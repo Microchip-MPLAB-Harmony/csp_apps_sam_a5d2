@@ -1,24 +1,22 @@
 /*******************************************************************************
-  Main Source File
+  Matrix (AHB) PLIB
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    main.c
+    plib_matrix.c
 
   Summary:
-    This file contains the "main" function for a project.
+    AHB Matrix PLIB implementation file
 
   Description:
-    This file contains the "main" function for a project.  The
-    "main" function calls the "SYS_Initialize" function to initialize the state
-    machines of all modules in the system
- *******************************************************************************/
+    Configure AHB masters and slaves.
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -41,54 +39,57 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Included Files
-// *****************************************************************************
-// *****************************************************************************
+#ifndef _PLIB_MATRIX_H    // Guards against multiple inclusion
+#define _PLIB_MATRIX_H
 
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include "definitions.h"                // SYS function prototypes
+#ifdef __cplusplus  // Provide C++ Compatibility
 
-/* This function is called after period expires */
-void TC0_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
-{
-    /* Toggle LED */
-    LED_Toggle();
-}
+    extern "C" {
+
+#endif
+
+
+
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Main Entry Point
+// Section: Interface Routines
 // *****************************************************************************
 // *****************************************************************************
 
-int main ( void )
-{
-    /* Initialize all modules */
-    SYS_Initialize ( NULL );
-        
-    /* Register callback function for CH0 period interrupt */
-    TC0_CH0_TimerCallbackRegister(TC0_CH0_TimerInterruptHandler, (uintptr_t)NULL);
-    
-    /* Start the timer channel 0*/
-    TC0_CH0_TimerStart();
- 
-    while ( true )
-    {
-        /* Maintain state machines of all polled MPLAB Harmony modules. */
-        SYS_Tasks ( );
+// *****************************************************************************
+/* Function:
+    void Matrix_Initialize(void)
+
+  Summary:
+    Initialize AHB Masters and Slaves.
+
+  Description:
+    Inialize AHB Masters and Slaves and peripheral's as secure or non-secure.
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Remarks:
+    Until security is implemented all peripherals will be non-secure.
+*/
+void Matrix_Initialize(void);
+
+
+#ifdef __cplusplus  // Provide C++ Compatibility
+
     }
 
-    /* Execution should not come here during normal operation */
+#endif
 
-    return ( EXIT_FAILURE );
-}
-
+#endif // _FILE_TEMPLATE_HEADER_H
 
 /*******************************************************************************
  End of File
 */
-

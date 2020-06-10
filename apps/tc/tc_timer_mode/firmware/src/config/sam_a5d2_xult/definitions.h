@@ -1,24 +1,20 @@
 /*******************************************************************************
-  Main Source File
-
-  Company:
-    Microchip Technology Inc.
+  System Definitions
 
   File Name:
-    main.c
+    definitions.h
 
   Summary:
-    This file contains the "main" function for a project.
+    project system definitions.
 
   Description:
-    This file contains the "main" function for a project.  The
-    "main" function calls the "SYS_Initialize" function to initialize the state
-    machines of all modules in the system
+    This file contains the system-wide prototypes and definitions for a project.
+
  *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
+//DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -38,56 +34,101 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-// DOM-IGNORE-END
+ *******************************************************************************/
+//DOM-IGNORE-END
+
+#ifndef DEFINITIONS_H
+#define DEFINITIONS_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+#include "peripheral/mmu/plib_mmu.h"
+#include "peripheral/matrix/plib_matrix.h"
+#include "peripheral/clk/plib_clk.h"
+#include "peripheral/pio/plib_pio.h"
+#include "peripheral/aic/plib_aic.h"
+#include "peripheral/tc/plib_tc0.h"
 
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include "definitions.h"                // SYS function prototypes
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
 
-/* This function is called after period expires */
-void TC0_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
-{
-    /* Toggle LED */
-    LED_Toggle();
-}
+extern "C" {
+
+#endif
+// DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Main Entry Point
+// Section: System Functions
 // *****************************************************************************
 // *****************************************************************************
 
-int main ( void )
-{
-    /* Initialize all modules */
+// *****************************************************************************
+/* System Initialization Function
+
+  Function:
+    void SYS_Initialize( void *data )
+
+  Summary:
+    Function that initializes all modules in the system.
+
+  Description:
+    This function initializes all modules in the system, including any drivers,
+    services, middleware, and applications.
+
+  Precondition:
+    None.
+
+  Parameters:
+    data            - Pointer to the data structure containing any data
+                      necessary to initialize the module. This pointer may
+                      be null if no data is required and default initialization
+                      is to be used.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
     SYS_Initialize ( NULL );
-        
-    /* Register callback function for CH0 period interrupt */
-    TC0_CH0_TimerCallbackRegister(TC0_CH0_TimerInterruptHandler, (uintptr_t)NULL);
-    
-    /* Start the timer channel 0*/
-    TC0_CH0_TimerStart();
- 
+
     while ( true )
     {
-        /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
     }
+    </code>
 
-    /* Execution should not come here during normal operation */
+  Remarks:
+    This function will only be called once, after system reset.
+*/
 
-    return ( EXIT_FAILURE );
+void SYS_Initialize( void *data );
+
+/* Nullify SYS_Tasks() if only PLIBs are used. */
+#define     SYS_Tasks()
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: extern declarations
+// *****************************************************************************
+// *****************************************************************************
+
+
+
+
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
 }
+#endif
+//DOM-IGNORE-END
 
-
+#endif /* DEFINITIONS_H */
 /*******************************************************************************
  End of File
 */
