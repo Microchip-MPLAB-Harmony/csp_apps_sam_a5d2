@@ -156,8 +156,7 @@
         <Boolean dnOrder="21" id="FLEXCOM0_INTERRUPT_ENABLE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0">
-              <Value dnOrder="0" id="core" priority="1" value="true"/>
-              <Value dnOrder="1" id="flexcom0" priority="2" value="true"/>
+              <Value dnOrder="0" id="flexcom0" priority="2" value="true"/>
             </Dynamic>
           </Values>
         </Boolean>

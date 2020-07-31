@@ -1511,7 +1511,7 @@
         </Integer>
         <Boolean dnOrder="297" id="TWIHS1_INTERRUPT_ENABLE">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="true"/>
+            <Dynamic dnOrder="0" id="twihs1" value="true"/>
           </Values>
         </Boolean>
         <String dnOrder="298" id="TWIHS1_INTERRUPT_HANDLER">

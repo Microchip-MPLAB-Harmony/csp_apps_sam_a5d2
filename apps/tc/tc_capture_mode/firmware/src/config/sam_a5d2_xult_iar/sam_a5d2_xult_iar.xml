@@ -1211,7 +1211,7 @@
             </Boolean>
           </Attributes>
           <Values dnOrder="1">
-            <Dynamic dnOrder="0" id="core" value="true"/>
+            <Dynamic dnOrder="0" id="tc1" value="true"/>
           </Values>
         </Boolean>
         <String dnOrder="236" id="TC1_INTERRUPT_HANDLER">

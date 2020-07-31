@@ -137,7 +137,7 @@
             </Boolean>
           </Attributes>
           <Values dnOrder="1">
-            <Dynamic dnOrder="0" id="core" value="true"/>
+            <Dynamic dnOrder="0" id="flexcom0" value="true"/>
           </Values>
         </Boolean>
         <String dnOrder="24" id="FLEXCOM0_INTERRUPT_HANDLER">

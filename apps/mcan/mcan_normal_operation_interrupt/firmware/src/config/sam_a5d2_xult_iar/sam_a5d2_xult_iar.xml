@@ -596,7 +596,7 @@
         </Integer>
         <Boolean dnOrder="102" id="MCAN0_INT0_INTERRUPT_ENABLE">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="true"/>
+            <Dynamic dnOrder="0" id="mcan0" value="true"/>
           </Values>
         </Boolean>
         <String dnOrder="103" id="MCAN0_INT0_INTERRUPT_HANDLER">

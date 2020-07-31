@@ -1819,8 +1819,7 @@
           </Attributes>
           <Values dnOrder="1">
             <Dynamic dnOrder="0">
-              <Value dnOrder="0" id="core" priority="1" value="true"/>
-              <Value dnOrder="1" id="spi1" priority="1" value="true"/>
+              <Value dnOrder="0" id="spi1" priority="1" value="true"/>
             </Dynamic>
           </Values>
         </Boolean>
