@@ -171,14 +171,14 @@
         <targetDevice>ATSAMA5D27</targetDevice>
         <targetHeader/>
         <targetPluginBoard/>
-        <platformTool>jlink</platformTool>
+        <platformTool>samice</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.3.33"/>
+        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.4.39"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="boot.load_adr" value=""/>
@@ -186,7 +186,7 @@
         <ScriptingSetting key="boot.entry_adr" value=""/>
         <ScriptingSetting key="boot.path" value="${ProjectDir}\..\at91bootstrap_sam_a5d2_xult.X\binaries\at91bootstrap.elf"/>
         <ScriptingSetting key="boot.prj" value=""/>
-      </ScriptingSettings>
+        </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -719,11 +719,6 @@
       </Simulator>
       <jlink>
         <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="boot.entry_adr" value=""/>
-        <property key="boot.load_adr" value=""/>
-        <property key="boot.path" value="${ProjectDir}\..\at91bootstrap_sam_a5d2_xult.X\binaries\at91bootstrap.elf"/>
-        <property key="boot.prj" value=""/>
-        <property key="boot.use" value="true"/>
         <property key="communication.autoselectspeed" value="true"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="4"/>
@@ -743,14 +738,9 @@
         <property key="programoptions.preserveprogramrange.end" value="0x23ffff"/>
         <property key="programoptions.preserveprogramrange.start" value="0x200000"/>
         <property key="programoptions.resetafterprogram" value="false"/>
-      </jlink>
+        </jlink>
       <samice>
         <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="boot.entry_adr" value=""/>
-        <property key="boot.load_adr" value=""/>
-        <property key="boot.path" value="${ProjectDir}\..\at91bootstrap_sam_a5d2_xult.X\binaries\at91bootstrap.elf"/>
-        <property key="boot.prj" value=""/>
-        <property key="boot.use" value="true"/>
         <property key="communication.autoselectspeed" value="true"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="4"/>
@@ -770,7 +760,6 @@
         <property key="programoptions.preserveprogramrange.end" value="0x23ffff"/>
         <property key="programoptions.preserveprogramrange.start" value="0x200000"/>
         <property key="programoptions.resetafterprogram" value="false"/>
-      </samice>
-    </conf>
+        </samice></conf>
   </confs>
 </configurationDescriptor>
