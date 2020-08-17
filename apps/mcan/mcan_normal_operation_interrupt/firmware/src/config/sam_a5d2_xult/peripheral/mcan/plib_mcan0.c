@@ -617,6 +617,7 @@ void MCAN0_INT0_InterruptHandler(void)
 {
     uint8_t length = 0;
     uint8_t rxgi = 0;
+    uint8_t bufferIndex = 0;
     mcan_rxf0e_registers_t *rxf0eFifo = NULL;
     mcan_rxf1e_registers_t *rxf1eFifo = NULL;
     uint32_t ir = MCAN0_REGS->MCAN_IR;
@@ -728,7 +729,7 @@ void MCAN0_INT0_InterruptHandler(void)
     {
         MCAN0_REGS->MCAN_IR = MCAN_IR_TC_Msk;
         MCAN0_REGS->MCAN_IE &= (~MCAN_IE_TCE_Msk);
-        for (uint8_t bufferIndex = 0; bufferIndex < (MCAN0_TX_FIFO_BUFFER_SIZE/MCAN0_TX_FIFO_BUFFER_ELEMENT_SIZE); bufferIndex++)
+        for (bufferIndex = 0; bufferIndex < (MCAN0_TX_FIFO_BUFFER_SIZE/MCAN0_TX_FIFO_BUFFER_ELEMENT_SIZE); bufferIndex++)
         {
             if ((MCAN0_REGS->MCAN_TXBTO & (1 << (bufferIndex & 0x1F))) &&
                 (MCAN0_REGS->MCAN_TXBTIE & (1 << (bufferIndex & 0x1F))))
