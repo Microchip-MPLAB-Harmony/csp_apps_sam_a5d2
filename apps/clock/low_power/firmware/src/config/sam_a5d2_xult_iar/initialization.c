@@ -92,6 +92,7 @@
 
 
 
+
 /*******************************************************************************
   Function:
     void SYS_Initialize ( void *data )
@@ -104,6 +105,7 @@
 
 void SYS_Initialize ( void* data )
 {
+
   
     CLK_Initialize();
 	PIO_Initialize();
