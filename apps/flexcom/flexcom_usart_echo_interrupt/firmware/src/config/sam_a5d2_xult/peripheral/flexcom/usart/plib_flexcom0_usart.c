@@ -386,3 +386,19 @@ size_t FLEXCOM0_USART_ReadCountGet( void )
     return flexcom0UsartObj.rxProcessedSize;
 }
 
+bool FLEXCOM0_USART_ReadAbort(void)
+{
+    if (flexcom0UsartObj.rxBusyStatus == true)
+    {        		
+		/* Disable Read, Overrun, Parity and Framing error interrupts */
+		FLEXCOM0_REGS->FLEX_US_IDR = (FLEX_US_IDR_RXRDY_Msk | FLEX_US_IDR_FRAME_Msk | FLEX_US_IDR_PARE_Msk | FLEX_US_IDR_OVRE_Msk);
+		
+		flexcom0UsartObj.rxBusyStatus = false;
+
+		/* If required application should read the num bytes processed prior to calling the read abort API */
+        flexcom0UsartObj.rxSize = flexcom0UsartObj.rxProcessedSize = 0;
+    }
+    
+    return true;
+}
+
