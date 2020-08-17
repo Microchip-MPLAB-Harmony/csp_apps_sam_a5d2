@@ -48,6 +48,7 @@ The following table shows the target hardware for the application projects.
 - SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
+- Use a jumper wire to connect J8-PIN8 to J22-PIN6
 
 ## Running the Application
 
@@ -66,4 +67,4 @@ The following table shows the target hardware for the application projects.
 
     ![output](images/output_tc_capture_mode.png)
 
-8. Frequency is constant (2500 Hz) and duty cycle changes by 8%
+8. Frequency is constant (~2500 Hz) and duty cycle changes by ~8%
