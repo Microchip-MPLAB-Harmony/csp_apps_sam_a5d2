@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Configuration>
   <Components>
     <UniqueComponent dnOrder="0" id="cmsis"/>
@@ -1633,49 +1633,80 @@
     <UniqueComponent dnOrder="2" id="dfp"/>
     <UniqueComponent dnOrder="3" id="mcan0">
       <Symbols dnOrder="0">
-        <Integer dnOrder="0" id="DATA_BITRATE">
+        <Integer dnOrder="0" id="CALCULATED_DATA_BITRATE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="mcan0" value="2000"/>
+          </Values>
+        </Integer>
+        <String dnOrder="1" id="CALCULATED_DATA_ERRORRATE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="mcan0" value="0.000"/>
+          </Values>
+        </String>
+        <Integer dnOrder="2" id="CALCULATED_NOMINAL_BITRATE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="mcan0" value="500"/>
+          </Values>
+        </Integer>
+        <String dnOrder="3" id="CALCULATED_NOMINAL_ERRORRATE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="mcan0" value="0.000"/>
+          </Values>
+        </String>
+        <Integer dnOrder="4" id="DATA_BITRATE">
           <Values dnOrder="0">
             <User dnOrder="0" value="2000"/>
           </Values>
         </Integer>
-        <Menu dnOrder="1" id="DATA_BIT_TIMING_CALCULATION">
+        <Menu dnOrder="5" id="DATA_BIT_TIMING_CALCULATION">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Menu>
-        <Integer dnOrder="2" id="DBTP_DSJW">
+        <String dnOrder="6" id="DATA_TIME_QUANTA_PERIOD">
           <Values dnOrder="0">
-            <User dnOrder="0" value="4"/>
+            <Dynamic dnOrder="0" id="mcan0" value="25.000"/>
+          </Values>
+        </String>
+        <Integer dnOrder="7" id="DBTP_DSJW">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="mcan0" value="5"/>
+            <User dnOrder="1" value="4"/>
           </Values>
         </Integer>
-        <Integer dnOrder="3" id="DBTP_DTSEG1">
+        <Integer dnOrder="8" id="DBTP_DTSEG1">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="mcan0" value="13"/>
+            <Dynamic dnOrder="0" id="mcan0" value="14"/>
           </Values>
         </Integer>
-        <Integer dnOrder="4" id="DBTP_DTSEG2">
+        <Integer dnOrder="9" id="DBTP_DTSEG2">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="mcan0" value="4"/>
+            <Dynamic dnOrder="0" id="mcan0" value="5"/>
           </Values>
         </Integer>
-        <Integer dnOrder="5" id="FILTERS_EXT">
+        <Integer dnOrder="10" id="DBTP_TOTAL_TIME_QUANTA">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="mcan0" value="20"/>
+          </Values>
+        </Integer>
+        <Integer dnOrder="11" id="FILTERS_EXT">
           <Values dnOrder="0">
             <User dnOrder="0" value="2"/>
           </Values>
         </Integer>
-        <Integer dnOrder="6" id="FILTERS_STD">
+        <Integer dnOrder="12" id="FILTERS_STD">
           <Values dnOrder="0">
             <User dnOrder="0" value="2"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="7" id="INTERRUPT_MODE">
+        <Boolean dnOrder="13" id="INTERRUPT_MODE">
           <Values dnOrder="0">
             <User dnOrder="0" value="true"/>
           </Values>
         </Boolean>
-        <Menu dnOrder="8" id="MCAN0_EXT_FILTER1">
+        <Menu dnOrder="14" id="MCAN0_EXT_FILTER1">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
@@ -1685,17 +1716,17 @@
             </Boolean>
           </Attributes>
         </Menu>
-        <KeyValueSet dnOrder="9" id="MCAN0_EXT_FILTER1_CONFIG">
+        <KeyValueSet dnOrder="15" id="MCAN0_EXT_FILTER1_CONFIG">
           <Values dnOrder="0">
             <User dnOrder="0" value="7"/>
           </Values>
         </KeyValueSet>
-        <Hex dnOrder="10" id="MCAN0_EXT_FILTER1_EFID1">
+        <Hex dnOrder="16" id="MCAN0_EXT_FILTER1_EFID1">
           <Values dnOrder="0">
             <User dnOrder="0" value="268435621"/>
           </Values>
         </Hex>
-        <Menu dnOrder="11" id="MCAN0_EXT_FILTER2">
+        <Menu dnOrder="17" id="MCAN0_EXT_FILTER2">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
@@ -1705,29 +1736,22 @@
             </Boolean>
           </Attributes>
         </Menu>
-        <Comment dnOrder="12" id="MCAN0_EXT_FILTER2_COMMENT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </Comment>
-        <KeyValueSet dnOrder="13" id="MCAN0_EXT_FILTER2_CONFIG">
+        <KeyValueSet dnOrder="18" id="MCAN0_EXT_FILTER2_CONFIG">
           <Values dnOrder="0">
             <User dnOrder="0" value="2"/>
           </Values>
         </KeyValueSet>
-        <Hex dnOrder="14" id="MCAN0_EXT_FILTER2_EFID1">
+        <Hex dnOrder="19" id="MCAN0_EXT_FILTER2_EFID1">
           <Values dnOrder="0">
             <User dnOrder="0" value="268435606"/>
           </Values>
         </Hex>
-        <Hex dnOrder="15" id="MCAN0_EXT_FILTER2_EFID2">
+        <Hex dnOrder="20" id="MCAN0_EXT_FILTER2_EFID2">
           <Values dnOrder="0">
             <User dnOrder="0" value="268435606"/>
           </Values>
         </Hex>
-        <Menu dnOrder="16" id="MCAN0_STD_FILTER1">
+        <Menu dnOrder="21" id="MCAN0_STD_FILTER1">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
@@ -1737,24 +1761,17 @@
             </Boolean>
           </Attributes>
         </Menu>
-        <Comment dnOrder="17" id="MCAN0_STD_FILTER1_COMMENT">
-          <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">false</Value>
-            </Boolean>
-          </Attributes>
-        </Comment>
-        <Hex dnOrder="18" id="MCAN0_STD_FILTER1_SFID1">
+        <Hex dnOrder="22" id="MCAN0_STD_FILTER1_SFID1">
           <Values dnOrder="0">
             <User dnOrder="0" value="1129"/>
           </Values>
         </Hex>
-        <Hex dnOrder="19" id="MCAN0_STD_FILTER1_SFID2">
+        <Hex dnOrder="23" id="MCAN0_STD_FILTER1_SFID2">
           <Values dnOrder="0">
             <User dnOrder="0" value="1129"/>
           </Values>
         </Hex>
-        <Menu dnOrder="20" id="MCAN0_STD_FILTER2">
+        <Menu dnOrder="24" id="MCAN0_STD_FILTER2">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="enabled">
               <Value dnOrder="0">true</Value>
@@ -1764,22 +1781,22 @@
             </Boolean>
           </Attributes>
         </Menu>
-        <KeyValueSet dnOrder="21" id="MCAN0_STD_FILTER2_CONFIG">
+        <KeyValueSet dnOrder="25" id="MCAN0_STD_FILTER2_CONFIG">
           <Values dnOrder="0">
             <User dnOrder="0" value="7"/>
           </Values>
         </KeyValueSet>
-        <Hex dnOrder="22" id="MCAN0_STD_FILTER2_SFID1">
+        <Hex dnOrder="26" id="MCAN0_STD_FILTER2_SFID1">
           <Values dnOrder="0">
             <User dnOrder="0" value="1114"/>
           </Values>
         </Hex>
-        <Integer dnOrder="23" id="MCAN_CORE_CLOCK_FREQ">
+        <Integer dnOrder="27" id="MCAN_CORE_CLOCK_FREQ">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="mcan0" value="40000000"/>
           </Values>
         </Integer>
-        <Comment dnOrder="24" id="MCAN_CORE_CLOCK_INVALID_COMMENT">
+        <Comment dnOrder="28" id="MCAN_CORE_CLOCK_INVALID_COMMENT">
           <Attributes dnOrder="0">
             <String dnOrder="0" id="text">
               <Value dnOrder="0">Warning!!!&amp;#160;MCAN0&amp;#160;Clock&amp;#160;Frequency&amp;#160;is&amp;#160;too&amp;#160;high&amp;#160;for&amp;#160;required&amp;#160;Data&amp;#160;Bit&amp;#160;Timing</Value>
@@ -1789,17 +1806,31 @@
             </Boolean>
           </Attributes>
         </Comment>
-        <Combo dnOrder="25" id="MCAN_OPMODE">
+        <Comment dnOrder="29" id="MCAN_DATA_ERRORRATE_COMMENT">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="visible">
+              <Value dnOrder="0">false</Value>
+            </Boolean>
+          </Attributes>
+        </Comment>
+        <Comment dnOrder="30" id="MCAN_NOMINAL_ERRORRATE_COMMENT">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="visible">
+              <Value dnOrder="0">false</Value>
+            </Boolean>
+          </Attributes>
+        </Comment>
+        <Combo dnOrder="31" id="MCAN_OPMODE">
           <Values dnOrder="0">
             <User dnOrder="0" value="CAN FD"/>
           </Values>
         </Combo>
-        <Integer dnOrder="26" id="MCAN_SFR_CAN_ENABLE_VALUE">
+        <Integer dnOrder="32" id="MCAN_SFR_CAN_ENABLE_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="mcan0" value="1"/>
           </Values>
         </Integer>
-        <Comment dnOrder="27" id="MCAN_TIME_QUANTA_INVALID_COMMENT">
+        <Comment dnOrder="33" id="MCAN_TIME_QUANTA_INVALID_COMMENT">
           <Attributes dnOrder="0">
             <String dnOrder="0" id="text">
               <Value dnOrder="0">Warning!!!&amp;#160;Number&amp;#160;of&amp;#160;Time&amp;#160;Quanta&amp;#160;is&amp;#160;too&amp;#160;high&amp;#160;for&amp;#160;required&amp;#160;Data&amp;#160;Bit&amp;#160;Timing</Value>
@@ -1809,32 +1840,43 @@
             </Boolean>
           </Attributes>
         </Comment>
-        <Integer dnOrder="28" id="NBTP_NBRP">
+        <Integer dnOrder="34" id="NBTP_NBRP">
           <Values dnOrder="0">
             <User dnOrder="0" value="3"/>
           </Values>
         </Integer>
-        <Integer dnOrder="29" id="NBTP_NSJW">
+        <Integer dnOrder="35" id="NBTP_NSJW">
           <Values dnOrder="0">
-            <User dnOrder="0" value="4"/>
+            <Dynamic dnOrder="0" id="mcan0" value="5"/>
+            <User dnOrder="1" value="4"/>
           </Values>
         </Integer>
-        <Integer dnOrder="30" id="NBTP_NTSEG1">
+        <Integer dnOrder="36" id="NBTP_NTSEG1">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="mcan0" value="13"/>
+            <Dynamic dnOrder="0" id="mcan0" value="14"/>
           </Values>
         </Integer>
-        <Integer dnOrder="31" id="NBTP_NTSEG2">
+        <Integer dnOrder="37" id="NBTP_NTSEG2">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="mcan0" value="4"/>
+            <Dynamic dnOrder="0" id="mcan0" value="5"/>
           </Values>
         </Integer>
-        <Boolean dnOrder="32" id="RXBUF_USE">
+        <Integer dnOrder="38" id="NBTP_TOTAL_TIME_QUANTA">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="mcan0" value="20"/>
+          </Values>
+        </Integer>
+        <String dnOrder="39" id="NOMINAL_TIME_QUANTA_PERIOD">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="mcan0" value="100.000"/>
+          </Values>
+        </String>
+        <Boolean dnOrder="40" id="RXBUF_USE">
           <Values dnOrder="0">
             <User dnOrder="0" value="true"/>
           </Values>
         </Boolean>
-        <KeyValueSet dnOrder="33" id="RXF0_BYTES_CFG">
+        <KeyValueSet dnOrder="41" id="RXF0_BYTES_CFG">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1844,7 +1886,7 @@
             <User dnOrder="0" value="7"/>
           </Values>
         </KeyValueSet>
-        <KeyValueSet dnOrder="34" id="RXF1_BYTES_CFG">
+        <KeyValueSet dnOrder="42" id="RXF1_BYTES_CFG">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1854,7 +1896,7 @@
             <User dnOrder="0" value="7"/>
           </Values>
         </KeyValueSet>
-        <KeyValueSet dnOrder="35" id="RX_BUFFER_BYTES_CFG">
+        <KeyValueSet dnOrder="43" id="RX_BUFFER_BYTES_CFG">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1864,26 +1906,26 @@
             <User dnOrder="0" value="7"/>
           </Values>
         </KeyValueSet>
-        <Integer dnOrder="36" id="RX_BUFFER_ELEMENTS">
+        <Integer dnOrder="44" id="RX_BUFFER_ELEMENTS">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </Integer>
-        <Boolean dnOrder="37" id="TIMESTAMP_ENABLE">
+        <Boolean dnOrder="45" id="TIMESTAMP_ENABLE">
           <Values dnOrder="0">
             <User dnOrder="0" value="true"/>
           </Values>
         </Boolean>
-        <KeyValueSet dnOrder="38" id="TIMESTAMP_MODE">
+        <KeyValueSet dnOrder="46" id="TIMESTAMP_MODE">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
         </KeyValueSet>
-        <KeyValueSet dnOrder="39" id="TX_FIFO_BYTES_CFG">
+        <KeyValueSet dnOrder="47" id="TX_FIFO_BYTES_CFG">
           <Attributes dnOrder="0">
             <Boolean dnOrder="0" id="visible">
               <Value dnOrder="0">true</Value>
@@ -1935,13 +1977,21 @@
         </Integer>
         <Boolean dnOrder="3" id="UART_RING_BUFFER_ENABLE">
           <Attributes dnOrder="0">
-            <Boolean dnOrder="0" id="visible">
-              <Value dnOrder="0">false</Value>
+            <Boolean dnOrder="0" id="readOnly">
+              <Value dnOrder="0">true</Value>
             </Boolean>
           </Attributes>
+          <Values dnOrder="1">
+            <Dynamic dnOrder="0" id="uart1" value="false"/>
+          </Values>
         </Boolean>
         <Boolean dnOrder="4" id="USART_INTERRUPT_MODE">
-          <Values dnOrder="0">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="readOnly">
+              <Value dnOrder="0">true</Value>
+            </Boolean>
+          </Attributes>
+          <Values dnOrder="1">
             <Dynamic dnOrder="0" id="stdio" value="false"/>
           </Values>
         </Boolean>
