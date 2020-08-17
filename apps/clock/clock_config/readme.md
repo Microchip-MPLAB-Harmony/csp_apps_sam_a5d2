@@ -56,7 +56,7 @@ The following table shows the target hardware for the application projects.
 2. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card)
 3. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot)
 4. Reset the board to run the application
-5. Observe the clock of 4.15 MHz on clock output pin
+5. Observe the clock of ~4.15 MHz on clock output pin
 6. LED should be blinking continuosly
 
 Refer to the following table for clock output pin and LED name for different boards:
