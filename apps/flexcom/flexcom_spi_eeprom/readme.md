@@ -49,7 +49,19 @@ The following table shows the target hardware for the application projects.
 - SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
-- Connect [EEPROM 4 Click board](https://www.mikroe.com/eeprom-4-click) to XPRO EXT1 (J25) connector on the board
+- Connect [EEPROM 4 Click board](https://www.mikroe.com/eeprom-4-click) to XPRO EXT1 (J25) connector on the board as per below Pin connections:
+
+| XPRO EXT1 (J25) Pins | EEPROM 4 CLICK Pins |
+| -------------------- | ------------------- |
+| PIN 07               | HLD                 |
+| PIN 09               | WP                  |
+| PIN 10               | CS                  |
+| PIN 15               | SCK                 |
+| PIN 16               | SDI                 |
+| PIN 17               | SDO                 |
+| PIN 19               | GND                 |
+| PIN 20               | 3V3                 |
+|||
 
 ## Running the Application
 
