@@ -58,7 +58,7 @@
 // *****************************************************************************
 
 /* Brief default interrupt handler for unused IRQs */
-void __attribute__((optimize("-O1"),section(".text.DefaultInterruptHandler"),long_call))DefaultInterruptHandler( void )
+void __attribute__((optimize("-O1"),section(".text.DefaultInterruptHandler"),long_call, noreturn))DefaultInterruptHandler( void )
 {
 #if defined(__DEBUG) || defined(__DEBUG_D)
     asm("BKPT");
