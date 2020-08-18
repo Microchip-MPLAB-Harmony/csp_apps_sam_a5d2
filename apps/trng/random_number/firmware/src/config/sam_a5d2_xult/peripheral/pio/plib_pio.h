@@ -78,18 +78,19 @@
                                             PIOB_REGS->PIO_MSKR = (1<<9); \
                                             PIOB_REGS->PIO_ODSR ^= (1<<9);\
                                         } while (0)
-#define SWITCH_Get()               ((PIOB_REGS->PIO_PDSR >> 9) & 0x1)
 #define SWITCH_OutputEnable()      do {\
                                             PIOB_REGS->PIO_MSKR = (1<<9); \
-										     PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define SWITCH_InputEnable()       do { \
                                             PIOB_REGS->PIO_MSKR = (1<<9); \
-										     PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
                                         } while (0)
+#define SWITCH_Get()               ((PIOB_REGS->PIO_PDSR >> 9) & 0x1)
+#define SWITCH_PIN                  PIO_PIN_PB9
 #define SWITCH_InterruptEnable()   (PIOB_REGS->PIO_IER = (1<<9))
 #define SWITCH_InterruptDisable()  (PIOB_REGS->PIO_IDR = (1<<9))
-#define SWITCH_PIN                  PIO_PIN_PB9
+
 
 
 // *****************************************************************************
@@ -1172,7 +1173,7 @@ static inline void PIO_PinInterruptDisable(PIO_PIN pin)
 
     If a pin is not configured for interrupt in Pin Manager and yet its callback
     registration is attempted using this API, then registration doesn't happen
-    and API returns false indicating the same.    
+    and API returns false indicating the same.
 
   Precondition:
     The PIO_Initialize function must have been called.
