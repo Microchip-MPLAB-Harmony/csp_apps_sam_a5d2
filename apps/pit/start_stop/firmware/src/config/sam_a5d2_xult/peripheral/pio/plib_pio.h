@@ -78,18 +78,18 @@
                                             PIOB_REGS->PIO_MSKR = (1<<9); \
                                             PIOB_REGS->PIO_ODSR ^= (1<<9);\
                                         } while (0)
-#define USER_PB_Get()               ((PIOB_REGS->PIO_PDSR >> 9) & 0x1)
 #define USER_PB_OutputEnable()      do {\
                                             PIOB_REGS->PIO_MSKR = (1<<9); \
-										     PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define USER_PB_InputEnable()       do { \
                                             PIOB_REGS->PIO_MSKR = (1<<9); \
-										     PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
                                         } while (0)
+#define USER_PB_Get()               ((PIOB_REGS->PIO_PDSR >> 9) & 0x1)
+#define USER_PB_PIN                  PIO_PIN_PB9
 #define USER_PB_InterruptEnable()   (PIOB_REGS->PIO_IER = (1<<9))
 #define USER_PB_InterruptDisable()  (PIOB_REGS->PIO_IDR = (1<<9))
-#define USER_PB_PIN                  PIO_PIN_PB9
 
 /*** Macros for LED_BLUE pin ***/
 #define LED_BLUE_Set()               (PIOB_REGS->PIO_SODR = (1<<0))
@@ -98,18 +98,17 @@
                                             PIOB_REGS->PIO_MSKR = (1<<0); \
                                             PIOB_REGS->PIO_ODSR ^= (1<<0);\
                                         } while (0)
-#define LED_BLUE_Get()               ((PIOB_REGS->PIO_PDSR >> 0) & 0x1)
 #define LED_BLUE_OutputEnable()      do {\
                                             PIOB_REGS->PIO_MSKR = (1<<0); \
-										     PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define LED_BLUE_InputEnable()       do { \
                                             PIOB_REGS->PIO_MSKR = (1<<0); \
-										     PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define LED_BLUE_InterruptEnable()   (PIOB_REGS->PIO_IER = (1<<0))
-#define LED_BLUE_InterruptDisable()  (PIOB_REGS->PIO_IDR = (1<<0))
+#define LED_BLUE_Get()               ((PIOB_REGS->PIO_PDSR >> 0) & 0x1)
 #define LED_BLUE_PIN                  PIO_PIN_PB0
+
 
 
 // *****************************************************************************
@@ -1192,7 +1191,7 @@ static inline void PIO_PinInterruptDisable(PIO_PIN pin)
 
     If a pin is not configured for interrupt in Pin Manager and yet its callback
     registration is attempted using this API, then registration doesn't happen
-    and API returns false indicating the same.    
+    and API returns false indicating the same.
 
   Precondition:
     The PIO_Initialize function must have been called.
