@@ -1,41 +1,42 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configurationDescriptor version="65">
-  <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="sam_a5d27_som1_ek" projectFiles="true">
-          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/sam_a5d27_som1_ek/bsp/bsp.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f6" displayName="aic" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/aic/plib_aic.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f4" displayName="clk" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/clk/plib_clk.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f3" displayName="matrix" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/matrix/plib_matrix.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f2" displayName="mmu" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/mmu/plib_mmu.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f5" displayName="pio" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/pio/plib_pio.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="uart" projectFiles="true">
+  <logicalFolder displayName="root" name="root" projectFiles="true">
+    <logicalFolder displayName="Header Files" name="HeaderFiles" projectFiles="true">
+      <logicalFolder displayName="config" name="f1" projectFiles="true">
+        <logicalFolder displayName="sam_a5d27_som1_ek" name="f1" projectFiles="true">
+          <logicalFolder displayName="peripheral" name="f1" projectFiles="true">
+            <logicalFolder displayName="uart" name="f1" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/uart/plib_uart_common.h</itemPath>
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/uart/plib_uart1.h</itemPath>
             </logicalFolder>
+            <logicalFolder displayName="mmu" name="f2" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/mmu/plib_mmu.h</itemPath>
+            </logicalFolder>
+            <logicalFolder displayName="matrix" name="f3" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/matrix/plib_matrix.h</itemPath>
+            </logicalFolder>
+            <logicalFolder displayName="clk" name="f4" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/clk/plib_clk.h</itemPath>
+            </logicalFolder>
+            <logicalFolder displayName="pio" name="f5" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/pio/plib_pio.h</itemPath>
+            </logicalFolder>
+            <logicalFolder displayName="aic" name="f6" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/aic/plib_aic.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder displayName="bsp" name="f2" projectFiles="true">
+            <itemPath>../src/config/sam_a5d27_som1_ek/bsp/bsp.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/sam_a5d27_som1_ek/device_cache.h</itemPath>
           <itemPath>../src/config/sam_a5d27_som1_ek/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_a5d27_som1_ek/definitions.h</itemPath>
+          <itemPath>../src/config/sam_a5d27_som1_ek/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1" displayName="ATSAMA5D27CD1G_DFP" projectFiles="true">
-          <logicalFolder name="f1" displayName="component" projectFiles="true">
+      <logicalFolder displayName="packs" name="f2" projectFiles="true">
+        <logicalFolder displayName="ATSAMA5D27CD1G_DFP" name="f1" projectFiles="true">
+          <logicalFolder displayName="component" name="f1" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/component/acc.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/component/adc.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/component/aes.h</itemPath>
@@ -85,16 +86,15 @@
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/component/xdmac.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="pio" projectFiles="true">
+          <logicalFolder displayName="pio" name="f2" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/pio/sama5d27cd1g.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/device.h</itemPath>
           <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/atsama5d27cd1g.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
-          <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
-            <logicalFolder name="f1" displayName="Core_A" projectFiles="true">
-              <logicalFolder name="f1" displayName="Include" projectFiles="true">
+        <logicalFolder displayName="CMSIS" name="f2" projectFiles="true">
+          <logicalFolder displayName="CMSIS" name="f1" projectFiles="true">
+            <logicalFolder displayName="Core_A" name="f1" projectFiles="true">
+              <logicalFolder displayName="Include" name="f1" projectFiles="true">
                 <itemPath>../src/packs/CMSIS/CMSIS/Core_A/Include/cmsis_compiler.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core_A/Include/cmsis_gcc.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core_A/Include/cmsis_iccarm.h</itemPath>
@@ -106,41 +106,41 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="sam_a5d27_som1_ek" projectFiles="true">
+    <logicalFolder displayName="Linker Files" name="LinkerScript" projectFiles="true">
+      <logicalFolder displayName="config" name="f1" projectFiles="true">
+        <logicalFolder displayName="sam_a5d27_som1_ek" name="f1" projectFiles="true">
           <itemPath>../src/config/sam_a5d27_som1_ek/ddr.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1" displayName="sam_a5d27_som1_ek" projectFiles="true">
-          <logicalFolder name="f3" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/sam_a5d27_som1_ek/bsp/bsp.c</itemPath>
-          </logicalFolder>
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f6" displayName="aic" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/aic/plib_aic.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f4" displayName="clk" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/clk/plib_clk.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f3" displayName="matrix" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/matrix/plib_matrix.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f2" displayName="mmu" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/mmu/plib_mmu.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f5" displayName="pio" projectFiles="true">
-              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/pio/plib_pio.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f1" displayName="uart" projectFiles="true">
+    <logicalFolder displayName="Source Files" name="SourceFiles" projectFiles="true">
+      <logicalFolder displayName="config" name="f1" projectFiles="true">
+        <logicalFolder displayName="sam_a5d27_som1_ek" name="f1" projectFiles="true">
+          <logicalFolder displayName="peripheral" name="f1" projectFiles="true">
+            <logicalFolder displayName="uart" name="f1" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/uart/plib_uart1.c</itemPath>
             </logicalFolder>
+            <logicalFolder displayName="mmu" name="f2" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/mmu/plib_mmu.c</itemPath>
+            </logicalFolder>
+            <logicalFolder displayName="matrix" name="f3" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/matrix/plib_matrix.c</itemPath>
+            </logicalFolder>
+            <logicalFolder displayName="clk" name="f4" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/clk/plib_clk.c</itemPath>
+            </logicalFolder>
+            <logicalFolder displayName="pio" name="f5" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/pio/plib_pio.c</itemPath>
+            </logicalFolder>
+            <logicalFolder displayName="aic" name="f6" projectFiles="true">
+              <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/aic/plib_aic.c</itemPath>
+            </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="stdio" projectFiles="true">
+          <logicalFolder displayName="stdio" name="f2" projectFiles="true">
             <itemPath>../src/config/sam_a5d27_som1_ek/stdio/xc32_monitor.c</itemPath>
+          </logicalFolder>
+          <logicalFolder displayName="bsp" name="f3" projectFiles="true">
+            <itemPath>../src/config/sam_a5d27_som1_ek/bsp/bsp.c</itemPath>
           </logicalFolder>
           <itemPath>../src/config/sam_a5d27_som1_ek/initialization.c</itemPath>
           <itemPath>../src/config/sam_a5d27_som1_ek/interrupts.c</itemPath>
@@ -150,10 +150,11 @@
       </logicalFolder>
       <itemPath>../src/main_sama5d27_som1_ek.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
+    <logicalFolder displayName="Important Files" name="ExternalFiles" projectFiles="true">
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_a5d27_som1_ek/harmony.prj</itemPath>
       <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.xml</itemPath>
+      <itemPath>../../../../../../mhc/../csp_apps_sam_a5d2/apps/uart/uart_echo_interrupt/firmware/src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.xml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -247,7 +248,7 @@
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value="__FPU_PRESENT=1"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="toplevel-reordering" value=""/>
@@ -256,6 +257,7 @@
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
         <appendMe value="-marm -cpu=cortex-a5 -mfpu=neon-vfpv4 -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn"/>
+      <property key="appendMe" value=""/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -334,7 +336,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories" value="../src;../src/config/sam_a5d27_som1_ek;../src/packs/ATSAMA5D27CD1G_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -748,6 +750,7 @@
         <property key="programoptions.preserveprogramrange.end" value="0x23ffff"/>
         <property key="programoptions.preserveprogramrange.start" value="0x200000"/>
         <property key="programoptions.resetafterprogram" value="false"/>
-        </samice></conf>
+        </samice>
+    </conf>
   </confs>
 </configurationDescriptor>
