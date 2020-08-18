@@ -1,22 +1,22 @@
 /*******************************************************************************
-  AIC PLIB Implementation
+  Device Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_aic.h
+    device.h
 
   Summary:
-    Function implementations for the AIC PLIB.
+    This file includes the selected device from within the project.
+    The device will provide access to respective device packs.
 
   Description:
-    This PLIB provides a simple interface to configure the Advanced Interrupt
-    Controller.
+    None
 
 *******************************************************************************/
 
-//DOM-IGNORE-BEGIN
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -39,20 +39,9 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-//DOM-IGNORE-END
-#include "definitions.h"
+// DOM-IGNORE-END
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: AIC Implementation
-// *****************************************************************************
-// *****************************************************************************
-extern IrqData  irqData[2];
-extern uint32_t irqDataEntryCount;
+#include "atsama5d27.h"
+#include "device_cache.h"
+#include "toolchain_specifics.h"
 
-void
-INT_Initialize( void )
-{   
-    __enable_irq();
-    __ISB();                                                // Allow pended interrupts to be recognized immediately
-}
