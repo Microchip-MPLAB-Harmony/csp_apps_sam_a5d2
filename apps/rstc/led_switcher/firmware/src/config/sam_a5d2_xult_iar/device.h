@@ -1,23 +1,17 @@
-#ifndef PLIB_RSTC_H
-#define PLIB_RSTC_H
 /*******************************************************************************
-  Reset Controller Peripheral Library, RSTC PLIB
+  Device Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_rstc.h
+    device.h
 
   Summary:
-    RSTC PLIB instance header file
+    This file includes the selected device from within the project.
+    The device will provide access to respective device packs.
 
   Description:
-    Interface and data type declarations for the RSTC PLIB.
-    The RSTC PLIB provides access to and control of the associated
-    reset controller.
-
-  Remarks:
     None
 
 *******************************************************************************/
@@ -45,29 +39,9 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-#ifdef __cplusplus  // Provide C++ Compatibility
-    extern "C" {
-#endif
 // DOM-IGNORE-END
 
-#include "device.h"
-#include "plib_rstc_common.h"
+#include "atsama5d27.h"
+#include "device_cache.h"
+#include "toolchain_specifics.h"
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Interface Routines
-// *****************************************************************************
-// *****************************************************************************
-void             RSTC_Initialize(        void );
-void             RSTC_Reset(             RSTC_RESET_TYPE type );
-RSTC_RESET_CAUSE RSTC_ResetCauseGet(     void );
-bool             RSTC_NRSTPinRead(       void );
-void             RSTC_CallbackRegister(  RSTC_CALLBACK callback, uintptr_t context );
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-    }
-#endif
-// DOM-IGNORE-END
-
-#endif // PLIB_RSTC_H
