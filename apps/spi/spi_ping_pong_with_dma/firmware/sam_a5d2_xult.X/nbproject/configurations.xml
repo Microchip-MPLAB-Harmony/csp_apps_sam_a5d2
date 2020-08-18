@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configurationDescriptor version="65">
   <logicalFolder displayName="root" name="root" projectFiles="true">
     <logicalFolder displayName="Header Files" name="HeaderFiles" projectFiles="true">
@@ -32,6 +32,7 @@
           <itemPath>../src/config/sam_a5d2_xult/device_cache.h</itemPath>
           <itemPath>../src/config/sam_a5d2_xult/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_a5d2_xult/definitions.h</itemPath>
+          <itemPath>../src/config/sam_a5d2_xult/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder displayName="packs" name="f2" projectFiles="true">
@@ -89,7 +90,6 @@
           <logicalFolder displayName="pio" name="f2" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D27_DFP/pio/sama5d27.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMA5D27_DFP/device.h</itemPath>
           <itemPath>../src/packs/ATSAMA5D27_DFP/atsama5d27.h</itemPath>
         </logicalFolder>
         <logicalFolder displayName="CMSIS" name="f2" projectFiles="true">
@@ -111,6 +111,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_a5d2_xult/harmony.prj</itemPath>
       <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.xml</itemPath>
+      <itemPath>../../../../../../mhc/../csp_apps_sam_a5d2/apps/spi/spi_ping_pong_with_dma/firmware/src/config/sam_a5d2_xult/sam_a5d2_xult.xml</itemPath>
     </logicalFolder>
     <logicalFolder displayName="Linker Files" name="LinkerScript" projectFiles="true">
       <logicalFolder displayName="config" name="f1" projectFiles="true">
@@ -248,7 +249,7 @@
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value="__FPU_PRESENT=1"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="toplevel-reordering" value=""/>
@@ -257,7 +258,7 @@
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
         <appendMe value="-marm -cpu=cortex-a5 -mfpu=neon-vfpv4 -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn"/>
-      <property key="appendMe" value="-marm -cpu=cortex-a5 -mfpu=neon-vfpv4"/>
+      <property key="appendMe" value=""/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -336,7 +337,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories" value="../src;../src/config/sam_a5d2_xult;../src/packs/ATSAMA5D27_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -722,6 +723,7 @@
         <property key="programoptions.preserveprogramrange.end" value="0x23ffff"/>
         <property key="programoptions.preserveprogramrange.start" value="0x200000"/>
         <property key="programoptions.resetafterprogram" value="false"/>
-        </samice></conf>
+        </samice>
+    </conf>
   </confs>
 </configurationDescriptor>
