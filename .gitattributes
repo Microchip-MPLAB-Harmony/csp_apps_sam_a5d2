@@ -12,3 +12,4 @@
 *.chm binary
 *.png binary
 *.elf binary
+*.bin binary
