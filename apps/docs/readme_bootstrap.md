@@ -1,3 +1,9 @@
+---
+title: Bootstrapping MPU applications using At91bootstrap loader
+nav_order: 2
+has_children: false
+has_toc: false
+---
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
 # Bootstrapping MPU applications using At91bootstrap loader
@@ -6,7 +12,7 @@ MPU applications are linked to execute from external DRAM memory that is availab
 
 Bootstrap loader project used for this purpose is a variant of the AT91Bootstrap project available for Microchip MPUs. It can be downloaded from [here](https://github.com/linux4sam/at91bootstrap/tree/at91bootstrap-3.x-mplabx). This project is adapted to be used from within MPLABx IDE on both Windows and Linux.
 
-To facilitate the debugging and running of the MPU application, each application in this repository is bundled with its own copy of the AT91Bootstrap project. Each copy of the bootstrap project can be found under same folder as the application project and is named and is prefixed with "at91bootstrap_". For eg: if the application folder name is sam_a5d2_xult.X, then bootstrap project folder will be named at91bootstrap_sam_a5d2_xult.X and will be present at the same folder level.
+To facilitate the debugging and running of the MPU application, each application in this repository is bundled with its own copy of the AT91Bootstrap project. Each copy of the bootstrap project can be found under same folder as the application project and is named and is prefixed with "at91bootstrap_". For eg: if the application folder name is sam_9x60_ek.X, then bootstrap project folder will be named at91bootstrap_sam_9x60_ek.X and will be present at the same folder level.
 
 Bootstrap project is configured to load and execute a raw binary file named "harmony.bin" from the SD card. SD card slot to be used shall vary with the evaluation kit.
 
@@ -21,7 +27,7 @@ If you are only interested in running or debugging the MPU applications in this 
     ![kconfig](images/kconfig.png)
 
 - Click on "LOAD" button and navigate to the boards folder inside the project. Choose the a  default configuration file (defconfig) config file to select a target evaluation board and boot method
-  - For eg: If you want to boot harmony.bin file from sd card for SAMA5D27 evaluation kit, navigate to board/sama5d2_xplained folder and select "sama5d2_xplainedsd_harmony_defconfig" file
+  - For eg: If you want to boot harmony.bin file from sd card for SAM9X60 evaluation kit, navigate to board/sam9x60ek folder and select "sam9x60eksd_harmony_defconfig" file
 
 - Click on "Apply" and "OK" buttons to configure the project
 

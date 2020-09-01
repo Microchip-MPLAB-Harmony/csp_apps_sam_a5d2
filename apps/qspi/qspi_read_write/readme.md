@@ -1,3 +1,10 @@
+---
+parent: Harmony 3 peripheral library application examples for SAMA5D2 family
+title: QSPI flash read write 
+has_children: false
+has_toc: false
+---
+
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
 # QSPI flash read write
