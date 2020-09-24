@@ -9,11 +9,11 @@ has_toc: false
 
 # FLEXCOM SPI Master read write test application
 
-This is a FLEXCOM SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under -  apps/flexcom/spi/slave/spi_write_read/firmware
+This is a FLEXCOM SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under -  apps/flexcom/spi/slave/flexcom_spi_write_read/firmware
 
 ## Description
 
-This example uses the FLEXCOM SPI peripheral library in master mode and serves as a test application to demonstrate communication between SPI master and corresponding SPI slave application available at apps/flexcom/spi/slave/spi_write_read/firmware.
+This example uses the FLEXCOM SPI peripheral library in master mode and serves as a test application to demonstrate communication between SPI master and corresponding SPI slave application available at apps/flexcom/spi/slave/flexcom_spi_write_read/firmware.
 
 The SPI master writes data by sending a write command followed by two bytes of memory address followed by the data to be written.
 
@@ -79,7 +79,7 @@ The following table shows the target hardware for the application projects.
 ## Running the Application
 
 1. Build and Program the SPI master application project using its IDE on board.
-2. Build and Program the SPI slave application project using its IDE. Path of the SPI Slave application within the repository is **apps/flexcom/spi/slave/spi_write_read/firmware** on another board. 
+2. Build and Program the SPI slave application project using its IDE. Path of the SPI Slave application within the repository is **apps/flexcom/spi/slave/flexcom_spi_write_read/firmware** on another board. 
 3. Copy the output binary (named 'harmony.bin') onto the each SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card).
 4. Insert the SD card into SDMMC slot on each board (Refer to the 'Setting up hardware' section for the correct SDMMC slot).
 5. Reset each board to run the application

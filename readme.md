@@ -43,11 +43,13 @@ The following applications are provided to demonstrate the typical or interestin
 | [Cache maintenance](apps/cache/cache_maintenance/readme.md) | This example application shows how to do cache maintenance operation by cleaning and invalidating the cache for the DMA buffers located in the cacheable SRAM region |
 | [Clock configuration](apps/clock/clock_config/readme.md) | This example application shows how to configure the clock system to run the device at maximum frequency. It also outputs a prescaled clock signal on a GPIO pin for measurement and verification |
 | [Low power modes](apps/clock/low_power/readme.md) | This example application shows how to enter low power modes of SAMA5D27 MPU |
-| [FLEXCOM SPI EEPROM read write](apps/flexcom/flexcom_spi_eeprom/readme.md) | This example application shows how to use the flexcom module in SPI mode |
-| [FLEXCOM TWI (I2C) EEPROM](apps/flexcom/flexcom_twi_eeprom/readme.md) | This example application shows how to use the flexcom module in TWI mode |
-| [FLEXCOM USART blocking](apps/flexcom/flexcom_usart_echo_blocking/readme.md) | This example application shows how to use the flexcom module in USART mode |
-| [FLEXCOM USART interrupt](apps/flexcom/flexcom_usart_echo_interrupt/readme.md) | This example application shows how to use the flexcom module in USART mode |
-| [FLEXCOM USART ring buffer](apps/flexcom/flexcom_usart_ring_buffer_interrupt/readme.md) | This example application shows how to use the FLEXCOM peripheral in USART ring buffer mode |
+| [FLEXCOM SPI EEPROM read write](apps/flexcom/spi/master/flexcom_spi_eeprom/readme.md) | This example application shows how to use the flexcom module in SPI mode |
+| [FLEXCOM SPI Master read write test application](apps/flexcom/spi/master/flexcom_spi_write_read_test_app/readme.md) | This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under - apps/flexcom/spi/slave/flexcom_spi_write_read/firmware |
+| [FLEXCOM SPI Slave read write](apps/flexcom/spi/slave/flexcom_spi_write_read/readme.md) | This example application demonstrates how to use the FLEXCOM SPI peripheral in slave mode |
+| [FLEXCOM TWI (I2C) EEPROM](apps/flexcom/twi/master/flexcom_twi_eeprom/readme.md) | This example application shows how to use the flexcom module in TWI mode |
+| [FLEXCOM USART blocking](apps/flexcom/usart/flexcom_usart_echo_blocking/readme.md) | This example application shows how to use the flexcom module in USART mode |
+| [FLEXCOM USART interrupt](apps/flexcom/usart/flexcom_usart_echo_interrupt/readme.md) | This example application shows how to use the flexcom module in USART mode |
+| [FLEXCOM USART ring buffer](apps/flexcom/usart/flexcom_usart_ring_buffer_interrupt/readme.md) | This example application shows how to use the FLEXCOM peripheral in USART ring buffer mode |
 | [MCAN FD interrupt](apps/mcan/mcan_fd_operation_interrupt_timestamp/readme.md) | This example application shows how to use the MCAN module to transmit and receive CAN FD messages in interrupt mode |
 | [MCAN blocking](apps/mcan/mcan_normal_operation_blocking/readme.md) | This example application shows how to use the MCAN module to transmit and receive CAN messages in polling mode |
 | [MCAN interrupt](apps/mcan/mcan_normal_operation_interrupt/readme.md) | This example application shows how to use the MCAN module to transmit and receive CAN messages in interrupt mode |
@@ -63,9 +65,11 @@ The following applications are provided to demonstrate the typical or interestin
 | [RTC alarm interrupt](apps/rtc/rtc_alarm/readme.md) | This example application shows how to use the RTC to configure the time and generate the alarm |
 | [RXLP wakeup](apps/rxlp/wakeup/readme.md) | This example application shows how RXLP can wakeup the device |
 | [SHDWC wakeup](apps/shdwc/piobu0_wakeup/readme.md) | This example application shows how to shutdown and wakeup the device using SHDWC peripheral |
-| [SPI ping pong with DMA](apps/spi/spi_ping_pong_with_dma/readme.md) | This example application shows how to continuously transmit and receive data over a SPI interface using ping pong buffers with the DMA |
-| [SPI blocking](apps/spi/spi_self_loopback_blocking/readme.md) | This example application shows how to use the SPI peripheral to transmit and receive a block of data in a blocking manner |
-| [SPI interrupt](apps/spi/spi_self_loopback_interrupt/readme.md) | This example application shows how to use the SPI peripheral to transmit and receive a block of data using interrupts |
+| [SPI ping pong with DMA](apps/spi/master/spi_ping_pong_with_dma/readme.md) | This example application shows how to continuously transmit and receive data over a SPI interface using ping pong buffers with the DMA |
+| [SPI blocking](apps/spi/master/spi_self_loopback_blocking/readme.md) | This example application shows how to use the SPI peripheral to transmit and receive a block of data in a blocking manner |
+| [SPI interrupt](apps/spi/master/spi_self_loopback_interrupt/readme.md) | This example application shows how to use the SPI peripheral to transmit and receive a block of data using interrupts |
+| [SPI Master read write test application](apps/spi/master/spi_write_read_test_app/readme.md) | This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under - apps/spi/slave/spi_write_read/firmware |
+| [SPI Slave read write](apps/spi/slave/spi_write_read/readme.md) | This example application demonstrates how to use the SPI peripheral in slave mode |
 | [TC capture mode](apps/tc/tc_capture_mode/readme.md) | This example application shows how to use the TC module in capture mode to measure duty cycle and frequency of an external input |
 | [TC compare mode](apps/tc/tc_compare_mode/readme.md) | This example application shows how to use the TC module in compare mode to generate an active low, active high, and toggle output on compare match |
 | [TC timer mode](apps/tc/tc_timer_mode/readme.md) | This example application shows how to use the TC module in timer mode to generate periodic interrupt |
