@@ -1,0 +1,77 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_uart_echo_blocking",
+		"version": "3.0.1",
+		"displayName": "UART echo blocking Example for SAM A5D2x Family",
+		"projectName": "uart_echo_blocking_sam_a5d2_xult",
+		"shortDescription": "This example application shows how to use the UART peripheral to transfer a block of data in a blocking manner.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMA5D2_DFP",
+			"semverRange": "^1.4.39"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMA5D27",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAMA5D2 Xplained Ultra Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "UART"
+			],
+			[
+				"Peripherals", "UART"
+			]
+		],
+		"peripherals": [
+			"UART"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMA5D27",
+			"SAM A5D2x Family",
+			"UART",
+			"Serial Communication",
+			"USART",
+			"SERCOM",
+			"FLEXCOM"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
