@@ -15,8 +15,10 @@
             </logicalFolder>
             <logicalFolder name="f7" displayName="flexcom" projectFiles="true">
               <logicalFolder name="f1" displayName="spi" projectFiles="true">
-                <itemPath>../src/config/sam_a5d2_xult/peripheral/flexcom/spi/plib_flexcom2_spi.h</itemPath>
-                <itemPath>../src/config/sam_a5d2_xult/peripheral/flexcom/spi/plib_flexcom_spi_local.h</itemPath>
+                <logicalFolder name="f1" displayName="master" projectFiles="true">
+                  <itemPath>../src/config/sam_a5d2_xult/peripheral/flexcom/spi/master/plib_flexcom2_spi_master.h</itemPath>
+                  <itemPath>../src/config/sam_a5d2_xult/peripheral/flexcom/spi/master/plib_flexcom_spi_master_common.h</itemPath>
+                </logicalFolder>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f3" displayName="l2cc" projectFiles="true">
@@ -36,6 +38,7 @@
           <itemPath>../src/config/sam_a5d2_xult/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_a5d2_xult/definitions.h</itemPath>
           <itemPath>../src/config/sam_a5d2_xult/device.h</itemPath>
+          <itemPath>../src/config/sam_a5d2_xult/interrupts.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -93,7 +96,7 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D27_DFP/pio/sama5d27.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMA5D27_DFP/atsama5d27.h</itemPath>
+          <itemPath>../src/packs/ATSAMA5D27_DFP/sama5d27.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
@@ -113,10 +116,17 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="sam_a5d2_xult.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.mhc/flexcom2.yml</itemPath>
+        <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.mhc/settings.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_a5d2_xult/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_a5d2_xult/sam_a5d2_xult.xml</itemPath>
-      <itemPath>../../../../../../mhc/../csp_apps_sam_a5d2/apps/flexcom/flexcom_spi_eeprom/firmware/src/config/sam_a5d2_xult/sam_a5d2_xult.xml</itemPath>
+      <itemPath>../src/config/sam_a5d2_xult/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -141,7 +151,9 @@
             </logicalFolder>
             <logicalFolder name="f7" displayName="flexcom" projectFiles="true">
               <logicalFolder name="f1" displayName="spi" projectFiles="true">
-                <itemPath>../src/config/sam_a5d2_xult/peripheral/flexcom/spi/plib_flexcom2_spi.c</itemPath>
+                <logicalFolder name="f1" displayName="master" projectFiles="true">
+                  <itemPath>../src/config/sam_a5d2_xult/peripheral/flexcom/spi/master/plib_flexcom2_spi_master.c</itemPath>
+                </logicalFolder>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f3" displayName="l2cc" projectFiles="true">
@@ -186,7 +198,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.5.42"/>
+        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.4.39"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
@@ -254,7 +266,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_a5d2_xult;../src/packs/ATSAMA5D27_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_a5d2_xult;../src/packs/ATSAMA5D27_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -330,7 +342,7 @@
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros"
-                  value="ROM_ORIGIN=0x0x26F00000;ROM_LENGTH=-0x26f00000"/>
+                  value=";ROM_LENGTH=-0x26f00000;ROM_ORIGIN=0x0x26F00000"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -352,7 +364,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_a5d2_xult;../src/packs/ATSAMA5D27_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_a5d2_xult;../src/packs/ATSAMA5D27_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

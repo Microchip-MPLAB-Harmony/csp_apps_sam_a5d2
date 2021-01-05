@@ -2133,6 +2133,9 @@
                     <file>
                         <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\definitions.h</name>
                     </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\interrupts.h</name>
+                    </file>
                     <group>
                         <name>peripheral</name>
                         <group>
@@ -2175,12 +2178,15 @@
                             <name>flexcom</name>
                             <group>
                                 <name>spi</name>
-                                <file>
-                                    <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\peripheral\flexcom\spi\plib_flexcom2_spi.h</name>
-                                </file>
-                                <file>
-                                    <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\peripheral\flexcom\spi\plib_flexcom_spi_local.h</name>
-                                </file>
+                                <group>
+                                    <name>master</name>
+                                    <file>
+                                        <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\peripheral\flexcom\spi\master\plib_flexcom2_spi_master.h</name>
+                                    </file>
+                                    <file>
+                                        <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\peripheral\flexcom\spi\master\plib_flexcom_spi_master_common.h</name>
+                                    </file>
+                                </group>
                             </group>
                         </group>
                     </group>
@@ -2341,7 +2347,7 @@
                         </file>
                     </group>
                     <file>
-                        <name>$PROJ_DIR$\..\src\packs\ATSAMA5D27_DFP\atsama5d27.h</name>
+                        <name>$PROJ_DIR$\..\src\packs\ATSAMA5D27_DFP\sama5d27.h</name>
                     </file>
                     <group>
                         <name>pio</name>
@@ -2442,9 +2448,12 @@
                             <name>flexcom</name>
                             <group>
                                 <name>spi</name>
-                                <file>
-                                    <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\peripheral\flexcom\spi\plib_flexcom2_spi.c</name>
-                                </file>
+                                <group>
+                                    <name>master</name>
+                                    <file>
+                                        <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\peripheral\flexcom\spi\master\plib_flexcom2_spi_master.c</name>
+                                    </file>
+                                </group>
                             </group>
                         </group>
                     </group>
