@@ -62,6 +62,7 @@ The following applications are provided to demonstrate the typical or interestin
 | [PWM synchronous channels](apps/pwm/pwm_synchronous_channels/readme.md) | This example application shows how to use the PWM peripheral to generate 3-phase PWM signals with dead time |
 | [QSPI flash read write](apps/qspi/qspi_read_write/readme.md) | This example application shows how to use the QSPI Peripheral library to perform erase, write and read operation with the QSPI Serial Flash memory in Quad IO mode |
 | [RSTC interrupt](apps/rstc/led_switcher/readme.md) | This example application shows how to use the RSTC peripheral to generate an interrupt instead of generating a reset, when the Reset switch is pressed on board |
+| [RSTC reset cause](apps/rstc/rstc_reset_cause/readme.md) | This example shows how to use the RSTC peripheral to indicate the cause of the device reset |
 | [RTC alarm interrupt](apps/rtc/rtc_alarm/readme.md) | This example application shows how to use the RTC to configure the time and generate the alarm |
 | [RXLP wakeup](apps/rxlp/wakeup/readme.md) | This example application shows how RXLP can wakeup the device |
 | [SHDWC wakeup](apps/shdwc/piobu0_wakeup/readme.md) | This example application shows how to shutdown and wakeup the device using SHDWC peripheral |
