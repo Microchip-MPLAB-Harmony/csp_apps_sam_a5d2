@@ -53,23 +53,51 @@
 static int timerState = 0;
 static int initPeriod;
 
+static void timerHandler (uintptr_t context)
+{
+    static uint32_t overflowCntr = 0;
+    (void)context;
+    
+    overflowCntr++;
+    
+    /* Depending on the period value, the overflowCntr will count to 10 in 1000ms
+     * or 500ms or 250ms or 125ms.
+     */
+    if (overflowCntr == 10)
+    {        
+        overflowCntr = 0;
+        
+        LED_BLUE_Toggle();
+    }
+    
+}
+
 static void handlePin(PIO_PIN pin, uintptr_t context)
 {
     uint32_t period;
     (void)context;
-    (void)pin;
+    (void)pin;    
 
-    period = PIT_TimerPeriodGet();
+    /* On each switch press the value of the new period is 
+     * set to half of the current period value. This should result in LED toggling
+     * rate change between 1000ms, 500ms, 250ms and 125ms every alternate switch
+     * press.
+     */
+    PIT_TimerStop();
+
+    period = PIT_TimerPeriodGet();    
     period = period >> 1;
-    timerState++;
+
+    timerState++;    
     if (timerState >= 4) {
         timerState = 0;
         period = initPeriod;
     }
 
     PIT_TimerPeriodSet(period);
-}
 
+    PIT_TimerStart();
+}
 
 // *****************************************************************************
 // *****************************************************************************
@@ -84,13 +112,12 @@ int main ( void )
     
     initPeriod = PIT_TimerPeriodGet();
 
+    PIT_TimerCallbackSet(timerHandler, 0);
     PIO_PinInterruptCallbackRegister(USER_PB_PIN, handlePin, 0);
     PIO_PinInterruptEnable(USER_PB_PIN);
 
     while ( true )
-    {
-        PIT_DelayMs(1000);
-        LED_BLUE_Toggle();
+    {        
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
     }
