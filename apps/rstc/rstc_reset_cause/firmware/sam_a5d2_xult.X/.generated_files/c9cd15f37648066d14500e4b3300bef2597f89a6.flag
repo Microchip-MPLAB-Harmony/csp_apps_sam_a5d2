@@ -1,0 +1,1 @@
+$(MP_EXTRA_AS_PRE)  -c -mprocessor=$(MP_PROCESSOR_OPTION) -DXPRJ_sam_a5d2_xult=$(CND_CONF)    -Wa,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_AS_POST),--gdwarf-2 -mdfp="${DFP_DIR}"D:\H3\csp_apps_sam_a5d2\apps\rstc\rstc_reset_cause\firmware\src\config\sam_a5d2_xult\cstartup.S
