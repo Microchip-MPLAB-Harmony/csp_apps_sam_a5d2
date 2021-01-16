@@ -117,20 +117,28 @@ int main ( void )
     return ( EXIT_FAILURE );
 }
    
-
+#if defined (__ICCARM__)
 #pragma section = ".ramcode_section"
 #pragma section = ".ramcode_section_init"                                                                                                                 
 #pragma section = ".ramdata_section"
 #pragma section = ".ramdata_section_init" 
-
+#elif defined (__XC32)
+extern uint32_t _ramcode_lma, _sramcode, _eramcode;
+extern uint32_t _ramdata_lma, _sramdata, _eramdata;   
+#endif 
 static void ramcode_init(void)
 {
+#if defined (__ICCARM__)
     memcpy(__section_begin(".ramcode_section"),
         __section_begin(".ramcode_section_init"),
         __section_size(".ramcode_section_init"));
     memcpy(__section_begin(".ramdata_section"),
         __section_begin(".ramdata_section_init"),
         __section_size(".ramdata_section_init"));
+#elif defined (__XC32)
+	memcpy(&_sramcode, &_ramcode_lma, (uint32_t)&_eramcode - (uint32_t)&_sramcode);
+	memcpy(&_sramdata, &_ramdata_lma, (uint32_t)&_eramdata - (uint32_t)&_sramdata);
+#endif
     DCACHE_CLEAN_INVALIDATE_ALL();
     L1_ICACHE_INVALIDATE_ALL();
 }
@@ -166,8 +174,12 @@ void enter_idle(void)
     RTC_InterruptDisable(RTC_INT_ALARM);
 }
 
+#if defined (__ICCARM__)
 #pragma location=".ramcode_section" 
 void enter_idle_sram(void)
+#elif defined (__XC32)
+__attribute__((__section__(".ramcode_section"))) void enter_idle_sram(void)
+#endif
 {
   
     PMC_REGS->PMC_SCDR = PMC_SCDR_PCK_Msk;
@@ -207,9 +219,14 @@ void enter_ulp0(void)
 
 }
 
+#if defined (__ICCARM__)
 _Pragma("location=\".ramdata_section\"") int tmp_stack[256];
 #pragma location=".ramcode_section" 
 void enter_ulp0_sram(void)
+#elif defined (__XC32)
+__attribute__((__section__(".ramdata_section"))) int tmp_stack[256];
+__attribute__((__section__(".ramcode_section"))) void enter_ulp0_sram(void)
+#endif
 {
     /* set up new stack in sram since ddr will be unavailable */
     uint32_t sp = (uint32_t)&tmp_stack[256];
@@ -227,8 +244,12 @@ void enter_ulp0_sram(void)
     asm("mov sp, r0");
 }
 
+#if defined (__ICCARM__)
 #pragma location=".ramcode_section" 
 void really_enter_ulp0_sram(void)
+#elif defined (__XC32)
+__attribute__((__section__(".ramcode_section")))void really_enter_ulp0_sram(void)
+#endif
 {
     struct clock_cfg {
         uint32_t scsr;
@@ -266,7 +287,7 @@ void really_enter_ulp0_sram(void)
 
     /* enable main clock */
     PMC_REGS->CKGR_MOR = clock_cfg.mor |  CKGR_MOR_KEY_PASSWD | CKGR_MOR_ONE_Msk;
-    if (clock_cfg.mor & CKGR_MOR_MOSCSEL_Msk == 1)
+    if ((clock_cfg.mor & CKGR_MOR_MOSCSEL_Msk) == 1)
         while (!(PMC_REGS->PMC_SR & PMC_SR_MOSCXTS_Msk));
 
     /* wait for pll lock */

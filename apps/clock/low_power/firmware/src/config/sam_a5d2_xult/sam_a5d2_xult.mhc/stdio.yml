@@ -11,24 +11,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: stdio, value: uart1}
-  - type: Boolean
-    attributes: {id: STDIN_BUFF_MODE}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
-  - type: Boolean
-    attributes: {id: STDOUT_BUFF_MODE}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
 - type: Attachments
   children:
   - type: DirectDependency
