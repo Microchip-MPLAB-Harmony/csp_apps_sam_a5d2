@@ -64,6 +64,7 @@ bool SPI1_Read( void* pReceiveData, size_t rxSize );
 
 bool SPI1_TransferSetup( SPI_TRANSFER_SETUP *setup, uint32_t spiSourceClock );
 
+
 bool SPI1_IsBusy( void );
 
 void SPI1_CallbackRegister( const SPI_CALLBACK callback, uintptr_t context );
