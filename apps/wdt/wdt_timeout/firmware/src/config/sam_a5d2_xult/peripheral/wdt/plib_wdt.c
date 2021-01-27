@@ -40,6 +40,7 @@
 
 #include "device.h"
 #include "plib_wdt.h"
+#include "interrupts.h"
 
 #define WDT_CLK_DELAY  ((3 * 498000000) / 32768)
 
