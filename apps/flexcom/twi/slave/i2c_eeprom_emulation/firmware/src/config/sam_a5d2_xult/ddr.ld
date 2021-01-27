@@ -46,7 +46,6 @@ FIQ_STACK_SIZE = 96;
 SVC_STACK_SIZE = 4096;
 ABT_STACK_SIZE = 64;
 UND_STACK_SIZE = 64;
-HEAP_SIZE      = 512;
 
 /* Section Definitions */
 SECTIONS
@@ -168,14 +167,6 @@ SECTIONS
 		. = ALIGN(32);
 		*(.region_cache_aligned)
 		. = ALIGN(32);
-	} >ram
-
-	.heap (NOLOAD) :
-	{
-		. = ALIGN(4);
-		__heap_start__ = .;
-		. += HEAP_SIZE;
-		__heap_end__ = .;
 	} >ram
 
 	.stacks (NOLOAD) :
