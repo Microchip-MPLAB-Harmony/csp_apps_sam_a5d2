@@ -1,0 +1,13 @@
+configName: sam_a5d2_xult_iar
+folderName: ''
+format_version: v1.0
+frameworkPath: D:\MCU_MPU\SAMA5\H3_MPU
+processor: ATSAMA5D27
+projectName: adc_polled_mode_sam_a5d2_xult_iar
+settings:
+  PackageFilter: csp;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.4.0
+  DFPPath: .\dev_packs\Microchip\SAMA5D2_DFP\0.1.16\atdf\ATSAMA5D27.atdf
+  MERGE_STRATEGY: USER_ALL
