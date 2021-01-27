@@ -47,6 +47,7 @@ The following applications are provided to demonstrate the typical or interestin
 | [FLEXCOM SPI Master read write test application](apps/flexcom/spi/master/flexcom_spi_write_read_test_app/readme.md) | This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under - apps/flexcom/spi/slave/flexcom_spi_write_read/firmware |
 | [FLEXCOM SPI Slave read write](apps/flexcom/spi/slave/flexcom_spi_write_read/readme.md) | This example application demonstrates how to use the FLEXCOM SPI peripheral in slave mode |
 | [FLEXCOM TWI (I2C) EEPROM](apps/flexcom/twi/master/flexcom_twi_eeprom/readme.md) | This example application shows how to use the flexcom module in TWI mode |
+| [FLEXCOM TWI EEPROM emulation](apps/flexcom/twi/slave/i2c_eeprom_emulation/readme.md) | This example application shows how to use the FLEXCOM TWI peripheral in slave mode |
 | [FLEXCOM USART blocking](apps/flexcom/usart/flexcom_usart_echo_blocking/readme.md) | This example application shows how to use the flexcom module in USART mode |
 | [FLEXCOM USART interrupt](apps/flexcom/usart/flexcom_usart_echo_interrupt/readme.md) | This example application shows how to use the flexcom module in USART mode |
 | [FLEXCOM USART ring buffer](apps/flexcom/usart/flexcom_usart_ring_buffer_interrupt/readme.md) | This example application shows how to use the FLEXCOM peripheral in USART ring buffer mode |
@@ -76,6 +77,7 @@ The following applications are provided to demonstrate the typical or interestin
 | [TC timer mode](apps/tc/tc_timer_mode/readme.md) | This example application shows how to use the TC module in timer mode to generate periodic interrupt |
 | [TRNG random number](apps/trng/random_number/readme.md) | This example application shows how to use the TRNG Peripheral library to generate and read a random number |
 | [TWIHS EEPROM read write](apps/twihs/master/twihs_eeprom/readme.md) | This example application shows how to use the TWIHS peripheral to write and read from the I2C serial EEPROM memory |
+| [TWIHS EEPROM emulation](apps/twihs/slave/i2c_eeprom_emulation/readme.md) | This example application shows how to use the TWIHS peripheral in slave mode |
 | [UART echo blocking](apps/uart/uart_echo_blocking/readme.md) | This example application shows how to use the UART peripheral to transfer a block of data in a blocking manner |
 | [UART echo interrupt](apps/uart/uart_echo_interrupt/readme.md) | This example application shows how to use the UART peripheral to transfer a block of data in a non-blocking manner |
 | [USART ring buffer](apps/uart/uart_ring_buffer_interrupt/readme.md) | This example application shows how to use USART peripheral in ring buffer mode |
