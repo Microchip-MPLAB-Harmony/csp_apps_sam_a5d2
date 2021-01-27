@@ -1,0 +1,39 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: qspi0}
+children:
+- type: Symbols
+  children:
+  - type: Comment
+    attributes: {id: QSPI_CLK_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '*** QSPI Clock Frequency Is Set To Maximum 66.0 MHz
+            for Master Clock Frequency At 166.0 MHz'}
+  - type: Integer
+    attributes: {id: QSPI_CLK_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: qspi0, value: '66000000'}
+  - type: KeyValueSet
+    attributes: {id: QSPI_CPOL}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: qspi0, value: '0'}
+  - type: Integer
+    attributes: {id: QSPI_SCBR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+- type: ElementPosition
+  attributes: {x: '292', y: '54', id: qspi0}
