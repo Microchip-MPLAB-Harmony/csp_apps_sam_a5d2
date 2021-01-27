@@ -76,6 +76,7 @@ The following table shows the target hardware for the application projects.
 4. Reset the board to run the application
 5. LED toggles indicating the board is up and running
 6. Press switch  to shutdown the device (LED toggling stops)
+7. Configure USB-UART virtual COM port to operate with the following parameters (9600 baud, 8 bit data, no parity, 1 stop bit)
 7. Send a character on the USB UART Virtual COM port to reset the device
 8. Device resets (indicated by the LED starting to toggle again)
 

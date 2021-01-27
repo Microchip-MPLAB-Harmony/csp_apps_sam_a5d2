@@ -1,0 +1,22 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: rxlp}
+children:
+- type: Symbols
+  children:
+  - type: KeyValueSet
+    attributes: {id: PARITY}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1'}
+  - type: Integer
+    attributes: {id: VAL2}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '255'}
+- type: ElementPosition
+  attributes: {x: '480', y: '20', id: rxlp}
