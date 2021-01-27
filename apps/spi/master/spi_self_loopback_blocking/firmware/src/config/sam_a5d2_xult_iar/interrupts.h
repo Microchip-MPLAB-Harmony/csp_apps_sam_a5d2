@@ -1,21 +1,20 @@
 /*******************************************************************************
-  SPI PLIB
+ System Interrupts File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_spi1.h
+    interrupt.h
 
   Summary:
-    SPI1 PLIB Header File
+    Interrupt vectors mapping
 
   Description:
-    This file has prototype of all the interfaces provided for particular
-    SPI peripheral.
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
-*******************************************************************************/
-
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -37,43 +36,26 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef PLIB_SPI1_H
-#define PLIB_SPI1_H
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
-#include "device.h"
-#include "plib_spi_common.h"
-
-/* Provide C++ Compatibility */
-#ifdef __cplusplus
-
-    extern "C" {
-
-#endif
-
-/****************************** SPI1 Interface *********************************/
-
-void SPI1_Initialize( void );
-
-bool SPI1_WriteRead( void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize );
-
-bool SPI1_Write( void* pTransmitData, size_t txSize );
-
-bool SPI1_Read( void* pReceiveData, size_t rxSize );
-
-bool SPI1_TransferSetup( SPI_TRANSFER_SETUP *setup, uint32_t spiSourceClock );
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+#include <stdint.h>
 
 
-/* Provide C++ Compatibility */
-#ifdef __cplusplus
+// *****************************************************************************
+// *****************************************************************************
+// Section: Handler Routines
+// *****************************************************************************
+// *****************************************************************************
 
-    }
 
-#endif
 
-#endif // PLIB_SPI1_H
-
-/*******************************************************************************
- End of File
-*/
+#endif // INTERRUPTS_H

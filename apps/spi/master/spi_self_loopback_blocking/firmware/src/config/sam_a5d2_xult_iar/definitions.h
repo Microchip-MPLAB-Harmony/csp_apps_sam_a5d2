@@ -53,7 +53,7 @@
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/pio/plib_pio.h"
 #include "peripheral/aic/plib_aic.h"
-#include "peripheral/spi/plib_spi1.h"
+#include "peripheral/spi/spi_master/plib_spi1_master.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -62,6 +62,9 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* CPU clock frequency */
+#define CPU_CLOCK_FREQUENCY 498000000
 
 // *****************************************************************************
 // *****************************************************************************
