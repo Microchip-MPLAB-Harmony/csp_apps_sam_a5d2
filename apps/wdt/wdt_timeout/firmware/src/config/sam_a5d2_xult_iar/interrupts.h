@@ -1,20 +1,20 @@
 /*******************************************************************************
-  WDT Peripheral Library
+ System Interrupts File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_wdt.c
+    interrupt.h
 
   Summary:
-    WDT Source File
+    Interrupt vectors mapping
 
   Description:
-    None
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
-*******************************************************************************/
-
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -36,40 +36,26 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
+// DOM-IGNORE-END
 
-#include "device.h"
-#include "plib_wdt.h"
-#include "interrupts.h"
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
-#define WDT_CLK_DELAY  ((3 * 498000000) / 32768)
-
-void WDT_Initialize( void )
-{
-    /* Until LOCK bit is set, watchdog can be disabled or enabled. If it is disabled (for eg, by bootloader),
-     * WDD and WDV fields in MR cannot be modified, so enable it before proceeding.
-     * NOTE: If lock bit is already set, these operations have no effect on WDT.
-     */
-    if (WDT_REGS->WDT_MR & WDT_MR_WDDIS_Msk)
-    {
-        /* Enable Watchdog */
-        WDT_REGS->WDT_MR &= ~(WDT_MR_WDDIS_Msk);
-
-        /* Wait for 3 WDT clk cycles before any further update to MR */
-        for(uint32_t count = 0; count < WDT_CLK_DELAY; count++);
-    }
-
-    WDT_REGS->WDT_MR = WDT_MR_WDD (4095) | WDT_MR_WDV(1024) \
-               | WDT_MR_WDRSTEN_Msk;
-
-    /* Lock WDT MR register */
-    WDT_REGS->WDT_CR = (WDT_CR_KEY_PASSWD | WDT_CR_LOCKMR_Msk);
-
-}
-
-void WDT_Clear(void)
-{
-   WDT_REGS->WDT_CR = (WDT_CR_KEY_PASSWD | WDT_CR_WDRSTT_Msk);
-}
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+#include <stdint.h>
 
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Handler Routines
+// *****************************************************************************
+// *****************************************************************************
+
+
+
+#endif // INTERRUPTS_H
