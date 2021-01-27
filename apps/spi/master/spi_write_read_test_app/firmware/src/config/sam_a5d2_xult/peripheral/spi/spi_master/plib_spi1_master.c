@@ -55,11 +55,16 @@ void SPI1_Initialize( void )
     /* Disable and Reset the SPI*/
     SPI1_REGS->SPI_CR = SPI_CR_SPIDIS_Msk | SPI_CR_SWRST_Msk;
 
+
     /* Enable Master mode, select source clock, select particular NPCS line for chip select and disable mode fault detection */
-    SPI1_REGS->SPI_MR = SPI_MR_MSTR_Msk | SPI_MR_BRSRCCLK_PERIPH_CLK | SPI_MR_PCS_NPCS0 | SPI_MR_MODFDIS_Msk;
+    SPI1_REGS->SPI_MR = SPI_MR_MSTR_Msk | SPI_MR_DLYBCS(0) | SPI_MR_BRSRCCLK_PERIPH_CLK | SPI_MR_PCS_NPCS0  | SPI_MR_MODFDIS_Msk;
 
     /* Set up clock Polarity, data phase, Communication Width, Baud Rate */
-    SPI1_REGS->SPI_CSR[0] = SPI_CSR_CPOL_IDLE_LOW | SPI_CSR_NCPHA_VALID_LEADING_EDGE | SPI_CSR_BITS_8_BIT | SPI_CSR_SCBR(83);
+    SPI1_REGS->SPI_CSR[0] = SPI_CSR_CPOL_IDLE_LOW | SPI_CSR_NCPHA_VALID_LEADING_EDGE | SPI_CSR_BITS_8_BIT | SPI_CSR_SCBR(83)| SPI_CSR_DLYBS(0) | SPI_CSR_DLYBCT(0) | SPI_CSR_CSAAT_Msk;
+
+
+
+
 
     /* Initialize global variables */
     spi1Obj.transferIsBusy = false;
@@ -68,6 +73,8 @@ void SPI1_Initialize( void )
     /* Enable SPI1 */
     SPI1_REGS->SPI_CR = SPI_CR_SPIEN_Msk;
 }
+
+
 
 bool SPI1_WriteRead( void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize )
 {
@@ -140,7 +147,7 @@ bool SPI1_WriteRead( void* pTransmitData, size_t txSize, void* pReceiveData, siz
             }
             else if (spi1Obj.dummySize > 0)
             {
-                SPI1_REGS->SPI_TDR = (uint16_t)(0xff);
+                SPI1_REGS->SPI_TDR = (uint16_t)(0xffff);
                 spi1Obj.dummySize--;
             }
         }
@@ -159,6 +166,7 @@ bool SPI1_WriteRead( void* pTransmitData, size_t txSize, void* pReceiveData, siz
 
     return isRequestAccepted;
 }
+
 
 bool SPI1_Write( void* pTransmitData, size_t txSize )
 {
@@ -196,7 +204,7 @@ bool SPI1_TransferSetup( SPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock )
         scbr = 255;
     }
 
-    SPI1_REGS->SPI_CSR[0] = (uint32_t)setup->clockPolarity | (uint32_t)setup->clockPhase | (uint32_t)setup->dataBits | SPI_CSR_SCBR(scbr);
+    SPI1_REGS->SPI_CSR[0] = (SPI1_REGS->SPI_CSR[0] & ~(SPI_CSR_CPOL_Msk | SPI_CSR_NCPHA_Msk | SPI_CSR_BITS_Msk | SPI_CSR_SCBR_Msk)) |((uint32_t)setup->clockPolarity | (uint32_t)setup->clockPhase | (uint32_t)setup->dataBits | SPI_CSR_SCBR(scbr));
 
     return true;
 }
@@ -211,7 +219,6 @@ bool SPI1_IsBusy( void )
 {
     return ((spi1Obj.transferIsBusy) || ((SPI1_REGS->SPI_SR & SPI_SR_TXEMPTY_Msk) == 0));
 }
-
 void SPI1_InterruptHandler( void )
 {
     uint32_t dataBits;
@@ -219,6 +226,7 @@ void SPI1_InterruptHandler( void )
     static bool isLastByteTransferInProgress = false;
 
     dataBits = SPI1_REGS->SPI_CSR[0] & SPI_CSR_BITS_Msk;
+
 
     if ((SPI1_REGS->SPI_SR & SPI_SR_RDRF_Msk ) == SPI_SR_RDRF_Msk)
     {
@@ -264,7 +272,7 @@ void SPI1_InterruptHandler( void )
             }
             else if (spi1Obj.dummySize > 0)
             {
-                SPI1_REGS->SPI_TDR = (uint16_t)(0xff);
+                SPI1_REGS->SPI_TDR = (uint16_t)(0xffff);
                 spi1Obj.dummySize--;
             }
         }
@@ -280,6 +288,7 @@ void SPI1_InterruptHandler( void )
              */
 
             isLastByteTransferInProgress = true;
+
         }
         else if (spi1Obj.rxCount == spi1Obj.rxSize)
         {
@@ -296,6 +305,9 @@ void SPI1_InterruptHandler( void )
     {
         if (spi1Obj.rxCount == spi1Obj.rxSize)
         {
+            /* Set Last transfer to deassert NPCS after the last byte written in TDR has been transferred. */
+            SPI1_REGS->SPI_CR = SPI_CR_LASTXFER_Msk;
+
             spi1Obj.transferIsBusy = false;
 
             /* Disable TDRE, RDRF and TXEMPTY interrupts */
