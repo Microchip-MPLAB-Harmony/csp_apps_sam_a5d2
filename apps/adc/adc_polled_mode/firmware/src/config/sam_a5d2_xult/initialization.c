@@ -124,6 +124,7 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+
     STDIO_BufferModeSet();
 
 
@@ -142,7 +143,7 @@ void SYS_Initialize ( void* data )
 
     PLIB_L2CC_Initialize();
 
-    INT_Initialize();
+    AIC_INT_Initialize();
     
 	WDT_REGS->WDT_MR = WDT_MR_WDDIS_Msk; 		// Disable WDT 
 
