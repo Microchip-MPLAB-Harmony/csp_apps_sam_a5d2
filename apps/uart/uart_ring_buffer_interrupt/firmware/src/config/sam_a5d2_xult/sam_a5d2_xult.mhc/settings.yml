@@ -1,0 +1,14 @@
+configName: sam_a5d2_xult
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../../..
+processor: ATSAMA5D27
+projectName: ''
+settings:
+  PackageFilter: bsp;core;csp;net;usb;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.6.0
+  DFPPath: .\dev_packs\Microchip\SAMA5D2_DFP\1.3.35\atdf\ATSAMA5D27.atdf
+  MERGE_STRATEGY: OVERWRITE
