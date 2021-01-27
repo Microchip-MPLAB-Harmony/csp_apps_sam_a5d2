@@ -4,7 +4,7 @@
 
 
 project: flexcom_spi_eeprom
-creation_date: 2021-01-05T13:09:23.801+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-01-27T13:24:09.710+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
 mhc_version: v3.6.5
@@ -13,6 +13,5 @@ plugin_version: NA        # if MPLAB X plugin only
 compiler: iar
 
 modules:
-    - {name: "csp", version: "unknown"}
-    - {name: "dev_packs", version: "unknown"}
-
+    - {name: "csp", version: "v3.9.0"}
+    - {name: "dev_packs", version: "v3.9.0"}
