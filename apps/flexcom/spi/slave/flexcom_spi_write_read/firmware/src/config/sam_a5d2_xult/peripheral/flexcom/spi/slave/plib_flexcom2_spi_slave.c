@@ -48,6 +48,7 @@
 #include "plib_flexcom2_spi_slave.h"
 #include "peripheral/pio/plib_pio.h"
 #include <string.h>
+#include "interrupts.h"
 
 #define FLEXCOM2_READ_BUFFER_SIZE            256
 #define FLEXCOM2_WRITE_BUFFER_SIZE           256
@@ -73,6 +74,9 @@ void FLEXCOM2_SPI_Initialize( void )
     /* Disable and Reset the SPI*/
     FLEXCOM2_REGS->FLEX_SPI_CR = FLEX_SPI_CR_SPIDIS_Msk | FLEX_SPI_CR_SWRST_Msk;
 
+    /* Enable FIFO support */
+    FLEXCOM2_REGS->FLEX_SPI_CR = FLEX_SPI_CR_FIFOEN_Msk;
+
     /* SPI is by default in Slave Mode, disable mode fault detection */
     FLEXCOM2_REGS->FLEX_SPI_MR = FLEX_SPI_MR_MODFDIS_Msk;
 
@@ -90,7 +94,7 @@ void FLEXCOM2_SPI_Initialize( void )
     PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 0);
 
     /* Enable Receive full and chip deselect interrupt */
-    FLEXCOM2_REGS->FLEX_SPI_IER = (SPI_IER_RDRF_Msk | SPI_IER_NSSR_Msk);
+    FLEXCOM2_REGS->FLEX_SPI_IER = (FLEX_SPI_IER_RDRF_Msk | FLEX_SPI_IER_NSSR_Msk);
 
     /* Enable SPIFLEXCOM2 */
     FLEXCOM2_REGS->FLEX_SPI_CR = FLEX_SPI_CR_SPIEN_Msk;
@@ -132,7 +136,7 @@ size_t FLEXCOM2_SPI_Write(void* pWrBuffer, size_t size )
 
     while ((FLEXCOM2_REGS->FLEX_SPI_SR & FLEX_SPI_SR_TDRE_Msk) && (flexcom2SpiObj.wrOutIndex < flexcom2SpiObj.nWrBytes))
     {
-        FLEXCOM2_REGS->FLEX_SPI_TDR = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
+        *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_TDR) = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
     }
 
     /* Restore interrupt enable state and also enable TDRE interrupt */
@@ -189,49 +193,57 @@ FLEXCOM_SPI_SLAVE_ERROR FLEXCOM2_SPI_ErrorGet(void)
 
 void FLEXCOM2_InterruptHandler(void)
 {
-    uint8_t txRxData;
+    uint8_t txRxData = 0;
 
     uint32_t statusFlags = FLEXCOM2_REGS->FLEX_SPI_SR;
 
-    if (statusFlags & SPI_SR_OVRES_Msk)
+    if (statusFlags & FLEX_SPI_SR_OVRES_Msk)
     {
         /*OVRES flag is cleared on reading SPI SR*/
 
         /* Save the error to report it to application later */
-        flexcom2SpiObj.errorStatus = SPI_SR_OVRES_Msk;
+        flexcom2SpiObj.errorStatus = FLEXCOM_SPI_SLAVE_ERROR_BUFOVF;
     }
 
-    if(statusFlags & SPI_SR_RDRF_Msk)
+    if(statusFlags & FLEX_SPI_SR_RDRF_Msk)
     {
-        flexcom2SpiObj.transferIsBusy = true;
-
-        PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 1);
-
-        /* Reading DATA register will also clear the RDRF flag */
-        txRxData = (FLEXCOM2_REGS->FLEX_SPI_RDR & FLEX_SPI_RDR_RD_Msk) >> FLEX_SPI_RDR_RD_Pos;
-
-        if (flexcom2SpiObj.rdInIndex < FLEXCOM2_READ_BUFFER_SIZE)
+        if (flexcom2SpiObj.transferIsBusy == false)
         {
-            FLEXCOM2_ReadBuffer[flexcom2SpiObj.rdInIndex++] = txRxData;
+            flexcom2SpiObj.transferIsBusy = true;
+
+            PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 1);
+        }
+
+        while ((statusFlags |= FLEXCOM2_REGS->FLEX_SPI_SR) & FLEX_SPI_SR_RDRF_Msk)
+        {
+            /* Reading DATA register will also clear the RDRF flag */
+            txRxData = *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_RDR);
+
+            if(flexcom2SpiObj.rdInIndex < FLEXCOM2_READ_BUFFER_SIZE)
+            {
+                FLEXCOM2_ReadBuffer[flexcom2SpiObj.rdInIndex++] = txRxData;
+            }
+
+            statusFlags &= ~FLEX_SPI_SR_RDRF_Msk;
         }
     }
 
-    if(statusFlags & SPI_SR_TDRE_Msk)
+    if(statusFlags & FLEX_SPI_SR_TDRE_Msk)
     {
-        if (flexcom2SpiObj.wrOutIndex < flexcom2SpiObj.nWrBytes)
+        while (((statusFlags |= FLEXCOM2_REGS->FLEX_SPI_SR) & FLEX_SPI_SR_TDRE_Msk) && (flexcom2SpiObj.wrOutIndex < flexcom2SpiObj.nWrBytes))
         {
-            txRxData = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
-
-            FLEXCOM2_REGS->FLEX_SPI_TDR = txRxData;
+            *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_TDR) = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
+            statusFlags &= ~FLEX_SPI_SR_TDRE_Msk;
         }
-        else
+
+        if (flexcom2SpiObj.wrOutIndex >= flexcom2SpiObj.nWrBytes)
         {
             /* Disable TDRE interrupt. The last byte sent by the master will be shifted out automatically */
             FLEXCOM2_REGS->FLEX_SPI_IDR = FLEX_SPI_IDR_TDRE_Msk;
         }
     }
 
-    if(statusFlags & SPI_SR_NSSR_Msk)
+    if(statusFlags & FLEX_SPI_SR_NSSR_Msk)
     {
         /* NSSR flag is cleared on reading SPI SR */
 
