@@ -2348,7 +2348,7 @@ children:
       - type: String
         attributes: {id: value}
         children:
-        - {type: Value, value: ROM_ORIGIN=0x0x26f00000;ROM_LENGTH=-0x26f00000}
+        - {type: Value}
   - type: KeyValueSet
     attributes: {id: XDMAC0_INTERRUPT_PRIORITY}
     children:
