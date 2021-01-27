@@ -67,7 +67,7 @@ extern "C" {
 #endif
 
 // DOM-IGNORE-END
-/****************************** ${FLEXCOM_INSTANCE_NAME} SPI Interface *********************************/
+/****************************** FLEXCOM2 SPI Interface *********************************/
 
 typedef enum
 {
@@ -88,6 +88,12 @@ typedef enum
     FLEXCOM_SPI_CLOCK_POLARITY_INVALID = 0xFFFFFFFF
 
 }FLEXCOM_SPI_CLOCK_POLARITY;
+
+typedef enum
+{
+    FLEXCOM_SPI_CHIP_SELECT_NPCS0 = 0x02,
+    FLEXCOM_SPI_CHIP_SELECT_NPCS1 = 0x01,
+}FLEXCOM_SPI_CHIP_SELECT;
 
 typedef enum
 {
