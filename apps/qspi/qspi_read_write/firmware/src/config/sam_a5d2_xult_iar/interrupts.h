@@ -1,20 +1,18 @@
 /*******************************************************************************
-Interface definition of QSPI0 PLIB.
+ System Interrupts File
 
- Company:
+  Company:
     Microchip Technology Inc.
 
- File Name:
-    plib_qspi0.h
+  File Name:
+    interrupt.h
 
- Summary:
-    Interface definition of the Quad Serial Peripheral Interface Plib (QSPI0).
+  Summary:
+    Interrupt vectors mapping
 
- Description:
-    This file defines the interface for the QSPI0 Plib.
-    It allows user to setup QSPI0 and transfer data to and from slave devices
-    attached.
-*******************************************************************************/
+  Description:
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -38,60 +36,26 @@ Interface definition of QSPI0 PLIB.
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_QSPI0_H // Guards against multiple inclusion
-#define PLIB_QSPI0_H
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+#include <stdint.h>
 
-/* This section lists the other files that are included in this file.
-*/
-
-#include "device.h"
-#include "plib_qspi_common.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-    extern "C" {
-#endif
-// DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Data Types
+// Section: Handler Routines
 // *****************************************************************************
 // *****************************************************************************
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Interface Routines
-// *****************************************************************************
-// *****************************************************************************
 
-void QSPI0_Initialize( void );
 
-void QSPI0_EndTransfer( void );
-
-bool QSPI0_CommandWrite( qspi_command_xfer_t *qspi_command_xfer, uint32_t address );
-
-bool QSPI0_RegisterRead( qspi_register_xfer_t *qspi_register_xfer, uint32_t *rx_data, uint8_t rx_data_length );
-
-bool QSPI0_RegisterWrite( qspi_register_xfer_t *qspi_register_xfer, uint32_t *tx_data, uint8_t tx_data_length );
-
-bool QSPI0_MemoryRead( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *rx_data, uint32_t rx_data_length, uint32_t address );
-
-bool QSPI0_MemoryWrite( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *tx_data, uint32_t tx_data_length, uint32_t address );
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-}
-#endif
-// DOM-IGNORE-END
-
-#endif /* PLIB_QSPI0_H */
+#endif // INTERRUPTS_H

@@ -1,0 +1,15 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: qspi0}
+children:
+- type: Symbols
+  children:
+  - type: KeyValueSet
+    attributes: {id: QSPI_CPOL}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: qspi0, value: '0'}
+- type: ElementPosition
+  attributes: {x: '323', y: '66', id: qspi0}
