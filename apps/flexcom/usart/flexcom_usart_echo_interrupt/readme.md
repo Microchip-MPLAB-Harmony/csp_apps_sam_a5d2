@@ -87,8 +87,8 @@ The following table shows the target hardware for the application projects.
 
     ![output](images/output_flexcom_usart_echo_blocking.png)
 
-8. Type a line of characters and press the Enter key (*NOTE: Number of characters entered before pressing enter key must be less than 256*))
-9. Entered line will be echoed back and the LED is toggled
+8. Type 10 characters
+9. Entered characters will be echoed back and the LED is toggled
 10. The following table provides the LED names
 
     | Board      | LED Name                                    |
