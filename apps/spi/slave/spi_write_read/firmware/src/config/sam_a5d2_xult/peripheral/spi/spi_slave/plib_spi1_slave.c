@@ -64,8 +64,11 @@ void SPI1_Initialize( void )
     /* Disable and Reset the SPI*/
     SPI1_REGS->SPI_CR = SPI_CR_SPIDIS_Msk | SPI_CR_SWRST_Msk;
 
-    /* SPI is by default in Slave Mode, disable mode fault detection  and select source clock */
-    SPI1_REGS->SPI_MR = SPI_MR_MODFDIS_Msk | SPI_MR_BRSRCCLK_PERIPH_CLK;
+    /* Enable FIFO support */
+    SPI1_REGS->SPI_CR = SPI_CR_FIFOEN_Msk;
+
+    /* SPI is by default in Slave Mode, disable mode fault detection */
+    SPI1_REGS->SPI_MR = SPI_MR_MODFDIS_Msk;
 
     /* Set up clock Polarity, data phase, Communication Width */
     SPI1_REGS->SPI_CSR[0] = SPI_CSR_CPOL_IDLE_LOW | SPI_CSR_NCPHA_VALID_LEADING_EDGE | SPI_CSR_BITS_8_BIT;
@@ -97,7 +100,6 @@ size_t SPI1_Read(void* pRdBuffer, size_t size)
     {
         rdSize = rdInIndex;
     }
-
     memcpy(pRdBuffer, SPI1_ReadBuffer, rdSize);
 
     return rdSize;
@@ -123,7 +125,7 @@ size_t SPI1_Write(void* pWrBuffer, size_t size )
 
     while ((SPI1_REGS->SPI_SR & SPI_SR_TDRE_Msk) && (spi1Obj.wrOutIndex < spi1Obj.nWrBytes))
     {
-        SPI1_REGS->SPI_TDR = SPI1_WriteBuffer[spi1Obj.wrOutIndex++];
+        *((uint8_t*)&SPI1_REGS->SPI_TDR) = SPI1_WriteBuffer[spi1Obj.wrOutIndex++];
     }
 
     /* Restore interrupt enable state and also enable TDRE interrupt */
@@ -180,7 +182,7 @@ SPI_SLAVE_ERROR SPI1_ErrorGet(void)
 
 void SPI1_InterruptHandler(void)
 {
-    uint8_t txRxData;
+    uint8_t txRxData = 0;
 
     uint32_t statusFlags = SPI1_REGS->SPI_SR;
 
@@ -194,28 +196,42 @@ void SPI1_InterruptHandler(void)
 
     if(statusFlags & SPI_SR_RDRF_Msk)
     {
-        spi1Obj.transferIsBusy = true;
-
-        PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 1);
-
-        /* Reading DATA register will also clear the RDRF flag */
-        txRxData = (SPI1_REGS->SPI_RDR & SPI_RDR_RD_Msk) >> SPI_RDR_RD_Pos;
-
-        if (spi1Obj.rdInIndex < SPI1_READ_BUFFER_SIZE)
+        if (spi1Obj.transferIsBusy == false)
         {
-            SPI1_ReadBuffer[spi1Obj.rdInIndex++] = txRxData;
+            spi1Obj.transferIsBusy = true;
+
+            PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 1);
+        }
+
+        /* Note: statusFlags must be updated every time SPI_SR is read. This is because the NSSR flag
+         * is cleared on SPI_SR read. If statusFlags is not updated, there is a possibility of missing
+         * NSSR event flag.
+         */
+        while ((statusFlags |= SPI1_REGS->SPI_SR) & SPI_SR_RDRF_Msk)
+        {
+            /* Reading DATA register will also clear the RDRF flag */
+            txRxData = *((uint8_t*)&SPI1_REGS->SPI_RDR);
+
+            if (spi1Obj.rdInIndex < SPI1_READ_BUFFER_SIZE)
+            {
+                SPI1_ReadBuffer[spi1Obj.rdInIndex++] = txRxData;
+            }
+
+            /* Only clear RDRF flag so as not to clear NSSR flag which may have been set */
+            statusFlags &= ~SPI_SR_RDRF_Msk;
         }
     }
 
     if(statusFlags & SPI_SR_TDRE_Msk)
     {
-        if (spi1Obj.wrOutIndex < spi1Obj.nWrBytes)
+        while (((statusFlags |= SPI1_REGS->SPI_SR) & SPI_SR_TDRE_Msk) && (spi1Obj.wrOutIndex < spi1Obj.nWrBytes))
         {
-            txRxData = SPI1_WriteBuffer[spi1Obj.wrOutIndex++];
-
-            SPI1_REGS->SPI_TDR = txRxData;
+            *((uint8_t*)&SPI1_REGS->SPI_TDR) = SPI1_WriteBuffer[spi1Obj.wrOutIndex++];
+            /* Only clear TDRE flag so as not to clear NSSR flag which may have been set */
+            statusFlags &= ~SPI_SR_TDRE_Msk;
         }
-        else
+
+        if (spi1Obj.wrOutIndex >= spi1Obj.nWrBytes)
         {
             /* Disable TDRE interrupt. The last byte sent by the master will be shifted out automatically */
             SPI1_REGS->SPI_IDR = SPI_IDR_TDRE_Msk;
