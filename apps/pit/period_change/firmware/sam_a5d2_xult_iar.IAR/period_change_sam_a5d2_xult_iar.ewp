@@ -2164,6 +2164,9 @@
                         </group>
                     </group>
                     <file>
+                        <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\device.h</name>
+                    </file>
+                    <file>
                         <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\device_cache.h</name>
                     </file>
                     <file>
@@ -2174,9 +2177,6 @@
                     </file>
                     <file>
                         <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\interrupts.h</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\src\config\sam_a5d2_xult_iar\device.h</name>
                     </file>
                 </group>
             </group>
