@@ -69,13 +69,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C7B67F5FF25ADCFC2C601A2C47971CD3
-- generatedChecksum: 40ED64934E7BCB99211E0DA8D02BD558
+- generatedChecksum: 8517300CF876CFA4625114E442A1C2D7
   logicalPath: config\sam_a5d2_xult\peripheral\pit
   name: plib_pit.c
   physicalPath: peripheral\pit
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 40ED64934E7BCB99211E0DA8D02BD558
+  userChecksum: 8517300CF876CFA4625114E442A1C2D7
 - generatedChecksum: 7961B6DA4CFAD213F46F56D7979D4C3F
   logicalPath: config\sam_a5d2_xult\peripheral\rstc
   name: plib_rstc.c
@@ -1096,7 +1096,7 @@ settings:
   delimiter: ;=
   key: preprocessor-macros
   security: NON_SECURE
-  value: ROM_ORIGIN=0x0x26f00000;ROM_LENGTH=-0x26f00000
+  value: ''
 - append: true
   category: C32CPP
   delimiter: ;
