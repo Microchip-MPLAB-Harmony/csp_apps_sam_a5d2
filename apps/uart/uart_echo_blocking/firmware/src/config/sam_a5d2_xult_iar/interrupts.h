@@ -1,22 +1,20 @@
 /*******************************************************************************
-  AIC PLIB Implementation
+ System Interrupts File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_aic.h
+    interrupt.h
 
   Summary:
-    Function implementations for the AIC PLIB.
+    Interrupt vectors mapping
 
   Description:
-    This PLIB provides a simple interface to configure the Advanced Interrupt
-    Controller.
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
-*******************************************************************************/
-
-//DOM-IGNORE-BEGIN
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -38,57 +36,26 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
-//DOM-IGNORE-END
-#include "definitions.h"
+ *******************************************************************************/
+// DOM-IGNORE-END
+
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
+#include <stdint.h>
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Local Functions
+// Section: Handler Routines
 // *****************************************************************************
 // *****************************************************************************
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: AIC Implementation
-// *****************************************************************************
-// *****************************************************************************
-extern IrqData  irqData[2];
-extern uint32_t irqDataEntryCount;
 
-void
-AIC_INT_Initialize( void )
-{   
-    __enable_irq();
-    __ISB();                                                // Allow pended interrupts to be recognized immediately
-}
 
-void AIC_INT_IrqEnable( void )
-{
-    __DMB();
-    __enable_irq();
-}
-
-bool AIC_INT_IrqDisable( void )
-{
-    /* Add a volatile qualifier to the return value to prevent the compiler from optimizing out this function */
-    volatile bool previousValue = (CPSR_I_Msk & __get_CPSR())? false:true;
-    __disable_irq();
-    __DMB();
-    return( previousValue );
-}
-
-void AIC_INT_IrqRestore( bool state )
-{
-    if( state == true )
-    {
-        __DMB();
-        __enable_irq();
-    }
-    else
-    {
-        __disable_irq();
-        __DMB();
-    }
-}
+#endif // INTERRUPTS_H
