@@ -50,6 +50,7 @@
 /* This section lists the other files that are included in this file.
 */
 #include "plib_flexcom1_usart.h"
+#include "interrupts.h"
 
 #define FLEXCOM1_USART_HW_RX_FIFO_THRES                 16
 #define FLEXCOM1_USART_HW_TX_FIFO_THRES                 16

@@ -1,7 +1,7 @@
 /**
  * \brief Header file for ATSAMA5D27
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-05-04T06:27:24Z */
+/* file generated from device description version 2020-12-17T18:14:58Z */
 #ifndef _SAMA5D27_H_
 #define _SAMA5D27_H_
 
@@ -301,6 +301,76 @@ void RXLP_Handler                  ( void );
 #include "component/xdmac.h"
 /** @}  end of Peripheral Software API */
 
+/* ************************************************************************** */
+/*   INSTANCE DEFINITIONS FOR SAMA5D27 */
+/* ************************************************************************** */
+#include "instance/acc.h"
+#include "instance/adc.h"
+#include "instance/aes.h"
+#include "instance/aesb.h"
+#include "instance/aic.h"
+#include "instance/aximx.h"
+#include "instance/chipid.h"
+#include "instance/classd.h"
+#include "instance/flexcom0.h"
+#include "instance/flexcom1.h"
+#include "instance/flexcom2.h"
+#include "instance/flexcom3.h"
+#include "instance/flexcom4.h"
+#include "instance/gmac.h"
+#include "instance/i2sc0.h"
+#include "instance/i2sc1.h"
+#include "instance/icm.h"
+#include "instance/isc.h"
+#include "instance/l2cc.h"
+#include "instance/lcdc.h"
+#include "instance/matrix0.h"
+#include "instance/matrix1.h"
+#include "instance/mcan0.h"
+#include "instance/mcan1.h"
+#include "instance/mpddrc.h"
+#include "instance/pdmic.h"
+#include "instance/pio.h"
+#include "instance/pit.h"
+#include "instance/pmc.h"
+#include "instance/ptc.h"
+#include "instance/pwm.h"
+#include "instance/qspi0.h"
+#include "instance/qspi1.h"
+#include "instance/rstc.h"
+#include "instance/rtc.h"
+#include "instance/rxlp.h"
+#include "instance/saic.h"
+#include "instance/sckc.h"
+#include "instance/sdmmc0.h"
+#include "instance/sdmmc1.h"
+#include "instance/secumod.h"
+#include "instance/sfc.h"
+#include "instance/sfr.h"
+#include "instance/sfrbu.h"
+#include "instance/sha.h"
+#include "instance/shdwc.h"
+#include "instance/smc.h"
+#include "instance/spi0.h"
+#include "instance/spi1.h"
+#include "instance/ssc0.h"
+#include "instance/ssc1.h"
+#include "instance/tc0.h"
+#include "instance/tc1.h"
+#include "instance/tdes.h"
+#include "instance/trng.h"
+#include "instance/twihs0.h"
+#include "instance/twihs1.h"
+#include "instance/uart0.h"
+#include "instance/uart1.h"
+#include "instance/uart2.h"
+#include "instance/uart3.h"
+#include "instance/uart4.h"
+#include "instance/udphs.h"
+#include "instance/wdt.h"
+#include "instance/xdmac0.h"
+#include "instance/xdmac1.h"
+
 /** \addtogroup SAMA5D27_id Peripheral Ids Definitions
  *  @{
  */
@@ -459,72 +529,72 @@ void RXLP_Handler                  ( void );
 /* ************************************************************************** */
 /*   BASE ADDRESS DEFINITIONS FOR SAMA5D27                                    */
 /* ************************************************************************** */
-#define ACC_BASE_ADDRESS                 _UL_(0xf804a000)                              /**< \brief ACC Base Address */
-#define ADC_BASE_ADDRESS                 _UL_(0xfc030000)                              /**< \brief ADC Base Address */
-#define AES_BASE_ADDRESS                 _UL_(0xf002c000)                              /**< \brief AES Base Address */
-#define AESB_BASE_ADDRESS                _UL_(0xf001c000)                              /**< \brief AESB Base Address */
-#define AIC_BASE_ADDRESS                 _UL_(0xfc020000)                              /**< \brief AIC Base Address */
-#define SAIC_BASE_ADDRESS                _UL_(0xf803c000)                              /**< \brief SAIC Base Address */
-#define AXIMX_BASE_ADDRESS               _UL_(0x00600000)                              /**< \brief AXIMX Base Address */
-#define CHIPID_BASE_ADDRESS              _UL_(0xfc069000)                              /**< \brief CHIPID Base Address */
-#define CLASSD_BASE_ADDRESS              _UL_(0xfc048000)                              /**< \brief CLASSD Base Address */
-#define FLEXCOM0_BASE_ADDRESS            _UL_(0xf8034000)                              /**< \brief FLEXCOM0 Base Address */
-#define FLEXCOM1_BASE_ADDRESS            _UL_(0xf8038000)                              /**< \brief FLEXCOM1 Base Address */
-#define FLEXCOM2_BASE_ADDRESS            _UL_(0xfc010000)                              /**< \brief FLEXCOM2 Base Address */
-#define FLEXCOM3_BASE_ADDRESS            _UL_(0xfc014000)                              /**< \brief FLEXCOM3 Base Address */
-#define FLEXCOM4_BASE_ADDRESS            _UL_(0xfc018000)                              /**< \brief FLEXCOM4 Base Address */
-#define GMAC_BASE_ADDRESS                _UL_(0xf8008000)                              /**< \brief GMAC Base Address */
-#define I2SC0_BASE_ADDRESS               _UL_(0xf8050000)                              /**< \brief I2SC0 Base Address */
-#define I2SC1_BASE_ADDRESS               _UL_(0xfc04c000)                              /**< \brief I2SC1 Base Address */
-#define ICM_BASE_ADDRESS                 _UL_(0xf8040000)                              /**< \brief ICM Base Address */
-#define ISC_BASE_ADDRESS                 _UL_(0xf0008000)                              /**< \brief ISC Base Address */
-#define L2CC_BASE_ADDRESS                _UL_(0x00a00000)                              /**< \brief L2CC Base Address */
-#define LCDC_BASE_ADDRESS                _UL_(0xf0000000)                              /**< \brief LCDC Base Address */
-#define MATRIX0_BASE_ADDRESS             _UL_(0xf0018000)                              /**< \brief MATRIX0 Base Address */
-#define MATRIX1_BASE_ADDRESS             _UL_(0xfc03c000)                              /**< \brief MATRIX1 Base Address */
-#define MCAN0_BASE_ADDRESS               _UL_(0xf8054000)                              /**< \brief MCAN0 Base Address */
-#define MCAN1_BASE_ADDRESS               _UL_(0xfc050000)                              /**< \brief MCAN1 Base Address */
-#define MPDDRC_BASE_ADDRESS              _UL_(0xf000c000)                              /**< \brief MPDDRC Base Address */
-#define PDMIC_BASE_ADDRESS               _UL_(0xf8018000)                              /**< \brief PDMIC Base Address */
-#define PIO_BASE_ADDRESS                 _UL_(0xfc038000)                              /**< \brief PIO Base Address */
-#define PIT_BASE_ADDRESS                 _UL_(0xf8048030)                              /**< \brief PIT Base Address */
-#define PMC_BASE_ADDRESS                 _UL_(0xf0014000)                              /**< \brief PMC Base Address */
-#define PTC_BASE_ADDRESS                 _UL_(0xfc060000)                              /**< \brief PTC Base Address */
-#define PWM_BASE_ADDRESS                 _UL_(0xf802c000)                              /**< \brief PWM Base Address */
-#define QSPI0_BASE_ADDRESS               _UL_(0xf0020000)                              /**< \brief QSPI0 Base Address */
-#define QSPI1_BASE_ADDRESS               _UL_(0xf0024000)                              /**< \brief QSPI1 Base Address */
-#define RSTC_BASE_ADDRESS                _UL_(0xf8048000)                              /**< \brief RSTC Base Address */
-#define RTC_BASE_ADDRESS                 _UL_(0xf80480b0)                              /**< \brief RTC Base Address */
-#define RXLP_BASE_ADDRESS                _UL_(0xf8049000)                              /**< \brief RXLP Base Address */
-#define SCKC_BASE_ADDRESS                _UL_(0xf8048050)                              /**< \brief SCKC Base Address */
-#define SDMMC0_BASE_ADDRESS              _UL_(0xa0000000)                              /**< \brief SDMMC0 Base Address */
-#define SDMMC1_BASE_ADDRESS              _UL_(0xb0000000)                              /**< \brief SDMMC1 Base Address */
-#define SECUMOD_BASE_ADDRESS             _UL_(0xfc040000)                              /**< \brief SECUMOD Base Address */
-#define SFC_BASE_ADDRESS                 _UL_(0xf804c000)                              /**< \brief SFC Base Address */
-#define SFR_BASE_ADDRESS                 _UL_(0xf8030000)                              /**< \brief SFR Base Address */
-#define SFRBU_BASE_ADDRESS               _UL_(0xfc05c000)                              /**< \brief SFRBU Base Address */
-#define SHA_BASE_ADDRESS                 _UL_(0xf0028000)                              /**< \brief SHA Base Address */
-#define SHDWC_BASE_ADDRESS               _UL_(0xf8048010)                              /**< \brief SHDWC Base Address */
-#define HSMC_BASE_ADDRESS                _UL_(0xf8014000)                              /**< \brief SMC Base Address */
-#define SPI0_BASE_ADDRESS                _UL_(0xf8000000)                              /**< \brief SPI0 Base Address */
-#define SPI1_BASE_ADDRESS                _UL_(0xfc000000)                              /**< \brief SPI1 Base Address */
-#define SSC0_BASE_ADDRESS                _UL_(0xf8004000)                              /**< \brief SSC0 Base Address */
-#define SSC1_BASE_ADDRESS                _UL_(0xfc004000)                              /**< \brief SSC1 Base Address */
-#define TC0_BASE_ADDRESS                 _UL_(0xf800c000)                              /**< \brief TC0 Base Address */
-#define TC1_BASE_ADDRESS                 _UL_(0xf8010000)                              /**< \brief TC1 Base Address */
-#define TDES_BASE_ADDRESS                _UL_(0xfc044000)                              /**< \brief TDES Base Address */
-#define TRNG_BASE_ADDRESS                _UL_(0xfc01c000)                              /**< \brief TRNG Base Address */
-#define TWIHS0_BASE_ADDRESS              _UL_(0xf8028000)                              /**< \brief TWIHS0 Base Address */
-#define TWIHS1_BASE_ADDRESS              _UL_(0xfc028000)                              /**< \brief TWIHS1 Base Address */
-#define UART0_BASE_ADDRESS               _UL_(0xf801c000)                              /**< \brief UART0 Base Address */
-#define UART1_BASE_ADDRESS               _UL_(0xf8020000)                              /**< \brief UART1 Base Address */
-#define UART2_BASE_ADDRESS               _UL_(0xf8024000)                              /**< \brief UART2 Base Address */
-#define UART3_BASE_ADDRESS               _UL_(0xfc008000)                              /**< \brief UART3 Base Address */
-#define UART4_BASE_ADDRESS               _UL_(0xfc00c000)                              /**< \brief UART4 Base Address */
-#define UDPHS_BASE_ADDRESS               _UL_(0xfc02c000)                              /**< \brief UDPHS Base Address */
-#define WDT_BASE_ADDRESS                 _UL_(0xf8048040)                              /**< \brief WDT Base Address */
-#define XDMAC0_BASE_ADDRESS              _UL_(0xf0010000)                              /**< \brief XDMAC0 Base Address */
-#define XDMAC1_BASE_ADDRESS              _UL_(0xf0004000)                              /**< \brief XDMAC1 Base Address */
+#define ACC_BASE_ADDRESS                 _UL_(0xf804a000)                              /* ACC Base Address */
+#define ADC_BASE_ADDRESS                 _UL_(0xfc030000)                              /* ADC Base Address */
+#define AES_BASE_ADDRESS                 _UL_(0xf002c000)                              /* AES Base Address */
+#define AESB_BASE_ADDRESS                _UL_(0xf001c000)                              /* AESB Base Address */
+#define AIC_BASE_ADDRESS                 _UL_(0xfc020000)                              /* AIC Base Address */
+#define SAIC_BASE_ADDRESS                _UL_(0xf803c000)                              /* SAIC Base Address */
+#define AXIMX_BASE_ADDRESS               _UL_(0x00600000)                              /* AXIMX Base Address */
+#define CHIPID_BASE_ADDRESS              _UL_(0xfc069000)                              /* CHIPID Base Address */
+#define CLASSD_BASE_ADDRESS              _UL_(0xfc048000)                              /* CLASSD Base Address */
+#define FLEXCOM0_BASE_ADDRESS            _UL_(0xf8034000)                              /* FLEXCOM0 Base Address */
+#define FLEXCOM1_BASE_ADDRESS            _UL_(0xf8038000)                              /* FLEXCOM1 Base Address */
+#define FLEXCOM2_BASE_ADDRESS            _UL_(0xfc010000)                              /* FLEXCOM2 Base Address */
+#define FLEXCOM3_BASE_ADDRESS            _UL_(0xfc014000)                              /* FLEXCOM3 Base Address */
+#define FLEXCOM4_BASE_ADDRESS            _UL_(0xfc018000)                              /* FLEXCOM4 Base Address */
+#define GMAC_BASE_ADDRESS                _UL_(0xf8008000)                              /* GMAC Base Address */
+#define I2SC0_BASE_ADDRESS               _UL_(0xf8050000)                              /* I2SC0 Base Address */
+#define I2SC1_BASE_ADDRESS               _UL_(0xfc04c000)                              /* I2SC1 Base Address */
+#define ICM_BASE_ADDRESS                 _UL_(0xf8040000)                              /* ICM Base Address */
+#define ISC_BASE_ADDRESS                 _UL_(0xf0008000)                              /* ISC Base Address */
+#define L2CC_BASE_ADDRESS                _UL_(0x00a00000)                              /* L2CC Base Address */
+#define LCDC_BASE_ADDRESS                _UL_(0xf0000000)                              /* LCDC Base Address */
+#define MATRIX0_BASE_ADDRESS             _UL_(0xf0018000)                              /* MATRIX0 Base Address */
+#define MATRIX1_BASE_ADDRESS             _UL_(0xfc03c000)                              /* MATRIX1 Base Address */
+#define MCAN0_BASE_ADDRESS               _UL_(0xf8054000)                              /* MCAN0 Base Address */
+#define MCAN1_BASE_ADDRESS               _UL_(0xfc050000)                              /* MCAN1 Base Address */
+#define MPDDRC_BASE_ADDRESS              _UL_(0xf000c000)                              /* MPDDRC Base Address */
+#define PDMIC_BASE_ADDRESS               _UL_(0xf8018000)                              /* PDMIC Base Address */
+#define PIO_BASE_ADDRESS                 _UL_(0xfc038000)                              /* PIO Base Address */
+#define PIT_BASE_ADDRESS                 _UL_(0xf8048030)                              /* PIT Base Address */
+#define PMC_BASE_ADDRESS                 _UL_(0xf0014000)                              /* PMC Base Address */
+#define PTC_BASE_ADDRESS                 _UL_(0xfc060000)                              /* PTC Base Address */
+#define PWM_BASE_ADDRESS                 _UL_(0xf802c000)                              /* PWM Base Address */
+#define QSPI0_BASE_ADDRESS               _UL_(0xf0020000)                              /* QSPI0 Base Address */
+#define QSPI1_BASE_ADDRESS               _UL_(0xf0024000)                              /* QSPI1 Base Address */
+#define RSTC_BASE_ADDRESS                _UL_(0xf8048000)                              /* RSTC Base Address */
+#define RTC_BASE_ADDRESS                 _UL_(0xf80480b0)                              /* RTC Base Address */
+#define RXLP_BASE_ADDRESS                _UL_(0xf8049000)                              /* RXLP Base Address */
+#define SCKC_BASE_ADDRESS                _UL_(0xf8048050)                              /* SCKC Base Address */
+#define SDMMC0_BASE_ADDRESS              _UL_(0xa0000000)                              /* SDMMC0 Base Address */
+#define SDMMC1_BASE_ADDRESS              _UL_(0xb0000000)                              /* SDMMC1 Base Address */
+#define SECUMOD_BASE_ADDRESS             _UL_(0xfc040000)                              /* SECUMOD Base Address */
+#define SFC_BASE_ADDRESS                 _UL_(0xf804c000)                              /* SFC Base Address */
+#define SFR_BASE_ADDRESS                 _UL_(0xf8030000)                              /* SFR Base Address */
+#define SFRBU_BASE_ADDRESS               _UL_(0xfc05c000)                              /* SFRBU Base Address */
+#define SHA_BASE_ADDRESS                 _UL_(0xf0028000)                              /* SHA Base Address */
+#define SHDWC_BASE_ADDRESS               _UL_(0xf8048010)                              /* SHDWC Base Address */
+#define HSMC_BASE_ADDRESS                _UL_(0xf8014000)                              /* SMC Base Address */
+#define SPI0_BASE_ADDRESS                _UL_(0xf8000000)                              /* SPI0 Base Address */
+#define SPI1_BASE_ADDRESS                _UL_(0xfc000000)                              /* SPI1 Base Address */
+#define SSC0_BASE_ADDRESS                _UL_(0xf8004000)                              /* SSC0 Base Address */
+#define SSC1_BASE_ADDRESS                _UL_(0xfc004000)                              /* SSC1 Base Address */
+#define TC0_BASE_ADDRESS                 _UL_(0xf800c000)                              /* TC0 Base Address */
+#define TC1_BASE_ADDRESS                 _UL_(0xf8010000)                              /* TC1 Base Address */
+#define TDES_BASE_ADDRESS                _UL_(0xfc044000)                              /* TDES Base Address */
+#define TRNG_BASE_ADDRESS                _UL_(0xfc01c000)                              /* TRNG Base Address */
+#define TWIHS0_BASE_ADDRESS              _UL_(0xf8028000)                              /* TWIHS0 Base Address */
+#define TWIHS1_BASE_ADDRESS              _UL_(0xfc028000)                              /* TWIHS1 Base Address */
+#define UART0_BASE_ADDRESS               _UL_(0xf801c000)                              /* UART0 Base Address */
+#define UART1_BASE_ADDRESS               _UL_(0xf8020000)                              /* UART1 Base Address */
+#define UART2_BASE_ADDRESS               _UL_(0xf8024000)                              /* UART2 Base Address */
+#define UART3_BASE_ADDRESS               _UL_(0xfc008000)                              /* UART3 Base Address */
+#define UART4_BASE_ADDRESS               _UL_(0xfc00c000)                              /* UART4 Base Address */
+#define UDPHS_BASE_ADDRESS               _UL_(0xfc02c000)                              /* UDPHS Base Address */
+#define WDT_BASE_ADDRESS                 _UL_(0xf8048040)                              /* WDT Base Address */
+#define XDMAC0_BASE_ADDRESS              _UL_(0xf0010000)                              /* XDMAC0 Base Address */
+#define XDMAC1_BASE_ADDRESS              _UL_(0xf0004000)                              /* XDMAC1 Base Address */
 /** @}  end of Peripheral Base Address Definitions */
 
 /** \addtogroup SAMA5D27_pio Peripheral Pio Definitions
