@@ -42,6 +42,13 @@
 //DOM-IGNORE-END
 #include "definitions.h"
 
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local Functions
+// *****************************************************************************
+// *****************************************************************************
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: AIC Implementation
@@ -51,8 +58,37 @@ extern IrqData  irqData[2];
 extern uint32_t irqDataEntryCount;
 
 void
-INT_Initialize( void )
+AIC_INT_Initialize( void )
 {   
     __enable_irq();
     __ISB();                                                // Allow pended interrupts to be recognized immediately
+}
+
+void AIC_INT_IrqEnable( void )
+{
+    __DMB();
+    __enable_irq();
+}
+
+bool AIC_INT_IrqDisable( void )
+{
+    /* Add a volatile qualifier to the return value to prevent the compiler from optimizing out this function */
+    volatile bool previousValue = (CPSR_I_Msk & __get_CPSR())? false:true;
+    __disable_irq();
+    __DMB();
+    return( previousValue );
+}
+
+void AIC_INT_IrqRestore( bool state )
+{
+    if( state == true )
+    {
+        __DMB();
+        __enable_irq();
+    }
+    else
+    {
+        __disable_irq();
+        __DMB();
+    }
 }
