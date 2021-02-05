@@ -42,6 +42,7 @@
 //DOM-IGNORE-END
 
 #include "plib_pio.h"
+#include "interrupts.h"
 
 /******************************************************************************
   Function:
@@ -77,7 +78,6 @@ void PIO_Initialize ( void )
 	PIOD_REGS->PIO_MSKR = 0xc;
 	PIOD_REGS->PIO_CFGR = 0x1;
 	
-
 
 
 
