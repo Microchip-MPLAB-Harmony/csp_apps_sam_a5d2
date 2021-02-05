@@ -102,6 +102,8 @@ bool MCAN0_InterruptGet(MCAN_INTERRUPT_MASK interruptMask);
 void MCAN0_InterruptClear(MCAN_INTERRUPT_MASK interruptMask);
 bool MCAN0_TxFIFOIsFull(void);
 void MCAN0_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress);
+void MCAN0_SleepModeEnter(void);
+void MCAN0_SleepModeExit(void);
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
     }
