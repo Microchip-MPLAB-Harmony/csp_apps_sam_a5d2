@@ -60,7 +60,8 @@
 #define APP_AT24CM_HIGH_MEMORY_ADDR    ((APP_AT24CM_MEMORY_ADDR >> 8) & 0xffu)
 #define APP_AT24CM_LOW_MEMORY_ADDR     (APP_AT24CM_MEMORY_ADDR & 0xffu)
 #define APP_AT24CM_PAGE_SIZE           (22)
-#define APP_TRANSMIT_DATA_LENGTH       (APP_AT24CM_PAGE_SIZE + 2)
+#define APP_NUM_ADDRESS_BYTES          (2)
+#define APP_TRANSMIT_DATA_LENGTH       (APP_AT24CM_PAGE_SIZE + APP_NUM_ADDRESS_BYTES)
 #define APP_RECEIVE_DATA_LENGTH        (APP_AT24CM_PAGE_SIZE)
 #define APP_ACK_DATA_LENGTH            (1)
 
@@ -195,7 +196,7 @@ int main ( void )
             case APP_STATE_EEPROM_READ:
                 /* Read the data from the page written earlier */
                 transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
-                FLEXCOM0_TWI_Read(APP_AT24CM_DEVICE_ADDR, &testRxData[0], APP_RECEIVE_DATA_LENGTH);
+                FLEXCOM0_TWI_WriteRead(APP_AT24CM_DEVICE_ADDR, &testTxData[0], APP_NUM_ADDRESS_BYTES,  &testRxData[0], APP_RECEIVE_DATA_LENGTH);
                 state = APP_STATE_EEPROM_WAIT_READ_COMPLETE;
                 break;
 
@@ -212,7 +213,7 @@ int main ( void )
 
             case APP_STATE_VERIFY:
                 /* Verify the read data */
-                if (memcmp(&testTxData[2], &testRxData[0], APP_RECEIVE_DATA_LENGTH) == 0)
+                if (memcmp(&testTxData[APP_NUM_ADDRESS_BYTES], &testRxData[0], APP_RECEIVE_DATA_LENGTH) == 0)
                 {
                     /* It means received data is same as transmitted data */
                     state = APP_STATE_XFER_SUCCESSFUL;
