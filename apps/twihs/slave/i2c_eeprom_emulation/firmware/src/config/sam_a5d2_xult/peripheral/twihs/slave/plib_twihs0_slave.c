@@ -73,7 +73,7 @@ void TWIHS0_Initialize( void )
     TWIHS0_REGS->TWIHS_CR = TWIHS_CR_MSDIS_Msk | TWIHS_CR_SVDIS_Msk;
 
     /* Configure slave address */
-    TWIHS0_REGS->TWIHS_SMR = TWIHS_SMR_SADR(0x54);
+    TWIHS0_REGS->TWIHS_SMR = TWIHS_SMR_SADR(0x57);
 
     /* Clear the Transmit Holding Register and set TXRDY, TXCOMP flags */
     TWIHS0_REGS->TWIHS_CR = TWIHS_CR_THRCLR_Msk;

@@ -88,7 +88,13 @@ Hardware setup requires two boards, one acting as the TWIHS Master and the other
 
 ## Running the Application
 
-1. Build TWIHS EEPROM application from *apps/twihs/master/twihs_eeprom/firmware* (used as TWIHS master) using its IDE
+1. Open the twihs_eeprom application from *apps/twihs/master/twihs_eeprom/firmware* and open the *main.c* file. Make sure the following macro is defined to *false*.
+   ```
+   #define I2C_SLAVE_IS_ONBOARD_EEPROM           false
+   ```
+
+   Build twihs_eeprom application (which is used as TWIHS master) using its IDE
+
 2. Build TWIHS slave application (used as TWIHS slave) using its IDE
 3. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card) for each board
 4. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot) for each board

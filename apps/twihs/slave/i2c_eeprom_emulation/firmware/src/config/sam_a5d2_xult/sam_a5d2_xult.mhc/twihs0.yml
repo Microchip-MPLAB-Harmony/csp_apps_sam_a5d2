@@ -106,6 +106,10 @@ children:
         attributes: {id: visible}
         children:
         - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '87'}
   - type: File
     attributes: {id: TWIHS_SLAVE_COMMON_HEADER}
     children:
