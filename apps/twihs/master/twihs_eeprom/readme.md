@@ -59,14 +59,25 @@ The following table shows the target hardware for the application projects.
 - SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
+- If this application is used for communicating with *apps/twihs/slave/i2c_eeprom_emulation* application, then connect TWIHS SDA line on Pin 7 (PD4) of J22 connector and TWIHS SCL line on Pin 8 (PD5) of J22 connector with the corresponding SDA and SCL lines of the TWIHS slave.
 
 ## Running the Application
 
-1. Build the application using its IDE
-2. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card)
-3. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot)
-4. Reset the board to run the application
-5. The LED indicates the success or failure:
+1. Open the main.c file and make sure the following macro is defined to *true* when communicating with on-board EEPROM and to *false* when communicating with the *apps/twihs/slave/i2c_eeprom_emulation* application.
+
+   When communicating with on-board EEPROM:
+   ```
+   #define I2C_SLAVE_IS_ONBOARD_EEPROM           true
+   ```
+   When communicating with *apps/twihs/slave/i2c_eeprom_emulation* application
+   ```
+   #define I2C_SLAVE_IS_ONBOARD_EEPROM           false
+
+2. Build the application using its IDE
+3. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card)
+4. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot)
+5. Reset the board to run the application
+6. The LED indicates the success or failure:
     - The LED is turned ON when the value read from the EEPROM matched with the written value
     - The LED is turned OFF when the value read from the EEPROM did not match with the written value
 

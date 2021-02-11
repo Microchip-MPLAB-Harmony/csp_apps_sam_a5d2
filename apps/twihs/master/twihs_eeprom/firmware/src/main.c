@@ -52,123 +52,45 @@
 #include "definitions.h"                // SYS function prototypes
 #include <string.h>
 
-#define LED_ON()                       LED_Clear()
-#define LED_OFF()                      LED_Set()
+#define I2C_SLAVE_IS_ONBOARD_EEPROM           false
 
-// *****************************************************************************
-/* I2C Address for the on-board EEPROM AT24MAC402.
-
-  Summary:
-    Defines the on-board EEPROM AT24MAC402's I2C Address.
-
-  Description:
-    This macro defines the on-board EEPROM AT24MAC402's I2C Address. 
-*/
+#if I2C_SLAVE_IS_ONBOARD_EEPROM == true
 
 #define APP_AT24MAC_DEVICE_ADDR             (0x0054)
-
-// *****************************************************************************
-/* EEPROM AT24MAC402 memory address.
-
-  Summary:
-    Defines the on-board EEPROM AT24MAC402 memory address.
-
-  Description:
-    This macro defines the on-board EEPROM AT24MAC402 memory Address. Data is
-    read/write from/to the location starting from this address.
- */
-
-#define APP_AT24MAC_MEMORY_ADDR             (0x00)
-
-// *****************************************************************************
-/* Transmit data length.
-
-  Summary:
-    Defines the length of the data to be transmitted to on-board EEPROM AT24MAC402.
-
-  Description:
-    This macro defines the size of one page on the AT24 EEPROM.
- */
-
+#define APP_AT24MAC_MEMORY_ADDR             (0x40)
 #define APP_AT24MAC_PAGE_SIZE               (16)
-// *****************************************************************************
-/* Transmit data length.
-
-  Summary:
-    Defines the length of the data to be transmitted to on-board EEPROM AT24MAC402.
-
-  Description:
-    This macro defines the length of the data to be tranmitted to the on-board
-    EEPROM AT24MAC402. The length must be sufficient to hold the data and the 
-    AT24 memory address.
- */
-
-#define APP_TRANSMIT_DATA_LENGTH            (APP_AT24MAC_PAGE_SIZE + 1)
-
-// *****************************************************************************
-/* Receive data length.
-
-  Summary:
-    Defines the length of the data to be received from on-board EEPROM AT24MAC402.
-
-  Description:
-    This macro defines the length of the data to be received from the on-board
-    EEPROM AT24MAC402. 
- */
-
+#define APP_NUM_ADDRESS_BYTES               1
+#define APP_TRANSMIT_DATA_LENGTH            (APP_AT24MAC_PAGE_SIZE + APP_NUM_ADDRESS_BYTES)
 #define APP_RECEIVE_DATA_LENGTH             (APP_AT24MAC_PAGE_SIZE)
+static uint8_t testTxData[APP_TRANSMIT_DATA_LENGTH] =
+{
+    APP_AT24MAC_MEMORY_ADDR,
+    'A', 'T', 'S', 'A', 'M', ' ', 'T', 'W', 'I', 'H', 'S', ' ', 'D', 'e', 'm', 'o',
+};
+#else
 
-// *****************************************************************************
-/* Acknowledge polling data length.
-
-  Summary:
-    Defines the length of the data to be transmitted to on-board EEPROM AT24MAC402
-    during Acknowledge polling.
-
-  Description:
-    This macro defines the length of the data to be tranmitted to the on-board
-    EEPROM AT24MAC402 during Acknowledge polling. This define is used by the TWIHS
-    PLib Write API.
- */
+#define APP_AT24MAC_DEVICE_ADDR             (0x0057)
+#define APP_AT24MAC_MEMORY_ADDR             (0x00)
+#define APP_AT24MAC_MEMORY_ADDR1            (0x00)
+#define APP_NUM_ADDRESS_BYTES               2
+#define APP_TRANSMIT_DATA_LENGTH            (4 + APP_NUM_ADDRESS_BYTES)
+#define APP_RECEIVE_DATA_LENGTH             (4)
+static uint8_t testTxData[APP_TRANSMIT_DATA_LENGTH] =
+{
+    APP_AT24MAC_MEMORY_ADDR, APP_AT24MAC_MEMORY_ADDR1,
+    'M','C','H','P',
+};
+#endif
 
 #define APP_ACK_DATA_LENGTH                 (1)
 
-// *****************************************************************************
-/* Application Test Transmit Data array
-
-  Summary:
-    Holds the application test transmit data.
-
-  Description:
-    This array holds the application's test transmit data.
-
-  Remarks:
-    None.
-*/
-
-static uint8_t testTxData[APP_TRANSMIT_DATA_LENGTH] =
-{
-	APP_AT24MAC_MEMORY_ADDR,
-    'A', 'T', 'S', 'A', 'M', ' ', 'T', 'W', 'I', 'H', 'S', ' ', 'D', 'e', 'm', 'o',
-};
-
-// *****************************************************************************
-/* Application Test receive Data array.
-
-  Summary:
-    Holds the application received test data.
-
-  Description:
-    This array holds the application's received test data.
-
-  Remarks:
-    None.
-*/
+#define LED_ON()                       LED_Clear()
+#define LED_OFF()                      LED_Set()
 
 static uint8_t  testRxData[APP_RECEIVE_DATA_LENGTH];
 
 // *****************************************************************************
-/* Application's state machine enum 
+/* Application's state machine enum
 
   Summary:
     Enumerator to define app states.
@@ -180,20 +102,20 @@ static uint8_t  testRxData[APP_RECEIVE_DATA_LENGTH];
     None.
 */
 typedef enum
-{    
+{
     APP_STATE_EEPROM_STATUS_VERIFY,
     APP_STATE_EEPROM_WRITE,
     APP_STATE_EEPROM_WAIT_INTERNAL_WRITE_COMPLETE,
     APP_STATE_EEPROM_READ,
     APP_STATE_VERIFY,
-    APP_STATE_IDLE,    
+    APP_STATE_IDLE,
     APP_STATE_XFER_SUCCESSFUL,
     APP_STATE_XFER_ERROR
-            
+
 } APP_STATES;
 
 // *****************************************************************************
-/* Transfer status enum 
+/* Transfer status enum
 
   Summary:
     Enumerator to define transfer status.
@@ -210,7 +132,7 @@ typedef enum
     APP_TRANSFER_STATUS_SUCCESS,
     APP_TRANSFER_STATUS_ERROR,
     APP_TRANSFER_STATUS_IDLE,
-            
+
 } APP_TRANSFER_STATUS;
 
 // *****************************************************************************
@@ -238,7 +160,7 @@ typedef enum
 void APP_TWIHSCallback(uintptr_t context )
 {
     APP_TRANSFER_STATUS* transferStatus = (APP_TRANSFER_STATUS*)context;
-    
+
     if(TWIHS1_ErrorGet() == TWIHS_ERROR_NONE)
     {
         *transferStatus = APP_TRANSFER_STATUS_SUCCESS;
@@ -246,7 +168,7 @@ void APP_TWIHSCallback(uintptr_t context )
     else
     {
         *transferStatus = APP_TRANSFER_STATUS_ERROR;
-    }        
+    }
 }
 
 // *****************************************************************************
@@ -254,15 +176,15 @@ void APP_TWIHSCallback(uintptr_t context )
 // Section: Main Entry Point
 // *****************************************************************************
 // *****************************************************************************
-    
+
 int main ( void )
 {
     APP_STATES currState = APP_STATE_EEPROM_STATUS_VERIFY;
-    APP_STATES nextState = APP_STATE_IDLE;    
+    APP_STATES nextState = APP_STATE_IDLE;
     volatile APP_TRANSFER_STATUS transferStatus = APP_TRANSFER_STATUS_ERROR;
     uint8_t ackData = 0;
     bool isInternalWriteCheckInProgress = false;
-           
+
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
@@ -273,30 +195,30 @@ int main ( void )
         switch (currState)
         {
             case APP_STATE_EEPROM_STATUS_VERIFY:
-            
+
                 /* Register the TWIHS Callback with current state as context */
                 TWIHS1_CallbackRegister( APP_TWIHSCallback, (uintptr_t)&transferStatus );
-                
+
                 /* Verify if EEPROM is ready to accept new requests */
                 transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
                 TWIHS1_Write(APP_AT24MAC_DEVICE_ADDR, &ackData, APP_ACK_DATA_LENGTH);
 
-                currState = APP_STATE_IDLE; 
+                currState = APP_STATE_IDLE;
                 nextState = APP_STATE_EEPROM_WRITE;
                 break;
-            
+
             case APP_STATE_EEPROM_WRITE:
-                            
+
                 /* Write 1 page of data to EEPROM */
                 transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
                 TWIHS1_Write(APP_AT24MAC_DEVICE_ADDR, &testTxData[0], APP_TRANSMIT_DATA_LENGTH);
-                
-                currState = APP_STATE_IDLE;  
+
+                currState = APP_STATE_IDLE;
                 nextState = APP_STATE_EEPROM_WAIT_INTERNAL_WRITE_COMPLETE;
                 break;
-            
+
             case APP_STATE_EEPROM_WAIT_INTERNAL_WRITE_COMPLETE:
-            
+
                 /* Check whether EEPROM's internal write cycle is complete */
                 if (transferStatus == APP_TRANSFER_STATUS_SUCCESS)
                 {
@@ -308,47 +230,47 @@ int main ( void )
                     /* EEPROM's internal write cycle is not complete. Keep checking. */
                     transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
                     TWIHS1_Write(APP_AT24MAC_DEVICE_ADDR, &ackData, APP_ACK_DATA_LENGTH);
-                
+
                     isInternalWriteCheckInProgress = true;
-                    currState = APP_STATE_IDLE; 
+                    currState = APP_STATE_IDLE;
                     nextState = APP_STATE_EEPROM_WAIT_INTERNAL_WRITE_COMPLETE;
                 }
-                break;            
+                break;
 
             case APP_STATE_EEPROM_READ:
-                            
+
                 /* Read the data from the page written earlier */
                 transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
-                TWIHS1_Read(APP_AT24MAC_DEVICE_ADDR, &testRxData[0], APP_RECEIVE_DATA_LENGTH);
-                
-                currState = APP_STATE_IDLE; 
+                TWIHS1_WriteRead(APP_AT24MAC_DEVICE_ADDR, &testTxData[0], APP_NUM_ADDRESS_BYTES,  &testRxData[0], APP_RECEIVE_DATA_LENGTH);
+
+                currState = APP_STATE_IDLE;
                 nextState = APP_STATE_VERIFY;
                 break;
-                
+
             case APP_STATE_VERIFY:
-                
+
                 /* Verify the read data */
-                if (memcmp(&testTxData[1], &testRxData[0], APP_RECEIVE_DATA_LENGTH) == 0)
+                if (memcmp(&testTxData[APP_NUM_ADDRESS_BYTES], &testRxData[0], APP_RECEIVE_DATA_LENGTH) == 0)
                 {
                     /* It means received data is same as transmitted data */
-                    currState = APP_STATE_XFER_SUCCESSFUL;                    
+                    currState = APP_STATE_XFER_SUCCESSFUL;
                 }
                 else
                 {
                     /* It means received data is not same as transmitted data */
                     currState = APP_STATE_XFER_ERROR;
                 }
-                break;                
-            
+                break;
+
             case APP_STATE_IDLE:
-            
+
                 /* Wait for the transfer to complete, and go to the next state if
                  * the last transfer was successful. If the EEPROM internal write
-                 * cycle is been checked, then repeat the check if the EEPROM 
+                 * cycle is been checked, then repeat the check if the EEPROM
                  * returns NAK (transferStatus == APP_TRANSFER_STATUS_ERROR).
                  */
                 if (transferStatus == APP_TRANSFER_STATUS_SUCCESS)
-                {                    
+                {
                     /* Reset the transfer status if the internal write cycle check
                      * is not in progress.
                      */
@@ -357,7 +279,7 @@ int main ( void )
                         transferStatus = APP_TRANSFER_STATUS_IDLE;
                     }
                     currState = nextState;
-                }   
+                }
                 else if (transferStatus == APP_TRANSFER_STATUS_ERROR)
                 {
                     /* Reset the transfer status if the internal write cycle check
@@ -368,7 +290,7 @@ int main ( void )
                     if (isInternalWriteCheckInProgress == false)
                     {
                         transferStatus = APP_TRANSFER_STATUS_IDLE;
-                        currState = APP_STATE_XFER_ERROR;                        
+                        currState = APP_STATE_XFER_ERROR;
                     }
                     else
                     {
@@ -376,17 +298,17 @@ int main ( void )
                     }
                 }
                 break;
-                
+
             case APP_STATE_XFER_SUCCESSFUL:
-            
+
                 LED_ON();
                 break;
-            
+
             case APP_STATE_XFER_ERROR:
-            
+
                 LED_OFF();
                 break;
-            
+
             default:
                 break;
         }
