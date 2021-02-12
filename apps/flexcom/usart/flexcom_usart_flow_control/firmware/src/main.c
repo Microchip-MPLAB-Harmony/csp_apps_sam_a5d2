@@ -100,6 +100,11 @@ int main ( void )
         LED_Off();
     }
 
+    while (1)
+    {
+
+    }
+
     /* Execution should not come here during normal operation */
 
     return ( EXIT_FAILURE );

@@ -60,7 +60,7 @@ The following table shows the target hardware for the application projects.
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 - Make connections as following:
-    - On J22 connector, short F0_TXD and F1_RXD
+    - On J22 connector, short pin 3 (F0_TXD) and pin 2 (F1_RXD)
     - On J17 connector, short pin 15 (FLEXCOM0 CTS) and pin 21 (FLEXCOM1 RTS)
 
 ## Running the Application
