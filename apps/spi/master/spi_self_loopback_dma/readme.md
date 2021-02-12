@@ -21,7 +21,7 @@ The example first transmits 10 bytes and receives 10 bytes. If the received data
 To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2) and then click Clone button to clone this repository or download as zip file.
 This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
-Path of the application within the repository is **apps/spi/spi_self_loopback_interrupt/firmware** .
+Path of the application within the repository is **apps/spi/master/spi_self_loopback_dma/firmware** .
 
 To build the application, refer to the following table and open the project using its IDE.
 
