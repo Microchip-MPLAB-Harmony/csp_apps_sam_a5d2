@@ -78,8 +78,8 @@ The following table shows the target hardware for the application projects.
 
 ## Running the Application
 
-1. Build and Program the SPI master application project using its IDE on board. Path of the SPI Master application within the repository is **apps/flexcom/spi/master/flexcom_spi_write_read_test_app/firmware**
-2. Build and Program the SPI slave application project using its IDE. 
+1. Build the SPI master application using its IDE. Path of the SPI Master application within the repository is **apps/flexcom/spi/master/flexcom_spi_write_read_test_app/firmware**
+2. Build the SPI slave application using its IDE. 
 3. Copy the output binary (named 'harmony.bin') onto the each SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card).
 4. Insert the SD card into SDMMC slot on each board (Refer to the 'Setting up hardware' section for the correct SDMMC slot).
 5. Reset each board to run the application
