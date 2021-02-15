@@ -82,7 +82,7 @@ Hardware setup requires two boards, one acting as the TWIHS Master and the other
 - SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
-- On EXT1 header, connect TWIHS SDA line on Pin 11 (PB31) and TWIHS SCL line on Pin 12 (PC0) with the corresponding SDA and SCL lines of the TWIHS master
+- On EXT1 header, connect TWIHS SDA line on Pin 11 (PB31) and TWIHS SCL line on Pin 12 (PC0) with the corresponding SDA and SCL lines of the TWIHS master. Refer the TWIHS master documentation for connection details.
 - Connect a ground wire between TWIHS master and TWIHS slave boards
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
