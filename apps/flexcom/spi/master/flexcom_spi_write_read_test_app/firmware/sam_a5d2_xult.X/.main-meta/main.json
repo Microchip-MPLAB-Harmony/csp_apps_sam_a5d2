@@ -3,28 +3,28 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_flexcom_twi_eeprom",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_flexcom_spi_write_read_test_app",
 		"version": "3.0.1",
-		"displayName": "FLEXCOM TWI (I2C) EEPROM Example for SAM A5D2x Family",
-		"projectName": "flexcom_twi_eeprom_sam_a5d2_xult",
-		"shortDescription": "This example application shows how to use the flexcom module in TWI mode.",
+		"displayName": "FLEXCOM SPI Master read write test application Example for SAM A5D2x Family",
+		"projectName": "flexcom_spi_write_read_test_app_sam_a5d2_xult",
+		"shortDescription": "This is a FLEXCOM SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application.",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.45.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.40.0"
+				"semverRange": ">=2.50.0"
 			}
 		],
 		"dfp": {
 			"name": "SAMA5D2_DFP",
-			"semverRange": "^1.5.42"
+			"semverRange": "^1.5.53"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.5.1"
+			"semverRange": ">=3.7.0"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
@@ -58,11 +58,7 @@
 			"SAM A5D2x Family",
 			"FLEXCOM",
 			"Serial Communication",
-			"I2C",
-			"SPI",
-			"UART",
-			"SERCOM",
-			"TWI"
+			"SPI"
 		],
 		"additionalData": {
 			"longDescription": {

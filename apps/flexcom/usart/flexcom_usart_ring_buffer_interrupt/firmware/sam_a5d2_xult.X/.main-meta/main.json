@@ -3,19 +3,19 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_spi_self_loopback_blocking",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_flexcom_usart_ring_buffer_interrupt",
 		"version": "3.0.1",
-		"displayName": "SPI blocking Example for SAM A5D2x Family",
-		"projectName": "spi_self_loopback_blocking_sam_a5d2_xult",
-		"shortDescription": "This example application shows how to use the SPI peripheral to transmit and receive a block of data in a blocking manner.",
+		"displayName": "FLEXCOM USART ring buffer Example for SAM A5D2x Family",
+		"projectName": "flexcom_usart_ring_buffer_interrupt_sam_a5d2_xult",
+		"shortDescription": "This example application shows how to use the FLEXCOM peripheral in USART ring buffer mode.",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.45.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.40.0"
+				"semverRange": ">=2.50.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.5.1"
+			"semverRange": ">=3.7.0"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
@@ -42,24 +42,24 @@
 				"Development Kit", "SAMA5D2 Xplained Ultra Evaluation Kit"
 			],
 			[
-				"Harmony", "Peripherals", "SPI"
+				"Harmony", "Peripherals", "FLEXCOM"
 			],
 			[
-				"Peripherals", "SPI"
+				"Peripherals", "FLEXCOM"
 			]
 		],
 		"peripherals": [
-			"SPI"
+			"FLEXCOM"
 		],
 		"keywords": [
 			"MHC",
 			"Harmony",
 			"ATSAMA5D27",
 			"SAM A5D2x Family",
-			"SPI",
+			"FLEXCOM",
 			"Serial Communication",
-			"SERCOM",
-			"FLEXCOM"
+			"UART",
+			"USART"
 		],
 		"additionalData": {
 			"longDescription": {

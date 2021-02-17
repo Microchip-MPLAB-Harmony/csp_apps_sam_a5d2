@@ -3,11 +3,11 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_flexcom_usart_echo_blocking",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_clock_low_power",
 		"version": "3.0.1",
-		"displayName": "FLEXCOM USART blocking Example for SAM A5D2x Family",
-		"projectName": "flexcom_usart_echo_blocking_sam_a5d2_xult",
-		"shortDescription": "This example application shows how to use the flexcom module in USART mode.",
+		"displayName": "Low power modes Example for SAM A5D2x Family",
+		"projectName": "clock_low_power_sam_a5d2_xult",
+		"shortDescription": "This example application shows how to enter low power modes of SAMA5D27 MPU.",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=5.45.0"
@@ -19,8 +19,8 @@
 			}
 		],
 		"dfp": {
-			"name": "CMSIS",
-			"semverRange": "^5.4.0"
+			"name": "SAMA5D2_DFP",
+			"semverRange": "^1.5.53"
 		},
 		"configurator": {
 			"name": "MHC",
@@ -42,24 +42,22 @@
 				"Development Kit", "SAMA5D2 Xplained Ultra Evaluation Kit"
 			],
 			[
-				"Harmony", "Peripherals", "FLEXCOM"
+				"Harmony", "Peripherals", "CLOCK"
 			],
 			[
-				"Peripherals", "FLEXCOM"
+				"Peripherals", "CLOCK"
 			]
 		],
 		"peripherals": [
-			"FLEXCOM"
+			"CLOCK"
 		],
 		"keywords": [
 			"MHC",
 			"Harmony",
 			"ATSAMA5D27",
 			"SAM A5D2x Family",
-			"FLEXCOM",
-			"Serial Communication",
-			"UART",
-			"USART"
+			"Clock",
+			"Low Power"
 		],
 		"additionalData": {
 			"longDescription": {
