@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_spi_master_spi_self_loopback_blocking",
-		"version": "3.0.1",
+		"version": "3.1.0",
 		"displayName": "SPI blocking Example for SAM A5D2x Family",
 		"projectName": "spi_self_loopback_blocking_sam_a5d2_xult",
 		"shortDescription": "This example application shows how to use the SPI peripheral to transmit and receive a block of data in a blocking manner.",
@@ -39,13 +39,17 @@
 		"author": "Microchip",
 		"subcategories": [
 			[
-				"Development Kit", "SAMA5D2 Xplained Ultra Evaluation Kit"
+				"Development Kit",
+				"SAMA5D2 Xplained Ultra Evaluation Kit"
 			],
 			[
-				"Harmony", "Peripherals", "SPI"
+				"Harmony",
+				"Peripherals",
+				"SPI"
 			],
 			[
-				"Peripherals", "SPI"
+				"Peripherals",
+				"SPI"
 			]
 		],
 		"peripherals": [
