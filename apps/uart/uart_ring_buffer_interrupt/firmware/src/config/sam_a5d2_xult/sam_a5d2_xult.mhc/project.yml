@@ -27,13 +27,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 4110A580F7D65712FB0C5EE4FAA178A9
-- generatedChecksum: null
+- generatedChecksum: F81A00E640818EDFB9E79C9BD241AEF4
   logicalPath: ''
-  name: main.c
+  name: main_sam_a5d2_xult.c
   physicalPath: ..\..
   security: NON_SECURE
   type: SOURCE
-  userChecksum: null
+  userChecksum: F81A00E640818EDFB9E79C9BD241AEF4
 - generatedChecksum: 4693B8CC018C492E1D08F256AB131D67
   logicalPath: config\sam_a5d2_xult\peripheral\aic
   name: plib_aic.c
