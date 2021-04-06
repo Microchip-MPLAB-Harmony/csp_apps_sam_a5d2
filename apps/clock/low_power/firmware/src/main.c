@@ -287,7 +287,7 @@ __attribute__((__section__(".ramcode_section")))void really_enter_ulp0_sram(void
 
     /* enable main clock */
     PMC_REGS->CKGR_MOR = clock_cfg.mor |  CKGR_MOR_KEY_PASSWD | CKGR_MOR_ONE_Msk;
-    if ((clock_cfg.mor & CKGR_MOR_MOSCSEL_Msk) == 1)
+    if (clock_cfg.mor & CKGR_MOR_MOSCSEL_Msk)
         while (!(PMC_REGS->PMC_SR & PMC_SR_MOSCXTS_Msk));
 
     /* wait for pll lock */
