@@ -284,8 +284,8 @@
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
-        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStep>${MP_CC_DIR}/xc32-objcopy -O binary ${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.elf ${DISTDIR}/harmony.bin</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -340,6 +340,7 @@
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
+        <appendMe value="-marm -cpu=cortex-a5 -mfpu=neon-vfpv4 -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn"/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -972,6 +973,12 @@
       </Simulator>
       <jlink>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="boot.entry_adr" value=""/>
+        <property key="boot.load_adr" value=""/>
+        <property key="boot.path"
+                  value="${ProjectDir}\..\at91bootstrap_sam_a5d27_som1_ek.X\binaries\at91bootstrap.elf"/>
+        <property key="boot.prj" value=""/>
+        <property key="boot.use" value="true"/>
         <property key="communication.autoselectspeed" value="true"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="4"/>
