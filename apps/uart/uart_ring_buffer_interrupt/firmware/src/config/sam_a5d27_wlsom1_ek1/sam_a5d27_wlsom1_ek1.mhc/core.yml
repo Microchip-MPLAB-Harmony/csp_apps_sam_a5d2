@@ -94,7 +94,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x26f00000'}
+        attributes: {id: core, value: '0x23f00000'}
   - type: Integer
     attributes: {id: CLASSD_GENERIC_CLOCK_FREQUENCY}
     children:
