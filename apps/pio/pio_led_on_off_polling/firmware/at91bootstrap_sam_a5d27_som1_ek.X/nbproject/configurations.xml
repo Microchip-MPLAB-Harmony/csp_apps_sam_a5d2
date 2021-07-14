@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
+    <logicalFolder name="HeaderFiles" displayName="Header Files" projectFiles="true">
       <logicalFolder name="f1" displayName="board" projectFiles="true">
         <logicalFolder name="f24" displayName="at91sam9260ek" projectFiles="true">
           <itemPath>board/at91sam9260ek/at91sam9260ek.h</itemPath>
@@ -254,18 +252,12 @@
         <itemPath>include/wm8904.h</itemPath>
       </logicalFolder>
     </logicalFolder>
-    <logicalFolder name="LoadableFiles"
-                   displayName="Prebuilt Files"
-                   projectFiles="true">
+    <logicalFolder name="LoadableFiles" displayName="Prebuilt Files" projectFiles="true">
     </logicalFolder>
-    <logicalFolder name="ScriptFiles"
-                   displayName="Script Files"
-                   projectFiles="true">
+    <logicalFolder name="ScriptFiles" displayName="Script Files" projectFiles="true">
       <itemPath>autoload.py</itemPath>
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
+    <logicalFolder name="SourceFiles" displayName="Source Files" projectFiles="true">
       <logicalFolder name="f1" displayName="board" projectFiles="true">
         <logicalFolder name="f24" displayName="at91sam9260ek" projectFiles="true">
           <itemPath>board/at91sam9260ek/at91sam9260ek.c</itemPath>
@@ -503,9 +495,7 @@
       <itemPath>crt0_gnu.S</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
+    <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -517,15 +507,15 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>ATSAMA5D27CD1G</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
+        <targetHeader/>
+        <targetPluginBoard/>
         <platformTool>noID</platformTool>
-        <languageToolchain></languageToolchain>
-        <languageToolchainVersion></languageToolchainVersion>
+        <languageToolchain/>
+        <languageToolchainVersion/>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.5.42"/>
+        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.5.53"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
@@ -542,8 +532,8 @@
           <debugBuildCommand>make CROSS_COMPILE=arm-none-eabi-</debugBuildCommand>
           <imageName>binaries/at91bootstrap-stripped.elf</imageName>
           <debugImageName>binaries/at91bootstrap.elf</debugImageName>
-          <userIncludePaths></userIncludePaths>
-          <userMacros></userMacros>
+          <userIncludePaths/>
+          <userMacros/>
         </makeTool>
       </makefileType>
       <userMakefileProjectLoading>
