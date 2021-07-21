@@ -64,6 +64,8 @@ MCAN - Normal operation mode, MCAN clock source is 8 MHz and bitrate is 500 Kbps
 /* LED ON and OFF macros */
 #define LED_On()                        LED_Clear()
 #define LED_Off()                       LED_Set()
+#define WRITE_ID(id)                    (id << 18)
+#define READ_ID(id)                     (id >> 18)
 
 uint8_t Mcan0MessageRAM[MCAN0_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32))) __attribute__((__section__(".region_nocache")));
 
@@ -83,47 +85,55 @@ char messageStart[] = "**** MCAN Normal Operation Interrupt Demo ****\r\n\
 **** Receive message from CAN Bus and transmit back received message to CAN Bus and UART1 serial port ****\r\n\
 **** LED toggles on each time the message is transmitted back ****\r\n";
 /* Variable to save application state */
-volatile static APP_STATES state = APP_STATE_MCAN_RECEIVE;
+volatile static APP_STATES state = APP_STATE_MCAN_IDLE;
 /* Variable to save Tx/Rx transfer status and context */
 static uint32_t status = 0;
 static uint32_t xferContext = 0;
+static uint8_t loop_count = 0;
+static uint8_t txFiFo[MCAN0_TX_FIFO_BUFFER_SIZE];
+static uint8_t rxFiFo0[MCAN0_RX_FIFO0_SIZE];
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Local functions
 // *****************************************************************************
 // *****************************************************************************
-
-/* This function will be called by MCAN PLIB when transfer is completed */
-// *****************************************************************************
-/* void APP_MCAN_Callback(uintptr_t context)
-
-  Summary:
-    Function called by MCAN PLIB upon transfer completion
-
-  Description:
-    This function will be called by MCAN PLIB when transfer is completed.
-    In this function, current state of the application is obtained by context
-    parameter. Based on current state of the application and MCAN error
-    state, next state of the application is decided.
-
-  Remarks:
-    None.
-*/
-void APP_MCAN_Callback(uintptr_t context)
+/* Print Rx Message */
+static void print_message(uint8_t numberOfMessage, MCAN_RX_BUFFER *rxBuf, uint8_t rxBufLen)
 {
+    uint8_t length = 0;
+    uint8_t msgLength = 0;
+    uint32_t id = 0;
+
+    for (uint8_t count = 0; count < numberOfMessage; count++)
+    {
+        /* Print message to UART1 */
+        id = rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id);
+        msgLength = rxBuf->dlc;
+        length = msgLength;
+        printf("Message - ID : 0x%x Length : 0x%x ", (unsigned int)id, (unsigned int)msgLength);
+        printf("Message : ");
+        while(length)
+        {
+            printf("0x%x ", rxBuf->data[msgLength - length--]);
+        }
+        printf("\r\n");
+        rxBuf += rxBufLen;
+    }
+}
+
+/* This function will be called by MCAN PLIB when transfer is completed from Tx FIFO */
+void APP_MCAN_TxFifoCallback(uintptr_t context)
+{
+    xferContext = context;
+
     /* Check MCAN Status */
     status = MCAN0_ErrorGet();
 
-    if (((status & MCAN_PSR_LEC_Msk) == MCAN_ERROR_NONE) || ((status & MCAN_PSR_LEC_Msk) == MCAN_PSR_LEC_NO_CHANGE))
+    if (((status & MCAN_PSR_LEC_Msk) == MCAN_ERROR_NONE) || ((status & MCAN_PSR_LEC_Msk) == MCAN_ERROR_LEC_NO_CHANGE))
     {
         switch ((APP_STATES)context)
         {
-            case APP_STATE_MCAN_RECEIVE:
-            {
-                state = APP_STATE_MCAN_TRANSMIT;
-                break;
-            }
             case APP_STATE_MCAN_TRANSMIT:
             {
                 state = APP_STATE_MCAN_XFER_SUCCESSFUL;
@@ -136,7 +146,42 @@ void APP_MCAN_Callback(uintptr_t context)
     else
     {
         state = APP_STATE_MCAN_XFER_ERROR;
-        xferContext = context;
+    }
+}
+
+/* This function will be called by MCAN PLIB when Message received in Rx FIFO0 */
+void APP_MCAN_RxFifo0Callback(uint8_t numberOfMessage, uintptr_t context)
+{
+    xferContext = context;
+
+    /* Check MCAN Status */
+    status = MCAN0_ErrorGet();
+
+    if (((status & MCAN_PSR_LEC_Msk) == MCAN_ERROR_NONE) || ((status & MCAN_PSR_LEC_Msk) == MCAN_ERROR_LEC_NO_CHANGE))
+    {
+        switch ((APP_STATES)context)
+        {
+            case APP_STATE_MCAN_RECEIVE:
+            {
+                memset(rxFiFo0, 0x00, (numberOfMessage * MCAN0_RX_FIFO0_ELEMENT_SIZE));
+                if (MCAN0_MessageReceiveFifo(MCAN_RX_FIFO_0, numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0) == true)
+                {
+                    print_message(numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0, MCAN0_RX_FIFO0_ELEMENT_SIZE);
+                    state = APP_STATE_MCAN_TRANSMIT;
+                }
+                else
+                {
+                    state = APP_STATE_MCAN_XFER_ERROR;
+                }
+                break;
+            }
+            default:
+                break;
+        }
+    }
+    else
+    {
+        state = APP_STATE_MCAN_XFER_ERROR;
     }
 }
 
@@ -147,10 +192,8 @@ void APP_MCAN_Callback(uintptr_t context)
 // *****************************************************************************
 int main ( void )
 {
-    uint32_t messageID = 0;
-    uint8_t message[64] = {0};
-    uint8_t messageLength = 0;
-    MCAN_MSG_RX_FRAME_ATTRIBUTE msgFrameAttr = MCAN_MSG_RX_DATA_FRAME;
+    MCAN_TX_BUFFER *txBuffer = NULL;
+    MCAN_RX_BUFFER *rxBuf = NULL;
 
     /* Initialize all modules */
     SYS_Initialize ( NULL );
@@ -162,32 +205,27 @@ int main ( void )
     /* Send start message */
     UART1_Write(&messageStart, sizeof(messageStart));
 
+    MCAN0_RxFifoCallbackRegister(MCAN_RX_FIFO_0, APP_MCAN_RxFifo0Callback, APP_STATE_MCAN_RECEIVE);
+
     while(1)
     {
         /* Check the application's current state. */
         switch (state)
         {
-            case APP_STATE_MCAN_RECEIVE:
-            {
-                MCAN0_RxCallbackRegister( APP_MCAN_Callback, (uintptr_t)APP_STATE_MCAN_RECEIVE, MCAN_MSG_ATTR_RX_FIFO0 );
-
-                state = APP_STATE_MCAN_IDLE;
-
-                /* Receive FIFO 0 New Message */
-                if (!MCAN0_MessageReceive(&messageID, &messageLength, message, 0, MCAN_MSG_ATTR_RX_FIFO0, &msgFrameAttr))
-                {
-                    printf("MCAN0_MessageReceive request has failed\r\n");
-                }
-                break;
-            }
             case APP_STATE_MCAN_TRANSMIT:
             {
-                MCAN0_TxCallbackRegister( APP_MCAN_Callback, (uintptr_t)APP_STATE_MCAN_TRANSMIT );
-
+                MCAN0_TxFifoCallbackRegister( APP_MCAN_TxFifoCallback, (uintptr_t)APP_STATE_MCAN_TRANSMIT );
                 state = APP_STATE_MCAN_IDLE;
-
+                memset(txFiFo, 0x00, MCAN0_TX_FIFO_BUFFER_SIZE);
+                txBuffer = (MCAN_TX_BUFFER *)txFiFo;
+                rxBuf = (MCAN_RX_BUFFER *)rxFiFo0;
+                txBuffer->id = rxBuf->id;
+                txBuffer->dlc = rxBuf->dlc;
+                for (loop_count = 0; loop_count < 8; loop_count++){
+                    txBuffer->data[loop_count] = rxBuf->data[loop_count];
+                }                
                 /* Transmit back received Message */
-                if (!MCAN0_MessageTransmit(messageID, messageLength, message, MCAN_MODE_NORMAL, MCAN_MSG_ATTR_TX_FIFO_DATA_FRAME))
+                if (MCAN0_MessageTransmitFifo(1, txBuffer) == false)
                 {
                     printf("MCAN0_MessageTransmit request has failed\r\n");
                 }
@@ -200,17 +238,8 @@ int main ( void )
             }
             case APP_STATE_MCAN_XFER_SUCCESSFUL:
             {
-                /* Print message to UART1 */
-                uint8_t length = messageLength;
-                printf("Message - ID : 0x%lx Length : 0x%x ", messageID, messageLength);
-                printf("Message : ");
-                while(length)
-                {
-                    printf("0x%x ", message[messageLength - length--]);
-                }
-                printf("\r\n");
                 LED_Toggle();
-                state = APP_STATE_MCAN_RECEIVE;
+                state = APP_STATE_MCAN_IDLE;
                 break;
             }
             case APP_STATE_MCAN_XFER_ERROR:
