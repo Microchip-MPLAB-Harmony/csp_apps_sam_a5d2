@@ -72,6 +72,13 @@ char messageStart[] = "**** MCAN Normal Operation Blocking Demo ****\r\n\
 **** Receive message from CAN Bus and transmit back received message to CAN Bus and UART1 serial port ****\r\n\
 **** LED toggles on each time the message is transmitted back ****\r\n";
 
+/* Standard identifier id[28:18]*/
+#define WRITE_ID(id) (id << 18)
+#define READ_ID(id)  (id >> 18)
+
+static uint8_t txFiFo[MCAN0_TX_FIFO_BUFFER_SIZE];
+static uint8_t rxFiFo0[MCAN0_RX_FIFO0_SIZE];
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Main Entry Point
@@ -79,11 +86,12 @@ char messageStart[] = "**** MCAN Normal Operation Blocking Demo ****\r\n\
 // *****************************************************************************
 int main ( void )
 {
-    uint32_t messageID = 0;
-    uint8_t message[64];
     uint8_t messageLength = 0;
     uint32_t status = 0;
-    MCAN_MSG_RX_FRAME_ATTRIBUTE msgFrameAttr = MCAN_MSG_RX_DATA_FRAME;
+    MCAN_TX_BUFFER *txBuffer = NULL;
+    MCAN_RX_BUFFER *rxBuf = NULL;
+    uint8_t numberOfMessage = 0;
+    uint8_t loop_count = 0;
 
     /* Initialize all modules */
     SYS_Initialize ( NULL );
@@ -107,37 +115,49 @@ int main ( void )
 
             if (((status & MCAN_PSR_LEC_Msk) == MCAN_ERROR_NONE) || ((status & MCAN_PSR_LEC_Msk) == MCAN_PSR_LEC_NO_CHANGE))
             {
-                memset(message, 0x00, sizeof(message));
-                /* Receive FIFO 0 New Message */
-                if (MCAN0_MessageReceive(&messageID, &messageLength, message, 0, MCAN_MSG_ATTR_RX_FIFO0, &msgFrameAttr))
+                numberOfMessage = MCAN0_RxFifoFillLevelGet(MCAN_RX_FIFO_0);
+                if (numberOfMessage != 0)
                 {
-                    /* Transmit back received Message */
-                    if (!MCAN0_MessageTransmit(messageID, messageLength, message, MCAN_MODE_NORMAL, MCAN_MSG_ATTR_TX_FIFO_DATA_FRAME))
+                    memset(rxFiFo0, 0x00, (numberOfMessage * MCAN0_RX_FIFO0_ELEMENT_SIZE));
+                    if (MCAN0_MessageReceiveFifo(MCAN_RX_FIFO_0, numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0) == true)
                     {
-                        printf("MCAN0_MessageTransmit request has failed\r\n");
-                    }
-                    else if (MCAN0_InterruptGet(MCAN_INTERRUPT_TC_MASK))
-                    {
-                        MCAN0_InterruptClear(MCAN_INTERRUPT_TC_MASK);
-                    }
-                    /* Check MCAN Status */
-                    status = MCAN0_ErrorGet();
-                    if (((status & MCAN_PSR_LEC_Msk) == MCAN_ERROR_NONE) || ((status & MCAN_PSR_LEC_Msk) == MCAN_PSR_LEC_NO_CHANGE))
-                    {
-                        /* Print message to UART1 */
-                        uint8_t length = messageLength;
-                        printf("Message - ID : 0x%lx Length : 0x%x ", messageID, messageLength);
-                        printf("Message : ");
-                        while(length)
+                        rxBuf = (MCAN_RX_BUFFER *)rxFiFo0;
+                        /* Transmit back received Message */
+                        memset(txFiFo, 0x00, MCAN0_TX_FIFO_BUFFER_SIZE);
+                        txBuffer = (MCAN_TX_BUFFER *)txFiFo;
+                        txBuffer->id = rxBuf->id;
+                        txBuffer->dlc = rxBuf->dlc;
+                        for (loop_count = 0; loop_count < 8; loop_count++){
+                            txBuffer->data[loop_count] = rxBuf->data[loop_count];
+                        }                
+                        if (MCAN0_MessageTransmitFifo(1, txBuffer) == false)
                         {
-                            printf("0x%x ", message[messageLength - length--]);
+                            printf("MCAN0_MessageTransmit request has failed\r\n");
                         }
-                        printf("\r\n");
-                        LED_Toggle();
-                    }
-                    else
-                    {
-                        printf("MCAN Tx Error : 0x%lx\r\n", status);
+                        else if (MCAN0_InterruptGet(MCAN_INTERRUPT_TC_MASK))
+                        {
+                            MCAN0_InterruptClear(MCAN_INTERRUPT_TC_MASK);
+                        }
+                        /* Check MCAN Status */
+                        status = MCAN0_ErrorGet();
+                        if (((status & MCAN_PSR_LEC_Msk) == MCAN_ERROR_NONE) || ((status & MCAN_PSR_LEC_Msk) == MCAN_PSR_LEC_NO_CHANGE))
+                        {
+                            /* Print message to UART1 */
+                            messageLength = rxBuf->dlc;
+                            uint8_t length = messageLength;
+                            printf("Message - ID : 0x%x Length : 0x%x ", (unsigned int)rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id), (unsigned int)messageLength);
+                            printf("Message : ");
+                            while(length)
+                            {
+                                printf("0x%x ", rxBuf->data[messageLength - length--]);
+                            }
+                            printf("\r\n");
+                            LED_Toggle();
+                        }
+                        else
+                        {
+                            printf("MCAN Tx Error : 0x%lx\r\n", status);
+                        }
                     }
                 }
                 else
