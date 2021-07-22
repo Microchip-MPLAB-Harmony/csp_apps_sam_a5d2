@@ -67,7 +67,7 @@ float adc_ch0_voltage, adc_ch5_voltage, adc_ch6_voltage;
 volatile bool result_ready = false;
 
 /* This function is called after conversion of last channel in the user sequence */
-void ADC_EventHandler(uintptr_t context)
+void ADC_EventHandler(uint32_t status, uintptr_t context)
 {
     /* Read the result of 3 channels*/
     adc_ch5_count = ADC_ChannelResultGet(ADC_CH5);
