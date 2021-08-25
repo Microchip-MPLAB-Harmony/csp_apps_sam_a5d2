@@ -119,6 +119,15 @@ bool ADC_ComparisonEventResultIsReady(void);
 
 void ADC_ComparisonRestart(void);
 
+void ADC_SleepModeEnable(void);
+
+void ADC_SleepModeDisable(void);
+
+void ADC_FastWakeupEnable(void);
+
+void ADC_FastWakeupDisable(void);
+
+
 void ADC_CallbackRegister(ADC_CALLBACK callback, uintptr_t context);
 // *****************************************************************************
 
