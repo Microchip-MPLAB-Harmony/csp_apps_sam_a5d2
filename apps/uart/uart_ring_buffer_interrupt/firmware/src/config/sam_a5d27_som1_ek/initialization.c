@@ -106,6 +106,7 @@ void SYS_Initialize ( void* data )
 {
 
   
+    MMU_Initialize();
     CLK_Initialize();
 	PIO_Initialize();
 
@@ -113,13 +114,13 @@ void SYS_Initialize ( void* data )
 
 	UART1_Initialize();
 
-    MMU_Initialize();
     Matrix_Initialize();
 
     AIC_INT_Initialize();
     
 	WDT_REGS->WDT_MR = WDT_MR_WDDIS_Msk; 		// Disable WDT 
 
+	BSP_Initialize();
 
 
 

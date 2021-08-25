@@ -39,6 +39,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: AESB_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '164000000'}
   - type: KeyValueSet
     attributes: {id: AESB_INTERRUPT_PRIORITY}
     children:
@@ -53,6 +60,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: AES_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: AES_INTERRUPT_PRIORITY}
     children:
@@ -94,9 +108,37 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '0x26f00000'}
+        attributes: {id: core, value: '0x23f00000'}
       - type: User
         attributes: {value: '0x23f00000'}
+  - type: Integer
+    attributes: {id: AUDIO_CLK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: AUDIO_CORE_CLK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: AUDIO_PAD_CLK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: CLASSD_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: Integer
     attributes: {id: CLASSD_GENERIC_CLOCK_FREQUENCY}
     children:
@@ -147,7 +189,16 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '166000000'}
+        attributes: {id: core, value: '164000000'}
+  - type: String
+    attributes: {id: DRAM_APP_START_ADDRESS}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Integer
     attributes: {id: FLEXCOM0_GENERIC_CLOCK_FREQUENCY}
     children:
@@ -253,6 +304,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: GMAC_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: GMAC_INTERRUPT_PRIORITY}
     children:
@@ -310,6 +368,13 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
   - type: Integer
+    attributes: {id: I2SC0_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
+  - type: Integer
     attributes: {id: I2SC0_GENERIC_CLOCK_FREQUENCY}
     children:
     - type: Values
@@ -331,6 +396,13 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
   - type: Integer
+    attributes: {id: I2SC1_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
+  - type: Integer
     attributes: {id: I2SC1_GENERIC_CLOCK_FREQUENCY}
     children:
     - type: Values
@@ -351,6 +423,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: ICM_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: ICM_INTERRUPT_PRIORITY}
     children:
@@ -365,6 +444,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: ISC_CLK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: ISC_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '164000000'}
   - type: KeyValueSet
     attributes: {id: ISC_INTERRUPT_PRIORITY}
     children:
@@ -435,6 +528,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: LCDC_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '164000000'}
   - type: KeyValueSet
     attributes: {id: LCDC_INTERRUPT_PRIORITY}
     children:
@@ -449,6 +549,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: LCD_CLK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
   - type: File
     attributes: {id: MAIN_C}
     children:
@@ -458,6 +565,13 @@ children:
         attributes: {id: name}
         children:
         - {type: Value, value: main_sam_a5d27_som1_ek.c}
+  - type: Integer
+    attributes: {id: MATRIX0_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: MATRIX0_INTERRUPT_PRIORITY}
     children:
@@ -472,6 +586,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: MATRIX1_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: MATRIX1_INTERRUPT_PRIORITY}
     children:
@@ -577,6 +698,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
+  - type: Integer
+    attributes: {id: MPDDRC_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '164000000'}
   - type: KeyValueSet
     attributes: {id: MPDDRC_INTERRUPT_PRIORITY}
     children:
@@ -620,6 +748,13 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
   - type: Integer
+    attributes: {id: PDMIC_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
+  - type: Integer
     attributes: {id: PDMIC_GENERIC_CLOCK_FREQUENCY}
     children:
     - type: Values
@@ -654,6 +789,55 @@ children:
       children:
       - type: User
         attributes: {value: A}
+  - type: String
+    attributes: {id: PIN_234_LAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_234_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: LED_AH}
+  - type: String
+    attributes: {id: PIN_235_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: SWITCH_AL}
+  - type: String
+    attributes: {id: PIN_248_LAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_248_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: LED_AH}
+  - type: String
+    attributes: {id: PIN_42_LAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
+    attributes: {id: PIN_42_PERIPHERAL_FUNCTION}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: LED_AH}
   - type: String
     attributes: {id: PIN_59_FUNCTION_TYPE}
     children:
@@ -731,6 +915,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
+  - type: Integer
+    attributes: {id: PIO_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
+  - type: Integer
+    attributes: {id: PIT_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: PIT_INTERRUPT_PRIORITY}
     children:
@@ -942,6 +1140,160 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
   - type: String
+    attributes: {id: PORT_A_CFGR_Value10}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x100'}
+  - type: String
+    attributes: {id: PORT_A_CFGR_Value29}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x200'}
+  - type: String
+    attributes: {id: PORT_A_CFGR_Value31}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x100'}
+  - type: String
+    attributes: {id: PORT_A_LATCH}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0x0L}
+  - type: String
+    attributes: {id: PORT_A_MSKR_ValueA}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0x0L}
+  - type: String
+    attributes: {id: PORT_A_MSKR_ValueB}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0x0L}
+  - type: String
+    attributes: {id: PORT_A_MSKR_ValueC}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0x0L}
+  - type: String
+    attributes: {id: PORT_A_MSKR_ValueD}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0x0L}
+  - type: String
+    attributes: {id: PORT_A_MSKR_ValueE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0x0L}
+  - type: String
+    attributes: {id: PORT_A_MSKR_ValueF}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0x0L}
+  - type: String
+    attributes: {id: PORT_A_MSKR_ValueG}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0x0L}
+  - type: String
+    attributes: {id: PORT_A_MSKR_ValueGPIO}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 0xa0000400L}
+  - type: String
+    attributes: {id: PORT_B_CFGR_Value1}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x100'}
+  - type: String
+    attributes: {id: PORT_B_LATCH}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_B_MSKR_ValueA}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_B_MSKR_ValueB}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_B_MSKR_ValueC}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_B_MSKR_ValueD}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_B_MSKR_ValueE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_B_MSKR_ValueF}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_B_MSKR_ValueG}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x0'}
+  - type: String
+    attributes: {id: PORT_B_MSKR_ValueGPIO}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x2'}
+  - type: String
     attributes: {id: PORT_D_MSKR_ValueA}
     children:
     - type: Values
@@ -997,6 +1349,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0x0'}
+  - type: Integer
+    attributes: {id: PTC_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: PTC_INTERRUPT_PRIORITY}
     children:
@@ -1011,6 +1370,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: PWM_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: PWM_INTERRUPT_PRIORITY}
     children:
@@ -1025,6 +1391,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: QSPI0_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '164000000'}
   - type: KeyValueSet
     attributes: {id: QSPI0_INTERRUPT_PRIORITY}
     children:
@@ -1039,6 +1412,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: QSPI1_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '164000000'}
   - type: KeyValueSet
     attributes: {id: QSPI1_INTERRUPT_PRIORITY}
     children:
@@ -1087,14 +1467,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '12000000'}
+        attributes: {id: core, value: '24000000'}
   - type: Integer
     attributes: {id: SDMMC0_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '166000000'}
+        attributes: {id: core, value: '164000000'}
   - type: Integer
     attributes: {id: SDMMC0_GENERIC_CLOCK_FREQUENCY}
     children:
@@ -1143,14 +1523,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '12000000'}
+        attributes: {id: core, value: '24000000'}
   - type: Integer
     attributes: {id: SDMMC1_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '166000000'}
+        attributes: {id: core, value: '164000000'}
   - type: Integer
     attributes: {id: SDMMC1_GENERIC_CLOCK_FREQUENCY}
     children:
@@ -1193,6 +1573,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: SECUMOD_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: SECUMOD_INTERRUPT_PRIORITY}
     children:
@@ -1228,6 +1615,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
+  - type: Integer
+    attributes: {id: SFC_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: SFC_INTERRUPT_PRIORITY}
     children:
@@ -1242,6 +1636,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: SHA_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: SHA_INTERRUPT_PRIORITY}
     children:
@@ -1263,6 +1664,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '32768'}
+  - type: Integer
+    attributes: {id: SMC_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: Integer
     attributes: {id: SPI0_GENERIC_CLOCK_FREQUENCY}
     children:
@@ -1305,6 +1713,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: SSC0_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: SSC0_INTERRUPT_PRIORITY}
     children:
@@ -1319,6 +1734,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: SSC1_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: SSC1_INTERRUPT_PRIORITY}
     children:
@@ -1403,6 +1825,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: TDES_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: TDES_INTERRUPT_PRIORITY}
     children:
@@ -1417,6 +1846,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: TRNG_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: TRNG_INTERRUPT_PRIORITY}
     children:
@@ -1507,7 +1943,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '83000000'}
+        attributes: {id: core, value: '82000000'}
   - type: Integer
     attributes: {id: UART1_GENERIC_CLOCK_FREQUENCY}
     children:
@@ -1613,6 +2049,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: UDPHS_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '82000000'}
   - type: KeyValueSet
     attributes: {id: UDPHS_INTERRUPT_PRIORITY}
     children:
@@ -1622,6 +2065,20 @@ children:
         attributes: {id: core, value: '0'}
   - type: KeyValueSet
     attributes: {id: UDPHS_INTERRUPT_SRC_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: UHP12M_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: UHP48M_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
@@ -1676,6 +2133,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: XDMAC0_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '164000000'}
   - type: KeyValueSet
     attributes: {id: XDMAC0_INTERRUPT_PRIORITY}
     children:
@@ -1690,6 +2154,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
+  - type: Integer
+    attributes: {id: XDMAC1_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '164000000'}
   - type: KeyValueSet
     attributes: {id: XDMAC1_INTERRUPT_PRIORITY}
     children:

@@ -1,20 +1,20 @@
 /*******************************************************************************
-  UART1 PLIB
+  Board Support Package Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_uart1.h
+    bsp.c
 
   Summary:
-    UART1 PLIB Header File
+    Board Support Package implementation.
 
   Description:
-    None
-
+    This file contains routines that implement the board support package
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -37,70 +37,51 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-
-#ifndef PLIB_UART1_H
-#define PLIB_UART1_H
-
-#include "plib_uart_common.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
 // DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface
+// Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-#define UART1_FrequencyGet()    (uint32_t)(82000000UL)
+#include "bsp.h"
 
-/****************************** UART1 API *********************************/
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
+// Section: Interface Routines
+// *****************************************************************************
+// *****************************************************************************
 
-void UART1_Initialize( void );
+// *****************************************************************************
+/* Function:
+    void BSP_Initialize(void)
 
-bool UART1_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
+  Summary:
+    Performs the necessary actions to initialize a board
 
-UART_ERROR UART1_ErrorGet( void );
+  Description:
+    This function initializes the LED, Switch and other ports on the board.
+    This function must be called by the user before using any APIs present in
+    this BSP.
 
-size_t UART1_Write(uint8_t* pWrBuffer, const size_t size );
+  Remarks:
+    Refer to bsp.h for usage information.
+*/
 
-size_t UART1_WriteCountGet(void);
+void BSP_Initialize(void )
+{
 
-size_t UART1_WriteFreeBufferCountGet(void);
 
-size_t UART1_WriteBufferSizeGet(void);
+    /* Switch off LEDs */
+		LED_GREEN_Off(); 
+		LED_BLUE_Off(); 
+		LED_RED_Off(); 
 
-bool UART1_WriteNotificationEnable(bool isEnabled, bool isPersistent);
 
-void UART1_WriteThresholdSet(uint32_t nBytesThreshold);
+}
 
-void UART1_WriteCallbackRegister( UART_RING_BUFFER_CALLBACK callback, uintptr_t context);
-
-size_t UART1_Read(uint8_t* pRdBuffer, const size_t size);
-
-size_t UART1_ReadCountGet(void);
-
-size_t UART1_ReadFreeBufferCountGet(void);
-
-size_t UART1_ReadBufferSizeGet(void);
-
-bool UART1_ReadNotificationEnable(bool isEnabled, bool isPersistent);
-
-void UART1_ReadThresholdSet(uint32_t nBytesThreshold);
-
-void UART1_ReadCallbackRegister( UART_RING_BUFFER_CALLBACK callback, uintptr_t context);
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
-#endif
-
-// DOM-IGNORE-END
-#endif // PLIB_UART1_H
+/*******************************************************************************
+ End of File
+*/

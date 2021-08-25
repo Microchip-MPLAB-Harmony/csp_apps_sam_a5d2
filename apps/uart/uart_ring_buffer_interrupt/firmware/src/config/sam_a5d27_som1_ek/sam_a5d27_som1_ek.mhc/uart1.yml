@@ -10,14 +10,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: uart1, value: '45'}
+        attributes: {id: uart1, value: '44'}
   - type: Integer
     attributes: {id: UART_CLOCK_FREQ}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: uart1, value: '83000000'}
+        attributes: {id: uart1, value: '82000000'}
   - type: File
     attributes: {id: UART_HEADER1}
     children:

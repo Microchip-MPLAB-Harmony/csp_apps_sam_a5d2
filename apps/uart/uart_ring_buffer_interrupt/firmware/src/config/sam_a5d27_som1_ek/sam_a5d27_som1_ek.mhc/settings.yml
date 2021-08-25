@@ -5,10 +5,10 @@ frameworkPath: ..\..\Harmony3
 processor: ATSAMA5D27CD1G
 projectName: uart_ring_buffer_interrupt_sam_a5d27_som1_ek
 settings:
-  PackageFilter: bsp;core;core_apps_sam_9x60;core_apps_sam_a5d2;crypto;csp;csp_apps_sam_9x60;csp_apps_sam_a5d2;gfx;gfx_apps_sam_9x60-3.8.1;net;quick_docs;usb
+  PackageFilter: bsp;core;csp;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
-  MERGE_STRATEGY: USER_RECENT
-  DFPPath: .\dev_packs\Microchip\SAMA5D2_DFP\1.5.53\atdf\ATSAMA5D27CD1G.atdf
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: OVERWRITE
+  DFPPath: .\dev_packs\Microchip\SAMA5D2_DFP\1.6.69\atdf\ATSAMA5D27CD1G.atdf

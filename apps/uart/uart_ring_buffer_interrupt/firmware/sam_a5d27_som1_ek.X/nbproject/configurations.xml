@@ -6,23 +6,26 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="sam_a5d27_som1_ek" projectFiles="true">
+          <logicalFolder name="f2" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/sam_a5d27_som1_ek/bsp/bsp.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f6" displayName="aic" projectFiles="true">
+            <logicalFolder name="f1" displayName="aic" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/aic/plib_aic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="clk" projectFiles="true">
+            <logicalFolder name="f2" displayName="clk" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="matrix" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/matrix/plib_matrix.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="mmu" projectFiles="true">
+            <logicalFolder name="f4" displayName="mmu" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/mmu/plib_mmu.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="pio" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/pio/plib_pio.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="uart" projectFiles="true">
+            <logicalFolder name="f6" displayName="uart" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/uart/plib_uart_common.h</itemPath>
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/uart/plib_uart1.h</itemPath>
             </logicalFolder>
@@ -174,6 +177,25 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="sam_a5d27_som1_ek.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/BSP_SAM_A5D27_SOM1_Kit1.yml</itemPath>
+        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/uart1.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_a5d27_som1_ek/harmony-manifest-success.yml</itemPath>
+      <itemPath>uart_ring_buffer_interrupt_sam_a5d27_som1_ek.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -188,23 +210,26 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="sam_a5d27_som1_ek" projectFiles="true">
+          <logicalFolder name="f3" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/sam_a5d27_som1_ek/bsp/bsp.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f6" displayName="aic" projectFiles="true">
+            <logicalFolder name="f1" displayName="aic" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/aic/plib_aic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="clk" projectFiles="true">
+            <logicalFolder name="f2" displayName="clk" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="matrix" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/matrix/plib_matrix.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="mmu" projectFiles="true">
+            <logicalFolder name="f4" displayName="mmu" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/mmu/plib_mmu.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="pio" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/pio/plib_pio.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="uart" projectFiles="true">
+            <logicalFolder name="f6" displayName="uart" projectFiles="true">
               <itemPath>../src/config/sam_a5d27_som1_ek/peripheral/uart/plib_uart1.c</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -218,23 +243,6 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main_sam_a5d27_som1_ek.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="sam_a5d27_som1_ek.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_a5d27_som1_ek/sam_a5d27_som1_ek.mhc/uart1.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_a5d27_som1_ek/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -250,7 +258,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>jlink</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <languageToolchainVersion>3.01</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -317,13 +325,15 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe"
+                  value="-marm -cpu=cortex-a5 -mfpu=neon-vfpv4 -Wformat=2 -Werror-implicit-function-declaration -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn"/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_a5d27_som1_ek;../src/packs/ATSAMA5D27CD1G_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core_A/Include"/>
+                  value="../src;../src/config/sam_a5d27_som1_ek;../src/packs/ATSAMA5D27CD1G_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -372,6 +382,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -398,7 +409,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value=";"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -411,6 +422,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -420,7 +432,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_a5d27_som1_ek;../src/packs/ATSAMA5D27CD1G_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core_A/Include"/>
+                  value="../src;../src/config/sam_a5d27_som1_ek;../src/packs/ATSAMA5D27CD1G_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -971,6 +983,41 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="boot.entry_adr" value=""/>
+        <property key="boot.load_adr" value=""/>
+        <property key="boot.path"
+                  value="${ProjectDir}\..\at91bootstrap_sam_a5d27_som1_ek.X\binaries\at91bootstrap.elf"/>
+        <property key="boot.prj" value=""/>
+        <property key="boot.use" value="true"/>
+        <property key="communication.autoselectspeed" value="true"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="4"/>
+        <property key="lastid" value=""/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram" value="true"/>
+        <property key="memories.instruction.ram.end"
+                  value="${memories.instruction.ram.end.value}"/>
+        <property key="memories.instruction.ram.start"
+                  value="${memories.instruction.ram.start.value}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.end" value="0x23ffff"/>
+        <property key="memories.programmemory.start" value="0x200000"/>
+        <property key="programoptions.eraseb4program" value="false"/>
+        <property key="programoptions.preservebootflash" value="false"/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveprogramrange.end" value="0x23ffff"/>
+        <property key="programoptions.preserveprogramrange.start" value="0x200000"/>
+        <property key="programoptions.resetafterprogram" value="true"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
+      </Tool>
       <jlink>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="boot.entry_adr" value=""/>
