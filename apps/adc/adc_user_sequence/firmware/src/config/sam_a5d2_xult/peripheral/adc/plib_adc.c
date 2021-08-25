@@ -131,19 +131,20 @@ void ADC_ConversionSequenceSet(ADC_CHANNEL_NUM *channelList, uint8_t numChannel)
     ADC_REGS->ADC_SEQR1 = 0U;
     ADC_REGS->ADC_SEQR2 = 0U;
 
-    for (channelIndex = 0U; channelIndex < ADC_SEQ1_CHANNEL_NUM; channelIndex++)
+    if (numChannel > 11)
     {
-        if (channelIndex >= numChannel)
-            break;
-        ADC_REGS->ADC_SEQR1 |= channelList[channelIndex] << (channelIndex * 4U);
+        return;
     }
-    if (numChannel > ADC_SEQ1_CHANNEL_NUM)
+
+    for (channelIndex = 0U; channelIndex < numChannel; channelIndex++)
     {
-        for (channelIndex = 0U; channelIndex < (numChannel - ADC_SEQ1_CHANNEL_NUM); channelIndex++)
+        if (channelIndex < ADC_SEQ1_CHANNEL_NUM)
         {
-            if (channelIndex >= 3)
-                break;
-            ADC_REGS->ADC_SEQR2 |= channelList[channelIndex + ADC_SEQ1_CHANNEL_NUM] << (channelIndex * 4U);
+            ADC_REGS->ADC_SEQR1 |= channelList[channelIndex] << (channelIndex * 4U);
+        }
+        else
+        {
+            ADC_REGS->ADC_SEQR2 |= channelList[channelIndex] << ((channelIndex - ADC_SEQ1_CHANNEL_NUM) * 4U);
         }
     }
 }
@@ -166,6 +167,30 @@ void ADC_ComparisonRestart(void)
     ADC_REGS->ADC_CR = ADC_CR_CMPRST_Msk;
 }
 
+/* Low power - Enable Sleep mode */
+void ADC_SleepModeEnable(void)
+{
+    ADC_REGS->ADC_MR |= ADC_MR_SLEEP_Msk;
+}
+
+/* Low power - Disable Sleep mode */
+void ADC_SleepModeDisable(void)
+{
+    ADC_REGS->ADC_MR &= ~(ADC_MR_SLEEP_Msk);
+}
+
+/* Low power - Enable Fast wake up mode */
+void ADC_FastWakeupEnable(void)
+{
+    ADC_REGS->ADC_MR |= ADC_MR_FWUP_Msk;
+}
+
+/* Low power - Disable Fast wake up mode */
+void ADC_FastWakeupDisable(void)
+{
+    ADC_REGS->ADC_MR &= ~(ADC_MR_FWUP_Msk);
+}
+
 /* Register the callback function */
 void ADC_CallbackRegister(ADC_CALLBACK callback, uintptr_t context)
 {
@@ -175,8 +200,10 @@ void ADC_CallbackRegister(ADC_CALLBACK callback, uintptr_t context)
 /* Interrupt Handler */
 void ADC_InterruptHandler(void)
 {
+    uint32_t status;
+    status = ADC_REGS->ADC_ISR;
     if (ADC_CallbackObj.callback_fn != NULL)
     {
-        ADC_CallbackObj.callback_fn(ADC_CallbackObj.context);
+        ADC_CallbackObj.callback_fn(status, ADC_CallbackObj.context);
     }
 }
