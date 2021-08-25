@@ -88,7 +88,7 @@ typedef enum
     ADC_CH8_MASK = (1U << 8U),
     ADC_CH9_MASK = (1U << 9U),
     ADC_CH10_MASK = (1U << 10U),
-    ADC_CH11_MASK = (1U << 11U)
+    ADC_CH11_MASK = (1U << 11U),
 }ADC_CHANNEL_MASK;
 
 /* Analog channel numbers */
@@ -105,7 +105,7 @@ typedef enum
     ADC_CH8,
     ADC_CH9,
     ADC_CH10,
-    ADC_CH11
+    ADC_CH11,
 }ADC_CHANNEL_NUM;
 
 /* Interrupt sources number */
@@ -123,11 +123,13 @@ typedef enum
     ADC_INTERRUPT_EOC_9_MASK = (1U << 9U),
     ADC_INTERRUPT_EOC_10_MASK = (1U << 10U),
     ADC_INTERRUPT_EOC_11_MASK = (1U << 11U),
+    ADC_INTERRUPT_DRDY_MASK = (1U << 24U),
+    ADC_INTERRUPT_GOVRE_MASK = (1U << 25U),
     ADC_INTERRUPT_COMPE_MASK = (1U << 26U)
 }ADC_INTERRUPT_MASK;
 
 /* Callback Function Pointer */
-typedef void (*ADC_CALLBACK)( uintptr_t context);
+typedef void (*ADC_CALLBACK)(uint32_t status, uintptr_t context);
 
 /* Callback structure */
 typedef struct
