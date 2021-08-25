@@ -47,6 +47,8 @@
 #include "plib_pit.h"
 #include "device.h"
 
+#define PIT_COUNTER_FREQUENCY       (83000000U / 16U)
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -58,14 +60,15 @@
 void PIT_TimerInitialize(void)
 {
     PIT_REGS->PIT_PIVR;
-    PIT_REGS->PIT_MR = PIT_MR_PIV(5187-1) | PIT_MR_PITEN(1) | PIT_MR_PITIEN(0);
+    PIT_REGS->PIT_MR = PIT_MR_PIV(5186U) | PIT_MR_PITEN_Msk;
 }
 
 void PIT_TimerRestart(void)
 {
     PIT_REGS->PIT_MR &= ~PIT_MR_PITEN_Msk;
-    while((PIT_REGS->PIT_PIIR & PIT_PIIR_CPIV_Msk) != 0) {
-        ;
+    while((PIT_REGS->PIT_PIIR & PIT_PIIR_CPIV_Msk) != 0U)
+    {
+        //do nothing
     }
     PIT_REGS->PIT_MR |= PIT_MR_PITEN_Msk;
 }
@@ -78,8 +81,9 @@ void PIT_TimerStart(void)
 void PIT_TimerStop(void)
 {
     PIT_REGS->PIT_MR &= ~PIT_MR_PITEN_Msk;
-    while ((PIT_REGS->PIT_PIIR & PIT_PIIR_CPIV_Msk) != 0) {
-        ;
+    while ((PIT_REGS->PIT_PIIR & PIT_PIIR_CPIV_Msk) != 0U)
+    {
+        //do nothing
     }
 }
 
@@ -108,12 +112,51 @@ void PIT_TimerCompareSet( uint16_t compare )
 
 uint32_t PIT_TimerFrequencyGet(void)
 {
-    return 83000000 / 16;
+    return PIT_COUNTER_FREQUENCY;
 }
+
+void PIT_DelayMs(uint32_t delay_ms)
+{
+    uint32_t period = (PIT_REGS->PIT_MR & PIT_MR_PIV_Msk) + 1U;
+    uint32_t delayCount = (PIT_COUNTER_FREQUENCY / 1000U) * delay_ms;
+    uint32_t oldCount = PIT_REGS->PIT_PIIR & PIT_PIIR_CPIV_Msk;
+    uint32_t newCount = 0U, deltaCount = 0U, elapsedCount = 0U;
+
+    if((PIT_REGS->PIT_MR & PIT_MR_PITEN_Msk) != 0U)
+    {
+        while(elapsedCount < delayCount)
+        {
+            newCount = PIT_REGS->PIT_PIIR & PIT_PIIR_CPIV_Msk;
+            deltaCount = (newCount > oldCount) ? (newCount - oldCount) : (period - oldCount + newCount);
+            elapsedCount += deltaCount;
+            oldCount = newCount;
+        }
+    }
+}
+
+void PIT_DelayUs(uint32_t delay_us)
+{
+    uint32_t period = (PIT_REGS->PIT_MR & PIT_MR_PIV_Msk) + 1U;
+    uint32_t delayCount = (PIT_COUNTER_FREQUENCY / 1000000U) * delay_us;
+    uint32_t oldCount = PIT_REGS->PIT_PIIR & PIT_PIIR_CPIV_Msk;
+    uint32_t newCount = 0U, deltaCount = 0U, elapsedCount = 0U;
+
+    if((PIT_REGS->PIT_MR & PIT_MR_PITEN_Msk) != 0U)
+    {
+        while(elapsedCount < delayCount)
+        {
+            newCount = PIT_REGS->PIT_PIIR & PIT_PIIR_CPIV_Msk;
+            deltaCount = (newCount > oldCount) ? (newCount - oldCount) : (period - oldCount + newCount);
+            elapsedCount += deltaCount;
+            oldCount = newCount;
+        }
+    }
+}
+
 
 bool PIT_TimerPeriodHasExpired(void)
 {
-    return !!(PIT_REGS->PIT_SR & PIT_SR_PITS_Msk);
+    return ((PIT_REGS->PIT_SR & PIT_SR_PITS_Msk) != 0U);
 }
 /*******************************************************************************
  End of File
