@@ -55,7 +55,6 @@
     define this configuration.
 */
 
-
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -85,6 +84,7 @@ extern "C" {
 #define L2_DCACHE_CLEAN_ALL()
 #define L2_DCACHE_INVALIDATE_BY_ADDR(addr,sz)
 //
+
 #define DCACHE_CLEAN_BY_ADDR(addr,sz)
 #define DCACHE_INVALIDATE_BY_ADDR(addr,sz)
 #define DCACHE_CLEAN_INVALIDATE_BY_ADDR(addr,sz)
