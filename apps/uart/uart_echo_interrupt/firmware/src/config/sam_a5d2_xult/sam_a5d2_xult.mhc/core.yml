@@ -768,7 +768,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '33562624'}
+        attributes: {id: core, value: '33824768'}
   - type: KeyValueSet
     attributes: {id: PMC_PCR_PID19_GCKCSS}
     children:
