@@ -258,13 +258,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 885A99BC7A8183859A0AF64E9E67758C
-- generatedChecksum: 3088F4A1E58EE56CEF3D5DF98119D404
+- generatedChecksum: 7A9899DBB35692FC3A7174D7C1E360FA
   logicalPath: config/sam_a5d2_xult
   name: device_cache.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3088F4A1E58EE56CEF3D5DF98119D404
+  userChecksum: 7A9899DBB35692FC3A7174D7C1E360FA
 - generatedChecksum: B122C7B8434B8BAD910C94904F404171
   logicalPath: packs/ATSAMA5D27_DFP/component
   name: flexcom.h
@@ -909,13 +909,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: D49484DCC734B9B8F97F068426764FCA
-- generatedChecksum: 812B613CCACA9D91D45F77BFA31F1E1F
+- generatedChecksum: E7B1CC92ABE4830B5244251AB8FA4FB0
   logicalPath: config/sam_a5d2_xult
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 812B613CCACA9D91D45F77BFA31F1E1F
+  userChecksum: E7B1CC92ABE4830B5244251AB8FA4FB0
 - generatedChecksum: AD7E577703CF363393A530B964E0E701
   logicalPath: packs/ATSAMA5D27_DFP/component
   name: trng.h
