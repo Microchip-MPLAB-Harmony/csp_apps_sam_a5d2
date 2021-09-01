@@ -4,15 +4,14 @@
 
 
 project: mcan_normal_operation_interrupt
-creation_date: 2021-07-21T14:02:24.042+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-09-01T19:49:25.740+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
-mhc_version: unknown
+mhc_version: v3.8.0
 mplabx_version: NA        # if MPLAB X plugin only
 plugin_version: NA        # if MPLAB X plugin only
 compiler: iar
 
 modules:
-    - {name: "csp", version: "unknown"}
-    - {name: "dev_packs", version: "unknown"}
-
+    - {name: "csp", version: "v3.10.0"}
+    - {name: "dev_packs", version: "v3.10.0"}
