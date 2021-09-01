@@ -54,6 +54,9 @@
 /*  This section Includes other configuration headers necessary to completely
     define this configuration.
 */
+#include <stdint.h>
+#include "peripheral/l2cc/plib_l2cc.h"
+#include "peripheral/mmu/plib_mmu.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
