@@ -50,12 +50,12 @@
 #include <string.h>
 #include "interrupts.h"
 
-#define FLEXCOM2_READ_BUFFER_SIZE            256
-#define FLEXCOM2_WRITE_BUFFER_SIZE           256
 
-static uint8_t FLEXCOM2_ReadBuffer[FLEXCOM2_READ_BUFFER_SIZE];
-static uint8_t FLEXCOM2_WriteBuffer[FLEXCOM2_WRITE_BUFFER_SIZE];
+#define FLEXCOM2_READ_BUFFER_SIZE            128
+#define FLEXCOM2_WRITE_BUFFER_SIZE           128
 
+static uint16_t FLEXCOM2_ReadBuffer[FLEXCOM2_READ_BUFFER_SIZE];
+static uint16_t FLEXCOM2_WriteBuffer[FLEXCOM2_WRITE_BUFFER_SIZE];
 
 // *****************************************************************************
 // *****************************************************************************
@@ -111,7 +111,7 @@ size_t FLEXCOM2_SPI_Read(void* pRdBuffer, size_t size)
         rdSize = rdInIndex;
     }
 
-    memcpy(pRdBuffer, FLEXCOM2_ReadBuffer, rdSize);
+    memcpy(pRdBuffer, FLEXCOM2_ReadBuffer, (rdSize << 1));
 
     return rdSize;
 }
@@ -129,14 +129,14 @@ size_t FLEXCOM2_SPI_Write(void* pWrBuffer, size_t size )
         wrSize = FLEXCOM2_WRITE_BUFFER_SIZE;
     }
 
-    memcpy(FLEXCOM2_WriteBuffer, pWrBuffer, wrSize);
+    memcpy(FLEXCOM2_WriteBuffer, pWrBuffer, (wrSize << 1));
 
     flexcom2SpiObj.nWrBytes = wrSize;
     flexcom2SpiObj.wrOutIndex = 0;
 
     while ((FLEXCOM2_REGS->FLEX_SPI_SR & FLEX_SPI_SR_TDRE_Msk) && (flexcom2SpiObj.wrOutIndex < flexcom2SpiObj.nWrBytes))
     {
-        *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_TDR) = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
+        *((uint16_t*)&FLEXCOM2_REGS->FLEX_SPI_TDR) = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
     }
 
     /* Restore interrupt enable state and also enable TDRE interrupt */
@@ -193,7 +193,7 @@ FLEXCOM_SPI_SLAVE_ERROR FLEXCOM2_SPI_ErrorGet(void)
 
 void FLEXCOM2_InterruptHandler(void)
 {
-    uint8_t txRxData = 0;
+    uint16_t txRxData = 0;
 
     uint32_t statusFlags = FLEXCOM2_REGS->FLEX_SPI_SR;
 
@@ -216,8 +216,7 @@ void FLEXCOM2_InterruptHandler(void)
 
         while ((statusFlags |= FLEXCOM2_REGS->FLEX_SPI_SR) & FLEX_SPI_SR_RDRF_Msk)
         {
-            /* Reading DATA register will also clear the RDRF flag */
-            txRxData = *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_RDR);
+            txRxData = *((uint16_t*)&FLEXCOM2_REGS->FLEX_SPI_RDR);
 
             if(flexcom2SpiObj.rdInIndex < FLEXCOM2_READ_BUFFER_SIZE)
             {
@@ -232,7 +231,7 @@ void FLEXCOM2_InterruptHandler(void)
     {
         while (((statusFlags |= FLEXCOM2_REGS->FLEX_SPI_SR) & FLEX_SPI_SR_TDRE_Msk) && (flexcom2SpiObj.wrOutIndex < flexcom2SpiObj.nWrBytes))
         {
-            *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_TDR) = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
+            *((uint16_t*)&FLEXCOM2_REGS->FLEX_SPI_TDR) = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
             statusFlags &= ~FLEX_SPI_SR_TDRE_Msk;
         }
 
