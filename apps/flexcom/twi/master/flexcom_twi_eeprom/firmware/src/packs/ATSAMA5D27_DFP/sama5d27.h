@@ -140,9 +140,9 @@ typedef enum IRQn
   PIOD_IRQn                 =  70, /* 70  Parallel Input/Output Controller (PIOD) */
   SDMMC0_TIMER_IRQn         =  71, /* 71  Secure Digital MultiMedia Card Controller (SDMMC0) */
   SDMMC1_TIMER_IRQn         =  72, /* 72  Secure Digital MultiMedia Card Controller (SDMMC1) */
+  PMC_IRQn                  =  74, /* 74  Shared between PMC RSTC RTC (PMC)   */
   RSTC_IRQn                 =  74, /* 74  Shared between PMC RSTC RTC (RSTC)  */
   RTC_IRQn                  =  74, /* 74  Shared between PMC RSTC RTC (RTC)   */
-  PMC_IRQn                  =  74, /* 74  Shared between PMC RSTC RTC (PMC)   */
   ACC_IRQn                  =  75, /* 75  Analog Comparator Controller (ACC)  */
   RXLP_IRQn                 =  76, /* 76  Low Power Asynchronous Receiver (RXLP) */
 
