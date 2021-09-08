@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek",
-		"version": "3.1.0",
+		"version": "3.2.0",
 		"displayName": "USART ring buffer Example for SAM A5D2x Family",
 		"projectName": "uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek",
 		"shortDescription": "This example application shows how to use USART peripheral in ring buffer mode.",
