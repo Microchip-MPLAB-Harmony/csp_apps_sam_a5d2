@@ -8,6 +8,34 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Harmony 3 peripheral library application examples for SAMA5D2 family  v3.2.0
+
+### Development kit and demo application support
+
+Following table provides number of peripheral library examples available for different development kits.
+
+| Development Kits  | MPLABx applications | IAR applications |
+|:-----------------:|:-------------------:|:----------------:|
+| None | 53 | 0 |
+| [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) | 48 | 36 |
+| [SAMA5D27-SOM1-EK1](https://www.microchip.com/DevelopmentTools/ProductDetails/atsama5d27-som1-ek1) | 3 | 0 |
+
+### New Features
+
+- None
+
+### Known Issues
+
+- None
+
+### Development Tools
+
+- [MPLAB® X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)
+- MPLAB® X IDE plug-ins:
+  - MPLAB® Harmony Configurator (MHC) v3.8.0
+- [MPLAB® XC32 C/C++ Compiler v3.01](https://www.microchip.com/mplab/compilers)
+- [IAR Embedded workbench for ARM v9.10 or above](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm)
+
 ## Harmony 3 peripheral library application examples for SAMA5D2 family  v3.1.1
 
 ### New Features
