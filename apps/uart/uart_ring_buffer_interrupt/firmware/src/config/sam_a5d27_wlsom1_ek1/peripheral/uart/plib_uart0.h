@@ -75,6 +75,8 @@ size_t UART0_WriteFreeBufferCountGet(void);
 
 size_t UART0_WriteBufferSizeGet(void);
 
+bool UART0_TransmitComplete(void);
+
 bool UART0_WriteNotificationEnable(bool isEnabled, bool isPersistent);
 
 void UART0_WriteThresholdSet(uint32_t nBytesThreshold);

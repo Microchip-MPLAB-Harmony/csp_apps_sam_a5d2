@@ -99,12 +99,14 @@ void UART0_Initialize( void )
 bool UART0_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
 {
     bool status = false;
-    uint32_t baud = setup->baudRate;
+    uint32_t baud;
     uint32_t brgVal = 0;
     uint32_t uartMode;
 
     if (setup != NULL)
     {
+        baud = setup->baudRate;
+
         if(srcClkFreq == 0)
         {
             srcClkFreq = UART0_FrequencyGet();
@@ -469,6 +471,18 @@ size_t UART0_WriteFreeBufferCountGet(void)
 size_t UART0_WriteBufferSizeGet(void)
 {
     return (UART0_WRITE_BUFFER_SIZE - 1);
+}
+
+bool UART0_TransmitComplete(void)
+{
+    if(UART_SR_TXEMPTY_Msk == (UART0_REGS->UART_SR & UART_SR_TXEMPTY_Msk))
+    {
+        return true;
+    }
+	else
+	{
+		return false;
+	}
 }
 
 bool UART0_WriteNotificationEnable(bool isEnabled, bool isPersistent)
