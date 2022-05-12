@@ -22,21 +22,32 @@
  *******************************************************************************/
 void __attribute((weak, noreturn)) undefined_instruction_irq_handler (void)
 {
-	while(1);
+    while(1)
+    {
+        // Do Nothing
+    }
 }
-
 
 void __attribute((weak, noreturn)) software_interrupt_irq_handler(void)
 {
-	while(1);
+    while(1)
+    {
+        // Do Nothing
+    }
 }
 
 void __attribute((weak, noreturn)) data_abort_irq_handler(void)
 {
-	while(1);
+    while(1)
+    {
+        // Do Nothing
+    }
 }
 
 void __attribute((weak, noreturn)) prefetch_abort_irq_handler(void)
 {
-	while(1);
+    while(1)
+    {
+        // Do Nothing
+    }
 }
