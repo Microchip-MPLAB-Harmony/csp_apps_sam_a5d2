@@ -41,6 +41,7 @@
 // DOM-IGNORE-END
 #include "device.h"
 #include "plib_adc.h"
+#include "interrupts.h"
 
 #define ADC_SEQ1_CHANNEL_NUM (8U)
 
@@ -52,7 +53,7 @@
 // *****************************************************************************
 
 /* Initialize ADC peripheral */
-void ADC_Initialize()
+void ADC_Initialize(void)
 {
     /* Software reset */
     ADC_REGS->ADC_CR = ADC_CR_SWRST_Msk;
@@ -78,25 +79,25 @@ void ADC_Initialize()
 /* Enable ADC channels */
 void ADC_ChannelsEnable (ADC_CHANNEL_MASK channelsMask)
 {
-    ADC_REGS->ADC_CHER = channelsMask;
+    ADC_REGS->ADC_CHER = (uint32_t)channelsMask;
 }
 
 /* Disable ADC channels */
 void ADC_ChannelsDisable (ADC_CHANNEL_MASK channelsMask)
 {
-    ADC_REGS->ADC_CHDR = channelsMask;
+    ADC_REGS->ADC_CHDR = (uint32_t)channelsMask;
 }
 
 /* Enable channel end of conversion or Comparison event interrupt */
 void ADC_ChannelsInterruptEnable (ADC_INTERRUPT_MASK channelsInterruptMask)
 {
-    ADC_REGS->ADC_IER = channelsInterruptMask;
+    ADC_REGS->ADC_IER = (uint32_t)channelsInterruptMask;
 }
 
 /* Disable channel end of conversion or Comparison event interrupt */
 void ADC_ChannelsInterruptDisable (ADC_INTERRUPT_MASK channelsInterruptMask)
 {
-    ADC_REGS->ADC_IDR = channelsInterruptMask;
+    ADC_REGS->ADC_IDR = (uint32_t)channelsInterruptMask;
 }
 
 /* Start the conversion with software trigger */
@@ -108,13 +109,13 @@ void ADC_ConversionStart(void)
 /* Check if conversion result is available */
 bool ADC_ChannelResultIsReady(ADC_CHANNEL_NUM channel)
 {
-    return (ADC_REGS->ADC_ISR >> channel) & 0x1U;
+    return (((ADC_REGS->ADC_ISR >> (uint32_t)channel) & 0x1U) != 0U);
 }
 
 /* Read the conversion result */
 uint16_t ADC_ChannelResultGet(ADC_CHANNEL_NUM channel)
 {
-    return ADC_REGS->ADC_CDR[channel];
+    return (uint16_t)ADC_REGS->ADC_CDR[channel];
 }
 
 /* Configure the user defined conversion sequence */
@@ -124,34 +125,33 @@ void ADC_ConversionSequenceSet(ADC_CHANNEL_NUM *channelList, uint8_t numChannel)
     ADC_REGS->ADC_SEQR1 = 0U;
     ADC_REGS->ADC_SEQR2 = 0U;
 
-    if (numChannel > 11)
+    if (numChannel <= 11U)
     {
-        return;
-    }
-
-    for (channelIndex = 0U; channelIndex < numChannel; channelIndex++)
+        for (channelIndex = 0U; channelIndex < numChannel; channelIndex++)
     {
         if (channelIndex < ADC_SEQ1_CHANNEL_NUM)
         {
-            ADC_REGS->ADC_SEQR1 |= channelList[channelIndex] << (channelIndex * 4U);
+            ADC_REGS->ADC_SEQR1 |= (uint32_t)channelList[channelIndex] << (channelIndex * 4U);
         }
         else
         {
-            ADC_REGS->ADC_SEQR2 |= channelList[channelIndex] << ((channelIndex - ADC_SEQ1_CHANNEL_NUM) * 4U);
+            ADC_REGS->ADC_SEQR2 |= (uint32_t)channelList[channelIndex] << ((channelIndex - ADC_SEQ1_CHANNEL_NUM) * 4U);
         }
     }
+    }
+
 }
 
 /* Sets Low threshold and High threshold in comparison window */
 void ADC_ComparisonWindowSet(uint16_t lowThreshold, uint16_t highThreshold)
 {
-    ADC_REGS->ADC_CWR = ADC_CWR_LOWTHRES(lowThreshold) | ADC_CWR_HIGHTHRES(highThreshold);
+    ADC_REGS->ADC_CWR = ADC_CWR_LOWTHRES((uint32_t)lowThreshold) | ADC_CWR_HIGHTHRES((uint32_t)highThreshold);
 }
 
 /* Check if Comparison event result is available */
 bool ADC_ComparisonEventResultIsReady(void)
 {
-    return (ADC_REGS->ADC_ISR >> ADC_ISR_COMPE_Pos) & 0x1U;
+    return (((ADC_REGS->ADC_ISR >> ADC_ISR_COMPE_Pos) & 0x1U) != 0U);
 }
 
 /* Restart the comparison function */
