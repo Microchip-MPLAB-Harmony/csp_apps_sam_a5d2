@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAMA5D28CLD2G
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,15 +20,15 @@
  *
  */
 
-/* file generated from device description version 2021-06-28T09:00:02Z */
+/* file generated from device description version 2022-02-21T21:02:22Z */
 #ifndef _SAMA5D2_TWIHS0_INSTANCE_
 #define _SAMA5D2_TWIHS0_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for TWIHS0 peripheral ========== */
-#define TWIHS0_INSTANCE_ID                       _UL_(29)   
-#define TWIHS0_CLOCK_ID                          _UL_(29)   
-#define TWIHS0_DMAC_ID_TX                        _UL_(0)    
-#define TWIHS0_DMAC_ID_RX                        _UL_(1)    
+#define TWIHS0_INSTANCE_ID                       (29)       
+#define TWIHS0_CLOCK_ID                          (29)       
+#define TWIHS0_DMAC_ID_TX                        (0)        
+#define TWIHS0_DMAC_ID_RX                        (1)        
 
 #endif /* _SAMA5D2_TWIHS0_INSTANCE_ */
