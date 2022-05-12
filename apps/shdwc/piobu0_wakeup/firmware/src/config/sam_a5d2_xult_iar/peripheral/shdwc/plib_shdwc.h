@@ -150,7 +150,6 @@ void SHDWC_Shutdown(void);
     <code>
     uint32_t wakeupEvents = SHDWC_GetWakeup(void);
     if (wakeupEvenets & SHDW_SR_RTCWK_Msk) {
-        //Handle RTC wake-up event 
     }
     </code>
 
