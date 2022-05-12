@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Periodic Interval Timer (PIT) 
+  Periodic Interval Timer (PIT)
 
   Company:
     Microchip Technology Inc.
@@ -44,8 +44,9 @@
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
-#include "plib_pit.h"
+#include <stddef.h>
 #include "device.h"
+#include "plib_pit.h"
 
 #define PIT_COUNTER_FREQUENCY       (83000000U / 16U)
 
@@ -175,11 +176,12 @@ void PIT_TimerCallbackSet(PIT_CALLBACK callback, uintptr_t context)
 void PIT_InterruptHandler(void)
 {
     uint32_t interruptStatus = PIT_REGS->PIT_SR;
-    if( interruptStatus ) {
+    if(interruptStatus != 0U)
+	{
         volatile uint32_t reg = PIT_REGS->PIT_PIVR;
         (void)reg;
         pit.tickCounter++;
-        if(pit.callback)
+        if((pit.callback) != NULL)
         {
             pit.callback(pit.context);
         }
