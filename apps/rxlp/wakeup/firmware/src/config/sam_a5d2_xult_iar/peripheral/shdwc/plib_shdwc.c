@@ -54,13 +54,13 @@ void SHDWC_Initialize(void)
     SHDWC_REGS->SHDW_MR =  SHDW_MR_RXLPWKEN_Msk | 
         SHDW_MR_WKUPDBC(0x0);
 
-    SHDWC_REGS->SHDW_WUIR = 0  | SHDW_WUIR_WKUPEN2_ENABLE  | SHDW_WUIR_WKUPT2_LOW  | SHDW_WUIR_WKUPEN0_ENABLE  | SHDW_WUIR_WKUPT0_LOW ;
+    SHDWC_REGS->SHDW_WUIR = 0U  | SHDW_WUIR_WKUPEN2_ENABLE  | SHDW_WUIR_WKUPT2_LOW  | SHDW_WUIR_WKUPEN0_ENABLE  | SHDW_WUIR_WKUPT0_LOW ;
 }
 
 void SHDWC_Shutdown(void)
 {
     /* Clear previous wake-up event before shutdown */
-    SHDWC_GetWakeup();
+    (void) SHDWC_GetWakeup();
     SHDWC_REGS->SHDW_CR = SHDW_CR_KEY_PASSWD | SHDW_CR_SHDW_Msk;
 }
 
