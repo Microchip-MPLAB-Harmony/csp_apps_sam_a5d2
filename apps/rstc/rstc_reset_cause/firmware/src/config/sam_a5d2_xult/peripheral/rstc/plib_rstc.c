@@ -62,15 +62,18 @@ void RSTC_Reset( RSTC_RESET_TYPE type )
     /* Issue reset command */
     RSTC_REGS->RSTC_CR = RSTC_CR_KEY_PASSWD | type; 
     /* Wait for command processing */
-    while( RSTC_REGS->RSTC_SR & (uint32_t)RSTC_SR_SRCMP_Msk );
+    while((RSTC_REGS->RSTC_SR & (uint32_t)RSTC_SR_SRCMP_Msk ) != 0U)
+	{
+		/* Do Nothing */
+	}
 }
 
 RSTC_RESET_CAUSE RSTC_ResetCauseGet( void )
 {
-    return (RSTC_RESET_CAUSE)(RSTC_REGS->RSTC_SR & RSTC_SR_RSTTYP_Msk);
+    return (RSTC_REGS->RSTC_SR & RSTC_SR_RSTTYP_Msk);
 }
 
 bool RSTC_NRSTPinRead( void )
 {
-    return (bool)(RSTC_REGS->RSTC_SR & RSTC_SR_NRSTL_Msk);
+    return ((RSTC_REGS->RSTC_SR & RSTC_SR_NRSTL_Msk) != 0U);
 }
