@@ -98,12 +98,13 @@ UART_ERROR UART1_ErrorGet( void )
 bool UART1_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
 {
     bool status = false;
-    uint32_t baud = setup->baudRate;
+    uint32_t baud;
     uint32_t brgVal = 0;
     uint32_t uartMode;
 
     if (setup != NULL)
     {
+        baud = setup->baudRate;
         if(srcClkFreq == 0)
         {
             srcClkFreq = UART1_FrequencyGet();
@@ -217,18 +218,6 @@ bool UART1_TransmitterIsReady( void )
     return status;
 }
 
-bool UART1_TransmitComplete( void )
-{
-    bool status = false;
-
-    if(UART_SR_TXEMPTY_Msk == (UART1_REGS->UART_SR & UART_SR_TXEMPTY_Msk))
-    {
-        status = true;
-    }
-
-    return status;
-}
-
 bool UART1_ReceiverIsReady( void )
 {
     bool status = false;
@@ -241,3 +230,15 @@ bool UART1_ReceiverIsReady( void )
     return status;
 }
 
+
+bool UART1_TransmitComplete( void )
+{
+    bool status = false;
+
+    if(UART_SR_TXEMPTY_Msk == (UART1_REGS->UART_SR & UART_SR_TXEMPTY_Msk))
+    {
+        status = true;
+    }
+
+    return status;
+}
