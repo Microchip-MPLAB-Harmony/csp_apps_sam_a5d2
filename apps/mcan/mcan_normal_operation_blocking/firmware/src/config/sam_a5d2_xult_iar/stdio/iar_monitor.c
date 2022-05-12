@@ -42,6 +42,7 @@
 #include <stdbool.h>    // true
 #include "definitions.h"
 
+
 /*******************
  *
  * Copyright 1998-2003 IAR Systems.  All rights reserved.

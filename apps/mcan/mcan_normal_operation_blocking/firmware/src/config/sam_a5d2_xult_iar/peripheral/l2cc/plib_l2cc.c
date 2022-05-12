@@ -56,13 +56,13 @@
 // Section: File Scope or Global Constants
 // *****************************************************************************
 // *****************************************************************************
-#define L2CC_OFFSET_BIT 5
-#define L2CC_INDEX_BIT  9
-#define L2CC_TAG_BIT    18
+#define L2CC_OFFSET_BIT  (5U)
+#define L2CC_INDEX_BIT   (9U)
+#define L2CC_TAG_BIT     (18U)
 
 static bool l2cacheIsEnabled(void)
 {
-    return (L2CC_REGS->L2CC_CR & L2CC_CR_L2CEN_Msk) != 0;
+    return (L2CC_REGS->L2CC_CR & L2CC_CR_L2CEN_Msk) != 0U;
 }
 
 static void l2cacheEnable(void)
@@ -135,9 +135,15 @@ static void clearInt(uint32_t sources)
 
 static void cacheSync(void)
 {
-    while (L2CC_REGS->L2CC_CSR & L2CC_CSR_C_Msk);
+    while ((L2CC_REGS->L2CC_CSR & L2CC_CSR_C_Msk) != 0U)
+    {
+        /* Do Nothing */
+    }
     L2CC_REGS->L2CC_CSR = L2CC_CSR_C_Msk;
-    while (L2CC_REGS->L2CC_CSR & L2CC_CSR_C_Msk);
+    while ((L2CC_REGS->L2CC_CSR & L2CC_CSR_C_Msk) != 0U)
+    {
+        /* Do Nothing */
+    }
 }
 
 static void invalidatePAL(uint32_t phys_addr)
@@ -145,9 +151,12 @@ static void invalidatePAL(uint32_t phys_addr)
     uint32_t tag, index;
 
     tag = phys_addr >> (L2CC_OFFSET_BIT + L2CC_INDEX_BIT);
-    index = (phys_addr >> L2CC_OFFSET_BIT) & ((1 << L2CC_INDEX_BIT) - 1);
+    index = (phys_addr >> L2CC_OFFSET_BIT) & ((1UL << L2CC_INDEX_BIT) - 1U);
     L2CC_REGS->L2CC_IPALR = L2CC_IPALR_TAG(tag) | L2CC_IPALR_IDX(index) | L2CC_IPALR_C_Msk;
-    while (L2CC_REGS->L2CC_IPALR & L2CC_IPALR_C_Msk);
+    while ((L2CC_REGS->L2CC_IPALR & L2CC_IPALR_C_Msk) != 0U)
+    {
+        /* Do Nothing */
+    }
 }
 
 static void cleanPAL(uint32_t phys_addr)
@@ -155,9 +164,12 @@ static void cleanPAL(uint32_t phys_addr)
     uint32_t tag, index;
 
     tag = phys_addr >> (L2CC_OFFSET_BIT + L2CC_INDEX_BIT);
-    index = (phys_addr >> L2CC_OFFSET_BIT) & ((1 << L2CC_INDEX_BIT) - 1);
+    index = (phys_addr >> L2CC_OFFSET_BIT) & ((1UL << L2CC_INDEX_BIT) - 1U);
     L2CC_REGS->L2CC_CPALR = L2CC_CPALR_TAG(tag) | L2CC_CPALR_IDX(index) | L2CC_CPALR_C_Msk;
-    while (L2CC_REGS->L2CC_CPALR & L2CC_CPALR_C_Msk);
+    while ((L2CC_REGS->L2CC_CPALR & L2CC_CPALR_C_Msk) != 0U)
+    {
+        /* Do Nothing */
+    }
 }
 
 static void cleanInvalidatePAL(uint32_t phys_addr)
@@ -165,27 +177,39 @@ static void cleanInvalidatePAL(uint32_t phys_addr)
     uint32_t tag, index;
 
     tag = phys_addr >> (L2CC_OFFSET_BIT + L2CC_INDEX_BIT);
-    index = (phys_addr >> L2CC_OFFSET_BIT) & ((1 << L2CC_INDEX_BIT) - 1);
+    index = (phys_addr >> L2CC_OFFSET_BIT) & ((1UL << L2CC_INDEX_BIT) - 1U);
     L2CC_REGS->L2CC_CIPALR = L2CC_CIPALR_TAG(tag) | L2CC_CIPALR_IDX(index) | L2CC_CIPALR_C_Msk;
-    while (L2CC_REGS->L2CC_CIPALR & L2CC_CIPALR_C_Msk);
+    while ((L2CC_REGS->L2CC_CIPALR & L2CC_CIPALR_C_Msk) != 0U)
+    {
+        /* Do Nothing */
+    }
 }
 
 static void invalidateWay(uint8_t way)
 {
     L2CC_REGS->L2CC_IWR = way;
-    while (L2CC_REGS->L2CC_IWR & way);
+    while ((L2CC_REGS->L2CC_IWR & way) != 0U)
+    {
+        /* Do Nothing */
+    }
 }
 
 static void cleanWay(uint8_t way)
 {
     L2CC_REGS->L2CC_CWR = way;
-    while (L2CC_REGS->L2CC_CWR & way);
+    while ((L2CC_REGS->L2CC_CWR & way) != 0U)
+    {
+        /* Do Nothing */
+    }
 }
 
 void cleanInvalidateWay(uint8_t way)
 {
     L2CC_REGS->L2CC_CIWR = way;
-    while (L2CC_REGS->L2CC_CIWR & way);
+    while ((L2CC_REGS->L2CC_CIWR & way) != 0U)
+    {
+        /* Do Nothing */
+    }
 }
 
 /*
@@ -358,11 +382,11 @@ void PLIB_L2CC_InvalidateCacheByAddr(uint32_t *addr, uint32_t size)
 {
     uint32_t start = (uint32_t)addr;
     uint32_t end = start + size;
-    uint32_t current = start & ~0x1f;
+    uint32_t current = start & ~0x1fU;
     if (l2cacheIsEnabled()) {
         while (current <= end) {
             invalidatePAL(current);
-            current += 32;
+            current += 32U;
         }
         invalidatePAL(end);
     }
@@ -400,11 +424,11 @@ void PLIB_L2CC_CleanCacheByAddr(uint32_t *addr, uint32_t size)
 {
     uint32_t start = (uint32_t)addr;
     uint32_t end = start + size;
-    uint32_t current = start & ~0x1f;
+    uint32_t current = start & ~0x1fU;
     if (l2cacheIsEnabled()) {
         while (current <= end) {
             cleanPAL(current);
-            current += 32;
+            current += 32U;
         }
         cleanPAL(end);
     }
@@ -442,11 +466,11 @@ void PLIB_L2CC_CleanInvalidateCacheByAddr(uint32_t *addr, uint32_t size)
 {
     uint32_t start = (uint32_t)addr;
     uint32_t end = start + size;
-    uint32_t current = start & ~0x1f;
+    uint32_t current = start & ~0x1fU;
     if (l2cacheIsEnabled()) {
         while (current <= end) {
             cleanInvalidatePAL(current);
-            current += 32;
+            current += 32U;
         }
         cleanInvalidatePAL(end);
     }
