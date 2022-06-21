@@ -1,0 +1,17 @@
+package:
+  format-version: "1.0.0"
+  name: "csp_apps_sam_a5d2"
+  version: "v3.3.0"
+  type: "application"
+  status: "production"
+  required: true
+
+  dependencies:
+    - name: "csp"
+      type: "package"
+      version: "v3.13.0"
+    - name: "bsp"
+      type: "package"
+      version: "v3.13.0"
+
+
