@@ -95,7 +95,7 @@ typedef enum
 uint8_t  txData[(4 + EEPROM_DATA_LEN)];
 uint8_t  rxData[(4 + EEPROM_DATA_LEN)];
 volatile bool isTransferDone = false;
-APP_STATES state = APP_STATE_INITIALIZE;
+static APP_STATES state = APP_STATE_INITIALIZE;
 
 /* This function will be called by FLEXCOM SPI PLIB when transfer is completed */
 void FLEXCOM_SPI_EventHandler(uintptr_t context )
