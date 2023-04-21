@@ -259,11 +259,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>jlink</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>4.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.6.69"/>
+        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.9.106"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
@@ -271,7 +271,7 @@
         <ScriptingSetting key="boot.use" value="true"/>
         <ScriptingSetting key="boot.entry_adr" value=""/>
         <ScriptingSetting key="boot.path"
-                          value="${ProjectDir}\..\at91bootstrap_sam_a5d27_som1_ek.X\build\binaries\at91bootstrap.elf"/>
+                          value="${ProjectDir}\..\..\..\..\..\deps\at91bootstrap_binaries_a5d27_som1_ek\at91bootstrap.elf"/>
         <ScriptingSetting key="boot.prj" value=""/>
       </ScriptingSettings>
       <compileType>
@@ -989,6 +989,7 @@
                   value="${ProjectDir}\..\at91bootstrap_sam_a5d27_som1_ek.X\build\binaries\at91bootstrap.elf"/>
         <property key="boot.prj" value=""/>
         <property key="boot.use" value="true"/>
+        <property key="communication.adaptivespeed" value="false"/>
         <property key="communication.autoselectspeed" value="true"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="4"/>
@@ -1028,11 +1029,13 @@
       </Tool>
       <jlink>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="communication.adaptivespeed" value="false"/>
         <property key="communication.autoselectspeed" value="true"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="jlink.override" value=""/>
         <property key="lastid" value=""/>
         <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.bootflash" value="true"/>
