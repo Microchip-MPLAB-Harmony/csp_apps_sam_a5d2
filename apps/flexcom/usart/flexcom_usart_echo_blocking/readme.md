@@ -27,7 +27,6 @@ To build the application, refer to the following table and open the project usin
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
 | sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
-| sam_a5d2_xult_iar.IAR/flexcom_usart_echo_blocking_sam_a5d2_xult_iar.eww | IAR project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -40,24 +39,17 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X <br> sam_a5d2_xult_iar.IAR/flexcom_usart_echo_blocking_sam_a5d2_xult_iar.eww | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
 |||
 
 ### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
 
 #### Addtional hardware required
 
-- SD Card with FAT32 file system
 - [USB UART click board](http://www.mikroe.com/usb-uart-click)
-
-#### Setting up the SD Card
-
-- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_xult.X/binaries/boot.bin)
-- Copy the downloaded boot loader binary( boot.bin) onto the SD card
 
 #### Setting up the board
 
-- SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 - Connect [USB UART click board](http://www.mikroe.com/usb-uart-click) to SAM A5D2 Xplained Ultra board as per below Pin Connections
@@ -74,23 +66,20 @@ The following table shows the target hardware for the application projects.
 ## Running the Application
 
 1. Build the application using its IDE
-2. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card)
-3. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot)
-4. Open the Terminal application (Ex.:Tera term) on the computer.
-5. Connect to the EDBG/Jlink Virtual COM port and configure the serial settings as follows:
+2. Open the Terminal application (Ex.:Tera term) on the computer.
+3. Connect to the EDBG/Jlink Virtual COM port and configure the serial settings as follows:
     - Baud : 115200
     - Data : 8 Bits
     - Parity : None
     - Stop : 1 Bit
     - Flow Control : None
-6. Reset the board to run the application
-7. The console displays the following message
+4. The console displays the following message
 
     ![output](images/output_flexcom_usart_echo_blocking.png)
 
-8. Type a line of characters and press the Enter key (*NOTE: Number of characters entered before pressing enter key must be less than 256*))
-9. Entered line will be echoed back and the LED is toggled
-10. The following table provides the LED names
+5. Type a line of characters and press the Enter key (*NOTE: Number of characters entered before pressing enter key must be less than 256*))
+6. Entered line will be echoed back and the LED is toggled
+7. The following table provides the LED names
 
     | Board      | LED Name                                    |
     | ----------------- | ---------------------------------------------- |

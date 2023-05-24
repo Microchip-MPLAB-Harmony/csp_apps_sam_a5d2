@@ -59,18 +59,8 @@ Hardware setup requires two boards, one acting as the FLEXCOM TWI Master and the
 
 ### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
 
-#### Addtional hardware required
-
-- SD Card with FAT32 file system
-
-#### Setting up the SD Card
-
-- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_xult.X/binaries/boot.bin)
-- Copy the downloaded boot loader binary( boot.bin) onto the SD card
-
 #### Setting up the board
 
-- SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 - On EXT2 header, connect FLEXCOM TWI SDA line on Pin 11 (PB28) and FLEXCOM TWI SCL line on Pin 12 (PB29) with the corresponding SDA and SCL lines of the FLEXCOM TWI master
@@ -81,10 +71,8 @@ Hardware setup requires two boards, one acting as the FLEXCOM TWI Master and the
 
 1. Build FLEXCOM TWI EEPROM application from *apps/flexcom/twi/master/flexcom_twi_eeprom/firmware* (used as FLEXCOM TWI master) using its IDE
 2. Build FLEXCOM TWI slave application (used as FLEXCOM TWI slave) using its IDE
-3. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card) for each board
-4. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot) for each board
-5. Run application on FLEXCOM TWI slave board and then run the application on FLEXCOM TWI master board
-6. LED on the FLEXCOM TWI master board indicates success or failure:
+3. Run application on FLEXCOM TWI slave board and then run the application on FLEXCOM TWI master board
+4. LED on the FLEXCOM TWI master board indicates success or failure:
 
     - The LED is turned ON when the value read from the FLEXCOM TWI slave matches with the written value
     - The LED is turned OFF when the value read from the FLEXCOM TWI slave did not match with the written value

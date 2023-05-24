@@ -68,18 +68,8 @@ Hardware setup requires two boards, one acting as the TWIHS Master and the other
 
 ### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
 
-#### Addtional hardware required
-
-- SD Card with FAT32 file system
-
-#### Setting up the SD Card
-
-- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_xult.X/binaries/boot.bin)
-- Copy the downloaded boot loader binary( boot.bin) onto the SD card
-
 #### Setting up the board
 
-- SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 - On EXT1 header, connect TWIHS SDA line on Pin 11 (PB31) and TWIHS SCL line on Pin 12 (PC0) with the corresponding SDA and SCL lines of the TWIHS master. Refer the TWIHS master documentation for connection details.
@@ -96,10 +86,8 @@ Hardware setup requires two boards, one acting as the TWIHS Master and the other
    Build twihs_eeprom application (which is used as TWIHS master) using its IDE
 
 2. Build TWIHS slave application (used as TWIHS slave) using its IDE
-3. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card) for each board
-4. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot) for each board
-5. Run application on TWIHS slave board and then run the application on TWIHS master board
-6. LED on the TWIHS master board indicates success or failure:
+3. Run application on TWIHS slave board and then run the application on TWIHS master board
+4. LED on the TWIHS master board indicates success or failure:
 
     - The LED is turned ON when the value read from the TWIHS slave matches with the written value
     - The LED is turned OFF when the value read from the TWIHS slave did not match with the written value

@@ -45,18 +45,9 @@ The following table shows the target hardware for the application projects.
 
 ### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
 
-#### Addtional hardware required
-
-- SD Card with FAT32 file system
-
-#### Setting up the SD Card
-
-- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_xult.X/binaries/boot.bin)
-- Copy the downloaded boot loader binary( boot.bin) onto the SD card
 
 #### Setting up the board
 
-- SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 - Make connections as following:
@@ -66,10 +57,8 @@ The following table shows the target hardware for the application projects.
 ## Running the Application
 
 1. Build the application using its IDE
-2. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card)
-3. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot)
-4. Reset the board to run the application. LED is turned ON on success.
-5. The following table provides the LED names
+2. LED is turned ON on success.
+3. The following table provides the LED names
 
     | Board      | LED Name                                    |
     | ----------------- | ---------------------------------------------- |

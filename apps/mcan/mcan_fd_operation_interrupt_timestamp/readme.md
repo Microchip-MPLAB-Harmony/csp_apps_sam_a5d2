@@ -49,18 +49,12 @@ The following table shows the target hardware for the application projects.
 | Name |Quantity |
 | -------- | ------- |
 | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) | 2 |
-| SD Card with FAT32 file system | 2 |
 | [ATA6563 click Board](https://www.mikroe.com/ata6563-click) | 2 |
 |||
 
-#### Setting up the SD Card
-
-- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_xult.X/binaries/boot.bin)
-- Copy the downloaded boot loader binary( boot.bin) onto the SD card
 
 #### Setting up the board
 
-- SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect [ATA6563 click Board](https://www.mikroe.com/ata6563-click) to [SAMA5D2 Xplained Ultra Evaluation Kits](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) as per the Pin connections shown below
 
@@ -80,20 +74,17 @@ The following table shows the target hardware for the application projects.
 ## Running the Application
 
 1. Build the application using its IDE
-2. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card)
-3. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot)
-4. Open the Terminal application (Ex.:Tera term) on the computer.
-5. Connect to the EDBG/Jlink Virtual COM port and configure the serial settings as follows:
+2. Open the Terminal application (Ex.:Tera term) on the computer.
+3. Connect to the EDBG/Jlink Virtual COM port and configure the serial settings as follows:
     - Baud : 115200
     - Data : 8 Bits
     - Parity : None
     - Stop : 1 Bit
     - Flow Control : None
-6. Reset the boards to run the application
-7. In the console associated with board 1, press "0" to transmit a CAN FD message
-8. Transmitted message description and status will be displayed in the console window of board 1
-9. Received message will be displayed in the console window of board 2
-10. Follow the sequence below to send and receive different messages:
+4. In the console associated with board 1, press "0" to transmit a CAN FD message
+5. Transmitted message description and status will be displayed in the console window of board 1
+6. Received message will be displayed in the console window of board 2
+7. Follow the sequence below to send and receive different messages:
     - Press '1' on board 1
     - Press '2' on board 1
     - Press '3' on board 1
@@ -103,6 +94,6 @@ The following table shows the target hardware for the application projects.
     - Press '2' on board 2
     - Press '3' on board 2
     - Press '4' on board 2
-11. If the steps are executed in this sequence, the final output in the consoles will be as below (console on the left is the transmitter (board 1) and the one on the right is receiver (board 2)):
+8. If the steps are executed in this sequence, the final output in the consoles will be as below (console on the left is the transmitter (board 1) and the one on the right is receiver (board 2)):
 
 ![output](images/output_mcan_fd_operation_interrupt.png)

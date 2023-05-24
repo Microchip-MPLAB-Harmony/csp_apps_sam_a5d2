@@ -54,19 +54,9 @@ The following table shows the target hardware for the application projects.
 
 ### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
 
-#### Addtional hardware required
-
-- Two SD Card with FAT32 file system
-
-#### Setting up the SD Card
-
-- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_xult.X/binaries/boot.bin)
-- Copy the downloaded boot loader binary( boot.bin) onto the each SD card
-
 #### Setting up the board
 
 - To run this demo two [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) are required. One will be progammed as SPI master and other will be programmed as SPI slave.
-- SDMMC slot used for bootloading the application is SDMMC1 on each board
 - Short jumper JP2 (DEBUG_DIS) on each board
 - Connect Pin 10, 15, 16, 17 on EXT1 of SPI slave to Pin 10, 15, 16, 17 on EXT1 of SPI master 
     - Pin 10 - SPI Chip Select
@@ -80,11 +70,8 @@ The following table shows the target hardware for the application projects.
 
 1. Build and Program the SPI master application project using its IDE on board.
 2. Build and Program the SPI slave application project using its IDE. Path of the SPI Slave application within the repository is **apps/flexcom/spi/slave/flexcom_spi_write_read/firmware** on another board. 
-3. Copy the output binary (named 'harmony.bin') onto the each SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card).
-4. Insert the SD card into SDMMC slot on each board (Refer to the 'Setting up hardware' section for the correct SDMMC slot).
-5. Reset each board to run the application
-6. On the SPI master board, press switch to start reading and writing data
-7. LED on SPI master board indicates the success or failure:
+3. On the SPI master board, press switch to start reading and writing data
+4. LED on SPI master board indicates the success or failure:
     - LED is turned ON when the data read from the SPI slave matches with the data written
     - LED is turned OFF when the data read from the SPI slave does not match with the data written
 

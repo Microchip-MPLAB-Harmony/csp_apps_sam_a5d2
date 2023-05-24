@@ -27,7 +27,6 @@ To build the application, refer to the following table and open the project usin
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
 | sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
-| sam_a5d2_xult_iar.IAR/mcan_normal_operation_blocking_sam_a5d2_xult_iar.eww | IAR project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -40,7 +39,7 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X <br> sam_a5d2_xult_iar.IAR/mcan_normal_operation_blocking_sam_a5d2_xult_iar.eww | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
 |||
 
 ### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
@@ -51,10 +50,6 @@ The following table shows the target hardware for the application projects.
   - [Microchip CAN Bus Analyzer](http://www.microchip.com/Developmenttools/ProductDetails/APGDT002)
   - [ATA6563 click board](https://www.mikroe.com/ata6563-click)
 
-#### Setting up the SD Card
-
-- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_xult.X/binaries/boot.bin)
-- Copy the downloaded boot loader binary( boot.bin) onto the SD card
 
 #### Setting up the board
 
@@ -72,36 +67,32 @@ The following table shows the target hardware for the application projects.
     |||
 
 - Connect [Microchip CAN Bus Analyzer](http://www.microchip.com/Developmenttools/ProductDetails/APGDT002) to PC using USB Male-A to Male Mini-B cable
-- SDMMC slot used for bootloading the application is SDMMC1
 - Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
 ## Running the Application
 
 1. Build the application using its IDE
-2. Copy the output binary (named 'harmony.bin') onto the SD Card (Refer to the 'Setting up hardware' section above for setting up the SD card)
-3. Insert the SD card into SDMMC slot on the board (Refer to the 'Setting up hardware' section for the correct SDMMC slot)
-4. Open the Terminal application (Ex.:Tera term) on the computer.
-5. Connect to the EDBG/Jlink Virtual COM port and configure the serial settings as follows:
+2. Open the Terminal application (Ex.:Tera term) on the computer.
+3. Connect to the EDBG/Jlink Virtual COM port and configure the serial settings as follows:
     - Baud : 115200
     - Data : 8 Bits
     - Parity : None
     - Stop : 1 Bit
     - Flow Control : None
-6. Reset the board to run the application
-7. Open the CAN Analyzer Software and perform following steps
+4. Open the CAN Analyzer Software and perform following steps
     - Configure CAN Analyzer Software as per Hardware Setup mention in below screenshot
 
     ![output_1](images/output_mcan_normal_operation_blocking_1.png)
 
     - Send CAN message from CAN Analyzer Software
 
-8. Received message will be echoed back to the CAN analyzer software and terminal window
-9. Following will be terminal session’s output
+5. Received message will be echoed back to the CAN analyzer software and terminal window
+6. Following will be terminal session’s output
 
     ![output_2](images/output_mcan_normal_operation_blocking_2.png)
 
-10. LED toggles for every message received
+7. LED toggles for every message received
 
 Following table provides LED name:
 
