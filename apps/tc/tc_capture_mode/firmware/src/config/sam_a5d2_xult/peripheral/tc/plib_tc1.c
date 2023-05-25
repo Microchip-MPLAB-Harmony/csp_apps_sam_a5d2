@@ -65,7 +65,7 @@
  
 
 /* Callback object for channel 0 */
-static TC_COMPARE_CALLBACK_OBJECT TC1_CH0_CallbackObj;
+volatile static TC_COMPARE_CALLBACK_OBJECT TC1_CH0_CallbackObj;
 
 /* Initialize channel in compare mode */
 void TC1_CH0_CompareInitialize (void)
@@ -140,15 +140,20 @@ void TC1_CH0_CompareCallbackRegister(TC_COMPARE_CALLBACK callback, uintptr_t con
 }
 
 /* Interrupt handler for Channel 0 */
-void TC1_CH0_InterruptHandler(void)
+static void __attribute__((used)) TC1_CH0_InterruptHandler(void)
 {
     TC_COMPARE_STATUS compare_status = (TC_COMPARE_STATUS)(TC1_REGS->TC_CHANNEL[0].TC_SR & TC_COMPARE_STATUS_MSK);
+
+    /* Additional temporary variable used to prevent MISRA violations (Rule 13.x) */
+    uintptr_t context = TC1_CH0_CallbackObj.context;
+
     /* Call registered callback function */
-    if ((TC_COMPARE_NONE != compare_status) && TC1_CH0_CallbackObj.callback_fn != NULL)
+    if ((TC1_CH0_CallbackObj.callback_fn != NULL) && (TC_COMPARE_NONE != compare_status))
     {
-        TC1_CH0_CallbackObj.callback_fn(compare_status, TC1_CH0_CallbackObj.context);
+        TC1_CH0_CallbackObj.callback_fn(compare_status, context);
     }
 }
+
  
 
  
@@ -156,7 +161,7 @@ void TC1_CH0_InterruptHandler(void)
 
 
 /* Callback object for channel 1 */
-static TC_TIMER_CALLBACK_OBJECT TC1_CH1_CallbackObj;
+volatile static TC_TIMER_CALLBACK_OBJECT TC1_CH1_CallbackObj;
 
 /* Initialize channel in timer mode */
 void TC1_CH1_TimerInitialize (void)
@@ -218,13 +223,17 @@ void TC1_CH1_TimerCallbackRegister(TC_TIMER_CALLBACK callback, uintptr_t context
 }
 
 /* Interrupt handler for Channel 1 */
-void TC1_CH1_InterruptHandler(void)
+static void __attribute__((used)) TC1_CH1_InterruptHandler(void)
 {
     TC_TIMER_STATUS timer_status = (TC_TIMER_STATUS)(TC1_REGS->TC_CHANNEL[1].TC_SR & TC_TIMER_STATUS_MSK);
+
+    /* Additional temporary variable used to prevent MISRA violations (Rule 13.x) */
+    uintptr_t context = TC1_CH1_CallbackObj.context;
+
     /* Call registered callback function */
-    if ((TC_TIMER_NONE != timer_status) && TC1_CH1_CallbackObj.callback_fn != NULL)
+    if ((TC1_CH1_CallbackObj.callback_fn != NULL) && (TC_TIMER_NONE != timer_status))
     {
-        TC1_CH1_CallbackObj.callback_fn(timer_status, TC1_CH1_CallbackObj.context);
+        TC1_CH1_CallbackObj.callback_fn(timer_status, context);
     }
 }
 
@@ -240,11 +249,11 @@ void TC1_CH1_InterruptHandler(void)
  
 
 /* Interrupt handler for TC1 */
-void TC1_InterruptHandler(void)
+void __attribute__((used)) TC1_InterruptHandler(void)
 {
-	TC1_CH0_InterruptHandler();
+    TC1_CH0_InterruptHandler();
 
-	TC1_CH1_InterruptHandler();
+    TC1_CH1_InterruptHandler();
 }
  
  
