@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Reset Controller Peripheral Library, RSTC PLIB 
+  Reset Controller Peripheral Library, RSTC PLIB
 
   Company:
     Microchip Technology Inc.
@@ -45,6 +45,7 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 #include "plib_rstc.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -53,14 +54,14 @@
 // *****************************************************************************
 void RSTC_Initialize( void )
 {
-    // Enable Interrupt 
+    // Enable Interrupt
     RSTC_REGS->RSTC_MR = (RSTC_MR_KEY_PASSWD | RSTC_MR_URSTIEN_Msk);
 }
 
 void RSTC_Reset( RSTC_RESET_TYPE type )
 {
     /* Issue reset command */
-    RSTC_REGS->RSTC_CR = RSTC_CR_KEY_PASSWD | type; 
+    RSTC_REGS->RSTC_CR = RSTC_CR_KEY_PASSWD | type;
     /* Wait for command processing */
     while((RSTC_REGS->RSTC_SR & (uint32_t)RSTC_SR_SRCMP_Msk ) != 0U)
 	{
@@ -78,7 +79,7 @@ bool RSTC_NRSTPinRead( void )
     return ((RSTC_REGS->RSTC_SR & RSTC_SR_NRSTL_Msk) != 0U);
 }
 
-static RSTC_OBJECT rstcObj;
+volatile static RSTC_OBJECT rstcObj;
 
 void RSTC_CallbackRegister( RSTC_CALLBACK callback, uintptr_t context )
 {
@@ -86,13 +87,17 @@ void RSTC_CallbackRegister( RSTC_CALLBACK callback, uintptr_t context )
     rstcObj.context = context;
 }
 
-void RSTC_InterruptHandler( void )
+void __attribute__((used)) RSTC_InterruptHandler( void )
 {
+    /* Additional temporary variable used to prevent MISRA violations (Rule 13.x) */
+    uintptr_t context = rstcObj.context;
+
     // Clear the interrupt flag
-    RSTC_REGS->RSTC_SR;
+    (void)RSTC_REGS->RSTC_SR;
 
     // Callback user function
-    if( rstcObj.callback != NULL ) {
-        rstcObj.callback( rstcObj.context );		
+    if(rstcObj.callback != NULL)
+    {
+        rstcObj.callback(context);
     }
 }
