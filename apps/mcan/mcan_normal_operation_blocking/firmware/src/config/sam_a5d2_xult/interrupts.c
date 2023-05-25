@@ -48,9 +48,9 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include "interrupts.h"
 #include "definitions.h"
+
 
 
 // *****************************************************************************
@@ -59,20 +59,17 @@
 // *****************************************************************************
 // *****************************************************************************
 
-/* Brief default interrupt handler for unused IRQs */
-void __attribute__((optimize("-O1"),section(".text.DefaultInterruptHandler"),long_call, noreturn))DefaultInterruptHandler( void )
+
+/* Handlers for vectors that are shared by multiple interrupts */
+
+
+/* Weak default handler for spurious interrupts */
+void __attribute__((weak)) SPURIOUS_INTERRUPT_Handler(void)
 {
-#if defined(__DEBUG) || defined(__DEBUG_D)
-    asm("BKPT");
-#endif
-    while( 1 ){
-    }
-}
-uint32_t spuriousEventCount = 0;
-void __attribute__((optimize("-O1"),section(".text.DefaultInterruptHandlerForSpurious"),long_call))DefaultInterruptHandlerForSpurious( void )
-{
+    static uint32_t spuriousEventCount = 0U;
     ++spuriousEventCount;
 }
+
 
 /*******************************************************************************
  End of File
