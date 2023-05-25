@@ -73,6 +73,8 @@
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
+#define MCAN0_CLOCK_FREQUENCY    8000000U
+
 /* MCAN0 Message RAM Configuration Size */
 #define MCAN0_RX_FIFO0_ELEMENT_SIZE       16U
 #define MCAN0_RX_FIFO0_SIZE               16U
@@ -102,6 +104,8 @@ void MCAN0_ErrorCountGet(uint8_t *txErrorCount, uint8_t *rxErrorCount);
 void MCAN0_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress);
 void MCAN0_SleepModeEnter(void);
 void MCAN0_SleepModeExit(void);
+bool MCAN0_BitTimingCalculationGet(MCAN_BIT_TIMING_SETUP *setup, MCAN_BIT_TIMING *bitTiming);
+bool MCAN0_BitTimingSet(MCAN_BIT_TIMING *bitTiming);
 void MCAN0_TxFifoCallbackRegister(MCAN_TX_FIFO_CALLBACK callback, uintptr_t contextHandle);
 void MCAN0_TxEventFifoCallbackRegister(MCAN_TX_EVENT_FIFO_CALLBACK callback, uintptr_t contextHandle);
 void MCAN0_RxFifoCallbackRegister(MCAN_RX_FIFO_NUM rxFifoNum, MCAN_RX_FIFO_CALLBACK callback, uintptr_t contextHandle);
