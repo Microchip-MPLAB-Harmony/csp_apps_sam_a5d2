@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Periodic Interval Timer (PIT) 
+  Periodic Interval Timer (PIT)
 
   Company:
     Microchip Technology Inc.
@@ -86,7 +86,7 @@
 
   Parameters:
     None.
-  
+
   Returns:
     None.
 */
@@ -107,7 +107,7 @@ void PIT_TimerInitialize(void);
 
   Parameters:
     None.
-  
+
   Returns:
     None.
 */
@@ -129,7 +129,7 @@ void PIT_TimerRestart(void);
 
   Parameters:
     None.
-  
+
   Returns:
     None.
 */
@@ -150,7 +150,7 @@ void PIT_TimerStart(void);
 
   Parameters:
     None.
-  
+
   Returns:
     None.
 */
@@ -170,8 +170,8 @@ void PIT_TimerStop(void);
     None.
 
   Parameters:
-   period       - The period (PIV) value of the PIT. 
-  
+   period       - The period (PIV) value of the PIT.
+
   Returns:
     None.
 */
@@ -192,7 +192,7 @@ void PIT_TimerPeriodSet(uint32_t period);
 
   Parameters:
     None.
-  
+
   Returns:
     None.
 */
@@ -213,7 +213,7 @@ uint32_t PIT_TimerPeriodGet(void);
 
   Parameters:
     None.
-  
+
   Returns:
     None.
 */
@@ -236,7 +236,7 @@ uint32_t PIT_TimerCounterGet(void);
 
   Parameters:
     None.
-  
+
   Returns:
     None.
 */
@@ -258,7 +258,7 @@ void PIT_TimerCompareSet( uint16_t compare );
 
   Parameters:
     None.
-  
+
   Returns:
     None.
 */
@@ -273,14 +273,14 @@ uint32_t PIT_TimerFrequencyGet(void);
 
   Description:
     Delays execution by using  the PIT timer to determine when given number of
-    milliseconds has expired.  
+    milliseconds has expired.
 
   Precondition:
     PIT is configured and enabled.  The PIT interrupt is also enabled.
 
   Parameters:
     delay_ms - number of milliseconds to delay
-  
+
   Returns:
     None.
 */
@@ -295,14 +295,14 @@ void PIT_DelayMs(uint32_t delay_ms);
 
   Description:
     Delays execution by using  the PIT timer to determine when given number of
-    microseconds has expired.  
+    microseconds has expired.
 
   Precondition:
     PIT is configured and enabled.  The PIT interrupt is also enabled.
 
   Parameters:
     delay_us - number of microseconds to delay
-  
+
   Returns:
     None.
 */
@@ -323,12 +323,37 @@ void PIT_DelayUs(uint32_t delay_us);
 
   Parameters:
     None.
-  
+
   Returns:
     True    - Indicates period has expired
     False   - Indicates period has not expired
 */
 bool PIT_TimerPeriodHasExpired(void);
+
+// *****************************************************************************
+/* Function:
+    void PIT_ClearInterrupt(void);
+
+  Summary:
+    PIT Clear Interrupt.
+
+  Description:
+    Clear the PIT interrupt by reading the PIVR register.  Meant
+    to be used by external interrupt handlers (e.g. FreeRTOS tick hanlder).
+
+  Precondition:
+    None.
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+*/
+__STATIC_INLINE void PIT_ClearInterrupt(void)
+{
+    (uint32_t)PIT_REGS->PIT_PIVR;
+}
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 
