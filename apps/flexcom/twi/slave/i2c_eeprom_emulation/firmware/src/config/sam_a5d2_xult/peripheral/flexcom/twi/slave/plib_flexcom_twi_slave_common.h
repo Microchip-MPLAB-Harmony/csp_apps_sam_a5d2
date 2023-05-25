@@ -65,6 +65,9 @@
 #endif
 // DOM-IGNORE-END
 
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 5.2 deviated 9 times.  Deviation record ID -  H3_MISRAC_2012_R_5_2_DR_1 */
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
@@ -109,22 +112,22 @@ typedef enum
 {
 	/* Slave Access flag */
     FLEXCOM_TWI_SLAVE_STATUS_FLAG_SVACC     = FLEX_TWI_SR_SVACC_Msk,
-	
+
 	/* End of slave access flag */
     FLEXCOM_TWI_SLAVE_STATUS_FLAG_EOSACC    = FLEX_TWI_SR_EOSACC_Msk,
-	
+
 	/* TWI transfer direction is read */
     FLEXCOM_TWI_SLAVE_STATUS_FLAG_SVREAD    = FLEX_TWI_SR_SVREAD_Msk,
-	
+
 	/* Transmitter is ready */
     FLEXCOM_TWI_SLAVE_STATUS_FLAG_TXRDY     = FLEX_TWI_SR_TXRDY_Msk,
-	
+
 	/* Receiver has an unread character */
     FLEXCOM_TWI_SLAVE_STATUS_FLAG_RXRDY     = FLEX_TWI_SR_RXRDY_Msk,
-	
+
 	/* NACK received from master */
 	FLEXCOM_TWI_SLAVE_STATUS_FLAG_NACK   	= FLEX_TWI_SR_NACK_Msk,
-	
+
 	/* Stop condtion or start condition with other slave address detected */
     FLEXCOM_TWI_SLAVE_STATUS_FLAG_TXCOMP    = FLEX_TWI_SR_TXCOMP_Msk,
 }FLEXCOM_TWI_SLAVE_STATUS_FLAG;
@@ -146,10 +149,10 @@ typedef enum
 {
 	/* Received ACK from I2C master */
     FLEXCOM_TWI_SLAVE_ACK_STATUS_RECEIVED_ACK = 0,
-	
+
 	/* Received NACK from I2C master */
     FLEXCOM_TWI_SLAVE_ACK_STATUS_RECEIVED_NAK,
-	
+
 }FLEXCOM_TWI_SLAVE_ACK_STATUS;
 
 // *****************************************************************************
@@ -182,6 +185,7 @@ typedef enum
     FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_TRANSMISSION_COMPLETE,
 
 }FLEXCOM_TWI_SLAVE_TRANSFER_EVENT;
+/* MISRAC 2012 deviation block end */
 
 // *****************************************************************************
 /* FLEXCOM TWI Slave Callback
