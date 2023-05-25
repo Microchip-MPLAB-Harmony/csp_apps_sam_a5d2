@@ -60,15 +60,15 @@ void PIO_Initialize ( void )
 {
 
  /* Port B Peripheral function D configuration */
-	PIOB_REGS->PIO_MSKR = 0x80000000LU;
-	PIOB_REGS->PIO_CFGR = 0x4U;
+   PIOB_REGS->PIO_MSKR = 0x80000000LU;
+   PIOB_REGS->PIO_CFGR = 0x4U;
 
  /* Port B Latch configuration */
-	PIOB_REGS->PIO_CODR = 0x0LU;
+   PIOB_REGS->PIO_CODR = 0x0LU;
 
  /* Port C Peripheral function D configuration */
-	PIOC_REGS->PIO_MSKR = 0x1U;
-	PIOC_REGS->PIO_CFGR = 0x4U;
+   PIOC_REGS->PIO_MSKR = 0x1U;
+   PIOC_REGS->PIO_CFGR = 0x4U;
 
 
 
