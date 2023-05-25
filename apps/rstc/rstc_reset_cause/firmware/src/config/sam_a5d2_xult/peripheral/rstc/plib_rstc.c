@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Reset Controller Peripheral Library, RSTC PLIB 
+  Reset Controller Peripheral Library, RSTC PLIB
 
   Company:
     Microchip Technology Inc.
@@ -45,6 +45,7 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 #include "plib_rstc.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -60,7 +61,7 @@ void RSTC_Initialize( void )
 void RSTC_Reset( RSTC_RESET_TYPE type )
 {
     /* Issue reset command */
-    RSTC_REGS->RSTC_CR = RSTC_CR_KEY_PASSWD | type; 
+    RSTC_REGS->RSTC_CR = RSTC_CR_KEY_PASSWD | type;
     /* Wait for command processing */
     while((RSTC_REGS->RSTC_SR & (uint32_t)RSTC_SR_SRCMP_Msk ) != 0U)
 	{

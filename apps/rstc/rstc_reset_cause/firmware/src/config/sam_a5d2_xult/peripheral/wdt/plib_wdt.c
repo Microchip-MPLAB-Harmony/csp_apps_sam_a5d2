@@ -42,7 +42,7 @@
 #include "plib_wdt.h"
 #include "interrupts.h"
 
-#define WDT_CLK_DELAY  ((3 * 498000000) / 32768)
+#define WDT_CLK_DELAY  ((3U * 498000000U) / 32768U)
 
 void WDT_Initialize( void )
 {
@@ -50,13 +50,16 @@ void WDT_Initialize( void )
      * WDD and WDV fields in MR cannot be modified, so enable it before proceeding.
      * NOTE: If lock bit is already set, these operations have no effect on WDT.
      */
-    if (WDT_REGS->WDT_MR & WDT_MR_WDDIS_Msk)
+    if( (WDT_REGS->WDT_MR & WDT_MR_WDDIS_Msk) != 0U)
     {
         /* Enable Watchdog */
         WDT_REGS->WDT_MR &= ~(WDT_MR_WDDIS_Msk);
 
         /* Wait for 3 WDT clk cycles before any further update to MR */
-        for(uint32_t count = 0; count < WDT_CLK_DELAY; count++);
+        for(uint32_t count = 0; count < WDT_CLK_DELAY; count++)
+        {
+            /* Nothing to do */
+        }
     }
 
     WDT_REGS->WDT_MR = WDT_MR_WDD (1024U) | WDT_MR_WDV(1024U) \
