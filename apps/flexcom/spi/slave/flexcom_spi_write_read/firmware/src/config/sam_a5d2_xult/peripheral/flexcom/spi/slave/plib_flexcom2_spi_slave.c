@@ -50,12 +50,14 @@
 #include <string.h>
 #include "interrupts.h"
 
-#define FLEXCOM2_READ_BUFFER_SIZE            256
-#define FLEXCOM2_WRITE_BUFFER_SIZE           256
+#define FLEXCOM_SPI_RDR_REG      (*(volatile uint8_t* const)((FLEXCOM2_BASE_ADDRESS + FLEX_SPI_RDR_REG_OFST)))
+#define FLEXCOM_SPI_TDR_REG      (*(volatile uint8_t* const)((FLEXCOM2_BASE_ADDRESS + FLEX_SPI_TDR_REG_OFST)))
 
-static uint8_t FLEXCOM2_ReadBuffer[FLEXCOM2_READ_BUFFER_SIZE];
-static uint8_t FLEXCOM2_WriteBuffer[FLEXCOM2_WRITE_BUFFER_SIZE];
+#define FLEXCOM2_READ_BUFFER_SIZE            256U
+#define FLEXCOM2_WRITE_BUFFER_SIZE           256U
 
+volatile static uint8_t FLEXCOM2_ReadBuffer[FLEXCOM2_READ_BUFFER_SIZE];
+volatile static uint8_t FLEXCOM2_WriteBuffer[FLEXCOM2_WRITE_BUFFER_SIZE];
 
 // *****************************************************************************
 // *****************************************************************************
@@ -64,7 +66,18 @@ static uint8_t FLEXCOM2_WriteBuffer[FLEXCOM2_WRITE_BUFFER_SIZE];
 // *****************************************************************************
 
 /* Global object to save FLEXCOM SPI Exchange related data */
-FLEXCOM_SPI_SLAVE_OBJECT flexcom2SpiObj;
+volatile static FLEXCOM_SPI_SLAVE_OBJECT flexcom2SpiObj;
+
+static void mem_copy(volatile void* pDst, volatile void* pSrc, uint32_t nBytes)
+{
+    volatile uint8_t* pSource = (volatile uint8_t*)pSrc;
+    volatile uint8_t* pDest = (volatile uint8_t*)pDst;
+
+    for (uint32_t i = 0U; i < nBytes; i++)
+    {
+        pDest[i] = pSource[i];
+    }
+}
 
 void FLEXCOM2_SPI_Initialize( void )
 {
@@ -81,7 +94,7 @@ void FLEXCOM2_SPI_Initialize( void )
     FLEXCOM2_REGS->FLEX_SPI_MR = FLEX_SPI_MR_MODFDIS_Msk;
 
     /* Set up clock Polarity, data phase, Communication Width */
-    FLEXCOM2_REGS->FLEX_SPI_CSR[0] = FLEX_SPI_CSR_CPOL(0) | FLEX_SPI_CSR_NCPHA(1) | FLEX_SPI_CSR_BITS_8_BIT;
+    FLEXCOM2_REGS->FLEX_SPI_CSR[0] = FLEX_SPI_CSR_CPOL(0U) | FLEX_SPI_CSR_NCPHA(1U) | FLEX_SPI_CSR_BITS_8_BIT;
 
     flexcom2SpiObj.rdInIndex = 0;
     flexcom2SpiObj.wrOutIndex = 0;
@@ -105,13 +118,14 @@ size_t FLEXCOM2_SPI_Read(void* pRdBuffer, size_t size)
 {
     size_t rdSize = size;
     size_t rdInIndex = flexcom2SpiObj.rdInIndex;
+    uint8_t* pBuffer = (uint8_t*)pRdBuffer;
 
     if (rdSize > rdInIndex)
     {
         rdSize = rdInIndex;
     }
 
-    memcpy(pRdBuffer, FLEXCOM2_ReadBuffer, rdSize);
+    (void)mem_copy(pBuffer, FLEXCOM2_ReadBuffer, rdSize);
 
     return rdSize;
 }
@@ -121,6 +135,8 @@ size_t FLEXCOM2_SPI_Write(void* pWrBuffer, size_t size )
 {
     uint32_t intState = FLEXCOM2_REGS->FLEX_SPI_IMR;
     size_t wrSize = size;
+    uint32_t wrOutIndex = 0;
+    uint8_t* pBuffer = (uint8_t*)pWrBuffer;
 
     FLEXCOM2_REGS->FLEX_SPI_IDR = intState;
 
@@ -129,15 +145,17 @@ size_t FLEXCOM2_SPI_Write(void* pWrBuffer, size_t size )
         wrSize = FLEXCOM2_WRITE_BUFFER_SIZE;
     }
 
-    memcpy(FLEXCOM2_WriteBuffer, pWrBuffer, wrSize);
+    (void)mem_copy(FLEXCOM2_WriteBuffer, pBuffer, wrSize);
 
     flexcom2SpiObj.nWrBytes = wrSize;
-    flexcom2SpiObj.wrOutIndex = 0;
 
-    while ((FLEXCOM2_REGS->FLEX_SPI_SR & FLEX_SPI_SR_TDRE_Msk) && (flexcom2SpiObj.wrOutIndex < flexcom2SpiObj.nWrBytes))
+    while (((FLEXCOM2_REGS->FLEX_SPI_SR & FLEX_SPI_SR_TDRE_Msk) != 0U) && (wrOutIndex < wrSize))
     {
-        *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_TDR) = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
+        FLEXCOM_SPI_TDR_REG = FLEXCOM2_WriteBuffer[wrOutIndex];
+        wrOutIndex++;
     }
+
+    flexcom2SpiObj.wrOutIndex = wrOutIndex;
 
     /* Restore interrupt enable state and also enable TDRE interrupt */
     FLEXCOM2_REGS->FLEX_SPI_IER = (intState | FLEX_SPI_IER_TDRE_Msk);
@@ -191,13 +209,13 @@ FLEXCOM_SPI_SLAVE_ERROR FLEXCOM2_SPI_ErrorGet(void)
     return errorStatus;
 }
 
-void FLEXCOM2_InterruptHandler(void)
+void __attribute__((used)) FLEXCOM2_InterruptHandler(void)
 {
     uint8_t txRxData = 0;
 
     uint32_t statusFlags = FLEXCOM2_REGS->FLEX_SPI_SR;
 
-    if (statusFlags & FLEX_SPI_SR_OVRES_Msk)
+    if ((statusFlags & FLEX_SPI_SR_OVRES_Msk) != 0U)
     {
         /*OVRES flag is cleared on reading SPI SR*/
 
@@ -205,7 +223,7 @@ void FLEXCOM2_InterruptHandler(void)
         flexcom2SpiObj.errorStatus = FLEXCOM_SPI_SLAVE_ERROR_BUFOVF;
     }
 
-    if(statusFlags & FLEX_SPI_SR_RDRF_Msk)
+    if((statusFlags & FLEX_SPI_SR_RDRF_Msk) != 0U)
     {
         if (flexcom2SpiObj.transferIsBusy == false)
         {
@@ -214,36 +232,47 @@ void FLEXCOM2_InterruptHandler(void)
             PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 1);
         }
 
-        while ((statusFlags |= FLEXCOM2_REGS->FLEX_SPI_SR) & FLEX_SPI_SR_RDRF_Msk)
+        uint32_t rdInIndex = flexcom2SpiObj.rdInIndex;
+
+        while (((statusFlags |= FLEXCOM2_REGS->FLEX_SPI_SR) & FLEX_SPI_SR_RDRF_Msk) != 0U)
         {
             /* Reading DATA register will also clear the RDRF flag */
-            txRxData = *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_RDR);
+            txRxData = FLEXCOM_SPI_RDR_REG;
 
-            if(flexcom2SpiObj.rdInIndex < FLEXCOM2_READ_BUFFER_SIZE)
+            if(rdInIndex < FLEXCOM2_READ_BUFFER_SIZE)
             {
-                FLEXCOM2_ReadBuffer[flexcom2SpiObj.rdInIndex++] = txRxData;
+                FLEXCOM2_ReadBuffer[rdInIndex] = txRxData;
+                rdInIndex++;
             }
 
             statusFlags &= ~FLEX_SPI_SR_RDRF_Msk;
         }
+
+        flexcom2SpiObj.rdInIndex = rdInIndex;
     }
 
-    if(statusFlags & FLEX_SPI_SR_TDRE_Msk)
+    if((statusFlags & FLEX_SPI_SR_TDRE_Msk) != 0U)
     {
-        while (((statusFlags |= FLEXCOM2_REGS->FLEX_SPI_SR) & FLEX_SPI_SR_TDRE_Msk) && (flexcom2SpiObj.wrOutIndex < flexcom2SpiObj.nWrBytes))
+        uint32_t wrOutIndex = flexcom2SpiObj.wrOutIndex;
+        uint32_t nWrBytes = flexcom2SpiObj.nWrBytes;
+
+        while ((((statusFlags |= FLEXCOM2_REGS->FLEX_SPI_SR) & FLEX_SPI_SR_TDRE_Msk) != 0U) && (wrOutIndex < nWrBytes))
         {
-            *((uint8_t*)&FLEXCOM2_REGS->FLEX_SPI_TDR) = FLEXCOM2_WriteBuffer[flexcom2SpiObj.wrOutIndex++];
+            FLEXCOM_SPI_TDR_REG = FLEXCOM2_WriteBuffer[wrOutIndex];
+            wrOutIndex++;
             statusFlags &= ~FLEX_SPI_SR_TDRE_Msk;
         }
 
-        if (flexcom2SpiObj.wrOutIndex >= flexcom2SpiObj.nWrBytes)
+        if (wrOutIndex >= nWrBytes)
         {
             /* Disable TDRE interrupt. The last byte sent by the master will be shifted out automatically */
             FLEXCOM2_REGS->FLEX_SPI_IDR = FLEX_SPI_IDR_TDRE_Msk;
         }
+
+        flexcom2SpiObj.wrOutIndex = wrOutIndex;
     }
 
-    if(statusFlags & FLEX_SPI_SR_NSSR_Msk)
+    if((statusFlags & FLEX_SPI_SR_NSSR_Msk) != 0U)
     {
         /* NSSR flag is cleared on reading SPI SR */
 
@@ -254,7 +283,9 @@ void FLEXCOM2_InterruptHandler(void)
 
         if(flexcom2SpiObj.callback != NULL)
         {
-            flexcom2SpiObj.callback(flexcom2SpiObj.context);
+            uintptr_t context = flexcom2SpiObj.context;
+
+            flexcom2SpiObj.callback(context);
         }
 
         /* Clear the rdInIndex. Application must read the received data in the callback. */
