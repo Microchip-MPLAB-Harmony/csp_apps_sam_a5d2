@@ -41,15 +41,28 @@
 
 #include "plib_spi1_slave.h"
 #include "peripheral/pio/plib_pio.h"
+#include "interrupts.h"
 #include <string.h>
 
-#define SPI1_READ_BUFFER_SIZE            256
-#define SPI1_WRITE_BUFFER_SIZE           256
+#define SPI1_READ_BUFFER_SIZE            256U
+#define SPI1_WRITE_BUFFER_SIZE           256U
 
-static uint8_t SPI1_ReadBuffer[SPI1_READ_BUFFER_SIZE];
-static uint8_t SPI1_WriteBuffer[SPI1_WRITE_BUFFER_SIZE];
+volatile static uint8_t SPI1_ReadBuffer[SPI1_READ_BUFFER_SIZE];
+volatile static uint8_t SPI1_WriteBuffer[SPI1_WRITE_BUFFER_SIZE];
 
 
+#define NOP asm("nop")
+
+
+#define SPI_TDR_8BIT_REG      (*(volatile uint8_t* const)((SPI1_BASE_ADDRESS + SPI_TDR_REG_OFST)))
+
+#define SPI_TDR_9BIT_REG      (*(volatile uint16_t* const)((SPI1_BASE_ADDRESS + SPI_TDR_REG_OFST)))
+
+
+
+#define SPI_RDR_8BIT_REG      (*(volatile uint8_t* const)((SPI1_BASE_ADDRESS + SPI_RDR_REG_OFST)))
+
+#define SPI_RDR_9BIT_REG      (*(volatile uint16_t* const)((SPI1_BASE_ADDRESS + SPI_RDR_REG_OFST)))
 // *****************************************************************************
 // *****************************************************************************
 // Section: SPI1 Implementation
@@ -57,7 +70,18 @@ static uint8_t SPI1_WriteBuffer[SPI1_WRITE_BUFFER_SIZE];
 // *****************************************************************************
 
 /* Global object to save SPI Exchange related data */
-static SPI_SLAVE_OBJECT spi1Obj;
+volatile static SPI_SLAVE_OBJECT spi1Obj;
+
+static void mem_copy(volatile void* pDst, volatile void* pSrc, uint32_t nBytes)
+{
+    volatile uint8_t* pSource = (volatile uint8_t*)pSrc;
+    volatile uint8_t* pDest = (volatile uint8_t*)pDst;
+
+    for (uint32_t i = 0U; i < nBytes; i++)
+    {
+        pDest[i] = pSource[i];
+    }
+}
 
 void SPI1_Initialize( void )
 {
@@ -100,7 +124,7 @@ size_t SPI1_Read(void* pRdBuffer, size_t size)
     {
         rdSize = rdInIndex;
     }
-    memcpy(pRdBuffer, SPI1_ReadBuffer, rdSize);
+    (void) mem_copy(pRdBuffer, SPI1_ReadBuffer, rdSize);
 
     return rdSize;
 }
@@ -110,6 +134,7 @@ size_t SPI1_Write(void* pWrBuffer, size_t size )
 {
     uint32_t intState = SPI1_REGS->SPI_IMR;
     size_t wrSize = size;
+    uint32_t wrOutIndex = 0;
 
     SPI1_REGS->SPI_IDR = intState;
 
@@ -118,15 +143,18 @@ size_t SPI1_Write(void* pWrBuffer, size_t size )
         wrSize = SPI1_WRITE_BUFFER_SIZE;
     }
 
-    memcpy(SPI1_WriteBuffer, pWrBuffer, wrSize);
+    (void) mem_copy(SPI1_WriteBuffer, pWrBuffer, wrSize);
 
     spi1Obj.nWrBytes = wrSize;
-    spi1Obj.wrOutIndex = 0;
 
-    while ((SPI1_REGS->SPI_SR & SPI_SR_TDRE_Msk) && (spi1Obj.wrOutIndex < spi1Obj.nWrBytes))
+    while (((SPI1_REGS->SPI_SR & SPI_SR_TDRE_Msk) != 0U) && (wrOutIndex < wrSize))
     {
-        *((uint8_t*)&SPI1_REGS->SPI_TDR) = SPI1_WriteBuffer[spi1Obj.wrOutIndex++];
+        SPI_TDR_8BIT_REG = SPI1_WriteBuffer[wrOutIndex];
+        wrOutIndex++;
+        NOP;
     }
+
+    spi1Obj.wrOutIndex = wrOutIndex;
 
     /* Restore interrupt enable state and also enable TDRE interrupt */
     SPI1_REGS->SPI_IER = (intState | SPI_IER_TDRE_Msk);
@@ -180,13 +208,13 @@ SPI_SLAVE_ERROR SPI1_ErrorGet(void)
     return errorStatus;
 }
 
-void SPI1_InterruptHandler(void)
+void __attribute__((used)) SPI1_InterruptHandler(void)
 {
     uint8_t txRxData = 0;
 
-    uint32_t statusFlags = SPI1_REGS->SPI_SR;
+    volatile uint32_t statusFlags = SPI1_REGS->SPI_SR;
 
-    if (statusFlags & SPI_SR_OVRES_Msk)
+    if ((statusFlags & SPI_SR_OVRES_Msk)  != 0U)
     {
         /*OVRES flag is cleared on reading SPI SR*/
 
@@ -194,7 +222,7 @@ void SPI1_InterruptHandler(void)
         spi1Obj.errorStatus = SPI_SR_OVRES_Msk;
     }
 
-    if(statusFlags & SPI_SR_RDRF_Msk)
+    if((statusFlags & SPI_SR_RDRF_Msk) != 0U)
     {
         if (spi1Obj.transferIsBusy == false)
         {
@@ -207,38 +235,49 @@ void SPI1_InterruptHandler(void)
          * is cleared on SPI_SR read. If statusFlags is not updated, there is a possibility of missing
          * NSSR event flag.
          */
-        while ((statusFlags |= SPI1_REGS->SPI_SR) & SPI_SR_RDRF_Msk)
+        uint32_t rdInIndex = spi1Obj.rdInIndex;
+
+        while (((statusFlags |= SPI1_REGS->SPI_SR)  & SPI_SR_RDRF_Msk) != 0U)
         {
             /* Reading DATA register will also clear the RDRF flag */
-            txRxData = *((uint8_t*)&SPI1_REGS->SPI_RDR);
+            txRxData = SPI_RDR_8BIT_REG;
 
-            if (spi1Obj.rdInIndex < SPI1_READ_BUFFER_SIZE)
+            if (rdInIndex < SPI1_READ_BUFFER_SIZE)
             {
-                SPI1_ReadBuffer[spi1Obj.rdInIndex++] = txRxData;
+                SPI1_ReadBuffer[rdInIndex] = txRxData;
+                rdInIndex++;
             }
 
             /* Only clear RDRF flag so as not to clear NSSR flag which may have been set */
             statusFlags &= ~SPI_SR_RDRF_Msk;
         }
+
+        spi1Obj.rdInIndex = rdInIndex;
     }
 
-    if(statusFlags & SPI_SR_TDRE_Msk)
+    if((statusFlags & SPI_SR_TDRE_Msk) != 0U)
     {
-        while (((statusFlags |= SPI1_REGS->SPI_SR) & SPI_SR_TDRE_Msk) && (spi1Obj.wrOutIndex < spi1Obj.nWrBytes))
+        uint32_t wrOutIndex = spi1Obj.wrOutIndex;
+        uint32_t nWrBytes = spi1Obj.nWrBytes;
+
+        while ((((statusFlags |= SPI1_REGS->SPI_SR) & SPI_SR_TDRE_Msk) != 0U) && (wrOutIndex < nWrBytes))
         {
-            *((uint8_t*)&SPI1_REGS->SPI_TDR) = SPI1_WriteBuffer[spi1Obj.wrOutIndex++];
+            SPI_TDR_8BIT_REG = SPI1_WriteBuffer[wrOutIndex];
+            wrOutIndex++;
             /* Only clear TDRE flag so as not to clear NSSR flag which may have been set */
             statusFlags &= ~SPI_SR_TDRE_Msk;
         }
 
-        if (spi1Obj.wrOutIndex >= spi1Obj.nWrBytes)
+        spi1Obj.wrOutIndex = wrOutIndex;
+
+        if (wrOutIndex >= spi1Obj.nWrBytes)
         {
             /* Disable TDRE interrupt. The last byte sent by the master will be shifted out automatically */
             SPI1_REGS->SPI_IDR = SPI_IDR_TDRE_Msk;
         }
     }
 
-    if(statusFlags & SPI_SR_NSSR_Msk)
+    if((statusFlags & SPI_SR_NSSR_Msk) != 0U)
     {
         /* NSSR flag is cleared on reading SPI SR */
 
@@ -249,7 +288,9 @@ void SPI1_InterruptHandler(void)
 
         if(spi1Obj.callback != NULL)
         {
-            spi1Obj.callback(spi1Obj.context);
+            uintptr_t context = spi1Obj.context;
+
+            spi1Obj.callback(context);
         }
 
         /* Clear the rdInIndex. Application must read the received data in the callback. */
