@@ -57,6 +57,13 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void PIT_InterruptHandler (void);
+void SYSC_SharedHandler (void);
+
+void RTC_InterruptHandler (void);
+
+/* Interrupt Handler for spurious interrupts */
+void SPURIOUS_INTERRUPT_Handler (void);
 
 
 #endif // INTERRUPTS_H

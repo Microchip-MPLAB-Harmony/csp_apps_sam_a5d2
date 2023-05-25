@@ -33,9 +33,6 @@
 Initialize Generic clock
 *********************************************************************************/
 
-static void CLK_GenericClockInitialize(void)
-{
-}
 
 /*********************************************************************************
 Initialize Programmable Clock (PCKx)
@@ -43,22 +40,20 @@ Initialize Programmable Clock (PCKx)
 
 static void CLK_ProgrammableClockInitialize(void)
 {
-	/* Disable selected programmable clock	*/
-	PMC_REGS->PMC_SCDR = PMC_SCDR_PCK2_Msk;
+    /* Disable selected programmable clock	*/
+    PMC_REGS->PMC_SCDR = PMC_SCDR_PCK2_Msk;
 
-	/* Configure selected programmable clock	*/
-	PMC_REGS->PMC_PCK[2]= PMC_PCK_CSS_MAIN_CLK | PMC_PCK_PRES(0);
+    /* Configure selected programmable clock	*/
+    PMC_REGS->PMC_PCK[2]= PMC_PCK_CSS_MAIN_CLK | PMC_PCK_PRES(0U);
 
-	/* Enable selected programmable clock	*/
-	PMC_REGS->PMC_SCER = PMC_SCER_PCK2_Msk;
+    /* Enable selected programmable clock	*/
+    PMC_REGS->PMC_SCER = PMC_SCER_PCK2_Msk;
 
-	/* Wait for clock to be ready	*/
-	while((PMC_REGS->PMC_SR & (PMC_SR_PCKRDY2_Msk) ) != (PMC_SR_PCKRDY2_Msk))
-	{
-			
-			/* Do Nothing */
-			
-	}
+    /* Wait for clock to be ready	*/
+    while((PMC_REGS->PMC_SR & (PMC_SR_PCKRDY2_Msk) ) != (PMC_SR_PCKRDY2_Msk))
+    {
+        /* Wait for PCKRDY */
+    }
 }
 
 
@@ -70,9 +65,9 @@ static void CLK_PeripheralClockInitialize(void)
 {
     /* Enable clock for the selected peripherals, since the rom boot will turn on
      * certain clocks turn off all clocks not expressly enabled */
-   	PMC_REGS->PMC_PCER0=0x2042000;
+    PMC_REGS->PMC_PCER0=0x2042000U;
     PMC_REGS->PMC_PCDR0=~0x2042000U;
-    PMC_REGS->PMC_PCER1=0x0;
+    PMC_REGS->PMC_PCER1=0x0U;
     PMC_REGS->PMC_PCDR1=~0x0U;
 }
 
@@ -84,14 +79,11 @@ Clock Initialize
 
 void CLK_Initialize( void )
 {
-	/* Initialize Generic Clock */
-	CLK_GenericClockInitialize();
+    /* Initialize Programmable Clock */
+    CLK_ProgrammableClockInitialize();
 
-	/* Initialize Programmable Clock */
-	CLK_ProgrammableClockInitialize();
-
-	/* Initialize Peripheral Clock */
-	CLK_PeripheralClockInitialize();
+    /* Initialize Peripheral Clock */
+    CLK_PeripheralClockInitialize();
 
 }
 
