@@ -3,11 +3,11 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_xdmac_memory_transfer",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_uart_echo_interrupt_sam_a5d27_som1_ek",
 		"version": "3.4.0",
-		"displayName": "XDMAC memory transfer Example for SAM A5D2x Family",
-		"projectName": "xdmac_memory_transfer_sam_a5d2_xult",
-		"shortDescription": "This example application shows how to use the XDMAC peripheral to do a memory to memory transfer and illustrates the usage of burst size to reduce the transfer time.",
+		"displayName": "UART echo interrupt Example for SAM A5D2x Family",
+		"projectName": "uart_echo_interrupt_sam_a5d27_som1_ek",
+		"shortDescription": "This example application shows how to use the UART peripheral to transfer a block of data in a non-blocking manner.",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.5.0"
@@ -32,7 +32,7 @@
 			"content": {
 				"metaDataVersion": "1.0.0",
 				"category": "com.microchip.device",
-				"name": "ATSAMA5D27",
+				"name": "ATSAMA5D27CD1G",
 				"versionRange": "*"
 			}
 		},
@@ -40,29 +40,31 @@
 		"subcategories": [
 			[
 				"Development Kit",
-				"SAMA5D2 Xplained Ultra Evaluation Kit"
+				"SAMA5D27-SOM1-EK1"
 			],
 			[
 				"Harmony",
 				"Peripherals",
-				"XDMAC"
+				"UART"
 			],
 			[
 				"Peripherals",
-				"XDMAC"
+				"UART"
 			]
 		],
 		"peripherals": [
-			"XDMAC"
+			"UART"
 		],
 		"keywords": [
 			"MHC",
 			"Harmony",
-			"ATSAMA5D27",
+			"ATSAMA5D27CD1G",
 			"SAM A5D2x Family",
-			"XDMAC",
-			"DMA",
-			"DMA Controller"
+			"UART",
+			"Serial Communication",
+			"USART",
+			"SERCOM",
+			"FLEXCOM"
 		],
 		"additionalData": {
 			"longDescription": {
