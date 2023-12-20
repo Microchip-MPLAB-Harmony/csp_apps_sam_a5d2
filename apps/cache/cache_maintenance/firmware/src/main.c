@@ -52,14 +52,14 @@
 #include <string.h>                     // For using string functions
 #include "definitions.h"                // SYS function prototypes
 
-#define LED_ON()                        LED_Clear()
-#define LED_OFF()                       LED_Set()
+#define LED_ON()                        LED_BLUE_Set()
+#define LED_OFF()                       LED_BLUE_Clear()
 
 #define READ_SIZE                        (10)
 #define MINIMUM_BUFFER_SIZE              (32)
 
-#define UART1_TRANSMIT_ADDRESS          (&UART1_REGS->UART_THR)
-#define UART1_RECEIVE_ADDRESS           (&UART1_REGS->UART_RHR)
+#define UART0_TRANSMIT_ADDRESS          (&UART0_REGS->UART_THR)
+#define UART0_RECEIVE_ADDRESS           (&UART0_REGS->UART_RHR)
 
 /* While using cache maintenance CMSIS API to handle cache coherency, buffer
  * size must be multiple of cache line (32 bytes) and buffers must be 32 byte
@@ -107,7 +107,7 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-    LED_ON();
+    LED_OFF();
 
     /* Register callback functions for both write and read contexts */
     XDMAC0_ChannelCallbackRegister(XDMAC_CHANNEL_0, XDMAC_Callback, 0);
@@ -117,7 +117,7 @@ int main ( void )
      * request to XDMAC to load the latest data in the cache to the actual
      * memory */
     DCACHE_CLEAN_BY_ADDR((void*)writeBuffer, sizeof(writeBuffer));
-    XDMAC0_ChannelTransfer(XDMAC_CHANNEL_0, writeBuffer, (const void *)UART1_TRANSMIT_ADDRESS, sizeof(writeBuffer));
+    XDMAC0_ChannelTransfer(XDMAC_CHANNEL_0, writeBuffer, (const void *)UART0_TRANSMIT_ADDRESS, sizeof(writeBuffer));
 
     while ( true )
     {
@@ -126,7 +126,7 @@ int main ( void )
             /* Send error message to console.
              * Using USART directly, since DMA is in error condition */
             errorStatus = false;
-            UART1_Write(failureMessage, sizeof(failureMessage));
+            UART0_Write(failureMessage, sizeof(failureMessage));
         }
         else if(readStatus == true)
         {
@@ -138,8 +138,8 @@ int main ( void )
 
             DCACHE_CLEAN_BY_ADDR((void*)echoBuffer, sizeof(echoBuffer));
             
-            XDMAC0_ChannelTransfer(XDMAC_CHANNEL_0, echoBuffer, (const void *)UART1_TRANSMIT_ADDRESS, READ_SIZE+strlen("\r\n"));
-            LED_Toggle();
+            XDMAC0_ChannelTransfer(XDMAC_CHANNEL_0, echoBuffer, (const void *)UART0_TRANSMIT_ADDRESS, READ_SIZE+strlen("\r\n"));
+            LED_BLUE_Toggle();
         }
         else if(writeStatus == true)
         {
@@ -149,7 +149,7 @@ int main ( void )
             /* Invalidate cache lines having received buffer before using it
              * to load the latest data in the actual memory to the cache */
             DCACHE_INVALIDATE_BY_ADDR((void*)readBuffer, sizeof(readBuffer));
-            XDMAC0_ChannelTransfer(XDMAC_CHANNEL_1, (const void *)UART1_RECEIVE_ADDRESS, readBuffer, READ_SIZE);
+            XDMAC0_ChannelTransfer(XDMAC_CHANNEL_1, (const void *)UART0_RECEIVE_ADDRESS, readBuffer, READ_SIZE);
         }
         else
         {
