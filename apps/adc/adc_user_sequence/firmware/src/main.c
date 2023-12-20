@@ -60,9 +60,9 @@
 
 #define ADC_VREF               (3.3f)
 
-uint16_t adc_ch0_count, adc_ch5_count, adc_ch6_count;
+uint16_t adc_ch5_count, adc_ch6_count, adc_ch7_count;
 
-float adc_ch0_voltage, adc_ch5_voltage, adc_ch6_voltage;
+float adc_ch5_voltage, adc_ch6_voltage, adc_ch7_voltage;
 
 volatile bool result_ready = false;
 
@@ -72,7 +72,7 @@ void ADC_EventHandler(uint32_t status, uintptr_t context)
     /* Read the result of 3 channels*/
     adc_ch5_count = ADC_ChannelResultGet(ADC_CH5);
     adc_ch6_count = ADC_ChannelResultGet(ADC_CH6);
-    adc_ch0_count = ADC_ChannelResultGet(ADC_CH0);
+    adc_ch7_count = ADC_ChannelResultGet(ADC_CH7);
        
     result_ready = true;
 
@@ -95,7 +95,7 @@ int main ( void )
     printf("\n\r---------------------------------------------------------");
     printf("\n\r                    ADC User Sequence Demo                 ");
     printf("\n\r---------------------------------------------------------\n\r");
-    printf("CH0 Count  CH0 Voltage  CH5 Count  CH5 Voltage  CH6 Count  CH6 Voltage \n\r");           
+    printf(" CH5 Count  CH5 Voltage  CH6 Count  CH6 Voltage CH7 Count  CH7 Voltage\n\r");           
 
     /* Start ADC conversion */
     ADC_ConversionStart();
@@ -107,9 +107,9 @@ int main ( void )
         {
             adc_ch5_voltage = (float)adc_ch5_count * ADC_VREF/4095U;
             adc_ch6_voltage = (float)adc_ch6_count * ADC_VREF/4095U;
-            adc_ch0_voltage = (float)adc_ch0_count * ADC_VREF/4095U;
+            adc_ch7_voltage = (float)adc_ch7_count * ADC_VREF/4095U;
             printf("0x%03x      %0.2f V       0x%03x      %0.2f V       0x%03x      %0.2f V \t\r",
-                    adc_ch0_count, adc_ch0_voltage, adc_ch5_count, adc_ch5_voltage, adc_ch6_count, adc_ch6_voltage);
+                    adc_ch5_count, adc_ch5_voltage, adc_ch6_count, adc_ch6_voltage, adc_ch7_count, adc_ch7_voltage);
                            
                 
             result_ready = false;
