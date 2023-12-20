@@ -26,7 +26,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,16 +39,15 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Setting up the board
 
-- Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
-- Connect an oscilloscope to monitor the PORT pin PD19 (Pin #2 on the J8 Connector)
+- Connect an oscilloscope to monitor the PORT pin PD6 (Pin #11 on the 40-pin GPIO Connector (J25))
 
 ## Running the Application
 
@@ -60,5 +59,5 @@ Refer to the following table for clock output pin and LED name for different boa
 
 | Board      | Clock output pin | LED Name |
 | ---------- | ---------------- |--------- |
-|  [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)  | PD19 (Pin #2 on the J8 Connector) | RGB_LED(Blue) |
+|  [SAMA5D2 Curiosity]()  | PD6 (Pin #11 on on the 40-pin GPIO Connector (J25)) | RGB_LED(Blue) |
 ||||

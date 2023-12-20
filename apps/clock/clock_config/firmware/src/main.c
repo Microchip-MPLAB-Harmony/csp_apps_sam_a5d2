@@ -68,7 +68,7 @@ int main ( void )
     while ( true )
     {
         /* Toggle LED after every 1s */
-        LED_Toggle();
+        LED_GREEN_Toggle();
         PIT_DelayMs(1000);
     }
 
