@@ -82,8 +82,8 @@ typedef enum
 #define APP_RX_BUFFER_SIZE                  256
 #define APP_TX_BUFFER_SIZE                  256
 
-#define LED_On()                            LED_Clear()
-#define LED_Off()                           LED_Set()
+#define LED_On()                            LED_GREEN_Set()
+#define LED_Off()                           LED_GREEN_Clear()
 
 typedef struct
 {    
@@ -158,9 +158,9 @@ void delay(uint32_t count)
 
 void SPIEventHandler(uintptr_t context )
 {
-    if (FLEXCOM2_SPI_ErrorGet() == FLEXCOM_SPI_SLAVE_ERROR_NONE)
+    if (FLEXCOM4_SPI_ErrorGet() == FLEXCOM_SPI_SLAVE_ERROR_NONE)
     {
-        appData.nBytesRead = FLEXCOM2_SPI_Read(APP_RxData, FLEXCOM2_SPI_ReadCountGet()); 
+        appData.nBytesRead = FLEXCOM4_SPI_Read(APP_RxData, FLEXCOM4_SPI_ReadCountGet()); 
 
         switch(APP_RxData[0])
         {            
@@ -182,7 +182,7 @@ void SPIEventHandler(uintptr_t context )
                 if ((appData.memAddr + appData.nBytesReadRequest) <= APP_TX_BUFFER_SIZE)
                 {
                     memcpy(APP_TxData, &APP_MemoryBuffer[appData.memAddr], appData.nBytesReadRequest);
-                    FLEXCOM2_SPI_Write(APP_TxData, appData.nBytesReadRequest);                    
+                    FLEXCOM4_SPI_Write(APP_TxData, appData.nBytesReadRequest);                    
                 }            
                 break;
         } 
@@ -190,7 +190,7 @@ void SPIEventHandler(uintptr_t context )
         if (appData.status.busy == 0)
         {
             /* Indicate to SPI Master that slave is ready for data transfer */
-            FLEXCOM2_SPI_Ready();
+            FLEXCOM4_SPI_Ready();
         }
     }       
 }
@@ -209,7 +209,7 @@ int main ( void )
         {
             case APP_STATE_INITIALIZE:
                   
-                FLEXCOM2_SPI_CallbackRegister(SPIEventHandler, (uintptr_t) 0);  
+                FLEXCOM4_SPI_CallbackRegister(SPIEventHandler, (uintptr_t) 0);  
                 
                 /* Wait for instructions from SPI master */
                 appData.state = APP_STATE_IDLE;   
@@ -232,7 +232,7 @@ int main ( void )
                 appData.state = APP_STATE_IDLE; 
 				
 				/* Indicate to SPI Master that slave is ready for data transfer */
-                FLEXCOM2_SPI_Ready();
+                FLEXCOM4_SPI_Ready();
                                 
                 break;
                             
