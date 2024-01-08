@@ -207,7 +207,7 @@ void enter_ulp0(void)
     enter_ulp0_sram();
 
 
-    UART1_Initialize();
+    UART0_Initialize();
     
     printf(" ------------------------------------------\n\r"
            "Leaving ULP0 Mode\n\r");
