@@ -52,8 +52,8 @@
 #include "definitions.h"                // SYS function prototypes
 #include <string.h>
 
-#define LED_ON()                        LED_Clear()
-#define LED_OFF()                       LED_Set()
+#define LED_ON()                        LED_GREEN_Set()
+#define LED_OFF()                       LED_GREEN_Clear()
 
 #define APP_AT24CM_DEVICE_ADDR         (0x54)
 #define APP_AT24CM_MEMORY_ADDR         (0x0000)
@@ -102,7 +102,7 @@ void APP_FLEXCOMTWICallback(uintptr_t context )
 {
     APP_TRANSFER_STATUS* transferStatus = (APP_TRANSFER_STATUS*)context;
 
-    if(FLEXCOM0_TWI_ErrorGet() == FLEXCOM_TWI_ERROR_NONE)
+    if(FLEXCOM4_TWI_ErrorGet() == FLEXCOM_TWI_ERROR_NONE)
     {
         if (transferStatus)
         {
@@ -142,11 +142,11 @@ int main ( void )
             case APP_STATE_EEPROM_STATUS_VERIFY:
 
                 /* Register the FLEXCOM TWI Callback with transfer status as context */
-                FLEXCOM0_TWI_CallbackRegister( APP_FLEXCOMTWICallback, (uintptr_t)&transferStatus );
+                FLEXCOM4_TWI_CallbackRegister( APP_FLEXCOMTWICallback, (uintptr_t)&transferStatus );
 
                 /* Verify if EEPROM is ready to accept new requests */
                 transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
-                FLEXCOM0_TWI_Write(APP_AT24CM_DEVICE_ADDR, &ackData, APP_ACK_DATA_LENGTH);
+                FLEXCOM4_TWI_Write(APP_AT24CM_DEVICE_ADDR, &ackData, APP_ACK_DATA_LENGTH);
 
                 state = APP_STATE_EEPROM_WRITE;
                 break;
@@ -156,7 +156,7 @@ int main ( void )
                 {
                     /* Write 1 page of data to EEPROM */
                     transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
-                    FLEXCOM0_TWI_Write(APP_AT24CM_DEVICE_ADDR, &testTxData[0], APP_TRANSMIT_DATA_LENGTH);
+                    FLEXCOM4_TWI_Write(APP_AT24CM_DEVICE_ADDR, &testTxData[0], APP_TRANSMIT_DATA_LENGTH);
                     state = APP_STATE_EEPROM_WAIT_WRITE_COMPLETE;
                 }
                 else if (transferStatus == APP_TRANSFER_STATUS_ERROR)
@@ -171,7 +171,7 @@ int main ( void )
                 {
                     /* Read the status of internal write cycle */
                     transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
-                    FLEXCOM0_TWI_Write(APP_AT24CM_DEVICE_ADDR, &testTxData[0], 2);
+                    FLEXCOM4_TWI_Write(APP_AT24CM_DEVICE_ADDR, &testTxData[0], 2);
                     state = APP_STATE_EEPROM_CHECK_INTERNAL_WRITE_STATUS;
                 }
                 else if (transferStatus == APP_TRANSFER_STATUS_ERROR)
@@ -189,14 +189,14 @@ int main ( void )
                 {
                     /* EEPROM's internal write cycle is not complete. Keep checking. */
                     transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
-                    FLEXCOM0_TWI_Write(APP_AT24CM_DEVICE_ADDR, &testTxData[0], 2);
+                    FLEXCOM4_TWI_Write(APP_AT24CM_DEVICE_ADDR, &testTxData[0], 2);
                 }
                 break;
 
             case APP_STATE_EEPROM_READ:
                 /* Read the data from the page written earlier */
                 transferStatus = APP_TRANSFER_STATUS_IN_PROGRESS;
-                FLEXCOM0_TWI_WriteRead(APP_AT24CM_DEVICE_ADDR, &testTxData[0], APP_NUM_ADDRESS_BYTES,  &testRxData[0], APP_RECEIVE_DATA_LENGTH);
+                FLEXCOM4_TWI_WriteRead(APP_AT24CM_DEVICE_ADDR, &testTxData[0], APP_NUM_ADDRESS_BYTES,  &testRxData[0], APP_RECEIVE_DATA_LENGTH);
                 state = APP_STATE_EEPROM_WAIT_READ_COMPLETE;
                 break;
 

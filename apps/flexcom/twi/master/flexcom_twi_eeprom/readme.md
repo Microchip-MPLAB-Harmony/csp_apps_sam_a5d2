@@ -26,7 +26,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,10 +39,10 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Addtional hardware required
 
@@ -50,16 +50,15 @@ The following table shows the target hardware for the application projects.
 
 #### Setting up the board
 
-- Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
-- Connect EEPROM Click 3 Board to XPRO EXT2 (J26) connector on the board as per below Pin Connections table
+- Connect EEPROM Click 3 Board to RPi 40-pin GPIO (J25) connector on the board as per below Pin Connections table
 
-| XPRO EXT2 (J26) Pins | EEPROM 4 CLICK Pins |
+| RPi 40-pin GPIO (J25) Connector Pins | EEPROM 3 CLICK Pins |
 | -------------------- | ------------------- |
-| PIN 11 | SDA |
-| PIN 12 | SCL |
-| PIN 19 | GND |
-| PIN 20 | 3V3 |
+| PIN 19 | SDA |
+| PIN 21 | SCL |
+| PIN 17 | 3V3 |
+| PIN 39 | GND |
 |||
 
 ## Running the Application
@@ -73,5 +72,5 @@ Following table provides the LED name:
 
 | Board      | LED Name                                    |
 | ----------------- | ---------------------------------------------- |
-| [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |RGB_LED(Green)  |
+| [SAMA5D2 Curiosity]() | RGB_LED(Green)  |
 |||
