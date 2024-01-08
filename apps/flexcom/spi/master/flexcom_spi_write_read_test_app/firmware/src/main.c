@@ -87,8 +87,8 @@ typedef enum
 #define APP_TEST_DATA                       "Test Data from SPI Master"
 #define APP_TEST_DATA_SIZE                  strlen(APP_TEST_DATA)
 
-#define LED_On()                            LED_Clear()
-#define LED_Off()                           LED_Set()
+#define LED_On()                            LED_GREEN_Set()
+#define LED_Off()                           LED_GREEN_Clear()
 
 uint8_t rxData[APP_RX_BUFFER_SIZE];
 uint8_t txData[APP_TX_BUFFER_SIZE];
@@ -120,7 +120,7 @@ int main ( void )
         switch (state)
         {
             case APP_STATE_INITIALIZE:
-                FLEXCOM2_SPI_CallbackRegister(SPIEventHandler, (uintptr_t) 0); 
+                FLEXCOM4_SPI_CallbackRegister(SPIEventHandler, (uintptr_t) 0); 
                 state = APP_STATE_WRITE_DATA;
                 break;          
             
@@ -141,7 +141,7 @@ int main ( void )
                 txData[2] = APP_MEM_ADDR;
                 memcpy(&txData[3], APP_TEST_DATA, APP_TEST_DATA_SIZE);
                 APP_SLAVE_CS_Clear();  
-                FLEXCOM2_SPI_WriteRead(txData, (3 + APP_TEST_DATA_SIZE), NULL, 0);
+                FLEXCOM4_SPI_WriteRead(txData, (3 + APP_TEST_DATA_SIZE), NULL, 0);
                 state = APP_STATE_TRANSFER_COMPLETE_WAIT;
                 nextState = APP_STATE_SEND_READ_DATA_CMD;                
                 break;
@@ -152,14 +152,14 @@ int main ( void )
                 txData[2] = APP_MEM_ADDR;
                 txData[3] = APP_TEST_DATA_SIZE;                
                 APP_SLAVE_CS_Clear(); 
-                FLEXCOM2_SPI_WriteRead(txData, 4, NULL, 0);   
+                FLEXCOM4_SPI_WriteRead(txData, 4, NULL, 0);   
                 state = APP_STATE_TRANSFER_COMPLETE_WAIT;
                 nextState = APP_STATE_READ_DATA;
                 break;
                 
             case APP_STATE_READ_DATA:
                 APP_SLAVE_CS_Clear();
-                FLEXCOM2_SPI_WriteRead(NULL, 0, rxData, APP_TEST_DATA_SIZE);
+                FLEXCOM4_SPI_WriteRead(NULL, 0, rxData, APP_TEST_DATA_SIZE);
                 state = APP_STATE_TRANSFER_COMPLETE_WAIT;
                 nextState = APP_STATE_VERIFY;
                 break;
