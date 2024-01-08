@@ -26,7 +26,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,10 +39,10 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Addtional hardware required
 
@@ -51,20 +51,19 @@ The following table shows the target hardware for the application projects.
 
 #### Setting up the board
 
-- Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
-- Connect [EEPROM 4 Click board](https://www.mikroe.com/eeprom-4-click) to XPRO EXT1 (J25) connector on the board as per below Pin connections:
+- Connect [EEPROM 4 Click board](https://www.mikroe.com/eeprom-4-click) to RPi 40-pin connector (J25) connector on the board as per below Pin connections:
 
-| XPRO EXT1 (J25) Pins | EEPROM 4 CLICK Pins |
-| -------------------- | ------------------- |
-| PIN 07               | HLD                 |
-| PIN 09               | WP                  |
-| PIN 10               | CS                  |
-| PIN 15               | SCK                 |
-| PIN 16               | SDI                 |
-| PIN 17               | SDO                 |
-| PIN 19               | GND                 |
-| PIN 20               | 3V3                 |
+| RPi 40-pin connector (J25) Pins | EEPROM 4 CLICK Pins |
+| ------------------------------- | ------------------- |
+| PIN 16                          | HLD                 |
+| PIN 15                          | WP                  |
+| PIN 24                          | CS                  |
+| PIN 23                          | SCK                 |
+| PIN 19                          | SDI                 |
+| PIN 21                          | SDO                 |
+| PIN 39                          | GND                 |
+| PIN 1                           | 3V3                 |
 |||
 
 ## Running the Application
@@ -78,5 +77,5 @@ Following table provides the LED name:
 
 | Board      | LED Name                                    |
 | ----------------- | ---------------------------------------------- |
-| [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |RGB_LED(Green)  |
+| [SAMA5D2 Curiosity]() |RGB_LED(Green)  |
 |||
