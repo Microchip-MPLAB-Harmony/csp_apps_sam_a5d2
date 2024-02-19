@@ -64,8 +64,8 @@
 #define SPI1_RX_ADDR                    &(SPI1_REGS->SPI_RDR)
 #define SPI1_TX_ADDR                    &(SPI1_REGS->SPI_TDR)
 
-#define LED_ON()                        LED_Clear()
-#define LED_OFF()                       LED_Set()
+#define LED_ON()                        LED_GREEN_Set()
+#define LED_OFF()                       LED_GREEN_Clear()
 
 CACHE_ALIGN uint8_t txDummyData[32];
 uint32_t rxDummyData;
