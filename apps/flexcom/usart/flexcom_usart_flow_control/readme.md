@@ -27,7 +27,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -40,19 +40,18 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 
 #### Setting up the board
 
-- Short jumper JP2 (DEBUG_DIS)
-- Connect the Debug USB port on the board to the computer using a micro USB cable
+- Connect the UART Debug port on the board to the computer using a FTDI to USB cable
 - Make connections as following:
-    - On J22 connector, short pin 3 (F0_TXD) and pin 2 (F1_RXD)
-    - On J17 connector, short pin 15 (FLEXCOM0 CTS) and pin 21 (FLEXCOM1 RTS)
+    - Short pin 5 (FLEXCOM1_TXD) of J8 connector to pin 21 (FLEXCOM4_RXD) of J25 connector.
+    - Short pin 6 (FLEXCOM1 CTS) of J8 connector to pin 26 (FLEXCOM4 RTS) of J25 connector.
 
 ## Running the Application
 
@@ -62,5 +61,5 @@ The following table shows the target hardware for the application projects.
 
     | Board      | LED Name                                    |
     | ----------------- | ---------------------------------------------- |
-    | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |RGB_LED(Green) |
+    | [SAMA5D2 Curiosity]() | RGB_LED(Green) |
     |||

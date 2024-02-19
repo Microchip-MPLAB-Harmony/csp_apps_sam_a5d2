@@ -57,8 +57,8 @@
 // Section: Main Entry Point
 // *****************************************************************************
 // *****************************************************************************
-#define LED_On()                        LED_Clear()
-#define LED_Off()                       LED_Set()
+#define LED_On()                        LED_GREEN_Set()
+#define LED_Off()                       LED_GREEN_Clear()
 
 #define NUM_TX_RX_BYTES                 100
 
@@ -98,14 +98,14 @@ int main ( void )
     */
     
     /* Transmit in interrupt mode */
-    FLEXCOM0_USART_Write(txData, NUM_TX_RX_BYTES);
+    FLEXCOM1_USART_Write(txData, NUM_TX_RX_BYTES);
         
     /* Simulate a slow receiver. Read character by character with delay between each character */
     while (nBytesRead < NUM_TX_RX_BYTES)
     {
-        while (FLEXCOM1_USART_ReceiverIsReady() == false);
+        while (FLEXCOM4_USART_ReceiverIsReady() == false);
         
-        FLEXCOM1_USART_Read(&rxData[nBytesRead], 1);
+        FLEXCOM4_USART_Read(&rxData[nBytesRead], 1);
         
         nBytesRead += 1;
         
