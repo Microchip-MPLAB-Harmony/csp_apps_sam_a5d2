@@ -72,8 +72,8 @@ static char data = 0;
 //
 static void echoBuffer(void)
 {
-    UART1_Write(receiveBuffer,rxCounter);
-    UART1_Write(newline,sizeof(newline));
+    UART0_Write(receiveBuffer,rxCounter);
+    UART0_Write(newline,sizeof(newline));
     rxCounter = 0;
 }
 
@@ -85,16 +85,16 @@ int main ( void )
     LED_Off();
 
     /* Send start message */
-    UART1_Write(&messageStart, sizeof(messageStart));
+    UART0_Write(&messageStart, sizeof(messageStart));
 
     while ( true )
     {
         /* Check if there is a received character */
-        if(UART1_ReceiverIsReady() == true)
+        if(UART0_ReceiverIsReady() == true)
         {
-            if(UART1_ErrorGet() == UART_ERROR_NONE)
+            if(UART0_ErrorGet() == UART_ERROR_NONE)
             {
-                UART1_Read(&data, 1);
+                UART0_Read(&data, 1);
 
                 if((data == '\n') || (data == '\r'))
                 {
@@ -110,7 +110,7 @@ int main ( void )
             }
             else
             {
-                UART1_Write(errorMessage,sizeof(errorMessage));
+                UART0_Write(errorMessage,sizeof(errorMessage));
             }
         }
     }
