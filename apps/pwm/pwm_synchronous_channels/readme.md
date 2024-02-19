@@ -26,7 +26,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,16 +39,15 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X  | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X  | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Setting up the board
 
-- Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
-- Connect PB5 (PIN 7 of XPRO EXT2) to an an oscilloscope/Logic analyzer
+- Connect PB0 (PIN 16 of mikroBUS2 (J22)) to an an oscilloscope/Logic analyzer
 
 ## Running the Application
 
@@ -59,7 +58,7 @@ The following table shows the target hardware for the application projects.
 
 Refer to the below table for PWM output pins for different boards:
 
-| PWM Channel | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| PWM Channel | [SAMA5D2 Curiosity]() |
 | ---------|---------------------- |
-| CH2_PWMH | pin 7 of XPRO_EXT2 (J26) |
+| CH1_PWMH | PIN 16 of mikroBUS2 (J22) |
 |||
