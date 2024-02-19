@@ -1,5 +1,25 @@
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+  TC Peripheral Library Interface Header File
+
+  Company
+    Microchip Technology Inc.
+
+  File Name
+    plib_tc0.h
+
+  Summary
+    TC peripheral library interface.
+
+  Description
+    This file defines the interface to the TC peripheral library.  This
+    library provides access to and control of the associated peripheral
+    instance.
+
+******************************************************************************/
+
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -20,24 +40,11 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+// DOM-IGNORE-END
 
-/*******************************************************************************
-  Main Source File
+#ifndef PLIB_TC0_H    // Guards against multiple inclusion
+#define PLIB_TC0_H
 
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This file contains the "main" function for a project.
-
-  Description:
-    This file contains the "main" function for a project.  The
-    "main" function calls the "SYS_Initialize" function to initialize the state
-    machines of all modules in the system
- *******************************************************************************/
 
 // *****************************************************************************
 // *****************************************************************************
@@ -45,47 +52,101 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include "definitions.h"                // SYS function prototypes
-
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Main Entry Point
-// *****************************************************************************
-// *****************************************************************************
-
-// *****************************************************************************
-// *****************************************************************************
-// This demo project generates two PWM outputs with a period of 1 second and
-// 40% duty cycle. One PWM signal is a compliment of the the other. PWM signals
-// are output through PINS PD29 and PD30 respectively. 
-// *****************************************************************************
-// *****************************************************************************
-
-int main ( void )
-{
-    /* Initialize all modules */
-    SYS_Initialize ( NULL );
-    
-    TC0_CH1_CompareStart();
-    
-    while ( true )
-    {
-        /* Maintain state machines of all polled MPLAB Harmony modules. */
-        
-        SYS_Tasks ( );
-    }
-
-    /* Execution should not come here during normal operation */
-
-    return ( EXIT_FAILURE );
-}
-
-
-/*******************************************************************************
- End of File
+/*  This section lists the other files that are included in this file.
 */
 
+
+#include "plib_tc_common.h"
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+extern "C" {
+
+#endif
+
+// DOM-IGNORE-END
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Types
+// *****************************************************************************
+// *****************************************************************************
+/*  The following data type definitions are used by the functions in this
+    interface and should be considered part it.
+*/
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Interface Routines
+// *****************************************************************************
+// *****************************************************************************
+/* The following functions make up the methods (set of possible operations) of
+   this interface.
+*/
+
+// *****************************************************************************
+
+  
+
+
+ 
+
+
+
+
+
+void TC0_CH0_CompareInitialize (void);
+
+void TC0_CH0_CompareStart (void);
+
+void TC0_CH0_CompareStop (void);
+
+uint32_t TC0_CH0_CompareFrequencyGet (void);
+
+void TC0_CH0_ComparePeriodSet (uint32_t period);
+
+uint32_t TC0_CH0_ComparePeriodGet (void);
+
+void TC0_CH0_CompareASet (uint32_t value);
+
+void TC0_CH0_CompareBSet (uint32_t value);
+
+TC_COMPARE_STATUS TC0_CH0_CompareStatusGet(void);
+
+
+ 
+
+
+
+
+
+void TC0_CH1_CompareInitialize (void);
+
+void TC0_CH1_CompareStart (void);
+
+void TC0_CH1_CompareStop (void);
+
+uint32_t TC0_CH1_CompareFrequencyGet (void);
+
+void TC0_CH1_ComparePeriodSet (uint32_t period);
+
+uint32_t TC0_CH1_ComparePeriodGet (void);
+
+void TC0_CH1_CompareASet (uint32_t value);
+
+void TC0_CH1_CompareBSet (uint32_t value);
+
+TC_COMPARE_STATUS TC0_CH1_CompareStatusGet(void);
+
+
+ 
+
+
+#ifdef __cplusplus // Provide C++ Compatibility
+}
+#endif
+
+#endif //PLIB_TC0_H
+
+/* End of File */

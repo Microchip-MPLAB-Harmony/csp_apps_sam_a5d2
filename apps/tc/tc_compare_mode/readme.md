@@ -32,7 +32,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -45,14 +45,13 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X  | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X  | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Setting up the board
 
-- Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
 ## Running the Application
@@ -60,10 +59,10 @@ The following table shows the target hardware for the application projects.
 1. Build the application using its IDE
 2. Observe generated waveforms on the oscilloscope
 
-### [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### [SAMA5D2 Curiosity]()
 
 | Pin      | Observable characteristic of the waveform |
 | ---------| -----------------------------------------|
-| PD29 (Pin 10 of XPRO EXT1) | Active high output with 1 Hz frequency |
-| PD30 (Pin 8 of J8) | Active low output with 1 Hz frequency |
+| PC3 (Pin 5 of mikroBUS1) | Active high output with 1 Hz frequency |
+| PC4 (Pin 3 of mikroBUS1) | Active low output with 1 Hz frequency |
 |||
