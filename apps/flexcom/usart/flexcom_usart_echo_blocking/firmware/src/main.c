@@ -56,8 +56,8 @@ FLEXCOM USART - Connect USB UART click board to mikroBUS Xplained Pro extension 
 *************************************************************************************/
 
 #define RX_BUFFER_SIZE 255
-#define LED_On()                        LED_Clear()
-#define LED_Off()                       LED_Set()
+#define LED_On()                        LED_GREEN_Set()
+#define LED_Off()                       LED_GREEN_Clear()
 
 char messageStart[] = "**** FLEXCOM USART Line Echo Demo ****\r\n\
 **** Demo uses blocking model of FLEXCOM USART PLIB. ****\r\n\
@@ -77,8 +77,8 @@ static char data = 0;
 //
 static void echoBuffer(void)
 {
-    FLEXCOM0_USART_Write(receiveBuffer,rxCounter);
-    FLEXCOM0_USART_Write(newline,sizeof(newline));
+    FLEXCOM1_USART_Write(receiveBuffer,rxCounter);
+    FLEXCOM1_USART_Write(newline,sizeof(newline));
     rxCounter = 0;
 }
 
@@ -90,21 +90,21 @@ int main ( void )
     LED_Off();
 
     /* Send start message */
-    FLEXCOM0_USART_Write(&messageStart, sizeof(messageStart));
+    FLEXCOM1_USART_Write(&messageStart, sizeof(messageStart));
 
     while ( true )
     {
         /* Check if there is a received character */
-        if(FLEXCOM0_USART_ReceiverIsReady() == true)
+        if(FLEXCOM1_USART_ReceiverIsReady() == true)
         {
-            if(FLEXCOM0_USART_ErrorGet() == FLEXCOM_USART_ERROR_NONE)
+            if(FLEXCOM1_USART_ErrorGet() == FLEXCOM_USART_ERROR_NONE)
             {
-                FLEXCOM0_USART_Read(&data, 1);
+                FLEXCOM1_USART_Read(&data, 1);
 
                 if((data == '\n') || (data == '\r'))
                 {
                     echoBuffer();
-                    LED_Toggle();
+                    LED_GREEN_Toggle();
                 }
                 else
                 {
@@ -115,7 +115,7 @@ int main ( void )
             }
             else
             {
-                FLEXCOM0_USART_Write(errorMessage,sizeof(errorMessage));
+                FLEXCOM1_USART_Write(errorMessage,sizeof(errorMessage));
             }
         }
     }
