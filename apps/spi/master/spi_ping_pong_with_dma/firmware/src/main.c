@@ -57,8 +57,8 @@
 #define SPI1_RECEIVE_ADDRESS            (&SPI1_REGS->SPI_RDR)
 #define SPI1_TRANSMIT_ADDRESS           (&SPI1_REGS->SPI_TDR)
 
-#define LED_On()                        LED_Clear()
-#define LED_Off()                       LED_Set()
+#define LED_On()                        LED_GREEN_Set()
+#define LED_Off()                       LED_GREEN_Clear()
 
 typedef enum
 {
