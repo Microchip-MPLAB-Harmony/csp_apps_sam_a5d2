@@ -67,7 +67,7 @@ static struct
     uint32_t        priority;
 }irqData[] =
 {
-    { 68U, PIOB_InterruptHandler,      AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val,  0x7U },
+    { 18U, PIOA_InterruptHandler,      AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val,  0x0U },
 };
 
 // *****************************************************************************

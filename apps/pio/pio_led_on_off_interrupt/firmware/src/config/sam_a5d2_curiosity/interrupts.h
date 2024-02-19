@@ -57,7 +57,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-void PIOB_InterruptHandler (void);
+void PIOA_InterruptHandler (void);
 
 
 /* Interrupt Handler for spurious interrupts */
