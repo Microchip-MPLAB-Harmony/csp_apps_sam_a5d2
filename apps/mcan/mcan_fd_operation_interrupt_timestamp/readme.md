@@ -26,7 +26,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,43 +39,41 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Hardware required
 
 | Name |Quantity |
 | -------- | ------- |
-| [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) | 2 |
+| [SAMA5D2 Curiosity]() | 2 |
 | [ATA6563 click Board](https://www.mikroe.com/ata6563-click) | 2 |
 |||
 
 
 #### Setting up the board
 
-- Short jumper JP2 (DEBUG_DIS)
-- Connect [ATA6563 click Board](https://www.mikroe.com/ata6563-click) to [SAMA5D2 Xplained Ultra Evaluation Kits](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) as per the Pin connections shown below
+- Connect [ATA6563 click Board](https://www.mikroe.com/ata6563-click) to [SAMA5D2 Xplained Ultra Evaluation Kits]() as per the Pin connections shown below
 
-    | [SAMA5D2 Xplained Ultra Evaluation Kits](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) | [ATA6563 click Board](https://www.mikroe.com/ata6563-click) |
+    | [SAMA5D2 Xplained Ultra Evaluation Kits]() | [ATA6563 click Board](https://www.mikroe.com/ata6563-click) |
     | ------ | ------- |
-    | CANTX0 (PIN8), J9 Connector | RX (PIN 14) |
-    | CANRX0 (PIN7), J9 Connector | TX (PIN 13) |
-    | 3V3 (PIN20), EXT1 Connector | 3V3 (PIN 7) |
-    | VDD_5V (PIN3), J24 Connector | 5V (PIN 10) |
-    | GND (PIN19), EXT1 Connector | GND (PIN 9) |
+    | CANTX0 (PIN4), mikroBUS1 Connector | RX (PIN 14) |
+    | CANRX0 (PIN6), mikroBUS1 Connector | TX (PIN 13) |
+    | 3V3 (PIN7),    mikroBUS1 Connector | 3V3 (PIN 7) |
+    | VDD_5V (PIN10), mikroBUS1 Connector| 5V (PIN 10) |
+    | GND (PIN8), mikroBUS1 Connector 	 | GND (PIN 9) |
     |||
 
 - Connect [ATA6563 click Board](https://www.mikroe.com/ata6563-click) to each other using DB9 serial cable
-- Short (close) jumper JP2 (DEBUG_DIS) to disable external debug communication interface (J1) for each board
 - Connect the Debug USB port on the boards to the computer using micro USB cables
 
 ## Running the Application
 
 1. Build the application using its IDE
 2. Open the Terminal application (Ex.:Tera term) on the computer.
-3. Connect to the EDBG/Jlink Virtual COM port and configure the serial settings as follows:
+3. Connect to the FTDI Virtual COM port and configure the serial settings as follows:
     - Baud : 115200
     - Data : 8 Bits
     - Parity : None
