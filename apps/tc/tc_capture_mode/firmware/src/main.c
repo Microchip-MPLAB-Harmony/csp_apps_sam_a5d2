@@ -84,7 +84,7 @@ void TC1_DelayMs(uint32_t delay);
 
 
 /* This function is called after period expires */
-void TC1_CH1_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
+void TC1_CH2_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
 {
    if(interrupt_counter > 0)
    {
@@ -100,16 +100,16 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     
-    /* Register callback function for TC1 CH1 period interrupt, it is used for
+    /* Register callback function for TC1 CH2 period interrupt, it is used for
        timing operations*/
-    TC1_CH1_TimerCallbackRegister(TC1_CH1_TimerInterruptHandler, (uintptr_t)NULL);
+    TC1_CH2_TimerCallbackRegister(TC1_CH2_TimerInterruptHandler, (uintptr_t)NULL);
     
     /* Start the timer channel 0*/
-    TC1_CH1_TimerStart();
+    TC1_CH2_TimerStart();
 
-    cmp_period = TC1_CH0_ComparePeriodGet();
-    TC0_CH2_CaptureStart();
-    TC1_CH0_CompareStart();
+    cmp_period = TC1_CH1_ComparePeriodGet();
+    TC0_CH1_CaptureStart();
+    TC1_CH1_CompareStart();
     
     /* Wait for 1 second  for UART to initialize */ 
     TC1_DelayMs(1000);
@@ -128,19 +128,19 @@ int main ( void )
         {
             cmp_val = CMP_VAL_INCREMENT;
         }
-        TC1_CH0_CompareBSet(cmp_val);
+        TC1_CH1_CompareASet(cmp_val);
         
         /* Wait for compare event */
-        while((TC0_CH2_CaptureStatusGet() & TC_CAPTURE_B_LOAD) != TC_CAPTURE_B_LOAD);
+        while((TC0_CH1_CaptureStatusGet() & TC_CAPTURE_B_LOAD) != TC_CAPTURE_B_LOAD);
         
         /* Read Captured values */ 
-        off_time = TC0_CH2_CaptureAGet();
-        period = TC0_CH2_CaptureBGet();
+        off_time = TC0_CH1_CaptureAGet();
+        period = TC0_CH1_CaptureBGet();
 
         /* Compute Duty Cycle in percentage and Frequency in Hz */
         on_time = period - off_time;
         duty = ((on_time) * 100U) / period;
-        frequency = (TC0_CH2_CaptureFrequencyGet() / period);
+        frequency = (TC0_CH1_CaptureFrequencyGet() / period);
         
         /* Send the measured data to console for display  */
         printf("Frequency of waveform: %.2f Hz \t Duty Cycle of waveform: %.2f %%", frequency, duty);
