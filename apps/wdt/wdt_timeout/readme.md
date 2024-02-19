@@ -26,7 +26,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,10 +39,10 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Addtional hardware required
 
@@ -50,7 +50,7 @@ The following table shows the target hardware for the application projects.
 
 #### Setting up the SD Card
 
-- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_xult.X/binaries/boot.bin)
+- Download harmony MPU bootstrap loader from this [location](firmware/at91bootstrap_sam_a5d2_curiosity.X/binaries/boot.bin)
 - Copy the downloaded boot loader binary( boot.bin) onto the SD card
 
 #### Setting up the board
@@ -87,5 +87,5 @@ Following table provides details of switch and LED:
 
 | Board      | Switch Name |  LED Name |
 | ---------- | ----------- | --------- |
-| [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |PB_USER |RGB_LED(Blue)  |
+| [SAMA5D2 Curiosity]() |PB_USER |RGB_LED(Blue)  |
 ||

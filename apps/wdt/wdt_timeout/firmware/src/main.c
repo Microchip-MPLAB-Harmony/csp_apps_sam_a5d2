@@ -54,6 +54,8 @@
 #include <stdlib.h>                		// Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
+#define LED_Toggle() GREEN_Toggle()
+
 volatile bool switchPressed = false;
 
 void switchHandler( PIO_PIN pin, uintptr_t context )
