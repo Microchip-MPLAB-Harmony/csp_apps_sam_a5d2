@@ -166,7 +166,7 @@ void showMsg( void )
     if( MsgNone != msgId )
     {
         int jj = strlen( message[ msgId ] );
-        while( !UART1_Write( (void *) message[ msgId ], jj ) )
+        while( !UART0_Write( (void *) message[ msgId ], jj ) )
         {
             ;   // spin lock
         }
