@@ -56,7 +56,7 @@
 void TC0_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
 {
     /* Toggle LED */
-    LED_Toggle();
+    LED_GREEN_Toggle();
 }
 
 // *****************************************************************************
