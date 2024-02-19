@@ -87,8 +87,8 @@ typedef enum
 #define APP_TEST_DATA                       "Test Data from SPI Master"
 #define APP_TEST_DATA_SIZE                  strlen(APP_TEST_DATA)
 
-#define LED_On()                            LED_Clear()
-#define LED_Off()                           LED_Set()
+#define LED_On()                            LED_GREEN_Set()
+#define LED_Off()                           LED_GREEN_Clear()
 
 uint8_t rxData[APP_RX_BUFFER_SIZE];
 uint8_t txData[APP_TX_BUFFER_SIZE];

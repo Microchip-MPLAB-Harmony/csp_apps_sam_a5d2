@@ -90,77 +90,113 @@
 #define PIO_PORT_MAX    4U
 
 
-/*** Macros for SWITCH pin ***/
-#define SWITCH_Set()               (PIOB_REGS->PIO_SODR = (1<<9))
-#define SWITCH_Clear()             (PIOB_REGS->PIO_CODR = (1<<9))
-#define SWITCH_Toggle()            do {\
-                                            PIOB_REGS->PIO_MSKR = (1<<9); \
-                                            PIOB_REGS->PIO_ODSR ^= (1<<9);\
-                                        } while (0)
-#define SWITCH_OutputEnable()      do {\
-                                            PIOB_REGS->PIO_MSKR = (1<<9); \
-                                            PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
-                                        }while(0)
-#define SWITCH_InputEnable()       do { \
-                                            PIOB_REGS->PIO_MSKR = (1<<9); \
-                                            PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
-                                        } while (0)
-#define SWITCH_Get()               ((PIOB_REGS->PIO_PDSR >> 9) & 0x1)
-#define SWITCH_PIN                  PIO_PIN_PB9
-
-/*** Macros for LED pin ***/
-#define LED_Set()               (PIOB_REGS->PIO_SODR = (1<<5))
-#define LED_Clear()             (PIOB_REGS->PIO_CODR = (1<<5))
-#define LED_Toggle()            do {\
-                                            PIOB_REGS->PIO_MSKR = (1<<5); \
-                                            PIOB_REGS->PIO_ODSR ^= (1<<5);\
-                                        } while (0)
-#define LED_OutputEnable()      do {\
-                                            PIOB_REGS->PIO_MSKR = (1<<5); \
-                                            PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
-                                        }while(0)
-#define LED_InputEnable()       do { \
-                                            PIOB_REGS->PIO_MSKR = (1<<5); \
-                                            PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
-                                        } while (0)
-#define LED_Get()               ((PIOB_REGS->PIO_PDSR >> 5) & 0x1)
-#define LED_PIN                  PIO_PIN_PB5
-
 /*** Macros for APP_SLAVE_BUSY_PIN pin ***/
-#define APP_SLAVE_BUSY_PIN_Set()               (PIOD_REGS->PIO_SODR = (1<<13))
-#define APP_SLAVE_BUSY_PIN_Clear()             (PIOD_REGS->PIO_CODR = (1<<13))
+#define APP_SLAVE_BUSY_PIN_Set()               (PIOD_REGS->PIO_SODR = (1<<25))
+#define APP_SLAVE_BUSY_PIN_Clear()             (PIOD_REGS->PIO_CODR = (1<<25))
 #define APP_SLAVE_BUSY_PIN_Toggle()            do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<13); \
-                                            PIOD_REGS->PIO_ODSR ^= (1<<13);\
+                                            PIOD_REGS->PIO_MSKR = (1<<25); \
+                                            PIOD_REGS->PIO_ODSR ^= (1<<25);\
                                         } while (0)
 #define APP_SLAVE_BUSY_PIN_OutputEnable()      do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<13); \
+                                            PIOD_REGS->PIO_MSKR = (1<<25); \
                                             PIOD_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define APP_SLAVE_BUSY_PIN_InputEnable()       do { \
-                                            PIOD_REGS->PIO_MSKR = (1<<13); \
+                                            PIOD_REGS->PIO_MSKR = (1<<25); \
                                             PIOD_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define APP_SLAVE_BUSY_PIN_Get()               ((PIOD_REGS->PIO_PDSR >> 13) & 0x1)
-#define APP_SLAVE_BUSY_PIN_PIN                  PIO_PIN_PD13
+#define APP_SLAVE_BUSY_PIN_Get()               ((PIOD_REGS->PIO_PDSR >> 25) & 0x1)
+#define APP_SLAVE_BUSY_PIN_PIN                  PIO_PIN_PD25
 
 /*** Macros for APP_SLAVE_CS pin ***/
-#define APP_SLAVE_CS_Set()               (PIOD_REGS->PIO_SODR = (1<<28))
-#define APP_SLAVE_CS_Clear()             (PIOD_REGS->PIO_CODR = (1<<28))
+#define APP_SLAVE_CS_Set()               (PIOC_REGS->PIO_SODR = (1<<4))
+#define APP_SLAVE_CS_Clear()             (PIOC_REGS->PIO_CODR = (1<<4))
 #define APP_SLAVE_CS_Toggle()            do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<28); \
-                                            PIOD_REGS->PIO_ODSR ^= (1<<28);\
+                                            PIOC_REGS->PIO_MSKR = (1<<4); \
+                                            PIOC_REGS->PIO_ODSR ^= (1<<4);\
                                         } while (0)
 #define APP_SLAVE_CS_OutputEnable()      do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<28); \
-                                            PIOD_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOC_REGS->PIO_MSKR = (1<<4); \
+                                            PIOC_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define APP_SLAVE_CS_InputEnable()       do { \
-                                            PIOD_REGS->PIO_MSKR = (1<<28); \
-                                            PIOD_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOC_REGS->PIO_MSKR = (1<<4); \
+                                            PIOC_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define APP_SLAVE_CS_Get()               ((PIOD_REGS->PIO_PDSR >> 28) & 0x1)
-#define APP_SLAVE_CS_PIN                  PIO_PIN_PD28
+#define APP_SLAVE_CS_Get()               ((PIOC_REGS->PIO_PDSR >> 4) & 0x1)
+#define APP_SLAVE_CS_PIN                  PIO_PIN_PC4
+
+/*** Macros for LED_GREEN pin ***/
+#define LED_GREEN_Set()               (PIOA_REGS->PIO_SODR = (1<<8))
+#define LED_GREEN_Clear()             (PIOA_REGS->PIO_CODR = (1<<8))
+#define LED_GREEN_Toggle()            do {\
+                                            PIOA_REGS->PIO_MSKR = (1<<8); \
+                                            PIOA_REGS->PIO_ODSR ^= (1<<8);\
+                                        } while (0)
+#define LED_GREEN_OutputEnable()      do {\
+                                            PIOA_REGS->PIO_MSKR = (1<<8); \
+                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                        }while(0)
+#define LED_GREEN_InputEnable()       do { \
+                                            PIOA_REGS->PIO_MSKR = (1<<8); \
+                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                        } while (0)
+#define LED_GREEN_Get()               ((PIOA_REGS->PIO_PDSR >> 8) & 0x1)
+#define LED_GREEN_PIN                  PIO_PIN_PA8
+
+/*** Macros for LED_BLUE pin ***/
+#define LED_BLUE_Set()               (PIOA_REGS->PIO_SODR = (1<<9))
+#define LED_BLUE_Clear()             (PIOA_REGS->PIO_CODR = (1<<9))
+#define LED_BLUE_Toggle()            do {\
+                                            PIOA_REGS->PIO_MSKR = (1<<9); \
+                                            PIOA_REGS->PIO_ODSR ^= (1<<9);\
+                                        } while (0)
+#define LED_BLUE_OutputEnable()      do {\
+                                            PIOA_REGS->PIO_MSKR = (1<<9); \
+                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                        }while(0)
+#define LED_BLUE_InputEnable()       do { \
+                                            PIOA_REGS->PIO_MSKR = (1<<9); \
+                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                        } while (0)
+#define LED_BLUE_Get()               ((PIOA_REGS->PIO_PDSR >> 9) & 0x1)
+#define LED_BLUE_PIN                  PIO_PIN_PA9
+
+/*** Macros for SWITCH pin ***/
+#define SWITCH_Set()               (PIOA_REGS->PIO_SODR = (1<<17))
+#define SWITCH_Clear()             (PIOA_REGS->PIO_CODR = (1<<17))
+#define SWITCH_Toggle()            do {\
+                                            PIOA_REGS->PIO_MSKR = (1<<17); \
+                                            PIOA_REGS->PIO_ODSR ^= (1<<17);\
+                                        } while (0)
+#define SWITCH_OutputEnable()      do {\
+                                            PIOA_REGS->PIO_MSKR = (1<<17); \
+                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                        }while(0)
+#define SWITCH_InputEnable()       do { \
+                                            PIOA_REGS->PIO_MSKR = (1<<17); \
+                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                        } while (0)
+#define SWITCH_Get()               ((PIOA_REGS->PIO_PDSR >> 17) & 0x1)
+#define SWITCH_PIN                  PIO_PIN_PA17
+
+/*** Macros for LED_RED pin ***/
+#define LED_RED_Set()               (PIOA_REGS->PIO_SODR = (1<<7))
+#define LED_RED_Clear()             (PIOA_REGS->PIO_CODR = (1<<7))
+#define LED_RED_Toggle()            do {\
+                                            PIOA_REGS->PIO_MSKR = (1<<7); \
+                                            PIOA_REGS->PIO_ODSR ^= (1<<7);\
+                                        } while (0)
+#define LED_RED_OutputEnable()      do {\
+                                            PIOA_REGS->PIO_MSKR = (1<<7); \
+                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                        }while(0)
+#define LED_RED_InputEnable()       do { \
+                                            PIOA_REGS->PIO_MSKR = (1<<7); \
+                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                        } while (0)
+#define LED_RED_Get()               ((PIOA_REGS->PIO_PDSR >> 7) & 0x1)
+#define LED_RED_PIN                  PIO_PIN_PA7
 // *****************************************************************************
 /* PIO Ports
 
