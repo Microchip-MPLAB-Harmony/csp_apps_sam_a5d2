@@ -3,21 +3,15 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>pit_period_change_sam_a5d2_xult</name>
-            <creation-uuid>e54023e9-3948-44ef-bf6f-29d8b223e555</creation-uuid>
+            <name>pit_period_change_sam_a5d2_curiosity</name>
+            <creation-uuid>d71c7f61-1089-463a-a98a-7e15517c80e2</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c,S</c-extensions>
-            <cpp-extensions/>
-            <header-extensions>h</header-extensions>
-            <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList>
-                <sourceRootElem>../src</sourceRootElem>
-            </sourceRootList>
+            <sourceRootList/>
             <confList>
                 <confElem>
-                    <name>sam_a5d2_xult</name>
+                    <name>sam_a5d2_curiosity</name>
                     <type>2</type>
                 </confElem>
             </confList>

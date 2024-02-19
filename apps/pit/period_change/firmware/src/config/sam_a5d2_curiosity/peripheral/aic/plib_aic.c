@@ -68,7 +68,7 @@ static struct
 }irqData[] =
 {
     { 3U,  PIT_InterruptHandler,       AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val,  0x0U },
-    { 68U, PIOB_InterruptHandler,      AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val,  0x7U },
+    { 18U, PIOA_InterruptHandler,      AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val,  0x0U },
 };
 
 // *****************************************************************************
