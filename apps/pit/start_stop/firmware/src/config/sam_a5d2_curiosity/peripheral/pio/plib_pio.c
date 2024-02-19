@@ -48,7 +48,7 @@
 volatile static PIO_PIN_CALLBACK_OBJ portPinCbObj[1];
 
 /* Array to store number of interrupts in each PORT Channel + previous interrupt count */
-volatile static uint8_t portNumCb[7 + 1] = { 0, 0, 1, 1, 1, 1, 1, 1, };
+volatile static uint8_t portNumCb[7 + 1] = { 0, 1, 1, 1, 1, 1, 1, 1, };
 
 
 
@@ -64,39 +64,41 @@ volatile static uint8_t portNumCb[7 + 1] = { 0, 0, 1, 1, 1, 1, 1, 1, };
 */
 void PIO_Initialize ( void )
 {
+ /* Port A Peripheral function GPIO configuration */
+   PIOA_REGS->PIO_MSKR = 0x20380U;
+   PIOA_REGS->PIO_CFGR = 0x0U;
 
- /* Port B Peripheral function GPIO configuration */
-   PIOB_REGS->PIO_MSKR = 0x201U;
-   PIOB_REGS->PIO_CFGR = 0x0U;
+ /* Port A Pin 7 configuration */
+   PIOA_REGS->PIO_MSKR = 0x80U;
+   PIOA_REGS->PIO_CFGR = (PIOA_REGS->PIO_CFGR & (PIO_CFGR_FUNC_Msk)) | 0x100U;
 
- /* Port B Pin 0 configuration */
-   PIOB_REGS->PIO_MSKR = 0x1U;
-   PIOB_REGS->PIO_CFGR = (PIOB_REGS->PIO_CFGR & (PIO_CFGR_FUNC_Msk)) | 0x100U;
+ /* Port A Pin 8 configuration */
+   PIOA_REGS->PIO_MSKR = 0x100U;
+   PIOA_REGS->PIO_CFGR = (PIOA_REGS->PIO_CFGR & (PIO_CFGR_FUNC_Msk)) | 0x100U;
 
- /* Port B Pin 9 configuration */
-   PIOB_REGS->PIO_MSKR = 0x200U;
-   PIOB_REGS->PIO_CFGR = (PIOB_REGS->PIO_CFGR & (PIO_CFGR_FUNC_Msk)) | 0x1000200U;
+ /* Port A Pin 9 configuration */
+   PIOA_REGS->PIO_MSKR = 0x200U;
+   PIOA_REGS->PIO_CFGR = (PIOA_REGS->PIO_CFGR & (PIO_CFGR_FUNC_Msk)) | 0x100U;
 
- /* Port B Latch configuration */
-   PIOB_REGS->PIO_SODR = 0x1U;
-   PIOB_REGS->PIO_CODR = 0x201U & ~0x1U;
+ /* Port A Pin 17 configuration */
+   PIOA_REGS->PIO_MSKR = 0x20000U;
+   PIOA_REGS->PIO_CFGR = (PIOA_REGS->PIO_CFGR & (PIO_CFGR_FUNC_Msk)) | 0x1000200U;
+
+ /* Port A Latch configuration */
+   PIOA_REGS->PIO_SODR = 0x200U;
+   PIOA_REGS->PIO_CODR = 0x20380U & ~0x200U;
 
     /* Clear the ISR register */
-   (uint32_t)PIOB_REGS->PIO_ISR;
+   (uint32_t)PIOA_REGS->PIO_ISR;
 
- /* Port D Peripheral function A configuration */
-   PIOD_REGS->PIO_MSKR = 0x3c00cLU;
-   PIOD_REGS->PIO_CFGR = 0x1U;
 
- /* Port D Latch configuration */
-   PIOD_REGS->PIO_CODR = 0x0LU;
 
 
 
 
     uint32_t i;
     /* Initialize Interrupt Pin data structures */
-    portPinCbObj[0 + 0].pin = PIO_PIN_PB9;
+    portPinCbObj[0 + 0].pin = PIO_PIN_PA17;
     
     for(i = 0U; i < 1U; i++)
     {
@@ -331,19 +333,19 @@ bool PIO_PinInterruptCallbackRegister(
 
 // *****************************************************************************
 /* Function:
-    void PIOB_InterruptHandler (void)
+    void PIOA_InterruptHandler (void)
 
   Summary:
-    Interrupt handler for PORTB.
+    Interrupt handler for PORTA.
 
   Description:
-    This function defines the Interrupt service routine for PORTB.
+    This function defines the Interrupt service routine for PORTA.
     This is the function which by default gets into Interrupt Vector Table.
 
   Remarks:
     User should not call this function.
 */
-void __attribute__((used)) PIOB_InterruptHandler(void)
+void __attribute__((used)) PIOA_InterruptHandler(void)
 {
     uint32_t status;
     uint8_t j;
@@ -351,8 +353,8 @@ void __attribute__((used)) PIOB_InterruptHandler(void)
     PIO_PIN pin;
     uintptr_t context;
 
-    status = PIOB_REGS->PIO_ISR;
-    status &= PIOB_REGS->PIO_IMR;
+    status = PIOA_REGS->PIO_ISR;
+    status &= PIOA_REGS->PIO_IMR;
 
     for( j = 0U; j < 1U; j++ )
     {
