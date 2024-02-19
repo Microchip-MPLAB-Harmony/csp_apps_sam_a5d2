@@ -36,7 +36,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -49,21 +49,20 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Setting up the board
 
-- To run this demo two [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) are required. One will be progammed as SPI master and other will be programmed as SPI slave.
-- Short jumper JP2 (DEBUG_DIS) on each board
-- Connect Pin 15, 16, 17, 18 on EXT1 of SPI slave to Pin 15, 16, 17, 18 on EXT1 of SPI master 
-    - Pin 15 - SPI Chip Select
-    - Pin 16 - MOSI
-    - Pin 17 - MISO
-    - Pin 18 - SCK
-- Connect Pin 9 on EXT1 of SPI slave to Pin 9 on EXT1 of SPI master. Pin 9 is configured as GPIO and serves as the slave busy pin.
+- To run this demo two [SAMA5D2 Curiosity]() are required. One will be progammed as SPI master and other will be programmed as SPI slave.
+- Connect Pin 3, 4, 5, 6 on mikroBUS1 of SPI slave to Pin 3, 4, 5, 6 on mikroBUS1 of SPI master 
+    - Pin 3 - SPI Chip Select
+    - Pin 4 - SCK
+    - Pin 5 - MISO
+    - Pin 6 - MOSI
+- Connect Pin 1 on mikroBUS1 of SPI slave to Pin 1 on mikroBUS1 of SPI master. Pin 1 is configured as GPIO and serves as the slave busy pin.
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
 ## Running the Application
@@ -79,5 +78,5 @@ Following table provides the LED name:
 
 | Board             | LED Name   | Switch Name |
 | ----------------- | ---------- | ----------- |
-| [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) | RGB_LED(Green) | PB_USER |
+| [SAMA5D2 Curiosity]() | RGB_LED(Green) | USER |
 |||

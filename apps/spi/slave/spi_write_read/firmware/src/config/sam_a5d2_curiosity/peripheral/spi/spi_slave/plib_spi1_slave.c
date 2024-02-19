@@ -105,7 +105,7 @@ void SPI1_Initialize( void )
     spi1Obj.transferIsBusy = false ;
 
     /* Set the Busy Pin to ready state */
-    PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 0);
+    PIO_PinWrite((PIO_PIN)PIO_PIN_PD25, 0);
 
     /* Enable Receive full and chip deselect interrupt */
     SPI1_REGS->SPI_IER = (SPI_IER_RDRF_Msk | SPI_IER_NSSR_Msk);
@@ -196,7 +196,7 @@ bool SPI1_IsBusy(void)
 /* Drive the GPIO pin to indicate to SPI Master that the slave is ready now */
 void SPI1_Ready(void)
 {
-    PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 0);
+    PIO_PinWrite((PIO_PIN)PIO_PIN_PD25, 0);
 }
 
 SPI_SLAVE_ERROR SPI1_ErrorGet(void)
@@ -228,7 +228,7 @@ void __attribute__((used)) SPI1_InterruptHandler(void)
         {
             spi1Obj.transferIsBusy = true;
 
-            PIO_PinWrite((PIO_PIN)PIO_PIN_PD13, 1);
+            PIO_PinWrite((PIO_PIN)PIO_PIN_PD25, 1);
         }
 
         /* Note: statusFlags must be updated every time SPI_SR is read. This is because the NSSR flag

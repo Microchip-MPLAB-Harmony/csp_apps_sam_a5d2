@@ -1,5 +1,5 @@
 /*
- * Header file for ATSAMA5D27
+ * Header file for ATSAMA5D29
  *
  * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,9 +20,9 @@
  *
  */
 
-/* File generated from device description version 2022-10-04T10:37:12Z */
-#ifndef _SAMA5D27_H_
-#define _SAMA5D27_H_
+/* File generated from device description version 2022-10-04T10:37:14Z */
+#ifndef _SAMA5D29_H_
+#define _SAMA5D29_H_
 
 /* Header version uses Semantic Versioning 2.0.0 (https://semver.org/) */
 #define HEADER_FORMAT_VERSION "2.1.0"
@@ -31,8 +31,8 @@
 #define HEADER_FORMAT_VERSION_MINOR (1)
 #define HEADER_FORMAT_VERSION_PATCH (0)
 
-/* SAMA5D27 definitions
-  This file defines all structures and symbols for SAMA5D27:
+/* SAMA5D29 definitions
+  This file defines all structures and symbols for SAMA5D29:
     - registers and bitfields
     - peripheral base address
     - peripheral ID
@@ -67,13 +67,13 @@
 #endif /* SKIP_INTEGER_LITERALS */
 
 /* ************************************************************************** */
-/* CMSIS DEFINITIONS FOR SAMA5D27                                           */
+/* CMSIS DEFINITIONS FOR SAMA5D29                                           */
 /* ************************************************************************** */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /* Interrupt Number Definition */
 typedef enum IRQn
 {
-/******  SAMA5D27 specific Interrupt Numbers ***********************************/
+/******  SAMA5D29 specific Interrupt Numbers ***********************************/
   SAIC_IRQn                 =   0, /* 0   Advanced Interrupt Controller (SAIC) */
   PMU_IRQn                  =   2, /* 2   PMU (PMU)                           */
   PIT_IRQn                  =   3, /* 3   Periodic Interval Timer (PIT)       */
@@ -162,11 +162,11 @@ typedef enum IRQn
 /* CMSIS includes */
 #include "core_ca.h"
 #if defined USE_CMSIS_INIT
-#include "system_sama5d2.h"
+#include "system_sama5d.h"
 #endif /* USE_CMSIS_INIT */
 
 /* ************************************************************************** */
-/*   SOFTWARE PERIPHERAL API DEFINITION FOR SAMA5D27                          */
+/*   SOFTWARE PERIPHERAL API DEFINITION FOR SAMA5D29                          */
 /* ************************************************************************** */
 #include "component/acc.h"
 #include "component/adc.h"
@@ -218,7 +218,7 @@ typedef enum IRQn
 #include "component/xdmac.h"
 
 /* ************************************************************************** */
-/*   INSTANCE DEFINITIONS FOR SAMA5D27 */
+/*   INSTANCE DEFINITIONS FOR SAMA5D29 */
 /* ************************************************************************** */
 #include "instance/acc.h"
 #include "instance/adc.h"
@@ -288,11 +288,11 @@ typedef enum IRQn
 #include "instance/xdmac1.h"
 
 /* ************************************************************************** */
-/*  PERIPHERAL ID DEFINITIONS FOR SAMA5D27                                    */
+/*  PERIPHERAL ID DEFINITIONS FOR SAMA5D29                                    */
 /* ************************************************************************** */
 #define ID_PIT           (  3) /* Periodic Interval Timer (PIT) */
 #define ID_WDT           (  4) /* Watchdog Timer (WDT) */
-#define ID_GMAC          (  5) /* Gigabit Ethernet MAC (GMAC) */
+#define ID_GMAC          (  5) /* Ethernet MAC (GMAC) */
 #define ID_XDMAC0        (  6) /* Extensible DMA Controller (XDMAC0) */
 #define ID_XDMAC1        (  7) /* Extensible DMA Controller (XDMAC1) */
 #define ID_ICM           (  8) /* Integrity Check Monitor (ICM) */
@@ -346,6 +346,8 @@ typedef enum IRQn
 #define ID_SAIC          ( 61) /* Advanced Interrupt Controller (SAIC) */
 #define ID_AIC           ( 62) /* Advanced Interrupt Controller (AIC) */
 #define ID_L2CC          ( 63) /* L2 Cache Controller (L2CC) */
+#define ID_GMAC_Q1       ( 66) /* GMAC Queue 1 Interrupt (GMAC_Q1) */
+#define ID_GMAC_Q2       ( 67) /* GMAC Queue 2 Interrupt (GMAC_Q2) */
 #define ID_PIOB          ( 68) /* Parallel Input/Output Controller (PIOB) */
 #define ID_PIOC          ( 69) /* Parallel Input/Output Controller (PIOC) */
 #define ID_PIOD          ( 70) /* Parallel Input/Output Controller (PIOD) */
@@ -357,7 +359,7 @@ typedef enum IRQn
 #define ID_PERIPH_MAX    ( 78) /* Number of peripheral IDs */
 
 /* ************************************************************************** */
-/*   REGISTER STRUCTURE ADDRESS DEFINITIONS FOR SAMA5D27                      */
+/*   REGISTER STRUCTURE ADDRESS DEFINITIONS FOR SAMA5D29                      */
 /* ************************************************************************** */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #define ACC_REGS                         ((acc_registers_t*)0xf804a000)                /* ACC Registers Address        */
@@ -429,7 +431,7 @@ typedef enum IRQn
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ************************************************************************** */
-/*   BASE ADDRESS DEFINITIONS FOR SAMA5D27                                    */
+/*   BASE ADDRESS DEFINITIONS FOR SAMA5D29                                    */
 /* ************************************************************************** */
 #define ACC_BASE_ADDRESS                 _UINT32_(0xf804a000)                          /* ACC Base Address */
 #define ADC_BASE_ADDRESS                 _UINT32_(0xfc030000)                          /* ADC Base Address */
@@ -499,12 +501,12 @@ typedef enum IRQn
 #define XDMAC1_BASE_ADDRESS              _UINT32_(0xf0004000)                          /* XDMAC1 Base Address */
 
 /* ************************************************************************** */
-/*   PIO DEFINITIONS FOR SAMA5D27                                             */
+/*   PIO DEFINITIONS FOR SAMA5D29                                             */
 /* ************************************************************************** */
-#include "pio/sama5d27.h"
+#include "pio/sama5d29.h"
 
 /* ************************************************************************** */
-/*   MEMORY MAPPING DEFINITIONS FOR SAMA5D27                                  */
+/*   MEMORY MAPPING DEFINITIONS FOR SAMA5D29                                  */
 /* ************************************************************************** */
 #define EBI_CS0_SIZE                   _UINT32_(0x10000000)    /* 262144kB Memory segment type: other */
 #define DDR_CS_SIZE                    _UINT32_(0x20000000)    /* 524288kB Memory segment type: other */
@@ -561,14 +563,14 @@ typedef enum IRQn
 #define SECURAM_ADDR                   _UINT32_(0xf8044000)    /* SECURAM base address (type: other)*/
 
 /* ************************************************************************** */
-/*   DEVICE SIGNATURES FOR SAMA5D27                                           */
+/*   DEVICE SIGNATURES FOR SAMA5D29                                           */
 /* ************************************************************************** */
 #define CHIP_JTAGID                    _UINT32_(0X05B3F03F)
-#define CHIP_CIDR                      _UINT32_(0X8A5C08C0)
-#define CHIP_EXID                      _UINT32_(0X00000002)
+#define CHIP_CIDR                      _UINT32_(0X8A5C08C3)
+#define CHIP_EXID                      _UINT32_(0X00000023)
 
 /* ************************************************************************** */
-/*   ELECTRICAL DEFINITIONS FOR SAMA5D27                                      */
+/*   ELECTRICAL DEFINITIONS FOR SAMA5D29                                      */
 /* ************************************************************************** */
 
 
@@ -577,5 +579,5 @@ typedef enum IRQn
 }
 #endif
 
-#endif /* _SAMA5D27_H_ */
+#endif /* _SAMA5D29_H_ */
 
