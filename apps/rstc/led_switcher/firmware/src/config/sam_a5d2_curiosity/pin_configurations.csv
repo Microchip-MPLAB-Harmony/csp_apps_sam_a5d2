@@ -62,18 +62,18 @@ J4,PD5,,Available,In,,,,,,,
 J5,PD18,,Available,In,,,,,,,
 J6,PD4,,Available,In,,,,,,,
 J7,PD7,,Available,In,,,,,,,
-J8,PB0,LED,GPIO,Out,Low,No,Disabled,No,No,Glitch Filter,0x0
+J8,PB0,,Available,In,,,,,,,
 J9,PC26,,Available,In,,,,,,,
 J10,PC8,,Available,In,,,,,,,
 K1,PD3,,Available,In,,,,,,,
-K2,PD17,,ICE_TMS,n/a,n/a,No,Disabled,No,No,Glitch Filter,0x0
-K4,PD14,,ICE_TCK,n/a,n/a,No,Disabled,No,No,Glitch Filter,0x0
+K2,PD17,,Available,In,,,,,,,
+K4,PD14,,Available,In,,,,,,,
 K6,PD19,,Available,In,,,,,,,
-K7,PD15,,ICE_TDI,n/a,n/a,No,Disabled,No,No,Glitch Filter,0x0
+K7,PD15,,Available,In,,,,,,,
 K8,PD12,,Available,In,,,,,,,
 K9,PD9,,Available,In,,,,,,,
 K10,PC6,,Available,In,,,,,,,
-L1,PD16,,ICE_TDO,n/a,n/a,No,Disabled,No,No,Glitch Filter,0x0
+L1,PD16,,Available,In,,,,,,,
 L2,PD13,,Available,In,,,,,,,
 L4,PD22,,Available,In,,,,,,,
 L6,PD25,,Available,In,,,,,,,
@@ -96,8 +96,8 @@ N1,PD21,,Available,In,,,,,,,
 N2,PD26,,Available,In,,,,,,,
 N3,PD29,,Available,In,,,,,,,
 N8,PIOBU1,,Available,In,,,,,,,
-N10,PA8,,Available,In,,,,,,,
-N11,PA9,,Available,In,,,,,,,
+N10,PA8,LED_GREEN,GPIO,Out,Low,No,Disabled,No,No,Glitch Filter,0x0
+N11,PA9,LED_BLUE,GPIO,Out,Low,No,Disabled,No,No,Glitch Filter,0x0
 N12,PC1,,Available,In,,,,,,,
 N14,PC2,,Available,In,,,,,,,
 N15,PA12,,Available,In,,,,,,,
@@ -123,7 +123,7 @@ R16,PA28,,Available,In,,,,,,,
 R17,PA31,,Available,In,,,,,,,
 T11,PA2,,Available,In,,,,,,,
 T12,PA5,,Available,In,,,,,,,
-T13,PA7,,Available,In,,,,,,,
+T13,PA7,LED_RED,GPIO,Out,Low,No,Disabled,No,No,Glitch Filter,0x0
 T14,PA19,,Available,In,,,,,,,
 T15,PA24,,Available,In,,,,,,,
 T16,PA27,,Available,In,,,,,,,

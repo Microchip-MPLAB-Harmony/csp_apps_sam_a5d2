@@ -54,6 +54,7 @@
 /*  This section Includes other configuration headers necessary to completely
     define this configuration.
 */
+#include "peripheral/mmu/plib_mmu.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -68,31 +69,34 @@ extern "C" {
 // Section: L1, L2 Cache Configuration
 // *****************************************************************************
 // *****************************************************************************
-#define L1_ICACHE_IN_USE                               false
-#define L1_ICACHE_ENABLE()
-#define L1_ICACHE_DISABLE()
-#define L1_ICACHE_INVALIDATE_ALL()
+#define L1_ICACHE_IN_USE                               true
+#define L1_ICACHE_ENABLE()                             icache_Enable()
+#define L1_ICACHE_DISABLE()                            icache_Disable()
+#define L1_ICACHE_INVALIDATE_ALL()                     L1C_InvalidateICacheAll()
 
-#define L1_DCACHE_IN_USE                               false
-#define L1_DCACHE_ENABLE()
-#define L1_DCACHE_DISABLE()
-#define L1_DCACHE_CLEAN_ALL()
-#define L1_DCACHE_INVALIDATE_ALL()
-#define L1_DCACHE_CLEAN_INVALIDATE_ALL()
+ 
+#define L1_DCACHE_IN_USE                               true
+#define L1_DCACHE_ENABLE()                             dcache_Enable()
+#define L1_DCACHE_DISABLE()                            dcache_Disable()
+#define L1_DCACHE_CLEAN_ALL()                          dcache_CleanAll()
+#define L1_DCACHE_INVALIDATE_ALL()                     dcache_InvalidateAll()
+#define L1_DCACHE_CLEAN_INVALIDATE_ALL()               dcache_CleanInvalidateAll()
+ 
 
 #define L2_DCACHE_IN_USE                               false
 #define L2_DCACHE_CLEAN_ALL()
 #define L2_DCACHE_INVALIDATE_BY_ADDR(addr,sz)
 //
 
-#define DCACHE_CLEAN_BY_ADDR(addr,sz)
-#define DCACHE_INVALIDATE_BY_ADDR(addr,sz)
-#define DCACHE_CLEAN_INVALIDATE_BY_ADDR(addr,sz)
-#define DCACHE_CLEAN_ALL()
-#define DCACHE_INVALIDATE_ALL()
-#define DCACHE_CLEAN_INVALIDATE_ALL()
+#define DCACHE_CLEAN_BY_ADDR(addr,sz)                  dcache_CleanByAddr(addr,sz)
+#define DCACHE_INVALIDATE_BY_ADDR(addr,sz)             dcache_InvalidateByAddr(addr,sz)
+#define DCACHE_CLEAN_INVALIDATE_BY_ADDR(addr,sz)       dcache_CleanInvalidateByAddr(addr,sz)
+#define DCACHE_CLEAN_ALL()                             dcache_CleanAll()
+#define DCACHE_INVALIDATE_ALL()                        dcache_InvalidateAll()
+#define DCACHE_CLEAN_INVALIDATE_ALL()                  dcache_CleanInvalidateAll()
 //
-#define DATA_CACHE_ENABLED                             false
+ 
+#define DATA_CACHE_ENABLED                             true   
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
