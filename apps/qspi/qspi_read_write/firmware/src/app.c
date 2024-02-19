@@ -92,27 +92,21 @@ static APP_TRANSFER_STATUS APP_ResetFlash(void)
 {
     memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = MX25_CMD_FLASH_RESET_ENABLE;
+    qspi_command_xfer.instruction = SST26_CMD_FLASH_RESET_ENABLE;
     qspi_command_xfer.width = SINGLE_BIT_SPI;
 
-    if (QSPI0_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI1_CommandWrite(&qspi_command_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
-    
-    /* Enforce MX25L Tcsh */
-    PIT_DelayMs(1);
 
-    qspi_command_xfer.instruction = MX25_CMD_FLASH_RESET;
+    qspi_command_xfer.instruction = SST26_CMD_FLASH_RESET;
     qspi_command_xfer.width = SINGLE_BIT_SPI;
 
-    if (QSPI0_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI1_CommandWrite(&qspi_command_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
-    
-    /* Enforce MX25L tReady2 */
-    PIT_DelayMs(100);
 
     return APP_TRANSFER_COMPLETED;
 }
@@ -122,10 +116,10 @@ static APP_TRANSFER_STATUS APP_EnableQuadIO(void)
 {
     memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = MX25_CMD_ENABLE_QUAD_IO;
+    qspi_command_xfer.instruction = SST26_CMD_ENABLE_QUAD_IO;
     qspi_command_xfer.width = SINGLE_BIT_SPI;
 
-    if (QSPI0_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI1_CommandWrite(&qspi_command_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -138,10 +132,10 @@ static APP_TRANSFER_STATUS APP_WriteEnable(void)
 {
     memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = MX25_CMD_WRITE_ENABLE;
+    qspi_command_xfer.instruction = SST26_CMD_WRITE_ENABLE;
     qspi_command_xfer.width = QUAD_CMD;
 
-    if (QSPI0_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI1_CommandWrite(&qspi_command_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -159,10 +153,10 @@ static APP_TRANSFER_STATUS APP_UnlockFlash(void)
 
     memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = MX25_CMD_UNPROTECT_GLOBAL;
+    qspi_command_xfer.instruction = SST26_CMD_UNPROTECT_GLOBAL;
     qspi_command_xfer.width = QUAD_CMD;
 
-    if (QSPI0_CommandWrite(&qspi_command_xfer, 0) == false)
+    if (QSPI1_CommandWrite(&qspi_command_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -175,11 +169,11 @@ static APP_TRANSFER_STATUS APP_ReadJedecId(uint32_t *jedec_id)
 {
     memset((void *)&qspi_register_xfer, 0, sizeof(qspi_register_xfer_t));
 
-    qspi_register_xfer.instruction = MX25_CMD_QUAD_JEDEC_ID_READ;
+    qspi_register_xfer.instruction = SST26_CMD_QUAD_JEDEC_ID_READ;
     qspi_register_xfer.width = QUAD_CMD;
-    qspi_register_xfer.dummy_cycles = 0;
+    qspi_register_xfer.dummy_cycles = 2;
 
-    if (QSPI0_RegisterRead(&qspi_register_xfer, jedec_id, 3) == false)
+    if (QSPI1_RegisterRead(&qspi_register_xfer, jedec_id, 3) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -192,11 +186,11 @@ static APP_TRANSFER_STATUS APP_ReadStatus( uint32_t *rx_data, uint32_t rx_data_l
 {
     memset((void *)&qspi_register_xfer, 0, sizeof(qspi_register_xfer_t));
 
-    qspi_register_xfer.instruction = MX25_CMD_READ_STATUS_REG;
+    qspi_register_xfer.instruction = SST26_CMD_READ_STATUS_REG;
     qspi_register_xfer.width = QUAD_CMD;
-    qspi_register_xfer.dummy_cycles = 0;
+    qspi_register_xfer.dummy_cycles = 2;
 
-    if (QSPI0_RegisterRead(&qspi_register_xfer, rx_data, rx_data_length) == false)
+    if (QSPI1_RegisterRead(&qspi_register_xfer, rx_data, rx_data_length) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -224,11 +218,11 @@ static APP_TRANSFER_STATUS APP_MemoryRead( uint32_t *rx_data, uint32_t rx_data_l
 {
     memset((void *)&qspi_memory_xfer, 0, sizeof(qspi_memory_xfer_t));
 
-    qspi_memory_xfer.instruction = MX25_CMD_HIGH_SPEED_QREAD;
+    qspi_memory_xfer.instruction = SST26_CMD_HIGH_SPEED_READ;
     qspi_memory_xfer.width = QUAD_CMD;
     qspi_memory_xfer.dummy_cycles = 6;
 
-    if (QSPI0_MemoryRead(&qspi_memory_xfer, rx_data, rx_data_length, address) == false) {
+    if (QSPI1_MemoryRead(&qspi_memory_xfer, rx_data, rx_data_length, address) == false) {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
     return APP_TRANSFER_COMPLETED;
@@ -244,10 +238,10 @@ static APP_TRANSFER_STATUS APP_MemoryWrite( uint32_t *tx_data, uint32_t tx_data_
 
     memset((void *)&qspi_memory_xfer, 0, sizeof(qspi_memory_xfer_t));
 
-    qspi_memory_xfer.instruction = MX25_CMD_PAGE_PROGRAM;
+    qspi_memory_xfer.instruction = SST26_CMD_PAGE_PROGRAM;
     qspi_memory_xfer.width = QUAD_CMD;
 
-    if (QSPI0_MemoryWrite(&qspi_memory_xfer, tx_data, tx_data_length, address) == false)
+    if (QSPI1_MemoryWrite(&qspi_memory_xfer, tx_data, tx_data_length, address) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -267,7 +261,7 @@ static APP_TRANSFER_STATUS APP_Erase(uint8_t instruction, uint32_t address)
     qspi_command_xfer.width = QUAD_CMD;
     qspi_command_xfer.addr_en = 1;
 
-    if (QSPI0_CommandWrite(&qspi_command_xfer, address) == false)
+    if (QSPI1_CommandWrite(&qspi_command_xfer, address) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
@@ -277,7 +271,7 @@ static APP_TRANSFER_STATUS APP_Erase(uint8_t instruction, uint32_t address)
 
 static APP_TRANSFER_STATUS APP_SectorErase(uint32_t address)
 {
-    return (APP_Erase(MX25_CMD_SECTOR_ERASE, address));
+    return (APP_Erase(SST26_CMD_SECTOR_ERASE, address));
 }
 
 // *****************************************************************************
@@ -303,6 +297,7 @@ void APP_Initialize ( void )
 
     for (i = 0; i < BUFFER_SIZE; i++)
         appData.writeBuffer[i] = i;
+
 }
 
 
@@ -371,7 +366,7 @@ void APP_Tasks ( void )
                 break;
             }
 
-            if (appData.jedec_id != MX25VF032B_JEDEC_ID)
+            if (appData.jedec_id != SST26VF032B_JEDEC_ID)
             {
                 appData.state = APP_STATE_ERROR;
                 break;

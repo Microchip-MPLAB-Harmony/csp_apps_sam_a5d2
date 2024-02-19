@@ -80,11 +80,11 @@ extern "C" {
 
 #define MEM_START_ADDRESS          (0x0U)
 
-#define MX25VF032B_JEDEC_ID       (0x001920C2UL)
+#define SST26VF032B_JEDEC_ID       (0x004326BFUL)
 
-#define LED_ON                     LED_Clear
-#define LED_OFF                    LED_Set
-#define LED_TOGGLE                 LED_Toggle
+#define LED_ON                     LED_GREEN_Set
+#define LED_OFF                    LED_GREEN_Clear
+#define LED_TOGGLE                 LED_GREEN_Toggle
 
 // *****************************************************************************
 /* Application states
@@ -171,13 +171,13 @@ typedef struct
     uint8_t writeBuffer[BUFFER_SIZE];
 } APP_DATA;
 
-/* MX25 Command set
+/* SST26 Command set
 
   Summary:
-    Enumeration listing the MX25VF commands.
+    Enumeration listing the SST26VF commands.
 
   Description:
-    This enumeration defines the commands used to interact with the MX25VF
+    This enumeration defines the commands used to interact with the SST26VF
     series of devices.
 
   Remarks:
@@ -187,49 +187,48 @@ typedef struct
 typedef enum
 {
     /* Reset enable command. */
-    MX25_CMD_FLASH_RESET_ENABLE = 0x66,
+    SST26_CMD_FLASH_RESET_ENABLE = 0x66,
 
     /* Command to reset the flash. */
-    MX25_CMD_FLASH_RESET        = 0x99,
+    SST26_CMD_FLASH_RESET        = 0x99,
 
     /* Command to Enable QUAD IO */
-    MX25_CMD_ENABLE_QUAD_IO     = 0x35,
+    SST26_CMD_ENABLE_QUAD_IO     = 0x38,
 
     /* Command to Reset QUAD IO */
-    MX25_CMD_RESET_QUAD_IO      = 0xFF,
+    SST26_CMD_RESET_QUAD_IO      = 0xFF,
 
     /* Command to read JEDEC-ID of the flash device. */
-    MX25_CMD_JEDEC_ID_READ      = 0x9F,
+    SST26_CMD_JEDEC_ID_READ      = 0x9F,
 
     /* QUAD Command to read JEDEC-ID of the flash device. */
-    MX25_CMD_QUAD_JEDEC_ID_READ = 0xAF,
+    SST26_CMD_QUAD_JEDEC_ID_READ = 0xAF,
 
     /* Command to perfrom High Speed Read */
-    MX25_CMD_HIGH_SPEED_READ    = 0x0B,
-    MX25_CMD_HIGH_SPEED_QREAD    = 0xEB,
+    SST26_CMD_HIGH_SPEED_READ    = 0x0B,
 
     /* Write enable command. */
-    MX25_CMD_WRITE_ENABLE       = 0x06,
+    SST26_CMD_WRITE_ENABLE       = 0x06,
 
     /* Page Program command. */
-    MX25_CMD_PAGE_PROGRAM       = 0x02,
+    SST26_CMD_PAGE_PROGRAM       = 0x02,
 
     /* Command to read the Flash status register. */
-    MX25_CMD_READ_STATUS_REG    = 0x05,
+    SST26_CMD_READ_STATUS_REG    = 0x05,
 
     /* Command to perform sector erase */
-    MX25_CMD_SECTOR_ERASE       = 0x20,
+    SST26_CMD_SECTOR_ERASE       = 0x20,
 
     /* Command to perform Bulk erase */
-    MX25_CMD_BULK_ERASE_64K     = 0xD8,
+    SST26_CMD_BULK_ERASE_64K     = 0xD8,
 
     /* Command to perform Chip erase */
-    MX25_CMD_CHIP_ERASE         = 0xC7,
+    SST26_CMD_CHIP_ERASE         = 0xC7,
 
     /* Command to unlock the flash device. */
-    MX25_CMD_UNPROTECT_GLOBAL   = 0x98
+    SST26_CMD_UNPROTECT_GLOBAL   = 0x98
 
-} MX25_CMD;
+} SST26_CMD;
 
 typedef enum
 {
