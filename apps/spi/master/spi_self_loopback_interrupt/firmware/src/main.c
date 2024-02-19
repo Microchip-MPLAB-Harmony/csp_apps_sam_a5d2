@@ -52,8 +52,8 @@
 #include "definitions.h"                // SYS function prototypes
 #include <string.h>
 
-#define LED_On()                        LED_Clear()
-#define LED_Off()                       LED_Set()
+#define LED_On()                        LED_GREEN_Set()
+#define LED_Off()                       LED_GREEN_Clear()
 
 /* Global variables */
 uint8_t txData[]  = "SELF LOOPBACK DEMO FOR SPI!";

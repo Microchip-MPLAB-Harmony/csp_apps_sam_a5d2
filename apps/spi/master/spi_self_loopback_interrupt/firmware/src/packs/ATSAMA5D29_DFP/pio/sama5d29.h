@@ -1,5 +1,5 @@
 /*
- * Peripheral I/O description for SAMA5D27
+ * Peripheral I/O description for SAMA5D29
  *
  * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
@@ -20,9 +20,9 @@
  *
  */
 
-/* file generated from device description version 2022-10-04T10:37:12Z */
-#ifndef _SAMA5D27_GPIO_H_
-#define _SAMA5D27_GPIO_H_
+/* file generated from device description version 2022-10-04T10:37:14Z */
+#ifndef _SAMA5D29_GPIO_H_
+#define _SAMA5D29_GPIO_H_
 
 /* ========== Peripheral I/O pin numbers ========== */
 #define PIN_PA0                     (    0)  /**< Pin Number for PA0 */
@@ -2207,5 +2207,5 @@
 #define MUX_PB4A_UART4_UTXD4                       _UINT32_(0)  /**< UART4 signal line function value: UART4_UTXD4 */
 #define PIO_PB4A_UART4_UTXD4                       (_UINT32_(1) << 4) /**< UART4 signal: UART4_UTXD4 */
 
-#endif /* _SAMA5D27_GPIO_H_ */
+#endif /* _SAMA5D29_GPIO_H_ */
 
