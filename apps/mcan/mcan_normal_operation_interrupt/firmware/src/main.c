@@ -17,7 +17,7 @@
  *******************************************************************************/
 
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -50,24 +50,12 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
-/*************************************************************************************
-MCAN - Connect ATA6563 click board to SAMA5D2 Xplained Ultra board as below.
-       Connect CANTX0 (PC10) to TX (PIN 13) of ATA6563 click board
-       Connect CANRX0 (PC11) to RX (PIN 14) of ATA6563 click board
-       Connect GND, 5V and 3.3V to ATA6563 click board
-       Connect Microchip CAN Bus Analyzer to PC using USB Male-A to Male Mini-B cable.
-       Connect Microchip CAN Bus Analyzer to ATA6563 click board using female to female DB9 serial cable.
-       Install Microchip CAN Bus Analyzer software on PC.
-MCAN - Normal operation mode, MCAN clock source is 8 MHz and bitrate is 500 Kbps.
-*************************************************************************************/
+//uint8_t CACHE_ALIGN mcan1MessageRAM[MCAN0_MESSAGE_RAM_CONFIG_SIZE] __attribute__((__section__(".region_sram")));
+uint8_t mcan1MessageRAM[MCAN0_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32))) __attribute__((__section__(".region_nocache")));
 
-/* LED ON and OFF macros */
-#define LED_On()                        LED_Clear()
-#define LED_Off()                       LED_Set()
-#define WRITE_ID(id)                    (id << 18)
-#define READ_ID(id)                     (id >> 18)
-
-uint8_t Mcan0MessageRAM[MCAN0_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32))) __attribute__((__section__(".region_nocache")));
+/* Standard identifier id[28:18]*/
+#define WRITE_ID(id) (id << 18)
+#define READ_ID(id)  (id >> 18)
 
 /* Application's state machine enum */
 typedef enum
@@ -76,20 +64,19 @@ typedef enum
     APP_STATE_MCAN_TRANSMIT,
     APP_STATE_MCAN_IDLE,
     APP_STATE_MCAN_XFER_SUCCESSFUL,
-    APP_STATE_MCAN_XFER_ERROR
+    APP_STATE_MCAN_XFER_ERROR,
+    APP_STATE_MCAN_USER_INPUT
 } APP_STATES;
 
-/* Global variables */
-char messageStart[] = "**** MCAN Normal Operation Interrupt Demo ****\r\n\
-**** Demo uses interrupt model of MCAN PLIB. ****\r\n\
-**** Receive message from CAN Bus and transmit back received message to CAN Bus and UART1 serial port ****\r\n\
-**** LED toggles on each time the message is transmitted back ****\r\n";
-/* Variable to save application state */
-volatile static APP_STATES state = APP_STATE_MCAN_IDLE;
 /* Variable to save Tx/Rx transfer status and context */
 static uint32_t status = 0;
 static uint32_t xferContext = 0;
+/* Variable to save Tx/Rx message */
 static uint8_t loop_count = 0;
+static uint8_t user_input = 0;
+/* Variable to save application state */
+volatile static APP_STATES state = APP_STATE_MCAN_USER_INPUT;
+
 static uint8_t txFiFo[MCAN0_TX_FIFO_BUFFER_SIZE];
 static uint8_t rxFiFo0[MCAN0_RX_FIFO0_SIZE];
 
@@ -98,6 +85,15 @@ static uint8_t rxFiFo0[MCAN0_RX_FIFO0_SIZE];
 // Section: Local functions
 // *****************************************************************************
 // *****************************************************************************
+
+/* Menu */
+static void display_menu(void)
+{
+    printf(" ------------------------------ \r\n");   
+    printf(" Press '1' to Transmit message \r\n");
+    printf(" Press 'm' to Display menu \r\n");
+}
+
 /* Print Rx Message */
 static void print_message(uint8_t numberOfMessage, MCAN_RX_BUFFER *rxBuf, uint8_t rxBufLen)
 {
@@ -107,11 +103,12 @@ static void print_message(uint8_t numberOfMessage, MCAN_RX_BUFFER *rxBuf, uint8_
 
     for (uint8_t count = 0; count < numberOfMessage; count++)
     {
-        /* Print message to UART1 */
+        /* Print message to Console */
+        printf(" Rx FIFO0 : New Message Received\r\n");
         id = rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id);
         msgLength = rxBuf->dlc;
         length = msgLength;
-        printf("Message - ID : 0x%x Length : 0x%x ", (unsigned int)id, (unsigned int)msgLength);
+        printf(" Message - ID : 0x%x Length : 0x%x ", (unsigned int)id, (unsigned int)msgLength);
         printf("Message : ");
         while(length)
         {
@@ -167,7 +164,7 @@ void APP_MCAN_RxFifo0Callback(uint8_t numberOfMessage, uintptr_t context)
                 if (MCAN0_MessageReceiveFifo(MCAN_RX_FIFO_0, numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0) == true)
                 {
                     print_message(numberOfMessage, (MCAN_RX_BUFFER *)rxFiFo0, MCAN0_RX_FIFO0_ELEMENT_SIZE);
-                    state = APP_STATE_MCAN_TRANSMIT;
+                    state = APP_STATE_MCAN_XFER_SUCCESSFUL;
                 }
                 else
                 {
@@ -190,47 +187,63 @@ void APP_MCAN_RxFifo0Callback(uint8_t numberOfMessage, uintptr_t context)
 // Section: Main Entry Point
 // *****************************************************************************
 // *****************************************************************************
+
 int main ( void )
 {
     MCAN_TX_BUFFER *txBuffer = NULL;
-    MCAN_RX_BUFFER *rxBuf = NULL;
 
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-    LED_Off();
 
+    printf(" ------------------------------ \r\n");
+    printf("            MCAN Demo            \r\n");
+    printf(" ------------------------------ \r\n");
+    
     /* Set Message RAM Configuration */
-    MCAN0_MessageRAMConfigSet(Mcan0MessageRAM);
-
-    /* Send start message */
-    UART1_Write(&messageStart, sizeof(messageStart));
+    MCAN0_MessageRAMConfigSet(mcan1MessageRAM);
 
     MCAN0_RxFifoCallbackRegister(MCAN_RX_FIFO_0, APP_MCAN_RxFifo0Callback, APP_STATE_MCAN_RECEIVE);
 
-    while(1)
+    display_menu();
+    
+    while ( true )
     {
+        if (state == APP_STATE_MCAN_USER_INPUT)
+        {
+            /* Read user input */
+            scanf("%c", (char *) &user_input);
+            
+            switch (user_input)
+            {
+				case '1':
+                    printf(" Transmitting Message:");
+                    memset(txFiFo, 0x00, MCAN0_TX_FIFO_BUFFER_ELEMENT_SIZE);
+                    txBuffer = (MCAN_TX_BUFFER *)txFiFo;
+					txBuffer->id = WRITE_ID(0x469);
+                    txBuffer->dlc = 8;
+					for (loop_count = 0; loop_count < 8; loop_count++){
+						txBuffer->data[loop_count] = loop_count;
+					}                
+ 					MCAN0_TxFifoCallbackRegister( APP_MCAN_TxFifoCallback, (uintptr_t)APP_STATE_MCAN_TRANSMIT );
+                    state = APP_STATE_MCAN_IDLE;
+					if (MCAN0_MessageTransmitFifo(1, txBuffer) == false)
+                    {
+                        printf(" Failed \r\n");
+                    }             
+                    break;
+				case 'm':
+				case 'M':
+					display_menu();
+					break;
+				default:
+					printf(" Invalid Input \r\n");
+					break;
+            }
+        }
+
         /* Check the application's current state. */
         switch (state)
         {
-            case APP_STATE_MCAN_TRANSMIT:
-            {
-                MCAN0_TxFifoCallbackRegister( APP_MCAN_TxFifoCallback, (uintptr_t)APP_STATE_MCAN_TRANSMIT );
-                state = APP_STATE_MCAN_IDLE;
-                memset(txFiFo, 0x00, MCAN0_TX_FIFO_BUFFER_SIZE);
-                txBuffer = (MCAN_TX_BUFFER *)txFiFo;
-                rxBuf = (MCAN_RX_BUFFER *)rxFiFo0;
-                txBuffer->id = rxBuf->id;
-                txBuffer->dlc = rxBuf->dlc;
-                for (loop_count = 0; loop_count < 8; loop_count++){
-                    txBuffer->data[loop_count] = rxBuf->data[loop_count];
-                }                
-                /* Transmit back received Message */
-                if (MCAN0_MessageTransmitFifo(1, txBuffer) == false)
-                {
-                    printf("MCAN0_MessageTransmit request has failed\r\n");
-                }
-                break;
-            }
             case APP_STATE_MCAN_IDLE:
             {
                 /* Application can do other task here */
@@ -238,24 +251,30 @@ int main ( void )
             }
             case APP_STATE_MCAN_XFER_SUCCESSFUL:
             {
-                LED_Toggle();
-                state = APP_STATE_MCAN_IDLE;
+                if ((APP_STATES)xferContext == APP_STATE_MCAN_TRANSMIT)
+                {
+                    printf(" Success\r\n");
+                }                
+                state = APP_STATE_MCAN_USER_INPUT;
                 break;
             }
             case APP_STATE_MCAN_XFER_ERROR:
             {
                 if ((APP_STATES)xferContext == APP_STATE_MCAN_RECEIVE)
                 {
-                    printf("MCAN Rx Error : 0x%lx\r\n", status);
+                    printf(" Error in received message\r\n");
                 }
                 else
                 {
-                    printf("MCAN Tx Error : 0x%lx\r\n", status);
+                    printf(" Failed\r\n");
                 }
+                state = APP_STATE_MCAN_USER_INPUT;
                 break;
             }
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -268,4 +287,3 @@ int main ( void )
 /*******************************************************************************
  End of File
 */
-
