@@ -3,11 +3,11 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.3.0",
-		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_adc_automatic_window_comparison",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_adc_polled_mode",
 		"version": "3.4.0",
-		"displayName": "ADC automatic window comparison Example for SAM A5D2x Family",
-		"projectName": "adc_automatic_window_comparison_sam_a5d2_xult",
-		"shortDescription": "This example application shows how to sample an analog input in polled mode and send the converted data to console using automatic window comparison of converted values.",
+		"displayName": "ADC Polling Example for SAM A5D2x Family",
+		"projectName": "adc_polled_mode_sam_a5d2_xult",
+		"shortDescription": "This example application shows how to sample an analog input in polled mode and send the converted data to console.",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.15.0"
