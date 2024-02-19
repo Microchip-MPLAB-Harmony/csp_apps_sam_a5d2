@@ -53,6 +53,8 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"         		// SYS function prototypes
 
+#define LED_Toggle()      GREEN_Toggle()
+
 static bool alarmTriggered = false;
 
 void RTC_Callback( uint32_t int_cause, uintptr_t context )
