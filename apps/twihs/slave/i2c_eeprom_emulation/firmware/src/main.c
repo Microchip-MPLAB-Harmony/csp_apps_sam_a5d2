@@ -155,7 +155,7 @@ bool APP_TWIHS_Callback ( TWIHS_SLAVE_TRANSFER_EVENT event, uintptr_t contextHan
 
         case TWIHS_SLAVE_TRANSFER_EVENT_RX_READY:
             
-            rxByte = TWIHS0_ReadByte();
+            rxByte = TWIHS1_ReadByte();
             
             if (eepromData.internalWriteInProgress == false)
             {
@@ -174,7 +174,7 @@ bool APP_TWIHS_Callback ( TWIHS_SLAVE_TRANSFER_EVENT event, uintptr_t contextHan
 
         case TWIHS_SLAVE_TRANSFER_EVENT_TX_READY:
             /* Provide the EEPROM data requested by the I2C Master */
-            TWIHS0_WriteByte(EEPROM_EmulationBuffer[eepromData.currentAddrPtr++]);
+            TWIHS1_WriteByte(EEPROM_EmulationBuffer[eepromData.currentAddrPtr++]);
             if (eepromData.currentAddrPtr >= EEPROM_SIZE_BYTES)
             {
                 eepromData.currentAddrPtr = 0;
@@ -202,7 +202,7 @@ bool APP_TWIHS_Callback ( TWIHS_SLAVE_TRANSFER_EVENT event, uintptr_t contextHan
                 eepromData.internalWriteInProgress = true;
                 
                 /* Send NACK for next data packets from I2C master */
-                TWIHS0_NACKDataPhase(true);
+                TWIHS1_NACKDataPhase(true);
                 
                 eepromData.eepromCommand = EEPROM_CMD_WRITE;
             }
@@ -228,7 +228,7 @@ void EEPROM_StateMachine(void)
             eepromData.eepromCommand = EEPROM_CMD_IDLE;
             
             /* Internal write is not in progress. ACK the data packets. */
-            TWIHS0_NACKDataPhase(false);
+            TWIHS1_NACKDataPhase(false);
             
             break;
         case EEPROM_CMD_IDLE:
@@ -244,7 +244,7 @@ int main ( void )
 
     eepromData.eepromCommand = EEPROM_CMD_IDLE;
 
-    TWIHS0_CallbackRegister(APP_TWIHS_Callback, 0);
+    TWIHS1_CallbackRegister(APP_TWIHS_Callback, 0);
 
     while ( true )
     {

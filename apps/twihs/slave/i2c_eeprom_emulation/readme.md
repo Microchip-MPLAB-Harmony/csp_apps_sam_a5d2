@@ -39,7 +39,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_xult.X | MPLABX project for [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -52,7 +52,7 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
 ## Setting up the hardware
@@ -61,20 +61,18 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_xult.X | [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT) |
+| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
 |||
 
 Hardware setup requires two boards, one acting as the TWIHS Master and the other as the TWIHS slave.
 
-### Setting up [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)
+### Setting up [SAMA5D2 Curiosity]()
 
 #### Setting up the board
 
-- Short jumper JP2 (DEBUG_DIS)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
-- On EXT1 header, connect TWIHS SDA line on Pin 11 (PB31) and TWIHS SCL line on Pin 12 (PC0) with the corresponding SDA and SCL lines of the TWIHS master. Refer the TWIHS master documentation for connection details.
+- connect TWIHS SDA line on Pin 11 (PD4) of J18 connector and TWIHS SCL line on Pin 12 (PD5) with the corresponding SDA and SCL lines of the TWIHS master. Refer the TWIHS master documentation for connection details.
 - Connect a ground wire between TWIHS master and TWIHS slave boards
-- Connect the Debug USB port on the board to the computer using a micro USB cable
 
 ## Running the Application
 
