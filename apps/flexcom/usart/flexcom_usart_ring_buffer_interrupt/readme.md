@@ -26,7 +26,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,17 +39,17 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
-### Setting up [SAMA5D2 Curiosity]()
+### Setting up [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A)
 
 #### Setting up the board
 
 - Connect the Debug USB port on the board to the computer using a micro USB cable
-- Connect [USB UART click board](http://www.mikroe.com/usb-uart-click) to SAM A5D2 Xplained Ultra board as per below Pin Connections
+- Connect [USB UART click board](http://www.mikroe.com/usb-uart-click) to SAM A5D29 Curiosity board as per below Pin Connections
 
-    | SAM A5D2 Xplained Ultra board Pins | [USB UART click board](http://www.mikroe.com/usb-uart-click) Pins |
+    | SAM A5D29 Curiosity board Pins | [USB UART click board](http://www.mikroe.com/usb-uart-click) Pins |
     | ---------------------------------- | ------------------------- |
     | PIN 5, J8 connector | RX |
     | PIN 4, J8 connector | TX |

@@ -1,32 +1,32 @@
 ---
 parent: Harmony 3 peripheral library application examples for SAMA5D2 family
-title: FLEXCOM TWI (I2C) EEPROM 
+title: TWIHS EEPROM read write
 has_children: false
 has_toc: false
 ---
 
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
-# FLEXCOM TWI (I2C) EEPROM
+# TWIHS EEPROM read write
 
-This example application shows how to use the flexcom module in TWI mode.
+This example application shows how to use the TWIHS peripheral to write and read from the I2C serial EEPROM memory.
 
 ## Description
 
-This application configures the flexcom peripheral in TWI mode to read and write data from an external EEPROM memory chip. Data is written to the EEPROM and then read back and compared. Successful comparison is indicated by turning on an LED.
+This example uses the TWIHS peripheral library to write an array of values to the I2C Serial EEPROM and verify the value written by reading the values back and comparing it to the value written.
 
 ## Downloading and building the application
 
 To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2) and then click Clone button to clone this repository or download as zip file.
 This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
-Path of the application within the repository is **apps/flexcom/twi/master/flexcom_twi_eeprom/firmware** .
+Path of the application within the repository is **apps/twihs/master/twihs_eeprom_read_write/firmware** .
 
 To build the application, refer to the following table and open the project using its IDE.
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,10 +39,10 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
-### Setting up [SAMA5D2 Curiosity]()
+### Setting up [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A)
 
 #### Addtional hardware required
 
@@ -72,5 +72,5 @@ Following table provides the LED name:
 
 | Board      | LED Name                                    |
 | ----------------- | ---------------------------------------------- |
-| [SAMA5D2 Curiosity]() |RGB_LED(Green)  |
+| [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |RGB_LED(Green)  |
 |||

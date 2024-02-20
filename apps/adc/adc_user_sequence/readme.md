@@ -17,7 +17,7 @@ Conversion of the three analog inputs is triggered from software trigger at ever
 
 | Board | Sequence of conversion |
 | ----- | ---------------------- |
-| [SAMA5D2 Curiosity]() |  AD5 --> AD6 --> AD0 |
+| [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |  AD5 --> AD6 --> AD0 |
 |||
 
 Analog input voltage in the range of 0 V to 3.3 V is fed to the ADC input channel AD5, AD6 and AD0. ADC conversion result is displayed on the console.
@@ -33,7 +33,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -46,10 +46,10 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_curiosity.X  | [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X  | [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
-### Setting up [SAMA5D2 Curiosity]()
+### Setting up [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A)
 
 #### Setting up the board
 

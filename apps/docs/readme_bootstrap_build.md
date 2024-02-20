@@ -38,17 +38,23 @@ has_toc: false
 
   **Debug/Run application from within MPLABx**
 
-  - Load *{evaluation_kit}_bkpt_none_defconfig*. For example, on SAMA5D2 Xplained Evaluation Kit, select **sama5d2_xplained_bkptnone_defconfig** as the configuration file
+  - Load *{evaluation_kit}_bkpt_none_defconfig*. For example, on SAMA5D29 Curiosity Board, select **sama5d29_curiosity_bkptnone_defconfig** as the configuration file
 
   - Click on "Apply" and "OK" buttons to configure the project
 
     ![](images/properties_kconfig_bkpt_none.png)
 
   - You can see that the MPU product is now selected as "SAMA5D2" and the primary operation is selected as "Configure and Stop"
-
+  
+  - If *{evaluation_kit}_bkpt_none_defconfig* is not present, load *{evaluation_kit}sd_uboot_defconfig* as the configuration file
+  
+	- Click on "Configure and stop" option under primary operation and Click on "Apply" and "OK" buttons to configure the project
+  
+	![](images/properties_kconfig_bkpt_none.png)
+	
   **Load and Run application from an SD card**
 
-  - Load *{evaluation_kit}sd_uboot_defconfig*. For example, on SAMA5D2 Xplained Evaluation Kit, select **sama5d2_xplainedsd_uboot_defconfig** as the configuration file
+  - Load *{evaluation_kit}sd_uboot_defconfig*. For example, on SAMA5D29 Curiosity Board, select **sama5d29_curiositysd_uboot_defconfig** as the configuration file
 
   - Click on "Apply" and "OK" buttons to configure the project
 

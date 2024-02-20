@@ -26,7 +26,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -39,15 +39,15 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
-### Setting up [SAMA5D2 Curiosity]()
+### Setting up [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A)
 
 #### Addtional hardware required
 
 - To run the demo, the following additional hardware are required:
-  - [SAMA5D2 Curiosity]() | 2 |
+  - [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) | 2 |
   - [ATA6563 click board](https://www.mikroe.com/ata6563-click)	| 2 |
 
 #### Setting up the board

@@ -36,7 +36,7 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
-| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | MPLABX project for [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
 ## Setting up AT91Bootstrap loader
@@ -49,14 +49,14 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_a5d2_curiosity.X | [SAMA5D2 Curiosity]() |
+| sam_a5d2_curiosity.X | [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) |
 |||
 
-### Setting up [SAMA5D2 Curiosity]()
+### Setting up [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A)
 
 #### Setting up the board
 
-- To run this demo two [SAMA5D2 Curiosity]() are required. One will be progammed as SPI master and other will be programmed as SPI slave.
+- To run this demo two [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) are required. One will be progammed as SPI master and other will be programmed as SPI slave.
 - Connect Pin 19, 21, 23, 24 on RPi 40-pin connector (J25) of SPI slave to Pin 19, 21, 23, 24 on RPi 40-pin connector (J25) of SPI master 
     - Pin 24 - SPI Chip Select
     - Pin 23 - SCK
@@ -78,5 +78,5 @@ Following table provides the LED name:
 
 | Board      | LED Name  | Switch Name |
 | ---------- | --------- | ----------- |
-| [SAMA5D2 Curiosity]() | RGB_LED(Green) | USER |
+| [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A) | RGB_LED(Green) | USER |
 |||
