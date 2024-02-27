@@ -1,105 +1,77 @@
-﻿---
-title: Harmony 3 peripheral library application examples for SAMA5D2 family
-nav_order: 1
-has_children: true
-has_toc: false
----
-[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
+# Harmony 3 Peripheral Library Application Examples for SAMA5D2 Family
 
-# Harmony 3 peripheral library application examples for SAMA5D2 family
+MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware<br /> solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices.<br /> Refer to the following links for more information.
 
-MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices.  Refer to the following links for more information.
+-   [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit)
+-   [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus)
+-   [Microchip MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide)
+-   [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony)
+-   [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/)
 
-- [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit)
-- [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus)
-- [Microchip MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide)
-- [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony)
-- [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/)
+This repository contains the MPLAB® Harmony 3 peripheral library application examples for<br /> SAMA5D2 family:
 
-This repository contains the MPLAB® Harmony 3 peripheral library application examples for SAMA5D2 family
+-   [Release Notes](docs/GUID-DFC5DD56-18A3-4091-A7AB-765E973D3A0E.md)
+-   [MPLAB® Harmony License](docs/GUID-769B511E-7564-4EF6-B53F-6F10D407F810.md)
 
-- [Release Notes](release_notes.md)
-- [MPLAB® Harmony License](mplab_harmony_license.md)
-
-To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2) and then click **Clone** button to clone this repository or download as zip file.
-This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
+To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2) and then click **Clone**<br /> button to clone this repository or download as zip file. This content can also be<br /> downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
 ## Contents Summary
 
-| Folder     | Description                             |
-| ---        | ---                                     |
-| apps       | Contains peripheral library example applications |
-| docs       | Contains documentation in html format for offline viewing (to be used only after cloning this repository onto a local machine). Use [github pages](https://microchip-mplab-harmony.github.io/csp_apps_sam_a5d2/) of this repository for viewing it online. |
+|Folder|Description|
+|:-----|:----------|
+|apps|Contains peripheral library example<br /> applications|
+|docs|Contains documentation in html<br /> format for offline viewing \(to be used only after cloning this<br /> repository onto a local machine\). Use [github pages](https://microchip-mplab-harmony.github.io/) of this repository for<br /> viewing it online|
 
 ## Code Examples
 
-The following applications are provided to demonstrate the typical or interesting usage models of one or more peripheral libraries.
+The following applications are provided to demonstrate the typical or interesting<br /> usage models of one or more peripheral libraries.
 
-| Name | Description |
-| ---- | ----------- |
-| [ADC automatic window comparison](apps/adc/adc_automatic_window_comparison/readme.md) | This example application shows how to sample an analog input in polled mode and send the converted data to console using automatic window comparison of converted values |
-| [ADC Polling](apps/adc/adc_polled_mode/readme.md) | This example application shows how to sample an analog input in polled mode and send the converted data to console |
-| [ADC user sequence](apps/adc/adc_user_sequence/readme.md) | This example application shows how to sample three analog inputs using the user sequencer in software trigger mode and send the converted data to the console |
-| [Cache maintenance](apps/cache/cache_maintenance/readme.md) | This example application shows how to do cache maintenance operation by cleaning and invalidating the cache for the DMA buffers located in the cacheable SRAM region |
-| [Clock configuration](apps/clock/clock_config/readme.md) | This example application shows how to configure the clock system to run the device at maximum frequency. It also outputs a prescaled clock signal on a GPIO pin for measurement and verification |
-| [Low power modes](apps/clock/low_power/readme.md) | This example application shows how to enter low power modes of SAMA5D27 MPU |
-| [FLEXCOM SPI EEPROM read write](apps/flexcom/spi/master/flexcom_spi_eeprom/readme.md) | This example application shows how to use the flexcom module in SPI mode |
-| [FLEXCOM SPI Master read write test application](apps/flexcom/spi/master/flexcom_spi_write_read_test_app/readme.md) | This is a FLEXCOM SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under -  apps/flexcom/spi/slave/flexcom_spi_write_read/firmware |
-| [FLEXCOM SPI Slave read write](apps/flexcom/spi/slave/flexcom_spi_write_read/readme.md) | This example application demonstrates how to use the FLEXCOM SPI peripheral in slave mode |
-| [FLEXCOM TWI (I2C) EEPROM](apps/flexcom/twi/master/flexcom_twi_eeprom/readme.md) | This example application shows how to use the flexcom module in TWI mode |
-| [FLEXCOM TWI EEPROM emulation](apps/flexcom/twi/slave/i2c_eeprom_emulation/readme.md) | This example application demonstrates how to use the FLEXCOM TWI peripheral in slave mode |
-| [FLEXCOM USART blocking](apps/flexcom/usart/flexcom_usart_echo_blocking/readme.md) | This example application shows how to use the flexcom module in USART mode |
-| [FLEXCOM USART interrupt](apps/flexcom/usart/flexcom_usart_echo_interrupt/readme.md) | This example application shows how to use the flexcom module in USART mode |
-| [FLEXCOM USART flow control](apps/flexcom/usart/flexcom_usart_flow_control/readme.md) | This example application shows how to use the flexcom module in USART flow control mode |
-| [FLEXCOM USART ring buffer](apps/flexcom/usart/flexcom_usart_ring_buffer_interrupt/readme.md) | This example application shows how to use the FLEXCOM peripheral in USART ring buffer mode |
-| [MCAN FD interrupt](apps/mcan/mcan_fd_operation_interrupt_timestamp/readme.md) | This example application shows how to use the MCAN module to transmit and receive CAN FD messages in interrupt mode |
-| [MCAN blocking](apps/mcan/mcan_normal_operation_blocking/readme.md) | This example application shows how to use the MCAN module to transmit and receive CAN messages in polling mode |
-| [MCAN interrupt](apps/mcan/mcan_normal_operation_interrupt/readme.md) | This example application shows how to use the MCAN module to transmit and receive CAN messages in interrupt mode |
-| [PIO interrupt](apps/pio/pio_led_on_off_interrupt/readme.md) | This example application shows how to generate GPIO interrupt on switch press and release, and indicate the switch status using the LED |
-| [PIO polling](apps/pio/pio_led_on_off_polling/readme.md) | This example application shows how to poll the switch input, and indicate the switch status using the LED |
-| [PIT periodic interrupt](apps/pit/led_toggle_interrupt/readme.md) | This example application shows how to use PIT counter in interrupt mode |
-| [PIT polling](apps/pit/led_toggle_polling/readme.md) | This example application shows how to use PIT counter in polling mode |
-| [PIT period change](apps/pit/period_change/readme.md) | This example application shows how PIT period can be changed during runtime |
-| [PIT start stop](apps/pit/start_stop/readme.md) | This example application shows how PIT can be started and stopped at runtime |
-| [PWM synchronous channels](apps/pwm/pwm_synchronous_channels/readme.md) | This example application shows how to use the PWM peripheral to generate 3-phase PWM signals with dead time |
-| [QSPI flash read write](apps/qspi/qspi_read_write/readme.md) | This example application shows how to use the QSPI Peripheral library to perform erase, write and read operation with the QSPI Serial Flash memory in Quad IO mode |
-| [RSTC interrupt](apps/rstc/led_switcher/readme.md) | This example application shows how to use the RSTC peripheral to generate an interrupt instead of generating a reset, when the Reset switch is pressed on board |
-| [RSTC reset cause](apps/rstc/rstc_reset_cause/readme.md) | This example shows how to use the RSTC peripheral to indicate the cause of the device reset |
-| [RTC alarm interrupt](apps/rtc/rtc_alarm/readme.md) | This example application shows how to use the RTC to configure the time and generate the alarm |
-| [RXLP wakeup](apps/rxlp/wakeup/readme.md) | This example application shows how RXLP can wakeup the device |
-| [SHDWC wakeup](apps/shdwc/piobu0_wakeup/readme.md) | This example application shows how to shutdown and wakeup the device using SHDWC peripheral |
-| [SPI ping pong with DMA](apps/spi/master/spi_ping_pong_with_dma/readme.md) | This example application shows how to continuously transmit and receive data over a SPI interface using ping pong buffers with the DMA |
-| [SPI blocking](apps/spi/master/spi_self_loopback_blocking/readme.md) | This example application shows how to use the SPI peripheral to transmit and receive a block of data in a blocking manner |
-| [SPI self loopback dma](apps/spi/master/spi_self_loopback_dma/readme.md) | This example application shows how to use the SPI peripheral with DMA to transmit and receive a block of data |
-| [SPI interrupt](apps/spi/master/spi_self_loopback_interrupt/readme.md) | This example application shows how to use the SPI peripheral to transmit and receive a block of data using interrupts |
-| [SPI Master read write test application](apps/spi/master/spi_write_read_test_app/readme.md) | This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under -  apps/spi/slave/spi_write_read/firmware |
-| [SPI Slave read write](apps/spi/slave/spi_write_read/readme.md) | This example application demonstrates how to use the SPI peripheral in slave mode |
-| [TC capture mode](apps/tc/tc_capture_mode/readme.md) | This example application shows how to use the TC module in capture mode to measure duty cycle and frequency of an external input |
-| [TC compare mode](apps/tc/tc_compare_mode/readme.md) | This example application shows how to use the TC module in compare mode to generate an active low, active high, and toggle output on compare match |
-| [TC timer mode](apps/tc/tc_timer_mode/readme.md) | This example application shows how to use the TC module in timer mode to generate periodic interrupt |
-| [TRNG random number](apps/trng/random_number/readme.md) | This example application shows how to use the TRNG Peripheral library to generate and read a random number |
-| [TWIHS EEPROM read write](apps/twihs/master/twihs_eeprom/readme.md) | This example application shows how to use the TWIHS peripheral to write and read from the I2C serial EEPROM memory |
-| [TWIHS EEPROM emulation](apps/twihs/slave/i2c_eeprom_emulation/readme.md) | This example application demonstrates how to use the TWIHS peripheral in slave mode |
-| [UART echo blocking](apps/uart/uart_echo_blocking/readme.md) | This example application shows how to use the UART peripheral to transfer a block of data in a blocking manner |
-| [UART echo interrupt](apps/uart/uart_echo_interrupt/readme.md) | This example application shows how to use the UART peripheral to transfer a block of data in a non-blocking manner |
-| [USART ring buffer](apps/uart/uart_ring_buffer_interrupt/readme.md) | This example application shows how to use USART peripheral in ring buffer mode |
-| [WDT timeout](apps/wdt/wdt_timeout/readme.md) | This example application shows how to generate a Watchdog timer reset by emulating a deadlock |
-| [XDMAC memory transfer](apps/xdmac/xdmac_memory_transfer/readme.md) | This example application shows how to use the XDMAC peripheral to do a memory to memory transfer and illustrates the usage of burst size to reduce the transfer time |
+|Name|Description|
+|----|-----------|
+|[ADC Automatic Window Comparison](docs/GUID-5B629421-92DF-4243-84DD-118B4E827B28.md)|This example application shows<br /> how to sample an analog input in polled mode and send the converted<br /> data to console using automatic window comparison of converted<br /> values|
+|[ADC Polling](docs/GUID-A109981B-C16D-43C7-9506-21A301C0529E.md)|This example application shows<br /> how to sample an analog input in polled mode and send the converted<br /> data to console|
+|[ADC User Sequence](docs/GUID-E00A8A28-604B-487D-A8CF-D0B34A25D547.md)|This example application shows<br /> how to sample three analog inputs using the user sequencer in<br /> software trigger mode and send the converted data to the<br /> console|
+|[Cache Maintenance](docs/GUID-DE9ADA61-BA03-4187-B0BB-A38D0EBAB43C.md)|This example application shows<br /> how to do cache maintenance operation by cleaning and invalidating<br /> the cache for the DMA buffers located in the cacheable SRAM<br /> region|
+|[Clock Configuration](docs/GUID-2FFE71D6-78A7-4AB9-A263-C95B74182FA3.md)|This example application shows<br /> how to configure the clock system to run the device at maximum<br /> frequency. It also outputs a prescaled clock signal on a GPIO pin<br /> for measurement and verification|
+|[FLEXCOM SPI EEPROM Read Write](docs/GUID-67BED8DC-CDCF-4CC5-B9D1-2D39D28E9503.md)|This example application shows<br /> how to use the FLEXCOM module in SPI mode|
+|[FLEXCOM SPI master Read Write Test Application](docs/GUID-56CAD3F5-68BC-4F5E-83D3-28200C4479EF.md)|This is a FLEXCOM SPI Host test<br /> application which is provided to demonstrate communication between<br /> SPI host and the corresponding SPI client application available<br /> under -<br /> apps/flexcom/spi/slave/flexcom\_spi\_write\_read/firmware|
+|[FLEXCOM SPI Slave Read Write](docs/GUID-DAD97C2E-D70E-4369-85D2-575F0D53C5F9.md)|This example application<br /> demonstrates how to use the FLEXCOM SPI peripheral in client<br /> mode|
+|[FLEXCOM TWI \(I2C\) EEPROM](docs/GUID-405EA827-74C0-4999-AC71-F1E1A5E71A56.md)|This example application shows<br /> how to use the FLEXCOM module in TWI mode|
+|[FLEXCOM USART Blocking](docs/GUID-C08A226C-07CF-450E-9C19-80D86BFDB7F1.md)|This example application shows<br /> how to use the FLEXCOM module in USART mode|
+|[FLEXCOM USART Flow Control](docs/GUID-444618DA-D2B8-4BBC-8C36-CF72431126CD.md)|This example application shows<br /> how to use the FLEXCOM module in USART flow control mode|
+|[FLEXCOM USART Interrupt](docs/GUID-54190A78-382B-41EC-A2D7-AEF30B86619A.md)|This example application shows<br /> how to use the FLEXCOM module in USART mode|
+|[FLEXCOM USART Ring Buffer](docs/GUID-8CFD1953-71C9-4DD6-B162-E032A49AA98F.md)|This example application shows<br /> how to use the FLEXCOM peripheral in USART ring buffer mode|
+|[Low Power Modes](docs/GUID-5D8204D4-DC19-40BF-81B1-B3D207E1E4F1.md)|This example application shows<br /> how to enter low power modes of SAMA5D29 MPU|
+|[MCAN FD Interrupt](docs/GUID-28CB457B-EAE2-483A-9F6D-536F74F54CCC.md)|This example application shows<br /> how to use the MCAN module to transmit and receive CAN FD messages<br /> in interrupt mode|
+|[MCAN FD Blocking](docs/GUID-E0606396-70B5-4760-B5C0-8F97E150494E.md)|This example application shows<br /> how to use the MCAN module to transmit and receive CAN messages in<br /> polling mode|
+|[MCAN Interrupt](docs/GUID-3616AE87-BF1C-41EF-B217-9677BD2C8E60.md)|This example application shows<br /> how to use the MCAN module to transmit and receive CAN messages in<br /> interrupt mode|
+|[PIO Interrupt](docs/GUID-FA96F38C-C8EE-4789-A3A7-388AAB0F3002.md)|This example application shows<br /> how to generate GPIO interrupt on switch press and release, and<br /> indicate the switch status using the LED|
+|[PIO Polling](docs/GUID-B455F642-5DE7-4E7B-801E-5263C1209D7F.md)|This example application shows<br /> how to poll the switch input, and indicate the switch status using<br /> the LED|
+|[PIT Period Change](docs/GUID-66B21601-3A85-4659-801D-6269396F8390.md)|This example application shows<br /> how PIT period can be changed during run time|
+|[PIT Periodic Interrupt](docs/GUID-A0390B15-40EF-4D49-8F65-6360714AB8E5.md)|This example application shows<br /> how to use PIT counter in interrupt mode|
+|[PIT Polling](docs/GUID-AA793882-DFA8-4D79-8475-EAC743DA9E2E.md)|This example application shows<br /> how to use PIT counter in polling mode|
+|[PIT Start Stop](docs/GUID-46BDCD8D-5470-49A2-899B-4254A906E84D.md)|This example application shows<br /> how PIT can be started and stopped at run time|
+|[PWM Synchronous Channels](docs/GUID-B64E6376-E411-4CB6-93E1-F5ECA46C0255.md)|This example application shows<br /> how to use the PWM peripheral to generate 3-phase PWM signals with<br /> dead time|
+|[QSPI Flash Read Write](docs/GUID-EC80A334-9301-4C6B-A89B-241CB2E5CF78.md)|This example application shows<br /> how to use the QSPI Peripheral library to perform erase, write and<br /> read operation with the QSPI Serial Flash memory in Quad IO<br /> mode|
+|[RSTC Interrupt](docs/GUID-6D168BBE-FB88-4C31-B221-085353EEA2AD.md)|This example application shows<br /> how to use the RSTC peripheral to generate an interrupt instead of<br /> generating a reset, when the Reset switch is pressed on<br /> board|
+|[RSTC Reset Cause](docs/GUID-FE9E5B22-1BFF-42CD-B2AB-CF023BF58EE1.md)|This example shows how to use the<br /> RSTC peripheral to indicate the cause of the device reset|
+|[RTC Alarm Interrupt](docs/GUID-D436F18E-14ED-46F0-B619-80F830FF90F9.md)|This example application shows<br /> how to use the RTC to configure the time and generate the<br /> alarm|
+|[SPI Ping Pong with DMA](docs/GUID-27DD0F6F-BAE9-43B3-846E-87084C2CAA1A.md)|This example application shows<br /> how to continuously transmit and receive data over a SPI interface<br /> using ping pong buffers with the DMA|
+|[SPI Blocking](docs/GUID-01F56760-3BE3-4721-9635-7F19CB0F61C9.md)|This example application shows<br /> how to use the SPI peripheral to transmit and receive a block of<br /> data in a blocking manner|
+|[SPI Interrupt](docs/GUID-8788E6AA-BA49-4A89-8CFB-F2DE9BB2CB45.md)|This example application shows<br /> how to use the SPI peripheral to transmit and receive a block of<br /> data using interrupts|
+|[SPI Master Read Write Test Application](docs/GUID-FD282B3E-147F-41FF-A097-05B81B5036E4.md)|This is a SPI Host test<br /> application which is provided to demonstrate communication between<br /> SPI host and the corresponding SPI client application available<br /> under - apps/spi/slave/spi\_write\_read/firmware|
+|[SPI Slave Read Write](docs/GUID-31DEF92B-2B81-4068-BA66-449B78FA3ED4.md)|This example application<br /> demonstrates how to use the SPI peripheral in client mode|
+|[SPI Self Loopback DMA](docs/GUID-745BD109-5529-44C2-A65E-CBC934B87397.md)|This example application shows<br /> how to use the SPI peripheral with DMA to transmit and receive a<br /> block of data|
+|[TC Capture Mode](docs/GUID-BC7A3AF0-42D4-41E2-9CA9-390BB2984C72.md)|This example application shows<br /> how to use the TC module in capture mode to measure duty cycle and<br /> frequency of an external input|
+|[TC Compare Mode](docs/GUID-1355A641-82D6-4652-AE67-4EB0F99EED75.md)|This example application shows<br /> how to use the TC module in compare mode to generate an active low,<br /> active high, and toggle output on compare match|
+|[TC Timer Mode](docs/GUID-4B3463C0-D657-439C-AC4C-A7A1B4E64783.md)|This example application shows<br /> how to use the TC module in timer mode to generate periodic<br /> interrupt|
+|[TRNG Random Number](docs/GUID-FCF93983-4DE6-452C-BEF0-AA56F0AAAA44.md)|This example application shows<br /> how to use the TRNG Peripheral library to generate and read a random<br /> number|
+|[TWIHS EEPROM Emulation](docs/GUID-A16AEF25-5EDE-4E24-8D07-2A22A8A078FB.md)|This example application<br /> demonstrates how to use the TWIHS peripheral in client mode|
+|[TWIHS EEPROM Read Write](docs/GUID-89A023B8-86AD-41A9-B637-4B7FD40F820C.md)|This example application shows<br /> how to use the TWIHS peripheral to write and read from the I2C<br /> serial EEPROM memory|
+|[TWIHS MASTER read write](docs/GUID-AA517272-2D78-4141-9C19-86E68336C0E5.md)|This example application<br /> demonstrates how to use the TWIHS peripheral in Master mode|
+|[UART Echo Blocking](docs/GUID-6E5D57DF-81C7-4B19-98DF-7C654B919EF2.md)|This example application shows<br /> how to use the UART peripheral to transfer a block of data in a<br /> blocking manner|
+|[UART Echo Interrupt](docs/GUID-BE86C291-8C9E-4DC3-8E0A-610C92FFF859.md)|This example application shows<br /> how to use the UART peripheral to transfer a block of data in a<br /> non-blocking manner|
+|[USART Ring Buffer](docs/GUID-F71DC218-2E28-4924-9028-2F8D522A4721.md)|This example application shows<br /> how to use USART peripheral in ring buffer mode|
+|[WDT Timeout](docs/GUID-9065FF59-9976-4E99-8F73-68079D386275.md)|This example application shows<br /> how to generate a Watchdog timer reset by emulating a<br /> deadlock|
+|[XDMAC Memory Transfer](docs/GUID-883FDBBE-AF15-44D8-B1EE-3E742D41E751.md)|This example application shows<br /> how to use the XDMAC peripheral to do a memory to memory transfer<br /> and illustrates the usage of burst size to reduce the transfer<br /> time|
 
-____
-
-[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2/blob/master/mplab_harmony_license.md)
-[![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2/releases/latest)
-[![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2/releases/latest)
-[![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2/graphs/commit-activity)
-[![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2.svg)]()
-
-____
-
-[![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology)
-[![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology)
-[![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/)
-[![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech)
-
-[![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2.svg?style=social)]()
-[![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2.svg?style=social)]()

@@ -1,0 +1,54 @@
+# SPI Interrupt
+
+This example application shows how to use the SPI peripheral to transmit and receive a<br /> block of data using interrupts.
+
+**Parent topic:**[Harmony 3 Peripheral Library Application Examples for SAMA5D2 Family](GUID-3730E5D6-911C-4BCA-9955-26D7EB66B585.md)
+
+## Description
+
+This example demonstrates transmit and receive operation over SPI interface in a<br /> non-blocking manner using interrupts. It transmits known values from an array and<br /> verifies the data received through loop back by comparing both. The example<br /> application performs the loop back test only once after a power on reset. After the<br /> loop back is complete, the status of the loop back is indicated and the application<br /> remains idle. The loop back test requires the MOSI output pin to be connected to the<br /> MISO input pin so that anything transmitted will also be received.
+
+## Downloading and Building the Application
+
+To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2) and then<br /> click Clone button to clone this repository or download as zip file. This content<br /> can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
+
+Path of the application within the repository is<br /> **apps/spi/spi\_self\_loopback\_interrupt/firmware**.
+
+To build the application, refer to the following table and open the project using its<br /> IDE.
+
+|Project Name|Description|
+|------------|-----------|
+|sam\_a5d2\_curiosity.X|MPLABX project for [SAMA5D29 Curiosity Development Board Kit](https://www.microchip.com/en-us/development-tool/EV07R15A)|
+
+## Setting Up AT91Bootstrap Loader
+
+To load the application binary onto the target device, we need to use at91bootstrap<br /> loader. Refer to the [at91bootstrap loader documentation](GUID-DA6B998E-C5DD-4566-BB08-7DC124553FBF.md) for<br /> details on how to configure, build and run bootstrap loader project and use it to<br /> bootstrap the application binaries.
+
+## Setting Up the Hardware
+
+The following table shows the target hardware for the application projects.
+
+|Project Name|Description|
+|------------|-----------|
+|sam\_a5d2\_curiosity.X|[SAMA5D29 Curiosity Development Board Kit](https://www.microchip.com/en-us/development-tool/EV07R15A)|
+
+### Setting Up SAMA5D29 Curiosity Development Board
+
+**SETTING UP THE BOARD**
+
+-   Connect the Debug USB port on the board to the computer using a Type-C USB cable
+-   Connect a Jumper cable between Pin 5 and Pin 6 of mikroBUS1 connector.
+
+## Running the Application
+
+1.  Build the application using its IDE
+2.  LED indicates the success or failure:
+    -   The LED is turned ON when the value read matched with the written value
+    -   The LED is turned OFF when the value read did not match with the written value
+
+Refer to the following table for LED name:
+
+|Board|LED Name|
+|-----|--------|
+|[SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A)|RGB\_LED \(Green\)|
+
