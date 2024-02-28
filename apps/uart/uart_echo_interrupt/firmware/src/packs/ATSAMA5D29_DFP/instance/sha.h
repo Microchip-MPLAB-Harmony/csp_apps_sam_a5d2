@@ -26,8 +26,8 @@
 
 
 /* ========== Instance Parameter definitions for SHA peripheral ========== */
-#define SHA_INSTANCE_ID                          (12)       
 #define SHA_CLOCK_ID                             (12)       
 #define SHA_DMAC_ID_TX                           (30)       
+#define SHA_INSTANCE_ID                          (12)       
 
 #endif /* _SAMA5D_SHA_INSTANCE_ */
