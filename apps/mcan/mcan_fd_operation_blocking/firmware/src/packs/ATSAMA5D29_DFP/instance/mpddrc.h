@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for MPDDRC peripheral ========== */
-#define MPDDRC_INSTANCE_ID                       (13)       
 #define MPDDRC_CLOCK_ID                          (13)       
+#define MPDDRC_INSTANCE_ID                       (13)       
 
 #endif /* _SAMA5D_MPDDRC_INSTANCE_ */
