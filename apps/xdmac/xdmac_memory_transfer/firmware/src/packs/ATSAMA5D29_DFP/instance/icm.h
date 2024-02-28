@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for ICM peripheral ========== */
-#define ICM_INSTANCE_ID                          (8)        
 #define ICM_CLOCK_ID                             (8)        
+#define ICM_INSTANCE_ID                          (8)        
 
 #endif /* _SAMA5D_ICM_INSTANCE_ */

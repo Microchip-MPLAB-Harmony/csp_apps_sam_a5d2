@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for ACC peripheral ========== */
-#define ACC_INSTANCE_ID                          (75)       
 #define ACC_HAS_INVERTED_COMPARATOR              (1)        
+#define ACC_INSTANCE_ID                          (75)       
 
 #endif /* _SAMA5D_ACC_INSTANCE_ */
