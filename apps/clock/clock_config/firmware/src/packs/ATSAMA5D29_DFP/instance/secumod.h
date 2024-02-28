@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for SECUMOD peripheral ========== */
-#define SECUMOD_INSTANCE_ID                      (16)       
 #define SECUMOD_CLOCK_ID                         (16)       
+#define SECUMOD_INSTANCE_ID                      (16)       
 
 #endif /* _SAMA5D_SECUMOD_INSTANCE_ */
