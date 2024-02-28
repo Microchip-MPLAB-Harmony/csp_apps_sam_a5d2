@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for UART2 peripheral ========== */
-#define UART2_INSTANCE_ID                        (26)       
-#define UART2_CLOCK_ID                           (26)       
-#define UART2_DMAC_ID_TX                         (39)       
-#define UART2_DMAC_ID_RX                         (40)       
-#define UART2_BRSRCCK_PERIPH_CLK                 (0)        /* MCK */
 #define UART2_BRSRCCK_GCLK                       (0)        /* GCLK */
+#define UART2_BRSRCCK_PERIPH_CLK                 (0)        /* MCK */
+#define UART2_CLOCK_ID                           (26)       
+#define UART2_DMAC_ID_RX                         (40)       
+#define UART2_DMAC_ID_TX                         (39)       
+#define UART2_INSTANCE_ID                        (26)       
 
 #endif /* _SAMA5D_UART2_INSTANCE_ */
