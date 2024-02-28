@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for MCAN0 peripheral ========== */
-#define MCAN0_INSTANCE_ID                        (56)       
 #define MCAN0_CLOCK_ID                           (56)       
 #define MCAN0_ID_MCAN0_INT0                      (56)       
 #define MCAN0_ID_MCAN0_INT1                      (64)       
+#define MCAN0_INSTANCE_ID                        (56)       
 
 #endif /* _SAMA5D_MCAN0_INSTANCE_ */

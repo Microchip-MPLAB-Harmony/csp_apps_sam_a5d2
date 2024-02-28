@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for SDMMC1 peripheral ========== */
-#define SDMMC1_INSTANCE_ID                       (32)       
 #define SDMMC1_CLOCK_ID                          (32)       
+#define SDMMC1_INSTANCE_ID                       (32)       
 
 #endif /* _SAMA5D_SDMMC1_INSTANCE_ */
