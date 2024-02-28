@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for ISC peripheral ========== */
-#define ISC_INSTANCE_ID                          (46)       
 #define ISC_CLOCK_ID                             (46)       
+#define ISC_INSTANCE_ID                          (46)       
 
 #endif /* _SAMA5D_ISC_INSTANCE_ */
