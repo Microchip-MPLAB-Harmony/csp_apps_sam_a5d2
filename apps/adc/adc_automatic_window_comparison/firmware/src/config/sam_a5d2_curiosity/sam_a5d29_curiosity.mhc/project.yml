@@ -1,27 +1,27 @@
 files:
 - generatedChecksum: 9B352802BE043FA5260F35291C50E3C8
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: cstartup.S
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9B352802BE043FA5260F35291C50E3C8
 - generatedChecksum: B2428EF8CAFD595BE67DA79F97846644
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: fault_handlers.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
   userChecksum: B2428EF8CAFD595BE67DA79F97846644
 - generatedChecksum: C4BADA2C67749EA3CEC48B37FFAC7AE3
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
   userChecksum: C4BADA2C67749EA3CEC48B37FFAC7AE3
 - generatedChecksum: 8D82C0306ABEBB9D56FD74CAEBC56965
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
@@ -35,70 +35,70 @@ files:
   type: SOURCE
   userChecksum: null
 - generatedChecksum: 5A116CBDC15D524575B6108CB70B7E36
-  logicalPath: config/sam_a5d29_curiosity/peripheral/adc
+  logicalPath: config/sam_a5d2_curiosity/peripheral/adc
   name: plib_adc.c
   physicalPath: peripheral/adc
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5A116CBDC15D524575B6108CB70B7E36
 - generatedChecksum: 9ED1D3C5AED3438F4A94343EF80EB4E3
-  logicalPath: config/sam_a5d29_curiosity/peripheral/aic
+  logicalPath: config/sam_a5d2_curiosity/peripheral/aic
   name: plib_aic.c
   physicalPath: peripheral/aic
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9ED1D3C5AED3438F4A94343EF80EB4E3
 - generatedChecksum: 3B548B8E814357B543C295CAA8D195F5
-  logicalPath: config/sam_a5d29_curiosity/peripheral/clk
+  logicalPath: config/sam_a5d2_curiosity/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
   userChecksum: 3B548B8E814357B543C295CAA8D195F5
 - generatedChecksum: B9B30444F4EFC9C0414A0E335E6B3C99
-  logicalPath: config/sam_a5d29_curiosity/peripheral/l2cc
+  logicalPath: config/sam_a5d2_curiosity/peripheral/l2cc
   name: plib_l2cc.c
   physicalPath: peripheral/l2cc
   security: NON_SECURE
   type: SOURCE
   userChecksum: B9B30444F4EFC9C0414A0E335E6B3C99
 - generatedChecksum: 7C2897988CFE29C50D1557F3734718AD
-  logicalPath: config/sam_a5d29_curiosity/peripheral/matrix
+  logicalPath: config/sam_a5d2_curiosity/peripheral/matrix
   name: plib_matrix.c
   physicalPath: peripheral/matrix
   security: NON_SECURE
   type: SOURCE
   userChecksum: 7C2897988CFE29C50D1557F3734718AD
 - generatedChecksum: FB1479CDEEA41774FB26ACDC754B80A9
-  logicalPath: config/sam_a5d29_curiosity/peripheral/mmu
+  logicalPath: config/sam_a5d2_curiosity/peripheral/mmu
   name: plib_mmu.c
   physicalPath: peripheral/mmu
   security: NON_SECURE
   type: SOURCE
   userChecksum: FB1479CDEEA41774FB26ACDC754B80A9
 - generatedChecksum: 9BE8FAA60607179ECAB1A47E0351BD7A
-  logicalPath: config/sam_a5d29_curiosity/peripheral/pio
+  logicalPath: config/sam_a5d2_curiosity/peripheral/pio
   name: plib_pio.c
   physicalPath: peripheral/pio
   security: NON_SECURE
   type: SOURCE
   userChecksum: 9BE8FAA60607179ECAB1A47E0351BD7A
 - generatedChecksum: ADA087D990A7758D28F61952506F02F5
-  logicalPath: config/sam_a5d29_curiosity/peripheral/pit
+  logicalPath: config/sam_a5d2_curiosity/peripheral/pit
   name: plib_pit.c
   physicalPath: peripheral/pit
   security: NON_SECURE
   type: SOURCE
   userChecksum: ADA087D990A7758D28F61952506F02F5
 - generatedChecksum: F4329844647833539A08448100C60F5C
-  logicalPath: config/sam_a5d29_curiosity/peripheral/uart
+  logicalPath: config/sam_a5d2_curiosity/peripheral/uart
   name: plib_uart1.c
   physicalPath: peripheral/uart
   security: NON_SECURE
   type: SOURCE
   userChecksum: F4329844647833539A08448100C60F5C
 - generatedChecksum: 42A948E504602741B0D592C55FCD9A7B
-  logicalPath: config/sam_a5d29_curiosity/stdio
+  logicalPath: config/sam_a5d2_curiosity/stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
@@ -252,21 +252,21 @@ files:
   type: HEADER
   userChecksum: 32D6F5036C919DE32EFC951936B81657
 - generatedChecksum: 5DBF56A8B6ADE4356023E40F5EA8A754
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: 5DBF56A8B6ADE4356023E40F5EA8A754
 - generatedChecksum: 885A99BC7A8183859A0AF64E9E67758C
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: device.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
   userChecksum: 885A99BC7A8183859A0AF64E9E67758C
 - generatedChecksum: 7A9899DBB35692FC3A7174D7C1E360FA
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: device_cache.h
   physicalPath: ''
   security: NON_SECURE
@@ -364,7 +364,7 @@ files:
   type: HEADER
   userChecksum: 95123F4CE51C504D9F969092DA327827
 - generatedChecksum: 4CF4A86296482D5331331BA301C20BB2
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: interrupts.h
   physicalPath: ''
   security: NON_SECURE
@@ -511,77 +511,77 @@ files:
   type: HEADER
   userChecksum: AF7FADAE8CF3C6588859DEFDC5778D5E
 - generatedChecksum: E61BEBBDADB3D20D57CBFFB798D4D884
-  logicalPath: config/sam_a5d29_curiosity/peripheral/adc
+  logicalPath: config/sam_a5d2_curiosity/peripheral/adc
   name: plib_adc.h
   physicalPath: peripheral/adc
   security: NON_SECURE
   type: HEADER
   userChecksum: E61BEBBDADB3D20D57CBFFB798D4D884
 - generatedChecksum: 0851EE5C8667E166C1FA6104690FB020
-  logicalPath: config/sam_a5d29_curiosity/peripheral/adc
+  logicalPath: config/sam_a5d2_curiosity/peripheral/adc
   name: plib_adc_common.h
   physicalPath: peripheral/adc
   security: NON_SECURE
   type: HEADER
   userChecksum: 0851EE5C8667E166C1FA6104690FB020
 - generatedChecksum: 9C00DC189B706ECF854F34A404F89118
-  logicalPath: config/sam_a5d29_curiosity/peripheral/aic
+  logicalPath: config/sam_a5d2_curiosity/peripheral/aic
   name: plib_aic.h
   physicalPath: peripheral/aic
   security: NON_SECURE
   type: HEADER
   userChecksum: 9C00DC189B706ECF854F34A404F89118
 - generatedChecksum: 3FE61C071805771E081A2E6BC5644F4F
-  logicalPath: config/sam_a5d29_curiosity/peripheral/clk
+  logicalPath: config/sam_a5d2_curiosity/peripheral/clk
   name: plib_clk.h
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: HEADER
   userChecksum: 3FE61C071805771E081A2E6BC5644F4F
 - generatedChecksum: 5B06530F30E5DDE63BE632C9A9006257
-  logicalPath: config/sam_a5d29_curiosity/peripheral/l2cc
+  logicalPath: config/sam_a5d2_curiosity/peripheral/l2cc
   name: plib_l2cc.h
   physicalPath: peripheral/l2cc
   security: NON_SECURE
   type: HEADER
   userChecksum: 5B06530F30E5DDE63BE632C9A9006257
 - generatedChecksum: 3851695A5A1C9A8206C2D8037F2FD89B
-  logicalPath: config/sam_a5d29_curiosity/peripheral/matrix
+  logicalPath: config/sam_a5d2_curiosity/peripheral/matrix
   name: plib_matrix.h
   physicalPath: peripheral/matrix
   security: NON_SECURE
   type: HEADER
   userChecksum: 3851695A5A1C9A8206C2D8037F2FD89B
 - generatedChecksum: 1FDB0980C78F8745DE442498856DEA71
-  logicalPath: config/sam_a5d29_curiosity/peripheral/mmu
+  logicalPath: config/sam_a5d2_curiosity/peripheral/mmu
   name: plib_mmu.h
   physicalPath: peripheral/mmu
   security: NON_SECURE
   type: HEADER
   userChecksum: 1FDB0980C78F8745DE442498856DEA71
 - generatedChecksum: 814436D947F6FEE2E470125E0C7F7683
-  logicalPath: config/sam_a5d29_curiosity/peripheral/pio
+  logicalPath: config/sam_a5d2_curiosity/peripheral/pio
   name: plib_pio.h
   physicalPath: peripheral/pio
   security: NON_SECURE
   type: HEADER
   userChecksum: 814436D947F6FEE2E470125E0C7F7683
 - generatedChecksum: 1A38B86C046E066B34962AA288A18129
-  logicalPath: config/sam_a5d29_curiosity/peripheral/pit
+  logicalPath: config/sam_a5d2_curiosity/peripheral/pit
   name: plib_pit.h
   physicalPath: peripheral/pit
   security: NON_SECURE
   type: HEADER
   userChecksum: 1A38B86C046E066B34962AA288A18129
 - generatedChecksum: 5D234E351BC87EBEBEAEF9D0B3B9CBE2
-  logicalPath: config/sam_a5d29_curiosity/peripheral/uart
+  logicalPath: config/sam_a5d2_curiosity/peripheral/uart
   name: plib_uart1.h
   physicalPath: peripheral/uart
   security: NON_SECURE
   type: HEADER
   userChecksum: 5D234E351BC87EBEBEAEF9D0B3B9CBE2
 - generatedChecksum: 2AF2604D6D1923F7C5041044A374E625
-  logicalPath: config/sam_a5d29_curiosity/peripheral/uart
+  logicalPath: config/sam_a5d2_curiosity/peripheral/uart
   name: plib_uart_common.h
   physicalPath: peripheral/uart
   security: NON_SECURE
@@ -924,7 +924,7 @@ files:
   type: HEADER
   userChecksum: BD47F2285D29901B6A9B3A0C5E4BC611
 - generatedChecksum: E7B1CC92ABE4830B5244251AB8FA4FB0
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
@@ -1064,7 +1064,7 @@ files:
   type: HEADER
   userChecksum: C5875E564C9463F68BA7A87DE9006DE9
 - generatedChecksum: 27D4C87A8B432F74917321345D52D1B9
-  logicalPath: config/sam_a5d29_curiosity
+  logicalPath: config/sam_a5d2_curiosity
   name: ddr.ld
   physicalPath: ''
   security: NON_SECURE
@@ -1085,7 +1085,7 @@ settings:
   delimiter: ;
   key: extra-include-directories
   security: NON_SECURE
-  value: ../src;../src/config/sam_a5d29_curiosity;../src/packs/ATSAMA5D29_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/
+  value: ../src;../src/config/sam_a5d2_curiosity;../src/packs/ATSAMA5D29_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/
 - append: false
   category: C32-LD
   delimiter: ''
@@ -1109,5 +1109,5 @@ settings:
   delimiter: ;
   key: extra-include-directories
   security: NON_SECURE
-  value: ../src;../src/config/sam_a5d29_curiosity;../src/packs/ATSAMA5D29_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/
+  value: ../src;../src/config/sam_a5d2_curiosity;../src/packs/ATSAMA5D29_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/
 sourcePaths: []

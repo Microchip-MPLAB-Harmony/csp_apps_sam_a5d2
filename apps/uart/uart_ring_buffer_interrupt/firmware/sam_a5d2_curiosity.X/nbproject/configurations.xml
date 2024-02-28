@@ -5,35 +5,35 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_a5d29_curiosity"
-                       displayName="sam_a5d29_curiosity"
+        <logicalFolder name="sam_a5d2_curiosity"
+                       displayName="sam_a5d2_curiosity"
                        projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="aic" displayName="aic" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/aic/plib_aic.h</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/aic/plib_aic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="clk" displayName="clk" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/clk/plib_clk.h</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
             <logicalFolder name="matrix" displayName="matrix" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/matrix/plib_matrix.h</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/matrix/plib_matrix.h</itemPath>
             </logicalFolder>
             <logicalFolder name="mmu" displayName="mmu" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/mmu/plib_mmu.h</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/mmu/plib_mmu.h</itemPath>
             </logicalFolder>
             <logicalFolder name="pio" displayName="pio" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/pio/plib_pio.h</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/pio/plib_pio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="uart" displayName="uart" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/uart/plib_uart_common.h</itemPath>
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/uart/plib_uart0.h</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/uart/plib_uart_common.h</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/uart/plib_uart0.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/sam_a5d29_curiosity/interrupts.h</itemPath>
-          <itemPath>../src/config/sam_a5d29_curiosity/toolchain_specifics.h</itemPath>
-          <itemPath>../src/config/sam_a5d29_curiosity/definitions.h</itemPath>
-          <itemPath>../src/config/sam_a5d29_curiosity/device.h</itemPath>
-          <itemPath>../src/config/sam_a5d29_curiosity/device_cache.h</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/interrupts.h</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/toolchain_specifics.h</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/definitions.h</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/device.h</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/device_cache.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
@@ -182,10 +182,10 @@
                    displayName="Linker Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_a5d29_curiosity"
-                       displayName="sam_a5d29_curiosity"
+        <logicalFolder name="sam_a5d2_curiosity"
+                       displayName="sam_a5d2_curiosity"
                        projectFiles="true">
-          <itemPath>../src/config/sam_a5d29_curiosity/ddr.ld</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/ddr.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -193,51 +193,51 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="sam_a5d29_curiosity"
-                       displayName="sam_a5d29_curiosity"
+        <logicalFolder name="sam_a5d2_curiosity"
+                       displayName="sam_a5d2_curiosity"
                        projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="aic" displayName="aic" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/aic/plib_aic.c</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/aic/plib_aic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="clk" displayName="clk" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/clk/plib_clk.c</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
             <logicalFolder name="matrix" displayName="matrix" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/matrix/plib_matrix.c</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/matrix/plib_matrix.c</itemPath>
             </logicalFolder>
             <logicalFolder name="mmu" displayName="mmu" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/mmu/plib_mmu.c</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/mmu/plib_mmu.c</itemPath>
             </logicalFolder>
             <logicalFolder name="pio" displayName="pio" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/pio/plib_pio.c</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/pio/plib_pio.c</itemPath>
             </logicalFolder>
             <logicalFolder name="uart" displayName="uart" projectFiles="true">
-              <itemPath>../src/config/sam_a5d29_curiosity/peripheral/uart/plib_uart0.c</itemPath>
+              <itemPath>../src/config/sam_a5d2_curiosity/peripheral/uart/plib_uart0.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
-            <itemPath>../src/config/sam_a5d29_curiosity/stdio/xc32_monitor.c</itemPath>
+            <itemPath>../src/config/sam_a5d2_curiosity/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
-          <itemPath>../src/config/sam_a5d29_curiosity/cstartup.S</itemPath>
-          <itemPath>../src/config/sam_a5d29_curiosity/interrupts.c</itemPath>
-          <itemPath>../src/config/sam_a5d29_curiosity/fault_handlers.c</itemPath>
-          <itemPath>../src/config/sam_a5d29_curiosity/initialization.c</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/cstartup.S</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/interrupts.c</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/fault_handlers.c</itemPath>
+          <itemPath>../src/config/sam_a5d2_curiosity/initialization.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/config/sam_a5d29_curiosity/pin_configurations.csv</itemPath>
+      <itemPath>../src/config/sam_a5d2_curiosity/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
-      <itemPath>uart_ring_buffer_interrupt_sam_a5d29_curiosity.mc3</itemPath>
+      <itemPath>uart_ring_buffer_interrupt_sam_a5d2_curiosity.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="sam_a5d29_curiosity" type="2">
+    <conf name="sam_a5d2_curiosity" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>ATSAMA5D29</targetDevice>
@@ -245,12 +245,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>j32</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.21</languageToolchainVersion>
+        <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.9.106"/>
+        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.9.108"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="boot.load_adr" value=""/>
@@ -288,14 +288,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
+        <property key="appendMe" value="-marm"/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_a5d29_curiosity;../src/packs/ATSAMA5D29_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core_A/Include"/>
+                  value="../src;../src/config/sam_a5d2_curiosity;../src/packs/ATSAMA5D29_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core_A/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -313,6 +313,7 @@
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
+        <appendMe value="-marm"/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -395,7 +396,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_a5d29_curiosity;../src/packs/ATSAMA5D29_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core_A/Include"/>
+                  value="../src;../src/config/sam_a5d2_curiosity;../src/packs/ATSAMA5D29_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core_A/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -426,36 +427,145 @@
         <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
+      <PK5Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="hwtoolclock.frcindebug" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="200000-23ffff"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoImageName" value="sam_a5d2_curiosity_ptg"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.ledbrightness" value="5"/>
+        <property key="programoptions.pgcconfig" value="pull down"/>
+        <property key="programoptions.pgcresistor.value" value="4.7"/>
+        <property key="programoptions.pgdconfig" value="pull down"/>
+        <property key="programoptions.pgdresistor.value" value="4.7"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="ptgProgramImage" value="true"/>
+        <property key="ptgSendImage" value="true"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value="3.25"/>
+      </PK5Tool>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
+        <property key="communication.activationmode" value="nohv"/>
         <property key="communication.adaptivespeed" value="false"/>
         <property key="communication.autoselectspeed" value="true"/>
         <property key="communication.interface" value="swd"/>
+        <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="jlink.override" value=""/>
         <property key="lastid" value=""/>
         <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
+        <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
         <property key="memories.instruction.ram" value="true"/>
         <property key="memories.instruction.ram.ranges"
                   value="${memories.instruction.ram.ranges.default}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0x200000-0x23ffff"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoImageName" value="sam_a5d2_curiosity_ptg"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="false"/>
+        <property key="programoptions.ledbrightness" value="5"/>
+        <property key="programoptions.pgcconfig" value="pull down"/>
+        <property key="programoptions.pgcresistor.value" value="4.7"/>
+        <property key="programoptions.pgdconfig" value="pull down"/>
+        <property key="programoptions.pgdresistor.value" value="4.7"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
         <property key="programoptions.preservebootflash" value="false"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogrammemory" value="false"/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveprogramrange.ranges"
                   value="0x200000-0x23ffff"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.resetafterprogram" value="true"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="ptgProgramImage" value="true"/>
+        <property key="ptgSendImage" value="true"/>
         <property key="script.has_reset" value="true"/>
         <property key="script.log_level" value="1"/>
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value="3.25"/>
       </Tool>
       <j32>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -465,6 +575,8 @@
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="jlink.override" value=""/>
         <property key="lastid" value=""/>
         <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
