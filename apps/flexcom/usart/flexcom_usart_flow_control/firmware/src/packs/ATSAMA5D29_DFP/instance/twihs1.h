@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for TWIHS1 peripheral ========== */
-#define TWIHS1_INSTANCE_ID                       (30)       
 #define TWIHS1_CLOCK_ID                          (30)       
-#define TWIHS1_DMAC_ID_TX                        (2)        
 #define TWIHS1_DMAC_ID_RX                        (3)        
+#define TWIHS1_DMAC_ID_TX                        (2)        
+#define TWIHS1_INSTANCE_ID                       (30)       
 
 #endif /* _SAMA5D_TWIHS1_INSTANCE_ */
