@@ -28,6 +28,13 @@
 /*   SOFTWARE API DEFINITION FOR SFRBU                                        */
 /* ************************************************************************** */
 
+/* -------- SFRBU_DDRBUMCR : (SFRBU Offset: 0x10) (R/W 32) DDR BU Mode Control Register -------- */
+#define SFRBU_DDRBUMCR_BUMEN_Pos              _UINT32_(0)                                          /* (SFRBU_DDRBUMCR) DDR BU Mode Enable Position */
+#define SFRBU_DDRBUMCR_BUMEN_Msk              (_UINT32_(0x1) << SFRBU_DDRBUMCR_BUMEN_Pos)          /* (SFRBU_DDRBUMCR) DDR BU Mode Enable Mask */
+#define SFRBU_DDRBUMCR_BUMEN(value)           (SFRBU_DDRBUMCR_BUMEN_Msk & (_UINT32_(value) << SFRBU_DDRBUMCR_BUMEN_Pos)) /* Assigment of value for BUMEN in the SFRBU_DDRBUMCR register */
+#define SFRBU_DDRBUMCR_Msk                    _UINT32_(0x00000001)                                 /* (SFRBU_DDRBUMCR) Register Mask  */
+
+
 /* -------- SFRBU_PSWBUCTRL : (SFRBU Offset: 0x00) (R/W 32) Power Switch BU Control Register -------- */
 #define SFRBU_PSWBUCTRL_SCTRL_Pos             _UINT32_(0)                                          /* (SFRBU_PSWBUCTRL) Power Switch BU Software Control Position */
 #define SFRBU_PSWBUCTRL_SCTRL_Msk             (_UINT32_(0x1) << SFRBU_PSWBUCTRL_SCTRL_Pos)         /* (SFRBU_PSWBUCTRL) Power Switch BU Software Control Mask */
@@ -47,20 +54,6 @@
 #define SFRBU_PSWBUCTRL_Msk                   _UINT32_(0xFFFFFF0F)                                 /* (SFRBU_PSWBUCTRL) Register Mask  */
 
 
-/* -------- SFRBU_TSRANGECFG : (SFRBU Offset: 0x04) (R/W 32) TS Range Configuration Register -------- */
-#define SFRBU_TSRANGECFG_TSHRSEL_Pos          _UINT32_(0)                                          /* (SFRBU_TSRANGECFG) Temperature Sensor Range Selection Position */
-#define SFRBU_TSRANGECFG_TSHRSEL_Msk          (_UINT32_(0x1) << SFRBU_TSRANGECFG_TSHRSEL_Pos)      /* (SFRBU_TSRANGECFG) Temperature Sensor Range Selection Mask */
-#define SFRBU_TSRANGECFG_TSHRSEL(value)       (SFRBU_TSRANGECFG_TSHRSEL_Msk & (_UINT32_(value) << SFRBU_TSRANGECFG_TSHRSEL_Pos)) /* Assigment of value for TSHRSEL in the SFRBU_TSRANGECFG register */
-#define SFRBU_TSRANGECFG_Msk                  _UINT32_(0x00000001)                                 /* (SFRBU_TSRANGECFG) Register Mask  */
-
-
-/* -------- SFRBU_DDRBUMCR : (SFRBU Offset: 0x10) (R/W 32) DDR BU Mode Control Register -------- */
-#define SFRBU_DDRBUMCR_BUMEN_Pos              _UINT32_(0)                                          /* (SFRBU_DDRBUMCR) DDR BU Mode Enable Position */
-#define SFRBU_DDRBUMCR_BUMEN_Msk              (_UINT32_(0x1) << SFRBU_DDRBUMCR_BUMEN_Pos)          /* (SFRBU_DDRBUMCR) DDR BU Mode Enable Mask */
-#define SFRBU_DDRBUMCR_BUMEN(value)           (SFRBU_DDRBUMCR_BUMEN_Msk & (_UINT32_(value) << SFRBU_DDRBUMCR_BUMEN_Pos)) /* Assigment of value for BUMEN in the SFRBU_DDRBUMCR register */
-#define SFRBU_DDRBUMCR_Msk                    _UINT32_(0x00000001)                                 /* (SFRBU_DDRBUMCR) Register Mask  */
-
-
 /* -------- SFRBU_RXLPPUCR : (SFRBU Offset: 0x14) (R/W 32) RXLP Pull-Up Control Register -------- */
 #define SFRBU_RXLPPUCR_RXDPUCTRL_Pos          _UINT32_(0)                                          /* (SFRBU_RXLPPUCR) RXLP RXD Pull-Up Control Position */
 #define SFRBU_RXLPPUCR_RXDPUCTRL_Msk          (_UINT32_(0x1) << SFRBU_RXLPPUCR_RXDPUCTRL_Pos)      /* (SFRBU_RXLPPUCR) RXLP RXD Pull-Up Control Mask */
@@ -68,11 +61,18 @@
 #define SFRBU_RXLPPUCR_Msk                    _UINT32_(0x00000001)                                 /* (SFRBU_RXLPPUCR) Register Mask  */
 
 
+/* -------- SFRBU_TSRANGECFG : (SFRBU Offset: 0x04) (R/W 32) TS Range Configuration Register -------- */
+#define SFRBU_TSRANGECFG_TSHRSEL_Pos          _UINT32_(0)                                          /* (SFRBU_TSRANGECFG) Temperature Sensor Range Selection Position */
+#define SFRBU_TSRANGECFG_TSHRSEL_Msk          (_UINT32_(0x1) << SFRBU_TSRANGECFG_TSHRSEL_Pos)      /* (SFRBU_TSRANGECFG) Temperature Sensor Range Selection Mask */
+#define SFRBU_TSRANGECFG_TSHRSEL(value)       (SFRBU_TSRANGECFG_TSHRSEL_Msk & (_UINT32_(value) << SFRBU_TSRANGECFG_TSHRSEL_Pos)) /* Assigment of value for TSHRSEL in the SFRBU_TSRANGECFG register */
+#define SFRBU_TSRANGECFG_Msk                  _UINT32_(0x00000001)                                 /* (SFRBU_TSRANGECFG) Register Mask  */
+
+
 /** \brief SFRBU register offsets definitions */
-#define SFRBU_PSWBUCTRL_REG_OFST       _UINT32_(0x00)      /* (SFRBU_PSWBUCTRL) Power Switch BU Control Register Offset */
-#define SFRBU_TSRANGECFG_REG_OFST      _UINT32_(0x04)      /* (SFRBU_TSRANGECFG) TS Range Configuration Register Offset */
 #define SFRBU_DDRBUMCR_REG_OFST        _UINT32_(0x10)      /* (SFRBU_DDRBUMCR) DDR BU Mode Control Register Offset */
+#define SFRBU_PSWBUCTRL_REG_OFST       _UINT32_(0x00)      /* (SFRBU_PSWBUCTRL) Power Switch BU Control Register Offset */
 #define SFRBU_RXLPPUCR_REG_OFST        _UINT32_(0x14)      /* (SFRBU_RXLPPUCR) RXLP Pull-Up Control Register Offset */
+#define SFRBU_TSRANGECFG_REG_OFST      _UINT32_(0x04)      /* (SFRBU_TSRANGECFG) TS Range Configuration Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief SFRBU register API structure */
