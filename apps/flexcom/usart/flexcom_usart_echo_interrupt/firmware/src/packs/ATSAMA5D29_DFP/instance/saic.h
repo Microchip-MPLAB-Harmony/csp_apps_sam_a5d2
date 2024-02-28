@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for SAIC peripheral ========== */
-#define SAIC_INSTANCE_ID                         (61)       
 #define SAIC_ID_SAIC_FIQ                         (0)        
+#define SAIC_INSTANCE_ID                         (61)       
 
 #endif /* _SAMA5D_SAIC_INSTANCE_ */

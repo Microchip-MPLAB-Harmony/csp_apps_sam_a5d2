@@ -28,173 +28,6 @@
 /*   SOFTWARE API DEFINITION FOR XDMAC                                        */
 /* ************************************************************************** */
 
-/* -------- XDMAC_CIE : (XDMAC Offset: 0x00) ( /W 32) Channel Interrupt Enable Register -------- */
-#define XDMAC_CIE_BIE_Pos                     _UINT32_(0)                                          /* (XDMAC_CIE) End of Block Interrupt Enable Bit Position */
-#define XDMAC_CIE_BIE_Msk                     (_UINT32_(0x1) << XDMAC_CIE_BIE_Pos)                 /* (XDMAC_CIE) End of Block Interrupt Enable Bit Mask */
-#define XDMAC_CIE_BIE(value)                  (XDMAC_CIE_BIE_Msk & (_UINT32_(value) << XDMAC_CIE_BIE_Pos)) /* Assigment of value for BIE in the XDMAC_CIE register */
-#define XDMAC_CIE_LIE_Pos                     _UINT32_(1)                                          /* (XDMAC_CIE) End of Linked List Interrupt Enable Bit Position */
-#define XDMAC_CIE_LIE_Msk                     (_UINT32_(0x1) << XDMAC_CIE_LIE_Pos)                 /* (XDMAC_CIE) End of Linked List Interrupt Enable Bit Mask */
-#define XDMAC_CIE_LIE(value)                  (XDMAC_CIE_LIE_Msk & (_UINT32_(value) << XDMAC_CIE_LIE_Pos)) /* Assigment of value for LIE in the XDMAC_CIE register */
-#define XDMAC_CIE_DIE_Pos                     _UINT32_(2)                                          /* (XDMAC_CIE) End of Disable Interrupt Enable Bit Position */
-#define XDMAC_CIE_DIE_Msk                     (_UINT32_(0x1) << XDMAC_CIE_DIE_Pos)                 /* (XDMAC_CIE) End of Disable Interrupt Enable Bit Mask */
-#define XDMAC_CIE_DIE(value)                  (XDMAC_CIE_DIE_Msk & (_UINT32_(value) << XDMAC_CIE_DIE_Pos)) /* Assigment of value for DIE in the XDMAC_CIE register */
-#define XDMAC_CIE_FIE_Pos                     _UINT32_(3)                                          /* (XDMAC_CIE) End of Flush Interrupt Enable Bit Position */
-#define XDMAC_CIE_FIE_Msk                     (_UINT32_(0x1) << XDMAC_CIE_FIE_Pos)                 /* (XDMAC_CIE) End of Flush Interrupt Enable Bit Mask */
-#define XDMAC_CIE_FIE(value)                  (XDMAC_CIE_FIE_Msk & (_UINT32_(value) << XDMAC_CIE_FIE_Pos)) /* Assigment of value for FIE in the XDMAC_CIE register */
-#define XDMAC_CIE_RBIE_Pos                    _UINT32_(4)                                          /* (XDMAC_CIE) Read Bus Error Interrupt Enable Bit Position */
-#define XDMAC_CIE_RBIE_Msk                    (_UINT32_(0x1) << XDMAC_CIE_RBIE_Pos)                /* (XDMAC_CIE) Read Bus Error Interrupt Enable Bit Mask */
-#define XDMAC_CIE_RBIE(value)                 (XDMAC_CIE_RBIE_Msk & (_UINT32_(value) << XDMAC_CIE_RBIE_Pos)) /* Assigment of value for RBIE in the XDMAC_CIE register */
-#define XDMAC_CIE_WBIE_Pos                    _UINT32_(5)                                          /* (XDMAC_CIE) Write Bus Error Interrupt Enable Bit Position */
-#define XDMAC_CIE_WBIE_Msk                    (_UINT32_(0x1) << XDMAC_CIE_WBIE_Pos)                /* (XDMAC_CIE) Write Bus Error Interrupt Enable Bit Mask */
-#define XDMAC_CIE_WBIE(value)                 (XDMAC_CIE_WBIE_Msk & (_UINT32_(value) << XDMAC_CIE_WBIE_Pos)) /* Assigment of value for WBIE in the XDMAC_CIE register */
-#define XDMAC_CIE_ROIE_Pos                    _UINT32_(6)                                          /* (XDMAC_CIE) Request Overflow Error Interrupt Enable Bit Position */
-#define XDMAC_CIE_ROIE_Msk                    (_UINT32_(0x1) << XDMAC_CIE_ROIE_Pos)                /* (XDMAC_CIE) Request Overflow Error Interrupt Enable Bit Mask */
-#define XDMAC_CIE_ROIE(value)                 (XDMAC_CIE_ROIE_Msk & (_UINT32_(value) << XDMAC_CIE_ROIE_Pos)) /* Assigment of value for ROIE in the XDMAC_CIE register */
-#define XDMAC_CIE_Msk                         _UINT32_(0x0000007F)                                 /* (XDMAC_CIE) Register Mask  */
-
-
-/* -------- XDMAC_CID : (XDMAC Offset: 0x04) ( /W 32) Channel Interrupt Disable Register -------- */
-#define XDMAC_CID_BID_Pos                     _UINT32_(0)                                          /* (XDMAC_CID) End of Block Interrupt Disable Bit Position */
-#define XDMAC_CID_BID_Msk                     (_UINT32_(0x1) << XDMAC_CID_BID_Pos)                 /* (XDMAC_CID) End of Block Interrupt Disable Bit Mask */
-#define XDMAC_CID_BID(value)                  (XDMAC_CID_BID_Msk & (_UINT32_(value) << XDMAC_CID_BID_Pos)) /* Assigment of value for BID in the XDMAC_CID register */
-#define XDMAC_CID_LID_Pos                     _UINT32_(1)                                          /* (XDMAC_CID) End of Linked List Interrupt Disable Bit Position */
-#define XDMAC_CID_LID_Msk                     (_UINT32_(0x1) << XDMAC_CID_LID_Pos)                 /* (XDMAC_CID) End of Linked List Interrupt Disable Bit Mask */
-#define XDMAC_CID_LID(value)                  (XDMAC_CID_LID_Msk & (_UINT32_(value) << XDMAC_CID_LID_Pos)) /* Assigment of value for LID in the XDMAC_CID register */
-#define XDMAC_CID_DID_Pos                     _UINT32_(2)                                          /* (XDMAC_CID) End of Disable Interrupt Disable Bit Position */
-#define XDMAC_CID_DID_Msk                     (_UINT32_(0x1) << XDMAC_CID_DID_Pos)                 /* (XDMAC_CID) End of Disable Interrupt Disable Bit Mask */
-#define XDMAC_CID_DID(value)                  (XDMAC_CID_DID_Msk & (_UINT32_(value) << XDMAC_CID_DID_Pos)) /* Assigment of value for DID in the XDMAC_CID register */
-#define XDMAC_CID_FID_Pos                     _UINT32_(3)                                          /* (XDMAC_CID) End of Flush Interrupt Disable Bit Position */
-#define XDMAC_CID_FID_Msk                     (_UINT32_(0x1) << XDMAC_CID_FID_Pos)                 /* (XDMAC_CID) End of Flush Interrupt Disable Bit Mask */
-#define XDMAC_CID_FID(value)                  (XDMAC_CID_FID_Msk & (_UINT32_(value) << XDMAC_CID_FID_Pos)) /* Assigment of value for FID in the XDMAC_CID register */
-#define XDMAC_CID_RBEID_Pos                   _UINT32_(4)                                          /* (XDMAC_CID) Read Bus Error Interrupt Disable Bit Position */
-#define XDMAC_CID_RBEID_Msk                   (_UINT32_(0x1) << XDMAC_CID_RBEID_Pos)               /* (XDMAC_CID) Read Bus Error Interrupt Disable Bit Mask */
-#define XDMAC_CID_RBEID(value)                (XDMAC_CID_RBEID_Msk & (_UINT32_(value) << XDMAC_CID_RBEID_Pos)) /* Assigment of value for RBEID in the XDMAC_CID register */
-#define XDMAC_CID_WBEID_Pos                   _UINT32_(5)                                          /* (XDMAC_CID) Write Bus Error Interrupt Disable Bit Position */
-#define XDMAC_CID_WBEID_Msk                   (_UINT32_(0x1) << XDMAC_CID_WBEID_Pos)               /* (XDMAC_CID) Write Bus Error Interrupt Disable Bit Mask */
-#define XDMAC_CID_WBEID(value)                (XDMAC_CID_WBEID_Msk & (_UINT32_(value) << XDMAC_CID_WBEID_Pos)) /* Assigment of value for WBEID in the XDMAC_CID register */
-#define XDMAC_CID_ROID_Pos                    _UINT32_(6)                                          /* (XDMAC_CID) Request Overflow Error Interrupt Disable Bit Position */
-#define XDMAC_CID_ROID_Msk                    (_UINT32_(0x1) << XDMAC_CID_ROID_Pos)                /* (XDMAC_CID) Request Overflow Error Interrupt Disable Bit Mask */
-#define XDMAC_CID_ROID(value)                 (XDMAC_CID_ROID_Msk & (_UINT32_(value) << XDMAC_CID_ROID_Pos)) /* Assigment of value for ROID in the XDMAC_CID register */
-#define XDMAC_CID_Msk                         _UINT32_(0x0000007F)                                 /* (XDMAC_CID) Register Mask  */
-
-
-/* -------- XDMAC_CIM : (XDMAC Offset: 0x08) ( R/ 32) Channel Interrupt Mask Register -------- */
-#define XDMAC_CIM_BIM_Pos                     _UINT32_(0)                                          /* (XDMAC_CIM) End of Block Interrupt Mask Bit Position */
-#define XDMAC_CIM_BIM_Msk                     (_UINT32_(0x1) << XDMAC_CIM_BIM_Pos)                 /* (XDMAC_CIM) End of Block Interrupt Mask Bit Mask */
-#define XDMAC_CIM_BIM(value)                  (XDMAC_CIM_BIM_Msk & (_UINT32_(value) << XDMAC_CIM_BIM_Pos)) /* Assigment of value for BIM in the XDMAC_CIM register */
-#define XDMAC_CIM_LIM_Pos                     _UINT32_(1)                                          /* (XDMAC_CIM) End of Linked List Interrupt Mask Bit Position */
-#define XDMAC_CIM_LIM_Msk                     (_UINT32_(0x1) << XDMAC_CIM_LIM_Pos)                 /* (XDMAC_CIM) End of Linked List Interrupt Mask Bit Mask */
-#define XDMAC_CIM_LIM(value)                  (XDMAC_CIM_LIM_Msk & (_UINT32_(value) << XDMAC_CIM_LIM_Pos)) /* Assigment of value for LIM in the XDMAC_CIM register */
-#define XDMAC_CIM_DIM_Pos                     _UINT32_(2)                                          /* (XDMAC_CIM) End of Disable Interrupt Mask Bit Position */
-#define XDMAC_CIM_DIM_Msk                     (_UINT32_(0x1) << XDMAC_CIM_DIM_Pos)                 /* (XDMAC_CIM) End of Disable Interrupt Mask Bit Mask */
-#define XDMAC_CIM_DIM(value)                  (XDMAC_CIM_DIM_Msk & (_UINT32_(value) << XDMAC_CIM_DIM_Pos)) /* Assigment of value for DIM in the XDMAC_CIM register */
-#define XDMAC_CIM_FIM_Pos                     _UINT32_(3)                                          /* (XDMAC_CIM) End of Flush Interrupt Mask Bit Position */
-#define XDMAC_CIM_FIM_Msk                     (_UINT32_(0x1) << XDMAC_CIM_FIM_Pos)                 /* (XDMAC_CIM) End of Flush Interrupt Mask Bit Mask */
-#define XDMAC_CIM_FIM(value)                  (XDMAC_CIM_FIM_Msk & (_UINT32_(value) << XDMAC_CIM_FIM_Pos)) /* Assigment of value for FIM in the XDMAC_CIM register */
-#define XDMAC_CIM_RBEIM_Pos                   _UINT32_(4)                                          /* (XDMAC_CIM) Read Bus Error Interrupt Mask Bit Position */
-#define XDMAC_CIM_RBEIM_Msk                   (_UINT32_(0x1) << XDMAC_CIM_RBEIM_Pos)               /* (XDMAC_CIM) Read Bus Error Interrupt Mask Bit Mask */
-#define XDMAC_CIM_RBEIM(value)                (XDMAC_CIM_RBEIM_Msk & (_UINT32_(value) << XDMAC_CIM_RBEIM_Pos)) /* Assigment of value for RBEIM in the XDMAC_CIM register */
-#define XDMAC_CIM_WBEIM_Pos                   _UINT32_(5)                                          /* (XDMAC_CIM) Write Bus Error Interrupt Mask Bit Position */
-#define XDMAC_CIM_WBEIM_Msk                   (_UINT32_(0x1) << XDMAC_CIM_WBEIM_Pos)               /* (XDMAC_CIM) Write Bus Error Interrupt Mask Bit Mask */
-#define XDMAC_CIM_WBEIM(value)                (XDMAC_CIM_WBEIM_Msk & (_UINT32_(value) << XDMAC_CIM_WBEIM_Pos)) /* Assigment of value for WBEIM in the XDMAC_CIM register */
-#define XDMAC_CIM_ROIM_Pos                    _UINT32_(6)                                          /* (XDMAC_CIM) Request Overflow Error Interrupt Mask Bit Position */
-#define XDMAC_CIM_ROIM_Msk                    (_UINT32_(0x1) << XDMAC_CIM_ROIM_Pos)                /* (XDMAC_CIM) Request Overflow Error Interrupt Mask Bit Mask */
-#define XDMAC_CIM_ROIM(value)                 (XDMAC_CIM_ROIM_Msk & (_UINT32_(value) << XDMAC_CIM_ROIM_Pos)) /* Assigment of value for ROIM in the XDMAC_CIM register */
-#define XDMAC_CIM_Msk                         _UINT32_(0x0000007F)                                 /* (XDMAC_CIM) Register Mask  */
-
-
-/* -------- XDMAC_CIS : (XDMAC Offset: 0x0C) ( R/ 32) Channel Interrupt Status Register -------- */
-#define XDMAC_CIS_BIS_Pos                     _UINT32_(0)                                          /* (XDMAC_CIS) End of Block Interrupt Status Bit Position */
-#define XDMAC_CIS_BIS_Msk                     (_UINT32_(0x1) << XDMAC_CIS_BIS_Pos)                 /* (XDMAC_CIS) End of Block Interrupt Status Bit Mask */
-#define XDMAC_CIS_BIS(value)                  (XDMAC_CIS_BIS_Msk & (_UINT32_(value) << XDMAC_CIS_BIS_Pos)) /* Assigment of value for BIS in the XDMAC_CIS register */
-#define XDMAC_CIS_LIS_Pos                     _UINT32_(1)                                          /* (XDMAC_CIS) End of Linked List Interrupt Status Bit Position */
-#define XDMAC_CIS_LIS_Msk                     (_UINT32_(0x1) << XDMAC_CIS_LIS_Pos)                 /* (XDMAC_CIS) End of Linked List Interrupt Status Bit Mask */
-#define XDMAC_CIS_LIS(value)                  (XDMAC_CIS_LIS_Msk & (_UINT32_(value) << XDMAC_CIS_LIS_Pos)) /* Assigment of value for LIS in the XDMAC_CIS register */
-#define XDMAC_CIS_DIS_Pos                     _UINT32_(2)                                          /* (XDMAC_CIS) End of Disable Interrupt Status Bit Position */
-#define XDMAC_CIS_DIS_Msk                     (_UINT32_(0x1) << XDMAC_CIS_DIS_Pos)                 /* (XDMAC_CIS) End of Disable Interrupt Status Bit Mask */
-#define XDMAC_CIS_DIS(value)                  (XDMAC_CIS_DIS_Msk & (_UINT32_(value) << XDMAC_CIS_DIS_Pos)) /* Assigment of value for DIS in the XDMAC_CIS register */
-#define XDMAC_CIS_FIS_Pos                     _UINT32_(3)                                          /* (XDMAC_CIS) End of Flush Interrupt Status Bit Position */
-#define XDMAC_CIS_FIS_Msk                     (_UINT32_(0x1) << XDMAC_CIS_FIS_Pos)                 /* (XDMAC_CIS) End of Flush Interrupt Status Bit Mask */
-#define XDMAC_CIS_FIS(value)                  (XDMAC_CIS_FIS_Msk & (_UINT32_(value) << XDMAC_CIS_FIS_Pos)) /* Assigment of value for FIS in the XDMAC_CIS register */
-#define XDMAC_CIS_RBEIS_Pos                   _UINT32_(4)                                          /* (XDMAC_CIS) Read Bus Error Interrupt Status Bit Position */
-#define XDMAC_CIS_RBEIS_Msk                   (_UINT32_(0x1) << XDMAC_CIS_RBEIS_Pos)               /* (XDMAC_CIS) Read Bus Error Interrupt Status Bit Mask */
-#define XDMAC_CIS_RBEIS(value)                (XDMAC_CIS_RBEIS_Msk & (_UINT32_(value) << XDMAC_CIS_RBEIS_Pos)) /* Assigment of value for RBEIS in the XDMAC_CIS register */
-#define XDMAC_CIS_WBEIS_Pos                   _UINT32_(5)                                          /* (XDMAC_CIS) Write Bus Error Interrupt Status Bit Position */
-#define XDMAC_CIS_WBEIS_Msk                   (_UINT32_(0x1) << XDMAC_CIS_WBEIS_Pos)               /* (XDMAC_CIS) Write Bus Error Interrupt Status Bit Mask */
-#define XDMAC_CIS_WBEIS(value)                (XDMAC_CIS_WBEIS_Msk & (_UINT32_(value) << XDMAC_CIS_WBEIS_Pos)) /* Assigment of value for WBEIS in the XDMAC_CIS register */
-#define XDMAC_CIS_ROIS_Pos                    _UINT32_(6)                                          /* (XDMAC_CIS) Request Overflow Error Interrupt Status Bit Position */
-#define XDMAC_CIS_ROIS_Msk                    (_UINT32_(0x1) << XDMAC_CIS_ROIS_Pos)                /* (XDMAC_CIS) Request Overflow Error Interrupt Status Bit Mask */
-#define XDMAC_CIS_ROIS(value)                 (XDMAC_CIS_ROIS_Msk & (_UINT32_(value) << XDMAC_CIS_ROIS_Pos)) /* Assigment of value for ROIS in the XDMAC_CIS register */
-#define XDMAC_CIS_Msk                         _UINT32_(0x0000007F)                                 /* (XDMAC_CIS) Register Mask  */
-
-
-/* -------- XDMAC_CSA : (XDMAC Offset: 0x10) (R/W 32) Channel Source Address Register -------- */
-#define XDMAC_CSA_SA_Pos                      _UINT32_(0)                                          /* (XDMAC_CSA) Channel x Source Address Position */
-#define XDMAC_CSA_SA_Msk                      (_UINT32_(0xFFFFFFFF) << XDMAC_CSA_SA_Pos)           /* (XDMAC_CSA) Channel x Source Address Mask */
-#define XDMAC_CSA_SA(value)                   (XDMAC_CSA_SA_Msk & (_UINT32_(value) << XDMAC_CSA_SA_Pos)) /* Assigment of value for SA in the XDMAC_CSA register */
-#define XDMAC_CSA_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (XDMAC_CSA) Register Mask  */
-
-
-/* -------- XDMAC_CDA : (XDMAC Offset: 0x14) (R/W 32) Channel Destination Address Register -------- */
-#define XDMAC_CDA_DA_Pos                      _UINT32_(0)                                          /* (XDMAC_CDA) Channel x Destination Address Position */
-#define XDMAC_CDA_DA_Msk                      (_UINT32_(0xFFFFFFFF) << XDMAC_CDA_DA_Pos)           /* (XDMAC_CDA) Channel x Destination Address Mask */
-#define XDMAC_CDA_DA(value)                   (XDMAC_CDA_DA_Msk & (_UINT32_(value) << XDMAC_CDA_DA_Pos)) /* Assigment of value for DA in the XDMAC_CDA register */
-#define XDMAC_CDA_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (XDMAC_CDA) Register Mask  */
-
-
-/* -------- XDMAC_CNDA : (XDMAC Offset: 0x18) (R/W 32) Channel Next Descriptor Address Register -------- */
-#define XDMAC_CNDA_NDAIF_Pos                  _UINT32_(0)                                          /* (XDMAC_CNDA) Channel x Next Descriptor Interface Position */
-#define XDMAC_CNDA_NDAIF_Msk                  (_UINT32_(0x1) << XDMAC_CNDA_NDAIF_Pos)              /* (XDMAC_CNDA) Channel x Next Descriptor Interface Mask */
-#define XDMAC_CNDA_NDAIF(value)               (XDMAC_CNDA_NDAIF_Msk & (_UINT32_(value) << XDMAC_CNDA_NDAIF_Pos)) /* Assigment of value for NDAIF in the XDMAC_CNDA register */
-#define XDMAC_CNDA_NDA_Pos                    _UINT32_(2)                                          /* (XDMAC_CNDA) Channel x Next Descriptor Address Position */
-#define XDMAC_CNDA_NDA_Msk                    (_UINT32_(0x3FFFFFFF) << XDMAC_CNDA_NDA_Pos)         /* (XDMAC_CNDA) Channel x Next Descriptor Address Mask */
-#define XDMAC_CNDA_NDA(value)                 (XDMAC_CNDA_NDA_Msk & (_UINT32_(value) << XDMAC_CNDA_NDA_Pos)) /* Assigment of value for NDA in the XDMAC_CNDA register */
-#define XDMAC_CNDA_Msk                        _UINT32_(0xFFFFFFFD)                                 /* (XDMAC_CNDA) Register Mask  */
-
-
-/* -------- XDMAC_CNDC : (XDMAC Offset: 0x1C) (R/W 32) Channel Next Descriptor Control Register -------- */
-#define XDMAC_CNDC_NDE_Pos                    _UINT32_(0)                                          /* (XDMAC_CNDC) Channel x Next Descriptor Enable Position */
-#define XDMAC_CNDC_NDE_Msk                    (_UINT32_(0x1) << XDMAC_CNDC_NDE_Pos)                /* (XDMAC_CNDC) Channel x Next Descriptor Enable Mask */
-#define XDMAC_CNDC_NDE(value)                 (XDMAC_CNDC_NDE_Msk & (_UINT32_(value) << XDMAC_CNDC_NDE_Pos)) /* Assigment of value for NDE in the XDMAC_CNDC register */
-#define   XDMAC_CNDC_NDE_DSCR_FETCH_DIS_Val   _UINT32_(0x0)                                        /* (XDMAC_CNDC) Descriptor fetch is disabled.  */
-#define   XDMAC_CNDC_NDE_DSCR_FETCH_EN_Val    _UINT32_(0x1)                                        /* (XDMAC_CNDC) Descriptor fetch is enabled.  */
-#define XDMAC_CNDC_NDE_DSCR_FETCH_DIS         (XDMAC_CNDC_NDE_DSCR_FETCH_DIS_Val << XDMAC_CNDC_NDE_Pos) /* (XDMAC_CNDC) Descriptor fetch is disabled. Position  */
-#define XDMAC_CNDC_NDE_DSCR_FETCH_EN          (XDMAC_CNDC_NDE_DSCR_FETCH_EN_Val << XDMAC_CNDC_NDE_Pos) /* (XDMAC_CNDC) Descriptor fetch is enabled. Position  */
-#define XDMAC_CNDC_NDSUP_Pos                  _UINT32_(1)                                          /* (XDMAC_CNDC) Channel x Next Descriptor Source Update Position */
-#define XDMAC_CNDC_NDSUP_Msk                  (_UINT32_(0x1) << XDMAC_CNDC_NDSUP_Pos)              /* (XDMAC_CNDC) Channel x Next Descriptor Source Update Mask */
-#define XDMAC_CNDC_NDSUP(value)               (XDMAC_CNDC_NDSUP_Msk & (_UINT32_(value) << XDMAC_CNDC_NDSUP_Pos)) /* Assigment of value for NDSUP in the XDMAC_CNDC register */
-#define   XDMAC_CNDC_NDSUP_SRC_PARAMS_UNCHANGED_Val _UINT32_(0x0)                                        /* (XDMAC_CNDC) Source parameters remain unchanged.  */
-#define   XDMAC_CNDC_NDSUP_SRC_PARAMS_UPDATED_Val _UINT32_(0x1)                                        /* (XDMAC_CNDC) Source parameters are updated when the descriptor is retrieved.  */
-#define XDMAC_CNDC_NDSUP_SRC_PARAMS_UNCHANGED (XDMAC_CNDC_NDSUP_SRC_PARAMS_UNCHANGED_Val << XDMAC_CNDC_NDSUP_Pos) /* (XDMAC_CNDC) Source parameters remain unchanged. Position  */
-#define XDMAC_CNDC_NDSUP_SRC_PARAMS_UPDATED   (XDMAC_CNDC_NDSUP_SRC_PARAMS_UPDATED_Val << XDMAC_CNDC_NDSUP_Pos) /* (XDMAC_CNDC) Source parameters are updated when the descriptor is retrieved. Position  */
-#define XDMAC_CNDC_NDDUP_Pos                  _UINT32_(2)                                          /* (XDMAC_CNDC) Channel x Next Descriptor Destination Update Position */
-#define XDMAC_CNDC_NDDUP_Msk                  (_UINT32_(0x1) << XDMAC_CNDC_NDDUP_Pos)              /* (XDMAC_CNDC) Channel x Next Descriptor Destination Update Mask */
-#define XDMAC_CNDC_NDDUP(value)               (XDMAC_CNDC_NDDUP_Msk & (_UINT32_(value) << XDMAC_CNDC_NDDUP_Pos)) /* Assigment of value for NDDUP in the XDMAC_CNDC register */
-#define   XDMAC_CNDC_NDDUP_DST_PARAMS_UNCHANGED_Val _UINT32_(0x0)                                        /* (XDMAC_CNDC) Destination parameters remain unchanged.  */
-#define   XDMAC_CNDC_NDDUP_DST_PARAMS_UPDATED_Val _UINT32_(0x1)                                        /* (XDMAC_CNDC) Destination parameters are updated when the descriptor is retrieved.  */
-#define XDMAC_CNDC_NDDUP_DST_PARAMS_UNCHANGED (XDMAC_CNDC_NDDUP_DST_PARAMS_UNCHANGED_Val << XDMAC_CNDC_NDDUP_Pos) /* (XDMAC_CNDC) Destination parameters remain unchanged. Position  */
-#define XDMAC_CNDC_NDDUP_DST_PARAMS_UPDATED   (XDMAC_CNDC_NDDUP_DST_PARAMS_UPDATED_Val << XDMAC_CNDC_NDDUP_Pos) /* (XDMAC_CNDC) Destination parameters are updated when the descriptor is retrieved. Position  */
-#define XDMAC_CNDC_NDVIEW_Pos                 _UINT32_(3)                                          /* (XDMAC_CNDC) Channel x Next Descriptor View Position */
-#define XDMAC_CNDC_NDVIEW_Msk                 (_UINT32_(0x3) << XDMAC_CNDC_NDVIEW_Pos)             /* (XDMAC_CNDC) Channel x Next Descriptor View Mask */
-#define XDMAC_CNDC_NDVIEW(value)              (XDMAC_CNDC_NDVIEW_Msk & (_UINT32_(value) << XDMAC_CNDC_NDVIEW_Pos)) /* Assigment of value for NDVIEW in the XDMAC_CNDC register */
-#define   XDMAC_CNDC_NDVIEW_NDV0_Val          _UINT32_(0x0)                                        /* (XDMAC_CNDC) Next Descriptor View 0  */
-#define   XDMAC_CNDC_NDVIEW_NDV1_Val          _UINT32_(0x1)                                        /* (XDMAC_CNDC) Next Descriptor View 1  */
-#define   XDMAC_CNDC_NDVIEW_NDV2_Val          _UINT32_(0x2)                                        /* (XDMAC_CNDC) Next Descriptor View 2  */
-#define   XDMAC_CNDC_NDVIEW_NDV3_Val          _UINT32_(0x3)                                        /* (XDMAC_CNDC) Next Descriptor View 3  */
-#define XDMAC_CNDC_NDVIEW_NDV0                (XDMAC_CNDC_NDVIEW_NDV0_Val << XDMAC_CNDC_NDVIEW_Pos) /* (XDMAC_CNDC) Next Descriptor View 0 Position  */
-#define XDMAC_CNDC_NDVIEW_NDV1                (XDMAC_CNDC_NDVIEW_NDV1_Val << XDMAC_CNDC_NDVIEW_Pos) /* (XDMAC_CNDC) Next Descriptor View 1 Position  */
-#define XDMAC_CNDC_NDVIEW_NDV2                (XDMAC_CNDC_NDVIEW_NDV2_Val << XDMAC_CNDC_NDVIEW_Pos) /* (XDMAC_CNDC) Next Descriptor View 2 Position  */
-#define XDMAC_CNDC_NDVIEW_NDV3                (XDMAC_CNDC_NDVIEW_NDV3_Val << XDMAC_CNDC_NDVIEW_Pos) /* (XDMAC_CNDC) Next Descriptor View 3 Position  */
-#define XDMAC_CNDC_Msk                        _UINT32_(0x0000001F)                                 /* (XDMAC_CNDC) Register Mask  */
-
-
-/* -------- XDMAC_CUBC : (XDMAC Offset: 0x20) (R/W 32) Channel Microblock Control Register -------- */
-#define XDMAC_CUBC_UBLEN_Pos                  _UINT32_(0)                                          /* (XDMAC_CUBC) Channel x Microblock Length Position */
-#define XDMAC_CUBC_UBLEN_Msk                  (_UINT32_(0xFFFFFF) << XDMAC_CUBC_UBLEN_Pos)         /* (XDMAC_CUBC) Channel x Microblock Length Mask */
-#define XDMAC_CUBC_UBLEN(value)               (XDMAC_CUBC_UBLEN_Msk & (_UINT32_(value) << XDMAC_CUBC_UBLEN_Pos)) /* Assigment of value for UBLEN in the XDMAC_CUBC register */
-#define XDMAC_CUBC_Msk                        _UINT32_(0x00FFFFFF)                                 /* (XDMAC_CUBC) Register Mask  */
-
-
 /* -------- XDMAC_CBC : (XDMAC Offset: 0x24) (R/W 32) Channel Block Control Register -------- */
 #define XDMAC_CBC_BLEN_Pos                    _UINT32_(0)                                          /* (XDMAC_CBC) Channel x Block Length Position */
 #define XDMAC_CBC_BLEN_Msk                    (_UINT32_(0xFFF) << XDMAC_CBC_BLEN_Pos)              /* (XDMAC_CBC) Channel x Block Length Mask */
@@ -438,6 +271,13 @@
 #define XDMAC_CC_Msk                          _UINT32_(0x7FEF7FF7)                                 /* (XDMAC_CC) Register Mask  */
 
 
+/* -------- XDMAC_CDA : (XDMAC Offset: 0x14) (R/W 32) Channel Destination Address Register -------- */
+#define XDMAC_CDA_DA_Pos                      _UINT32_(0)                                          /* (XDMAC_CDA) Channel x Destination Address Position */
+#define XDMAC_CDA_DA_Msk                      (_UINT32_(0xFFFFFFFF) << XDMAC_CDA_DA_Pos)           /* (XDMAC_CDA) Channel x Destination Address Mask */
+#define XDMAC_CDA_DA(value)                   (XDMAC_CDA_DA_Msk & (_UINT32_(value) << XDMAC_CDA_DA_Pos)) /* Assigment of value for DA in the XDMAC_CDA register */
+#define XDMAC_CDA_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (XDMAC_CDA) Register Mask  */
+
+
 /* -------- XDMAC_CDS_MSP : (XDMAC Offset: 0x2C) (R/W 32) Channel Data Stride Memory Set Pattern -------- */
 #define XDMAC_CDS_MSP_SDS_MSP_Pos             _UINT32_(0)                                          /* (XDMAC_CDS_MSP) Channel x Source Data stride or Memory Set Pattern Position */
 #define XDMAC_CDS_MSP_SDS_MSP_Msk             (_UINT32_(0xFFFF) << XDMAC_CDS_MSP_SDS_MSP_Pos)      /* (XDMAC_CDS_MSP) Channel x Source Data stride or Memory Set Pattern Mask */
@@ -448,13 +288,6 @@
 #define XDMAC_CDS_MSP_Msk                     _UINT32_(0xFFFFFFFF)                                 /* (XDMAC_CDS_MSP) Register Mask  */
 
 
-/* -------- XDMAC_CSUS : (XDMAC Offset: 0x30) (R/W 32) Channel Source Microblock Stride -------- */
-#define XDMAC_CSUS_SUBS_Pos                   _UINT32_(0)                                          /* (XDMAC_CSUS) Channel x Source Microblock Stride Position */
-#define XDMAC_CSUS_SUBS_Msk                   (_UINT32_(0xFFFFFF) << XDMAC_CSUS_SUBS_Pos)          /* (XDMAC_CSUS) Channel x Source Microblock Stride Mask */
-#define XDMAC_CSUS_SUBS(value)                (XDMAC_CSUS_SUBS_Msk & (_UINT32_(value) << XDMAC_CSUS_SUBS_Pos)) /* Assigment of value for SUBS in the XDMAC_CSUS register */
-#define XDMAC_CSUS_Msk                        _UINT32_(0x00FFFFFF)                                 /* (XDMAC_CSUS) Register Mask  */
-
-
 /* -------- XDMAC_CDUS : (XDMAC Offset: 0x34) (R/W 32) Channel Destination Microblock Stride -------- */
 #define XDMAC_CDUS_DUBS_Pos                   _UINT32_(0)                                          /* (XDMAC_CDUS) Channel x Destination Microblock Stride Position */
 #define XDMAC_CDUS_DUBS_Msk                   (_UINT32_(0xFFFFFF) << XDMAC_CDUS_DUBS_Pos)          /* (XDMAC_CDUS) Channel x Destination Microblock Stride Mask */
@@ -462,17 +295,171 @@
 #define XDMAC_CDUS_Msk                        _UINT32_(0x00FFFFFF)                                 /* (XDMAC_CDUS) Register Mask  */
 
 
-/* -------- XDMAC_GTYPE : (XDMAC Offset: 0x00) ( R/ 32) Global Type Register -------- */
-#define XDMAC_GTYPE_NB_CH_Pos                 _UINT32_(0)                                          /* (XDMAC_GTYPE) Number of Channels Minus One Position */
-#define XDMAC_GTYPE_NB_CH_Msk                 (_UINT32_(0x1F) << XDMAC_GTYPE_NB_CH_Pos)            /* (XDMAC_GTYPE) Number of Channels Minus One Mask */
-#define XDMAC_GTYPE_NB_CH(value)              (XDMAC_GTYPE_NB_CH_Msk & (_UINT32_(value) << XDMAC_GTYPE_NB_CH_Pos)) /* Assigment of value for NB_CH in the XDMAC_GTYPE register */
-#define XDMAC_GTYPE_FIFO_SZ_Pos               _UINT32_(5)                                          /* (XDMAC_GTYPE) Number of Bytes Position */
-#define XDMAC_GTYPE_FIFO_SZ_Msk               (_UINT32_(0x7FF) << XDMAC_GTYPE_FIFO_SZ_Pos)         /* (XDMAC_GTYPE) Number of Bytes Mask */
-#define XDMAC_GTYPE_FIFO_SZ(value)            (XDMAC_GTYPE_FIFO_SZ_Msk & (_UINT32_(value) << XDMAC_GTYPE_FIFO_SZ_Pos)) /* Assigment of value for FIFO_SZ in the XDMAC_GTYPE register */
-#define XDMAC_GTYPE_NB_REQ_Pos                _UINT32_(16)                                         /* (XDMAC_GTYPE) Number of Peripheral Requests Minus One Position */
-#define XDMAC_GTYPE_NB_REQ_Msk                (_UINT32_(0x7F) << XDMAC_GTYPE_NB_REQ_Pos)           /* (XDMAC_GTYPE) Number of Peripheral Requests Minus One Mask */
-#define XDMAC_GTYPE_NB_REQ(value)             (XDMAC_GTYPE_NB_REQ_Msk & (_UINT32_(value) << XDMAC_GTYPE_NB_REQ_Pos)) /* Assigment of value for NB_REQ in the XDMAC_GTYPE register */
-#define XDMAC_GTYPE_Msk                       _UINT32_(0x007FFFFF)                                 /* (XDMAC_GTYPE) Register Mask  */
+/* -------- XDMAC_CID : (XDMAC Offset: 0x04) ( /W 32) Channel Interrupt Disable Register -------- */
+#define XDMAC_CID_BID_Pos                     _UINT32_(0)                                          /* (XDMAC_CID) End of Block Interrupt Disable Bit Position */
+#define XDMAC_CID_BID_Msk                     (_UINT32_(0x1) << XDMAC_CID_BID_Pos)                 /* (XDMAC_CID) End of Block Interrupt Disable Bit Mask */
+#define XDMAC_CID_BID(value)                  (XDMAC_CID_BID_Msk & (_UINT32_(value) << XDMAC_CID_BID_Pos)) /* Assigment of value for BID in the XDMAC_CID register */
+#define XDMAC_CID_LID_Pos                     _UINT32_(1)                                          /* (XDMAC_CID) End of Linked List Interrupt Disable Bit Position */
+#define XDMAC_CID_LID_Msk                     (_UINT32_(0x1) << XDMAC_CID_LID_Pos)                 /* (XDMAC_CID) End of Linked List Interrupt Disable Bit Mask */
+#define XDMAC_CID_LID(value)                  (XDMAC_CID_LID_Msk & (_UINT32_(value) << XDMAC_CID_LID_Pos)) /* Assigment of value for LID in the XDMAC_CID register */
+#define XDMAC_CID_DID_Pos                     _UINT32_(2)                                          /* (XDMAC_CID) End of Disable Interrupt Disable Bit Position */
+#define XDMAC_CID_DID_Msk                     (_UINT32_(0x1) << XDMAC_CID_DID_Pos)                 /* (XDMAC_CID) End of Disable Interrupt Disable Bit Mask */
+#define XDMAC_CID_DID(value)                  (XDMAC_CID_DID_Msk & (_UINT32_(value) << XDMAC_CID_DID_Pos)) /* Assigment of value for DID in the XDMAC_CID register */
+#define XDMAC_CID_FID_Pos                     _UINT32_(3)                                          /* (XDMAC_CID) End of Flush Interrupt Disable Bit Position */
+#define XDMAC_CID_FID_Msk                     (_UINT32_(0x1) << XDMAC_CID_FID_Pos)                 /* (XDMAC_CID) End of Flush Interrupt Disable Bit Mask */
+#define XDMAC_CID_FID(value)                  (XDMAC_CID_FID_Msk & (_UINT32_(value) << XDMAC_CID_FID_Pos)) /* Assigment of value for FID in the XDMAC_CID register */
+#define XDMAC_CID_RBEID_Pos                   _UINT32_(4)                                          /* (XDMAC_CID) Read Bus Error Interrupt Disable Bit Position */
+#define XDMAC_CID_RBEID_Msk                   (_UINT32_(0x1) << XDMAC_CID_RBEID_Pos)               /* (XDMAC_CID) Read Bus Error Interrupt Disable Bit Mask */
+#define XDMAC_CID_RBEID(value)                (XDMAC_CID_RBEID_Msk & (_UINT32_(value) << XDMAC_CID_RBEID_Pos)) /* Assigment of value for RBEID in the XDMAC_CID register */
+#define XDMAC_CID_WBEID_Pos                   _UINT32_(5)                                          /* (XDMAC_CID) Write Bus Error Interrupt Disable Bit Position */
+#define XDMAC_CID_WBEID_Msk                   (_UINT32_(0x1) << XDMAC_CID_WBEID_Pos)               /* (XDMAC_CID) Write Bus Error Interrupt Disable Bit Mask */
+#define XDMAC_CID_WBEID(value)                (XDMAC_CID_WBEID_Msk & (_UINT32_(value) << XDMAC_CID_WBEID_Pos)) /* Assigment of value for WBEID in the XDMAC_CID register */
+#define XDMAC_CID_ROID_Pos                    _UINT32_(6)                                          /* (XDMAC_CID) Request Overflow Error Interrupt Disable Bit Position */
+#define XDMAC_CID_ROID_Msk                    (_UINT32_(0x1) << XDMAC_CID_ROID_Pos)                /* (XDMAC_CID) Request Overflow Error Interrupt Disable Bit Mask */
+#define XDMAC_CID_ROID(value)                 (XDMAC_CID_ROID_Msk & (_UINT32_(value) << XDMAC_CID_ROID_Pos)) /* Assigment of value for ROID in the XDMAC_CID register */
+#define XDMAC_CID_Msk                         _UINT32_(0x0000007F)                                 /* (XDMAC_CID) Register Mask  */
+
+
+/* -------- XDMAC_CIE : (XDMAC Offset: 0x00) ( /W 32) Channel Interrupt Enable Register -------- */
+#define XDMAC_CIE_BIE_Pos                     _UINT32_(0)                                          /* (XDMAC_CIE) End of Block Interrupt Enable Bit Position */
+#define XDMAC_CIE_BIE_Msk                     (_UINT32_(0x1) << XDMAC_CIE_BIE_Pos)                 /* (XDMAC_CIE) End of Block Interrupt Enable Bit Mask */
+#define XDMAC_CIE_BIE(value)                  (XDMAC_CIE_BIE_Msk & (_UINT32_(value) << XDMAC_CIE_BIE_Pos)) /* Assigment of value for BIE in the XDMAC_CIE register */
+#define XDMAC_CIE_LIE_Pos                     _UINT32_(1)                                          /* (XDMAC_CIE) End of Linked List Interrupt Enable Bit Position */
+#define XDMAC_CIE_LIE_Msk                     (_UINT32_(0x1) << XDMAC_CIE_LIE_Pos)                 /* (XDMAC_CIE) End of Linked List Interrupt Enable Bit Mask */
+#define XDMAC_CIE_LIE(value)                  (XDMAC_CIE_LIE_Msk & (_UINT32_(value) << XDMAC_CIE_LIE_Pos)) /* Assigment of value for LIE in the XDMAC_CIE register */
+#define XDMAC_CIE_DIE_Pos                     _UINT32_(2)                                          /* (XDMAC_CIE) End of Disable Interrupt Enable Bit Position */
+#define XDMAC_CIE_DIE_Msk                     (_UINT32_(0x1) << XDMAC_CIE_DIE_Pos)                 /* (XDMAC_CIE) End of Disable Interrupt Enable Bit Mask */
+#define XDMAC_CIE_DIE(value)                  (XDMAC_CIE_DIE_Msk & (_UINT32_(value) << XDMAC_CIE_DIE_Pos)) /* Assigment of value for DIE in the XDMAC_CIE register */
+#define XDMAC_CIE_FIE_Pos                     _UINT32_(3)                                          /* (XDMAC_CIE) End of Flush Interrupt Enable Bit Position */
+#define XDMAC_CIE_FIE_Msk                     (_UINT32_(0x1) << XDMAC_CIE_FIE_Pos)                 /* (XDMAC_CIE) End of Flush Interrupt Enable Bit Mask */
+#define XDMAC_CIE_FIE(value)                  (XDMAC_CIE_FIE_Msk & (_UINT32_(value) << XDMAC_CIE_FIE_Pos)) /* Assigment of value for FIE in the XDMAC_CIE register */
+#define XDMAC_CIE_RBIE_Pos                    _UINT32_(4)                                          /* (XDMAC_CIE) Read Bus Error Interrupt Enable Bit Position */
+#define XDMAC_CIE_RBIE_Msk                    (_UINT32_(0x1) << XDMAC_CIE_RBIE_Pos)                /* (XDMAC_CIE) Read Bus Error Interrupt Enable Bit Mask */
+#define XDMAC_CIE_RBIE(value)                 (XDMAC_CIE_RBIE_Msk & (_UINT32_(value) << XDMAC_CIE_RBIE_Pos)) /* Assigment of value for RBIE in the XDMAC_CIE register */
+#define XDMAC_CIE_WBIE_Pos                    _UINT32_(5)                                          /* (XDMAC_CIE) Write Bus Error Interrupt Enable Bit Position */
+#define XDMAC_CIE_WBIE_Msk                    (_UINT32_(0x1) << XDMAC_CIE_WBIE_Pos)                /* (XDMAC_CIE) Write Bus Error Interrupt Enable Bit Mask */
+#define XDMAC_CIE_WBIE(value)                 (XDMAC_CIE_WBIE_Msk & (_UINT32_(value) << XDMAC_CIE_WBIE_Pos)) /* Assigment of value for WBIE in the XDMAC_CIE register */
+#define XDMAC_CIE_ROIE_Pos                    _UINT32_(6)                                          /* (XDMAC_CIE) Request Overflow Error Interrupt Enable Bit Position */
+#define XDMAC_CIE_ROIE_Msk                    (_UINT32_(0x1) << XDMAC_CIE_ROIE_Pos)                /* (XDMAC_CIE) Request Overflow Error Interrupt Enable Bit Mask */
+#define XDMAC_CIE_ROIE(value)                 (XDMAC_CIE_ROIE_Msk & (_UINT32_(value) << XDMAC_CIE_ROIE_Pos)) /* Assigment of value for ROIE in the XDMAC_CIE register */
+#define XDMAC_CIE_Msk                         _UINT32_(0x0000007F)                                 /* (XDMAC_CIE) Register Mask  */
+
+
+/* -------- XDMAC_CIM : (XDMAC Offset: 0x08) ( R/ 32) Channel Interrupt Mask Register -------- */
+#define XDMAC_CIM_BIM_Pos                     _UINT32_(0)                                          /* (XDMAC_CIM) End of Block Interrupt Mask Bit Position */
+#define XDMAC_CIM_BIM_Msk                     (_UINT32_(0x1) << XDMAC_CIM_BIM_Pos)                 /* (XDMAC_CIM) End of Block Interrupt Mask Bit Mask */
+#define XDMAC_CIM_BIM(value)                  (XDMAC_CIM_BIM_Msk & (_UINT32_(value) << XDMAC_CIM_BIM_Pos)) /* Assigment of value for BIM in the XDMAC_CIM register */
+#define XDMAC_CIM_LIM_Pos                     _UINT32_(1)                                          /* (XDMAC_CIM) End of Linked List Interrupt Mask Bit Position */
+#define XDMAC_CIM_LIM_Msk                     (_UINT32_(0x1) << XDMAC_CIM_LIM_Pos)                 /* (XDMAC_CIM) End of Linked List Interrupt Mask Bit Mask */
+#define XDMAC_CIM_LIM(value)                  (XDMAC_CIM_LIM_Msk & (_UINT32_(value) << XDMAC_CIM_LIM_Pos)) /* Assigment of value for LIM in the XDMAC_CIM register */
+#define XDMAC_CIM_DIM_Pos                     _UINT32_(2)                                          /* (XDMAC_CIM) End of Disable Interrupt Mask Bit Position */
+#define XDMAC_CIM_DIM_Msk                     (_UINT32_(0x1) << XDMAC_CIM_DIM_Pos)                 /* (XDMAC_CIM) End of Disable Interrupt Mask Bit Mask */
+#define XDMAC_CIM_DIM(value)                  (XDMAC_CIM_DIM_Msk & (_UINT32_(value) << XDMAC_CIM_DIM_Pos)) /* Assigment of value for DIM in the XDMAC_CIM register */
+#define XDMAC_CIM_FIM_Pos                     _UINT32_(3)                                          /* (XDMAC_CIM) End of Flush Interrupt Mask Bit Position */
+#define XDMAC_CIM_FIM_Msk                     (_UINT32_(0x1) << XDMAC_CIM_FIM_Pos)                 /* (XDMAC_CIM) End of Flush Interrupt Mask Bit Mask */
+#define XDMAC_CIM_FIM(value)                  (XDMAC_CIM_FIM_Msk & (_UINT32_(value) << XDMAC_CIM_FIM_Pos)) /* Assigment of value for FIM in the XDMAC_CIM register */
+#define XDMAC_CIM_RBEIM_Pos                   _UINT32_(4)                                          /* (XDMAC_CIM) Read Bus Error Interrupt Mask Bit Position */
+#define XDMAC_CIM_RBEIM_Msk                   (_UINT32_(0x1) << XDMAC_CIM_RBEIM_Pos)               /* (XDMAC_CIM) Read Bus Error Interrupt Mask Bit Mask */
+#define XDMAC_CIM_RBEIM(value)                (XDMAC_CIM_RBEIM_Msk & (_UINT32_(value) << XDMAC_CIM_RBEIM_Pos)) /* Assigment of value for RBEIM in the XDMAC_CIM register */
+#define XDMAC_CIM_WBEIM_Pos                   _UINT32_(5)                                          /* (XDMAC_CIM) Write Bus Error Interrupt Mask Bit Position */
+#define XDMAC_CIM_WBEIM_Msk                   (_UINT32_(0x1) << XDMAC_CIM_WBEIM_Pos)               /* (XDMAC_CIM) Write Bus Error Interrupt Mask Bit Mask */
+#define XDMAC_CIM_WBEIM(value)                (XDMAC_CIM_WBEIM_Msk & (_UINT32_(value) << XDMAC_CIM_WBEIM_Pos)) /* Assigment of value for WBEIM in the XDMAC_CIM register */
+#define XDMAC_CIM_ROIM_Pos                    _UINT32_(6)                                          /* (XDMAC_CIM) Request Overflow Error Interrupt Mask Bit Position */
+#define XDMAC_CIM_ROIM_Msk                    (_UINT32_(0x1) << XDMAC_CIM_ROIM_Pos)                /* (XDMAC_CIM) Request Overflow Error Interrupt Mask Bit Mask */
+#define XDMAC_CIM_ROIM(value)                 (XDMAC_CIM_ROIM_Msk & (_UINT32_(value) << XDMAC_CIM_ROIM_Pos)) /* Assigment of value for ROIM in the XDMAC_CIM register */
+#define XDMAC_CIM_Msk                         _UINT32_(0x0000007F)                                 /* (XDMAC_CIM) Register Mask  */
+
+
+/* -------- XDMAC_CIS : (XDMAC Offset: 0x0C) ( R/ 32) Channel Interrupt Status Register -------- */
+#define XDMAC_CIS_BIS_Pos                     _UINT32_(0)                                          /* (XDMAC_CIS) End of Block Interrupt Status Bit Position */
+#define XDMAC_CIS_BIS_Msk                     (_UINT32_(0x1) << XDMAC_CIS_BIS_Pos)                 /* (XDMAC_CIS) End of Block Interrupt Status Bit Mask */
+#define XDMAC_CIS_BIS(value)                  (XDMAC_CIS_BIS_Msk & (_UINT32_(value) << XDMAC_CIS_BIS_Pos)) /* Assigment of value for BIS in the XDMAC_CIS register */
+#define XDMAC_CIS_LIS_Pos                     _UINT32_(1)                                          /* (XDMAC_CIS) End of Linked List Interrupt Status Bit Position */
+#define XDMAC_CIS_LIS_Msk                     (_UINT32_(0x1) << XDMAC_CIS_LIS_Pos)                 /* (XDMAC_CIS) End of Linked List Interrupt Status Bit Mask */
+#define XDMAC_CIS_LIS(value)                  (XDMAC_CIS_LIS_Msk & (_UINT32_(value) << XDMAC_CIS_LIS_Pos)) /* Assigment of value for LIS in the XDMAC_CIS register */
+#define XDMAC_CIS_DIS_Pos                     _UINT32_(2)                                          /* (XDMAC_CIS) End of Disable Interrupt Status Bit Position */
+#define XDMAC_CIS_DIS_Msk                     (_UINT32_(0x1) << XDMAC_CIS_DIS_Pos)                 /* (XDMAC_CIS) End of Disable Interrupt Status Bit Mask */
+#define XDMAC_CIS_DIS(value)                  (XDMAC_CIS_DIS_Msk & (_UINT32_(value) << XDMAC_CIS_DIS_Pos)) /* Assigment of value for DIS in the XDMAC_CIS register */
+#define XDMAC_CIS_FIS_Pos                     _UINT32_(3)                                          /* (XDMAC_CIS) End of Flush Interrupt Status Bit Position */
+#define XDMAC_CIS_FIS_Msk                     (_UINT32_(0x1) << XDMAC_CIS_FIS_Pos)                 /* (XDMAC_CIS) End of Flush Interrupt Status Bit Mask */
+#define XDMAC_CIS_FIS(value)                  (XDMAC_CIS_FIS_Msk & (_UINT32_(value) << XDMAC_CIS_FIS_Pos)) /* Assigment of value for FIS in the XDMAC_CIS register */
+#define XDMAC_CIS_RBEIS_Pos                   _UINT32_(4)                                          /* (XDMAC_CIS) Read Bus Error Interrupt Status Bit Position */
+#define XDMAC_CIS_RBEIS_Msk                   (_UINT32_(0x1) << XDMAC_CIS_RBEIS_Pos)               /* (XDMAC_CIS) Read Bus Error Interrupt Status Bit Mask */
+#define XDMAC_CIS_RBEIS(value)                (XDMAC_CIS_RBEIS_Msk & (_UINT32_(value) << XDMAC_CIS_RBEIS_Pos)) /* Assigment of value for RBEIS in the XDMAC_CIS register */
+#define XDMAC_CIS_WBEIS_Pos                   _UINT32_(5)                                          /* (XDMAC_CIS) Write Bus Error Interrupt Status Bit Position */
+#define XDMAC_CIS_WBEIS_Msk                   (_UINT32_(0x1) << XDMAC_CIS_WBEIS_Pos)               /* (XDMAC_CIS) Write Bus Error Interrupt Status Bit Mask */
+#define XDMAC_CIS_WBEIS(value)                (XDMAC_CIS_WBEIS_Msk & (_UINT32_(value) << XDMAC_CIS_WBEIS_Pos)) /* Assigment of value for WBEIS in the XDMAC_CIS register */
+#define XDMAC_CIS_ROIS_Pos                    _UINT32_(6)                                          /* (XDMAC_CIS) Request Overflow Error Interrupt Status Bit Position */
+#define XDMAC_CIS_ROIS_Msk                    (_UINT32_(0x1) << XDMAC_CIS_ROIS_Pos)                /* (XDMAC_CIS) Request Overflow Error Interrupt Status Bit Mask */
+#define XDMAC_CIS_ROIS(value)                 (XDMAC_CIS_ROIS_Msk & (_UINT32_(value) << XDMAC_CIS_ROIS_Pos)) /* Assigment of value for ROIS in the XDMAC_CIS register */
+#define XDMAC_CIS_Msk                         _UINT32_(0x0000007F)                                 /* (XDMAC_CIS) Register Mask  */
+
+
+/* -------- XDMAC_CNDA : (XDMAC Offset: 0x18) (R/W 32) Channel Next Descriptor Address Register -------- */
+#define XDMAC_CNDA_NDAIF_Pos                  _UINT32_(0)                                          /* (XDMAC_CNDA) Channel x Next Descriptor Interface Position */
+#define XDMAC_CNDA_NDAIF_Msk                  (_UINT32_(0x1) << XDMAC_CNDA_NDAIF_Pos)              /* (XDMAC_CNDA) Channel x Next Descriptor Interface Mask */
+#define XDMAC_CNDA_NDAIF(value)               (XDMAC_CNDA_NDAIF_Msk & (_UINT32_(value) << XDMAC_CNDA_NDAIF_Pos)) /* Assigment of value for NDAIF in the XDMAC_CNDA register */
+#define XDMAC_CNDA_NDA_Pos                    _UINT32_(2)                                          /* (XDMAC_CNDA) Channel x Next Descriptor Address Position */
+#define XDMAC_CNDA_NDA_Msk                    (_UINT32_(0x3FFFFFFF) << XDMAC_CNDA_NDA_Pos)         /* (XDMAC_CNDA) Channel x Next Descriptor Address Mask */
+#define XDMAC_CNDA_NDA(value)                 (XDMAC_CNDA_NDA_Msk & (_UINT32_(value) << XDMAC_CNDA_NDA_Pos)) /* Assigment of value for NDA in the XDMAC_CNDA register */
+#define XDMAC_CNDA_Msk                        _UINT32_(0xFFFFFFFD)                                 /* (XDMAC_CNDA) Register Mask  */
+
+
+/* -------- XDMAC_CNDC : (XDMAC Offset: 0x1C) (R/W 32) Channel Next Descriptor Control Register -------- */
+#define XDMAC_CNDC_NDE_Pos                    _UINT32_(0)                                          /* (XDMAC_CNDC) Channel x Next Descriptor Enable Position */
+#define XDMAC_CNDC_NDE_Msk                    (_UINT32_(0x1) << XDMAC_CNDC_NDE_Pos)                /* (XDMAC_CNDC) Channel x Next Descriptor Enable Mask */
+#define XDMAC_CNDC_NDE(value)                 (XDMAC_CNDC_NDE_Msk & (_UINT32_(value) << XDMAC_CNDC_NDE_Pos)) /* Assigment of value for NDE in the XDMAC_CNDC register */
+#define   XDMAC_CNDC_NDE_DSCR_FETCH_DIS_Val   _UINT32_(0x0)                                        /* (XDMAC_CNDC) Descriptor fetch is disabled.  */
+#define   XDMAC_CNDC_NDE_DSCR_FETCH_EN_Val    _UINT32_(0x1)                                        /* (XDMAC_CNDC) Descriptor fetch is enabled.  */
+#define XDMAC_CNDC_NDE_DSCR_FETCH_DIS         (XDMAC_CNDC_NDE_DSCR_FETCH_DIS_Val << XDMAC_CNDC_NDE_Pos) /* (XDMAC_CNDC) Descriptor fetch is disabled. Position  */
+#define XDMAC_CNDC_NDE_DSCR_FETCH_EN          (XDMAC_CNDC_NDE_DSCR_FETCH_EN_Val << XDMAC_CNDC_NDE_Pos) /* (XDMAC_CNDC) Descriptor fetch is enabled. Position  */
+#define XDMAC_CNDC_NDSUP_Pos                  _UINT32_(1)                                          /* (XDMAC_CNDC) Channel x Next Descriptor Source Update Position */
+#define XDMAC_CNDC_NDSUP_Msk                  (_UINT32_(0x1) << XDMAC_CNDC_NDSUP_Pos)              /* (XDMAC_CNDC) Channel x Next Descriptor Source Update Mask */
+#define XDMAC_CNDC_NDSUP(value)               (XDMAC_CNDC_NDSUP_Msk & (_UINT32_(value) << XDMAC_CNDC_NDSUP_Pos)) /* Assigment of value for NDSUP in the XDMAC_CNDC register */
+#define   XDMAC_CNDC_NDSUP_SRC_PARAMS_UNCHANGED_Val _UINT32_(0x0)                                        /* (XDMAC_CNDC) Source parameters remain unchanged.  */
+#define   XDMAC_CNDC_NDSUP_SRC_PARAMS_UPDATED_Val _UINT32_(0x1)                                        /* (XDMAC_CNDC) Source parameters are updated when the descriptor is retrieved.  */
+#define XDMAC_CNDC_NDSUP_SRC_PARAMS_UNCHANGED (XDMAC_CNDC_NDSUP_SRC_PARAMS_UNCHANGED_Val << XDMAC_CNDC_NDSUP_Pos) /* (XDMAC_CNDC) Source parameters remain unchanged. Position  */
+#define XDMAC_CNDC_NDSUP_SRC_PARAMS_UPDATED   (XDMAC_CNDC_NDSUP_SRC_PARAMS_UPDATED_Val << XDMAC_CNDC_NDSUP_Pos) /* (XDMAC_CNDC) Source parameters are updated when the descriptor is retrieved. Position  */
+#define XDMAC_CNDC_NDDUP_Pos                  _UINT32_(2)                                          /* (XDMAC_CNDC) Channel x Next Descriptor Destination Update Position */
+#define XDMAC_CNDC_NDDUP_Msk                  (_UINT32_(0x1) << XDMAC_CNDC_NDDUP_Pos)              /* (XDMAC_CNDC) Channel x Next Descriptor Destination Update Mask */
+#define XDMAC_CNDC_NDDUP(value)               (XDMAC_CNDC_NDDUP_Msk & (_UINT32_(value) << XDMAC_CNDC_NDDUP_Pos)) /* Assigment of value for NDDUP in the XDMAC_CNDC register */
+#define   XDMAC_CNDC_NDDUP_DST_PARAMS_UNCHANGED_Val _UINT32_(0x0)                                        /* (XDMAC_CNDC) Destination parameters remain unchanged.  */
+#define   XDMAC_CNDC_NDDUP_DST_PARAMS_UPDATED_Val _UINT32_(0x1)                                        /* (XDMAC_CNDC) Destination parameters are updated when the descriptor is retrieved.  */
+#define XDMAC_CNDC_NDDUP_DST_PARAMS_UNCHANGED (XDMAC_CNDC_NDDUP_DST_PARAMS_UNCHANGED_Val << XDMAC_CNDC_NDDUP_Pos) /* (XDMAC_CNDC) Destination parameters remain unchanged. Position  */
+#define XDMAC_CNDC_NDDUP_DST_PARAMS_UPDATED   (XDMAC_CNDC_NDDUP_DST_PARAMS_UPDATED_Val << XDMAC_CNDC_NDDUP_Pos) /* (XDMAC_CNDC) Destination parameters are updated when the descriptor is retrieved. Position  */
+#define XDMAC_CNDC_NDVIEW_Pos                 _UINT32_(3)                                          /* (XDMAC_CNDC) Channel x Next Descriptor View Position */
+#define XDMAC_CNDC_NDVIEW_Msk                 (_UINT32_(0x3) << XDMAC_CNDC_NDVIEW_Pos)             /* (XDMAC_CNDC) Channel x Next Descriptor View Mask */
+#define XDMAC_CNDC_NDVIEW(value)              (XDMAC_CNDC_NDVIEW_Msk & (_UINT32_(value) << XDMAC_CNDC_NDVIEW_Pos)) /* Assigment of value for NDVIEW in the XDMAC_CNDC register */
+#define   XDMAC_CNDC_NDVIEW_NDV0_Val          _UINT32_(0x0)                                        /* (XDMAC_CNDC) Next Descriptor View 0  */
+#define   XDMAC_CNDC_NDVIEW_NDV1_Val          _UINT32_(0x1)                                        /* (XDMAC_CNDC) Next Descriptor View 1  */
+#define   XDMAC_CNDC_NDVIEW_NDV2_Val          _UINT32_(0x2)                                        /* (XDMAC_CNDC) Next Descriptor View 2  */
+#define   XDMAC_CNDC_NDVIEW_NDV3_Val          _UINT32_(0x3)                                        /* (XDMAC_CNDC) Next Descriptor View 3  */
+#define XDMAC_CNDC_NDVIEW_NDV0                (XDMAC_CNDC_NDVIEW_NDV0_Val << XDMAC_CNDC_NDVIEW_Pos) /* (XDMAC_CNDC) Next Descriptor View 0 Position  */
+#define XDMAC_CNDC_NDVIEW_NDV1                (XDMAC_CNDC_NDVIEW_NDV1_Val << XDMAC_CNDC_NDVIEW_Pos) /* (XDMAC_CNDC) Next Descriptor View 1 Position  */
+#define XDMAC_CNDC_NDVIEW_NDV2                (XDMAC_CNDC_NDVIEW_NDV2_Val << XDMAC_CNDC_NDVIEW_Pos) /* (XDMAC_CNDC) Next Descriptor View 2 Position  */
+#define XDMAC_CNDC_NDVIEW_NDV3                (XDMAC_CNDC_NDVIEW_NDV3_Val << XDMAC_CNDC_NDVIEW_Pos) /* (XDMAC_CNDC) Next Descriptor View 3 Position  */
+#define XDMAC_CNDC_Msk                        _UINT32_(0x0000001F)                                 /* (XDMAC_CNDC) Register Mask  */
+
+
+/* -------- XDMAC_CSA : (XDMAC Offset: 0x10) (R/W 32) Channel Source Address Register -------- */
+#define XDMAC_CSA_SA_Pos                      _UINT32_(0)                                          /* (XDMAC_CSA) Channel x Source Address Position */
+#define XDMAC_CSA_SA_Msk                      (_UINT32_(0xFFFFFFFF) << XDMAC_CSA_SA_Pos)           /* (XDMAC_CSA) Channel x Source Address Mask */
+#define XDMAC_CSA_SA(value)                   (XDMAC_CSA_SA_Msk & (_UINT32_(value) << XDMAC_CSA_SA_Pos)) /* Assigment of value for SA in the XDMAC_CSA register */
+#define XDMAC_CSA_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (XDMAC_CSA) Register Mask  */
+
+
+/* -------- XDMAC_CSUS : (XDMAC Offset: 0x30) (R/W 32) Channel Source Microblock Stride -------- */
+#define XDMAC_CSUS_SUBS_Pos                   _UINT32_(0)                                          /* (XDMAC_CSUS) Channel x Source Microblock Stride Position */
+#define XDMAC_CSUS_SUBS_Msk                   (_UINT32_(0xFFFFFF) << XDMAC_CSUS_SUBS_Pos)          /* (XDMAC_CSUS) Channel x Source Microblock Stride Mask */
+#define XDMAC_CSUS_SUBS(value)                (XDMAC_CSUS_SUBS_Msk & (_UINT32_(value) << XDMAC_CSUS_SUBS_Pos)) /* Assigment of value for SUBS in the XDMAC_CSUS register */
+#define XDMAC_CSUS_Msk                        _UINT32_(0x00FFFFFF)                                 /* (XDMAC_CSUS) Register Mask  */
+
+
+/* -------- XDMAC_CUBC : (XDMAC Offset: 0x20) (R/W 32) Channel Microblock Control Register -------- */
+#define XDMAC_CUBC_UBLEN_Pos                  _UINT32_(0)                                          /* (XDMAC_CUBC) Channel x Microblock Length Position */
+#define XDMAC_CUBC_UBLEN_Msk                  (_UINT32_(0xFFFFFF) << XDMAC_CUBC_UBLEN_Pos)         /* (XDMAC_CUBC) Channel x Microblock Length Mask */
+#define XDMAC_CUBC_UBLEN(value)               (XDMAC_CUBC_UBLEN_Msk & (_UINT32_(value) << XDMAC_CUBC_UBLEN_Pos)) /* Assigment of value for UBLEN in the XDMAC_CUBC register */
+#define XDMAC_CUBC_Msk                        _UINT32_(0x00FFFFFF)                                 /* (XDMAC_CUBC) Register Mask  */
 
 
 /* -------- XDMAC_GCFG : (XDMAC Offset: 0x04) (R/W 32) Global Configuration Register -------- */
@@ -494,76 +481,115 @@
 #define XDMAC_GCFG_Msk                        _UINT32_(0x0000010F)                                 /* (XDMAC_GCFG) Register Mask  */
 
 
-/* -------- XDMAC_GWAC : (XDMAC Offset: 0x08) (R/W 32) Global Weighted Arbiter Configuration Register -------- */
-#define XDMAC_GWAC_PW0_Pos                    _UINT32_(0)                                          /* (XDMAC_GWAC) Pool Weight 0 Position */
-#define XDMAC_GWAC_PW0_Msk                    (_UINT32_(0xF) << XDMAC_GWAC_PW0_Pos)                /* (XDMAC_GWAC) Pool Weight 0 Mask */
-#define XDMAC_GWAC_PW0(value)                 (XDMAC_GWAC_PW0_Msk & (_UINT32_(value) << XDMAC_GWAC_PW0_Pos)) /* Assigment of value for PW0 in the XDMAC_GWAC register */
-#define XDMAC_GWAC_PW1_Pos                    _UINT32_(4)                                          /* (XDMAC_GWAC) Pool Weight 1 Position */
-#define XDMAC_GWAC_PW1_Msk                    (_UINT32_(0xF) << XDMAC_GWAC_PW1_Pos)                /* (XDMAC_GWAC) Pool Weight 1 Mask */
-#define XDMAC_GWAC_PW1(value)                 (XDMAC_GWAC_PW1_Msk & (_UINT32_(value) << XDMAC_GWAC_PW1_Pos)) /* Assigment of value for PW1 in the XDMAC_GWAC register */
-#define XDMAC_GWAC_PW2_Pos                    _UINT32_(8)                                          /* (XDMAC_GWAC) Pool Weight 2 Position */
-#define XDMAC_GWAC_PW2_Msk                    (_UINT32_(0xF) << XDMAC_GWAC_PW2_Pos)                /* (XDMAC_GWAC) Pool Weight 2 Mask */
-#define XDMAC_GWAC_PW2(value)                 (XDMAC_GWAC_PW2_Msk & (_UINT32_(value) << XDMAC_GWAC_PW2_Pos)) /* Assigment of value for PW2 in the XDMAC_GWAC register */
-#define XDMAC_GWAC_PW3_Pos                    _UINT32_(12)                                         /* (XDMAC_GWAC) Pool Weight 3 Position */
-#define XDMAC_GWAC_PW3_Msk                    (_UINT32_(0xF) << XDMAC_GWAC_PW3_Pos)                /* (XDMAC_GWAC) Pool Weight 3 Mask */
-#define XDMAC_GWAC_PW3(value)                 (XDMAC_GWAC_PW3_Msk & (_UINT32_(value) << XDMAC_GWAC_PW3_Pos)) /* Assigment of value for PW3 in the XDMAC_GWAC register */
-#define XDMAC_GWAC_Msk                        _UINT32_(0x0000FFFF)                                 /* (XDMAC_GWAC) Register Mask  */
+/* -------- XDMAC_GD : (XDMAC Offset: 0x20) ( /W 32) Global Channel Disable Register -------- */
+#define XDMAC_GD_DI0_Pos                      _UINT32_(0)                                          /* (XDMAC_GD) XDMAC Channel 0 Disable Bit Position */
+#define XDMAC_GD_DI0_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI0_Pos)                  /* (XDMAC_GD) XDMAC Channel 0 Disable Bit Mask */
+#define XDMAC_GD_DI0(value)                   (XDMAC_GD_DI0_Msk & (_UINT32_(value) << XDMAC_GD_DI0_Pos)) /* Assigment of value for DI0 in the XDMAC_GD register */
+#define XDMAC_GD_DI1_Pos                      _UINT32_(1)                                          /* (XDMAC_GD) XDMAC Channel 1 Disable Bit Position */
+#define XDMAC_GD_DI1_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI1_Pos)                  /* (XDMAC_GD) XDMAC Channel 1 Disable Bit Mask */
+#define XDMAC_GD_DI1(value)                   (XDMAC_GD_DI1_Msk & (_UINT32_(value) << XDMAC_GD_DI1_Pos)) /* Assigment of value for DI1 in the XDMAC_GD register */
+#define XDMAC_GD_DI2_Pos                      _UINT32_(2)                                          /* (XDMAC_GD) XDMAC Channel 2 Disable Bit Position */
+#define XDMAC_GD_DI2_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI2_Pos)                  /* (XDMAC_GD) XDMAC Channel 2 Disable Bit Mask */
+#define XDMAC_GD_DI2(value)                   (XDMAC_GD_DI2_Msk & (_UINT32_(value) << XDMAC_GD_DI2_Pos)) /* Assigment of value for DI2 in the XDMAC_GD register */
+#define XDMAC_GD_DI3_Pos                      _UINT32_(3)                                          /* (XDMAC_GD) XDMAC Channel 3 Disable Bit Position */
+#define XDMAC_GD_DI3_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI3_Pos)                  /* (XDMAC_GD) XDMAC Channel 3 Disable Bit Mask */
+#define XDMAC_GD_DI3(value)                   (XDMAC_GD_DI3_Msk & (_UINT32_(value) << XDMAC_GD_DI3_Pos)) /* Assigment of value for DI3 in the XDMAC_GD register */
+#define XDMAC_GD_DI4_Pos                      _UINT32_(4)                                          /* (XDMAC_GD) XDMAC Channel 4 Disable Bit Position */
+#define XDMAC_GD_DI4_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI4_Pos)                  /* (XDMAC_GD) XDMAC Channel 4 Disable Bit Mask */
+#define XDMAC_GD_DI4(value)                   (XDMAC_GD_DI4_Msk & (_UINT32_(value) << XDMAC_GD_DI4_Pos)) /* Assigment of value for DI4 in the XDMAC_GD register */
+#define XDMAC_GD_DI5_Pos                      _UINT32_(5)                                          /* (XDMAC_GD) XDMAC Channel 5 Disable Bit Position */
+#define XDMAC_GD_DI5_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI5_Pos)                  /* (XDMAC_GD) XDMAC Channel 5 Disable Bit Mask */
+#define XDMAC_GD_DI5(value)                   (XDMAC_GD_DI5_Msk & (_UINT32_(value) << XDMAC_GD_DI5_Pos)) /* Assigment of value for DI5 in the XDMAC_GD register */
+#define XDMAC_GD_DI6_Pos                      _UINT32_(6)                                          /* (XDMAC_GD) XDMAC Channel 6 Disable Bit Position */
+#define XDMAC_GD_DI6_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI6_Pos)                  /* (XDMAC_GD) XDMAC Channel 6 Disable Bit Mask */
+#define XDMAC_GD_DI6(value)                   (XDMAC_GD_DI6_Msk & (_UINT32_(value) << XDMAC_GD_DI6_Pos)) /* Assigment of value for DI6 in the XDMAC_GD register */
+#define XDMAC_GD_DI7_Pos                      _UINT32_(7)                                          /* (XDMAC_GD) XDMAC Channel 7 Disable Bit Position */
+#define XDMAC_GD_DI7_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI7_Pos)                  /* (XDMAC_GD) XDMAC Channel 7 Disable Bit Mask */
+#define XDMAC_GD_DI7(value)                   (XDMAC_GD_DI7_Msk & (_UINT32_(value) << XDMAC_GD_DI7_Pos)) /* Assigment of value for DI7 in the XDMAC_GD register */
+#define XDMAC_GD_DI8_Pos                      _UINT32_(8)                                          /* (XDMAC_GD) XDMAC Channel 8 Disable Bit Position */
+#define XDMAC_GD_DI8_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI8_Pos)                  /* (XDMAC_GD) XDMAC Channel 8 Disable Bit Mask */
+#define XDMAC_GD_DI8(value)                   (XDMAC_GD_DI8_Msk & (_UINT32_(value) << XDMAC_GD_DI8_Pos)) /* Assigment of value for DI8 in the XDMAC_GD register */
+#define XDMAC_GD_DI9_Pos                      _UINT32_(9)                                          /* (XDMAC_GD) XDMAC Channel 9 Disable Bit Position */
+#define XDMAC_GD_DI9_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI9_Pos)                  /* (XDMAC_GD) XDMAC Channel 9 Disable Bit Mask */
+#define XDMAC_GD_DI9(value)                   (XDMAC_GD_DI9_Msk & (_UINT32_(value) << XDMAC_GD_DI9_Pos)) /* Assigment of value for DI9 in the XDMAC_GD register */
+#define XDMAC_GD_DI10_Pos                     _UINT32_(10)                                         /* (XDMAC_GD) XDMAC Channel 10 Disable Bit Position */
+#define XDMAC_GD_DI10_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI10_Pos)                 /* (XDMAC_GD) XDMAC Channel 10 Disable Bit Mask */
+#define XDMAC_GD_DI10(value)                  (XDMAC_GD_DI10_Msk & (_UINT32_(value) << XDMAC_GD_DI10_Pos)) /* Assigment of value for DI10 in the XDMAC_GD register */
+#define XDMAC_GD_DI11_Pos                     _UINT32_(11)                                         /* (XDMAC_GD) XDMAC Channel 11 Disable Bit Position */
+#define XDMAC_GD_DI11_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI11_Pos)                 /* (XDMAC_GD) XDMAC Channel 11 Disable Bit Mask */
+#define XDMAC_GD_DI11(value)                  (XDMAC_GD_DI11_Msk & (_UINT32_(value) << XDMAC_GD_DI11_Pos)) /* Assigment of value for DI11 in the XDMAC_GD register */
+#define XDMAC_GD_DI12_Pos                     _UINT32_(12)                                         /* (XDMAC_GD) XDMAC Channel 12 Disable Bit Position */
+#define XDMAC_GD_DI12_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI12_Pos)                 /* (XDMAC_GD) XDMAC Channel 12 Disable Bit Mask */
+#define XDMAC_GD_DI12(value)                  (XDMAC_GD_DI12_Msk & (_UINT32_(value) << XDMAC_GD_DI12_Pos)) /* Assigment of value for DI12 in the XDMAC_GD register */
+#define XDMAC_GD_DI13_Pos                     _UINT32_(13)                                         /* (XDMAC_GD) XDMAC Channel 13 Disable Bit Position */
+#define XDMAC_GD_DI13_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI13_Pos)                 /* (XDMAC_GD) XDMAC Channel 13 Disable Bit Mask */
+#define XDMAC_GD_DI13(value)                  (XDMAC_GD_DI13_Msk & (_UINT32_(value) << XDMAC_GD_DI13_Pos)) /* Assigment of value for DI13 in the XDMAC_GD register */
+#define XDMAC_GD_DI14_Pos                     _UINT32_(14)                                         /* (XDMAC_GD) XDMAC Channel 14 Disable Bit Position */
+#define XDMAC_GD_DI14_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI14_Pos)                 /* (XDMAC_GD) XDMAC Channel 14 Disable Bit Mask */
+#define XDMAC_GD_DI14(value)                  (XDMAC_GD_DI14_Msk & (_UINT32_(value) << XDMAC_GD_DI14_Pos)) /* Assigment of value for DI14 in the XDMAC_GD register */
+#define XDMAC_GD_DI15_Pos                     _UINT32_(15)                                         /* (XDMAC_GD) XDMAC Channel 15 Disable Bit Position */
+#define XDMAC_GD_DI15_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI15_Pos)                 /* (XDMAC_GD) XDMAC Channel 15 Disable Bit Mask */
+#define XDMAC_GD_DI15(value)                  (XDMAC_GD_DI15_Msk & (_UINT32_(value) << XDMAC_GD_DI15_Pos)) /* Assigment of value for DI15 in the XDMAC_GD register */
+#define XDMAC_GD_Msk                          _UINT32_(0x0000FFFF)                                 /* (XDMAC_GD) Register Mask  */
 
+#define XDMAC_GD_DI_Pos                       _UINT32_(0)                                          /* (XDMAC_GD Position) XDMAC Channel x5 Disable Bit */
+#define XDMAC_GD_DI_Msk                       (_UINT32_(0xFFFF) << XDMAC_GD_DI_Pos)                /* (XDMAC_GD Mask) DI */
+#define XDMAC_GD_DI(value)                    (XDMAC_GD_DI_Msk & (_UINT32_(value) << XDMAC_GD_DI_Pos)) 
 
-/* -------- XDMAC_GIE : (XDMAC Offset: 0x0C) ( /W 32) Global Interrupt Enable Register -------- */
-#define XDMAC_GIE_IE0_Pos                     _UINT32_(0)                                          /* (XDMAC_GIE) XDMAC Channel 0 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE0_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE0_Pos)                 /* (XDMAC_GIE) XDMAC Channel 0 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE0(value)                  (XDMAC_GIE_IE0_Msk & (_UINT32_(value) << XDMAC_GIE_IE0_Pos)) /* Assigment of value for IE0 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE1_Pos                     _UINT32_(1)                                          /* (XDMAC_GIE) XDMAC Channel 1 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE1_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE1_Pos)                 /* (XDMAC_GIE) XDMAC Channel 1 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE1(value)                  (XDMAC_GIE_IE1_Msk & (_UINT32_(value) << XDMAC_GIE_IE1_Pos)) /* Assigment of value for IE1 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE2_Pos                     _UINT32_(2)                                          /* (XDMAC_GIE) XDMAC Channel 2 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE2_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE2_Pos)                 /* (XDMAC_GIE) XDMAC Channel 2 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE2(value)                  (XDMAC_GIE_IE2_Msk & (_UINT32_(value) << XDMAC_GIE_IE2_Pos)) /* Assigment of value for IE2 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE3_Pos                     _UINT32_(3)                                          /* (XDMAC_GIE) XDMAC Channel 3 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE3_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE3_Pos)                 /* (XDMAC_GIE) XDMAC Channel 3 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE3(value)                  (XDMAC_GIE_IE3_Msk & (_UINT32_(value) << XDMAC_GIE_IE3_Pos)) /* Assigment of value for IE3 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE4_Pos                     _UINT32_(4)                                          /* (XDMAC_GIE) XDMAC Channel 4 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE4_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE4_Pos)                 /* (XDMAC_GIE) XDMAC Channel 4 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE4(value)                  (XDMAC_GIE_IE4_Msk & (_UINT32_(value) << XDMAC_GIE_IE4_Pos)) /* Assigment of value for IE4 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE5_Pos                     _UINT32_(5)                                          /* (XDMAC_GIE) XDMAC Channel 5 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE5_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE5_Pos)                 /* (XDMAC_GIE) XDMAC Channel 5 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE5(value)                  (XDMAC_GIE_IE5_Msk & (_UINT32_(value) << XDMAC_GIE_IE5_Pos)) /* Assigment of value for IE5 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE6_Pos                     _UINT32_(6)                                          /* (XDMAC_GIE) XDMAC Channel 6 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE6_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE6_Pos)                 /* (XDMAC_GIE) XDMAC Channel 6 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE6(value)                  (XDMAC_GIE_IE6_Msk & (_UINT32_(value) << XDMAC_GIE_IE6_Pos)) /* Assigment of value for IE6 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE7_Pos                     _UINT32_(7)                                          /* (XDMAC_GIE) XDMAC Channel 7 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE7_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE7_Pos)                 /* (XDMAC_GIE) XDMAC Channel 7 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE7(value)                  (XDMAC_GIE_IE7_Msk & (_UINT32_(value) << XDMAC_GIE_IE7_Pos)) /* Assigment of value for IE7 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE8_Pos                     _UINT32_(8)                                          /* (XDMAC_GIE) XDMAC Channel 8 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE8_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE8_Pos)                 /* (XDMAC_GIE) XDMAC Channel 8 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE8(value)                  (XDMAC_GIE_IE8_Msk & (_UINT32_(value) << XDMAC_GIE_IE8_Pos)) /* Assigment of value for IE8 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE9_Pos                     _UINT32_(9)                                          /* (XDMAC_GIE) XDMAC Channel 9 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE9_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE9_Pos)                 /* (XDMAC_GIE) XDMAC Channel 9 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE9(value)                  (XDMAC_GIE_IE9_Msk & (_UINT32_(value) << XDMAC_GIE_IE9_Pos)) /* Assigment of value for IE9 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE10_Pos                    _UINT32_(10)                                         /* (XDMAC_GIE) XDMAC Channel 10 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE10_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE10_Pos)                /* (XDMAC_GIE) XDMAC Channel 10 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE10(value)                 (XDMAC_GIE_IE10_Msk & (_UINT32_(value) << XDMAC_GIE_IE10_Pos)) /* Assigment of value for IE10 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE11_Pos                    _UINT32_(11)                                         /* (XDMAC_GIE) XDMAC Channel 11 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE11_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE11_Pos)                /* (XDMAC_GIE) XDMAC Channel 11 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE11(value)                 (XDMAC_GIE_IE11_Msk & (_UINT32_(value) << XDMAC_GIE_IE11_Pos)) /* Assigment of value for IE11 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE12_Pos                    _UINT32_(12)                                         /* (XDMAC_GIE) XDMAC Channel 12 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE12_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE12_Pos)                /* (XDMAC_GIE) XDMAC Channel 12 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE12(value)                 (XDMAC_GIE_IE12_Msk & (_UINT32_(value) << XDMAC_GIE_IE12_Pos)) /* Assigment of value for IE12 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE13_Pos                    _UINT32_(13)                                         /* (XDMAC_GIE) XDMAC Channel 13 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE13_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE13_Pos)                /* (XDMAC_GIE) XDMAC Channel 13 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE13(value)                 (XDMAC_GIE_IE13_Msk & (_UINT32_(value) << XDMAC_GIE_IE13_Pos)) /* Assigment of value for IE13 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE14_Pos                    _UINT32_(14)                                         /* (XDMAC_GIE) XDMAC Channel 14 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE14_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE14_Pos)                /* (XDMAC_GIE) XDMAC Channel 14 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE14(value)                 (XDMAC_GIE_IE14_Msk & (_UINT32_(value) << XDMAC_GIE_IE14_Pos)) /* Assigment of value for IE14 in the XDMAC_GIE register */
-#define XDMAC_GIE_IE15_Pos                    _UINT32_(15)                                         /* (XDMAC_GIE) XDMAC Channel 15 Interrupt Enable Bit Position */
-#define XDMAC_GIE_IE15_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE15_Pos)                /* (XDMAC_GIE) XDMAC Channel 15 Interrupt Enable Bit Mask */
-#define XDMAC_GIE_IE15(value)                 (XDMAC_GIE_IE15_Msk & (_UINT32_(value) << XDMAC_GIE_IE15_Pos)) /* Assigment of value for IE15 in the XDMAC_GIE register */
-#define XDMAC_GIE_Msk                         _UINT32_(0x0000FFFF)                                 /* (XDMAC_GIE) Register Mask  */
+/* -------- XDMAC_GE : (XDMAC Offset: 0x1C) ( /W 32) Global Channel Enable Register -------- */
+#define XDMAC_GE_EN0_Pos                      _UINT32_(0)                                          /* (XDMAC_GE) XDMAC Channel 0 Enable Bit Position */
+#define XDMAC_GE_EN0_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN0_Pos)                  /* (XDMAC_GE) XDMAC Channel 0 Enable Bit Mask */
+#define XDMAC_GE_EN0(value)                   (XDMAC_GE_EN0_Msk & (_UINT32_(value) << XDMAC_GE_EN0_Pos)) /* Assigment of value for EN0 in the XDMAC_GE register */
+#define XDMAC_GE_EN1_Pos                      _UINT32_(1)                                          /* (XDMAC_GE) XDMAC Channel 1 Enable Bit Position */
+#define XDMAC_GE_EN1_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN1_Pos)                  /* (XDMAC_GE) XDMAC Channel 1 Enable Bit Mask */
+#define XDMAC_GE_EN1(value)                   (XDMAC_GE_EN1_Msk & (_UINT32_(value) << XDMAC_GE_EN1_Pos)) /* Assigment of value for EN1 in the XDMAC_GE register */
+#define XDMAC_GE_EN2_Pos                      _UINT32_(2)                                          /* (XDMAC_GE) XDMAC Channel 2 Enable Bit Position */
+#define XDMAC_GE_EN2_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN2_Pos)                  /* (XDMAC_GE) XDMAC Channel 2 Enable Bit Mask */
+#define XDMAC_GE_EN2(value)                   (XDMAC_GE_EN2_Msk & (_UINT32_(value) << XDMAC_GE_EN2_Pos)) /* Assigment of value for EN2 in the XDMAC_GE register */
+#define XDMAC_GE_EN3_Pos                      _UINT32_(3)                                          /* (XDMAC_GE) XDMAC Channel 3 Enable Bit Position */
+#define XDMAC_GE_EN3_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN3_Pos)                  /* (XDMAC_GE) XDMAC Channel 3 Enable Bit Mask */
+#define XDMAC_GE_EN3(value)                   (XDMAC_GE_EN3_Msk & (_UINT32_(value) << XDMAC_GE_EN3_Pos)) /* Assigment of value for EN3 in the XDMAC_GE register */
+#define XDMAC_GE_EN4_Pos                      _UINT32_(4)                                          /* (XDMAC_GE) XDMAC Channel 4 Enable Bit Position */
+#define XDMAC_GE_EN4_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN4_Pos)                  /* (XDMAC_GE) XDMAC Channel 4 Enable Bit Mask */
+#define XDMAC_GE_EN4(value)                   (XDMAC_GE_EN4_Msk & (_UINT32_(value) << XDMAC_GE_EN4_Pos)) /* Assigment of value for EN4 in the XDMAC_GE register */
+#define XDMAC_GE_EN5_Pos                      _UINT32_(5)                                          /* (XDMAC_GE) XDMAC Channel 5 Enable Bit Position */
+#define XDMAC_GE_EN5_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN5_Pos)                  /* (XDMAC_GE) XDMAC Channel 5 Enable Bit Mask */
+#define XDMAC_GE_EN5(value)                   (XDMAC_GE_EN5_Msk & (_UINT32_(value) << XDMAC_GE_EN5_Pos)) /* Assigment of value for EN5 in the XDMAC_GE register */
+#define XDMAC_GE_EN6_Pos                      _UINT32_(6)                                          /* (XDMAC_GE) XDMAC Channel 6 Enable Bit Position */
+#define XDMAC_GE_EN6_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN6_Pos)                  /* (XDMAC_GE) XDMAC Channel 6 Enable Bit Mask */
+#define XDMAC_GE_EN6(value)                   (XDMAC_GE_EN6_Msk & (_UINT32_(value) << XDMAC_GE_EN6_Pos)) /* Assigment of value for EN6 in the XDMAC_GE register */
+#define XDMAC_GE_EN7_Pos                      _UINT32_(7)                                          /* (XDMAC_GE) XDMAC Channel 7 Enable Bit Position */
+#define XDMAC_GE_EN7_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN7_Pos)                  /* (XDMAC_GE) XDMAC Channel 7 Enable Bit Mask */
+#define XDMAC_GE_EN7(value)                   (XDMAC_GE_EN7_Msk & (_UINT32_(value) << XDMAC_GE_EN7_Pos)) /* Assigment of value for EN7 in the XDMAC_GE register */
+#define XDMAC_GE_EN8_Pos                      _UINT32_(8)                                          /* (XDMAC_GE) XDMAC Channel 8 Enable Bit Position */
+#define XDMAC_GE_EN8_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN8_Pos)                  /* (XDMAC_GE) XDMAC Channel 8 Enable Bit Mask */
+#define XDMAC_GE_EN8(value)                   (XDMAC_GE_EN8_Msk & (_UINT32_(value) << XDMAC_GE_EN8_Pos)) /* Assigment of value for EN8 in the XDMAC_GE register */
+#define XDMAC_GE_EN9_Pos                      _UINT32_(9)                                          /* (XDMAC_GE) XDMAC Channel 9 Enable Bit Position */
+#define XDMAC_GE_EN9_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN9_Pos)                  /* (XDMAC_GE) XDMAC Channel 9 Enable Bit Mask */
+#define XDMAC_GE_EN9(value)                   (XDMAC_GE_EN9_Msk & (_UINT32_(value) << XDMAC_GE_EN9_Pos)) /* Assigment of value for EN9 in the XDMAC_GE register */
+#define XDMAC_GE_EN10_Pos                     _UINT32_(10)                                         /* (XDMAC_GE) XDMAC Channel 10 Enable Bit Position */
+#define XDMAC_GE_EN10_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN10_Pos)                 /* (XDMAC_GE) XDMAC Channel 10 Enable Bit Mask */
+#define XDMAC_GE_EN10(value)                  (XDMAC_GE_EN10_Msk & (_UINT32_(value) << XDMAC_GE_EN10_Pos)) /* Assigment of value for EN10 in the XDMAC_GE register */
+#define XDMAC_GE_EN11_Pos                     _UINT32_(11)                                         /* (XDMAC_GE) XDMAC Channel 11 Enable Bit Position */
+#define XDMAC_GE_EN11_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN11_Pos)                 /* (XDMAC_GE) XDMAC Channel 11 Enable Bit Mask */
+#define XDMAC_GE_EN11(value)                  (XDMAC_GE_EN11_Msk & (_UINT32_(value) << XDMAC_GE_EN11_Pos)) /* Assigment of value for EN11 in the XDMAC_GE register */
+#define XDMAC_GE_EN12_Pos                     _UINT32_(12)                                         /* (XDMAC_GE) XDMAC Channel 12 Enable Bit Position */
+#define XDMAC_GE_EN12_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN12_Pos)                 /* (XDMAC_GE) XDMAC Channel 12 Enable Bit Mask */
+#define XDMAC_GE_EN12(value)                  (XDMAC_GE_EN12_Msk & (_UINT32_(value) << XDMAC_GE_EN12_Pos)) /* Assigment of value for EN12 in the XDMAC_GE register */
+#define XDMAC_GE_EN13_Pos                     _UINT32_(13)                                         /* (XDMAC_GE) XDMAC Channel 13 Enable Bit Position */
+#define XDMAC_GE_EN13_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN13_Pos)                 /* (XDMAC_GE) XDMAC Channel 13 Enable Bit Mask */
+#define XDMAC_GE_EN13(value)                  (XDMAC_GE_EN13_Msk & (_UINT32_(value) << XDMAC_GE_EN13_Pos)) /* Assigment of value for EN13 in the XDMAC_GE register */
+#define XDMAC_GE_EN14_Pos                     _UINT32_(14)                                         /* (XDMAC_GE) XDMAC Channel 14 Enable Bit Position */
+#define XDMAC_GE_EN14_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN14_Pos)                 /* (XDMAC_GE) XDMAC Channel 14 Enable Bit Mask */
+#define XDMAC_GE_EN14(value)                  (XDMAC_GE_EN14_Msk & (_UINT32_(value) << XDMAC_GE_EN14_Pos)) /* Assigment of value for EN14 in the XDMAC_GE register */
+#define XDMAC_GE_EN15_Pos                     _UINT32_(15)                                         /* (XDMAC_GE) XDMAC Channel 15 Enable Bit Position */
+#define XDMAC_GE_EN15_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN15_Pos)                 /* (XDMAC_GE) XDMAC Channel 15 Enable Bit Mask */
+#define XDMAC_GE_EN15(value)                  (XDMAC_GE_EN15_Msk & (_UINT32_(value) << XDMAC_GE_EN15_Pos)) /* Assigment of value for EN15 in the XDMAC_GE register */
+#define XDMAC_GE_Msk                          _UINT32_(0x0000FFFF)                                 /* (XDMAC_GE) Register Mask  */
 
-#define XDMAC_GIE_IE_Pos                      _UINT32_(0)                                          /* (XDMAC_GIE Position) XDMAC Channel x5 Interrupt Enable Bit */
-#define XDMAC_GIE_IE_Msk                      (_UINT32_(0xFFFF) << XDMAC_GIE_IE_Pos)               /* (XDMAC_GIE Mask) IE */
-#define XDMAC_GIE_IE(value)                   (XDMAC_GIE_IE_Msk & (_UINT32_(value) << XDMAC_GIE_IE_Pos)) 
+#define XDMAC_GE_EN_Pos                       _UINT32_(0)                                          /* (XDMAC_GE Position) XDMAC Channel x5 Enable Bit */
+#define XDMAC_GE_EN_Msk                       (_UINT32_(0xFFFF) << XDMAC_GE_EN_Pos)                /* (XDMAC_GE Mask) EN */
+#define XDMAC_GE_EN(value)                    (XDMAC_GE_EN_Msk & (_UINT32_(value) << XDMAC_GE_EN_Pos)) 
 
 /* -------- XDMAC_GID : (XDMAC Offset: 0x10) ( /W 32) Global Interrupt Disable Register -------- */
 #define XDMAC_GID_ID0_Pos                     _UINT32_(0)                                          /* (XDMAC_GID) XDMAC Channel 0 Interrupt Disable Bit Position */
@@ -619,6 +645,61 @@
 #define XDMAC_GID_ID_Pos                      _UINT32_(0)                                          /* (XDMAC_GID Position) XDMAC Channel x5 Interrupt Disable Bit */
 #define XDMAC_GID_ID_Msk                      (_UINT32_(0xFFFF) << XDMAC_GID_ID_Pos)               /* (XDMAC_GID Mask) ID */
 #define XDMAC_GID_ID(value)                   (XDMAC_GID_ID_Msk & (_UINT32_(value) << XDMAC_GID_ID_Pos)) 
+
+/* -------- XDMAC_GIE : (XDMAC Offset: 0x0C) ( /W 32) Global Interrupt Enable Register -------- */
+#define XDMAC_GIE_IE0_Pos                     _UINT32_(0)                                          /* (XDMAC_GIE) XDMAC Channel 0 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE0_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE0_Pos)                 /* (XDMAC_GIE) XDMAC Channel 0 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE0(value)                  (XDMAC_GIE_IE0_Msk & (_UINT32_(value) << XDMAC_GIE_IE0_Pos)) /* Assigment of value for IE0 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE1_Pos                     _UINT32_(1)                                          /* (XDMAC_GIE) XDMAC Channel 1 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE1_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE1_Pos)                 /* (XDMAC_GIE) XDMAC Channel 1 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE1(value)                  (XDMAC_GIE_IE1_Msk & (_UINT32_(value) << XDMAC_GIE_IE1_Pos)) /* Assigment of value for IE1 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE2_Pos                     _UINT32_(2)                                          /* (XDMAC_GIE) XDMAC Channel 2 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE2_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE2_Pos)                 /* (XDMAC_GIE) XDMAC Channel 2 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE2(value)                  (XDMAC_GIE_IE2_Msk & (_UINT32_(value) << XDMAC_GIE_IE2_Pos)) /* Assigment of value for IE2 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE3_Pos                     _UINT32_(3)                                          /* (XDMAC_GIE) XDMAC Channel 3 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE3_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE3_Pos)                 /* (XDMAC_GIE) XDMAC Channel 3 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE3(value)                  (XDMAC_GIE_IE3_Msk & (_UINT32_(value) << XDMAC_GIE_IE3_Pos)) /* Assigment of value for IE3 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE4_Pos                     _UINT32_(4)                                          /* (XDMAC_GIE) XDMAC Channel 4 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE4_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE4_Pos)                 /* (XDMAC_GIE) XDMAC Channel 4 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE4(value)                  (XDMAC_GIE_IE4_Msk & (_UINT32_(value) << XDMAC_GIE_IE4_Pos)) /* Assigment of value for IE4 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE5_Pos                     _UINT32_(5)                                          /* (XDMAC_GIE) XDMAC Channel 5 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE5_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE5_Pos)                 /* (XDMAC_GIE) XDMAC Channel 5 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE5(value)                  (XDMAC_GIE_IE5_Msk & (_UINT32_(value) << XDMAC_GIE_IE5_Pos)) /* Assigment of value for IE5 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE6_Pos                     _UINT32_(6)                                          /* (XDMAC_GIE) XDMAC Channel 6 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE6_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE6_Pos)                 /* (XDMAC_GIE) XDMAC Channel 6 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE6(value)                  (XDMAC_GIE_IE6_Msk & (_UINT32_(value) << XDMAC_GIE_IE6_Pos)) /* Assigment of value for IE6 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE7_Pos                     _UINT32_(7)                                          /* (XDMAC_GIE) XDMAC Channel 7 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE7_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE7_Pos)                 /* (XDMAC_GIE) XDMAC Channel 7 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE7(value)                  (XDMAC_GIE_IE7_Msk & (_UINT32_(value) << XDMAC_GIE_IE7_Pos)) /* Assigment of value for IE7 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE8_Pos                     _UINT32_(8)                                          /* (XDMAC_GIE) XDMAC Channel 8 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE8_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE8_Pos)                 /* (XDMAC_GIE) XDMAC Channel 8 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE8(value)                  (XDMAC_GIE_IE8_Msk & (_UINT32_(value) << XDMAC_GIE_IE8_Pos)) /* Assigment of value for IE8 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE9_Pos                     _UINT32_(9)                                          /* (XDMAC_GIE) XDMAC Channel 9 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE9_Msk                     (_UINT32_(0x1) << XDMAC_GIE_IE9_Pos)                 /* (XDMAC_GIE) XDMAC Channel 9 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE9(value)                  (XDMAC_GIE_IE9_Msk & (_UINT32_(value) << XDMAC_GIE_IE9_Pos)) /* Assigment of value for IE9 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE10_Pos                    _UINT32_(10)                                         /* (XDMAC_GIE) XDMAC Channel 10 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE10_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE10_Pos)                /* (XDMAC_GIE) XDMAC Channel 10 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE10(value)                 (XDMAC_GIE_IE10_Msk & (_UINT32_(value) << XDMAC_GIE_IE10_Pos)) /* Assigment of value for IE10 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE11_Pos                    _UINT32_(11)                                         /* (XDMAC_GIE) XDMAC Channel 11 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE11_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE11_Pos)                /* (XDMAC_GIE) XDMAC Channel 11 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE11(value)                 (XDMAC_GIE_IE11_Msk & (_UINT32_(value) << XDMAC_GIE_IE11_Pos)) /* Assigment of value for IE11 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE12_Pos                    _UINT32_(12)                                         /* (XDMAC_GIE) XDMAC Channel 12 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE12_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE12_Pos)                /* (XDMAC_GIE) XDMAC Channel 12 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE12(value)                 (XDMAC_GIE_IE12_Msk & (_UINT32_(value) << XDMAC_GIE_IE12_Pos)) /* Assigment of value for IE12 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE13_Pos                    _UINT32_(13)                                         /* (XDMAC_GIE) XDMAC Channel 13 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE13_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE13_Pos)                /* (XDMAC_GIE) XDMAC Channel 13 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE13(value)                 (XDMAC_GIE_IE13_Msk & (_UINT32_(value) << XDMAC_GIE_IE13_Pos)) /* Assigment of value for IE13 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE14_Pos                    _UINT32_(14)                                         /* (XDMAC_GIE) XDMAC Channel 14 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE14_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE14_Pos)                /* (XDMAC_GIE) XDMAC Channel 14 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE14(value)                 (XDMAC_GIE_IE14_Msk & (_UINT32_(value) << XDMAC_GIE_IE14_Pos)) /* Assigment of value for IE14 in the XDMAC_GIE register */
+#define XDMAC_GIE_IE15_Pos                    _UINT32_(15)                                         /* (XDMAC_GIE) XDMAC Channel 15 Interrupt Enable Bit Position */
+#define XDMAC_GIE_IE15_Msk                    (_UINT32_(0x1) << XDMAC_GIE_IE15_Pos)                /* (XDMAC_GIE) XDMAC Channel 15 Interrupt Enable Bit Mask */
+#define XDMAC_GIE_IE15(value)                 (XDMAC_GIE_IE15_Msk & (_UINT32_(value) << XDMAC_GIE_IE15_Pos)) /* Assigment of value for IE15 in the XDMAC_GIE register */
+#define XDMAC_GIE_Msk                         _UINT32_(0x0000FFFF)                                 /* (XDMAC_GIE) Register Mask  */
+
+#define XDMAC_GIE_IE_Pos                      _UINT32_(0)                                          /* (XDMAC_GIE Position) XDMAC Channel x5 Interrupt Enable Bit */
+#define XDMAC_GIE_IE_Msk                      (_UINT32_(0xFFFF) << XDMAC_GIE_IE_Pos)               /* (XDMAC_GIE Mask) IE */
+#define XDMAC_GIE_IE(value)                   (XDMAC_GIE_IE_Msk & (_UINT32_(value) << XDMAC_GIE_IE_Pos)) 
 
 /* -------- XDMAC_GIM : (XDMAC Offset: 0x14) ( R/ 32) Global Interrupt Mask Register -------- */
 #define XDMAC_GIM_IM0_Pos                     _UINT32_(0)                                          /* (XDMAC_GIM) XDMAC Channel 0 Interrupt Mask Bit Position */
@@ -730,171 +811,6 @@
 #define XDMAC_GIS_IS_Msk                      (_UINT32_(0xFFFF) << XDMAC_GIS_IS_Pos)               /* (XDMAC_GIS Mask) IS */
 #define XDMAC_GIS_IS(value)                   (XDMAC_GIS_IS_Msk & (_UINT32_(value) << XDMAC_GIS_IS_Pos)) 
 
-/* -------- XDMAC_GE : (XDMAC Offset: 0x1C) ( /W 32) Global Channel Enable Register -------- */
-#define XDMAC_GE_EN0_Pos                      _UINT32_(0)                                          /* (XDMAC_GE) XDMAC Channel 0 Enable Bit Position */
-#define XDMAC_GE_EN0_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN0_Pos)                  /* (XDMAC_GE) XDMAC Channel 0 Enable Bit Mask */
-#define XDMAC_GE_EN0(value)                   (XDMAC_GE_EN0_Msk & (_UINT32_(value) << XDMAC_GE_EN0_Pos)) /* Assigment of value for EN0 in the XDMAC_GE register */
-#define XDMAC_GE_EN1_Pos                      _UINT32_(1)                                          /* (XDMAC_GE) XDMAC Channel 1 Enable Bit Position */
-#define XDMAC_GE_EN1_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN1_Pos)                  /* (XDMAC_GE) XDMAC Channel 1 Enable Bit Mask */
-#define XDMAC_GE_EN1(value)                   (XDMAC_GE_EN1_Msk & (_UINT32_(value) << XDMAC_GE_EN1_Pos)) /* Assigment of value for EN1 in the XDMAC_GE register */
-#define XDMAC_GE_EN2_Pos                      _UINT32_(2)                                          /* (XDMAC_GE) XDMAC Channel 2 Enable Bit Position */
-#define XDMAC_GE_EN2_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN2_Pos)                  /* (XDMAC_GE) XDMAC Channel 2 Enable Bit Mask */
-#define XDMAC_GE_EN2(value)                   (XDMAC_GE_EN2_Msk & (_UINT32_(value) << XDMAC_GE_EN2_Pos)) /* Assigment of value for EN2 in the XDMAC_GE register */
-#define XDMAC_GE_EN3_Pos                      _UINT32_(3)                                          /* (XDMAC_GE) XDMAC Channel 3 Enable Bit Position */
-#define XDMAC_GE_EN3_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN3_Pos)                  /* (XDMAC_GE) XDMAC Channel 3 Enable Bit Mask */
-#define XDMAC_GE_EN3(value)                   (XDMAC_GE_EN3_Msk & (_UINT32_(value) << XDMAC_GE_EN3_Pos)) /* Assigment of value for EN3 in the XDMAC_GE register */
-#define XDMAC_GE_EN4_Pos                      _UINT32_(4)                                          /* (XDMAC_GE) XDMAC Channel 4 Enable Bit Position */
-#define XDMAC_GE_EN4_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN4_Pos)                  /* (XDMAC_GE) XDMAC Channel 4 Enable Bit Mask */
-#define XDMAC_GE_EN4(value)                   (XDMAC_GE_EN4_Msk & (_UINT32_(value) << XDMAC_GE_EN4_Pos)) /* Assigment of value for EN4 in the XDMAC_GE register */
-#define XDMAC_GE_EN5_Pos                      _UINT32_(5)                                          /* (XDMAC_GE) XDMAC Channel 5 Enable Bit Position */
-#define XDMAC_GE_EN5_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN5_Pos)                  /* (XDMAC_GE) XDMAC Channel 5 Enable Bit Mask */
-#define XDMAC_GE_EN5(value)                   (XDMAC_GE_EN5_Msk & (_UINT32_(value) << XDMAC_GE_EN5_Pos)) /* Assigment of value for EN5 in the XDMAC_GE register */
-#define XDMAC_GE_EN6_Pos                      _UINT32_(6)                                          /* (XDMAC_GE) XDMAC Channel 6 Enable Bit Position */
-#define XDMAC_GE_EN6_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN6_Pos)                  /* (XDMAC_GE) XDMAC Channel 6 Enable Bit Mask */
-#define XDMAC_GE_EN6(value)                   (XDMAC_GE_EN6_Msk & (_UINT32_(value) << XDMAC_GE_EN6_Pos)) /* Assigment of value for EN6 in the XDMAC_GE register */
-#define XDMAC_GE_EN7_Pos                      _UINT32_(7)                                          /* (XDMAC_GE) XDMAC Channel 7 Enable Bit Position */
-#define XDMAC_GE_EN7_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN7_Pos)                  /* (XDMAC_GE) XDMAC Channel 7 Enable Bit Mask */
-#define XDMAC_GE_EN7(value)                   (XDMAC_GE_EN7_Msk & (_UINT32_(value) << XDMAC_GE_EN7_Pos)) /* Assigment of value for EN7 in the XDMAC_GE register */
-#define XDMAC_GE_EN8_Pos                      _UINT32_(8)                                          /* (XDMAC_GE) XDMAC Channel 8 Enable Bit Position */
-#define XDMAC_GE_EN8_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN8_Pos)                  /* (XDMAC_GE) XDMAC Channel 8 Enable Bit Mask */
-#define XDMAC_GE_EN8(value)                   (XDMAC_GE_EN8_Msk & (_UINT32_(value) << XDMAC_GE_EN8_Pos)) /* Assigment of value for EN8 in the XDMAC_GE register */
-#define XDMAC_GE_EN9_Pos                      _UINT32_(9)                                          /* (XDMAC_GE) XDMAC Channel 9 Enable Bit Position */
-#define XDMAC_GE_EN9_Msk                      (_UINT32_(0x1) << XDMAC_GE_EN9_Pos)                  /* (XDMAC_GE) XDMAC Channel 9 Enable Bit Mask */
-#define XDMAC_GE_EN9(value)                   (XDMAC_GE_EN9_Msk & (_UINT32_(value) << XDMAC_GE_EN9_Pos)) /* Assigment of value for EN9 in the XDMAC_GE register */
-#define XDMAC_GE_EN10_Pos                     _UINT32_(10)                                         /* (XDMAC_GE) XDMAC Channel 10 Enable Bit Position */
-#define XDMAC_GE_EN10_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN10_Pos)                 /* (XDMAC_GE) XDMAC Channel 10 Enable Bit Mask */
-#define XDMAC_GE_EN10(value)                  (XDMAC_GE_EN10_Msk & (_UINT32_(value) << XDMAC_GE_EN10_Pos)) /* Assigment of value for EN10 in the XDMAC_GE register */
-#define XDMAC_GE_EN11_Pos                     _UINT32_(11)                                         /* (XDMAC_GE) XDMAC Channel 11 Enable Bit Position */
-#define XDMAC_GE_EN11_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN11_Pos)                 /* (XDMAC_GE) XDMAC Channel 11 Enable Bit Mask */
-#define XDMAC_GE_EN11(value)                  (XDMAC_GE_EN11_Msk & (_UINT32_(value) << XDMAC_GE_EN11_Pos)) /* Assigment of value for EN11 in the XDMAC_GE register */
-#define XDMAC_GE_EN12_Pos                     _UINT32_(12)                                         /* (XDMAC_GE) XDMAC Channel 12 Enable Bit Position */
-#define XDMAC_GE_EN12_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN12_Pos)                 /* (XDMAC_GE) XDMAC Channel 12 Enable Bit Mask */
-#define XDMAC_GE_EN12(value)                  (XDMAC_GE_EN12_Msk & (_UINT32_(value) << XDMAC_GE_EN12_Pos)) /* Assigment of value for EN12 in the XDMAC_GE register */
-#define XDMAC_GE_EN13_Pos                     _UINT32_(13)                                         /* (XDMAC_GE) XDMAC Channel 13 Enable Bit Position */
-#define XDMAC_GE_EN13_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN13_Pos)                 /* (XDMAC_GE) XDMAC Channel 13 Enable Bit Mask */
-#define XDMAC_GE_EN13(value)                  (XDMAC_GE_EN13_Msk & (_UINT32_(value) << XDMAC_GE_EN13_Pos)) /* Assigment of value for EN13 in the XDMAC_GE register */
-#define XDMAC_GE_EN14_Pos                     _UINT32_(14)                                         /* (XDMAC_GE) XDMAC Channel 14 Enable Bit Position */
-#define XDMAC_GE_EN14_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN14_Pos)                 /* (XDMAC_GE) XDMAC Channel 14 Enable Bit Mask */
-#define XDMAC_GE_EN14(value)                  (XDMAC_GE_EN14_Msk & (_UINT32_(value) << XDMAC_GE_EN14_Pos)) /* Assigment of value for EN14 in the XDMAC_GE register */
-#define XDMAC_GE_EN15_Pos                     _UINT32_(15)                                         /* (XDMAC_GE) XDMAC Channel 15 Enable Bit Position */
-#define XDMAC_GE_EN15_Msk                     (_UINT32_(0x1) << XDMAC_GE_EN15_Pos)                 /* (XDMAC_GE) XDMAC Channel 15 Enable Bit Mask */
-#define XDMAC_GE_EN15(value)                  (XDMAC_GE_EN15_Msk & (_UINT32_(value) << XDMAC_GE_EN15_Pos)) /* Assigment of value for EN15 in the XDMAC_GE register */
-#define XDMAC_GE_Msk                          _UINT32_(0x0000FFFF)                                 /* (XDMAC_GE) Register Mask  */
-
-#define XDMAC_GE_EN_Pos                       _UINT32_(0)                                          /* (XDMAC_GE Position) XDMAC Channel x5 Enable Bit */
-#define XDMAC_GE_EN_Msk                       (_UINT32_(0xFFFF) << XDMAC_GE_EN_Pos)                /* (XDMAC_GE Mask) EN */
-#define XDMAC_GE_EN(value)                    (XDMAC_GE_EN_Msk & (_UINT32_(value) << XDMAC_GE_EN_Pos)) 
-
-/* -------- XDMAC_GD : (XDMAC Offset: 0x20) ( /W 32) Global Channel Disable Register -------- */
-#define XDMAC_GD_DI0_Pos                      _UINT32_(0)                                          /* (XDMAC_GD) XDMAC Channel 0 Disable Bit Position */
-#define XDMAC_GD_DI0_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI0_Pos)                  /* (XDMAC_GD) XDMAC Channel 0 Disable Bit Mask */
-#define XDMAC_GD_DI0(value)                   (XDMAC_GD_DI0_Msk & (_UINT32_(value) << XDMAC_GD_DI0_Pos)) /* Assigment of value for DI0 in the XDMAC_GD register */
-#define XDMAC_GD_DI1_Pos                      _UINT32_(1)                                          /* (XDMAC_GD) XDMAC Channel 1 Disable Bit Position */
-#define XDMAC_GD_DI1_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI1_Pos)                  /* (XDMAC_GD) XDMAC Channel 1 Disable Bit Mask */
-#define XDMAC_GD_DI1(value)                   (XDMAC_GD_DI1_Msk & (_UINT32_(value) << XDMAC_GD_DI1_Pos)) /* Assigment of value for DI1 in the XDMAC_GD register */
-#define XDMAC_GD_DI2_Pos                      _UINT32_(2)                                          /* (XDMAC_GD) XDMAC Channel 2 Disable Bit Position */
-#define XDMAC_GD_DI2_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI2_Pos)                  /* (XDMAC_GD) XDMAC Channel 2 Disable Bit Mask */
-#define XDMAC_GD_DI2(value)                   (XDMAC_GD_DI2_Msk & (_UINT32_(value) << XDMAC_GD_DI2_Pos)) /* Assigment of value for DI2 in the XDMAC_GD register */
-#define XDMAC_GD_DI3_Pos                      _UINT32_(3)                                          /* (XDMAC_GD) XDMAC Channel 3 Disable Bit Position */
-#define XDMAC_GD_DI3_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI3_Pos)                  /* (XDMAC_GD) XDMAC Channel 3 Disable Bit Mask */
-#define XDMAC_GD_DI3(value)                   (XDMAC_GD_DI3_Msk & (_UINT32_(value) << XDMAC_GD_DI3_Pos)) /* Assigment of value for DI3 in the XDMAC_GD register */
-#define XDMAC_GD_DI4_Pos                      _UINT32_(4)                                          /* (XDMAC_GD) XDMAC Channel 4 Disable Bit Position */
-#define XDMAC_GD_DI4_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI4_Pos)                  /* (XDMAC_GD) XDMAC Channel 4 Disable Bit Mask */
-#define XDMAC_GD_DI4(value)                   (XDMAC_GD_DI4_Msk & (_UINT32_(value) << XDMAC_GD_DI4_Pos)) /* Assigment of value for DI4 in the XDMAC_GD register */
-#define XDMAC_GD_DI5_Pos                      _UINT32_(5)                                          /* (XDMAC_GD) XDMAC Channel 5 Disable Bit Position */
-#define XDMAC_GD_DI5_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI5_Pos)                  /* (XDMAC_GD) XDMAC Channel 5 Disable Bit Mask */
-#define XDMAC_GD_DI5(value)                   (XDMAC_GD_DI5_Msk & (_UINT32_(value) << XDMAC_GD_DI5_Pos)) /* Assigment of value for DI5 in the XDMAC_GD register */
-#define XDMAC_GD_DI6_Pos                      _UINT32_(6)                                          /* (XDMAC_GD) XDMAC Channel 6 Disable Bit Position */
-#define XDMAC_GD_DI6_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI6_Pos)                  /* (XDMAC_GD) XDMAC Channel 6 Disable Bit Mask */
-#define XDMAC_GD_DI6(value)                   (XDMAC_GD_DI6_Msk & (_UINT32_(value) << XDMAC_GD_DI6_Pos)) /* Assigment of value for DI6 in the XDMAC_GD register */
-#define XDMAC_GD_DI7_Pos                      _UINT32_(7)                                          /* (XDMAC_GD) XDMAC Channel 7 Disable Bit Position */
-#define XDMAC_GD_DI7_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI7_Pos)                  /* (XDMAC_GD) XDMAC Channel 7 Disable Bit Mask */
-#define XDMAC_GD_DI7(value)                   (XDMAC_GD_DI7_Msk & (_UINT32_(value) << XDMAC_GD_DI7_Pos)) /* Assigment of value for DI7 in the XDMAC_GD register */
-#define XDMAC_GD_DI8_Pos                      _UINT32_(8)                                          /* (XDMAC_GD) XDMAC Channel 8 Disable Bit Position */
-#define XDMAC_GD_DI8_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI8_Pos)                  /* (XDMAC_GD) XDMAC Channel 8 Disable Bit Mask */
-#define XDMAC_GD_DI8(value)                   (XDMAC_GD_DI8_Msk & (_UINT32_(value) << XDMAC_GD_DI8_Pos)) /* Assigment of value for DI8 in the XDMAC_GD register */
-#define XDMAC_GD_DI9_Pos                      _UINT32_(9)                                          /* (XDMAC_GD) XDMAC Channel 9 Disable Bit Position */
-#define XDMAC_GD_DI9_Msk                      (_UINT32_(0x1) << XDMAC_GD_DI9_Pos)                  /* (XDMAC_GD) XDMAC Channel 9 Disable Bit Mask */
-#define XDMAC_GD_DI9(value)                   (XDMAC_GD_DI9_Msk & (_UINT32_(value) << XDMAC_GD_DI9_Pos)) /* Assigment of value for DI9 in the XDMAC_GD register */
-#define XDMAC_GD_DI10_Pos                     _UINT32_(10)                                         /* (XDMAC_GD) XDMAC Channel 10 Disable Bit Position */
-#define XDMAC_GD_DI10_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI10_Pos)                 /* (XDMAC_GD) XDMAC Channel 10 Disable Bit Mask */
-#define XDMAC_GD_DI10(value)                  (XDMAC_GD_DI10_Msk & (_UINT32_(value) << XDMAC_GD_DI10_Pos)) /* Assigment of value for DI10 in the XDMAC_GD register */
-#define XDMAC_GD_DI11_Pos                     _UINT32_(11)                                         /* (XDMAC_GD) XDMAC Channel 11 Disable Bit Position */
-#define XDMAC_GD_DI11_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI11_Pos)                 /* (XDMAC_GD) XDMAC Channel 11 Disable Bit Mask */
-#define XDMAC_GD_DI11(value)                  (XDMAC_GD_DI11_Msk & (_UINT32_(value) << XDMAC_GD_DI11_Pos)) /* Assigment of value for DI11 in the XDMAC_GD register */
-#define XDMAC_GD_DI12_Pos                     _UINT32_(12)                                         /* (XDMAC_GD) XDMAC Channel 12 Disable Bit Position */
-#define XDMAC_GD_DI12_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI12_Pos)                 /* (XDMAC_GD) XDMAC Channel 12 Disable Bit Mask */
-#define XDMAC_GD_DI12(value)                  (XDMAC_GD_DI12_Msk & (_UINT32_(value) << XDMAC_GD_DI12_Pos)) /* Assigment of value for DI12 in the XDMAC_GD register */
-#define XDMAC_GD_DI13_Pos                     _UINT32_(13)                                         /* (XDMAC_GD) XDMAC Channel 13 Disable Bit Position */
-#define XDMAC_GD_DI13_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI13_Pos)                 /* (XDMAC_GD) XDMAC Channel 13 Disable Bit Mask */
-#define XDMAC_GD_DI13(value)                  (XDMAC_GD_DI13_Msk & (_UINT32_(value) << XDMAC_GD_DI13_Pos)) /* Assigment of value for DI13 in the XDMAC_GD register */
-#define XDMAC_GD_DI14_Pos                     _UINT32_(14)                                         /* (XDMAC_GD) XDMAC Channel 14 Disable Bit Position */
-#define XDMAC_GD_DI14_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI14_Pos)                 /* (XDMAC_GD) XDMAC Channel 14 Disable Bit Mask */
-#define XDMAC_GD_DI14(value)                  (XDMAC_GD_DI14_Msk & (_UINT32_(value) << XDMAC_GD_DI14_Pos)) /* Assigment of value for DI14 in the XDMAC_GD register */
-#define XDMAC_GD_DI15_Pos                     _UINT32_(15)                                         /* (XDMAC_GD) XDMAC Channel 15 Disable Bit Position */
-#define XDMAC_GD_DI15_Msk                     (_UINT32_(0x1) << XDMAC_GD_DI15_Pos)                 /* (XDMAC_GD) XDMAC Channel 15 Disable Bit Mask */
-#define XDMAC_GD_DI15(value)                  (XDMAC_GD_DI15_Msk & (_UINT32_(value) << XDMAC_GD_DI15_Pos)) /* Assigment of value for DI15 in the XDMAC_GD register */
-#define XDMAC_GD_Msk                          _UINT32_(0x0000FFFF)                                 /* (XDMAC_GD) Register Mask  */
-
-#define XDMAC_GD_DI_Pos                       _UINT32_(0)                                          /* (XDMAC_GD Position) XDMAC Channel x5 Disable Bit */
-#define XDMAC_GD_DI_Msk                       (_UINT32_(0xFFFF) << XDMAC_GD_DI_Pos)                /* (XDMAC_GD Mask) DI */
-#define XDMAC_GD_DI(value)                    (XDMAC_GD_DI_Msk & (_UINT32_(value) << XDMAC_GD_DI_Pos)) 
-
-/* -------- XDMAC_GS : (XDMAC Offset: 0x24) ( R/ 32) Global Channel Status Register -------- */
-#define XDMAC_GS_ST0_Pos                      _UINT32_(0)                                          /* (XDMAC_GS) XDMAC Channel 0 Status Bit Position */
-#define XDMAC_GS_ST0_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST0_Pos)                  /* (XDMAC_GS) XDMAC Channel 0 Status Bit Mask */
-#define XDMAC_GS_ST0(value)                   (XDMAC_GS_ST0_Msk & (_UINT32_(value) << XDMAC_GS_ST0_Pos)) /* Assigment of value for ST0 in the XDMAC_GS register */
-#define XDMAC_GS_ST1_Pos                      _UINT32_(1)                                          /* (XDMAC_GS) XDMAC Channel 1 Status Bit Position */
-#define XDMAC_GS_ST1_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST1_Pos)                  /* (XDMAC_GS) XDMAC Channel 1 Status Bit Mask */
-#define XDMAC_GS_ST1(value)                   (XDMAC_GS_ST1_Msk & (_UINT32_(value) << XDMAC_GS_ST1_Pos)) /* Assigment of value for ST1 in the XDMAC_GS register */
-#define XDMAC_GS_ST2_Pos                      _UINT32_(2)                                          /* (XDMAC_GS) XDMAC Channel 2 Status Bit Position */
-#define XDMAC_GS_ST2_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST2_Pos)                  /* (XDMAC_GS) XDMAC Channel 2 Status Bit Mask */
-#define XDMAC_GS_ST2(value)                   (XDMAC_GS_ST2_Msk & (_UINT32_(value) << XDMAC_GS_ST2_Pos)) /* Assigment of value for ST2 in the XDMAC_GS register */
-#define XDMAC_GS_ST3_Pos                      _UINT32_(3)                                          /* (XDMAC_GS) XDMAC Channel 3 Status Bit Position */
-#define XDMAC_GS_ST3_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST3_Pos)                  /* (XDMAC_GS) XDMAC Channel 3 Status Bit Mask */
-#define XDMAC_GS_ST3(value)                   (XDMAC_GS_ST3_Msk & (_UINT32_(value) << XDMAC_GS_ST3_Pos)) /* Assigment of value for ST3 in the XDMAC_GS register */
-#define XDMAC_GS_ST4_Pos                      _UINT32_(4)                                          /* (XDMAC_GS) XDMAC Channel 4 Status Bit Position */
-#define XDMAC_GS_ST4_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST4_Pos)                  /* (XDMAC_GS) XDMAC Channel 4 Status Bit Mask */
-#define XDMAC_GS_ST4(value)                   (XDMAC_GS_ST4_Msk & (_UINT32_(value) << XDMAC_GS_ST4_Pos)) /* Assigment of value for ST4 in the XDMAC_GS register */
-#define XDMAC_GS_ST5_Pos                      _UINT32_(5)                                          /* (XDMAC_GS) XDMAC Channel 5 Status Bit Position */
-#define XDMAC_GS_ST5_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST5_Pos)                  /* (XDMAC_GS) XDMAC Channel 5 Status Bit Mask */
-#define XDMAC_GS_ST5(value)                   (XDMAC_GS_ST5_Msk & (_UINT32_(value) << XDMAC_GS_ST5_Pos)) /* Assigment of value for ST5 in the XDMAC_GS register */
-#define XDMAC_GS_ST6_Pos                      _UINT32_(6)                                          /* (XDMAC_GS) XDMAC Channel 6 Status Bit Position */
-#define XDMAC_GS_ST6_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST6_Pos)                  /* (XDMAC_GS) XDMAC Channel 6 Status Bit Mask */
-#define XDMAC_GS_ST6(value)                   (XDMAC_GS_ST6_Msk & (_UINT32_(value) << XDMAC_GS_ST6_Pos)) /* Assigment of value for ST6 in the XDMAC_GS register */
-#define XDMAC_GS_ST7_Pos                      _UINT32_(7)                                          /* (XDMAC_GS) XDMAC Channel 7 Status Bit Position */
-#define XDMAC_GS_ST7_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST7_Pos)                  /* (XDMAC_GS) XDMAC Channel 7 Status Bit Mask */
-#define XDMAC_GS_ST7(value)                   (XDMAC_GS_ST7_Msk & (_UINT32_(value) << XDMAC_GS_ST7_Pos)) /* Assigment of value for ST7 in the XDMAC_GS register */
-#define XDMAC_GS_ST8_Pos                      _UINT32_(8)                                          /* (XDMAC_GS) XDMAC Channel 8 Status Bit Position */
-#define XDMAC_GS_ST8_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST8_Pos)                  /* (XDMAC_GS) XDMAC Channel 8 Status Bit Mask */
-#define XDMAC_GS_ST8(value)                   (XDMAC_GS_ST8_Msk & (_UINT32_(value) << XDMAC_GS_ST8_Pos)) /* Assigment of value for ST8 in the XDMAC_GS register */
-#define XDMAC_GS_ST9_Pos                      _UINT32_(9)                                          /* (XDMAC_GS) XDMAC Channel 9 Status Bit Position */
-#define XDMAC_GS_ST9_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST9_Pos)                  /* (XDMAC_GS) XDMAC Channel 9 Status Bit Mask */
-#define XDMAC_GS_ST9(value)                   (XDMAC_GS_ST9_Msk & (_UINT32_(value) << XDMAC_GS_ST9_Pos)) /* Assigment of value for ST9 in the XDMAC_GS register */
-#define XDMAC_GS_ST10_Pos                     _UINT32_(10)                                         /* (XDMAC_GS) XDMAC Channel 10 Status Bit Position */
-#define XDMAC_GS_ST10_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST10_Pos)                 /* (XDMAC_GS) XDMAC Channel 10 Status Bit Mask */
-#define XDMAC_GS_ST10(value)                  (XDMAC_GS_ST10_Msk & (_UINT32_(value) << XDMAC_GS_ST10_Pos)) /* Assigment of value for ST10 in the XDMAC_GS register */
-#define XDMAC_GS_ST11_Pos                     _UINT32_(11)                                         /* (XDMAC_GS) XDMAC Channel 11 Status Bit Position */
-#define XDMAC_GS_ST11_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST11_Pos)                 /* (XDMAC_GS) XDMAC Channel 11 Status Bit Mask */
-#define XDMAC_GS_ST11(value)                  (XDMAC_GS_ST11_Msk & (_UINT32_(value) << XDMAC_GS_ST11_Pos)) /* Assigment of value for ST11 in the XDMAC_GS register */
-#define XDMAC_GS_ST12_Pos                     _UINT32_(12)                                         /* (XDMAC_GS) XDMAC Channel 12 Status Bit Position */
-#define XDMAC_GS_ST12_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST12_Pos)                 /* (XDMAC_GS) XDMAC Channel 12 Status Bit Mask */
-#define XDMAC_GS_ST12(value)                  (XDMAC_GS_ST12_Msk & (_UINT32_(value) << XDMAC_GS_ST12_Pos)) /* Assigment of value for ST12 in the XDMAC_GS register */
-#define XDMAC_GS_ST13_Pos                     _UINT32_(13)                                         /* (XDMAC_GS) XDMAC Channel 13 Status Bit Position */
-#define XDMAC_GS_ST13_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST13_Pos)                 /* (XDMAC_GS) XDMAC Channel 13 Status Bit Mask */
-#define XDMAC_GS_ST13(value)                  (XDMAC_GS_ST13_Msk & (_UINT32_(value) << XDMAC_GS_ST13_Pos)) /* Assigment of value for ST13 in the XDMAC_GS register */
-#define XDMAC_GS_ST14_Pos                     _UINT32_(14)                                         /* (XDMAC_GS) XDMAC Channel 14 Status Bit Position */
-#define XDMAC_GS_ST14_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST14_Pos)                 /* (XDMAC_GS) XDMAC Channel 14 Status Bit Mask */
-#define XDMAC_GS_ST14(value)                  (XDMAC_GS_ST14_Msk & (_UINT32_(value) << XDMAC_GS_ST14_Pos)) /* Assigment of value for ST14 in the XDMAC_GS register */
-#define XDMAC_GS_ST15_Pos                     _UINT32_(15)                                         /* (XDMAC_GS) XDMAC Channel 15 Status Bit Position */
-#define XDMAC_GS_ST15_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST15_Pos)                 /* (XDMAC_GS) XDMAC Channel 15 Status Bit Mask */
-#define XDMAC_GS_ST15(value)                  (XDMAC_GS_ST15_Msk & (_UINT32_(value) << XDMAC_GS_ST15_Pos)) /* Assigment of value for ST15 in the XDMAC_GS register */
-#define XDMAC_GS_Msk                          _UINT32_(0x0000FFFF)                                 /* (XDMAC_GS) Register Mask  */
-
-#define XDMAC_GS_ST_Pos                       _UINT32_(0)                                          /* (XDMAC_GS Position) XDMAC Channel x5 Status Bit */
-#define XDMAC_GS_ST_Msk                       (_UINT32_(0xFFFF) << XDMAC_GS_ST_Pos)                /* (XDMAC_GS Mask) ST */
-#define XDMAC_GS_ST(value)                    (XDMAC_GS_ST_Msk & (_UINT32_(value) << XDMAC_GS_ST_Pos)) 
-
 /* -------- XDMAC_GRS : (XDMAC Offset: 0x28) (R/W 32) Global Channel Read Suspend Register -------- */
 #define XDMAC_GRS_RS0_Pos                     _UINT32_(0)                                          /* (XDMAC_GRS) XDMAC Channel 0 Read Suspend Bit Position */
 #define XDMAC_GRS_RS0_Msk                     (_UINT32_(0x1) << XDMAC_GRS_RS0_Pos)                 /* (XDMAC_GRS) XDMAC Channel 0 Read Suspend Bit Mask */
@@ -950,60 +866,60 @@
 #define XDMAC_GRS_RS_Msk                      (_UINT32_(0xFFFF) << XDMAC_GRS_RS_Pos)               /* (XDMAC_GRS Mask) RS */
 #define XDMAC_GRS_RS(value)                   (XDMAC_GRS_RS_Msk & (_UINT32_(value) << XDMAC_GRS_RS_Pos)) 
 
-/* -------- XDMAC_GWS : (XDMAC Offset: 0x2C) (R/W 32) Global Channel Write Suspend Register -------- */
-#define XDMAC_GWS_WS0_Pos                     _UINT32_(0)                                          /* (XDMAC_GWS) XDMAC Channel 0 Write Suspend Bit Position */
-#define XDMAC_GWS_WS0_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS0_Pos)                 /* (XDMAC_GWS) XDMAC Channel 0 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS0(value)                  (XDMAC_GWS_WS0_Msk & (_UINT32_(value) << XDMAC_GWS_WS0_Pos)) /* Assigment of value for WS0 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS1_Pos                     _UINT32_(1)                                          /* (XDMAC_GWS) XDMAC Channel 1 Write Suspend Bit Position */
-#define XDMAC_GWS_WS1_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS1_Pos)                 /* (XDMAC_GWS) XDMAC Channel 1 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS1(value)                  (XDMAC_GWS_WS1_Msk & (_UINT32_(value) << XDMAC_GWS_WS1_Pos)) /* Assigment of value for WS1 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS2_Pos                     _UINT32_(2)                                          /* (XDMAC_GWS) XDMAC Channel 2 Write Suspend Bit Position */
-#define XDMAC_GWS_WS2_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS2_Pos)                 /* (XDMAC_GWS) XDMAC Channel 2 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS2(value)                  (XDMAC_GWS_WS2_Msk & (_UINT32_(value) << XDMAC_GWS_WS2_Pos)) /* Assigment of value for WS2 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS3_Pos                     _UINT32_(3)                                          /* (XDMAC_GWS) XDMAC Channel 3 Write Suspend Bit Position */
-#define XDMAC_GWS_WS3_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS3_Pos)                 /* (XDMAC_GWS) XDMAC Channel 3 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS3(value)                  (XDMAC_GWS_WS3_Msk & (_UINT32_(value) << XDMAC_GWS_WS3_Pos)) /* Assigment of value for WS3 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS4_Pos                     _UINT32_(4)                                          /* (XDMAC_GWS) XDMAC Channel 4 Write Suspend Bit Position */
-#define XDMAC_GWS_WS4_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS4_Pos)                 /* (XDMAC_GWS) XDMAC Channel 4 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS4(value)                  (XDMAC_GWS_WS4_Msk & (_UINT32_(value) << XDMAC_GWS_WS4_Pos)) /* Assigment of value for WS4 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS5_Pos                     _UINT32_(5)                                          /* (XDMAC_GWS) XDMAC Channel 5 Write Suspend Bit Position */
-#define XDMAC_GWS_WS5_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS5_Pos)                 /* (XDMAC_GWS) XDMAC Channel 5 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS5(value)                  (XDMAC_GWS_WS5_Msk & (_UINT32_(value) << XDMAC_GWS_WS5_Pos)) /* Assigment of value for WS5 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS6_Pos                     _UINT32_(6)                                          /* (XDMAC_GWS) XDMAC Channel 6 Write Suspend Bit Position */
-#define XDMAC_GWS_WS6_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS6_Pos)                 /* (XDMAC_GWS) XDMAC Channel 6 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS6(value)                  (XDMAC_GWS_WS6_Msk & (_UINT32_(value) << XDMAC_GWS_WS6_Pos)) /* Assigment of value for WS6 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS7_Pos                     _UINT32_(7)                                          /* (XDMAC_GWS) XDMAC Channel 7 Write Suspend Bit Position */
-#define XDMAC_GWS_WS7_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS7_Pos)                 /* (XDMAC_GWS) XDMAC Channel 7 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS7(value)                  (XDMAC_GWS_WS7_Msk & (_UINT32_(value) << XDMAC_GWS_WS7_Pos)) /* Assigment of value for WS7 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS8_Pos                     _UINT32_(8)                                          /* (XDMAC_GWS) XDMAC Channel 8 Write Suspend Bit Position */
-#define XDMAC_GWS_WS8_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS8_Pos)                 /* (XDMAC_GWS) XDMAC Channel 8 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS8(value)                  (XDMAC_GWS_WS8_Msk & (_UINT32_(value) << XDMAC_GWS_WS8_Pos)) /* Assigment of value for WS8 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS9_Pos                     _UINT32_(9)                                          /* (XDMAC_GWS) XDMAC Channel 9 Write Suspend Bit Position */
-#define XDMAC_GWS_WS9_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS9_Pos)                 /* (XDMAC_GWS) XDMAC Channel 9 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS9(value)                  (XDMAC_GWS_WS9_Msk & (_UINT32_(value) << XDMAC_GWS_WS9_Pos)) /* Assigment of value for WS9 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS10_Pos                    _UINT32_(10)                                         /* (XDMAC_GWS) XDMAC Channel 10 Write Suspend Bit Position */
-#define XDMAC_GWS_WS10_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS10_Pos)                /* (XDMAC_GWS) XDMAC Channel 10 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS10(value)                 (XDMAC_GWS_WS10_Msk & (_UINT32_(value) << XDMAC_GWS_WS10_Pos)) /* Assigment of value for WS10 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS11_Pos                    _UINT32_(11)                                         /* (XDMAC_GWS) XDMAC Channel 11 Write Suspend Bit Position */
-#define XDMAC_GWS_WS11_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS11_Pos)                /* (XDMAC_GWS) XDMAC Channel 11 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS11(value)                 (XDMAC_GWS_WS11_Msk & (_UINT32_(value) << XDMAC_GWS_WS11_Pos)) /* Assigment of value for WS11 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS12_Pos                    _UINT32_(12)                                         /* (XDMAC_GWS) XDMAC Channel 12 Write Suspend Bit Position */
-#define XDMAC_GWS_WS12_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS12_Pos)                /* (XDMAC_GWS) XDMAC Channel 12 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS12(value)                 (XDMAC_GWS_WS12_Msk & (_UINT32_(value) << XDMAC_GWS_WS12_Pos)) /* Assigment of value for WS12 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS13_Pos                    _UINT32_(13)                                         /* (XDMAC_GWS) XDMAC Channel 13 Write Suspend Bit Position */
-#define XDMAC_GWS_WS13_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS13_Pos)                /* (XDMAC_GWS) XDMAC Channel 13 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS13(value)                 (XDMAC_GWS_WS13_Msk & (_UINT32_(value) << XDMAC_GWS_WS13_Pos)) /* Assigment of value for WS13 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS14_Pos                    _UINT32_(14)                                         /* (XDMAC_GWS) XDMAC Channel 14 Write Suspend Bit Position */
-#define XDMAC_GWS_WS14_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS14_Pos)                /* (XDMAC_GWS) XDMAC Channel 14 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS14(value)                 (XDMAC_GWS_WS14_Msk & (_UINT32_(value) << XDMAC_GWS_WS14_Pos)) /* Assigment of value for WS14 in the XDMAC_GWS register */
-#define XDMAC_GWS_WS15_Pos                    _UINT32_(15)                                         /* (XDMAC_GWS) XDMAC Channel 15 Write Suspend Bit Position */
-#define XDMAC_GWS_WS15_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS15_Pos)                /* (XDMAC_GWS) XDMAC Channel 15 Write Suspend Bit Mask */
-#define XDMAC_GWS_WS15(value)                 (XDMAC_GWS_WS15_Msk & (_UINT32_(value) << XDMAC_GWS_WS15_Pos)) /* Assigment of value for WS15 in the XDMAC_GWS register */
-#define XDMAC_GWS_Msk                         _UINT32_(0x0000FFFF)                                 /* (XDMAC_GWS) Register Mask  */
+/* -------- XDMAC_GRWR : (XDMAC Offset: 0x34) ( /W 32) Global Channel Read Write Resume Register -------- */
+#define XDMAC_GRWR_RWR0_Pos                   _UINT32_(0)                                          /* (XDMAC_GRWR) XDMAC Channel 0 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR0_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR0_Pos)               /* (XDMAC_GRWR) XDMAC Channel 0 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR0(value)                (XDMAC_GRWR_RWR0_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR0_Pos)) /* Assigment of value for RWR0 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR1_Pos                   _UINT32_(1)                                          /* (XDMAC_GRWR) XDMAC Channel 1 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR1_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR1_Pos)               /* (XDMAC_GRWR) XDMAC Channel 1 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR1(value)                (XDMAC_GRWR_RWR1_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR1_Pos)) /* Assigment of value for RWR1 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR2_Pos                   _UINT32_(2)                                          /* (XDMAC_GRWR) XDMAC Channel 2 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR2_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR2_Pos)               /* (XDMAC_GRWR) XDMAC Channel 2 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR2(value)                (XDMAC_GRWR_RWR2_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR2_Pos)) /* Assigment of value for RWR2 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR3_Pos                   _UINT32_(3)                                          /* (XDMAC_GRWR) XDMAC Channel 3 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR3_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR3_Pos)               /* (XDMAC_GRWR) XDMAC Channel 3 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR3(value)                (XDMAC_GRWR_RWR3_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR3_Pos)) /* Assigment of value for RWR3 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR4_Pos                   _UINT32_(4)                                          /* (XDMAC_GRWR) XDMAC Channel 4 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR4_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR4_Pos)               /* (XDMAC_GRWR) XDMAC Channel 4 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR4(value)                (XDMAC_GRWR_RWR4_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR4_Pos)) /* Assigment of value for RWR4 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR5_Pos                   _UINT32_(5)                                          /* (XDMAC_GRWR) XDMAC Channel 5 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR5_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR5_Pos)               /* (XDMAC_GRWR) XDMAC Channel 5 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR5(value)                (XDMAC_GRWR_RWR5_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR5_Pos)) /* Assigment of value for RWR5 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR6_Pos                   _UINT32_(6)                                          /* (XDMAC_GRWR) XDMAC Channel 6 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR6_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR6_Pos)               /* (XDMAC_GRWR) XDMAC Channel 6 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR6(value)                (XDMAC_GRWR_RWR6_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR6_Pos)) /* Assigment of value for RWR6 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR7_Pos                   _UINT32_(7)                                          /* (XDMAC_GRWR) XDMAC Channel 7 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR7_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR7_Pos)               /* (XDMAC_GRWR) XDMAC Channel 7 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR7(value)                (XDMAC_GRWR_RWR7_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR7_Pos)) /* Assigment of value for RWR7 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR8_Pos                   _UINT32_(8)                                          /* (XDMAC_GRWR) XDMAC Channel 8 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR8_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR8_Pos)               /* (XDMAC_GRWR) XDMAC Channel 8 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR8(value)                (XDMAC_GRWR_RWR8_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR8_Pos)) /* Assigment of value for RWR8 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR9_Pos                   _UINT32_(9)                                          /* (XDMAC_GRWR) XDMAC Channel 9 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR9_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR9_Pos)               /* (XDMAC_GRWR) XDMAC Channel 9 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR9(value)                (XDMAC_GRWR_RWR9_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR9_Pos)) /* Assigment of value for RWR9 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR10_Pos                  _UINT32_(10)                                         /* (XDMAC_GRWR) XDMAC Channel 10 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR10_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR10_Pos)              /* (XDMAC_GRWR) XDMAC Channel 10 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR10(value)               (XDMAC_GRWR_RWR10_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR10_Pos)) /* Assigment of value for RWR10 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR11_Pos                  _UINT32_(11)                                         /* (XDMAC_GRWR) XDMAC Channel 11 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR11_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR11_Pos)              /* (XDMAC_GRWR) XDMAC Channel 11 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR11(value)               (XDMAC_GRWR_RWR11_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR11_Pos)) /* Assigment of value for RWR11 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR12_Pos                  _UINT32_(12)                                         /* (XDMAC_GRWR) XDMAC Channel 12 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR12_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR12_Pos)              /* (XDMAC_GRWR) XDMAC Channel 12 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR12(value)               (XDMAC_GRWR_RWR12_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR12_Pos)) /* Assigment of value for RWR12 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR13_Pos                  _UINT32_(13)                                         /* (XDMAC_GRWR) XDMAC Channel 13 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR13_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR13_Pos)              /* (XDMAC_GRWR) XDMAC Channel 13 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR13(value)               (XDMAC_GRWR_RWR13_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR13_Pos)) /* Assigment of value for RWR13 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR14_Pos                  _UINT32_(14)                                         /* (XDMAC_GRWR) XDMAC Channel 14 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR14_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR14_Pos)              /* (XDMAC_GRWR) XDMAC Channel 14 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR14(value)               (XDMAC_GRWR_RWR14_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR14_Pos)) /* Assigment of value for RWR14 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_RWR15_Pos                  _UINT32_(15)                                         /* (XDMAC_GRWR) XDMAC Channel 15 Read Write Resume Bit Position */
+#define XDMAC_GRWR_RWR15_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR15_Pos)              /* (XDMAC_GRWR) XDMAC Channel 15 Read Write Resume Bit Mask */
+#define XDMAC_GRWR_RWR15(value)               (XDMAC_GRWR_RWR15_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR15_Pos)) /* Assigment of value for RWR15 in the XDMAC_GRWR register */
+#define XDMAC_GRWR_Msk                        _UINT32_(0x0000FFFF)                                 /* (XDMAC_GRWR) Register Mask  */
 
-#define XDMAC_GWS_WS_Pos                      _UINT32_(0)                                          /* (XDMAC_GWS Position) XDMAC Channel x5 Write Suspend Bit */
-#define XDMAC_GWS_WS_Msk                      (_UINT32_(0xFFFF) << XDMAC_GWS_WS_Pos)               /* (XDMAC_GWS Mask) WS */
-#define XDMAC_GWS_WS(value)                   (XDMAC_GWS_WS_Msk & (_UINT32_(value) << XDMAC_GWS_WS_Pos)) 
+#define XDMAC_GRWR_RWR_Pos                    _UINT32_(0)                                          /* (XDMAC_GRWR Position) XDMAC Channel x5 Read Write Resume Bit */
+#define XDMAC_GRWR_RWR_Msk                    (_UINT32_(0xFFFF) << XDMAC_GRWR_RWR_Pos)             /* (XDMAC_GRWR Mask) RWR */
+#define XDMAC_GRWR_RWR(value)                 (XDMAC_GRWR_RWR_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR_Pos)) 
 
 /* -------- XDMAC_GRWS : (XDMAC Offset: 0x30) ( /W 32) Global Channel Read Write Suspend Register -------- */
 #define XDMAC_GRWS_RWS0_Pos                   _UINT32_(0)                                          /* (XDMAC_GRWS) XDMAC Channel 0 Read Write Suspend Bit Position */
@@ -1060,60 +976,115 @@
 #define XDMAC_GRWS_RWS_Msk                    (_UINT32_(0xFFFF) << XDMAC_GRWS_RWS_Pos)             /* (XDMAC_GRWS Mask) RWS */
 #define XDMAC_GRWS_RWS(value)                 (XDMAC_GRWS_RWS_Msk & (_UINT32_(value) << XDMAC_GRWS_RWS_Pos)) 
 
-/* -------- XDMAC_GRWR : (XDMAC Offset: 0x34) ( /W 32) Global Channel Read Write Resume Register -------- */
-#define XDMAC_GRWR_RWR0_Pos                   _UINT32_(0)                                          /* (XDMAC_GRWR) XDMAC Channel 0 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR0_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR0_Pos)               /* (XDMAC_GRWR) XDMAC Channel 0 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR0(value)                (XDMAC_GRWR_RWR0_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR0_Pos)) /* Assigment of value for RWR0 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR1_Pos                   _UINT32_(1)                                          /* (XDMAC_GRWR) XDMAC Channel 1 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR1_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR1_Pos)               /* (XDMAC_GRWR) XDMAC Channel 1 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR1(value)                (XDMAC_GRWR_RWR1_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR1_Pos)) /* Assigment of value for RWR1 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR2_Pos                   _UINT32_(2)                                          /* (XDMAC_GRWR) XDMAC Channel 2 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR2_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR2_Pos)               /* (XDMAC_GRWR) XDMAC Channel 2 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR2(value)                (XDMAC_GRWR_RWR2_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR2_Pos)) /* Assigment of value for RWR2 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR3_Pos                   _UINT32_(3)                                          /* (XDMAC_GRWR) XDMAC Channel 3 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR3_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR3_Pos)               /* (XDMAC_GRWR) XDMAC Channel 3 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR3(value)                (XDMAC_GRWR_RWR3_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR3_Pos)) /* Assigment of value for RWR3 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR4_Pos                   _UINT32_(4)                                          /* (XDMAC_GRWR) XDMAC Channel 4 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR4_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR4_Pos)               /* (XDMAC_GRWR) XDMAC Channel 4 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR4(value)                (XDMAC_GRWR_RWR4_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR4_Pos)) /* Assigment of value for RWR4 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR5_Pos                   _UINT32_(5)                                          /* (XDMAC_GRWR) XDMAC Channel 5 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR5_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR5_Pos)               /* (XDMAC_GRWR) XDMAC Channel 5 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR5(value)                (XDMAC_GRWR_RWR5_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR5_Pos)) /* Assigment of value for RWR5 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR6_Pos                   _UINT32_(6)                                          /* (XDMAC_GRWR) XDMAC Channel 6 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR6_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR6_Pos)               /* (XDMAC_GRWR) XDMAC Channel 6 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR6(value)                (XDMAC_GRWR_RWR6_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR6_Pos)) /* Assigment of value for RWR6 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR7_Pos                   _UINT32_(7)                                          /* (XDMAC_GRWR) XDMAC Channel 7 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR7_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR7_Pos)               /* (XDMAC_GRWR) XDMAC Channel 7 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR7(value)                (XDMAC_GRWR_RWR7_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR7_Pos)) /* Assigment of value for RWR7 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR8_Pos                   _UINT32_(8)                                          /* (XDMAC_GRWR) XDMAC Channel 8 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR8_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR8_Pos)               /* (XDMAC_GRWR) XDMAC Channel 8 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR8(value)                (XDMAC_GRWR_RWR8_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR8_Pos)) /* Assigment of value for RWR8 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR9_Pos                   _UINT32_(9)                                          /* (XDMAC_GRWR) XDMAC Channel 9 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR9_Msk                   (_UINT32_(0x1) << XDMAC_GRWR_RWR9_Pos)               /* (XDMAC_GRWR) XDMAC Channel 9 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR9(value)                (XDMAC_GRWR_RWR9_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR9_Pos)) /* Assigment of value for RWR9 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR10_Pos                  _UINT32_(10)                                         /* (XDMAC_GRWR) XDMAC Channel 10 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR10_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR10_Pos)              /* (XDMAC_GRWR) XDMAC Channel 10 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR10(value)               (XDMAC_GRWR_RWR10_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR10_Pos)) /* Assigment of value for RWR10 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR11_Pos                  _UINT32_(11)                                         /* (XDMAC_GRWR) XDMAC Channel 11 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR11_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR11_Pos)              /* (XDMAC_GRWR) XDMAC Channel 11 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR11(value)               (XDMAC_GRWR_RWR11_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR11_Pos)) /* Assigment of value for RWR11 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR12_Pos                  _UINT32_(12)                                         /* (XDMAC_GRWR) XDMAC Channel 12 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR12_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR12_Pos)              /* (XDMAC_GRWR) XDMAC Channel 12 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR12(value)               (XDMAC_GRWR_RWR12_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR12_Pos)) /* Assigment of value for RWR12 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR13_Pos                  _UINT32_(13)                                         /* (XDMAC_GRWR) XDMAC Channel 13 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR13_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR13_Pos)              /* (XDMAC_GRWR) XDMAC Channel 13 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR13(value)               (XDMAC_GRWR_RWR13_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR13_Pos)) /* Assigment of value for RWR13 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR14_Pos                  _UINT32_(14)                                         /* (XDMAC_GRWR) XDMAC Channel 14 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR14_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR14_Pos)              /* (XDMAC_GRWR) XDMAC Channel 14 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR14(value)               (XDMAC_GRWR_RWR14_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR14_Pos)) /* Assigment of value for RWR14 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_RWR15_Pos                  _UINT32_(15)                                         /* (XDMAC_GRWR) XDMAC Channel 15 Read Write Resume Bit Position */
-#define XDMAC_GRWR_RWR15_Msk                  (_UINT32_(0x1) << XDMAC_GRWR_RWR15_Pos)              /* (XDMAC_GRWR) XDMAC Channel 15 Read Write Resume Bit Mask */
-#define XDMAC_GRWR_RWR15(value)               (XDMAC_GRWR_RWR15_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR15_Pos)) /* Assigment of value for RWR15 in the XDMAC_GRWR register */
-#define XDMAC_GRWR_Msk                        _UINT32_(0x0000FFFF)                                 /* (XDMAC_GRWR) Register Mask  */
+/* -------- XDMAC_GS : (XDMAC Offset: 0x24) ( R/ 32) Global Channel Status Register -------- */
+#define XDMAC_GS_ST0_Pos                      _UINT32_(0)                                          /* (XDMAC_GS) XDMAC Channel 0 Status Bit Position */
+#define XDMAC_GS_ST0_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST0_Pos)                  /* (XDMAC_GS) XDMAC Channel 0 Status Bit Mask */
+#define XDMAC_GS_ST0(value)                   (XDMAC_GS_ST0_Msk & (_UINT32_(value) << XDMAC_GS_ST0_Pos)) /* Assigment of value for ST0 in the XDMAC_GS register */
+#define XDMAC_GS_ST1_Pos                      _UINT32_(1)                                          /* (XDMAC_GS) XDMAC Channel 1 Status Bit Position */
+#define XDMAC_GS_ST1_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST1_Pos)                  /* (XDMAC_GS) XDMAC Channel 1 Status Bit Mask */
+#define XDMAC_GS_ST1(value)                   (XDMAC_GS_ST1_Msk & (_UINT32_(value) << XDMAC_GS_ST1_Pos)) /* Assigment of value for ST1 in the XDMAC_GS register */
+#define XDMAC_GS_ST2_Pos                      _UINT32_(2)                                          /* (XDMAC_GS) XDMAC Channel 2 Status Bit Position */
+#define XDMAC_GS_ST2_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST2_Pos)                  /* (XDMAC_GS) XDMAC Channel 2 Status Bit Mask */
+#define XDMAC_GS_ST2(value)                   (XDMAC_GS_ST2_Msk & (_UINT32_(value) << XDMAC_GS_ST2_Pos)) /* Assigment of value for ST2 in the XDMAC_GS register */
+#define XDMAC_GS_ST3_Pos                      _UINT32_(3)                                          /* (XDMAC_GS) XDMAC Channel 3 Status Bit Position */
+#define XDMAC_GS_ST3_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST3_Pos)                  /* (XDMAC_GS) XDMAC Channel 3 Status Bit Mask */
+#define XDMAC_GS_ST3(value)                   (XDMAC_GS_ST3_Msk & (_UINT32_(value) << XDMAC_GS_ST3_Pos)) /* Assigment of value for ST3 in the XDMAC_GS register */
+#define XDMAC_GS_ST4_Pos                      _UINT32_(4)                                          /* (XDMAC_GS) XDMAC Channel 4 Status Bit Position */
+#define XDMAC_GS_ST4_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST4_Pos)                  /* (XDMAC_GS) XDMAC Channel 4 Status Bit Mask */
+#define XDMAC_GS_ST4(value)                   (XDMAC_GS_ST4_Msk & (_UINT32_(value) << XDMAC_GS_ST4_Pos)) /* Assigment of value for ST4 in the XDMAC_GS register */
+#define XDMAC_GS_ST5_Pos                      _UINT32_(5)                                          /* (XDMAC_GS) XDMAC Channel 5 Status Bit Position */
+#define XDMAC_GS_ST5_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST5_Pos)                  /* (XDMAC_GS) XDMAC Channel 5 Status Bit Mask */
+#define XDMAC_GS_ST5(value)                   (XDMAC_GS_ST5_Msk & (_UINT32_(value) << XDMAC_GS_ST5_Pos)) /* Assigment of value for ST5 in the XDMAC_GS register */
+#define XDMAC_GS_ST6_Pos                      _UINT32_(6)                                          /* (XDMAC_GS) XDMAC Channel 6 Status Bit Position */
+#define XDMAC_GS_ST6_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST6_Pos)                  /* (XDMAC_GS) XDMAC Channel 6 Status Bit Mask */
+#define XDMAC_GS_ST6(value)                   (XDMAC_GS_ST6_Msk & (_UINT32_(value) << XDMAC_GS_ST6_Pos)) /* Assigment of value for ST6 in the XDMAC_GS register */
+#define XDMAC_GS_ST7_Pos                      _UINT32_(7)                                          /* (XDMAC_GS) XDMAC Channel 7 Status Bit Position */
+#define XDMAC_GS_ST7_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST7_Pos)                  /* (XDMAC_GS) XDMAC Channel 7 Status Bit Mask */
+#define XDMAC_GS_ST7(value)                   (XDMAC_GS_ST7_Msk & (_UINT32_(value) << XDMAC_GS_ST7_Pos)) /* Assigment of value for ST7 in the XDMAC_GS register */
+#define XDMAC_GS_ST8_Pos                      _UINT32_(8)                                          /* (XDMAC_GS) XDMAC Channel 8 Status Bit Position */
+#define XDMAC_GS_ST8_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST8_Pos)                  /* (XDMAC_GS) XDMAC Channel 8 Status Bit Mask */
+#define XDMAC_GS_ST8(value)                   (XDMAC_GS_ST8_Msk & (_UINT32_(value) << XDMAC_GS_ST8_Pos)) /* Assigment of value for ST8 in the XDMAC_GS register */
+#define XDMAC_GS_ST9_Pos                      _UINT32_(9)                                          /* (XDMAC_GS) XDMAC Channel 9 Status Bit Position */
+#define XDMAC_GS_ST9_Msk                      (_UINT32_(0x1) << XDMAC_GS_ST9_Pos)                  /* (XDMAC_GS) XDMAC Channel 9 Status Bit Mask */
+#define XDMAC_GS_ST9(value)                   (XDMAC_GS_ST9_Msk & (_UINT32_(value) << XDMAC_GS_ST9_Pos)) /* Assigment of value for ST9 in the XDMAC_GS register */
+#define XDMAC_GS_ST10_Pos                     _UINT32_(10)                                         /* (XDMAC_GS) XDMAC Channel 10 Status Bit Position */
+#define XDMAC_GS_ST10_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST10_Pos)                 /* (XDMAC_GS) XDMAC Channel 10 Status Bit Mask */
+#define XDMAC_GS_ST10(value)                  (XDMAC_GS_ST10_Msk & (_UINT32_(value) << XDMAC_GS_ST10_Pos)) /* Assigment of value for ST10 in the XDMAC_GS register */
+#define XDMAC_GS_ST11_Pos                     _UINT32_(11)                                         /* (XDMAC_GS) XDMAC Channel 11 Status Bit Position */
+#define XDMAC_GS_ST11_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST11_Pos)                 /* (XDMAC_GS) XDMAC Channel 11 Status Bit Mask */
+#define XDMAC_GS_ST11(value)                  (XDMAC_GS_ST11_Msk & (_UINT32_(value) << XDMAC_GS_ST11_Pos)) /* Assigment of value for ST11 in the XDMAC_GS register */
+#define XDMAC_GS_ST12_Pos                     _UINT32_(12)                                         /* (XDMAC_GS) XDMAC Channel 12 Status Bit Position */
+#define XDMAC_GS_ST12_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST12_Pos)                 /* (XDMAC_GS) XDMAC Channel 12 Status Bit Mask */
+#define XDMAC_GS_ST12(value)                  (XDMAC_GS_ST12_Msk & (_UINT32_(value) << XDMAC_GS_ST12_Pos)) /* Assigment of value for ST12 in the XDMAC_GS register */
+#define XDMAC_GS_ST13_Pos                     _UINT32_(13)                                         /* (XDMAC_GS) XDMAC Channel 13 Status Bit Position */
+#define XDMAC_GS_ST13_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST13_Pos)                 /* (XDMAC_GS) XDMAC Channel 13 Status Bit Mask */
+#define XDMAC_GS_ST13(value)                  (XDMAC_GS_ST13_Msk & (_UINT32_(value) << XDMAC_GS_ST13_Pos)) /* Assigment of value for ST13 in the XDMAC_GS register */
+#define XDMAC_GS_ST14_Pos                     _UINT32_(14)                                         /* (XDMAC_GS) XDMAC Channel 14 Status Bit Position */
+#define XDMAC_GS_ST14_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST14_Pos)                 /* (XDMAC_GS) XDMAC Channel 14 Status Bit Mask */
+#define XDMAC_GS_ST14(value)                  (XDMAC_GS_ST14_Msk & (_UINT32_(value) << XDMAC_GS_ST14_Pos)) /* Assigment of value for ST14 in the XDMAC_GS register */
+#define XDMAC_GS_ST15_Pos                     _UINT32_(15)                                         /* (XDMAC_GS) XDMAC Channel 15 Status Bit Position */
+#define XDMAC_GS_ST15_Msk                     (_UINT32_(0x1) << XDMAC_GS_ST15_Pos)                 /* (XDMAC_GS) XDMAC Channel 15 Status Bit Mask */
+#define XDMAC_GS_ST15(value)                  (XDMAC_GS_ST15_Msk & (_UINT32_(value) << XDMAC_GS_ST15_Pos)) /* Assigment of value for ST15 in the XDMAC_GS register */
+#define XDMAC_GS_Msk                          _UINT32_(0x0000FFFF)                                 /* (XDMAC_GS) Register Mask  */
 
-#define XDMAC_GRWR_RWR_Pos                    _UINT32_(0)                                          /* (XDMAC_GRWR Position) XDMAC Channel x5 Read Write Resume Bit */
-#define XDMAC_GRWR_RWR_Msk                    (_UINT32_(0xFFFF) << XDMAC_GRWR_RWR_Pos)             /* (XDMAC_GRWR Mask) RWR */
-#define XDMAC_GRWR_RWR(value)                 (XDMAC_GRWR_RWR_Msk & (_UINT32_(value) << XDMAC_GRWR_RWR_Pos)) 
+#define XDMAC_GS_ST_Pos                       _UINT32_(0)                                          /* (XDMAC_GS Position) XDMAC Channel x5 Status Bit */
+#define XDMAC_GS_ST_Msk                       (_UINT32_(0xFFFF) << XDMAC_GS_ST_Pos)                /* (XDMAC_GS Mask) ST */
+#define XDMAC_GS_ST(value)                    (XDMAC_GS_ST_Msk & (_UINT32_(value) << XDMAC_GS_ST_Pos)) 
+
+/* -------- XDMAC_GSWF : (XDMAC Offset: 0x40) ( /W 32) Global Channel Software Flush Request Register -------- */
+#define XDMAC_GSWF_SWF0_Pos                   _UINT32_(0)                                          /* (XDMAC_GSWF) XDMAC Channel 0 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF0_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF0_Pos)               /* (XDMAC_GSWF) XDMAC Channel 0 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF0(value)                (XDMAC_GSWF_SWF0_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF0_Pos)) /* Assigment of value for SWF0 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF1_Pos                   _UINT32_(1)                                          /* (XDMAC_GSWF) XDMAC Channel 1 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF1_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF1_Pos)               /* (XDMAC_GSWF) XDMAC Channel 1 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF1(value)                (XDMAC_GSWF_SWF1_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF1_Pos)) /* Assigment of value for SWF1 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF2_Pos                   _UINT32_(2)                                          /* (XDMAC_GSWF) XDMAC Channel 2 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF2_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF2_Pos)               /* (XDMAC_GSWF) XDMAC Channel 2 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF2(value)                (XDMAC_GSWF_SWF2_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF2_Pos)) /* Assigment of value for SWF2 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF3_Pos                   _UINT32_(3)                                          /* (XDMAC_GSWF) XDMAC Channel 3 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF3_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF3_Pos)               /* (XDMAC_GSWF) XDMAC Channel 3 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF3(value)                (XDMAC_GSWF_SWF3_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF3_Pos)) /* Assigment of value for SWF3 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF4_Pos                   _UINT32_(4)                                          /* (XDMAC_GSWF) XDMAC Channel 4 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF4_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF4_Pos)               /* (XDMAC_GSWF) XDMAC Channel 4 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF4(value)                (XDMAC_GSWF_SWF4_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF4_Pos)) /* Assigment of value for SWF4 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF5_Pos                   _UINT32_(5)                                          /* (XDMAC_GSWF) XDMAC Channel 5 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF5_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF5_Pos)               /* (XDMAC_GSWF) XDMAC Channel 5 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF5(value)                (XDMAC_GSWF_SWF5_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF5_Pos)) /* Assigment of value for SWF5 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF6_Pos                   _UINT32_(6)                                          /* (XDMAC_GSWF) XDMAC Channel 6 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF6_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF6_Pos)               /* (XDMAC_GSWF) XDMAC Channel 6 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF6(value)                (XDMAC_GSWF_SWF6_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF6_Pos)) /* Assigment of value for SWF6 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF7_Pos                   _UINT32_(7)                                          /* (XDMAC_GSWF) XDMAC Channel 7 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF7_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF7_Pos)               /* (XDMAC_GSWF) XDMAC Channel 7 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF7(value)                (XDMAC_GSWF_SWF7_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF7_Pos)) /* Assigment of value for SWF7 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF8_Pos                   _UINT32_(8)                                          /* (XDMAC_GSWF) XDMAC Channel 8 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF8_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF8_Pos)               /* (XDMAC_GSWF) XDMAC Channel 8 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF8(value)                (XDMAC_GSWF_SWF8_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF8_Pos)) /* Assigment of value for SWF8 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF9_Pos                   _UINT32_(9)                                          /* (XDMAC_GSWF) XDMAC Channel 9 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF9_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF9_Pos)               /* (XDMAC_GSWF) XDMAC Channel 9 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF9(value)                (XDMAC_GSWF_SWF9_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF9_Pos)) /* Assigment of value for SWF9 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF10_Pos                  _UINT32_(10)                                         /* (XDMAC_GSWF) XDMAC Channel 10 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF10_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF10_Pos)              /* (XDMAC_GSWF) XDMAC Channel 10 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF10(value)               (XDMAC_GSWF_SWF10_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF10_Pos)) /* Assigment of value for SWF10 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF11_Pos                  _UINT32_(11)                                         /* (XDMAC_GSWF) XDMAC Channel 11 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF11_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF11_Pos)              /* (XDMAC_GSWF) XDMAC Channel 11 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF11(value)               (XDMAC_GSWF_SWF11_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF11_Pos)) /* Assigment of value for SWF11 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF12_Pos                  _UINT32_(12)                                         /* (XDMAC_GSWF) XDMAC Channel 12 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF12_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF12_Pos)              /* (XDMAC_GSWF) XDMAC Channel 12 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF12(value)               (XDMAC_GSWF_SWF12_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF12_Pos)) /* Assigment of value for SWF12 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF13_Pos                  _UINT32_(13)                                         /* (XDMAC_GSWF) XDMAC Channel 13 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF13_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF13_Pos)              /* (XDMAC_GSWF) XDMAC Channel 13 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF13(value)               (XDMAC_GSWF_SWF13_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF13_Pos)) /* Assigment of value for SWF13 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF14_Pos                  _UINT32_(14)                                         /* (XDMAC_GSWF) XDMAC Channel 14 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF14_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF14_Pos)              /* (XDMAC_GSWF) XDMAC Channel 14 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF14(value)               (XDMAC_GSWF_SWF14_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF14_Pos)) /* Assigment of value for SWF14 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_SWF15_Pos                  _UINT32_(15)                                         /* (XDMAC_GSWF) XDMAC Channel 15 Software Flush Request Bit Position */
+#define XDMAC_GSWF_SWF15_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF15_Pos)              /* (XDMAC_GSWF) XDMAC Channel 15 Software Flush Request Bit Mask */
+#define XDMAC_GSWF_SWF15(value)               (XDMAC_GSWF_SWF15_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF15_Pos)) /* Assigment of value for SWF15 in the XDMAC_GSWF register */
+#define XDMAC_GSWF_Msk                        _UINT32_(0x0000FFFF)                                 /* (XDMAC_GSWF) Register Mask  */
+
+#define XDMAC_GSWF_SWF_Pos                    _UINT32_(0)                                          /* (XDMAC_GSWF Position) XDMAC Channel x5 Software Flush Request Bit */
+#define XDMAC_GSWF_SWF_Msk                    (_UINT32_(0xFFFF) << XDMAC_GSWF_SWF_Pos)             /* (XDMAC_GSWF Mask) SWF */
+#define XDMAC_GSWF_SWF(value)                 (XDMAC_GSWF_SWF_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF_Pos)) 
 
 /* -------- XDMAC_GSWR : (XDMAC Offset: 0x38) ( /W 32) Global Channel Software Request Register -------- */
 #define XDMAC_GSWR_SWREQ0_Pos                 _UINT32_(0)                                          /* (XDMAC_GSWR) XDMAC Channel 0 Software Request Bit Position */
@@ -1225,93 +1196,122 @@
 #define XDMAC_GSWS_SWRS_Msk                   (_UINT32_(0xFFFF) << XDMAC_GSWS_SWRS_Pos)            /* (XDMAC_GSWS Mask) SWRS */
 #define XDMAC_GSWS_SWRS(value)                (XDMAC_GSWS_SWRS_Msk & (_UINT32_(value) << XDMAC_GSWS_SWRS_Pos)) 
 
-/* -------- XDMAC_GSWF : (XDMAC Offset: 0x40) ( /W 32) Global Channel Software Flush Request Register -------- */
-#define XDMAC_GSWF_SWF0_Pos                   _UINT32_(0)                                          /* (XDMAC_GSWF) XDMAC Channel 0 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF0_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF0_Pos)               /* (XDMAC_GSWF) XDMAC Channel 0 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF0(value)                (XDMAC_GSWF_SWF0_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF0_Pos)) /* Assigment of value for SWF0 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF1_Pos                   _UINT32_(1)                                          /* (XDMAC_GSWF) XDMAC Channel 1 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF1_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF1_Pos)               /* (XDMAC_GSWF) XDMAC Channel 1 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF1(value)                (XDMAC_GSWF_SWF1_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF1_Pos)) /* Assigment of value for SWF1 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF2_Pos                   _UINT32_(2)                                          /* (XDMAC_GSWF) XDMAC Channel 2 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF2_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF2_Pos)               /* (XDMAC_GSWF) XDMAC Channel 2 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF2(value)                (XDMAC_GSWF_SWF2_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF2_Pos)) /* Assigment of value for SWF2 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF3_Pos                   _UINT32_(3)                                          /* (XDMAC_GSWF) XDMAC Channel 3 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF3_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF3_Pos)               /* (XDMAC_GSWF) XDMAC Channel 3 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF3(value)                (XDMAC_GSWF_SWF3_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF3_Pos)) /* Assigment of value for SWF3 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF4_Pos                   _UINT32_(4)                                          /* (XDMAC_GSWF) XDMAC Channel 4 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF4_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF4_Pos)               /* (XDMAC_GSWF) XDMAC Channel 4 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF4(value)                (XDMAC_GSWF_SWF4_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF4_Pos)) /* Assigment of value for SWF4 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF5_Pos                   _UINT32_(5)                                          /* (XDMAC_GSWF) XDMAC Channel 5 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF5_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF5_Pos)               /* (XDMAC_GSWF) XDMAC Channel 5 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF5(value)                (XDMAC_GSWF_SWF5_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF5_Pos)) /* Assigment of value for SWF5 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF6_Pos                   _UINT32_(6)                                          /* (XDMAC_GSWF) XDMAC Channel 6 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF6_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF6_Pos)               /* (XDMAC_GSWF) XDMAC Channel 6 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF6(value)                (XDMAC_GSWF_SWF6_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF6_Pos)) /* Assigment of value for SWF6 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF7_Pos                   _UINT32_(7)                                          /* (XDMAC_GSWF) XDMAC Channel 7 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF7_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF7_Pos)               /* (XDMAC_GSWF) XDMAC Channel 7 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF7(value)                (XDMAC_GSWF_SWF7_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF7_Pos)) /* Assigment of value for SWF7 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF8_Pos                   _UINT32_(8)                                          /* (XDMAC_GSWF) XDMAC Channel 8 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF8_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF8_Pos)               /* (XDMAC_GSWF) XDMAC Channel 8 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF8(value)                (XDMAC_GSWF_SWF8_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF8_Pos)) /* Assigment of value for SWF8 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF9_Pos                   _UINT32_(9)                                          /* (XDMAC_GSWF) XDMAC Channel 9 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF9_Msk                   (_UINT32_(0x1) << XDMAC_GSWF_SWF9_Pos)               /* (XDMAC_GSWF) XDMAC Channel 9 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF9(value)                (XDMAC_GSWF_SWF9_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF9_Pos)) /* Assigment of value for SWF9 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF10_Pos                  _UINT32_(10)                                         /* (XDMAC_GSWF) XDMAC Channel 10 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF10_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF10_Pos)              /* (XDMAC_GSWF) XDMAC Channel 10 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF10(value)               (XDMAC_GSWF_SWF10_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF10_Pos)) /* Assigment of value for SWF10 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF11_Pos                  _UINT32_(11)                                         /* (XDMAC_GSWF) XDMAC Channel 11 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF11_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF11_Pos)              /* (XDMAC_GSWF) XDMAC Channel 11 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF11(value)               (XDMAC_GSWF_SWF11_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF11_Pos)) /* Assigment of value for SWF11 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF12_Pos                  _UINT32_(12)                                         /* (XDMAC_GSWF) XDMAC Channel 12 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF12_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF12_Pos)              /* (XDMAC_GSWF) XDMAC Channel 12 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF12(value)               (XDMAC_GSWF_SWF12_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF12_Pos)) /* Assigment of value for SWF12 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF13_Pos                  _UINT32_(13)                                         /* (XDMAC_GSWF) XDMAC Channel 13 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF13_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF13_Pos)              /* (XDMAC_GSWF) XDMAC Channel 13 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF13(value)               (XDMAC_GSWF_SWF13_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF13_Pos)) /* Assigment of value for SWF13 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF14_Pos                  _UINT32_(14)                                         /* (XDMAC_GSWF) XDMAC Channel 14 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF14_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF14_Pos)              /* (XDMAC_GSWF) XDMAC Channel 14 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF14(value)               (XDMAC_GSWF_SWF14_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF14_Pos)) /* Assigment of value for SWF14 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_SWF15_Pos                  _UINT32_(15)                                         /* (XDMAC_GSWF) XDMAC Channel 15 Software Flush Request Bit Position */
-#define XDMAC_GSWF_SWF15_Msk                  (_UINT32_(0x1) << XDMAC_GSWF_SWF15_Pos)              /* (XDMAC_GSWF) XDMAC Channel 15 Software Flush Request Bit Mask */
-#define XDMAC_GSWF_SWF15(value)               (XDMAC_GSWF_SWF15_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF15_Pos)) /* Assigment of value for SWF15 in the XDMAC_GSWF register */
-#define XDMAC_GSWF_Msk                        _UINT32_(0x0000FFFF)                                 /* (XDMAC_GSWF) Register Mask  */
+/* -------- XDMAC_GTYPE : (XDMAC Offset: 0x00) ( R/ 32) Global Type Register -------- */
+#define XDMAC_GTYPE_NB_CH_Pos                 _UINT32_(0)                                          /* (XDMAC_GTYPE) Number of Channels Minus One Position */
+#define XDMAC_GTYPE_NB_CH_Msk                 (_UINT32_(0x1F) << XDMAC_GTYPE_NB_CH_Pos)            /* (XDMAC_GTYPE) Number of Channels Minus One Mask */
+#define XDMAC_GTYPE_NB_CH(value)              (XDMAC_GTYPE_NB_CH_Msk & (_UINT32_(value) << XDMAC_GTYPE_NB_CH_Pos)) /* Assigment of value for NB_CH in the XDMAC_GTYPE register */
+#define XDMAC_GTYPE_FIFO_SZ_Pos               _UINT32_(5)                                          /* (XDMAC_GTYPE) Number of Bytes Position */
+#define XDMAC_GTYPE_FIFO_SZ_Msk               (_UINT32_(0x7FF) << XDMAC_GTYPE_FIFO_SZ_Pos)         /* (XDMAC_GTYPE) Number of Bytes Mask */
+#define XDMAC_GTYPE_FIFO_SZ(value)            (XDMAC_GTYPE_FIFO_SZ_Msk & (_UINT32_(value) << XDMAC_GTYPE_FIFO_SZ_Pos)) /* Assigment of value for FIFO_SZ in the XDMAC_GTYPE register */
+#define XDMAC_GTYPE_NB_REQ_Pos                _UINT32_(16)                                         /* (XDMAC_GTYPE) Number of Peripheral Requests Minus One Position */
+#define XDMAC_GTYPE_NB_REQ_Msk                (_UINT32_(0x7F) << XDMAC_GTYPE_NB_REQ_Pos)           /* (XDMAC_GTYPE) Number of Peripheral Requests Minus One Mask */
+#define XDMAC_GTYPE_NB_REQ(value)             (XDMAC_GTYPE_NB_REQ_Msk & (_UINT32_(value) << XDMAC_GTYPE_NB_REQ_Pos)) /* Assigment of value for NB_REQ in the XDMAC_GTYPE register */
+#define XDMAC_GTYPE_Msk                       _UINT32_(0x007FFFFF)                                 /* (XDMAC_GTYPE) Register Mask  */
 
-#define XDMAC_GSWF_SWF_Pos                    _UINT32_(0)                                          /* (XDMAC_GSWF Position) XDMAC Channel x5 Software Flush Request Bit */
-#define XDMAC_GSWF_SWF_Msk                    (_UINT32_(0xFFFF) << XDMAC_GSWF_SWF_Pos)             /* (XDMAC_GSWF Mask) SWF */
-#define XDMAC_GSWF_SWF(value)                 (XDMAC_GSWF_SWF_Msk & (_UINT32_(value) << XDMAC_GSWF_SWF_Pos)) 
+
+/* -------- XDMAC_GWAC : (XDMAC Offset: 0x08) (R/W 32) Global Weighted Arbiter Configuration Register -------- */
+#define XDMAC_GWAC_PW0_Pos                    _UINT32_(0)                                          /* (XDMAC_GWAC) Pool Weight 0 Position */
+#define XDMAC_GWAC_PW0_Msk                    (_UINT32_(0xF) << XDMAC_GWAC_PW0_Pos)                /* (XDMAC_GWAC) Pool Weight 0 Mask */
+#define XDMAC_GWAC_PW0(value)                 (XDMAC_GWAC_PW0_Msk & (_UINT32_(value) << XDMAC_GWAC_PW0_Pos)) /* Assigment of value for PW0 in the XDMAC_GWAC register */
+#define XDMAC_GWAC_PW1_Pos                    _UINT32_(4)                                          /* (XDMAC_GWAC) Pool Weight 1 Position */
+#define XDMAC_GWAC_PW1_Msk                    (_UINT32_(0xF) << XDMAC_GWAC_PW1_Pos)                /* (XDMAC_GWAC) Pool Weight 1 Mask */
+#define XDMAC_GWAC_PW1(value)                 (XDMAC_GWAC_PW1_Msk & (_UINT32_(value) << XDMAC_GWAC_PW1_Pos)) /* Assigment of value for PW1 in the XDMAC_GWAC register */
+#define XDMAC_GWAC_PW2_Pos                    _UINT32_(8)                                          /* (XDMAC_GWAC) Pool Weight 2 Position */
+#define XDMAC_GWAC_PW2_Msk                    (_UINT32_(0xF) << XDMAC_GWAC_PW2_Pos)                /* (XDMAC_GWAC) Pool Weight 2 Mask */
+#define XDMAC_GWAC_PW2(value)                 (XDMAC_GWAC_PW2_Msk & (_UINT32_(value) << XDMAC_GWAC_PW2_Pos)) /* Assigment of value for PW2 in the XDMAC_GWAC register */
+#define XDMAC_GWAC_PW3_Pos                    _UINT32_(12)                                         /* (XDMAC_GWAC) Pool Weight 3 Position */
+#define XDMAC_GWAC_PW3_Msk                    (_UINT32_(0xF) << XDMAC_GWAC_PW3_Pos)                /* (XDMAC_GWAC) Pool Weight 3 Mask */
+#define XDMAC_GWAC_PW3(value)                 (XDMAC_GWAC_PW3_Msk & (_UINT32_(value) << XDMAC_GWAC_PW3_Pos)) /* Assigment of value for PW3 in the XDMAC_GWAC register */
+#define XDMAC_GWAC_Msk                        _UINT32_(0x0000FFFF)                                 /* (XDMAC_GWAC) Register Mask  */
+
+
+/* -------- XDMAC_GWS : (XDMAC Offset: 0x2C) (R/W 32) Global Channel Write Suspend Register -------- */
+#define XDMAC_GWS_WS0_Pos                     _UINT32_(0)                                          /* (XDMAC_GWS) XDMAC Channel 0 Write Suspend Bit Position */
+#define XDMAC_GWS_WS0_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS0_Pos)                 /* (XDMAC_GWS) XDMAC Channel 0 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS0(value)                  (XDMAC_GWS_WS0_Msk & (_UINT32_(value) << XDMAC_GWS_WS0_Pos)) /* Assigment of value for WS0 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS1_Pos                     _UINT32_(1)                                          /* (XDMAC_GWS) XDMAC Channel 1 Write Suspend Bit Position */
+#define XDMAC_GWS_WS1_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS1_Pos)                 /* (XDMAC_GWS) XDMAC Channel 1 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS1(value)                  (XDMAC_GWS_WS1_Msk & (_UINT32_(value) << XDMAC_GWS_WS1_Pos)) /* Assigment of value for WS1 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS2_Pos                     _UINT32_(2)                                          /* (XDMAC_GWS) XDMAC Channel 2 Write Suspend Bit Position */
+#define XDMAC_GWS_WS2_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS2_Pos)                 /* (XDMAC_GWS) XDMAC Channel 2 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS2(value)                  (XDMAC_GWS_WS2_Msk & (_UINT32_(value) << XDMAC_GWS_WS2_Pos)) /* Assigment of value for WS2 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS3_Pos                     _UINT32_(3)                                          /* (XDMAC_GWS) XDMAC Channel 3 Write Suspend Bit Position */
+#define XDMAC_GWS_WS3_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS3_Pos)                 /* (XDMAC_GWS) XDMAC Channel 3 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS3(value)                  (XDMAC_GWS_WS3_Msk & (_UINT32_(value) << XDMAC_GWS_WS3_Pos)) /* Assigment of value for WS3 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS4_Pos                     _UINT32_(4)                                          /* (XDMAC_GWS) XDMAC Channel 4 Write Suspend Bit Position */
+#define XDMAC_GWS_WS4_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS4_Pos)                 /* (XDMAC_GWS) XDMAC Channel 4 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS4(value)                  (XDMAC_GWS_WS4_Msk & (_UINT32_(value) << XDMAC_GWS_WS4_Pos)) /* Assigment of value for WS4 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS5_Pos                     _UINT32_(5)                                          /* (XDMAC_GWS) XDMAC Channel 5 Write Suspend Bit Position */
+#define XDMAC_GWS_WS5_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS5_Pos)                 /* (XDMAC_GWS) XDMAC Channel 5 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS5(value)                  (XDMAC_GWS_WS5_Msk & (_UINT32_(value) << XDMAC_GWS_WS5_Pos)) /* Assigment of value for WS5 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS6_Pos                     _UINT32_(6)                                          /* (XDMAC_GWS) XDMAC Channel 6 Write Suspend Bit Position */
+#define XDMAC_GWS_WS6_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS6_Pos)                 /* (XDMAC_GWS) XDMAC Channel 6 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS6(value)                  (XDMAC_GWS_WS6_Msk & (_UINT32_(value) << XDMAC_GWS_WS6_Pos)) /* Assigment of value for WS6 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS7_Pos                     _UINT32_(7)                                          /* (XDMAC_GWS) XDMAC Channel 7 Write Suspend Bit Position */
+#define XDMAC_GWS_WS7_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS7_Pos)                 /* (XDMAC_GWS) XDMAC Channel 7 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS7(value)                  (XDMAC_GWS_WS7_Msk & (_UINT32_(value) << XDMAC_GWS_WS7_Pos)) /* Assigment of value for WS7 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS8_Pos                     _UINT32_(8)                                          /* (XDMAC_GWS) XDMAC Channel 8 Write Suspend Bit Position */
+#define XDMAC_GWS_WS8_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS8_Pos)                 /* (XDMAC_GWS) XDMAC Channel 8 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS8(value)                  (XDMAC_GWS_WS8_Msk & (_UINT32_(value) << XDMAC_GWS_WS8_Pos)) /* Assigment of value for WS8 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS9_Pos                     _UINT32_(9)                                          /* (XDMAC_GWS) XDMAC Channel 9 Write Suspend Bit Position */
+#define XDMAC_GWS_WS9_Msk                     (_UINT32_(0x1) << XDMAC_GWS_WS9_Pos)                 /* (XDMAC_GWS) XDMAC Channel 9 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS9(value)                  (XDMAC_GWS_WS9_Msk & (_UINT32_(value) << XDMAC_GWS_WS9_Pos)) /* Assigment of value for WS9 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS10_Pos                    _UINT32_(10)                                         /* (XDMAC_GWS) XDMAC Channel 10 Write Suspend Bit Position */
+#define XDMAC_GWS_WS10_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS10_Pos)                /* (XDMAC_GWS) XDMAC Channel 10 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS10(value)                 (XDMAC_GWS_WS10_Msk & (_UINT32_(value) << XDMAC_GWS_WS10_Pos)) /* Assigment of value for WS10 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS11_Pos                    _UINT32_(11)                                         /* (XDMAC_GWS) XDMAC Channel 11 Write Suspend Bit Position */
+#define XDMAC_GWS_WS11_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS11_Pos)                /* (XDMAC_GWS) XDMAC Channel 11 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS11(value)                 (XDMAC_GWS_WS11_Msk & (_UINT32_(value) << XDMAC_GWS_WS11_Pos)) /* Assigment of value for WS11 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS12_Pos                    _UINT32_(12)                                         /* (XDMAC_GWS) XDMAC Channel 12 Write Suspend Bit Position */
+#define XDMAC_GWS_WS12_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS12_Pos)                /* (XDMAC_GWS) XDMAC Channel 12 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS12(value)                 (XDMAC_GWS_WS12_Msk & (_UINT32_(value) << XDMAC_GWS_WS12_Pos)) /* Assigment of value for WS12 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS13_Pos                    _UINT32_(13)                                         /* (XDMAC_GWS) XDMAC Channel 13 Write Suspend Bit Position */
+#define XDMAC_GWS_WS13_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS13_Pos)                /* (XDMAC_GWS) XDMAC Channel 13 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS13(value)                 (XDMAC_GWS_WS13_Msk & (_UINT32_(value) << XDMAC_GWS_WS13_Pos)) /* Assigment of value for WS13 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS14_Pos                    _UINT32_(14)                                         /* (XDMAC_GWS) XDMAC Channel 14 Write Suspend Bit Position */
+#define XDMAC_GWS_WS14_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS14_Pos)                /* (XDMAC_GWS) XDMAC Channel 14 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS14(value)                 (XDMAC_GWS_WS14_Msk & (_UINT32_(value) << XDMAC_GWS_WS14_Pos)) /* Assigment of value for WS14 in the XDMAC_GWS register */
+#define XDMAC_GWS_WS15_Pos                    _UINT32_(15)                                         /* (XDMAC_GWS) XDMAC Channel 15 Write Suspend Bit Position */
+#define XDMAC_GWS_WS15_Msk                    (_UINT32_(0x1) << XDMAC_GWS_WS15_Pos)                /* (XDMAC_GWS) XDMAC Channel 15 Write Suspend Bit Mask */
+#define XDMAC_GWS_WS15(value)                 (XDMAC_GWS_WS15_Msk & (_UINT32_(value) << XDMAC_GWS_WS15_Pos)) /* Assigment of value for WS15 in the XDMAC_GWS register */
+#define XDMAC_GWS_Msk                         _UINT32_(0x0000FFFF)                                 /* (XDMAC_GWS) Register Mask  */
+
+#define XDMAC_GWS_WS_Pos                      _UINT32_(0)                                          /* (XDMAC_GWS Position) XDMAC Channel x5 Write Suspend Bit */
+#define XDMAC_GWS_WS_Msk                      (_UINT32_(0xFFFF) << XDMAC_GWS_WS_Pos)               /* (XDMAC_GWS Mask) WS */
+#define XDMAC_GWS_WS(value)                   (XDMAC_GWS_WS_Msk & (_UINT32_(value) << XDMAC_GWS_WS_Pos)) 
 
 /** \brief XDMAC register offsets definitions */
-#define XDMAC_CIE_REG_OFST             _UINT32_(0x00)      /* (XDMAC_CIE) Channel Interrupt Enable Register Offset */
-#define XDMAC_CID_REG_OFST             _UINT32_(0x04)      /* (XDMAC_CID) Channel Interrupt Disable Register Offset */
-#define XDMAC_CIM_REG_OFST             _UINT32_(0x08)      /* (XDMAC_CIM) Channel Interrupt Mask Register Offset */
-#define XDMAC_CIS_REG_OFST             _UINT32_(0x0C)      /* (XDMAC_CIS) Channel Interrupt Status Register Offset */
-#define XDMAC_CSA_REG_OFST             _UINT32_(0x10)      /* (XDMAC_CSA) Channel Source Address Register Offset */
-#define XDMAC_CDA_REG_OFST             _UINT32_(0x14)      /* (XDMAC_CDA) Channel Destination Address Register Offset */
-#define XDMAC_CNDA_REG_OFST            _UINT32_(0x18)      /* (XDMAC_CNDA) Channel Next Descriptor Address Register Offset */
-#define XDMAC_CNDC_REG_OFST            _UINT32_(0x1C)      /* (XDMAC_CNDC) Channel Next Descriptor Control Register Offset */
-#define XDMAC_CUBC_REG_OFST            _UINT32_(0x20)      /* (XDMAC_CUBC) Channel Microblock Control Register Offset */
 #define XDMAC_CBC_REG_OFST             _UINT32_(0x24)      /* (XDMAC_CBC) Channel Block Control Register Offset */
 #define XDMAC_CC_REG_OFST              _UINT32_(0x28)      /* (XDMAC_CC) Channel Configuration Register Offset */
+#define XDMAC_CDA_REG_OFST             _UINT32_(0x14)      /* (XDMAC_CDA) Channel Destination Address Register Offset */
 #define XDMAC_CDS_MSP_REG_OFST         _UINT32_(0x2C)      /* (XDMAC_CDS_MSP) Channel Data Stride Memory Set Pattern Offset */
-#define XDMAC_CSUS_REG_OFST            _UINT32_(0x30)      /* (XDMAC_CSUS) Channel Source Microblock Stride Offset */
 #define XDMAC_CDUS_REG_OFST            _UINT32_(0x34)      /* (XDMAC_CDUS) Channel Destination Microblock Stride Offset */
-#define XDMAC_GTYPE_REG_OFST           _UINT32_(0x00)      /* (XDMAC_GTYPE) Global Type Register Offset */
+#define XDMAC_CID_REG_OFST             _UINT32_(0x04)      /* (XDMAC_CID) Channel Interrupt Disable Register Offset */
+#define XDMAC_CIE_REG_OFST             _UINT32_(0x00)      /* (XDMAC_CIE) Channel Interrupt Enable Register Offset */
+#define XDMAC_CIM_REG_OFST             _UINT32_(0x08)      /* (XDMAC_CIM) Channel Interrupt Mask Register Offset */
+#define XDMAC_CIS_REG_OFST             _UINT32_(0x0C)      /* (XDMAC_CIS) Channel Interrupt Status Register Offset */
+#define XDMAC_CNDA_REG_OFST            _UINT32_(0x18)      /* (XDMAC_CNDA) Channel Next Descriptor Address Register Offset */
+#define XDMAC_CNDC_REG_OFST            _UINT32_(0x1C)      /* (XDMAC_CNDC) Channel Next Descriptor Control Register Offset */
+#define XDMAC_CSA_REG_OFST             _UINT32_(0x10)      /* (XDMAC_CSA) Channel Source Address Register Offset */
+#define XDMAC_CSUS_REG_OFST            _UINT32_(0x30)      /* (XDMAC_CSUS) Channel Source Microblock Stride Offset */
+#define XDMAC_CUBC_REG_OFST            _UINT32_(0x20)      /* (XDMAC_CUBC) Channel Microblock Control Register Offset */
 #define XDMAC_GCFG_REG_OFST            _UINT32_(0x04)      /* (XDMAC_GCFG) Global Configuration Register Offset */
-#define XDMAC_GWAC_REG_OFST            _UINT32_(0x08)      /* (XDMAC_GWAC) Global Weighted Arbiter Configuration Register Offset */
-#define XDMAC_GIE_REG_OFST             _UINT32_(0x0C)      /* (XDMAC_GIE) Global Interrupt Enable Register Offset */
+#define XDMAC_GD_REG_OFST              _UINT32_(0x20)      /* (XDMAC_GD) Global Channel Disable Register Offset */
+#define XDMAC_GE_REG_OFST              _UINT32_(0x1C)      /* (XDMAC_GE) Global Channel Enable Register Offset */
 #define XDMAC_GID_REG_OFST             _UINT32_(0x10)      /* (XDMAC_GID) Global Interrupt Disable Register Offset */
+#define XDMAC_GIE_REG_OFST             _UINT32_(0x0C)      /* (XDMAC_GIE) Global Interrupt Enable Register Offset */
 #define XDMAC_GIM_REG_OFST             _UINT32_(0x14)      /* (XDMAC_GIM) Global Interrupt Mask Register Offset */
 #define XDMAC_GIS_REG_OFST             _UINT32_(0x18)      /* (XDMAC_GIS) Global Interrupt Status Register Offset */
-#define XDMAC_GE_REG_OFST              _UINT32_(0x1C)      /* (XDMAC_GE) Global Channel Enable Register Offset */
-#define XDMAC_GD_REG_OFST              _UINT32_(0x20)      /* (XDMAC_GD) Global Channel Disable Register Offset */
-#define XDMAC_GS_REG_OFST              _UINT32_(0x24)      /* (XDMAC_GS) Global Channel Status Register Offset */
 #define XDMAC_GRS_REG_OFST             _UINT32_(0x28)      /* (XDMAC_GRS) Global Channel Read Suspend Register Offset */
-#define XDMAC_GWS_REG_OFST             _UINT32_(0x2C)      /* (XDMAC_GWS) Global Channel Write Suspend Register Offset */
-#define XDMAC_GRWS_REG_OFST            _UINT32_(0x30)      /* (XDMAC_GRWS) Global Channel Read Write Suspend Register Offset */
 #define XDMAC_GRWR_REG_OFST            _UINT32_(0x34)      /* (XDMAC_GRWR) Global Channel Read Write Resume Register Offset */
+#define XDMAC_GRWS_REG_OFST            _UINT32_(0x30)      /* (XDMAC_GRWS) Global Channel Read Write Suspend Register Offset */
+#define XDMAC_GS_REG_OFST              _UINT32_(0x24)      /* (XDMAC_GS) Global Channel Status Register Offset */
+#define XDMAC_GSWF_REG_OFST            _UINT32_(0x40)      /* (XDMAC_GSWF) Global Channel Software Flush Request Register Offset */
 #define XDMAC_GSWR_REG_OFST            _UINT32_(0x38)      /* (XDMAC_GSWR) Global Channel Software Request Register Offset */
 #define XDMAC_GSWS_REG_OFST            _UINT32_(0x3C)      /* (XDMAC_GSWS) Global Channel Software Request Status Register Offset */
-#define XDMAC_GSWF_REG_OFST            _UINT32_(0x40)      /* (XDMAC_GSWF) Global Channel Software Flush Request Register Offset */
+#define XDMAC_GTYPE_REG_OFST           _UINT32_(0x00)      /* (XDMAC_GTYPE) Global Type Register Offset */
+#define XDMAC_GWAC_REG_OFST            _UINT32_(0x08)      /* (XDMAC_GWAC) Global Weighted Arbiter Configuration Register Offset */
+#define XDMAC_GWS_REG_OFST             _UINT32_(0x2C)      /* (XDMAC_GWS) Global Channel Write Suspend Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief XDMAC_CHID register API structure */

@@ -28,6 +28,28 @@
 /*   SOFTWARE API DEFINITION FOR TWIHS                                        */
 /* ************************************************************************** */
 
+/* -------- TWIHS_ACR : (TWIHS Offset: 0x40) (R/W 32) Alternative Command Register -------- */
+#define TWIHS_ACR_DATAL_Pos                   _UINT32_(0)                                          /* (TWIHS_ACR) Data Length Position */
+#define TWIHS_ACR_DATAL_Msk                   (_UINT32_(0xFF) << TWIHS_ACR_DATAL_Pos)              /* (TWIHS_ACR) Data Length Mask */
+#define TWIHS_ACR_DATAL(value)                (TWIHS_ACR_DATAL_Msk & (_UINT32_(value) << TWIHS_ACR_DATAL_Pos)) /* Assigment of value for DATAL in the TWIHS_ACR register */
+#define TWIHS_ACR_DIR_Pos                     _UINT32_(8)                                          /* (TWIHS_ACR) Transfer Direction Position */
+#define TWIHS_ACR_DIR_Msk                     (_UINT32_(0x1) << TWIHS_ACR_DIR_Pos)                 /* (TWIHS_ACR) Transfer Direction Mask */
+#define TWIHS_ACR_DIR(value)                  (TWIHS_ACR_DIR_Msk & (_UINT32_(value) << TWIHS_ACR_DIR_Pos)) /* Assigment of value for DIR in the TWIHS_ACR register */
+#define TWIHS_ACR_PEC_Pos                     _UINT32_(9)                                          /* (TWIHS_ACR) PEC Request (SMBus Mode only) Position */
+#define TWIHS_ACR_PEC_Msk                     (_UINT32_(0x1) << TWIHS_ACR_PEC_Pos)                 /* (TWIHS_ACR) PEC Request (SMBus Mode only) Mask */
+#define TWIHS_ACR_PEC(value)                  (TWIHS_ACR_PEC_Msk & (_UINT32_(value) << TWIHS_ACR_PEC_Pos)) /* Assigment of value for PEC in the TWIHS_ACR register */
+#define TWIHS_ACR_NDATAL_Pos                  _UINT32_(16)                                         /* (TWIHS_ACR) Next Data Length Position */
+#define TWIHS_ACR_NDATAL_Msk                  (_UINT32_(0xFF) << TWIHS_ACR_NDATAL_Pos)             /* (TWIHS_ACR) Next Data Length Mask */
+#define TWIHS_ACR_NDATAL(value)               (TWIHS_ACR_NDATAL_Msk & (_UINT32_(value) << TWIHS_ACR_NDATAL_Pos)) /* Assigment of value for NDATAL in the TWIHS_ACR register */
+#define TWIHS_ACR_NDIR_Pos                    _UINT32_(24)                                         /* (TWIHS_ACR) Next Transfer Direction Position */
+#define TWIHS_ACR_NDIR_Msk                    (_UINT32_(0x1) << TWIHS_ACR_NDIR_Pos)                /* (TWIHS_ACR) Next Transfer Direction Mask */
+#define TWIHS_ACR_NDIR(value)                 (TWIHS_ACR_NDIR_Msk & (_UINT32_(value) << TWIHS_ACR_NDIR_Pos)) /* Assigment of value for NDIR in the TWIHS_ACR register */
+#define TWIHS_ACR_NPEC_Pos                    _UINT32_(25)                                         /* (TWIHS_ACR) Next PEC Request (SMBus Mode only) Position */
+#define TWIHS_ACR_NPEC_Msk                    (_UINT32_(0x1) << TWIHS_ACR_NPEC_Pos)                /* (TWIHS_ACR) Next PEC Request (SMBus Mode only) Mask */
+#define TWIHS_ACR_NPEC(value)                 (TWIHS_ACR_NPEC_Msk & (_UINT32_(value) << TWIHS_ACR_NPEC_Pos)) /* Assigment of value for NPEC in the TWIHS_ACR register */
+#define TWIHS_ACR_Msk                         _UINT32_(0x03FF03FF)                                 /* (TWIHS_ACR) Register Mask  */
+
+
 /* -------- TWIHS_CR : (TWIHS Offset: 0x00) ( /W 32) Control Register -------- */
 #define TWIHS_CR_START_Pos                    _UINT32_(0)                                          /* (TWIHS_CR) Send a START Condition Position */
 #define TWIHS_CR_START_Msk                    (_UINT32_(0x1) << TWIHS_CR_START_Pos)                /* (TWIHS_CR) Send a START Condition Mask */
@@ -170,6 +192,374 @@
 #define TWIHS_CR_FIFO_ENABLED_Msk             _UINT32_(0x3703FFFF)                                  /* (TWIHS_CR_FIFO_ENABLED) Register Mask  */
 
 
+/* -------- TWIHS_CWGR : (TWIHS Offset: 0x10) (R/W 32) Clock Waveform Generator Register -------- */
+#define TWIHS_CWGR_CLDIV_Pos                  _UINT32_(0)                                          /* (TWIHS_CWGR) Clock Low Divider Position */
+#define TWIHS_CWGR_CLDIV_Msk                  (_UINT32_(0xFF) << TWIHS_CWGR_CLDIV_Pos)             /* (TWIHS_CWGR) Clock Low Divider Mask */
+#define TWIHS_CWGR_CLDIV(value)               (TWIHS_CWGR_CLDIV_Msk & (_UINT32_(value) << TWIHS_CWGR_CLDIV_Pos)) /* Assigment of value for CLDIV in the TWIHS_CWGR register */
+#define TWIHS_CWGR_CHDIV_Pos                  _UINT32_(8)                                          /* (TWIHS_CWGR) Clock High Divider Position */
+#define TWIHS_CWGR_CHDIV_Msk                  (_UINT32_(0xFF) << TWIHS_CWGR_CHDIV_Pos)             /* (TWIHS_CWGR) Clock High Divider Mask */
+#define TWIHS_CWGR_CHDIV(value)               (TWIHS_CWGR_CHDIV_Msk & (_UINT32_(value) << TWIHS_CWGR_CHDIV_Pos)) /* Assigment of value for CHDIV in the TWIHS_CWGR register */
+#define TWIHS_CWGR_CKDIV_Pos                  _UINT32_(16)                                         /* (TWIHS_CWGR) Clock Divider Position */
+#define TWIHS_CWGR_CKDIV_Msk                  (_UINT32_(0x7) << TWIHS_CWGR_CKDIV_Pos)              /* (TWIHS_CWGR) Clock Divider Mask */
+#define TWIHS_CWGR_CKDIV(value)               (TWIHS_CWGR_CKDIV_Msk & (_UINT32_(value) << TWIHS_CWGR_CKDIV_Pos)) /* Assigment of value for CKDIV in the TWIHS_CWGR register */
+#define TWIHS_CWGR_CKSRC_Pos                  _UINT32_(20)                                         /* (TWIHS_CWGR) Transfer Rate Clock Source Position */
+#define TWIHS_CWGR_CKSRC_Msk                  (_UINT32_(0x1) << TWIHS_CWGR_CKSRC_Pos)              /* (TWIHS_CWGR) Transfer Rate Clock Source Mask */
+#define TWIHS_CWGR_CKSRC(value)               (TWIHS_CWGR_CKSRC_Msk & (_UINT32_(value) << TWIHS_CWGR_CKSRC_Pos)) /* Assigment of value for CKSRC in the TWIHS_CWGR register */
+#define   TWIHS_CWGR_CKSRC_PERIPH_CK_Val      _UINT32_(0x0)                                        /* (TWIHS_CWGR) Peripheral clock is used to generate the TWIHS baud rate.  */
+#define   TWIHS_CWGR_CKSRC_GCLK_Val           _UINT32_(0x1)                                        /* (TWIHS_CWGR) GCLK is used to generate the TWIHS baud rate.  */
+#define TWIHS_CWGR_CKSRC_PERIPH_CK            (TWIHS_CWGR_CKSRC_PERIPH_CK_Val << TWIHS_CWGR_CKSRC_Pos) /* (TWIHS_CWGR) Peripheral clock is used to generate the TWIHS baud rate. Position  */
+#define TWIHS_CWGR_CKSRC_GCLK                 (TWIHS_CWGR_CKSRC_GCLK_Val << TWIHS_CWGR_CKSRC_Pos)  /* (TWIHS_CWGR) GCLK is used to generate the TWIHS baud rate. Position  */
+#define TWIHS_CWGR_HOLD_Pos                   _UINT32_(24)                                         /* (TWIHS_CWGR) TWD Hold Time Versus TWCK Falling Position */
+#define TWIHS_CWGR_HOLD_Msk                   (_UINT32_(0x1F) << TWIHS_CWGR_HOLD_Pos)              /* (TWIHS_CWGR) TWD Hold Time Versus TWCK Falling Mask */
+#define TWIHS_CWGR_HOLD(value)                (TWIHS_CWGR_HOLD_Msk & (_UINT32_(value) << TWIHS_CWGR_HOLD_Pos)) /* Assigment of value for HOLD in the TWIHS_CWGR register */
+#define TWIHS_CWGR_Msk                        _UINT32_(0x1F17FFFF)                                 /* (TWIHS_CWGR) Register Mask  */
+
+
+/* -------- TWIHS_DR : (TWIHS Offset: 0xD0) ( R/ 32) Debug Register -------- */
+#define TWIHS_DR_SWEN_Pos                     _UINT32_(0)                                          /* (TWIHS_DR) SleepWalking Enable Position */
+#define TWIHS_DR_SWEN_Msk                     (_UINT32_(0x1) << TWIHS_DR_SWEN_Pos)                 /* (TWIHS_DR) SleepWalking Enable Mask */
+#define TWIHS_DR_SWEN(value)                  (TWIHS_DR_SWEN_Msk & (_UINT32_(value) << TWIHS_DR_SWEN_Pos)) /* Assigment of value for SWEN in the TWIHS_DR register */
+#define TWIHS_DR_CLKRQ_Pos                    _UINT32_(1)                                          /* (TWIHS_DR) Clock Request Position */
+#define TWIHS_DR_CLKRQ_Msk                    (_UINT32_(0x1) << TWIHS_DR_CLKRQ_Pos)                /* (TWIHS_DR) Clock Request Mask */
+#define TWIHS_DR_CLKRQ(value)                 (TWIHS_DR_CLKRQ_Msk & (_UINT32_(value) << TWIHS_DR_CLKRQ_Pos)) /* Assigment of value for CLKRQ in the TWIHS_DR register */
+#define TWIHS_DR_SWMATCH_Pos                  _UINT32_(2)                                          /* (TWIHS_DR) SleepWalking Match Position */
+#define TWIHS_DR_SWMATCH_Msk                  (_UINT32_(0x1) << TWIHS_DR_SWMATCH_Pos)              /* (TWIHS_DR) SleepWalking Match Mask */
+#define TWIHS_DR_SWMATCH(value)               (TWIHS_DR_SWMATCH_Msk & (_UINT32_(value) << TWIHS_DR_SWMATCH_Pos)) /* Assigment of value for SWMATCH in the TWIHS_DR register */
+#define TWIHS_DR_TRP_Pos                      _UINT32_(3)                                          /* (TWIHS_DR) Transfer Pending Position */
+#define TWIHS_DR_TRP_Msk                      (_UINT32_(0x1) << TWIHS_DR_TRP_Pos)                  /* (TWIHS_DR) Transfer Pending Mask */
+#define TWIHS_DR_TRP(value)                   (TWIHS_DR_TRP_Msk & (_UINT32_(value) << TWIHS_DR_TRP_Pos)) /* Assigment of value for TRP in the TWIHS_DR register */
+#define TWIHS_DR_Msk                          _UINT32_(0x0000000F)                                 /* (TWIHS_DR) Register Mask  */
+
+
+/* -------- TWIHS_FIDR : (TWIHS Offset: 0x68) ( /W 32) FIFO Interrupt Disable Register -------- */
+#define TWIHS_FIDR_TXFEF_Pos                  _UINT32_(0)                                          /* (TWIHS_FIDR) TXFEF Interrupt Disable Position */
+#define TWIHS_FIDR_TXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIDR_TXFEF_Pos)              /* (TWIHS_FIDR) TXFEF Interrupt Disable Mask */
+#define TWIHS_FIDR_TXFEF(value)               (TWIHS_FIDR_TXFEF_Msk & (_UINT32_(value) << TWIHS_FIDR_TXFEF_Pos)) /* Assigment of value for TXFEF in the TWIHS_FIDR register */
+#define TWIHS_FIDR_TXFFF_Pos                  _UINT32_(1)                                          /* (TWIHS_FIDR) TXFFF Interrupt Disable Position */
+#define TWIHS_FIDR_TXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIDR_TXFFF_Pos)              /* (TWIHS_FIDR) TXFFF Interrupt Disable Mask */
+#define TWIHS_FIDR_TXFFF(value)               (TWIHS_FIDR_TXFFF_Msk & (_UINT32_(value) << TWIHS_FIDR_TXFFF_Pos)) /* Assigment of value for TXFFF in the TWIHS_FIDR register */
+#define TWIHS_FIDR_TXFTHF_Pos                 _UINT32_(2)                                          /* (TWIHS_FIDR) TXFTHF Interrupt Disable Position */
+#define TWIHS_FIDR_TXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIDR_TXFTHF_Pos)             /* (TWIHS_FIDR) TXFTHF Interrupt Disable Mask */
+#define TWIHS_FIDR_TXFTHF(value)              (TWIHS_FIDR_TXFTHF_Msk & (_UINT32_(value) << TWIHS_FIDR_TXFTHF_Pos)) /* Assigment of value for TXFTHF in the TWIHS_FIDR register */
+#define TWIHS_FIDR_RXFEF_Pos                  _UINT32_(3)                                          /* (TWIHS_FIDR) RXFEF Interrupt Disable Position */
+#define TWIHS_FIDR_RXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIDR_RXFEF_Pos)              /* (TWIHS_FIDR) RXFEF Interrupt Disable Mask */
+#define TWIHS_FIDR_RXFEF(value)               (TWIHS_FIDR_RXFEF_Msk & (_UINT32_(value) << TWIHS_FIDR_RXFEF_Pos)) /* Assigment of value for RXFEF in the TWIHS_FIDR register */
+#define TWIHS_FIDR_RXFFF_Pos                  _UINT32_(4)                                          /* (TWIHS_FIDR) RXFFF Interrupt Disable Position */
+#define TWIHS_FIDR_RXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIDR_RXFFF_Pos)              /* (TWIHS_FIDR) RXFFF Interrupt Disable Mask */
+#define TWIHS_FIDR_RXFFF(value)               (TWIHS_FIDR_RXFFF_Msk & (_UINT32_(value) << TWIHS_FIDR_RXFFF_Pos)) /* Assigment of value for RXFFF in the TWIHS_FIDR register */
+#define TWIHS_FIDR_RXFTHF_Pos                 _UINT32_(5)                                          /* (TWIHS_FIDR) RXFTHF Interrupt Disable Position */
+#define TWIHS_FIDR_RXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIDR_RXFTHF_Pos)             /* (TWIHS_FIDR) RXFTHF Interrupt Disable Mask */
+#define TWIHS_FIDR_RXFTHF(value)              (TWIHS_FIDR_RXFTHF_Msk & (_UINT32_(value) << TWIHS_FIDR_RXFTHF_Pos)) /* Assigment of value for RXFTHF in the TWIHS_FIDR register */
+#define TWIHS_FIDR_TXFPTEF_Pos                _UINT32_(6)                                          /* (TWIHS_FIDR) TXFPTEF Interrupt Disable Position */
+#define TWIHS_FIDR_TXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIDR_TXFPTEF_Pos)            /* (TWIHS_FIDR) TXFPTEF Interrupt Disable Mask */
+#define TWIHS_FIDR_TXFPTEF(value)             (TWIHS_FIDR_TXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIDR_TXFPTEF_Pos)) /* Assigment of value for TXFPTEF in the TWIHS_FIDR register */
+#define TWIHS_FIDR_RXFPTEF_Pos                _UINT32_(7)                                          /* (TWIHS_FIDR) RXFPTEF Interrupt Disable Position */
+#define TWIHS_FIDR_RXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIDR_RXFPTEF_Pos)            /* (TWIHS_FIDR) RXFPTEF Interrupt Disable Mask */
+#define TWIHS_FIDR_RXFPTEF(value)             (TWIHS_FIDR_RXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIDR_RXFPTEF_Pos)) /* Assigment of value for RXFPTEF in the TWIHS_FIDR register */
+#define TWIHS_FIDR_Msk                        _UINT32_(0x000000FF)                                 /* (TWIHS_FIDR) Register Mask  */
+
+
+/* -------- TWIHS_FIER : (TWIHS Offset: 0x64) ( /W 32) FIFO Interrupt Enable Register -------- */
+#define TWIHS_FIER_TXFEF_Pos                  _UINT32_(0)                                          /* (TWIHS_FIER) TXFEF Interrupt Enable Position */
+#define TWIHS_FIER_TXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIER_TXFEF_Pos)              /* (TWIHS_FIER) TXFEF Interrupt Enable Mask */
+#define TWIHS_FIER_TXFEF(value)               (TWIHS_FIER_TXFEF_Msk & (_UINT32_(value) << TWIHS_FIER_TXFEF_Pos)) /* Assigment of value for TXFEF in the TWIHS_FIER register */
+#define TWIHS_FIER_TXFFF_Pos                  _UINT32_(1)                                          /* (TWIHS_FIER) TXFFF Interrupt Enable Position */
+#define TWIHS_FIER_TXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIER_TXFFF_Pos)              /* (TWIHS_FIER) TXFFF Interrupt Enable Mask */
+#define TWIHS_FIER_TXFFF(value)               (TWIHS_FIER_TXFFF_Msk & (_UINT32_(value) << TWIHS_FIER_TXFFF_Pos)) /* Assigment of value for TXFFF in the TWIHS_FIER register */
+#define TWIHS_FIER_TXFTHF_Pos                 _UINT32_(2)                                          /* (TWIHS_FIER) TXFTHF Interrupt Enable Position */
+#define TWIHS_FIER_TXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIER_TXFTHF_Pos)             /* (TWIHS_FIER) TXFTHF Interrupt Enable Mask */
+#define TWIHS_FIER_TXFTHF(value)              (TWIHS_FIER_TXFTHF_Msk & (_UINT32_(value) << TWIHS_FIER_TXFTHF_Pos)) /* Assigment of value for TXFTHF in the TWIHS_FIER register */
+#define TWIHS_FIER_RXFEF_Pos                  _UINT32_(3)                                          /* (TWIHS_FIER) RXFEF Interrupt Enable Position */
+#define TWIHS_FIER_RXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIER_RXFEF_Pos)              /* (TWIHS_FIER) RXFEF Interrupt Enable Mask */
+#define TWIHS_FIER_RXFEF(value)               (TWIHS_FIER_RXFEF_Msk & (_UINT32_(value) << TWIHS_FIER_RXFEF_Pos)) /* Assigment of value for RXFEF in the TWIHS_FIER register */
+#define TWIHS_FIER_RXFFF_Pos                  _UINT32_(4)                                          /* (TWIHS_FIER) RXFFF Interrupt Enable Position */
+#define TWIHS_FIER_RXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIER_RXFFF_Pos)              /* (TWIHS_FIER) RXFFF Interrupt Enable Mask */
+#define TWIHS_FIER_RXFFF(value)               (TWIHS_FIER_RXFFF_Msk & (_UINT32_(value) << TWIHS_FIER_RXFFF_Pos)) /* Assigment of value for RXFFF in the TWIHS_FIER register */
+#define TWIHS_FIER_RXFTHF_Pos                 _UINT32_(5)                                          /* (TWIHS_FIER) RXFTHF Interrupt Enable Position */
+#define TWIHS_FIER_RXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIER_RXFTHF_Pos)             /* (TWIHS_FIER) RXFTHF Interrupt Enable Mask */
+#define TWIHS_FIER_RXFTHF(value)              (TWIHS_FIER_RXFTHF_Msk & (_UINT32_(value) << TWIHS_FIER_RXFTHF_Pos)) /* Assigment of value for RXFTHF in the TWIHS_FIER register */
+#define TWIHS_FIER_TXFPTEF_Pos                _UINT32_(6)                                          /* (TWIHS_FIER) TXFPTEF Interrupt Enable Position */
+#define TWIHS_FIER_TXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIER_TXFPTEF_Pos)            /* (TWIHS_FIER) TXFPTEF Interrupt Enable Mask */
+#define TWIHS_FIER_TXFPTEF(value)             (TWIHS_FIER_TXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIER_TXFPTEF_Pos)) /* Assigment of value for TXFPTEF in the TWIHS_FIER register */
+#define TWIHS_FIER_RXFPTEF_Pos                _UINT32_(7)                                          /* (TWIHS_FIER) RXFPTEF Interrupt Enable Position */
+#define TWIHS_FIER_RXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIER_RXFPTEF_Pos)            /* (TWIHS_FIER) RXFPTEF Interrupt Enable Mask */
+#define TWIHS_FIER_RXFPTEF(value)             (TWIHS_FIER_RXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIER_RXFPTEF_Pos)) /* Assigment of value for RXFPTEF in the TWIHS_FIER register */
+#define TWIHS_FIER_Msk                        _UINT32_(0x000000FF)                                 /* (TWIHS_FIER) Register Mask  */
+
+
+/* -------- TWIHS_FILTR : (TWIHS Offset: 0x44) (R/W 32) Filter Register -------- */
+#define TWIHS_FILTR_FILT_Pos                  _UINT32_(0)                                          /* (TWIHS_FILTR) RX Digital Filter Position */
+#define TWIHS_FILTR_FILT_Msk                  (_UINT32_(0x1) << TWIHS_FILTR_FILT_Pos)              /* (TWIHS_FILTR) RX Digital Filter Mask */
+#define TWIHS_FILTR_FILT(value)               (TWIHS_FILTR_FILT_Msk & (_UINT32_(value) << TWIHS_FILTR_FILT_Pos)) /* Assigment of value for FILT in the TWIHS_FILTR register */
+#define TWIHS_FILTR_PADFEN_Pos                _UINT32_(1)                                          /* (TWIHS_FILTR) PAD Filter Enable Position */
+#define TWIHS_FILTR_PADFEN_Msk                (_UINT32_(0x1) << TWIHS_FILTR_PADFEN_Pos)            /* (TWIHS_FILTR) PAD Filter Enable Mask */
+#define TWIHS_FILTR_PADFEN(value)             (TWIHS_FILTR_PADFEN_Msk & (_UINT32_(value) << TWIHS_FILTR_PADFEN_Pos)) /* Assigment of value for PADFEN in the TWIHS_FILTR register */
+#define TWIHS_FILTR_PADFCFG_Pos               _UINT32_(2)                                          /* (TWIHS_FILTR) PAD Filter Config Position */
+#define TWIHS_FILTR_PADFCFG_Msk               (_UINT32_(0x1) << TWIHS_FILTR_PADFCFG_Pos)           /* (TWIHS_FILTR) PAD Filter Config Mask */
+#define TWIHS_FILTR_PADFCFG(value)            (TWIHS_FILTR_PADFCFG_Msk & (_UINT32_(value) << TWIHS_FILTR_PADFCFG_Pos)) /* Assigment of value for PADFCFG in the TWIHS_FILTR register */
+#define TWIHS_FILTR_THRES_Pos                 _UINT32_(8)                                          /* (TWIHS_FILTR) Digital Filter Threshold Position */
+#define TWIHS_FILTR_THRES_Msk                 (_UINT32_(0x7) << TWIHS_FILTR_THRES_Pos)             /* (TWIHS_FILTR) Digital Filter Threshold Mask */
+#define TWIHS_FILTR_THRES(value)              (TWIHS_FILTR_THRES_Msk & (_UINT32_(value) << TWIHS_FILTR_THRES_Pos)) /* Assigment of value for THRES in the TWIHS_FILTR register */
+#define TWIHS_FILTR_Msk                       _UINT32_(0x00000707)                                 /* (TWIHS_FILTR) Register Mask  */
+
+
+/* -------- TWIHS_FIMR : (TWIHS Offset: 0x6C) ( R/ 32) FIFO Interrupt Mask Register -------- */
+#define TWIHS_FIMR_TXFEF_Pos                  _UINT32_(0)                                          /* (TWIHS_FIMR) TXFEF Interrupt Mask Position */
+#define TWIHS_FIMR_TXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIMR_TXFEF_Pos)              /* (TWIHS_FIMR) TXFEF Interrupt Mask Mask */
+#define TWIHS_FIMR_TXFEF(value)               (TWIHS_FIMR_TXFEF_Msk & (_UINT32_(value) << TWIHS_FIMR_TXFEF_Pos)) /* Assigment of value for TXFEF in the TWIHS_FIMR register */
+#define TWIHS_FIMR_TXFFF_Pos                  _UINT32_(1)                                          /* (TWIHS_FIMR) TXFFF Interrupt Mask Position */
+#define TWIHS_FIMR_TXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIMR_TXFFF_Pos)              /* (TWIHS_FIMR) TXFFF Interrupt Mask Mask */
+#define TWIHS_FIMR_TXFFF(value)               (TWIHS_FIMR_TXFFF_Msk & (_UINT32_(value) << TWIHS_FIMR_TXFFF_Pos)) /* Assigment of value for TXFFF in the TWIHS_FIMR register */
+#define TWIHS_FIMR_TXFTHF_Pos                 _UINT32_(2)                                          /* (TWIHS_FIMR) TXFTHF Interrupt Mask Position */
+#define TWIHS_FIMR_TXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIMR_TXFTHF_Pos)             /* (TWIHS_FIMR) TXFTHF Interrupt Mask Mask */
+#define TWIHS_FIMR_TXFTHF(value)              (TWIHS_FIMR_TXFTHF_Msk & (_UINT32_(value) << TWIHS_FIMR_TXFTHF_Pos)) /* Assigment of value for TXFTHF in the TWIHS_FIMR register */
+#define TWIHS_FIMR_RXFEF_Pos                  _UINT32_(3)                                          /* (TWIHS_FIMR) RXFEF Interrupt Mask Position */
+#define TWIHS_FIMR_RXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIMR_RXFEF_Pos)              /* (TWIHS_FIMR) RXFEF Interrupt Mask Mask */
+#define TWIHS_FIMR_RXFEF(value)               (TWIHS_FIMR_RXFEF_Msk & (_UINT32_(value) << TWIHS_FIMR_RXFEF_Pos)) /* Assigment of value for RXFEF in the TWIHS_FIMR register */
+#define TWIHS_FIMR_RXFFF_Pos                  _UINT32_(4)                                          /* (TWIHS_FIMR) RXFFF Interrupt Mask Position */
+#define TWIHS_FIMR_RXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIMR_RXFFF_Pos)              /* (TWIHS_FIMR) RXFFF Interrupt Mask Mask */
+#define TWIHS_FIMR_RXFFF(value)               (TWIHS_FIMR_RXFFF_Msk & (_UINT32_(value) << TWIHS_FIMR_RXFFF_Pos)) /* Assigment of value for RXFFF in the TWIHS_FIMR register */
+#define TWIHS_FIMR_RXFTHF_Pos                 _UINT32_(5)                                          /* (TWIHS_FIMR) RXFTHF Interrupt Mask Position */
+#define TWIHS_FIMR_RXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIMR_RXFTHF_Pos)             /* (TWIHS_FIMR) RXFTHF Interrupt Mask Mask */
+#define TWIHS_FIMR_RXFTHF(value)              (TWIHS_FIMR_RXFTHF_Msk & (_UINT32_(value) << TWIHS_FIMR_RXFTHF_Pos)) /* Assigment of value for RXFTHF in the TWIHS_FIMR register */
+#define TWIHS_FIMR_TXFPTEF_Pos                _UINT32_(6)                                          /* (TWIHS_FIMR) TXFPTEF Interrupt Mask Position */
+#define TWIHS_FIMR_TXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIMR_TXFPTEF_Pos)            /* (TWIHS_FIMR) TXFPTEF Interrupt Mask Mask */
+#define TWIHS_FIMR_TXFPTEF(value)             (TWIHS_FIMR_TXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIMR_TXFPTEF_Pos)) /* Assigment of value for TXFPTEF in the TWIHS_FIMR register */
+#define TWIHS_FIMR_RXFPTEF_Pos                _UINT32_(7)                                          /* (TWIHS_FIMR) RXFPTEF Interrupt Mask Position */
+#define TWIHS_FIMR_RXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIMR_RXFPTEF_Pos)            /* (TWIHS_FIMR) RXFPTEF Interrupt Mask Mask */
+#define TWIHS_FIMR_RXFPTEF(value)             (TWIHS_FIMR_RXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIMR_RXFPTEF_Pos)) /* Assigment of value for RXFPTEF in the TWIHS_FIMR register */
+#define TWIHS_FIMR_Msk                        _UINT32_(0x000000FF)                                 /* (TWIHS_FIMR) Register Mask  */
+
+
+/* -------- TWIHS_FLR : (TWIHS Offset: 0x54) ( R/ 32) FIFO Level Register -------- */
+#define TWIHS_FLR_TXFL_Pos                    _UINT32_(0)                                          /* (TWIHS_FLR) Transmit FIFO Level Position */
+#define TWIHS_FLR_TXFL_Msk                    (_UINT32_(0x3F) << TWIHS_FLR_TXFL_Pos)               /* (TWIHS_FLR) Transmit FIFO Level Mask */
+#define TWIHS_FLR_TXFL(value)                 (TWIHS_FLR_TXFL_Msk & (_UINT32_(value) << TWIHS_FLR_TXFL_Pos)) /* Assigment of value for TXFL in the TWIHS_FLR register */
+#define TWIHS_FLR_RXFL_Pos                    _UINT32_(16)                                         /* (TWIHS_FLR) Receive FIFO Level Position */
+#define TWIHS_FLR_RXFL_Msk                    (_UINT32_(0x3F) << TWIHS_FLR_RXFL_Pos)               /* (TWIHS_FLR) Receive FIFO Level Mask */
+#define TWIHS_FLR_RXFL(value)                 (TWIHS_FLR_RXFL_Msk & (_UINT32_(value) << TWIHS_FLR_RXFL_Pos)) /* Assigment of value for RXFL in the TWIHS_FLR register */
+#define TWIHS_FLR_Msk                         _UINT32_(0x003F003F)                                 /* (TWIHS_FLR) Register Mask  */
+
+
+/* -------- TWIHS_FMR : (TWIHS Offset: 0x50) (R/W 32) FIFO Mode Register -------- */
+#define TWIHS_FMR_TXRDYM_Pos                  _UINT32_(0)                                          /* (TWIHS_FMR) Transmitter Ready Mode Position */
+#define TWIHS_FMR_TXRDYM_Msk                  (_UINT32_(0x3) << TWIHS_FMR_TXRDYM_Pos)              /* (TWIHS_FMR) Transmitter Ready Mode Mask */
+#define TWIHS_FMR_TXRDYM(value)               (TWIHS_FMR_TXRDYM_Msk & (_UINT32_(value) << TWIHS_FMR_TXRDYM_Pos)) /* Assigment of value for TXRDYM in the TWIHS_FMR register */
+#define   TWIHS_FMR_TXRDYM_ONE_DATA_Val       _UINT32_(0x0)                                        /* (TWIHS_FMR) TXRDY will be at level '1' when at least one data can be written in the Transmit FIFO  */
+#define   TWIHS_FMR_TXRDYM_TWO_DATA_Val       _UINT32_(0x1)                                        /* (TWIHS_FMR) TXRDY will be at level '1' when at least two data can be written in the Transmit FIFO  */
+#define   TWIHS_FMR_TXRDYM_FOUR_DATA_Val      _UINT32_(0x2)                                        /* (TWIHS_FMR) TXRDY will be at level '1' when at least four data can be written in the Transmit FIFO  */
+#define TWIHS_FMR_TXRDYM_ONE_DATA             (TWIHS_FMR_TXRDYM_ONE_DATA_Val << TWIHS_FMR_TXRDYM_Pos) /* (TWIHS_FMR) TXRDY will be at level '1' when at least one data can be written in the Transmit FIFO Position  */
+#define TWIHS_FMR_TXRDYM_TWO_DATA             (TWIHS_FMR_TXRDYM_TWO_DATA_Val << TWIHS_FMR_TXRDYM_Pos) /* (TWIHS_FMR) TXRDY will be at level '1' when at least two data can be written in the Transmit FIFO Position  */
+#define TWIHS_FMR_TXRDYM_FOUR_DATA            (TWIHS_FMR_TXRDYM_FOUR_DATA_Val << TWIHS_FMR_TXRDYM_Pos) /* (TWIHS_FMR) TXRDY will be at level '1' when at least four data can be written in the Transmit FIFO Position  */
+#define TWIHS_FMR_RXRDYM_Pos                  _UINT32_(4)                                          /* (TWIHS_FMR) Receiver Ready Mode Position */
+#define TWIHS_FMR_RXRDYM_Msk                  (_UINT32_(0x3) << TWIHS_FMR_RXRDYM_Pos)              /* (TWIHS_FMR) Receiver Ready Mode Mask */
+#define TWIHS_FMR_RXRDYM(value)               (TWIHS_FMR_RXRDYM_Msk & (_UINT32_(value) << TWIHS_FMR_RXRDYM_Pos)) /* Assigment of value for RXRDYM in the TWIHS_FMR register */
+#define   TWIHS_FMR_RXRDYM_ONE_DATA_Val       _UINT32_(0x0)                                        /* (TWIHS_FMR) RXRDY will be at level '1' when at least one unread data is in the Receive FIFO  */
+#define   TWIHS_FMR_RXRDYM_TWO_DATA_Val       _UINT32_(0x1)                                        /* (TWIHS_FMR) RXRDY will be at level '1' when at least two unread data are in the Receive FIFO  */
+#define   TWIHS_FMR_RXRDYM_FOUR_DATA_Val      _UINT32_(0x2)                                        /* (TWIHS_FMR) RXRDY will be at level '1' when at least four unread data are in the Receive FIFO  */
+#define TWIHS_FMR_RXRDYM_ONE_DATA             (TWIHS_FMR_RXRDYM_ONE_DATA_Val << TWIHS_FMR_RXRDYM_Pos) /* (TWIHS_FMR) RXRDY will be at level '1' when at least one unread data is in the Receive FIFO Position  */
+#define TWIHS_FMR_RXRDYM_TWO_DATA             (TWIHS_FMR_RXRDYM_TWO_DATA_Val << TWIHS_FMR_RXRDYM_Pos) /* (TWIHS_FMR) RXRDY will be at level '1' when at least two unread data are in the Receive FIFO Position  */
+#define TWIHS_FMR_RXRDYM_FOUR_DATA            (TWIHS_FMR_RXRDYM_FOUR_DATA_Val << TWIHS_FMR_RXRDYM_Pos) /* (TWIHS_FMR) RXRDY will be at level '1' when at least four unread data are in the Receive FIFO Position  */
+#define TWIHS_FMR_TXFTHRES_Pos                _UINT32_(16)                                         /* (TWIHS_FMR) Transmit FIFO Threshold Position */
+#define TWIHS_FMR_TXFTHRES_Msk                (_UINT32_(0x3F) << TWIHS_FMR_TXFTHRES_Pos)           /* (TWIHS_FMR) Transmit FIFO Threshold Mask */
+#define TWIHS_FMR_TXFTHRES(value)             (TWIHS_FMR_TXFTHRES_Msk & (_UINT32_(value) << TWIHS_FMR_TXFTHRES_Pos)) /* Assigment of value for TXFTHRES in the TWIHS_FMR register */
+#define TWIHS_FMR_RXFTHRES_Pos                _UINT32_(24)                                         /* (TWIHS_FMR) Receive FIFO Threshold Position */
+#define TWIHS_FMR_RXFTHRES_Msk                (_UINT32_(0x3F) << TWIHS_FMR_RXFTHRES_Pos)           /* (TWIHS_FMR) Receive FIFO Threshold Mask */
+#define TWIHS_FMR_RXFTHRES(value)             (TWIHS_FMR_RXFTHRES_Msk & (_UINT32_(value) << TWIHS_FMR_RXFTHRES_Pos)) /* Assigment of value for RXFTHRES in the TWIHS_FMR register */
+#define TWIHS_FMR_Msk                         _UINT32_(0x3F3F0033)                                 /* (TWIHS_FMR) Register Mask  */
+
+
+/* -------- TWIHS_FSR : (TWIHS Offset: 0x60) ( R/ 32) FIFO Status Register -------- */
+#define TWIHS_FSR_TXFEF_Pos                   _UINT32_(0)                                          /* (TWIHS_FSR) Transmit FIFO Empty Flag (cleared on read) Position */
+#define TWIHS_FSR_TXFEF_Msk                   (_UINT32_(0x1) << TWIHS_FSR_TXFEF_Pos)               /* (TWIHS_FSR) Transmit FIFO Empty Flag (cleared on read) Mask */
+#define TWIHS_FSR_TXFEF(value)                (TWIHS_FSR_TXFEF_Msk & (_UINT32_(value) << TWIHS_FSR_TXFEF_Pos)) /* Assigment of value for TXFEF in the TWIHS_FSR register */
+#define TWIHS_FSR_TXFFF_Pos                   _UINT32_(1)                                          /* (TWIHS_FSR) Transmit FIFO Full Flag (cleared on read) Position */
+#define TWIHS_FSR_TXFFF_Msk                   (_UINT32_(0x1) << TWIHS_FSR_TXFFF_Pos)               /* (TWIHS_FSR) Transmit FIFO Full Flag (cleared on read) Mask */
+#define TWIHS_FSR_TXFFF(value)                (TWIHS_FSR_TXFFF_Msk & (_UINT32_(value) << TWIHS_FSR_TXFFF_Pos)) /* Assigment of value for TXFFF in the TWIHS_FSR register */
+#define TWIHS_FSR_TXFTHF_Pos                  _UINT32_(2)                                          /* (TWIHS_FSR) Transmit FIFO Threshold Flag (cleared on read) Position */
+#define TWIHS_FSR_TXFTHF_Msk                  (_UINT32_(0x1) << TWIHS_FSR_TXFTHF_Pos)              /* (TWIHS_FSR) Transmit FIFO Threshold Flag (cleared on read) Mask */
+#define TWIHS_FSR_TXFTHF(value)               (TWIHS_FSR_TXFTHF_Msk & (_UINT32_(value) << TWIHS_FSR_TXFTHF_Pos)) /* Assigment of value for TXFTHF in the TWIHS_FSR register */
+#define TWIHS_FSR_RXFEF_Pos                   _UINT32_(3)                                          /* (TWIHS_FSR) Receive FIFO Empty Flag Position */
+#define TWIHS_FSR_RXFEF_Msk                   (_UINT32_(0x1) << TWIHS_FSR_RXFEF_Pos)               /* (TWIHS_FSR) Receive FIFO Empty Flag Mask */
+#define TWIHS_FSR_RXFEF(value)                (TWIHS_FSR_RXFEF_Msk & (_UINT32_(value) << TWIHS_FSR_RXFEF_Pos)) /* Assigment of value for RXFEF in the TWIHS_FSR register */
+#define TWIHS_FSR_RXFFF_Pos                   _UINT32_(4)                                          /* (TWIHS_FSR) Receive FIFO Full Flag Position */
+#define TWIHS_FSR_RXFFF_Msk                   (_UINT32_(0x1) << TWIHS_FSR_RXFFF_Pos)               /* (TWIHS_FSR) Receive FIFO Full Flag Mask */
+#define TWIHS_FSR_RXFFF(value)                (TWIHS_FSR_RXFFF_Msk & (_UINT32_(value) << TWIHS_FSR_RXFFF_Pos)) /* Assigment of value for RXFFF in the TWIHS_FSR register */
+#define TWIHS_FSR_RXFTHF_Pos                  _UINT32_(5)                                          /* (TWIHS_FSR) Receive FIFO Threshold Flag Position */
+#define TWIHS_FSR_RXFTHF_Msk                  (_UINT32_(0x1) << TWIHS_FSR_RXFTHF_Pos)              /* (TWIHS_FSR) Receive FIFO Threshold Flag Mask */
+#define TWIHS_FSR_RXFTHF(value)               (TWIHS_FSR_RXFTHF_Msk & (_UINT32_(value) << TWIHS_FSR_RXFTHF_Pos)) /* Assigment of value for RXFTHF in the TWIHS_FSR register */
+#define TWIHS_FSR_TXFPTEF_Pos                 _UINT32_(6)                                          /* (TWIHS_FSR) Transmit FIFO Pointer Error Flag Position */
+#define TWIHS_FSR_TXFPTEF_Msk                 (_UINT32_(0x1) << TWIHS_FSR_TXFPTEF_Pos)             /* (TWIHS_FSR) Transmit FIFO Pointer Error Flag Mask */
+#define TWIHS_FSR_TXFPTEF(value)              (TWIHS_FSR_TXFPTEF_Msk & (_UINT32_(value) << TWIHS_FSR_TXFPTEF_Pos)) /* Assigment of value for TXFPTEF in the TWIHS_FSR register */
+#define TWIHS_FSR_RXFPTEF_Pos                 _UINT32_(7)                                          /* (TWIHS_FSR) Receive FIFO Pointer Error Flag Position */
+#define TWIHS_FSR_RXFPTEF_Msk                 (_UINT32_(0x1) << TWIHS_FSR_RXFPTEF_Pos)             /* (TWIHS_FSR) Receive FIFO Pointer Error Flag Mask */
+#define TWIHS_FSR_RXFPTEF(value)              (TWIHS_FSR_RXFPTEF_Msk & (_UINT32_(value) << TWIHS_FSR_RXFPTEF_Pos)) /* Assigment of value for RXFPTEF in the TWIHS_FSR register */
+#define TWIHS_FSR_Msk                         _UINT32_(0x000000FF)                                 /* (TWIHS_FSR) Register Mask  */
+
+
+/* -------- TWIHS_IADR : (TWIHS Offset: 0x0C) (R/W 32) Internal Address Register -------- */
+#define TWIHS_IADR_IADR_Pos                   _UINT32_(0)                                          /* (TWIHS_IADR) Internal Address Position */
+#define TWIHS_IADR_IADR_Msk                   (_UINT32_(0xFFFFFF) << TWIHS_IADR_IADR_Pos)          /* (TWIHS_IADR) Internal Address Mask */
+#define TWIHS_IADR_IADR(value)                (TWIHS_IADR_IADR_Msk & (_UINT32_(value) << TWIHS_IADR_IADR_Pos)) /* Assigment of value for IADR in the TWIHS_IADR register */
+#define TWIHS_IADR_Msk                        _UINT32_(0x00FFFFFF)                                 /* (TWIHS_IADR) Register Mask  */
+
+
+/* -------- TWIHS_IDR : (TWIHS Offset: 0x28) ( /W 32) Interrupt Disable Register -------- */
+#define TWIHS_IDR_TXCOMP_Pos                  _UINT32_(0)                                          /* (TWIHS_IDR) Transmission Completed Interrupt Disable Position */
+#define TWIHS_IDR_TXCOMP_Msk                  (_UINT32_(0x1) << TWIHS_IDR_TXCOMP_Pos)              /* (TWIHS_IDR) Transmission Completed Interrupt Disable Mask */
+#define TWIHS_IDR_TXCOMP(value)               (TWIHS_IDR_TXCOMP_Msk & (_UINT32_(value) << TWIHS_IDR_TXCOMP_Pos)) /* Assigment of value for TXCOMP in the TWIHS_IDR register */
+#define TWIHS_IDR_RXRDY_Pos                   _UINT32_(1)                                          /* (TWIHS_IDR) Receive Holding Register Ready Interrupt Disable Position */
+#define TWIHS_IDR_RXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IDR_RXRDY_Pos)               /* (TWIHS_IDR) Receive Holding Register Ready Interrupt Disable Mask */
+#define TWIHS_IDR_RXRDY(value)                (TWIHS_IDR_RXRDY_Msk & (_UINT32_(value) << TWIHS_IDR_RXRDY_Pos)) /* Assigment of value for RXRDY in the TWIHS_IDR register */
+#define TWIHS_IDR_TXRDY_Pos                   _UINT32_(2)                                          /* (TWIHS_IDR) Transmit Holding Register Ready Interrupt Disable Position */
+#define TWIHS_IDR_TXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IDR_TXRDY_Pos)               /* (TWIHS_IDR) Transmit Holding Register Ready Interrupt Disable Mask */
+#define TWIHS_IDR_TXRDY(value)                (TWIHS_IDR_TXRDY_Msk & (_UINT32_(value) << TWIHS_IDR_TXRDY_Pos)) /* Assigment of value for TXRDY in the TWIHS_IDR register */
+#define TWIHS_IDR_SVACC_Pos                   _UINT32_(4)                                          /* (TWIHS_IDR) Slave Access Interrupt Disable Position */
+#define TWIHS_IDR_SVACC_Msk                   (_UINT32_(0x1) << TWIHS_IDR_SVACC_Pos)               /* (TWIHS_IDR) Slave Access Interrupt Disable Mask */
+#define TWIHS_IDR_SVACC(value)                (TWIHS_IDR_SVACC_Msk & (_UINT32_(value) << TWIHS_IDR_SVACC_Pos)) /* Assigment of value for SVACC in the TWIHS_IDR register */
+#define TWIHS_IDR_GACC_Pos                    _UINT32_(5)                                          /* (TWIHS_IDR) General Call Access Interrupt Disable Position */
+#define TWIHS_IDR_GACC_Msk                    (_UINT32_(0x1) << TWIHS_IDR_GACC_Pos)                /* (TWIHS_IDR) General Call Access Interrupt Disable Mask */
+#define TWIHS_IDR_GACC(value)                 (TWIHS_IDR_GACC_Msk & (_UINT32_(value) << TWIHS_IDR_GACC_Pos)) /* Assigment of value for GACC in the TWIHS_IDR register */
+#define TWIHS_IDR_OVRE_Pos                    _UINT32_(6)                                          /* (TWIHS_IDR) Overrun Error Interrupt Disable Position */
+#define TWIHS_IDR_OVRE_Msk                    (_UINT32_(0x1) << TWIHS_IDR_OVRE_Pos)                /* (TWIHS_IDR) Overrun Error Interrupt Disable Mask */
+#define TWIHS_IDR_OVRE(value)                 (TWIHS_IDR_OVRE_Msk & (_UINT32_(value) << TWIHS_IDR_OVRE_Pos)) /* Assigment of value for OVRE in the TWIHS_IDR register */
+#define TWIHS_IDR_UNRE_Pos                    _UINT32_(7)                                          /* (TWIHS_IDR) Underrun Error Interrupt Disable Position */
+#define TWIHS_IDR_UNRE_Msk                    (_UINT32_(0x1) << TWIHS_IDR_UNRE_Pos)                /* (TWIHS_IDR) Underrun Error Interrupt Disable Mask */
+#define TWIHS_IDR_UNRE(value)                 (TWIHS_IDR_UNRE_Msk & (_UINT32_(value) << TWIHS_IDR_UNRE_Pos)) /* Assigment of value for UNRE in the TWIHS_IDR register */
+#define TWIHS_IDR_NACK_Pos                    _UINT32_(8)                                          /* (TWIHS_IDR) Not Acknowledge Interrupt Disable Position */
+#define TWIHS_IDR_NACK_Msk                    (_UINT32_(0x1) << TWIHS_IDR_NACK_Pos)                /* (TWIHS_IDR) Not Acknowledge Interrupt Disable Mask */
+#define TWIHS_IDR_NACK(value)                 (TWIHS_IDR_NACK_Msk & (_UINT32_(value) << TWIHS_IDR_NACK_Pos)) /* Assigment of value for NACK in the TWIHS_IDR register */
+#define TWIHS_IDR_ARBLST_Pos                  _UINT32_(9)                                          /* (TWIHS_IDR) Arbitration Lost Interrupt Disable Position */
+#define TWIHS_IDR_ARBLST_Msk                  (_UINT32_(0x1) << TWIHS_IDR_ARBLST_Pos)              /* (TWIHS_IDR) Arbitration Lost Interrupt Disable Mask */
+#define TWIHS_IDR_ARBLST(value)               (TWIHS_IDR_ARBLST_Msk & (_UINT32_(value) << TWIHS_IDR_ARBLST_Pos)) /* Assigment of value for ARBLST in the TWIHS_IDR register */
+#define TWIHS_IDR_SCL_WS_Pos                  _UINT32_(10)                                         /* (TWIHS_IDR) Clock Wait State Interrupt Disable Position */
+#define TWIHS_IDR_SCL_WS_Msk                  (_UINT32_(0x1) << TWIHS_IDR_SCL_WS_Pos)              /* (TWIHS_IDR) Clock Wait State Interrupt Disable Mask */
+#define TWIHS_IDR_SCL_WS(value)               (TWIHS_IDR_SCL_WS_Msk & (_UINT32_(value) << TWIHS_IDR_SCL_WS_Pos)) /* Assigment of value for SCL_WS in the TWIHS_IDR register */
+#define TWIHS_IDR_EOSACC_Pos                  _UINT32_(11)                                         /* (TWIHS_IDR) End Of Slave Access Interrupt Disable Position */
+#define TWIHS_IDR_EOSACC_Msk                  (_UINT32_(0x1) << TWIHS_IDR_EOSACC_Pos)              /* (TWIHS_IDR) End Of Slave Access Interrupt Disable Mask */
+#define TWIHS_IDR_EOSACC(value)               (TWIHS_IDR_EOSACC_Msk & (_UINT32_(value) << TWIHS_IDR_EOSACC_Pos)) /* Assigment of value for EOSACC in the TWIHS_IDR register */
+#define TWIHS_IDR_MCACK_Pos                   _UINT32_(16)                                         /* (TWIHS_IDR) Master Code Acknowledge Interrupt Disable Position */
+#define TWIHS_IDR_MCACK_Msk                   (_UINT32_(0x1) << TWIHS_IDR_MCACK_Pos)               /* (TWIHS_IDR) Master Code Acknowledge Interrupt Disable Mask */
+#define TWIHS_IDR_MCACK(value)                (TWIHS_IDR_MCACK_Msk & (_UINT32_(value) << TWIHS_IDR_MCACK_Pos)) /* Assigment of value for MCACK in the TWIHS_IDR register */
+#define TWIHS_IDR_TOUT_Pos                    _UINT32_(18)                                         /* (TWIHS_IDR) Timeout Error Interrupt Disable Position */
+#define TWIHS_IDR_TOUT_Msk                    (_UINT32_(0x1) << TWIHS_IDR_TOUT_Pos)                /* (TWIHS_IDR) Timeout Error Interrupt Disable Mask */
+#define TWIHS_IDR_TOUT(value)                 (TWIHS_IDR_TOUT_Msk & (_UINT32_(value) << TWIHS_IDR_TOUT_Pos)) /* Assigment of value for TOUT in the TWIHS_IDR register */
+#define TWIHS_IDR_PECERR_Pos                  _UINT32_(19)                                         /* (TWIHS_IDR) PEC Error Interrupt Disable Position */
+#define TWIHS_IDR_PECERR_Msk                  (_UINT32_(0x1) << TWIHS_IDR_PECERR_Pos)              /* (TWIHS_IDR) PEC Error Interrupt Disable Mask */
+#define TWIHS_IDR_PECERR(value)               (TWIHS_IDR_PECERR_Msk & (_UINT32_(value) << TWIHS_IDR_PECERR_Pos)) /* Assigment of value for PECERR in the TWIHS_IDR register */
+#define TWIHS_IDR_SMBDAM_Pos                  _UINT32_(20)                                         /* (TWIHS_IDR) SMBus Default Address Match Interrupt Disable Position */
+#define TWIHS_IDR_SMBDAM_Msk                  (_UINT32_(0x1) << TWIHS_IDR_SMBDAM_Pos)              /* (TWIHS_IDR) SMBus Default Address Match Interrupt Disable Mask */
+#define TWIHS_IDR_SMBDAM(value)               (TWIHS_IDR_SMBDAM_Msk & (_UINT32_(value) << TWIHS_IDR_SMBDAM_Pos)) /* Assigment of value for SMBDAM in the TWIHS_IDR register */
+#define TWIHS_IDR_SMBHHM_Pos                  _UINT32_(21)                                         /* (TWIHS_IDR) SMBus Host Header Address Match Interrupt Disable Position */
+#define TWIHS_IDR_SMBHHM_Msk                  (_UINT32_(0x1) << TWIHS_IDR_SMBHHM_Pos)              /* (TWIHS_IDR) SMBus Host Header Address Match Interrupt Disable Mask */
+#define TWIHS_IDR_SMBHHM(value)               (TWIHS_IDR_SMBHHM_Msk & (_UINT32_(value) << TWIHS_IDR_SMBHHM_Pos)) /* Assigment of value for SMBHHM in the TWIHS_IDR register */
+#define TWIHS_IDR_Msk                         _UINT32_(0x003D0FF7)                                 /* (TWIHS_IDR) Register Mask  */
+
+
+/* -------- TWIHS_IER : (TWIHS Offset: 0x24) ( /W 32) Interrupt Enable Register -------- */
+#define TWIHS_IER_TXCOMP_Pos                  _UINT32_(0)                                          /* (TWIHS_IER) Transmission Completed Interrupt Enable Position */
+#define TWIHS_IER_TXCOMP_Msk                  (_UINT32_(0x1) << TWIHS_IER_TXCOMP_Pos)              /* (TWIHS_IER) Transmission Completed Interrupt Enable Mask */
+#define TWIHS_IER_TXCOMP(value)               (TWIHS_IER_TXCOMP_Msk & (_UINT32_(value) << TWIHS_IER_TXCOMP_Pos)) /* Assigment of value for TXCOMP in the TWIHS_IER register */
+#define TWIHS_IER_RXRDY_Pos                   _UINT32_(1)                                          /* (TWIHS_IER) Receive Holding Register Ready Interrupt Enable Position */
+#define TWIHS_IER_RXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IER_RXRDY_Pos)               /* (TWIHS_IER) Receive Holding Register Ready Interrupt Enable Mask */
+#define TWIHS_IER_RXRDY(value)                (TWIHS_IER_RXRDY_Msk & (_UINT32_(value) << TWIHS_IER_RXRDY_Pos)) /* Assigment of value for RXRDY in the TWIHS_IER register */
+#define TWIHS_IER_TXRDY_Pos                   _UINT32_(2)                                          /* (TWIHS_IER) Transmit Holding Register Ready Interrupt Enable Position */
+#define TWIHS_IER_TXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IER_TXRDY_Pos)               /* (TWIHS_IER) Transmit Holding Register Ready Interrupt Enable Mask */
+#define TWIHS_IER_TXRDY(value)                (TWIHS_IER_TXRDY_Msk & (_UINT32_(value) << TWIHS_IER_TXRDY_Pos)) /* Assigment of value for TXRDY in the TWIHS_IER register */
+#define TWIHS_IER_SVACC_Pos                   _UINT32_(4)                                          /* (TWIHS_IER) Slave Access Interrupt Enable Position */
+#define TWIHS_IER_SVACC_Msk                   (_UINT32_(0x1) << TWIHS_IER_SVACC_Pos)               /* (TWIHS_IER) Slave Access Interrupt Enable Mask */
+#define TWIHS_IER_SVACC(value)                (TWIHS_IER_SVACC_Msk & (_UINT32_(value) << TWIHS_IER_SVACC_Pos)) /* Assigment of value for SVACC in the TWIHS_IER register */
+#define TWIHS_IER_GACC_Pos                    _UINT32_(5)                                          /* (TWIHS_IER) General Call Access Interrupt Enable Position */
+#define TWIHS_IER_GACC_Msk                    (_UINT32_(0x1) << TWIHS_IER_GACC_Pos)                /* (TWIHS_IER) General Call Access Interrupt Enable Mask */
+#define TWIHS_IER_GACC(value)                 (TWIHS_IER_GACC_Msk & (_UINT32_(value) << TWIHS_IER_GACC_Pos)) /* Assigment of value for GACC in the TWIHS_IER register */
+#define TWIHS_IER_OVRE_Pos                    _UINT32_(6)                                          /* (TWIHS_IER) Overrun Error Interrupt Enable Position */
+#define TWIHS_IER_OVRE_Msk                    (_UINT32_(0x1) << TWIHS_IER_OVRE_Pos)                /* (TWIHS_IER) Overrun Error Interrupt Enable Mask */
+#define TWIHS_IER_OVRE(value)                 (TWIHS_IER_OVRE_Msk & (_UINT32_(value) << TWIHS_IER_OVRE_Pos)) /* Assigment of value for OVRE in the TWIHS_IER register */
+#define TWIHS_IER_UNRE_Pos                    _UINT32_(7)                                          /* (TWIHS_IER) Underrun Error Interrupt Enable Position */
+#define TWIHS_IER_UNRE_Msk                    (_UINT32_(0x1) << TWIHS_IER_UNRE_Pos)                /* (TWIHS_IER) Underrun Error Interrupt Enable Mask */
+#define TWIHS_IER_UNRE(value)                 (TWIHS_IER_UNRE_Msk & (_UINT32_(value) << TWIHS_IER_UNRE_Pos)) /* Assigment of value for UNRE in the TWIHS_IER register */
+#define TWIHS_IER_NACK_Pos                    _UINT32_(8)                                          /* (TWIHS_IER) Not Acknowledge Interrupt Enable Position */
+#define TWIHS_IER_NACK_Msk                    (_UINT32_(0x1) << TWIHS_IER_NACK_Pos)                /* (TWIHS_IER) Not Acknowledge Interrupt Enable Mask */
+#define TWIHS_IER_NACK(value)                 (TWIHS_IER_NACK_Msk & (_UINT32_(value) << TWIHS_IER_NACK_Pos)) /* Assigment of value for NACK in the TWIHS_IER register */
+#define TWIHS_IER_ARBLST_Pos                  _UINT32_(9)                                          /* (TWIHS_IER) Arbitration Lost Interrupt Enable Position */
+#define TWIHS_IER_ARBLST_Msk                  (_UINT32_(0x1) << TWIHS_IER_ARBLST_Pos)              /* (TWIHS_IER) Arbitration Lost Interrupt Enable Mask */
+#define TWIHS_IER_ARBLST(value)               (TWIHS_IER_ARBLST_Msk & (_UINT32_(value) << TWIHS_IER_ARBLST_Pos)) /* Assigment of value for ARBLST in the TWIHS_IER register */
+#define TWIHS_IER_SCL_WS_Pos                  _UINT32_(10)                                         /* (TWIHS_IER) Clock Wait State Interrupt Enable Position */
+#define TWIHS_IER_SCL_WS_Msk                  (_UINT32_(0x1) << TWIHS_IER_SCL_WS_Pos)              /* (TWIHS_IER) Clock Wait State Interrupt Enable Mask */
+#define TWIHS_IER_SCL_WS(value)               (TWIHS_IER_SCL_WS_Msk & (_UINT32_(value) << TWIHS_IER_SCL_WS_Pos)) /* Assigment of value for SCL_WS in the TWIHS_IER register */
+#define TWIHS_IER_EOSACC_Pos                  _UINT32_(11)                                         /* (TWIHS_IER) End Of Slave Access Interrupt Enable Position */
+#define TWIHS_IER_EOSACC_Msk                  (_UINT32_(0x1) << TWIHS_IER_EOSACC_Pos)              /* (TWIHS_IER) End Of Slave Access Interrupt Enable Mask */
+#define TWIHS_IER_EOSACC(value)               (TWIHS_IER_EOSACC_Msk & (_UINT32_(value) << TWIHS_IER_EOSACC_Pos)) /* Assigment of value for EOSACC in the TWIHS_IER register */
+#define TWIHS_IER_MCACK_Pos                   _UINT32_(16)                                         /* (TWIHS_IER) Master Code Acknowledge Interrupt Enable Position */
+#define TWIHS_IER_MCACK_Msk                   (_UINT32_(0x1) << TWIHS_IER_MCACK_Pos)               /* (TWIHS_IER) Master Code Acknowledge Interrupt Enable Mask */
+#define TWIHS_IER_MCACK(value)                (TWIHS_IER_MCACK_Msk & (_UINT32_(value) << TWIHS_IER_MCACK_Pos)) /* Assigment of value for MCACK in the TWIHS_IER register */
+#define TWIHS_IER_TOUT_Pos                    _UINT32_(18)                                         /* (TWIHS_IER) Timeout Error Interrupt Enable Position */
+#define TWIHS_IER_TOUT_Msk                    (_UINT32_(0x1) << TWIHS_IER_TOUT_Pos)                /* (TWIHS_IER) Timeout Error Interrupt Enable Mask */
+#define TWIHS_IER_TOUT(value)                 (TWIHS_IER_TOUT_Msk & (_UINT32_(value) << TWIHS_IER_TOUT_Pos)) /* Assigment of value for TOUT in the TWIHS_IER register */
+#define TWIHS_IER_PECERR_Pos                  _UINT32_(19)                                         /* (TWIHS_IER) PEC Error Interrupt Enable Position */
+#define TWIHS_IER_PECERR_Msk                  (_UINT32_(0x1) << TWIHS_IER_PECERR_Pos)              /* (TWIHS_IER) PEC Error Interrupt Enable Mask */
+#define TWIHS_IER_PECERR(value)               (TWIHS_IER_PECERR_Msk & (_UINT32_(value) << TWIHS_IER_PECERR_Pos)) /* Assigment of value for PECERR in the TWIHS_IER register */
+#define TWIHS_IER_SMBDAM_Pos                  _UINT32_(20)                                         /* (TWIHS_IER) SMBus Default Address Match Interrupt Enable Position */
+#define TWIHS_IER_SMBDAM_Msk                  (_UINT32_(0x1) << TWIHS_IER_SMBDAM_Pos)              /* (TWIHS_IER) SMBus Default Address Match Interrupt Enable Mask */
+#define TWIHS_IER_SMBDAM(value)               (TWIHS_IER_SMBDAM_Msk & (_UINT32_(value) << TWIHS_IER_SMBDAM_Pos)) /* Assigment of value for SMBDAM in the TWIHS_IER register */
+#define TWIHS_IER_SMBHHM_Pos                  _UINT32_(21)                                         /* (TWIHS_IER) SMBus Host Header Address Match Interrupt Enable Position */
+#define TWIHS_IER_SMBHHM_Msk                  (_UINT32_(0x1) << TWIHS_IER_SMBHHM_Pos)              /* (TWIHS_IER) SMBus Host Header Address Match Interrupt Enable Mask */
+#define TWIHS_IER_SMBHHM(value)               (TWIHS_IER_SMBHHM_Msk & (_UINT32_(value) << TWIHS_IER_SMBHHM_Pos)) /* Assigment of value for SMBHHM in the TWIHS_IER register */
+#define TWIHS_IER_Msk                         _UINT32_(0x003D0FF7)                                 /* (TWIHS_IER) Register Mask  */
+
+
+/* -------- TWIHS_IMR : (TWIHS Offset: 0x2C) ( R/ 32) Interrupt Mask Register -------- */
+#define TWIHS_IMR_TXCOMP_Pos                  _UINT32_(0)                                          /* (TWIHS_IMR) Transmission Completed Interrupt Mask Position */
+#define TWIHS_IMR_TXCOMP_Msk                  (_UINT32_(0x1) << TWIHS_IMR_TXCOMP_Pos)              /* (TWIHS_IMR) Transmission Completed Interrupt Mask Mask */
+#define TWIHS_IMR_TXCOMP(value)               (TWIHS_IMR_TXCOMP_Msk & (_UINT32_(value) << TWIHS_IMR_TXCOMP_Pos)) /* Assigment of value for TXCOMP in the TWIHS_IMR register */
+#define TWIHS_IMR_RXRDY_Pos                   _UINT32_(1)                                          /* (TWIHS_IMR) Receive Holding Register Ready Interrupt Mask Position */
+#define TWIHS_IMR_RXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IMR_RXRDY_Pos)               /* (TWIHS_IMR) Receive Holding Register Ready Interrupt Mask Mask */
+#define TWIHS_IMR_RXRDY(value)                (TWIHS_IMR_RXRDY_Msk & (_UINT32_(value) << TWIHS_IMR_RXRDY_Pos)) /* Assigment of value for RXRDY in the TWIHS_IMR register */
+#define TWIHS_IMR_TXRDY_Pos                   _UINT32_(2)                                          /* (TWIHS_IMR) Transmit Holding Register Ready Interrupt Mask Position */
+#define TWIHS_IMR_TXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IMR_TXRDY_Pos)               /* (TWIHS_IMR) Transmit Holding Register Ready Interrupt Mask Mask */
+#define TWIHS_IMR_TXRDY(value)                (TWIHS_IMR_TXRDY_Msk & (_UINT32_(value) << TWIHS_IMR_TXRDY_Pos)) /* Assigment of value for TXRDY in the TWIHS_IMR register */
+#define TWIHS_IMR_SVACC_Pos                   _UINT32_(4)                                          /* (TWIHS_IMR) Slave Access Interrupt Mask Position */
+#define TWIHS_IMR_SVACC_Msk                   (_UINT32_(0x1) << TWIHS_IMR_SVACC_Pos)               /* (TWIHS_IMR) Slave Access Interrupt Mask Mask */
+#define TWIHS_IMR_SVACC(value)                (TWIHS_IMR_SVACC_Msk & (_UINT32_(value) << TWIHS_IMR_SVACC_Pos)) /* Assigment of value for SVACC in the TWIHS_IMR register */
+#define TWIHS_IMR_GACC_Pos                    _UINT32_(5)                                          /* (TWIHS_IMR) General Call Access Interrupt Mask Position */
+#define TWIHS_IMR_GACC_Msk                    (_UINT32_(0x1) << TWIHS_IMR_GACC_Pos)                /* (TWIHS_IMR) General Call Access Interrupt Mask Mask */
+#define TWIHS_IMR_GACC(value)                 (TWIHS_IMR_GACC_Msk & (_UINT32_(value) << TWIHS_IMR_GACC_Pos)) /* Assigment of value for GACC in the TWIHS_IMR register */
+#define TWIHS_IMR_OVRE_Pos                    _UINT32_(6)                                          /* (TWIHS_IMR) Overrun Error Interrupt Mask Position */
+#define TWIHS_IMR_OVRE_Msk                    (_UINT32_(0x1) << TWIHS_IMR_OVRE_Pos)                /* (TWIHS_IMR) Overrun Error Interrupt Mask Mask */
+#define TWIHS_IMR_OVRE(value)                 (TWIHS_IMR_OVRE_Msk & (_UINT32_(value) << TWIHS_IMR_OVRE_Pos)) /* Assigment of value for OVRE in the TWIHS_IMR register */
+#define TWIHS_IMR_UNRE_Pos                    _UINT32_(7)                                          /* (TWIHS_IMR) Underrun Error Interrupt Mask Position */
+#define TWIHS_IMR_UNRE_Msk                    (_UINT32_(0x1) << TWIHS_IMR_UNRE_Pos)                /* (TWIHS_IMR) Underrun Error Interrupt Mask Mask */
+#define TWIHS_IMR_UNRE(value)                 (TWIHS_IMR_UNRE_Msk & (_UINT32_(value) << TWIHS_IMR_UNRE_Pos)) /* Assigment of value for UNRE in the TWIHS_IMR register */
+#define TWIHS_IMR_NACK_Pos                    _UINT32_(8)                                          /* (TWIHS_IMR) Not Acknowledge Interrupt Mask Position */
+#define TWIHS_IMR_NACK_Msk                    (_UINT32_(0x1) << TWIHS_IMR_NACK_Pos)                /* (TWIHS_IMR) Not Acknowledge Interrupt Mask Mask */
+#define TWIHS_IMR_NACK(value)                 (TWIHS_IMR_NACK_Msk & (_UINT32_(value) << TWIHS_IMR_NACK_Pos)) /* Assigment of value for NACK in the TWIHS_IMR register */
+#define TWIHS_IMR_ARBLST_Pos                  _UINT32_(9)                                          /* (TWIHS_IMR) Arbitration Lost Interrupt Mask Position */
+#define TWIHS_IMR_ARBLST_Msk                  (_UINT32_(0x1) << TWIHS_IMR_ARBLST_Pos)              /* (TWIHS_IMR) Arbitration Lost Interrupt Mask Mask */
+#define TWIHS_IMR_ARBLST(value)               (TWIHS_IMR_ARBLST_Msk & (_UINT32_(value) << TWIHS_IMR_ARBLST_Pos)) /* Assigment of value for ARBLST in the TWIHS_IMR register */
+#define TWIHS_IMR_SCL_WS_Pos                  _UINT32_(10)                                         /* (TWIHS_IMR) Clock Wait State Interrupt Mask Position */
+#define TWIHS_IMR_SCL_WS_Msk                  (_UINT32_(0x1) << TWIHS_IMR_SCL_WS_Pos)              /* (TWIHS_IMR) Clock Wait State Interrupt Mask Mask */
+#define TWIHS_IMR_SCL_WS(value)               (TWIHS_IMR_SCL_WS_Msk & (_UINT32_(value) << TWIHS_IMR_SCL_WS_Pos)) /* Assigment of value for SCL_WS in the TWIHS_IMR register */
+#define TWIHS_IMR_EOSACC_Pos                  _UINT32_(11)                                         /* (TWIHS_IMR) End Of Slave Access Interrupt Mask Position */
+#define TWIHS_IMR_EOSACC_Msk                  (_UINT32_(0x1) << TWIHS_IMR_EOSACC_Pos)              /* (TWIHS_IMR) End Of Slave Access Interrupt Mask Mask */
+#define TWIHS_IMR_EOSACC(value)               (TWIHS_IMR_EOSACC_Msk & (_UINT32_(value) << TWIHS_IMR_EOSACC_Pos)) /* Assigment of value for EOSACC in the TWIHS_IMR register */
+#define TWIHS_IMR_MCACK_Pos                   _UINT32_(16)                                         /* (TWIHS_IMR) Master Code Acknowledge Interrupt Mask Position */
+#define TWIHS_IMR_MCACK_Msk                   (_UINT32_(0x1) << TWIHS_IMR_MCACK_Pos)               /* (TWIHS_IMR) Master Code Acknowledge Interrupt Mask Mask */
+#define TWIHS_IMR_MCACK(value)                (TWIHS_IMR_MCACK_Msk & (_UINT32_(value) << TWIHS_IMR_MCACK_Pos)) /* Assigment of value for MCACK in the TWIHS_IMR register */
+#define TWIHS_IMR_TOUT_Pos                    _UINT32_(18)                                         /* (TWIHS_IMR) Timeout Error Interrupt Mask Position */
+#define TWIHS_IMR_TOUT_Msk                    (_UINT32_(0x1) << TWIHS_IMR_TOUT_Pos)                /* (TWIHS_IMR) Timeout Error Interrupt Mask Mask */
+#define TWIHS_IMR_TOUT(value)                 (TWIHS_IMR_TOUT_Msk & (_UINT32_(value) << TWIHS_IMR_TOUT_Pos)) /* Assigment of value for TOUT in the TWIHS_IMR register */
+#define TWIHS_IMR_PECERR_Pos                  _UINT32_(19)                                         /* (TWIHS_IMR) PEC Error Interrupt Mask Position */
+#define TWIHS_IMR_PECERR_Msk                  (_UINT32_(0x1) << TWIHS_IMR_PECERR_Pos)              /* (TWIHS_IMR) PEC Error Interrupt Mask Mask */
+#define TWIHS_IMR_PECERR(value)               (TWIHS_IMR_PECERR_Msk & (_UINT32_(value) << TWIHS_IMR_PECERR_Pos)) /* Assigment of value for PECERR in the TWIHS_IMR register */
+#define TWIHS_IMR_SMBDAM_Pos                  _UINT32_(20)                                         /* (TWIHS_IMR) SMBus Default Address Match Interrupt Mask Position */
+#define TWIHS_IMR_SMBDAM_Msk                  (_UINT32_(0x1) << TWIHS_IMR_SMBDAM_Pos)              /* (TWIHS_IMR) SMBus Default Address Match Interrupt Mask Mask */
+#define TWIHS_IMR_SMBDAM(value)               (TWIHS_IMR_SMBDAM_Msk & (_UINT32_(value) << TWIHS_IMR_SMBDAM_Pos)) /* Assigment of value for SMBDAM in the TWIHS_IMR register */
+#define TWIHS_IMR_SMBHHM_Pos                  _UINT32_(21)                                         /* (TWIHS_IMR) SMBus Host Header Address Match Interrupt Mask Position */
+#define TWIHS_IMR_SMBHHM_Msk                  (_UINT32_(0x1) << TWIHS_IMR_SMBHHM_Pos)              /* (TWIHS_IMR) SMBus Host Header Address Match Interrupt Mask Mask */
+#define TWIHS_IMR_SMBHHM(value)               (TWIHS_IMR_SMBHHM_Msk & (_UINT32_(value) << TWIHS_IMR_SMBHHM_Pos)) /* Assigment of value for SMBHHM in the TWIHS_IMR register */
+#define TWIHS_IMR_Msk                         _UINT32_(0x003D0FF7)                                 /* (TWIHS_IMR) Register Mask  */
+
+
 /* -------- TWIHS_MMR : (TWIHS Offset: 0x04) (R/W 32) Master Mode Register -------- */
 #define TWIHS_MMR_IADRSZ_Pos                  _UINT32_(8)                                          /* (TWIHS_MMR) Internal Device Address Size Position */
 #define TWIHS_MMR_IADRSZ_Msk                  (_UINT32_(0x3) << TWIHS_MMR_IADRSZ_Pos)              /* (TWIHS_MMR) Internal Device Address Size Mask */
@@ -189,6 +579,44 @@
 #define TWIHS_MMR_DADR_Msk                    (_UINT32_(0x7F) << TWIHS_MMR_DADR_Pos)               /* (TWIHS_MMR) Device Address Mask */
 #define TWIHS_MMR_DADR(value)                 (TWIHS_MMR_DADR_Msk & (_UINT32_(value) << TWIHS_MMR_DADR_Pos)) /* Assigment of value for DADR in the TWIHS_MMR register */
 #define TWIHS_MMR_Msk                         _UINT32_(0x007F1300)                                 /* (TWIHS_MMR) Register Mask  */
+
+
+/* -------- TWIHS_RHR : (TWIHS Offset: 0x30) ( R/ 32) Receive Holding Register -------- */
+#define TWIHS_RHR_RXDATA_Pos                  _UINT32_(0)                                          /* (TWIHS_RHR) Master or Slave Receive Holding Data Position */
+#define TWIHS_RHR_RXDATA_Msk                  (_UINT32_(0xFF) << TWIHS_RHR_RXDATA_Pos)             /* (TWIHS_RHR) Master or Slave Receive Holding Data Mask */
+#define TWIHS_RHR_RXDATA(value)               (TWIHS_RHR_RXDATA_Msk & (_UINT32_(value) << TWIHS_RHR_RXDATA_Pos)) /* Assigment of value for RXDATA in the TWIHS_RHR register */
+#define TWIHS_RHR_Msk                         _UINT32_(0x000000FF)                                 /* (TWIHS_RHR) Register Mask  */
+
+/* FIFO_ENABLED mode */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA0_Pos    _UINT32_(0)                                          /* (TWIHS_RHR) Master or Slave Receive Holding Data 0 Position */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA0_Msk    (_UINT32_(0xFF) << TWIHS_RHR_FIFO_ENABLED_RXDATA0_Pos) /* (TWIHS_RHR) Master or Slave Receive Holding Data 0 Mask */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA0(value) (TWIHS_RHR_FIFO_ENABLED_RXDATA0_Msk & (_UINT32_(value) << TWIHS_RHR_FIFO_ENABLED_RXDATA0_Pos))
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA1_Pos    _UINT32_(8)                                          /* (TWIHS_RHR) Master or Slave Receive Holding Data 1 Position */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA1_Msk    (_UINT32_(0xFF) << TWIHS_RHR_FIFO_ENABLED_RXDATA1_Pos) /* (TWIHS_RHR) Master or Slave Receive Holding Data 1 Mask */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA1(value) (TWIHS_RHR_FIFO_ENABLED_RXDATA1_Msk & (_UINT32_(value) << TWIHS_RHR_FIFO_ENABLED_RXDATA1_Pos))
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA2_Pos    _UINT32_(16)                                         /* (TWIHS_RHR) Master or Slave Receive Holding Data 2 Position */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA2_Msk    (_UINT32_(0xFF) << TWIHS_RHR_FIFO_ENABLED_RXDATA2_Pos) /* (TWIHS_RHR) Master or Slave Receive Holding Data 2 Mask */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA2(value) (TWIHS_RHR_FIFO_ENABLED_RXDATA2_Msk & (_UINT32_(value) << TWIHS_RHR_FIFO_ENABLED_RXDATA2_Pos))
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA3_Pos    _UINT32_(24)                                         /* (TWIHS_RHR) Master or Slave Receive Holding Data 3 Position */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA3_Msk    (_UINT32_(0xFF) << TWIHS_RHR_FIFO_ENABLED_RXDATA3_Pos) /* (TWIHS_RHR) Master or Slave Receive Holding Data 3 Mask */
+#define TWIHS_RHR_FIFO_ENABLED_RXDATA3(value) (TWIHS_RHR_FIFO_ENABLED_RXDATA3_Msk & (_UINT32_(value) << TWIHS_RHR_FIFO_ENABLED_RXDATA3_Pos))
+#define TWIHS_RHR_FIFO_ENABLED_Msk            _UINT32_(0xFFFFFFFF)                                  /* (TWIHS_RHR_FIFO_ENABLED) Register Mask  */
+
+
+/* -------- TWIHS_SMBTR : (TWIHS Offset: 0x38) (R/W 32) SMBus Timing Register -------- */
+#define TWIHS_SMBTR_PRESC_Pos                 _UINT32_(0)                                          /* (TWIHS_SMBTR) SMBus Clock Prescaler Position */
+#define TWIHS_SMBTR_PRESC_Msk                 (_UINT32_(0xF) << TWIHS_SMBTR_PRESC_Pos)             /* (TWIHS_SMBTR) SMBus Clock Prescaler Mask */
+#define TWIHS_SMBTR_PRESC(value)              (TWIHS_SMBTR_PRESC_Msk & (_UINT32_(value) << TWIHS_SMBTR_PRESC_Pos)) /* Assigment of value for PRESC in the TWIHS_SMBTR register */
+#define TWIHS_SMBTR_TLOWS_Pos                 _UINT32_(8)                                          /* (TWIHS_SMBTR) Slave Clock Stretch Maximum Cycles Position */
+#define TWIHS_SMBTR_TLOWS_Msk                 (_UINT32_(0xFF) << TWIHS_SMBTR_TLOWS_Pos)            /* (TWIHS_SMBTR) Slave Clock Stretch Maximum Cycles Mask */
+#define TWIHS_SMBTR_TLOWS(value)              (TWIHS_SMBTR_TLOWS_Msk & (_UINT32_(value) << TWIHS_SMBTR_TLOWS_Pos)) /* Assigment of value for TLOWS in the TWIHS_SMBTR register */
+#define TWIHS_SMBTR_TLOWM_Pos                 _UINT32_(16)                                         /* (TWIHS_SMBTR) Master Clock Stretch Maximum Cycles Position */
+#define TWIHS_SMBTR_TLOWM_Msk                 (_UINT32_(0xFF) << TWIHS_SMBTR_TLOWM_Pos)            /* (TWIHS_SMBTR) Master Clock Stretch Maximum Cycles Mask */
+#define TWIHS_SMBTR_TLOWM(value)              (TWIHS_SMBTR_TLOWM_Msk & (_UINT32_(value) << TWIHS_SMBTR_TLOWM_Pos)) /* Assigment of value for TLOWM in the TWIHS_SMBTR register */
+#define TWIHS_SMBTR_THMAX_Pos                 _UINT32_(24)                                         /* (TWIHS_SMBTR) Clock High Maximum Cycles Position */
+#define TWIHS_SMBTR_THMAX_Msk                 (_UINT32_(0xFF) << TWIHS_SMBTR_THMAX_Pos)            /* (TWIHS_SMBTR) Clock High Maximum Cycles Mask */
+#define TWIHS_SMBTR_THMAX(value)              (TWIHS_SMBTR_THMAX_Msk & (_UINT32_(value) << TWIHS_SMBTR_THMAX_Pos)) /* Assigment of value for THMAX in the TWIHS_SMBTR register */
+#define TWIHS_SMBTR_Msk                       _UINT32_(0xFFFFFF0F)                                 /* (TWIHS_SMBTR) Register Mask  */
 
 
 /* -------- TWIHS_SMR : (TWIHS Offset: 0x08) (R/W 32) Slave Mode Register -------- */
@@ -223,36 +651,6 @@
 #define TWIHS_SMR_DATAMEN_Msk                 (_UINT32_(0x1) << TWIHS_SMR_DATAMEN_Pos)             /* (TWIHS_SMR) Data Matching Enable Mask */
 #define TWIHS_SMR_DATAMEN(value)              (TWIHS_SMR_DATAMEN_Msk & (_UINT32_(value) << TWIHS_SMR_DATAMEN_Pos)) /* Assigment of value for DATAMEN in the TWIHS_SMR register */
 #define TWIHS_SMR_Msk                         _UINT32_(0xF07F7F4D)                                 /* (TWIHS_SMR) Register Mask  */
-
-
-/* -------- TWIHS_IADR : (TWIHS Offset: 0x0C) (R/W 32) Internal Address Register -------- */
-#define TWIHS_IADR_IADR_Pos                   _UINT32_(0)                                          /* (TWIHS_IADR) Internal Address Position */
-#define TWIHS_IADR_IADR_Msk                   (_UINT32_(0xFFFFFF) << TWIHS_IADR_IADR_Pos)          /* (TWIHS_IADR) Internal Address Mask */
-#define TWIHS_IADR_IADR(value)                (TWIHS_IADR_IADR_Msk & (_UINT32_(value) << TWIHS_IADR_IADR_Pos)) /* Assigment of value for IADR in the TWIHS_IADR register */
-#define TWIHS_IADR_Msk                        _UINT32_(0x00FFFFFF)                                 /* (TWIHS_IADR) Register Mask  */
-
-
-/* -------- TWIHS_CWGR : (TWIHS Offset: 0x10) (R/W 32) Clock Waveform Generator Register -------- */
-#define TWIHS_CWGR_CLDIV_Pos                  _UINT32_(0)                                          /* (TWIHS_CWGR) Clock Low Divider Position */
-#define TWIHS_CWGR_CLDIV_Msk                  (_UINT32_(0xFF) << TWIHS_CWGR_CLDIV_Pos)             /* (TWIHS_CWGR) Clock Low Divider Mask */
-#define TWIHS_CWGR_CLDIV(value)               (TWIHS_CWGR_CLDIV_Msk & (_UINT32_(value) << TWIHS_CWGR_CLDIV_Pos)) /* Assigment of value for CLDIV in the TWIHS_CWGR register */
-#define TWIHS_CWGR_CHDIV_Pos                  _UINT32_(8)                                          /* (TWIHS_CWGR) Clock High Divider Position */
-#define TWIHS_CWGR_CHDIV_Msk                  (_UINT32_(0xFF) << TWIHS_CWGR_CHDIV_Pos)             /* (TWIHS_CWGR) Clock High Divider Mask */
-#define TWIHS_CWGR_CHDIV(value)               (TWIHS_CWGR_CHDIV_Msk & (_UINT32_(value) << TWIHS_CWGR_CHDIV_Pos)) /* Assigment of value for CHDIV in the TWIHS_CWGR register */
-#define TWIHS_CWGR_CKDIV_Pos                  _UINT32_(16)                                         /* (TWIHS_CWGR) Clock Divider Position */
-#define TWIHS_CWGR_CKDIV_Msk                  (_UINT32_(0x7) << TWIHS_CWGR_CKDIV_Pos)              /* (TWIHS_CWGR) Clock Divider Mask */
-#define TWIHS_CWGR_CKDIV(value)               (TWIHS_CWGR_CKDIV_Msk & (_UINT32_(value) << TWIHS_CWGR_CKDIV_Pos)) /* Assigment of value for CKDIV in the TWIHS_CWGR register */
-#define TWIHS_CWGR_CKSRC_Pos                  _UINT32_(20)                                         /* (TWIHS_CWGR) Transfer Rate Clock Source Position */
-#define TWIHS_CWGR_CKSRC_Msk                  (_UINT32_(0x1) << TWIHS_CWGR_CKSRC_Pos)              /* (TWIHS_CWGR) Transfer Rate Clock Source Mask */
-#define TWIHS_CWGR_CKSRC(value)               (TWIHS_CWGR_CKSRC_Msk & (_UINT32_(value) << TWIHS_CWGR_CKSRC_Pos)) /* Assigment of value for CKSRC in the TWIHS_CWGR register */
-#define   TWIHS_CWGR_CKSRC_PERIPH_CK_Val      _UINT32_(0x0)                                        /* (TWIHS_CWGR) Peripheral clock is used to generate the TWIHS baud rate.  */
-#define   TWIHS_CWGR_CKSRC_GCLK_Val           _UINT32_(0x1)                                        /* (TWIHS_CWGR) GCLK is used to generate the TWIHS baud rate.  */
-#define TWIHS_CWGR_CKSRC_PERIPH_CK            (TWIHS_CWGR_CKSRC_PERIPH_CK_Val << TWIHS_CWGR_CKSRC_Pos) /* (TWIHS_CWGR) Peripheral clock is used to generate the TWIHS baud rate. Position  */
-#define TWIHS_CWGR_CKSRC_GCLK                 (TWIHS_CWGR_CKSRC_GCLK_Val << TWIHS_CWGR_CKSRC_Pos)  /* (TWIHS_CWGR) GCLK is used to generate the TWIHS baud rate. Position  */
-#define TWIHS_CWGR_HOLD_Pos                   _UINT32_(24)                                         /* (TWIHS_CWGR) TWD Hold Time Versus TWCK Falling Position */
-#define TWIHS_CWGR_HOLD_Msk                   (_UINT32_(0x1F) << TWIHS_CWGR_HOLD_Pos)              /* (TWIHS_CWGR) TWD Hold Time Versus TWCK Falling Mask */
-#define TWIHS_CWGR_HOLD(value)                (TWIHS_CWGR_HOLD_Msk & (_UINT32_(value) << TWIHS_CWGR_HOLD_Pos)) /* Assigment of value for HOLD in the TWIHS_CWGR register */
-#define TWIHS_CWGR_Msk                        _UINT32_(0x1F17FFFF)                                 /* (TWIHS_CWGR) Register Mask  */
 
 
 /* -------- TWIHS_SR : (TWIHS Offset: 0x20) ( R/ 32) Status Register -------- */
@@ -382,182 +780,20 @@
 #define TWIHS_SR_FIFO_ENABLED_Msk             _UINT32_(0x03BD0FFF)                                  /* (TWIHS_SR_FIFO_ENABLED) Register Mask  */
 
 
-/* -------- TWIHS_IER : (TWIHS Offset: 0x24) ( /W 32) Interrupt Enable Register -------- */
-#define TWIHS_IER_TXCOMP_Pos                  _UINT32_(0)                                          /* (TWIHS_IER) Transmission Completed Interrupt Enable Position */
-#define TWIHS_IER_TXCOMP_Msk                  (_UINT32_(0x1) << TWIHS_IER_TXCOMP_Pos)              /* (TWIHS_IER) Transmission Completed Interrupt Enable Mask */
-#define TWIHS_IER_TXCOMP(value)               (TWIHS_IER_TXCOMP_Msk & (_UINT32_(value) << TWIHS_IER_TXCOMP_Pos)) /* Assigment of value for TXCOMP in the TWIHS_IER register */
-#define TWIHS_IER_RXRDY_Pos                   _UINT32_(1)                                          /* (TWIHS_IER) Receive Holding Register Ready Interrupt Enable Position */
-#define TWIHS_IER_RXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IER_RXRDY_Pos)               /* (TWIHS_IER) Receive Holding Register Ready Interrupt Enable Mask */
-#define TWIHS_IER_RXRDY(value)                (TWIHS_IER_RXRDY_Msk & (_UINT32_(value) << TWIHS_IER_RXRDY_Pos)) /* Assigment of value for RXRDY in the TWIHS_IER register */
-#define TWIHS_IER_TXRDY_Pos                   _UINT32_(2)                                          /* (TWIHS_IER) Transmit Holding Register Ready Interrupt Enable Position */
-#define TWIHS_IER_TXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IER_TXRDY_Pos)               /* (TWIHS_IER) Transmit Holding Register Ready Interrupt Enable Mask */
-#define TWIHS_IER_TXRDY(value)                (TWIHS_IER_TXRDY_Msk & (_UINT32_(value) << TWIHS_IER_TXRDY_Pos)) /* Assigment of value for TXRDY in the TWIHS_IER register */
-#define TWIHS_IER_SVACC_Pos                   _UINT32_(4)                                          /* (TWIHS_IER) Slave Access Interrupt Enable Position */
-#define TWIHS_IER_SVACC_Msk                   (_UINT32_(0x1) << TWIHS_IER_SVACC_Pos)               /* (TWIHS_IER) Slave Access Interrupt Enable Mask */
-#define TWIHS_IER_SVACC(value)                (TWIHS_IER_SVACC_Msk & (_UINT32_(value) << TWIHS_IER_SVACC_Pos)) /* Assigment of value for SVACC in the TWIHS_IER register */
-#define TWIHS_IER_GACC_Pos                    _UINT32_(5)                                          /* (TWIHS_IER) General Call Access Interrupt Enable Position */
-#define TWIHS_IER_GACC_Msk                    (_UINT32_(0x1) << TWIHS_IER_GACC_Pos)                /* (TWIHS_IER) General Call Access Interrupt Enable Mask */
-#define TWIHS_IER_GACC(value)                 (TWIHS_IER_GACC_Msk & (_UINT32_(value) << TWIHS_IER_GACC_Pos)) /* Assigment of value for GACC in the TWIHS_IER register */
-#define TWIHS_IER_OVRE_Pos                    _UINT32_(6)                                          /* (TWIHS_IER) Overrun Error Interrupt Enable Position */
-#define TWIHS_IER_OVRE_Msk                    (_UINT32_(0x1) << TWIHS_IER_OVRE_Pos)                /* (TWIHS_IER) Overrun Error Interrupt Enable Mask */
-#define TWIHS_IER_OVRE(value)                 (TWIHS_IER_OVRE_Msk & (_UINT32_(value) << TWIHS_IER_OVRE_Pos)) /* Assigment of value for OVRE in the TWIHS_IER register */
-#define TWIHS_IER_UNRE_Pos                    _UINT32_(7)                                          /* (TWIHS_IER) Underrun Error Interrupt Enable Position */
-#define TWIHS_IER_UNRE_Msk                    (_UINT32_(0x1) << TWIHS_IER_UNRE_Pos)                /* (TWIHS_IER) Underrun Error Interrupt Enable Mask */
-#define TWIHS_IER_UNRE(value)                 (TWIHS_IER_UNRE_Msk & (_UINT32_(value) << TWIHS_IER_UNRE_Pos)) /* Assigment of value for UNRE in the TWIHS_IER register */
-#define TWIHS_IER_NACK_Pos                    _UINT32_(8)                                          /* (TWIHS_IER) Not Acknowledge Interrupt Enable Position */
-#define TWIHS_IER_NACK_Msk                    (_UINT32_(0x1) << TWIHS_IER_NACK_Pos)                /* (TWIHS_IER) Not Acknowledge Interrupt Enable Mask */
-#define TWIHS_IER_NACK(value)                 (TWIHS_IER_NACK_Msk & (_UINT32_(value) << TWIHS_IER_NACK_Pos)) /* Assigment of value for NACK in the TWIHS_IER register */
-#define TWIHS_IER_ARBLST_Pos                  _UINT32_(9)                                          /* (TWIHS_IER) Arbitration Lost Interrupt Enable Position */
-#define TWIHS_IER_ARBLST_Msk                  (_UINT32_(0x1) << TWIHS_IER_ARBLST_Pos)              /* (TWIHS_IER) Arbitration Lost Interrupt Enable Mask */
-#define TWIHS_IER_ARBLST(value)               (TWIHS_IER_ARBLST_Msk & (_UINT32_(value) << TWIHS_IER_ARBLST_Pos)) /* Assigment of value for ARBLST in the TWIHS_IER register */
-#define TWIHS_IER_SCL_WS_Pos                  _UINT32_(10)                                         /* (TWIHS_IER) Clock Wait State Interrupt Enable Position */
-#define TWIHS_IER_SCL_WS_Msk                  (_UINT32_(0x1) << TWIHS_IER_SCL_WS_Pos)              /* (TWIHS_IER) Clock Wait State Interrupt Enable Mask */
-#define TWIHS_IER_SCL_WS(value)               (TWIHS_IER_SCL_WS_Msk & (_UINT32_(value) << TWIHS_IER_SCL_WS_Pos)) /* Assigment of value for SCL_WS in the TWIHS_IER register */
-#define TWIHS_IER_EOSACC_Pos                  _UINT32_(11)                                         /* (TWIHS_IER) End Of Slave Access Interrupt Enable Position */
-#define TWIHS_IER_EOSACC_Msk                  (_UINT32_(0x1) << TWIHS_IER_EOSACC_Pos)              /* (TWIHS_IER) End Of Slave Access Interrupt Enable Mask */
-#define TWIHS_IER_EOSACC(value)               (TWIHS_IER_EOSACC_Msk & (_UINT32_(value) << TWIHS_IER_EOSACC_Pos)) /* Assigment of value for EOSACC in the TWIHS_IER register */
-#define TWIHS_IER_MCACK_Pos                   _UINT32_(16)                                         /* (TWIHS_IER) Master Code Acknowledge Interrupt Enable Position */
-#define TWIHS_IER_MCACK_Msk                   (_UINT32_(0x1) << TWIHS_IER_MCACK_Pos)               /* (TWIHS_IER) Master Code Acknowledge Interrupt Enable Mask */
-#define TWIHS_IER_MCACK(value)                (TWIHS_IER_MCACK_Msk & (_UINT32_(value) << TWIHS_IER_MCACK_Pos)) /* Assigment of value for MCACK in the TWIHS_IER register */
-#define TWIHS_IER_TOUT_Pos                    _UINT32_(18)                                         /* (TWIHS_IER) Timeout Error Interrupt Enable Position */
-#define TWIHS_IER_TOUT_Msk                    (_UINT32_(0x1) << TWIHS_IER_TOUT_Pos)                /* (TWIHS_IER) Timeout Error Interrupt Enable Mask */
-#define TWIHS_IER_TOUT(value)                 (TWIHS_IER_TOUT_Msk & (_UINT32_(value) << TWIHS_IER_TOUT_Pos)) /* Assigment of value for TOUT in the TWIHS_IER register */
-#define TWIHS_IER_PECERR_Pos                  _UINT32_(19)                                         /* (TWIHS_IER) PEC Error Interrupt Enable Position */
-#define TWIHS_IER_PECERR_Msk                  (_UINT32_(0x1) << TWIHS_IER_PECERR_Pos)              /* (TWIHS_IER) PEC Error Interrupt Enable Mask */
-#define TWIHS_IER_PECERR(value)               (TWIHS_IER_PECERR_Msk & (_UINT32_(value) << TWIHS_IER_PECERR_Pos)) /* Assigment of value for PECERR in the TWIHS_IER register */
-#define TWIHS_IER_SMBDAM_Pos                  _UINT32_(20)                                         /* (TWIHS_IER) SMBus Default Address Match Interrupt Enable Position */
-#define TWIHS_IER_SMBDAM_Msk                  (_UINT32_(0x1) << TWIHS_IER_SMBDAM_Pos)              /* (TWIHS_IER) SMBus Default Address Match Interrupt Enable Mask */
-#define TWIHS_IER_SMBDAM(value)               (TWIHS_IER_SMBDAM_Msk & (_UINT32_(value) << TWIHS_IER_SMBDAM_Pos)) /* Assigment of value for SMBDAM in the TWIHS_IER register */
-#define TWIHS_IER_SMBHHM_Pos                  _UINT32_(21)                                         /* (TWIHS_IER) SMBus Host Header Address Match Interrupt Enable Position */
-#define TWIHS_IER_SMBHHM_Msk                  (_UINT32_(0x1) << TWIHS_IER_SMBHHM_Pos)              /* (TWIHS_IER) SMBus Host Header Address Match Interrupt Enable Mask */
-#define TWIHS_IER_SMBHHM(value)               (TWIHS_IER_SMBHHM_Msk & (_UINT32_(value) << TWIHS_IER_SMBHHM_Pos)) /* Assigment of value for SMBHHM in the TWIHS_IER register */
-#define TWIHS_IER_Msk                         _UINT32_(0x003D0FF7)                                 /* (TWIHS_IER) Register Mask  */
-
-
-/* -------- TWIHS_IDR : (TWIHS Offset: 0x28) ( /W 32) Interrupt Disable Register -------- */
-#define TWIHS_IDR_TXCOMP_Pos                  _UINT32_(0)                                          /* (TWIHS_IDR) Transmission Completed Interrupt Disable Position */
-#define TWIHS_IDR_TXCOMP_Msk                  (_UINT32_(0x1) << TWIHS_IDR_TXCOMP_Pos)              /* (TWIHS_IDR) Transmission Completed Interrupt Disable Mask */
-#define TWIHS_IDR_TXCOMP(value)               (TWIHS_IDR_TXCOMP_Msk & (_UINT32_(value) << TWIHS_IDR_TXCOMP_Pos)) /* Assigment of value for TXCOMP in the TWIHS_IDR register */
-#define TWIHS_IDR_RXRDY_Pos                   _UINT32_(1)                                          /* (TWIHS_IDR) Receive Holding Register Ready Interrupt Disable Position */
-#define TWIHS_IDR_RXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IDR_RXRDY_Pos)               /* (TWIHS_IDR) Receive Holding Register Ready Interrupt Disable Mask */
-#define TWIHS_IDR_RXRDY(value)                (TWIHS_IDR_RXRDY_Msk & (_UINT32_(value) << TWIHS_IDR_RXRDY_Pos)) /* Assigment of value for RXRDY in the TWIHS_IDR register */
-#define TWIHS_IDR_TXRDY_Pos                   _UINT32_(2)                                          /* (TWIHS_IDR) Transmit Holding Register Ready Interrupt Disable Position */
-#define TWIHS_IDR_TXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IDR_TXRDY_Pos)               /* (TWIHS_IDR) Transmit Holding Register Ready Interrupt Disable Mask */
-#define TWIHS_IDR_TXRDY(value)                (TWIHS_IDR_TXRDY_Msk & (_UINT32_(value) << TWIHS_IDR_TXRDY_Pos)) /* Assigment of value for TXRDY in the TWIHS_IDR register */
-#define TWIHS_IDR_SVACC_Pos                   _UINT32_(4)                                          /* (TWIHS_IDR) Slave Access Interrupt Disable Position */
-#define TWIHS_IDR_SVACC_Msk                   (_UINT32_(0x1) << TWIHS_IDR_SVACC_Pos)               /* (TWIHS_IDR) Slave Access Interrupt Disable Mask */
-#define TWIHS_IDR_SVACC(value)                (TWIHS_IDR_SVACC_Msk & (_UINT32_(value) << TWIHS_IDR_SVACC_Pos)) /* Assigment of value for SVACC in the TWIHS_IDR register */
-#define TWIHS_IDR_GACC_Pos                    _UINT32_(5)                                          /* (TWIHS_IDR) General Call Access Interrupt Disable Position */
-#define TWIHS_IDR_GACC_Msk                    (_UINT32_(0x1) << TWIHS_IDR_GACC_Pos)                /* (TWIHS_IDR) General Call Access Interrupt Disable Mask */
-#define TWIHS_IDR_GACC(value)                 (TWIHS_IDR_GACC_Msk & (_UINT32_(value) << TWIHS_IDR_GACC_Pos)) /* Assigment of value for GACC in the TWIHS_IDR register */
-#define TWIHS_IDR_OVRE_Pos                    _UINT32_(6)                                          /* (TWIHS_IDR) Overrun Error Interrupt Disable Position */
-#define TWIHS_IDR_OVRE_Msk                    (_UINT32_(0x1) << TWIHS_IDR_OVRE_Pos)                /* (TWIHS_IDR) Overrun Error Interrupt Disable Mask */
-#define TWIHS_IDR_OVRE(value)                 (TWIHS_IDR_OVRE_Msk & (_UINT32_(value) << TWIHS_IDR_OVRE_Pos)) /* Assigment of value for OVRE in the TWIHS_IDR register */
-#define TWIHS_IDR_UNRE_Pos                    _UINT32_(7)                                          /* (TWIHS_IDR) Underrun Error Interrupt Disable Position */
-#define TWIHS_IDR_UNRE_Msk                    (_UINT32_(0x1) << TWIHS_IDR_UNRE_Pos)                /* (TWIHS_IDR) Underrun Error Interrupt Disable Mask */
-#define TWIHS_IDR_UNRE(value)                 (TWIHS_IDR_UNRE_Msk & (_UINT32_(value) << TWIHS_IDR_UNRE_Pos)) /* Assigment of value for UNRE in the TWIHS_IDR register */
-#define TWIHS_IDR_NACK_Pos                    _UINT32_(8)                                          /* (TWIHS_IDR) Not Acknowledge Interrupt Disable Position */
-#define TWIHS_IDR_NACK_Msk                    (_UINT32_(0x1) << TWIHS_IDR_NACK_Pos)                /* (TWIHS_IDR) Not Acknowledge Interrupt Disable Mask */
-#define TWIHS_IDR_NACK(value)                 (TWIHS_IDR_NACK_Msk & (_UINT32_(value) << TWIHS_IDR_NACK_Pos)) /* Assigment of value for NACK in the TWIHS_IDR register */
-#define TWIHS_IDR_ARBLST_Pos                  _UINT32_(9)                                          /* (TWIHS_IDR) Arbitration Lost Interrupt Disable Position */
-#define TWIHS_IDR_ARBLST_Msk                  (_UINT32_(0x1) << TWIHS_IDR_ARBLST_Pos)              /* (TWIHS_IDR) Arbitration Lost Interrupt Disable Mask */
-#define TWIHS_IDR_ARBLST(value)               (TWIHS_IDR_ARBLST_Msk & (_UINT32_(value) << TWIHS_IDR_ARBLST_Pos)) /* Assigment of value for ARBLST in the TWIHS_IDR register */
-#define TWIHS_IDR_SCL_WS_Pos                  _UINT32_(10)                                         /* (TWIHS_IDR) Clock Wait State Interrupt Disable Position */
-#define TWIHS_IDR_SCL_WS_Msk                  (_UINT32_(0x1) << TWIHS_IDR_SCL_WS_Pos)              /* (TWIHS_IDR) Clock Wait State Interrupt Disable Mask */
-#define TWIHS_IDR_SCL_WS(value)               (TWIHS_IDR_SCL_WS_Msk & (_UINT32_(value) << TWIHS_IDR_SCL_WS_Pos)) /* Assigment of value for SCL_WS in the TWIHS_IDR register */
-#define TWIHS_IDR_EOSACC_Pos                  _UINT32_(11)                                         /* (TWIHS_IDR) End Of Slave Access Interrupt Disable Position */
-#define TWIHS_IDR_EOSACC_Msk                  (_UINT32_(0x1) << TWIHS_IDR_EOSACC_Pos)              /* (TWIHS_IDR) End Of Slave Access Interrupt Disable Mask */
-#define TWIHS_IDR_EOSACC(value)               (TWIHS_IDR_EOSACC_Msk & (_UINT32_(value) << TWIHS_IDR_EOSACC_Pos)) /* Assigment of value for EOSACC in the TWIHS_IDR register */
-#define TWIHS_IDR_MCACK_Pos                   _UINT32_(16)                                         /* (TWIHS_IDR) Master Code Acknowledge Interrupt Disable Position */
-#define TWIHS_IDR_MCACK_Msk                   (_UINT32_(0x1) << TWIHS_IDR_MCACK_Pos)               /* (TWIHS_IDR) Master Code Acknowledge Interrupt Disable Mask */
-#define TWIHS_IDR_MCACK(value)                (TWIHS_IDR_MCACK_Msk & (_UINT32_(value) << TWIHS_IDR_MCACK_Pos)) /* Assigment of value for MCACK in the TWIHS_IDR register */
-#define TWIHS_IDR_TOUT_Pos                    _UINT32_(18)                                         /* (TWIHS_IDR) Timeout Error Interrupt Disable Position */
-#define TWIHS_IDR_TOUT_Msk                    (_UINT32_(0x1) << TWIHS_IDR_TOUT_Pos)                /* (TWIHS_IDR) Timeout Error Interrupt Disable Mask */
-#define TWIHS_IDR_TOUT(value)                 (TWIHS_IDR_TOUT_Msk & (_UINT32_(value) << TWIHS_IDR_TOUT_Pos)) /* Assigment of value for TOUT in the TWIHS_IDR register */
-#define TWIHS_IDR_PECERR_Pos                  _UINT32_(19)                                         /* (TWIHS_IDR) PEC Error Interrupt Disable Position */
-#define TWIHS_IDR_PECERR_Msk                  (_UINT32_(0x1) << TWIHS_IDR_PECERR_Pos)              /* (TWIHS_IDR) PEC Error Interrupt Disable Mask */
-#define TWIHS_IDR_PECERR(value)               (TWIHS_IDR_PECERR_Msk & (_UINT32_(value) << TWIHS_IDR_PECERR_Pos)) /* Assigment of value for PECERR in the TWIHS_IDR register */
-#define TWIHS_IDR_SMBDAM_Pos                  _UINT32_(20)                                         /* (TWIHS_IDR) SMBus Default Address Match Interrupt Disable Position */
-#define TWIHS_IDR_SMBDAM_Msk                  (_UINT32_(0x1) << TWIHS_IDR_SMBDAM_Pos)              /* (TWIHS_IDR) SMBus Default Address Match Interrupt Disable Mask */
-#define TWIHS_IDR_SMBDAM(value)               (TWIHS_IDR_SMBDAM_Msk & (_UINT32_(value) << TWIHS_IDR_SMBDAM_Pos)) /* Assigment of value for SMBDAM in the TWIHS_IDR register */
-#define TWIHS_IDR_SMBHHM_Pos                  _UINT32_(21)                                         /* (TWIHS_IDR) SMBus Host Header Address Match Interrupt Disable Position */
-#define TWIHS_IDR_SMBHHM_Msk                  (_UINT32_(0x1) << TWIHS_IDR_SMBHHM_Pos)              /* (TWIHS_IDR) SMBus Host Header Address Match Interrupt Disable Mask */
-#define TWIHS_IDR_SMBHHM(value)               (TWIHS_IDR_SMBHHM_Msk & (_UINT32_(value) << TWIHS_IDR_SMBHHM_Pos)) /* Assigment of value for SMBHHM in the TWIHS_IDR register */
-#define TWIHS_IDR_Msk                         _UINT32_(0x003D0FF7)                                 /* (TWIHS_IDR) Register Mask  */
-
-
-/* -------- TWIHS_IMR : (TWIHS Offset: 0x2C) ( R/ 32) Interrupt Mask Register -------- */
-#define TWIHS_IMR_TXCOMP_Pos                  _UINT32_(0)                                          /* (TWIHS_IMR) Transmission Completed Interrupt Mask Position */
-#define TWIHS_IMR_TXCOMP_Msk                  (_UINT32_(0x1) << TWIHS_IMR_TXCOMP_Pos)              /* (TWIHS_IMR) Transmission Completed Interrupt Mask Mask */
-#define TWIHS_IMR_TXCOMP(value)               (TWIHS_IMR_TXCOMP_Msk & (_UINT32_(value) << TWIHS_IMR_TXCOMP_Pos)) /* Assigment of value for TXCOMP in the TWIHS_IMR register */
-#define TWIHS_IMR_RXRDY_Pos                   _UINT32_(1)                                          /* (TWIHS_IMR) Receive Holding Register Ready Interrupt Mask Position */
-#define TWIHS_IMR_RXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IMR_RXRDY_Pos)               /* (TWIHS_IMR) Receive Holding Register Ready Interrupt Mask Mask */
-#define TWIHS_IMR_RXRDY(value)                (TWIHS_IMR_RXRDY_Msk & (_UINT32_(value) << TWIHS_IMR_RXRDY_Pos)) /* Assigment of value for RXRDY in the TWIHS_IMR register */
-#define TWIHS_IMR_TXRDY_Pos                   _UINT32_(2)                                          /* (TWIHS_IMR) Transmit Holding Register Ready Interrupt Mask Position */
-#define TWIHS_IMR_TXRDY_Msk                   (_UINT32_(0x1) << TWIHS_IMR_TXRDY_Pos)               /* (TWIHS_IMR) Transmit Holding Register Ready Interrupt Mask Mask */
-#define TWIHS_IMR_TXRDY(value)                (TWIHS_IMR_TXRDY_Msk & (_UINT32_(value) << TWIHS_IMR_TXRDY_Pos)) /* Assigment of value for TXRDY in the TWIHS_IMR register */
-#define TWIHS_IMR_SVACC_Pos                   _UINT32_(4)                                          /* (TWIHS_IMR) Slave Access Interrupt Mask Position */
-#define TWIHS_IMR_SVACC_Msk                   (_UINT32_(0x1) << TWIHS_IMR_SVACC_Pos)               /* (TWIHS_IMR) Slave Access Interrupt Mask Mask */
-#define TWIHS_IMR_SVACC(value)                (TWIHS_IMR_SVACC_Msk & (_UINT32_(value) << TWIHS_IMR_SVACC_Pos)) /* Assigment of value for SVACC in the TWIHS_IMR register */
-#define TWIHS_IMR_GACC_Pos                    _UINT32_(5)                                          /* (TWIHS_IMR) General Call Access Interrupt Mask Position */
-#define TWIHS_IMR_GACC_Msk                    (_UINT32_(0x1) << TWIHS_IMR_GACC_Pos)                /* (TWIHS_IMR) General Call Access Interrupt Mask Mask */
-#define TWIHS_IMR_GACC(value)                 (TWIHS_IMR_GACC_Msk & (_UINT32_(value) << TWIHS_IMR_GACC_Pos)) /* Assigment of value for GACC in the TWIHS_IMR register */
-#define TWIHS_IMR_OVRE_Pos                    _UINT32_(6)                                          /* (TWIHS_IMR) Overrun Error Interrupt Mask Position */
-#define TWIHS_IMR_OVRE_Msk                    (_UINT32_(0x1) << TWIHS_IMR_OVRE_Pos)                /* (TWIHS_IMR) Overrun Error Interrupt Mask Mask */
-#define TWIHS_IMR_OVRE(value)                 (TWIHS_IMR_OVRE_Msk & (_UINT32_(value) << TWIHS_IMR_OVRE_Pos)) /* Assigment of value for OVRE in the TWIHS_IMR register */
-#define TWIHS_IMR_UNRE_Pos                    _UINT32_(7)                                          /* (TWIHS_IMR) Underrun Error Interrupt Mask Position */
-#define TWIHS_IMR_UNRE_Msk                    (_UINT32_(0x1) << TWIHS_IMR_UNRE_Pos)                /* (TWIHS_IMR) Underrun Error Interrupt Mask Mask */
-#define TWIHS_IMR_UNRE(value)                 (TWIHS_IMR_UNRE_Msk & (_UINT32_(value) << TWIHS_IMR_UNRE_Pos)) /* Assigment of value for UNRE in the TWIHS_IMR register */
-#define TWIHS_IMR_NACK_Pos                    _UINT32_(8)                                          /* (TWIHS_IMR) Not Acknowledge Interrupt Mask Position */
-#define TWIHS_IMR_NACK_Msk                    (_UINT32_(0x1) << TWIHS_IMR_NACK_Pos)                /* (TWIHS_IMR) Not Acknowledge Interrupt Mask Mask */
-#define TWIHS_IMR_NACK(value)                 (TWIHS_IMR_NACK_Msk & (_UINT32_(value) << TWIHS_IMR_NACK_Pos)) /* Assigment of value for NACK in the TWIHS_IMR register */
-#define TWIHS_IMR_ARBLST_Pos                  _UINT32_(9)                                          /* (TWIHS_IMR) Arbitration Lost Interrupt Mask Position */
-#define TWIHS_IMR_ARBLST_Msk                  (_UINT32_(0x1) << TWIHS_IMR_ARBLST_Pos)              /* (TWIHS_IMR) Arbitration Lost Interrupt Mask Mask */
-#define TWIHS_IMR_ARBLST(value)               (TWIHS_IMR_ARBLST_Msk & (_UINT32_(value) << TWIHS_IMR_ARBLST_Pos)) /* Assigment of value for ARBLST in the TWIHS_IMR register */
-#define TWIHS_IMR_SCL_WS_Pos                  _UINT32_(10)                                         /* (TWIHS_IMR) Clock Wait State Interrupt Mask Position */
-#define TWIHS_IMR_SCL_WS_Msk                  (_UINT32_(0x1) << TWIHS_IMR_SCL_WS_Pos)              /* (TWIHS_IMR) Clock Wait State Interrupt Mask Mask */
-#define TWIHS_IMR_SCL_WS(value)               (TWIHS_IMR_SCL_WS_Msk & (_UINT32_(value) << TWIHS_IMR_SCL_WS_Pos)) /* Assigment of value for SCL_WS in the TWIHS_IMR register */
-#define TWIHS_IMR_EOSACC_Pos                  _UINT32_(11)                                         /* (TWIHS_IMR) End Of Slave Access Interrupt Mask Position */
-#define TWIHS_IMR_EOSACC_Msk                  (_UINT32_(0x1) << TWIHS_IMR_EOSACC_Pos)              /* (TWIHS_IMR) End Of Slave Access Interrupt Mask Mask */
-#define TWIHS_IMR_EOSACC(value)               (TWIHS_IMR_EOSACC_Msk & (_UINT32_(value) << TWIHS_IMR_EOSACC_Pos)) /* Assigment of value for EOSACC in the TWIHS_IMR register */
-#define TWIHS_IMR_MCACK_Pos                   _UINT32_(16)                                         /* (TWIHS_IMR) Master Code Acknowledge Interrupt Mask Position */
-#define TWIHS_IMR_MCACK_Msk                   (_UINT32_(0x1) << TWIHS_IMR_MCACK_Pos)               /* (TWIHS_IMR) Master Code Acknowledge Interrupt Mask Mask */
-#define TWIHS_IMR_MCACK(value)                (TWIHS_IMR_MCACK_Msk & (_UINT32_(value) << TWIHS_IMR_MCACK_Pos)) /* Assigment of value for MCACK in the TWIHS_IMR register */
-#define TWIHS_IMR_TOUT_Pos                    _UINT32_(18)                                         /* (TWIHS_IMR) Timeout Error Interrupt Mask Position */
-#define TWIHS_IMR_TOUT_Msk                    (_UINT32_(0x1) << TWIHS_IMR_TOUT_Pos)                /* (TWIHS_IMR) Timeout Error Interrupt Mask Mask */
-#define TWIHS_IMR_TOUT(value)                 (TWIHS_IMR_TOUT_Msk & (_UINT32_(value) << TWIHS_IMR_TOUT_Pos)) /* Assigment of value for TOUT in the TWIHS_IMR register */
-#define TWIHS_IMR_PECERR_Pos                  _UINT32_(19)                                         /* (TWIHS_IMR) PEC Error Interrupt Mask Position */
-#define TWIHS_IMR_PECERR_Msk                  (_UINT32_(0x1) << TWIHS_IMR_PECERR_Pos)              /* (TWIHS_IMR) PEC Error Interrupt Mask Mask */
-#define TWIHS_IMR_PECERR(value)               (TWIHS_IMR_PECERR_Msk & (_UINT32_(value) << TWIHS_IMR_PECERR_Pos)) /* Assigment of value for PECERR in the TWIHS_IMR register */
-#define TWIHS_IMR_SMBDAM_Pos                  _UINT32_(20)                                         /* (TWIHS_IMR) SMBus Default Address Match Interrupt Mask Position */
-#define TWIHS_IMR_SMBDAM_Msk                  (_UINT32_(0x1) << TWIHS_IMR_SMBDAM_Pos)              /* (TWIHS_IMR) SMBus Default Address Match Interrupt Mask Mask */
-#define TWIHS_IMR_SMBDAM(value)               (TWIHS_IMR_SMBDAM_Msk & (_UINT32_(value) << TWIHS_IMR_SMBDAM_Pos)) /* Assigment of value for SMBDAM in the TWIHS_IMR register */
-#define TWIHS_IMR_SMBHHM_Pos                  _UINT32_(21)                                         /* (TWIHS_IMR) SMBus Host Header Address Match Interrupt Mask Position */
-#define TWIHS_IMR_SMBHHM_Msk                  (_UINT32_(0x1) << TWIHS_IMR_SMBHHM_Pos)              /* (TWIHS_IMR) SMBus Host Header Address Match Interrupt Mask Mask */
-#define TWIHS_IMR_SMBHHM(value)               (TWIHS_IMR_SMBHHM_Msk & (_UINT32_(value) << TWIHS_IMR_SMBHHM_Pos)) /* Assigment of value for SMBHHM in the TWIHS_IMR register */
-#define TWIHS_IMR_Msk                         _UINT32_(0x003D0FF7)                                 /* (TWIHS_IMR) Register Mask  */
-
-
-/* -------- TWIHS_RHR : (TWIHS Offset: 0x30) ( R/ 32) Receive Holding Register -------- */
-#define TWIHS_RHR_RXDATA_Pos                  _UINT32_(0)                                          /* (TWIHS_RHR) Master or Slave Receive Holding Data Position */
-#define TWIHS_RHR_RXDATA_Msk                  (_UINT32_(0xFF) << TWIHS_RHR_RXDATA_Pos)             /* (TWIHS_RHR) Master or Slave Receive Holding Data Mask */
-#define TWIHS_RHR_RXDATA(value)               (TWIHS_RHR_RXDATA_Msk & (_UINT32_(value) << TWIHS_RHR_RXDATA_Pos)) /* Assigment of value for RXDATA in the TWIHS_RHR register */
-#define TWIHS_RHR_Msk                         _UINT32_(0x000000FF)                                 /* (TWIHS_RHR) Register Mask  */
-
-/* FIFO_ENABLED mode */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA0_Pos    _UINT32_(0)                                          /* (TWIHS_RHR) Master or Slave Receive Holding Data 0 Position */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA0_Msk    (_UINT32_(0xFF) << TWIHS_RHR_FIFO_ENABLED_RXDATA0_Pos) /* (TWIHS_RHR) Master or Slave Receive Holding Data 0 Mask */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA0(value) (TWIHS_RHR_FIFO_ENABLED_RXDATA0_Msk & (_UINT32_(value) << TWIHS_RHR_FIFO_ENABLED_RXDATA0_Pos))
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA1_Pos    _UINT32_(8)                                          /* (TWIHS_RHR) Master or Slave Receive Holding Data 1 Position */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA1_Msk    (_UINT32_(0xFF) << TWIHS_RHR_FIFO_ENABLED_RXDATA1_Pos) /* (TWIHS_RHR) Master or Slave Receive Holding Data 1 Mask */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA1(value) (TWIHS_RHR_FIFO_ENABLED_RXDATA1_Msk & (_UINT32_(value) << TWIHS_RHR_FIFO_ENABLED_RXDATA1_Pos))
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA2_Pos    _UINT32_(16)                                         /* (TWIHS_RHR) Master or Slave Receive Holding Data 2 Position */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA2_Msk    (_UINT32_(0xFF) << TWIHS_RHR_FIFO_ENABLED_RXDATA2_Pos) /* (TWIHS_RHR) Master or Slave Receive Holding Data 2 Mask */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA2(value) (TWIHS_RHR_FIFO_ENABLED_RXDATA2_Msk & (_UINT32_(value) << TWIHS_RHR_FIFO_ENABLED_RXDATA2_Pos))
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA3_Pos    _UINT32_(24)                                         /* (TWIHS_RHR) Master or Slave Receive Holding Data 3 Position */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA3_Msk    (_UINT32_(0xFF) << TWIHS_RHR_FIFO_ENABLED_RXDATA3_Pos) /* (TWIHS_RHR) Master or Slave Receive Holding Data 3 Mask */
-#define TWIHS_RHR_FIFO_ENABLED_RXDATA3(value) (TWIHS_RHR_FIFO_ENABLED_RXDATA3_Msk & (_UINT32_(value) << TWIHS_RHR_FIFO_ENABLED_RXDATA3_Pos))
-#define TWIHS_RHR_FIFO_ENABLED_Msk            _UINT32_(0xFFFFFFFF)                                  /* (TWIHS_RHR_FIFO_ENABLED) Register Mask  */
+/* -------- TWIHS_SWMR : (TWIHS Offset: 0x4C) (R/W 32) SleepWalking Matching Register -------- */
+#define TWIHS_SWMR_SADR1_Pos                  _UINT32_(0)                                          /* (TWIHS_SWMR) Slave Address 1 Position */
+#define TWIHS_SWMR_SADR1_Msk                  (_UINT32_(0x7F) << TWIHS_SWMR_SADR1_Pos)             /* (TWIHS_SWMR) Slave Address 1 Mask */
+#define TWIHS_SWMR_SADR1(value)               (TWIHS_SWMR_SADR1_Msk & (_UINT32_(value) << TWIHS_SWMR_SADR1_Pos)) /* Assigment of value for SADR1 in the TWIHS_SWMR register */
+#define TWIHS_SWMR_SADR2_Pos                  _UINT32_(8)                                          /* (TWIHS_SWMR) Slave Address 2 Position */
+#define TWIHS_SWMR_SADR2_Msk                  (_UINT32_(0x7F) << TWIHS_SWMR_SADR2_Pos)             /* (TWIHS_SWMR) Slave Address 2 Mask */
+#define TWIHS_SWMR_SADR2(value)               (TWIHS_SWMR_SADR2_Msk & (_UINT32_(value) << TWIHS_SWMR_SADR2_Pos)) /* Assigment of value for SADR2 in the TWIHS_SWMR register */
+#define TWIHS_SWMR_SADR3_Pos                  _UINT32_(16)                                         /* (TWIHS_SWMR) Slave Address 3 Position */
+#define TWIHS_SWMR_SADR3_Msk                  (_UINT32_(0x7F) << TWIHS_SWMR_SADR3_Pos)             /* (TWIHS_SWMR) Slave Address 3 Mask */
+#define TWIHS_SWMR_SADR3(value)               (TWIHS_SWMR_SADR3_Msk & (_UINT32_(value) << TWIHS_SWMR_SADR3_Pos)) /* Assigment of value for SADR3 in the TWIHS_SWMR register */
+#define TWIHS_SWMR_DATAM_Pos                  _UINT32_(24)                                         /* (TWIHS_SWMR) Data Match Position */
+#define TWIHS_SWMR_DATAM_Msk                  (_UINT32_(0xFF) << TWIHS_SWMR_DATAM_Pos)             /* (TWIHS_SWMR) Data Match Mask */
+#define TWIHS_SWMR_DATAM(value)               (TWIHS_SWMR_DATAM_Msk & (_UINT32_(value) << TWIHS_SWMR_DATAM_Pos)) /* Assigment of value for DATAM in the TWIHS_SWMR register */
+#define TWIHS_SWMR_Msk                        _UINT32_(0xFF7F7F7F)                                 /* (TWIHS_SWMR) Register Mask  */
 
 
 /* -------- TWIHS_THR : (TWIHS Offset: 0x34) ( /W 32) Transmit Holding Register -------- */
@@ -580,242 +816,6 @@
 #define TWIHS_THR_FIFO_ENABLED_TXDATA3_Msk    (_UINT32_(0xFF) << TWIHS_THR_FIFO_ENABLED_TXDATA3_Pos) /* (TWIHS_THR) Master or Slave Transmit Holding Data 3 Mask */
 #define TWIHS_THR_FIFO_ENABLED_TXDATA3(value) (TWIHS_THR_FIFO_ENABLED_TXDATA3_Msk & (_UINT32_(value) << TWIHS_THR_FIFO_ENABLED_TXDATA3_Pos))
 #define TWIHS_THR_FIFO_ENABLED_Msk            _UINT32_(0xFFFFFFFF)                                  /* (TWIHS_THR_FIFO_ENABLED) Register Mask  */
-
-
-/* -------- TWIHS_SMBTR : (TWIHS Offset: 0x38) (R/W 32) SMBus Timing Register -------- */
-#define TWIHS_SMBTR_PRESC_Pos                 _UINT32_(0)                                          /* (TWIHS_SMBTR) SMBus Clock Prescaler Position */
-#define TWIHS_SMBTR_PRESC_Msk                 (_UINT32_(0xF) << TWIHS_SMBTR_PRESC_Pos)             /* (TWIHS_SMBTR) SMBus Clock Prescaler Mask */
-#define TWIHS_SMBTR_PRESC(value)              (TWIHS_SMBTR_PRESC_Msk & (_UINT32_(value) << TWIHS_SMBTR_PRESC_Pos)) /* Assigment of value for PRESC in the TWIHS_SMBTR register */
-#define TWIHS_SMBTR_TLOWS_Pos                 _UINT32_(8)                                          /* (TWIHS_SMBTR) Slave Clock Stretch Maximum Cycles Position */
-#define TWIHS_SMBTR_TLOWS_Msk                 (_UINT32_(0xFF) << TWIHS_SMBTR_TLOWS_Pos)            /* (TWIHS_SMBTR) Slave Clock Stretch Maximum Cycles Mask */
-#define TWIHS_SMBTR_TLOWS(value)              (TWIHS_SMBTR_TLOWS_Msk & (_UINT32_(value) << TWIHS_SMBTR_TLOWS_Pos)) /* Assigment of value for TLOWS in the TWIHS_SMBTR register */
-#define TWIHS_SMBTR_TLOWM_Pos                 _UINT32_(16)                                         /* (TWIHS_SMBTR) Master Clock Stretch Maximum Cycles Position */
-#define TWIHS_SMBTR_TLOWM_Msk                 (_UINT32_(0xFF) << TWIHS_SMBTR_TLOWM_Pos)            /* (TWIHS_SMBTR) Master Clock Stretch Maximum Cycles Mask */
-#define TWIHS_SMBTR_TLOWM(value)              (TWIHS_SMBTR_TLOWM_Msk & (_UINT32_(value) << TWIHS_SMBTR_TLOWM_Pos)) /* Assigment of value for TLOWM in the TWIHS_SMBTR register */
-#define TWIHS_SMBTR_THMAX_Pos                 _UINT32_(24)                                         /* (TWIHS_SMBTR) Clock High Maximum Cycles Position */
-#define TWIHS_SMBTR_THMAX_Msk                 (_UINT32_(0xFF) << TWIHS_SMBTR_THMAX_Pos)            /* (TWIHS_SMBTR) Clock High Maximum Cycles Mask */
-#define TWIHS_SMBTR_THMAX(value)              (TWIHS_SMBTR_THMAX_Msk & (_UINT32_(value) << TWIHS_SMBTR_THMAX_Pos)) /* Assigment of value for THMAX in the TWIHS_SMBTR register */
-#define TWIHS_SMBTR_Msk                       _UINT32_(0xFFFFFF0F)                                 /* (TWIHS_SMBTR) Register Mask  */
-
-
-/* -------- TWIHS_ACR : (TWIHS Offset: 0x40) (R/W 32) Alternative Command Register -------- */
-#define TWIHS_ACR_DATAL_Pos                   _UINT32_(0)                                          /* (TWIHS_ACR) Data Length Position */
-#define TWIHS_ACR_DATAL_Msk                   (_UINT32_(0xFF) << TWIHS_ACR_DATAL_Pos)              /* (TWIHS_ACR) Data Length Mask */
-#define TWIHS_ACR_DATAL(value)                (TWIHS_ACR_DATAL_Msk & (_UINT32_(value) << TWIHS_ACR_DATAL_Pos)) /* Assigment of value for DATAL in the TWIHS_ACR register */
-#define TWIHS_ACR_DIR_Pos                     _UINT32_(8)                                          /* (TWIHS_ACR) Transfer Direction Position */
-#define TWIHS_ACR_DIR_Msk                     (_UINT32_(0x1) << TWIHS_ACR_DIR_Pos)                 /* (TWIHS_ACR) Transfer Direction Mask */
-#define TWIHS_ACR_DIR(value)                  (TWIHS_ACR_DIR_Msk & (_UINT32_(value) << TWIHS_ACR_DIR_Pos)) /* Assigment of value for DIR in the TWIHS_ACR register */
-#define TWIHS_ACR_PEC_Pos                     _UINT32_(9)                                          /* (TWIHS_ACR) PEC Request (SMBus Mode only) Position */
-#define TWIHS_ACR_PEC_Msk                     (_UINT32_(0x1) << TWIHS_ACR_PEC_Pos)                 /* (TWIHS_ACR) PEC Request (SMBus Mode only) Mask */
-#define TWIHS_ACR_PEC(value)                  (TWIHS_ACR_PEC_Msk & (_UINT32_(value) << TWIHS_ACR_PEC_Pos)) /* Assigment of value for PEC in the TWIHS_ACR register */
-#define TWIHS_ACR_NDATAL_Pos                  _UINT32_(16)                                         /* (TWIHS_ACR) Next Data Length Position */
-#define TWIHS_ACR_NDATAL_Msk                  (_UINT32_(0xFF) << TWIHS_ACR_NDATAL_Pos)             /* (TWIHS_ACR) Next Data Length Mask */
-#define TWIHS_ACR_NDATAL(value)               (TWIHS_ACR_NDATAL_Msk & (_UINT32_(value) << TWIHS_ACR_NDATAL_Pos)) /* Assigment of value for NDATAL in the TWIHS_ACR register */
-#define TWIHS_ACR_NDIR_Pos                    _UINT32_(24)                                         /* (TWIHS_ACR) Next Transfer Direction Position */
-#define TWIHS_ACR_NDIR_Msk                    (_UINT32_(0x1) << TWIHS_ACR_NDIR_Pos)                /* (TWIHS_ACR) Next Transfer Direction Mask */
-#define TWIHS_ACR_NDIR(value)                 (TWIHS_ACR_NDIR_Msk & (_UINT32_(value) << TWIHS_ACR_NDIR_Pos)) /* Assigment of value for NDIR in the TWIHS_ACR register */
-#define TWIHS_ACR_NPEC_Pos                    _UINT32_(25)                                         /* (TWIHS_ACR) Next PEC Request (SMBus Mode only) Position */
-#define TWIHS_ACR_NPEC_Msk                    (_UINT32_(0x1) << TWIHS_ACR_NPEC_Pos)                /* (TWIHS_ACR) Next PEC Request (SMBus Mode only) Mask */
-#define TWIHS_ACR_NPEC(value)                 (TWIHS_ACR_NPEC_Msk & (_UINT32_(value) << TWIHS_ACR_NPEC_Pos)) /* Assigment of value for NPEC in the TWIHS_ACR register */
-#define TWIHS_ACR_Msk                         _UINT32_(0x03FF03FF)                                 /* (TWIHS_ACR) Register Mask  */
-
-
-/* -------- TWIHS_FILTR : (TWIHS Offset: 0x44) (R/W 32) Filter Register -------- */
-#define TWIHS_FILTR_FILT_Pos                  _UINT32_(0)                                          /* (TWIHS_FILTR) RX Digital Filter Position */
-#define TWIHS_FILTR_FILT_Msk                  (_UINT32_(0x1) << TWIHS_FILTR_FILT_Pos)              /* (TWIHS_FILTR) RX Digital Filter Mask */
-#define TWIHS_FILTR_FILT(value)               (TWIHS_FILTR_FILT_Msk & (_UINT32_(value) << TWIHS_FILTR_FILT_Pos)) /* Assigment of value for FILT in the TWIHS_FILTR register */
-#define TWIHS_FILTR_PADFEN_Pos                _UINT32_(1)                                          /* (TWIHS_FILTR) PAD Filter Enable Position */
-#define TWIHS_FILTR_PADFEN_Msk                (_UINT32_(0x1) << TWIHS_FILTR_PADFEN_Pos)            /* (TWIHS_FILTR) PAD Filter Enable Mask */
-#define TWIHS_FILTR_PADFEN(value)             (TWIHS_FILTR_PADFEN_Msk & (_UINT32_(value) << TWIHS_FILTR_PADFEN_Pos)) /* Assigment of value for PADFEN in the TWIHS_FILTR register */
-#define TWIHS_FILTR_PADFCFG_Pos               _UINT32_(2)                                          /* (TWIHS_FILTR) PAD Filter Config Position */
-#define TWIHS_FILTR_PADFCFG_Msk               (_UINT32_(0x1) << TWIHS_FILTR_PADFCFG_Pos)           /* (TWIHS_FILTR) PAD Filter Config Mask */
-#define TWIHS_FILTR_PADFCFG(value)            (TWIHS_FILTR_PADFCFG_Msk & (_UINT32_(value) << TWIHS_FILTR_PADFCFG_Pos)) /* Assigment of value for PADFCFG in the TWIHS_FILTR register */
-#define TWIHS_FILTR_THRES_Pos                 _UINT32_(8)                                          /* (TWIHS_FILTR) Digital Filter Threshold Position */
-#define TWIHS_FILTR_THRES_Msk                 (_UINT32_(0x7) << TWIHS_FILTR_THRES_Pos)             /* (TWIHS_FILTR) Digital Filter Threshold Mask */
-#define TWIHS_FILTR_THRES(value)              (TWIHS_FILTR_THRES_Msk & (_UINT32_(value) << TWIHS_FILTR_THRES_Pos)) /* Assigment of value for THRES in the TWIHS_FILTR register */
-#define TWIHS_FILTR_Msk                       _UINT32_(0x00000707)                                 /* (TWIHS_FILTR) Register Mask  */
-
-
-/* -------- TWIHS_SWMR : (TWIHS Offset: 0x4C) (R/W 32) SleepWalking Matching Register -------- */
-#define TWIHS_SWMR_SADR1_Pos                  _UINT32_(0)                                          /* (TWIHS_SWMR) Slave Address 1 Position */
-#define TWIHS_SWMR_SADR1_Msk                  (_UINT32_(0x7F) << TWIHS_SWMR_SADR1_Pos)             /* (TWIHS_SWMR) Slave Address 1 Mask */
-#define TWIHS_SWMR_SADR1(value)               (TWIHS_SWMR_SADR1_Msk & (_UINT32_(value) << TWIHS_SWMR_SADR1_Pos)) /* Assigment of value for SADR1 in the TWIHS_SWMR register */
-#define TWIHS_SWMR_SADR2_Pos                  _UINT32_(8)                                          /* (TWIHS_SWMR) Slave Address 2 Position */
-#define TWIHS_SWMR_SADR2_Msk                  (_UINT32_(0x7F) << TWIHS_SWMR_SADR2_Pos)             /* (TWIHS_SWMR) Slave Address 2 Mask */
-#define TWIHS_SWMR_SADR2(value)               (TWIHS_SWMR_SADR2_Msk & (_UINT32_(value) << TWIHS_SWMR_SADR2_Pos)) /* Assigment of value for SADR2 in the TWIHS_SWMR register */
-#define TWIHS_SWMR_SADR3_Pos                  _UINT32_(16)                                         /* (TWIHS_SWMR) Slave Address 3 Position */
-#define TWIHS_SWMR_SADR3_Msk                  (_UINT32_(0x7F) << TWIHS_SWMR_SADR3_Pos)             /* (TWIHS_SWMR) Slave Address 3 Mask */
-#define TWIHS_SWMR_SADR3(value)               (TWIHS_SWMR_SADR3_Msk & (_UINT32_(value) << TWIHS_SWMR_SADR3_Pos)) /* Assigment of value for SADR3 in the TWIHS_SWMR register */
-#define TWIHS_SWMR_DATAM_Pos                  _UINT32_(24)                                         /* (TWIHS_SWMR) Data Match Position */
-#define TWIHS_SWMR_DATAM_Msk                  (_UINT32_(0xFF) << TWIHS_SWMR_DATAM_Pos)             /* (TWIHS_SWMR) Data Match Mask */
-#define TWIHS_SWMR_DATAM(value)               (TWIHS_SWMR_DATAM_Msk & (_UINT32_(value) << TWIHS_SWMR_DATAM_Pos)) /* Assigment of value for DATAM in the TWIHS_SWMR register */
-#define TWIHS_SWMR_Msk                        _UINT32_(0xFF7F7F7F)                                 /* (TWIHS_SWMR) Register Mask  */
-
-
-/* -------- TWIHS_FMR : (TWIHS Offset: 0x50) (R/W 32) FIFO Mode Register -------- */
-#define TWIHS_FMR_TXRDYM_Pos                  _UINT32_(0)                                          /* (TWIHS_FMR) Transmitter Ready Mode Position */
-#define TWIHS_FMR_TXRDYM_Msk                  (_UINT32_(0x3) << TWIHS_FMR_TXRDYM_Pos)              /* (TWIHS_FMR) Transmitter Ready Mode Mask */
-#define TWIHS_FMR_TXRDYM(value)               (TWIHS_FMR_TXRDYM_Msk & (_UINT32_(value) << TWIHS_FMR_TXRDYM_Pos)) /* Assigment of value for TXRDYM in the TWIHS_FMR register */
-#define   TWIHS_FMR_TXRDYM_ONE_DATA_Val       _UINT32_(0x0)                                        /* (TWIHS_FMR) TXRDY will be at level '1' when at least one data can be written in the Transmit FIFO  */
-#define   TWIHS_FMR_TXRDYM_TWO_DATA_Val       _UINT32_(0x1)                                        /* (TWIHS_FMR) TXRDY will be at level '1' when at least two data can be written in the Transmit FIFO  */
-#define   TWIHS_FMR_TXRDYM_FOUR_DATA_Val      _UINT32_(0x2)                                        /* (TWIHS_FMR) TXRDY will be at level '1' when at least four data can be written in the Transmit FIFO  */
-#define TWIHS_FMR_TXRDYM_ONE_DATA             (TWIHS_FMR_TXRDYM_ONE_DATA_Val << TWIHS_FMR_TXRDYM_Pos) /* (TWIHS_FMR) TXRDY will be at level '1' when at least one data can be written in the Transmit FIFO Position  */
-#define TWIHS_FMR_TXRDYM_TWO_DATA             (TWIHS_FMR_TXRDYM_TWO_DATA_Val << TWIHS_FMR_TXRDYM_Pos) /* (TWIHS_FMR) TXRDY will be at level '1' when at least two data can be written in the Transmit FIFO Position  */
-#define TWIHS_FMR_TXRDYM_FOUR_DATA            (TWIHS_FMR_TXRDYM_FOUR_DATA_Val << TWIHS_FMR_TXRDYM_Pos) /* (TWIHS_FMR) TXRDY will be at level '1' when at least four data can be written in the Transmit FIFO Position  */
-#define TWIHS_FMR_RXRDYM_Pos                  _UINT32_(4)                                          /* (TWIHS_FMR) Receiver Ready Mode Position */
-#define TWIHS_FMR_RXRDYM_Msk                  (_UINT32_(0x3) << TWIHS_FMR_RXRDYM_Pos)              /* (TWIHS_FMR) Receiver Ready Mode Mask */
-#define TWIHS_FMR_RXRDYM(value)               (TWIHS_FMR_RXRDYM_Msk & (_UINT32_(value) << TWIHS_FMR_RXRDYM_Pos)) /* Assigment of value for RXRDYM in the TWIHS_FMR register */
-#define   TWIHS_FMR_RXRDYM_ONE_DATA_Val       _UINT32_(0x0)                                        /* (TWIHS_FMR) RXRDY will be at level '1' when at least one unread data is in the Receive FIFO  */
-#define   TWIHS_FMR_RXRDYM_TWO_DATA_Val       _UINT32_(0x1)                                        /* (TWIHS_FMR) RXRDY will be at level '1' when at least two unread data are in the Receive FIFO  */
-#define   TWIHS_FMR_RXRDYM_FOUR_DATA_Val      _UINT32_(0x2)                                        /* (TWIHS_FMR) RXRDY will be at level '1' when at least four unread data are in the Receive FIFO  */
-#define TWIHS_FMR_RXRDYM_ONE_DATA             (TWIHS_FMR_RXRDYM_ONE_DATA_Val << TWIHS_FMR_RXRDYM_Pos) /* (TWIHS_FMR) RXRDY will be at level '1' when at least one unread data is in the Receive FIFO Position  */
-#define TWIHS_FMR_RXRDYM_TWO_DATA             (TWIHS_FMR_RXRDYM_TWO_DATA_Val << TWIHS_FMR_RXRDYM_Pos) /* (TWIHS_FMR) RXRDY will be at level '1' when at least two unread data are in the Receive FIFO Position  */
-#define TWIHS_FMR_RXRDYM_FOUR_DATA            (TWIHS_FMR_RXRDYM_FOUR_DATA_Val << TWIHS_FMR_RXRDYM_Pos) /* (TWIHS_FMR) RXRDY will be at level '1' when at least four unread data are in the Receive FIFO Position  */
-#define TWIHS_FMR_TXFTHRES_Pos                _UINT32_(16)                                         /* (TWIHS_FMR) Transmit FIFO Threshold Position */
-#define TWIHS_FMR_TXFTHRES_Msk                (_UINT32_(0x3F) << TWIHS_FMR_TXFTHRES_Pos)           /* (TWIHS_FMR) Transmit FIFO Threshold Mask */
-#define TWIHS_FMR_TXFTHRES(value)             (TWIHS_FMR_TXFTHRES_Msk & (_UINT32_(value) << TWIHS_FMR_TXFTHRES_Pos)) /* Assigment of value for TXFTHRES in the TWIHS_FMR register */
-#define TWIHS_FMR_RXFTHRES_Pos                _UINT32_(24)                                         /* (TWIHS_FMR) Receive FIFO Threshold Position */
-#define TWIHS_FMR_RXFTHRES_Msk                (_UINT32_(0x3F) << TWIHS_FMR_RXFTHRES_Pos)           /* (TWIHS_FMR) Receive FIFO Threshold Mask */
-#define TWIHS_FMR_RXFTHRES(value)             (TWIHS_FMR_RXFTHRES_Msk & (_UINT32_(value) << TWIHS_FMR_RXFTHRES_Pos)) /* Assigment of value for RXFTHRES in the TWIHS_FMR register */
-#define TWIHS_FMR_Msk                         _UINT32_(0x3F3F0033)                                 /* (TWIHS_FMR) Register Mask  */
-
-
-/* -------- TWIHS_FLR : (TWIHS Offset: 0x54) ( R/ 32) FIFO Level Register -------- */
-#define TWIHS_FLR_TXFL_Pos                    _UINT32_(0)                                          /* (TWIHS_FLR) Transmit FIFO Level Position */
-#define TWIHS_FLR_TXFL_Msk                    (_UINT32_(0x3F) << TWIHS_FLR_TXFL_Pos)               /* (TWIHS_FLR) Transmit FIFO Level Mask */
-#define TWIHS_FLR_TXFL(value)                 (TWIHS_FLR_TXFL_Msk & (_UINT32_(value) << TWIHS_FLR_TXFL_Pos)) /* Assigment of value for TXFL in the TWIHS_FLR register */
-#define TWIHS_FLR_RXFL_Pos                    _UINT32_(16)                                         /* (TWIHS_FLR) Receive FIFO Level Position */
-#define TWIHS_FLR_RXFL_Msk                    (_UINT32_(0x3F) << TWIHS_FLR_RXFL_Pos)               /* (TWIHS_FLR) Receive FIFO Level Mask */
-#define TWIHS_FLR_RXFL(value)                 (TWIHS_FLR_RXFL_Msk & (_UINT32_(value) << TWIHS_FLR_RXFL_Pos)) /* Assigment of value for RXFL in the TWIHS_FLR register */
-#define TWIHS_FLR_Msk                         _UINT32_(0x003F003F)                                 /* (TWIHS_FLR) Register Mask  */
-
-
-/* -------- TWIHS_FSR : (TWIHS Offset: 0x60) ( R/ 32) FIFO Status Register -------- */
-#define TWIHS_FSR_TXFEF_Pos                   _UINT32_(0)                                          /* (TWIHS_FSR) Transmit FIFO Empty Flag (cleared on read) Position */
-#define TWIHS_FSR_TXFEF_Msk                   (_UINT32_(0x1) << TWIHS_FSR_TXFEF_Pos)               /* (TWIHS_FSR) Transmit FIFO Empty Flag (cleared on read) Mask */
-#define TWIHS_FSR_TXFEF(value)                (TWIHS_FSR_TXFEF_Msk & (_UINT32_(value) << TWIHS_FSR_TXFEF_Pos)) /* Assigment of value for TXFEF in the TWIHS_FSR register */
-#define TWIHS_FSR_TXFFF_Pos                   _UINT32_(1)                                          /* (TWIHS_FSR) Transmit FIFO Full Flag (cleared on read) Position */
-#define TWIHS_FSR_TXFFF_Msk                   (_UINT32_(0x1) << TWIHS_FSR_TXFFF_Pos)               /* (TWIHS_FSR) Transmit FIFO Full Flag (cleared on read) Mask */
-#define TWIHS_FSR_TXFFF(value)                (TWIHS_FSR_TXFFF_Msk & (_UINT32_(value) << TWIHS_FSR_TXFFF_Pos)) /* Assigment of value for TXFFF in the TWIHS_FSR register */
-#define TWIHS_FSR_TXFTHF_Pos                  _UINT32_(2)                                          /* (TWIHS_FSR) Transmit FIFO Threshold Flag (cleared on read) Position */
-#define TWIHS_FSR_TXFTHF_Msk                  (_UINT32_(0x1) << TWIHS_FSR_TXFTHF_Pos)              /* (TWIHS_FSR) Transmit FIFO Threshold Flag (cleared on read) Mask */
-#define TWIHS_FSR_TXFTHF(value)               (TWIHS_FSR_TXFTHF_Msk & (_UINT32_(value) << TWIHS_FSR_TXFTHF_Pos)) /* Assigment of value for TXFTHF in the TWIHS_FSR register */
-#define TWIHS_FSR_RXFEF_Pos                   _UINT32_(3)                                          /* (TWIHS_FSR) Receive FIFO Empty Flag Position */
-#define TWIHS_FSR_RXFEF_Msk                   (_UINT32_(0x1) << TWIHS_FSR_RXFEF_Pos)               /* (TWIHS_FSR) Receive FIFO Empty Flag Mask */
-#define TWIHS_FSR_RXFEF(value)                (TWIHS_FSR_RXFEF_Msk & (_UINT32_(value) << TWIHS_FSR_RXFEF_Pos)) /* Assigment of value for RXFEF in the TWIHS_FSR register */
-#define TWIHS_FSR_RXFFF_Pos                   _UINT32_(4)                                          /* (TWIHS_FSR) Receive FIFO Full Flag Position */
-#define TWIHS_FSR_RXFFF_Msk                   (_UINT32_(0x1) << TWIHS_FSR_RXFFF_Pos)               /* (TWIHS_FSR) Receive FIFO Full Flag Mask */
-#define TWIHS_FSR_RXFFF(value)                (TWIHS_FSR_RXFFF_Msk & (_UINT32_(value) << TWIHS_FSR_RXFFF_Pos)) /* Assigment of value for RXFFF in the TWIHS_FSR register */
-#define TWIHS_FSR_RXFTHF_Pos                  _UINT32_(5)                                          /* (TWIHS_FSR) Receive FIFO Threshold Flag Position */
-#define TWIHS_FSR_RXFTHF_Msk                  (_UINT32_(0x1) << TWIHS_FSR_RXFTHF_Pos)              /* (TWIHS_FSR) Receive FIFO Threshold Flag Mask */
-#define TWIHS_FSR_RXFTHF(value)               (TWIHS_FSR_RXFTHF_Msk & (_UINT32_(value) << TWIHS_FSR_RXFTHF_Pos)) /* Assigment of value for RXFTHF in the TWIHS_FSR register */
-#define TWIHS_FSR_TXFPTEF_Pos                 _UINT32_(6)                                          /* (TWIHS_FSR) Transmit FIFO Pointer Error Flag Position */
-#define TWIHS_FSR_TXFPTEF_Msk                 (_UINT32_(0x1) << TWIHS_FSR_TXFPTEF_Pos)             /* (TWIHS_FSR) Transmit FIFO Pointer Error Flag Mask */
-#define TWIHS_FSR_TXFPTEF(value)              (TWIHS_FSR_TXFPTEF_Msk & (_UINT32_(value) << TWIHS_FSR_TXFPTEF_Pos)) /* Assigment of value for TXFPTEF in the TWIHS_FSR register */
-#define TWIHS_FSR_RXFPTEF_Pos                 _UINT32_(7)                                          /* (TWIHS_FSR) Receive FIFO Pointer Error Flag Position */
-#define TWIHS_FSR_RXFPTEF_Msk                 (_UINT32_(0x1) << TWIHS_FSR_RXFPTEF_Pos)             /* (TWIHS_FSR) Receive FIFO Pointer Error Flag Mask */
-#define TWIHS_FSR_RXFPTEF(value)              (TWIHS_FSR_RXFPTEF_Msk & (_UINT32_(value) << TWIHS_FSR_RXFPTEF_Pos)) /* Assigment of value for RXFPTEF in the TWIHS_FSR register */
-#define TWIHS_FSR_Msk                         _UINT32_(0x000000FF)                                 /* (TWIHS_FSR) Register Mask  */
-
-
-/* -------- TWIHS_FIER : (TWIHS Offset: 0x64) ( /W 32) FIFO Interrupt Enable Register -------- */
-#define TWIHS_FIER_TXFEF_Pos                  _UINT32_(0)                                          /* (TWIHS_FIER) TXFEF Interrupt Enable Position */
-#define TWIHS_FIER_TXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIER_TXFEF_Pos)              /* (TWIHS_FIER) TXFEF Interrupt Enable Mask */
-#define TWIHS_FIER_TXFEF(value)               (TWIHS_FIER_TXFEF_Msk & (_UINT32_(value) << TWIHS_FIER_TXFEF_Pos)) /* Assigment of value for TXFEF in the TWIHS_FIER register */
-#define TWIHS_FIER_TXFFF_Pos                  _UINT32_(1)                                          /* (TWIHS_FIER) TXFFF Interrupt Enable Position */
-#define TWIHS_FIER_TXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIER_TXFFF_Pos)              /* (TWIHS_FIER) TXFFF Interrupt Enable Mask */
-#define TWIHS_FIER_TXFFF(value)               (TWIHS_FIER_TXFFF_Msk & (_UINT32_(value) << TWIHS_FIER_TXFFF_Pos)) /* Assigment of value for TXFFF in the TWIHS_FIER register */
-#define TWIHS_FIER_TXFTHF_Pos                 _UINT32_(2)                                          /* (TWIHS_FIER) TXFTHF Interrupt Enable Position */
-#define TWIHS_FIER_TXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIER_TXFTHF_Pos)             /* (TWIHS_FIER) TXFTHF Interrupt Enable Mask */
-#define TWIHS_FIER_TXFTHF(value)              (TWIHS_FIER_TXFTHF_Msk & (_UINT32_(value) << TWIHS_FIER_TXFTHF_Pos)) /* Assigment of value for TXFTHF in the TWIHS_FIER register */
-#define TWIHS_FIER_RXFEF_Pos                  _UINT32_(3)                                          /* (TWIHS_FIER) RXFEF Interrupt Enable Position */
-#define TWIHS_FIER_RXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIER_RXFEF_Pos)              /* (TWIHS_FIER) RXFEF Interrupt Enable Mask */
-#define TWIHS_FIER_RXFEF(value)               (TWIHS_FIER_RXFEF_Msk & (_UINT32_(value) << TWIHS_FIER_RXFEF_Pos)) /* Assigment of value for RXFEF in the TWIHS_FIER register */
-#define TWIHS_FIER_RXFFF_Pos                  _UINT32_(4)                                          /* (TWIHS_FIER) RXFFF Interrupt Enable Position */
-#define TWIHS_FIER_RXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIER_RXFFF_Pos)              /* (TWIHS_FIER) RXFFF Interrupt Enable Mask */
-#define TWIHS_FIER_RXFFF(value)               (TWIHS_FIER_RXFFF_Msk & (_UINT32_(value) << TWIHS_FIER_RXFFF_Pos)) /* Assigment of value for RXFFF in the TWIHS_FIER register */
-#define TWIHS_FIER_RXFTHF_Pos                 _UINT32_(5)                                          /* (TWIHS_FIER) RXFTHF Interrupt Enable Position */
-#define TWIHS_FIER_RXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIER_RXFTHF_Pos)             /* (TWIHS_FIER) RXFTHF Interrupt Enable Mask */
-#define TWIHS_FIER_RXFTHF(value)              (TWIHS_FIER_RXFTHF_Msk & (_UINT32_(value) << TWIHS_FIER_RXFTHF_Pos)) /* Assigment of value for RXFTHF in the TWIHS_FIER register */
-#define TWIHS_FIER_TXFPTEF_Pos                _UINT32_(6)                                          /* (TWIHS_FIER) TXFPTEF Interrupt Enable Position */
-#define TWIHS_FIER_TXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIER_TXFPTEF_Pos)            /* (TWIHS_FIER) TXFPTEF Interrupt Enable Mask */
-#define TWIHS_FIER_TXFPTEF(value)             (TWIHS_FIER_TXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIER_TXFPTEF_Pos)) /* Assigment of value for TXFPTEF in the TWIHS_FIER register */
-#define TWIHS_FIER_RXFPTEF_Pos                _UINT32_(7)                                          /* (TWIHS_FIER) RXFPTEF Interrupt Enable Position */
-#define TWIHS_FIER_RXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIER_RXFPTEF_Pos)            /* (TWIHS_FIER) RXFPTEF Interrupt Enable Mask */
-#define TWIHS_FIER_RXFPTEF(value)             (TWIHS_FIER_RXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIER_RXFPTEF_Pos)) /* Assigment of value for RXFPTEF in the TWIHS_FIER register */
-#define TWIHS_FIER_Msk                        _UINT32_(0x000000FF)                                 /* (TWIHS_FIER) Register Mask  */
-
-
-/* -------- TWIHS_FIDR : (TWIHS Offset: 0x68) ( /W 32) FIFO Interrupt Disable Register -------- */
-#define TWIHS_FIDR_TXFEF_Pos                  _UINT32_(0)                                          /* (TWIHS_FIDR) TXFEF Interrupt Disable Position */
-#define TWIHS_FIDR_TXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIDR_TXFEF_Pos)              /* (TWIHS_FIDR) TXFEF Interrupt Disable Mask */
-#define TWIHS_FIDR_TXFEF(value)               (TWIHS_FIDR_TXFEF_Msk & (_UINT32_(value) << TWIHS_FIDR_TXFEF_Pos)) /* Assigment of value for TXFEF in the TWIHS_FIDR register */
-#define TWIHS_FIDR_TXFFF_Pos                  _UINT32_(1)                                          /* (TWIHS_FIDR) TXFFF Interrupt Disable Position */
-#define TWIHS_FIDR_TXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIDR_TXFFF_Pos)              /* (TWIHS_FIDR) TXFFF Interrupt Disable Mask */
-#define TWIHS_FIDR_TXFFF(value)               (TWIHS_FIDR_TXFFF_Msk & (_UINT32_(value) << TWIHS_FIDR_TXFFF_Pos)) /* Assigment of value for TXFFF in the TWIHS_FIDR register */
-#define TWIHS_FIDR_TXFTHF_Pos                 _UINT32_(2)                                          /* (TWIHS_FIDR) TXFTHF Interrupt Disable Position */
-#define TWIHS_FIDR_TXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIDR_TXFTHF_Pos)             /* (TWIHS_FIDR) TXFTHF Interrupt Disable Mask */
-#define TWIHS_FIDR_TXFTHF(value)              (TWIHS_FIDR_TXFTHF_Msk & (_UINT32_(value) << TWIHS_FIDR_TXFTHF_Pos)) /* Assigment of value for TXFTHF in the TWIHS_FIDR register */
-#define TWIHS_FIDR_RXFEF_Pos                  _UINT32_(3)                                          /* (TWIHS_FIDR) RXFEF Interrupt Disable Position */
-#define TWIHS_FIDR_RXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIDR_RXFEF_Pos)              /* (TWIHS_FIDR) RXFEF Interrupt Disable Mask */
-#define TWIHS_FIDR_RXFEF(value)               (TWIHS_FIDR_RXFEF_Msk & (_UINT32_(value) << TWIHS_FIDR_RXFEF_Pos)) /* Assigment of value for RXFEF in the TWIHS_FIDR register */
-#define TWIHS_FIDR_RXFFF_Pos                  _UINT32_(4)                                          /* (TWIHS_FIDR) RXFFF Interrupt Disable Position */
-#define TWIHS_FIDR_RXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIDR_RXFFF_Pos)              /* (TWIHS_FIDR) RXFFF Interrupt Disable Mask */
-#define TWIHS_FIDR_RXFFF(value)               (TWIHS_FIDR_RXFFF_Msk & (_UINT32_(value) << TWIHS_FIDR_RXFFF_Pos)) /* Assigment of value for RXFFF in the TWIHS_FIDR register */
-#define TWIHS_FIDR_RXFTHF_Pos                 _UINT32_(5)                                          /* (TWIHS_FIDR) RXFTHF Interrupt Disable Position */
-#define TWIHS_FIDR_RXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIDR_RXFTHF_Pos)             /* (TWIHS_FIDR) RXFTHF Interrupt Disable Mask */
-#define TWIHS_FIDR_RXFTHF(value)              (TWIHS_FIDR_RXFTHF_Msk & (_UINT32_(value) << TWIHS_FIDR_RXFTHF_Pos)) /* Assigment of value for RXFTHF in the TWIHS_FIDR register */
-#define TWIHS_FIDR_TXFPTEF_Pos                _UINT32_(6)                                          /* (TWIHS_FIDR) TXFPTEF Interrupt Disable Position */
-#define TWIHS_FIDR_TXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIDR_TXFPTEF_Pos)            /* (TWIHS_FIDR) TXFPTEF Interrupt Disable Mask */
-#define TWIHS_FIDR_TXFPTEF(value)             (TWIHS_FIDR_TXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIDR_TXFPTEF_Pos)) /* Assigment of value for TXFPTEF in the TWIHS_FIDR register */
-#define TWIHS_FIDR_RXFPTEF_Pos                _UINT32_(7)                                          /* (TWIHS_FIDR) RXFPTEF Interrupt Disable Position */
-#define TWIHS_FIDR_RXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIDR_RXFPTEF_Pos)            /* (TWIHS_FIDR) RXFPTEF Interrupt Disable Mask */
-#define TWIHS_FIDR_RXFPTEF(value)             (TWIHS_FIDR_RXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIDR_RXFPTEF_Pos)) /* Assigment of value for RXFPTEF in the TWIHS_FIDR register */
-#define TWIHS_FIDR_Msk                        _UINT32_(0x000000FF)                                 /* (TWIHS_FIDR) Register Mask  */
-
-
-/* -------- TWIHS_FIMR : (TWIHS Offset: 0x6C) ( R/ 32) FIFO Interrupt Mask Register -------- */
-#define TWIHS_FIMR_TXFEF_Pos                  _UINT32_(0)                                          /* (TWIHS_FIMR) TXFEF Interrupt Mask Position */
-#define TWIHS_FIMR_TXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIMR_TXFEF_Pos)              /* (TWIHS_FIMR) TXFEF Interrupt Mask Mask */
-#define TWIHS_FIMR_TXFEF(value)               (TWIHS_FIMR_TXFEF_Msk & (_UINT32_(value) << TWIHS_FIMR_TXFEF_Pos)) /* Assigment of value for TXFEF in the TWIHS_FIMR register */
-#define TWIHS_FIMR_TXFFF_Pos                  _UINT32_(1)                                          /* (TWIHS_FIMR) TXFFF Interrupt Mask Position */
-#define TWIHS_FIMR_TXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIMR_TXFFF_Pos)              /* (TWIHS_FIMR) TXFFF Interrupt Mask Mask */
-#define TWIHS_FIMR_TXFFF(value)               (TWIHS_FIMR_TXFFF_Msk & (_UINT32_(value) << TWIHS_FIMR_TXFFF_Pos)) /* Assigment of value for TXFFF in the TWIHS_FIMR register */
-#define TWIHS_FIMR_TXFTHF_Pos                 _UINT32_(2)                                          /* (TWIHS_FIMR) TXFTHF Interrupt Mask Position */
-#define TWIHS_FIMR_TXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIMR_TXFTHF_Pos)             /* (TWIHS_FIMR) TXFTHF Interrupt Mask Mask */
-#define TWIHS_FIMR_TXFTHF(value)              (TWIHS_FIMR_TXFTHF_Msk & (_UINT32_(value) << TWIHS_FIMR_TXFTHF_Pos)) /* Assigment of value for TXFTHF in the TWIHS_FIMR register */
-#define TWIHS_FIMR_RXFEF_Pos                  _UINT32_(3)                                          /* (TWIHS_FIMR) RXFEF Interrupt Mask Position */
-#define TWIHS_FIMR_RXFEF_Msk                  (_UINT32_(0x1) << TWIHS_FIMR_RXFEF_Pos)              /* (TWIHS_FIMR) RXFEF Interrupt Mask Mask */
-#define TWIHS_FIMR_RXFEF(value)               (TWIHS_FIMR_RXFEF_Msk & (_UINT32_(value) << TWIHS_FIMR_RXFEF_Pos)) /* Assigment of value for RXFEF in the TWIHS_FIMR register */
-#define TWIHS_FIMR_RXFFF_Pos                  _UINT32_(4)                                          /* (TWIHS_FIMR) RXFFF Interrupt Mask Position */
-#define TWIHS_FIMR_RXFFF_Msk                  (_UINT32_(0x1) << TWIHS_FIMR_RXFFF_Pos)              /* (TWIHS_FIMR) RXFFF Interrupt Mask Mask */
-#define TWIHS_FIMR_RXFFF(value)               (TWIHS_FIMR_RXFFF_Msk & (_UINT32_(value) << TWIHS_FIMR_RXFFF_Pos)) /* Assigment of value for RXFFF in the TWIHS_FIMR register */
-#define TWIHS_FIMR_RXFTHF_Pos                 _UINT32_(5)                                          /* (TWIHS_FIMR) RXFTHF Interrupt Mask Position */
-#define TWIHS_FIMR_RXFTHF_Msk                 (_UINT32_(0x1) << TWIHS_FIMR_RXFTHF_Pos)             /* (TWIHS_FIMR) RXFTHF Interrupt Mask Mask */
-#define TWIHS_FIMR_RXFTHF(value)              (TWIHS_FIMR_RXFTHF_Msk & (_UINT32_(value) << TWIHS_FIMR_RXFTHF_Pos)) /* Assigment of value for RXFTHF in the TWIHS_FIMR register */
-#define TWIHS_FIMR_TXFPTEF_Pos                _UINT32_(6)                                          /* (TWIHS_FIMR) TXFPTEF Interrupt Mask Position */
-#define TWIHS_FIMR_TXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIMR_TXFPTEF_Pos)            /* (TWIHS_FIMR) TXFPTEF Interrupt Mask Mask */
-#define TWIHS_FIMR_TXFPTEF(value)             (TWIHS_FIMR_TXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIMR_TXFPTEF_Pos)) /* Assigment of value for TXFPTEF in the TWIHS_FIMR register */
-#define TWIHS_FIMR_RXFPTEF_Pos                _UINT32_(7)                                          /* (TWIHS_FIMR) RXFPTEF Interrupt Mask Position */
-#define TWIHS_FIMR_RXFPTEF_Msk                (_UINT32_(0x1) << TWIHS_FIMR_RXFPTEF_Pos)            /* (TWIHS_FIMR) RXFPTEF Interrupt Mask Mask */
-#define TWIHS_FIMR_RXFPTEF(value)             (TWIHS_FIMR_RXFPTEF_Msk & (_UINT32_(value) << TWIHS_FIMR_RXFPTEF_Pos)) /* Assigment of value for RXFPTEF in the TWIHS_FIMR register */
-#define TWIHS_FIMR_Msk                        _UINT32_(0x000000FF)                                 /* (TWIHS_FIMR) Register Mask  */
-
-
-/* -------- TWIHS_DR : (TWIHS Offset: 0xD0) ( R/ 32) Debug Register -------- */
-#define TWIHS_DR_SWEN_Pos                     _UINT32_(0)                                          /* (TWIHS_DR) SleepWalking Enable Position */
-#define TWIHS_DR_SWEN_Msk                     (_UINT32_(0x1) << TWIHS_DR_SWEN_Pos)                 /* (TWIHS_DR) SleepWalking Enable Mask */
-#define TWIHS_DR_SWEN(value)                  (TWIHS_DR_SWEN_Msk & (_UINT32_(value) << TWIHS_DR_SWEN_Pos)) /* Assigment of value for SWEN in the TWIHS_DR register */
-#define TWIHS_DR_CLKRQ_Pos                    _UINT32_(1)                                          /* (TWIHS_DR) Clock Request Position */
-#define TWIHS_DR_CLKRQ_Msk                    (_UINT32_(0x1) << TWIHS_DR_CLKRQ_Pos)                /* (TWIHS_DR) Clock Request Mask */
-#define TWIHS_DR_CLKRQ(value)                 (TWIHS_DR_CLKRQ_Msk & (_UINT32_(value) << TWIHS_DR_CLKRQ_Pos)) /* Assigment of value for CLKRQ in the TWIHS_DR register */
-#define TWIHS_DR_SWMATCH_Pos                  _UINT32_(2)                                          /* (TWIHS_DR) SleepWalking Match Position */
-#define TWIHS_DR_SWMATCH_Msk                  (_UINT32_(0x1) << TWIHS_DR_SWMATCH_Pos)              /* (TWIHS_DR) SleepWalking Match Mask */
-#define TWIHS_DR_SWMATCH(value)               (TWIHS_DR_SWMATCH_Msk & (_UINT32_(value) << TWIHS_DR_SWMATCH_Pos)) /* Assigment of value for SWMATCH in the TWIHS_DR register */
-#define TWIHS_DR_TRP_Pos                      _UINT32_(3)                                          /* (TWIHS_DR) Transfer Pending Position */
-#define TWIHS_DR_TRP_Msk                      (_UINT32_(0x1) << TWIHS_DR_TRP_Pos)                  /* (TWIHS_DR) Transfer Pending Mask */
-#define TWIHS_DR_TRP(value)                   (TWIHS_DR_TRP_Msk & (_UINT32_(value) << TWIHS_DR_TRP_Pos)) /* Assigment of value for TRP in the TWIHS_DR register */
-#define TWIHS_DR_Msk                          _UINT32_(0x0000000F)                                 /* (TWIHS_DR) Register Mask  */
 
 
 /* -------- TWIHS_WPMR : (TWIHS Offset: 0xE4) (R/W 32) Write Protection Mode Register -------- */
@@ -841,28 +841,28 @@
 
 
 /** \brief TWIHS register offsets definitions */
-#define TWIHS_CR_REG_OFST              _UINT32_(0x00)      /* (TWIHS_CR) Control Register Offset */
-#define TWIHS_MMR_REG_OFST             _UINT32_(0x04)      /* (TWIHS_MMR) Master Mode Register Offset */
-#define TWIHS_SMR_REG_OFST             _UINT32_(0x08)      /* (TWIHS_SMR) Slave Mode Register Offset */
-#define TWIHS_IADR_REG_OFST            _UINT32_(0x0C)      /* (TWIHS_IADR) Internal Address Register Offset */
-#define TWIHS_CWGR_REG_OFST            _UINT32_(0x10)      /* (TWIHS_CWGR) Clock Waveform Generator Register Offset */
-#define TWIHS_SR_REG_OFST              _UINT32_(0x20)      /* (TWIHS_SR) Status Register Offset */
-#define TWIHS_IER_REG_OFST             _UINT32_(0x24)      /* (TWIHS_IER) Interrupt Enable Register Offset */
-#define TWIHS_IDR_REG_OFST             _UINT32_(0x28)      /* (TWIHS_IDR) Interrupt Disable Register Offset */
-#define TWIHS_IMR_REG_OFST             _UINT32_(0x2C)      /* (TWIHS_IMR) Interrupt Mask Register Offset */
-#define TWIHS_RHR_REG_OFST             _UINT32_(0x30)      /* (TWIHS_RHR) Receive Holding Register Offset */
-#define TWIHS_THR_REG_OFST             _UINT32_(0x34)      /* (TWIHS_THR) Transmit Holding Register Offset */
-#define TWIHS_SMBTR_REG_OFST           _UINT32_(0x38)      /* (TWIHS_SMBTR) SMBus Timing Register Offset */
 #define TWIHS_ACR_REG_OFST             _UINT32_(0x40)      /* (TWIHS_ACR) Alternative Command Register Offset */
-#define TWIHS_FILTR_REG_OFST           _UINT32_(0x44)      /* (TWIHS_FILTR) Filter Register Offset */
-#define TWIHS_SWMR_REG_OFST            _UINT32_(0x4C)      /* (TWIHS_SWMR) SleepWalking Matching Register Offset */
-#define TWIHS_FMR_REG_OFST             _UINT32_(0x50)      /* (TWIHS_FMR) FIFO Mode Register Offset */
-#define TWIHS_FLR_REG_OFST             _UINT32_(0x54)      /* (TWIHS_FLR) FIFO Level Register Offset */
-#define TWIHS_FSR_REG_OFST             _UINT32_(0x60)      /* (TWIHS_FSR) FIFO Status Register Offset */
-#define TWIHS_FIER_REG_OFST            _UINT32_(0x64)      /* (TWIHS_FIER) FIFO Interrupt Enable Register Offset */
-#define TWIHS_FIDR_REG_OFST            _UINT32_(0x68)      /* (TWIHS_FIDR) FIFO Interrupt Disable Register Offset */
-#define TWIHS_FIMR_REG_OFST            _UINT32_(0x6C)      /* (TWIHS_FIMR) FIFO Interrupt Mask Register Offset */
+#define TWIHS_CR_REG_OFST              _UINT32_(0x00)      /* (TWIHS_CR) Control Register Offset */
+#define TWIHS_CWGR_REG_OFST            _UINT32_(0x10)      /* (TWIHS_CWGR) Clock Waveform Generator Register Offset */
 #define TWIHS_DR_REG_OFST              _UINT32_(0xD0)      /* (TWIHS_DR) Debug Register Offset */
+#define TWIHS_FIDR_REG_OFST            _UINT32_(0x68)      /* (TWIHS_FIDR) FIFO Interrupt Disable Register Offset */
+#define TWIHS_FIER_REG_OFST            _UINT32_(0x64)      /* (TWIHS_FIER) FIFO Interrupt Enable Register Offset */
+#define TWIHS_FILTR_REG_OFST           _UINT32_(0x44)      /* (TWIHS_FILTR) Filter Register Offset */
+#define TWIHS_FIMR_REG_OFST            _UINT32_(0x6C)      /* (TWIHS_FIMR) FIFO Interrupt Mask Register Offset */
+#define TWIHS_FLR_REG_OFST             _UINT32_(0x54)      /* (TWIHS_FLR) FIFO Level Register Offset */
+#define TWIHS_FMR_REG_OFST             _UINT32_(0x50)      /* (TWIHS_FMR) FIFO Mode Register Offset */
+#define TWIHS_FSR_REG_OFST             _UINT32_(0x60)      /* (TWIHS_FSR) FIFO Status Register Offset */
+#define TWIHS_IADR_REG_OFST            _UINT32_(0x0C)      /* (TWIHS_IADR) Internal Address Register Offset */
+#define TWIHS_IDR_REG_OFST             _UINT32_(0x28)      /* (TWIHS_IDR) Interrupt Disable Register Offset */
+#define TWIHS_IER_REG_OFST             _UINT32_(0x24)      /* (TWIHS_IER) Interrupt Enable Register Offset */
+#define TWIHS_IMR_REG_OFST             _UINT32_(0x2C)      /* (TWIHS_IMR) Interrupt Mask Register Offset */
+#define TWIHS_MMR_REG_OFST             _UINT32_(0x04)      /* (TWIHS_MMR) Master Mode Register Offset */
+#define TWIHS_RHR_REG_OFST             _UINT32_(0x30)      /* (TWIHS_RHR) Receive Holding Register Offset */
+#define TWIHS_SMBTR_REG_OFST           _UINT32_(0x38)      /* (TWIHS_SMBTR) SMBus Timing Register Offset */
+#define TWIHS_SMR_REG_OFST             _UINT32_(0x08)      /* (TWIHS_SMR) Slave Mode Register Offset */
+#define TWIHS_SR_REG_OFST              _UINT32_(0x20)      /* (TWIHS_SR) Status Register Offset */
+#define TWIHS_SWMR_REG_OFST            _UINT32_(0x4C)      /* (TWIHS_SWMR) SleepWalking Matching Register Offset */
+#define TWIHS_THR_REG_OFST             _UINT32_(0x34)      /* (TWIHS_THR) Transmit Holding Register Offset */
 #define TWIHS_WPMR_REG_OFST            _UINT32_(0xE4)      /* (TWIHS_WPMR) Write Protection Mode Register Offset */
 #define TWIHS_WPSR_REG_OFST            _UINT32_(0xE8)      /* (TWIHS_WPSR) Write Protection Status Register Offset */
 
