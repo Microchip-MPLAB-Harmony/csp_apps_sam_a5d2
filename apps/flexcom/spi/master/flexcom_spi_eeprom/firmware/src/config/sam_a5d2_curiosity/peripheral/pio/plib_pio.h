@@ -91,111 +91,111 @@
 
 
 /*** Macros for EEPROM_WP pin ***/
-#define EEPROM_WP_Set()               (PIOD_REGS->PIO_SODR = (1<<8))
-#define EEPROM_WP_Clear()             (PIOD_REGS->PIO_CODR = (1<<8))
+#define EEPROM_WP_Set()               (PIOD_REGS->PIO_SODR = ((uint32_t)1U<<8U))
+#define EEPROM_WP_Clear()             (PIOD_REGS->PIO_CODR = ((uint32_t)1U<<8U))
 #define EEPROM_WP_Toggle()            do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<8); \
-                                            PIOD_REGS->PIO_ODSR ^= (1<<8);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOD_REGS->PIO_ODSR ^= ((uint32_t)1U<<8U);\
                                         } while (0)
 #define EEPROM_WP_OutputEnable()      do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<8); \
-                                            PIOD_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOD_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define EEPROM_WP_InputEnable()       do { \
-                                            PIOD_REGS->PIO_MSKR = (1<<8); \
-                                            PIOD_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOD_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define EEPROM_WP_Get()               ((PIOD_REGS->PIO_PDSR >> 8) & 0x1)
+#define EEPROM_WP_Get()               ((PIOD_REGS->PIO_PDSR >> 8U) & 0x1U)
 #define EEPROM_WP_PIN                  PIO_PIN_PD8
 
 /*** Macros for EEPROM_CS pin ***/
-#define EEPROM_CS_Set()               (PIOD_REGS->PIO_SODR = (1<<15))
-#define EEPROM_CS_Clear()             (PIOD_REGS->PIO_CODR = (1<<15))
+#define EEPROM_CS_Set()               (PIOD_REGS->PIO_SODR = ((uint32_t)1U<<15U))
+#define EEPROM_CS_Clear()             (PIOD_REGS->PIO_CODR = ((uint32_t)1U<<15U))
 #define EEPROM_CS_Toggle()            do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<15); \
-                                            PIOD_REGS->PIO_ODSR ^= (1<<15);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<15U); \
+                                            PIOD_REGS->PIO_ODSR ^= ((uint32_t)1U<<15U);\
                                         } while (0)
 #define EEPROM_CS_OutputEnable()      do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<15); \
-                                            PIOD_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<15U); \
+                                            PIOD_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define EEPROM_CS_InputEnable()       do { \
-                                            PIOD_REGS->PIO_MSKR = (1<<15); \
-                                            PIOD_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<15U); \
+                                            PIOD_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define EEPROM_CS_Get()               ((PIOD_REGS->PIO_PDSR >> 15) & 0x1)
+#define EEPROM_CS_Get()               ((PIOD_REGS->PIO_PDSR >> 15U) & 0x1U)
 #define EEPROM_CS_PIN                  PIO_PIN_PD15
 
 /*** Macros for EEPROM_HOLD pin ***/
-#define EEPROM_HOLD_Set()               (PIOD_REGS->PIO_SODR = (1<<9))
-#define EEPROM_HOLD_Clear()             (PIOD_REGS->PIO_CODR = (1<<9))
+#define EEPROM_HOLD_Set()               (PIOD_REGS->PIO_SODR = ((uint32_t)1U<<9U))
+#define EEPROM_HOLD_Clear()             (PIOD_REGS->PIO_CODR = ((uint32_t)1U<<9U))
 #define EEPROM_HOLD_Toggle()            do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<9); \
-                                            PIOD_REGS->PIO_ODSR ^= (1<<9);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOD_REGS->PIO_ODSR ^= ((uint32_t)1U<<9U);\
                                         } while (0)
 #define EEPROM_HOLD_OutputEnable()      do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<9); \
-                                            PIOD_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOD_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define EEPROM_HOLD_InputEnable()       do { \
-                                            PIOD_REGS->PIO_MSKR = (1<<9); \
-                                            PIOD_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOD_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define EEPROM_HOLD_Get()               ((PIOD_REGS->PIO_PDSR >> 9) & 0x1)
+#define EEPROM_HOLD_Get()               ((PIOD_REGS->PIO_PDSR >> 9U) & 0x1U)
 #define EEPROM_HOLD_PIN                  PIO_PIN_PD9
 
 /*** Macros for LED_GREEN pin ***/
-#define LED_GREEN_Set()               (PIOA_REGS->PIO_SODR = (1<<8))
-#define LED_GREEN_Clear()             (PIOA_REGS->PIO_CODR = (1<<8))
+#define LED_GREEN_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<8U))
+#define LED_GREEN_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<8U))
 #define LED_GREEN_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<8);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<8U);\
                                         } while (0)
 #define LED_GREEN_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define LED_GREEN_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define LED_GREEN_Get()               ((PIOA_REGS->PIO_PDSR >> 8) & 0x1)
+#define LED_GREEN_Get()               ((PIOA_REGS->PIO_PDSR >> 8U) & 0x1U)
 #define LED_GREEN_PIN                  PIO_PIN_PA8
 
 /*** Macros for LED_BLUE pin ***/
-#define LED_BLUE_Set()               (PIOA_REGS->PIO_SODR = (1<<9))
-#define LED_BLUE_Clear()             (PIOA_REGS->PIO_CODR = (1<<9))
+#define LED_BLUE_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<9U))
+#define LED_BLUE_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<9U))
 #define LED_BLUE_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<9);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<9U);\
                                         } while (0)
 #define LED_BLUE_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define LED_BLUE_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define LED_BLUE_Get()               ((PIOA_REGS->PIO_PDSR >> 9) & 0x1)
+#define LED_BLUE_Get()               ((PIOA_REGS->PIO_PDSR >> 9U) & 0x1U)
 #define LED_BLUE_PIN                  PIO_PIN_PA9
 
 /*** Macros for LED_RED pin ***/
-#define LED_RED_Set()               (PIOA_REGS->PIO_SODR = (1<<7))
-#define LED_RED_Clear()             (PIOA_REGS->PIO_CODR = (1<<7))
+#define LED_RED_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<7U))
+#define LED_RED_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<7U))
 #define LED_RED_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<7);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<7U);\
                                         } while (0)
 #define LED_RED_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define LED_RED_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define LED_RED_Get()               ((PIOA_REGS->PIO_PDSR >> 7) & 0x1)
+#define LED_RED_Get()               ((PIOA_REGS->PIO_PDSR >> 7U) & 0x1U)
 #define LED_RED_PIN                  PIO_PIN_PA7
 // *****************************************************************************
 /* PIO Ports
