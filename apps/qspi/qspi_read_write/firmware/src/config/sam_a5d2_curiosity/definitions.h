@@ -56,7 +56,6 @@
 #include "peripheral/pio/plib_pio.h"
 #include "peripheral/aic/plib_aic.h"
 
-
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

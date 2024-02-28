@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for TDES peripheral ========== */
-#define TDES_INSTANCE_ID                         (11)       
 #define TDES_CLOCK_ID                            (11)       
-#define TDES_DMAC_ID_TX                          (28)       
 #define TDES_DMAC_ID_RX                          (29)       
+#define TDES_DMAC_ID_TX                          (28)       
+#define TDES_INSTANCE_ID                         (11)       
 
 #endif /* _SAMA5D_TDES_INSTANCE_ */

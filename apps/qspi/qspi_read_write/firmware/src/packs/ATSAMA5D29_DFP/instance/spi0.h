@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for SPI0 peripheral ========== */
-#define SPI0_INSTANCE_ID                         (33)       
 #define SPI0_CLOCK_ID                            (33)       
-#define SPI0_DMAC_ID_TX                          (6)        
 #define SPI0_DMAC_ID_RX                          (7)        
+#define SPI0_DMAC_ID_TX                          (6)        
+#define SPI0_INSTANCE_ID                         (33)       
 
 #endif /* _SAMA5D_SPI0_INSTANCE_ */

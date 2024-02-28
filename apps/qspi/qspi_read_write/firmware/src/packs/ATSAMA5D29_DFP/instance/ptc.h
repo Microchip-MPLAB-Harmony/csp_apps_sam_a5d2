@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for PTC peripheral ========== */
-#define PTC_INSTANCE_ID                          (58)       
 #define PTC_CLOCK_ID                             (58)       
+#define PTC_INSTANCE_ID                          (58)       
 
 #endif /* _SAMA5D_PTC_INSTANCE_ */

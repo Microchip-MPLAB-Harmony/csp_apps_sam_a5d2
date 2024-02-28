@@ -35,37 +35,25 @@
 #define CLASSD_CR_Msk                         _UINT32_(0x00000001)                                 /* (CLASSD_CR) Register Mask  */
 
 
-/* -------- CLASSD_MR : (CLASSD Offset: 0x04) (R/W 32) Mode Register -------- */
-#define CLASSD_MR_LEN_Pos                     _UINT32_(0)                                          /* (CLASSD_MR) Left Channel Enable Position */
-#define CLASSD_MR_LEN_Msk                     (_UINT32_(0x1) << CLASSD_MR_LEN_Pos)                 /* (CLASSD_MR) Left Channel Enable Mask */
-#define CLASSD_MR_LEN(value)                  (CLASSD_MR_LEN_Msk & (_UINT32_(value) << CLASSD_MR_LEN_Pos)) /* Assigment of value for LEN in the CLASSD_MR register */
-#define CLASSD_MR_LMUTE_Pos                   _UINT32_(1)                                          /* (CLASSD_MR) Left Channel Mute Position */
-#define CLASSD_MR_LMUTE_Msk                   (_UINT32_(0x1) << CLASSD_MR_LMUTE_Pos)               /* (CLASSD_MR) Left Channel Mute Mask */
-#define CLASSD_MR_LMUTE(value)                (CLASSD_MR_LMUTE_Msk & (_UINT32_(value) << CLASSD_MR_LMUTE_Pos)) /* Assigment of value for LMUTE in the CLASSD_MR register */
-#define CLASSD_MR_REN_Pos                     _UINT32_(4)                                          /* (CLASSD_MR) Right Channel Enable Position */
-#define CLASSD_MR_REN_Msk                     (_UINT32_(0x1) << CLASSD_MR_REN_Pos)                 /* (CLASSD_MR) Right Channel Enable Mask */
-#define CLASSD_MR_REN(value)                  (CLASSD_MR_REN_Msk & (_UINT32_(value) << CLASSD_MR_REN_Pos)) /* Assigment of value for REN in the CLASSD_MR register */
-#define CLASSD_MR_RMUTE_Pos                   _UINT32_(5)                                          /* (CLASSD_MR) Right Channel Mute Position */
-#define CLASSD_MR_RMUTE_Msk                   (_UINT32_(0x1) << CLASSD_MR_RMUTE_Pos)               /* (CLASSD_MR) Right Channel Mute Mask */
-#define CLASSD_MR_RMUTE(value)                (CLASSD_MR_RMUTE_Msk & (_UINT32_(value) << CLASSD_MR_RMUTE_Pos)) /* Assigment of value for RMUTE in the CLASSD_MR register */
-#define CLASSD_MR_PWMTYP_Pos                  _UINT32_(8)                                          /* (CLASSD_MR) PWM Modulation Type Position */
-#define CLASSD_MR_PWMTYP_Msk                  (_UINT32_(0x1) << CLASSD_MR_PWMTYP_Pos)              /* (CLASSD_MR) PWM Modulation Type Mask */
-#define CLASSD_MR_PWMTYP(value)               (CLASSD_MR_PWMTYP_Msk & (_UINT32_(value) << CLASSD_MR_PWMTYP_Pos)) /* Assigment of value for PWMTYP in the CLASSD_MR register */
-#define CLASSD_MR_NON_OVERLAP_Pos             _UINT32_(16)                                         /* (CLASSD_MR) Non-Overlapping Enable Position */
-#define CLASSD_MR_NON_OVERLAP_Msk             (_UINT32_(0x1) << CLASSD_MR_NON_OVERLAP_Pos)         /* (CLASSD_MR) Non-Overlapping Enable Mask */
-#define CLASSD_MR_NON_OVERLAP(value)          (CLASSD_MR_NON_OVERLAP_Msk & (_UINT32_(value) << CLASSD_MR_NON_OVERLAP_Pos)) /* Assigment of value for NON_OVERLAP in the CLASSD_MR register */
-#define CLASSD_MR_NOVRVAL_Pos                 _UINT32_(20)                                         /* (CLASSD_MR) Non-Overlapping Value Position */
-#define CLASSD_MR_NOVRVAL_Msk                 (_UINT32_(0x3) << CLASSD_MR_NOVRVAL_Pos)             /* (CLASSD_MR) Non-Overlapping Value Mask */
-#define CLASSD_MR_NOVRVAL(value)              (CLASSD_MR_NOVRVAL_Msk & (_UINT32_(value) << CLASSD_MR_NOVRVAL_Pos)) /* Assigment of value for NOVRVAL in the CLASSD_MR register */
-#define   CLASSD_MR_NOVRVAL_5NS_Val           _UINT32_(0x0)                                        /* (CLASSD_MR) Non-overlapping time is 5 ns  */
-#define   CLASSD_MR_NOVRVAL_10NS_Val          _UINT32_(0x1)                                        /* (CLASSD_MR) Non-overlapping time is 10 ns  */
-#define   CLASSD_MR_NOVRVAL_15NS_Val          _UINT32_(0x2)                                        /* (CLASSD_MR) Non-overlapping time is 15 ns  */
-#define   CLASSD_MR_NOVRVAL_20NS_Val          _UINT32_(0x3)                                        /* (CLASSD_MR) Non-overlapping time is 20 ns  */
-#define CLASSD_MR_NOVRVAL_5NS                 (CLASSD_MR_NOVRVAL_5NS_Val << CLASSD_MR_NOVRVAL_Pos) /* (CLASSD_MR) Non-overlapping time is 5 ns Position  */
-#define CLASSD_MR_NOVRVAL_10NS                (CLASSD_MR_NOVRVAL_10NS_Val << CLASSD_MR_NOVRVAL_Pos) /* (CLASSD_MR) Non-overlapping time is 10 ns Position  */
-#define CLASSD_MR_NOVRVAL_15NS                (CLASSD_MR_NOVRVAL_15NS_Val << CLASSD_MR_NOVRVAL_Pos) /* (CLASSD_MR) Non-overlapping time is 15 ns Position  */
-#define CLASSD_MR_NOVRVAL_20NS                (CLASSD_MR_NOVRVAL_20NS_Val << CLASSD_MR_NOVRVAL_Pos) /* (CLASSD_MR) Non-overlapping time is 20 ns Position  */
-#define CLASSD_MR_Msk                         _UINT32_(0x00310133)                                 /* (CLASSD_MR) Register Mask  */
+/* -------- CLASSD_IDR : (CLASSD Offset: 0x18) ( /W 32) Interrupt Disable Register -------- */
+#define CLASSD_IDR_DATRDY_Pos                 _UINT32_(0)                                          /* (CLASSD_IDR) Data Ready Position */
+#define CLASSD_IDR_DATRDY_Msk                 (_UINT32_(0x1) << CLASSD_IDR_DATRDY_Pos)             /* (CLASSD_IDR) Data Ready Mask */
+#define CLASSD_IDR_DATRDY(value)              (CLASSD_IDR_DATRDY_Msk & (_UINT32_(value) << CLASSD_IDR_DATRDY_Pos)) /* Assigment of value for DATRDY in the CLASSD_IDR register */
+#define CLASSD_IDR_Msk                        _UINT32_(0x00000001)                                 /* (CLASSD_IDR) Register Mask  */
+
+
+/* -------- CLASSD_IER : (CLASSD Offset: 0x14) ( /W 32) Interrupt Enable Register -------- */
+#define CLASSD_IER_DATRDY_Pos                 _UINT32_(0)                                          /* (CLASSD_IER) Data Ready Position */
+#define CLASSD_IER_DATRDY_Msk                 (_UINT32_(0x1) << CLASSD_IER_DATRDY_Pos)             /* (CLASSD_IER) Data Ready Mask */
+#define CLASSD_IER_DATRDY(value)              (CLASSD_IER_DATRDY_Msk & (_UINT32_(value) << CLASSD_IER_DATRDY_Pos)) /* Assigment of value for DATRDY in the CLASSD_IER register */
+#define CLASSD_IER_Msk                        _UINT32_(0x00000001)                                 /* (CLASSD_IER) Register Mask  */
+
+
+/* -------- CLASSD_IMR : (CLASSD Offset: 0x1C) (R/W 32) Interrupt Mask Register -------- */
+#define CLASSD_IMR_DATRDY_Pos                 _UINT32_(0)                                          /* (CLASSD_IMR) Data Ready Position */
+#define CLASSD_IMR_DATRDY_Msk                 (_UINT32_(0x1) << CLASSD_IMR_DATRDY_Pos)             /* (CLASSD_IMR) Data Ready Mask */
+#define CLASSD_IMR_DATRDY(value)              (CLASSD_IMR_DATRDY_Msk & (_UINT32_(value) << CLASSD_IMR_DATRDY_Pos)) /* Assigment of value for DATRDY in the CLASSD_IMR register */
+#define CLASSD_IMR_Msk                        _UINT32_(0x00000001)                                 /* (CLASSD_IMR) Register Mask  */
 
 
 /* -------- CLASSD_INTPMR : (CLASSD Offset: 0x08) (R/W 32) Interpolator Mode Register -------- */
@@ -172,6 +160,46 @@
 #define CLASSD_INTSR_Msk                      _UINT32_(0x00000001)                                 /* (CLASSD_INTSR) Register Mask  */
 
 
+/* -------- CLASSD_ISR : (CLASSD Offset: 0x20) ( R/ 32) Interrupt Status Register -------- */
+#define CLASSD_ISR_DATRDY_Pos                 _UINT32_(0)                                          /* (CLASSD_ISR) Data Ready Position */
+#define CLASSD_ISR_DATRDY_Msk                 (_UINT32_(0x1) << CLASSD_ISR_DATRDY_Pos)             /* (CLASSD_ISR) Data Ready Mask */
+#define CLASSD_ISR_DATRDY(value)              (CLASSD_ISR_DATRDY_Msk & (_UINT32_(value) << CLASSD_ISR_DATRDY_Pos)) /* Assigment of value for DATRDY in the CLASSD_ISR register */
+#define CLASSD_ISR_Msk                        _UINT32_(0x00000001)                                 /* (CLASSD_ISR) Register Mask  */
+
+
+/* -------- CLASSD_MR : (CLASSD Offset: 0x04) (R/W 32) Mode Register -------- */
+#define CLASSD_MR_LEN_Pos                     _UINT32_(0)                                          /* (CLASSD_MR) Left Channel Enable Position */
+#define CLASSD_MR_LEN_Msk                     (_UINT32_(0x1) << CLASSD_MR_LEN_Pos)                 /* (CLASSD_MR) Left Channel Enable Mask */
+#define CLASSD_MR_LEN(value)                  (CLASSD_MR_LEN_Msk & (_UINT32_(value) << CLASSD_MR_LEN_Pos)) /* Assigment of value for LEN in the CLASSD_MR register */
+#define CLASSD_MR_LMUTE_Pos                   _UINT32_(1)                                          /* (CLASSD_MR) Left Channel Mute Position */
+#define CLASSD_MR_LMUTE_Msk                   (_UINT32_(0x1) << CLASSD_MR_LMUTE_Pos)               /* (CLASSD_MR) Left Channel Mute Mask */
+#define CLASSD_MR_LMUTE(value)                (CLASSD_MR_LMUTE_Msk & (_UINT32_(value) << CLASSD_MR_LMUTE_Pos)) /* Assigment of value for LMUTE in the CLASSD_MR register */
+#define CLASSD_MR_REN_Pos                     _UINT32_(4)                                          /* (CLASSD_MR) Right Channel Enable Position */
+#define CLASSD_MR_REN_Msk                     (_UINT32_(0x1) << CLASSD_MR_REN_Pos)                 /* (CLASSD_MR) Right Channel Enable Mask */
+#define CLASSD_MR_REN(value)                  (CLASSD_MR_REN_Msk & (_UINT32_(value) << CLASSD_MR_REN_Pos)) /* Assigment of value for REN in the CLASSD_MR register */
+#define CLASSD_MR_RMUTE_Pos                   _UINT32_(5)                                          /* (CLASSD_MR) Right Channel Mute Position */
+#define CLASSD_MR_RMUTE_Msk                   (_UINT32_(0x1) << CLASSD_MR_RMUTE_Pos)               /* (CLASSD_MR) Right Channel Mute Mask */
+#define CLASSD_MR_RMUTE(value)                (CLASSD_MR_RMUTE_Msk & (_UINT32_(value) << CLASSD_MR_RMUTE_Pos)) /* Assigment of value for RMUTE in the CLASSD_MR register */
+#define CLASSD_MR_PWMTYP_Pos                  _UINT32_(8)                                          /* (CLASSD_MR) PWM Modulation Type Position */
+#define CLASSD_MR_PWMTYP_Msk                  (_UINT32_(0x1) << CLASSD_MR_PWMTYP_Pos)              /* (CLASSD_MR) PWM Modulation Type Mask */
+#define CLASSD_MR_PWMTYP(value)               (CLASSD_MR_PWMTYP_Msk & (_UINT32_(value) << CLASSD_MR_PWMTYP_Pos)) /* Assigment of value for PWMTYP in the CLASSD_MR register */
+#define CLASSD_MR_NON_OVERLAP_Pos             _UINT32_(16)                                         /* (CLASSD_MR) Non-Overlapping Enable Position */
+#define CLASSD_MR_NON_OVERLAP_Msk             (_UINT32_(0x1) << CLASSD_MR_NON_OVERLAP_Pos)         /* (CLASSD_MR) Non-Overlapping Enable Mask */
+#define CLASSD_MR_NON_OVERLAP(value)          (CLASSD_MR_NON_OVERLAP_Msk & (_UINT32_(value) << CLASSD_MR_NON_OVERLAP_Pos)) /* Assigment of value for NON_OVERLAP in the CLASSD_MR register */
+#define CLASSD_MR_NOVRVAL_Pos                 _UINT32_(20)                                         /* (CLASSD_MR) Non-Overlapping Value Position */
+#define CLASSD_MR_NOVRVAL_Msk                 (_UINT32_(0x3) << CLASSD_MR_NOVRVAL_Pos)             /* (CLASSD_MR) Non-Overlapping Value Mask */
+#define CLASSD_MR_NOVRVAL(value)              (CLASSD_MR_NOVRVAL_Msk & (_UINT32_(value) << CLASSD_MR_NOVRVAL_Pos)) /* Assigment of value for NOVRVAL in the CLASSD_MR register */
+#define   CLASSD_MR_NOVRVAL_5NS_Val           _UINT32_(0x0)                                        /* (CLASSD_MR) Non-overlapping time is 5 ns  */
+#define   CLASSD_MR_NOVRVAL_10NS_Val          _UINT32_(0x1)                                        /* (CLASSD_MR) Non-overlapping time is 10 ns  */
+#define   CLASSD_MR_NOVRVAL_15NS_Val          _UINT32_(0x2)                                        /* (CLASSD_MR) Non-overlapping time is 15 ns  */
+#define   CLASSD_MR_NOVRVAL_20NS_Val          _UINT32_(0x3)                                        /* (CLASSD_MR) Non-overlapping time is 20 ns  */
+#define CLASSD_MR_NOVRVAL_5NS                 (CLASSD_MR_NOVRVAL_5NS_Val << CLASSD_MR_NOVRVAL_Pos) /* (CLASSD_MR) Non-overlapping time is 5 ns Position  */
+#define CLASSD_MR_NOVRVAL_10NS                (CLASSD_MR_NOVRVAL_10NS_Val << CLASSD_MR_NOVRVAL_Pos) /* (CLASSD_MR) Non-overlapping time is 10 ns Position  */
+#define CLASSD_MR_NOVRVAL_15NS                (CLASSD_MR_NOVRVAL_15NS_Val << CLASSD_MR_NOVRVAL_Pos) /* (CLASSD_MR) Non-overlapping time is 15 ns Position  */
+#define CLASSD_MR_NOVRVAL_20NS                (CLASSD_MR_NOVRVAL_20NS_Val << CLASSD_MR_NOVRVAL_Pos) /* (CLASSD_MR) Non-overlapping time is 20 ns Position  */
+#define CLASSD_MR_Msk                         _UINT32_(0x00310133)                                 /* (CLASSD_MR) Register Mask  */
+
+
 /* -------- CLASSD_THR : (CLASSD Offset: 0x10) (R/W 32) Transmit Holding Register -------- */
 #define CLASSD_THR_LDATA_Pos                  _UINT32_(0)                                          /* (CLASSD_THR) Left Channel Data Position */
 #define CLASSD_THR_LDATA_Msk                  (_UINT32_(0xFFFF) << CLASSD_THR_LDATA_Pos)           /* (CLASSD_THR) Left Channel Data Mask */
@@ -180,34 +208,6 @@
 #define CLASSD_THR_RDATA_Msk                  (_UINT32_(0xFFFF) << CLASSD_THR_RDATA_Pos)           /* (CLASSD_THR) Right Channel Data Mask */
 #define CLASSD_THR_RDATA(value)               (CLASSD_THR_RDATA_Msk & (_UINT32_(value) << CLASSD_THR_RDATA_Pos)) /* Assigment of value for RDATA in the CLASSD_THR register */
 #define CLASSD_THR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (CLASSD_THR) Register Mask  */
-
-
-/* -------- CLASSD_IER : (CLASSD Offset: 0x14) ( /W 32) Interrupt Enable Register -------- */
-#define CLASSD_IER_DATRDY_Pos                 _UINT32_(0)                                          /* (CLASSD_IER) Data Ready Position */
-#define CLASSD_IER_DATRDY_Msk                 (_UINT32_(0x1) << CLASSD_IER_DATRDY_Pos)             /* (CLASSD_IER) Data Ready Mask */
-#define CLASSD_IER_DATRDY(value)              (CLASSD_IER_DATRDY_Msk & (_UINT32_(value) << CLASSD_IER_DATRDY_Pos)) /* Assigment of value for DATRDY in the CLASSD_IER register */
-#define CLASSD_IER_Msk                        _UINT32_(0x00000001)                                 /* (CLASSD_IER) Register Mask  */
-
-
-/* -------- CLASSD_IDR : (CLASSD Offset: 0x18) ( /W 32) Interrupt Disable Register -------- */
-#define CLASSD_IDR_DATRDY_Pos                 _UINT32_(0)                                          /* (CLASSD_IDR) Data Ready Position */
-#define CLASSD_IDR_DATRDY_Msk                 (_UINT32_(0x1) << CLASSD_IDR_DATRDY_Pos)             /* (CLASSD_IDR) Data Ready Mask */
-#define CLASSD_IDR_DATRDY(value)              (CLASSD_IDR_DATRDY_Msk & (_UINT32_(value) << CLASSD_IDR_DATRDY_Pos)) /* Assigment of value for DATRDY in the CLASSD_IDR register */
-#define CLASSD_IDR_Msk                        _UINT32_(0x00000001)                                 /* (CLASSD_IDR) Register Mask  */
-
-
-/* -------- CLASSD_IMR : (CLASSD Offset: 0x1C) (R/W 32) Interrupt Mask Register -------- */
-#define CLASSD_IMR_DATRDY_Pos                 _UINT32_(0)                                          /* (CLASSD_IMR) Data Ready Position */
-#define CLASSD_IMR_DATRDY_Msk                 (_UINT32_(0x1) << CLASSD_IMR_DATRDY_Pos)             /* (CLASSD_IMR) Data Ready Mask */
-#define CLASSD_IMR_DATRDY(value)              (CLASSD_IMR_DATRDY_Msk & (_UINT32_(value) << CLASSD_IMR_DATRDY_Pos)) /* Assigment of value for DATRDY in the CLASSD_IMR register */
-#define CLASSD_IMR_Msk                        _UINT32_(0x00000001)                                 /* (CLASSD_IMR) Register Mask  */
-
-
-/* -------- CLASSD_ISR : (CLASSD Offset: 0x20) ( R/ 32) Interrupt Status Register -------- */
-#define CLASSD_ISR_DATRDY_Pos                 _UINT32_(0)                                          /* (CLASSD_ISR) Data Ready Position */
-#define CLASSD_ISR_DATRDY_Msk                 (_UINT32_(0x1) << CLASSD_ISR_DATRDY_Pos)             /* (CLASSD_ISR) Data Ready Mask */
-#define CLASSD_ISR_DATRDY(value)              (CLASSD_ISR_DATRDY_Msk & (_UINT32_(value) << CLASSD_ISR_DATRDY_Pos)) /* Assigment of value for DATRDY in the CLASSD_ISR register */
-#define CLASSD_ISR_Msk                        _UINT32_(0x00000001)                                 /* (CLASSD_ISR) Register Mask  */
 
 
 /* -------- CLASSD_WPMR : (CLASSD Offset: 0xE4) (R/W 32) Write Protection Mode Register -------- */
@@ -224,14 +224,14 @@
 
 /** \brief CLASSD register offsets definitions */
 #define CLASSD_CR_REG_OFST             _UINT32_(0x00)      /* (CLASSD_CR) Control Register Offset */
-#define CLASSD_MR_REG_OFST             _UINT32_(0x04)      /* (CLASSD_MR) Mode Register Offset */
+#define CLASSD_IDR_REG_OFST            _UINT32_(0x18)      /* (CLASSD_IDR) Interrupt Disable Register Offset */
+#define CLASSD_IER_REG_OFST            _UINT32_(0x14)      /* (CLASSD_IER) Interrupt Enable Register Offset */
+#define CLASSD_IMR_REG_OFST            _UINT32_(0x1C)      /* (CLASSD_IMR) Interrupt Mask Register Offset */
 #define CLASSD_INTPMR_REG_OFST         _UINT32_(0x08)      /* (CLASSD_INTPMR) Interpolator Mode Register Offset */
 #define CLASSD_INTSR_REG_OFST          _UINT32_(0x0C)      /* (CLASSD_INTSR) Interpolator Status Register Offset */
-#define CLASSD_THR_REG_OFST            _UINT32_(0x10)      /* (CLASSD_THR) Transmit Holding Register Offset */
-#define CLASSD_IER_REG_OFST            _UINT32_(0x14)      /* (CLASSD_IER) Interrupt Enable Register Offset */
-#define CLASSD_IDR_REG_OFST            _UINT32_(0x18)      /* (CLASSD_IDR) Interrupt Disable Register Offset */
-#define CLASSD_IMR_REG_OFST            _UINT32_(0x1C)      /* (CLASSD_IMR) Interrupt Mask Register Offset */
 #define CLASSD_ISR_REG_OFST            _UINT32_(0x20)      /* (CLASSD_ISR) Interrupt Status Register Offset */
+#define CLASSD_MR_REG_OFST             _UINT32_(0x04)      /* (CLASSD_MR) Mode Register Offset */
+#define CLASSD_THR_REG_OFST            _UINT32_(0x10)      /* (CLASSD_THR) Transmit Holding Register Offset */
 #define CLASSD_WPMR_REG_OFST           _UINT32_(0xE4)      /* (CLASSD_WPMR) Write Protection Mode Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
