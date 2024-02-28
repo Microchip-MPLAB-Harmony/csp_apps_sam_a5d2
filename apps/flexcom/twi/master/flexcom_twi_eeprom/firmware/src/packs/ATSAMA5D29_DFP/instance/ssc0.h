@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for SSC0 peripheral ========== */
-#define SSC0_INSTANCE_ID                         (43)       
 #define SSC0_CLOCK_ID                            (43)       
-#define SSC0_DMAC_ID_TX                          (21)       
 #define SSC0_DMAC_ID_RX                          (22)       
+#define SSC0_DMAC_ID_TX                          (21)       
+#define SSC0_INSTANCE_ID                         (43)       
 
 #endif /* _SAMA5D_SSC0_INSTANCE_ */
