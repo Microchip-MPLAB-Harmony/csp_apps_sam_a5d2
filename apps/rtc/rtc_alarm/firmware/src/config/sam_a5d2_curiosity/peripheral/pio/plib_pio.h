@@ -91,75 +91,75 @@
 
 
 /*** Macros for GREEN pin ***/
-#define GREEN_Set()               (PIOA_REGS->PIO_SODR = (1<<8))
-#define GREEN_Clear()             (PIOA_REGS->PIO_CODR = (1<<8))
+#define GREEN_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<8U))
+#define GREEN_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<8U))
 #define GREEN_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<8);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<8U);\
                                         } while (0)
 #define GREEN_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define GREEN_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define GREEN_Get()               ((PIOA_REGS->PIO_PDSR >> 8) & 0x1)
+#define GREEN_Get()               ((PIOA_REGS->PIO_PDSR >> 8U) & 0x1U)
 #define GREEN_PIN                  PIO_PIN_PA8
 
 /*** Macros for RED pin ***/
-#define RED_Set()               (PIOA_REGS->PIO_SODR = (1<<9))
-#define RED_Clear()             (PIOA_REGS->PIO_CODR = (1<<9))
+#define RED_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<9U))
+#define RED_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<9U))
 #define RED_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<9);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<9U);\
                                         } while (0)
 #define RED_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define RED_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define RED_Get()               ((PIOA_REGS->PIO_PDSR >> 9) & 0x1)
+#define RED_Get()               ((PIOA_REGS->PIO_PDSR >> 9U) & 0x1U)
 #define RED_PIN                  PIO_PIN_PA9
 
 /*** Macros for PUSH_BUTTON pin ***/
-#define PUSH_BUTTON_Set()               (PIOA_REGS->PIO_SODR = (1<<17))
-#define PUSH_BUTTON_Clear()             (PIOA_REGS->PIO_CODR = (1<<17))
+#define PUSH_BUTTON_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<17U))
+#define PUSH_BUTTON_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<17U))
 #define PUSH_BUTTON_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<17); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<17);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<17U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<17U);\
                                         } while (0)
 #define PUSH_BUTTON_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<17); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<17U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define PUSH_BUTTON_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<17); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<17U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define PUSH_BUTTON_Get()               ((PIOA_REGS->PIO_PDSR >> 17) & 0x1)
+#define PUSH_BUTTON_Get()               ((PIOA_REGS->PIO_PDSR >> 17U) & 0x1U)
 #define PUSH_BUTTON_PIN                  PIO_PIN_PA17
 
 /*** Macros for BLUE pin ***/
-#define BLUE_Set()               (PIOA_REGS->PIO_SODR = (1<<7))
-#define BLUE_Clear()             (PIOA_REGS->PIO_CODR = (1<<7))
+#define BLUE_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<7U))
+#define BLUE_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<7U))
 #define BLUE_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<7);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<7U);\
                                         } while (0)
 #define BLUE_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define BLUE_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define BLUE_Get()               ((PIOA_REGS->PIO_PDSR >> 7) & 0x1)
+#define BLUE_Get()               ((PIOA_REGS->PIO_PDSR >> 7U) & 0x1U)
 #define BLUE_PIN                  PIO_PIN_PA7
 // *****************************************************************************
 /* PIO Ports
