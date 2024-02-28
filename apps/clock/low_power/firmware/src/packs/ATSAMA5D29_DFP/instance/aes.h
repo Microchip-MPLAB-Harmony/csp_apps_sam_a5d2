@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for AES peripheral ========== */
-#define AES_INSTANCE_ID                          (9)        
 #define AES_CLOCK_ID                             (9)        
-#define AES_DMAC_ID_TX                           (26)       
 #define AES_DMAC_ID_RX                           (27)       
+#define AES_DMAC_ID_TX                           (26)       
+#define AES_INSTANCE_ID                          (9)        
 
 #endif /* _SAMA5D_AES_INSTANCE_ */

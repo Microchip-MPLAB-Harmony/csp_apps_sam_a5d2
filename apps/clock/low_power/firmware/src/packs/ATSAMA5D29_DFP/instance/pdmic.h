@@ -26,8 +26,8 @@
 
 
 /* ========== Instance Parameter definitions for PDMIC peripheral ========== */
-#define PDMIC_INSTANCE_ID                        (48)       
 #define PDMIC_CLOCK_ID                           (48)       
 #define PDMIC_DMAC_ID_RX                         (50)       
+#define PDMIC_INSTANCE_ID                        (48)       
 
 #endif /* _SAMA5D_PDMIC_INSTANCE_ */
