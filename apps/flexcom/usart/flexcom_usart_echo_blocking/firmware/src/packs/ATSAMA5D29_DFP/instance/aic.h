@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for AIC peripheral ========== */
-#define AIC_INSTANCE_ID                          (62)       
 #define AIC_ID_AIC_IRQ                           (49)       
+#define AIC_INSTANCE_ID                          (62)       
 
 #endif /* _SAMA5D_AIC_INSTANCE_ */

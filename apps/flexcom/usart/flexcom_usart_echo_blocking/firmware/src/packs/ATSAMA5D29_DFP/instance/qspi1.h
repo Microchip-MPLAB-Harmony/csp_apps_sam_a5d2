@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for QSPI1 peripheral ========== */
-#define QSPI1_INSTANCE_ID                        (53)       
 #define QSPI1_CLOCK_ID                           (53)       
-#define QSPI1_DMAC_ID_TX                         (48)       
 #define QSPI1_DMAC_ID_RX                         (49)       
+#define QSPI1_DMAC_ID_TX                         (48)       
+#define QSPI1_INSTANCE_ID                        (53)       
 
 #endif /* _SAMA5D_QSPI1_INSTANCE_ */

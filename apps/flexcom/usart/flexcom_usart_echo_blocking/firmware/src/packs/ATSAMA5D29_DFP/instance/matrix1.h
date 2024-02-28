@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for MATRIX1 peripheral ========== */
-#define MATRIX1_INSTANCE_ID                      (14)       
 #define MATRIX1_CLOCK_ID                         (14)       
+#define MATRIX1_INSTANCE_ID                      (14)       
 
 #endif /* _SAMA5D_MATRIX1_INSTANCE_ */

@@ -26,8 +26,8 @@
 
 
 /* ========== Instance Parameter definitions for GMAC peripheral ========== */
-#define GMAC_INSTANCE_ID                         (5)        /* Ethernet MAC */
 #define GMAC_CLOCK_ID                            (5)        
+#define GMAC_INSTANCE_ID                         (5)        /* Ethernet MAC */
 #define GMAC_INSTANCE_ID_Q1                      (66)       /* GMAC Queue 1 Interrupt */
 #define GMAC_INSTANCE_ID_Q2                      (67)       /* GMAC Queue 2 Interrupt */
 

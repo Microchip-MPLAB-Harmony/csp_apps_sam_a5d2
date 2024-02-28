@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for AESB peripheral ========== */
-#define AESB_INSTANCE_ID                         (10)       
 #define AESB_CLOCK_ID                            (10)       
+#define AESB_INSTANCE_ID                         (10)       
 
 #endif /* _SAMA5D_AESB_INSTANCE_ */
