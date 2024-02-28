@@ -91,75 +91,75 @@
 
 
 /*** Macros for GPIO_PD9 pin ***/
-#define GPIO_PD9_Set()               (PIOD_REGS->PIO_SODR = (1<<9))
-#define GPIO_PD9_Clear()             (PIOD_REGS->PIO_CODR = (1<<9))
+#define GPIO_PD9_Set()               (PIOD_REGS->PIO_SODR = ((uint32_t)1U<<9U))
+#define GPIO_PD9_Clear()             (PIOD_REGS->PIO_CODR = ((uint32_t)1U<<9U))
 #define GPIO_PD9_Toggle()            do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<9); \
-                                            PIOD_REGS->PIO_ODSR ^= (1<<9);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOD_REGS->PIO_ODSR ^= ((uint32_t)1U<<9U);\
                                         } while (0)
 #define GPIO_PD9_OutputEnable()      do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<9); \
-                                            PIOD_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOD_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define GPIO_PD9_InputEnable()       do { \
-                                            PIOD_REGS->PIO_MSKR = (1<<9); \
-                                            PIOD_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOD_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define GPIO_PD9_Get()               ((PIOD_REGS->PIO_PDSR >> 9) & 0x1)
+#define GPIO_PD9_Get()               ((PIOD_REGS->PIO_PDSR >> 9U) & 0x1U)
 #define GPIO_PD9_PIN                  PIO_PIN_PD9
 
 /*** Macros for GPIO_PA8 pin ***/
-#define GPIO_PA8_Set()               (PIOA_REGS->PIO_SODR = (1<<8))
-#define GPIO_PA8_Clear()             (PIOA_REGS->PIO_CODR = (1<<8))
+#define GPIO_PA8_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<8U))
+#define GPIO_PA8_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<8U))
 #define GPIO_PA8_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<8);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<8U);\
                                         } while (0)
 #define GPIO_PA8_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define GPIO_PA8_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<8); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<8U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define GPIO_PA8_Get()               ((PIOA_REGS->PIO_PDSR >> 8) & 0x1)
+#define GPIO_PA8_Get()               ((PIOA_REGS->PIO_PDSR >> 8U) & 0x1U)
 #define GPIO_PA8_PIN                  PIO_PIN_PA8
 
 /*** Macros for GPIO_PA9 pin ***/
-#define GPIO_PA9_Set()               (PIOA_REGS->PIO_SODR = (1<<9))
-#define GPIO_PA9_Clear()             (PIOA_REGS->PIO_CODR = (1<<9))
+#define GPIO_PA9_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<9U))
+#define GPIO_PA9_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<9U))
 #define GPIO_PA9_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<9);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<9U);\
                                         } while (0)
 #define GPIO_PA9_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define GPIO_PA9_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<9); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<9U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define GPIO_PA9_Get()               ((PIOA_REGS->PIO_PDSR >> 9) & 0x1)
+#define GPIO_PA9_Get()               ((PIOA_REGS->PIO_PDSR >> 9U) & 0x1U)
 #define GPIO_PA9_PIN                  PIO_PIN_PA9
 
 /*** Macros for GPIO_PA7 pin ***/
-#define GPIO_PA7_Set()               (PIOA_REGS->PIO_SODR = (1<<7))
-#define GPIO_PA7_Clear()             (PIOA_REGS->PIO_CODR = (1<<7))
+#define GPIO_PA7_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<7U))
+#define GPIO_PA7_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<7U))
 #define GPIO_PA7_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<7);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<7U);\
                                         } while (0)
 #define GPIO_PA7_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define GPIO_PA7_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<7); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<7U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define GPIO_PA7_Get()               ((PIOA_REGS->PIO_PDSR >> 7) & 0x1)
+#define GPIO_PA7_Get()               ((PIOA_REGS->PIO_PDSR >> 7U) & 0x1U)
 #define GPIO_PA7_PIN                  PIO_PIN_PA7
 // *****************************************************************************
 /* PIO Ports
