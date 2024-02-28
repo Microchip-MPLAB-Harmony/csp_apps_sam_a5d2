@@ -92,29 +92,6 @@ extern "C" {
 
  
 
-
-
-
-
-void TC0_CH0_CompareInitialize (void);
-
-void TC0_CH0_CompareStart (void);
-
-void TC0_CH0_CompareStop (void);
-
-uint32_t TC0_CH0_CompareFrequencyGet (void);
-
-void TC0_CH0_ComparePeriodSet (uint32_t period);
-
-uint32_t TC0_CH0_ComparePeriodGet (void);
-
-void TC0_CH0_CompareASet (uint32_t value);
-
-void TC0_CH0_CompareBSet (uint32_t value);
-
-TC_COMPARE_STATUS TC0_CH0_CompareStatusGet(void);
-
-
  
 
 

@@ -128,7 +128,7 @@ void SYS_Initialize ( void* data )
   
 
  
-    TC0_CH0_CompareInitialize(); 
+     
     TC0_CH1_CompareInitialize(); 
     
 
