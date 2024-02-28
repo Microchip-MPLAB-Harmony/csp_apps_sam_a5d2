@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for LCDC peripheral ========== */
-#define LCDC_INSTANCE_ID                         (45)       
 #define LCDC_CLOCK_ID                            (45)       
+#define LCDC_INSTANCE_ID                         (45)       
 
 #endif /* _SAMA5D_LCDC_INSTANCE_ */

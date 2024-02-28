@@ -58,7 +58,6 @@
 // *****************************************************************************
 
 void XDMAC0_InterruptHandler (void);
-void UART0_InterruptHandler (void);
 
 
 /* Interrupt Handler for spurious interrupts */

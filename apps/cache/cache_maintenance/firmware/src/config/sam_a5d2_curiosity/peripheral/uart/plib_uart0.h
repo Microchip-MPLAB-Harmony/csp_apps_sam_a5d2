@@ -71,19 +71,13 @@ bool UART0_Write( void *buffer, const size_t size );
 
 bool UART0_Read( void *buffer, const size_t size );
 
-bool UART0_WriteIsBusy( void );
+int UART0_ReadByte( void );
 
-bool UART0_ReadIsBusy( void );
+void UART0_WriteByte( int data );
 
-size_t UART0_WriteCountGet( void );
+bool UART0_TransmitterIsReady( void );
 
-size_t UART0_ReadCountGet( void );
-
-bool UART0_ReadAbort(void);
-
-void UART0_WriteCallbackRegister( UART_CALLBACK callback, uintptr_t context );
-
-void UART0_ReadCallbackRegister( UART_CALLBACK callback, uintptr_t context );
+bool UART0_ReceiverIsReady( void );
 
 
 bool UART0_TransmitComplete( void );

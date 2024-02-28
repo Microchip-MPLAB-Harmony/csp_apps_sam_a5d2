@@ -48,119 +48,6 @@
 // *****************************************************************************
 // *****************************************************************************
 
-volatile static UART_OBJECT uart0Obj;
-
-static void __attribute__((used)) UART0_ISR_RX_Handler( void )
-{
-    if(uart0Obj.rxBusyStatus == true)
-    {
-        size_t rxSize = uart0Obj.rxSize;
-        size_t rxProcessedSize = uart0Obj.rxProcessedSize;
-
-        while((UART_SR_RXRDY_Msk == (UART0_REGS->UART_SR& UART_SR_RXRDY_Msk)) && (rxSize > rxProcessedSize) )
-        {
-            uart0Obj.rxBuffer[rxProcessedSize] = (uint8_t)(UART0_REGS->UART_RHR& UART_RHR_RXCHR_Msk);
-            rxProcessedSize++;
-        }
-
-        uart0Obj.rxProcessedSize = rxProcessedSize;
-
-        /* Check if the buffer is done */
-        if(uart0Obj.rxProcessedSize >= rxSize)
-        {
-            uart0Obj.rxBusyStatus = false;
-
-            /* Disable Read, Overrun, Parity and Framing error interrupts */
-            UART0_REGS->UART_IDR = (UART_IDR_RXRDY_Msk | UART_IDR_FRAME_Msk | UART_IDR_PARE_Msk | UART_IDR_OVRE_Msk);
-
-            if(uart0Obj.rxCallback != NULL)
-            {
-                uintptr_t rxContext = uart0Obj.rxContext;
-
-                uart0Obj.rxCallback(rxContext);
-            }
-        }
-    }
-    else
-    {
-        /* Nothing to process */
-        ;
-    }
-}
-
-static void __attribute__((used)) UART0_ISR_TX_Handler( void )
-{
-    if(uart0Obj.txBusyStatus == true)
-    {
-        size_t txSize = uart0Obj.txSize;
-        size_t txProcessedSize = uart0Obj.txProcessedSize;
-
-        while((UART_SR_TXRDY_Msk == (UART0_REGS->UART_SR & UART_SR_TXRDY_Msk)) && (txSize > txProcessedSize) )
-        {
-            UART0_REGS->UART_THR|= uart0Obj.txBuffer[txProcessedSize];
-            txProcessedSize++;
-        }
-
-        uart0Obj.txProcessedSize = txProcessedSize;
-
-        /* Check if the buffer is done */
-        if(uart0Obj.txProcessedSize >= txSize)
-        {
-            uart0Obj.txBusyStatus = false;
-            UART0_REGS->UART_IDR = UART_IDR_TXEMPTY_Msk;
-
-            if(uart0Obj.txCallback != NULL)
-            {
-                uintptr_t txContext = uart0Obj.txContext;
-
-                uart0Obj.txCallback(txContext);
-            }
-        }
-    }
-    else
-    {
-        /* Nothing to process */
-        ;
-    }
-}
-
-void __attribute__((used)) UART0_InterruptHandler( void )
-{
-    /* Error status */
-    uint32_t errorStatusx = (UART0_REGS->UART_SR & (UART_SR_OVRE_Msk | UART_SR_FRAME_Msk | UART_SR_PARE_Msk));
-
-    if(errorStatusx != 0U)
-    {
-        /* Client must call UARTx_ErrorGet() function to clear the errors */
-
-        /* Disable Read, Overrun, Parity and Framing error interrupts */
-        UART0_REGS->UART_IDR = (UART_IDR_RXRDY_Msk | UART_IDR_FRAME_Msk | UART_IDR_PARE_Msk | UART_IDR_OVRE_Msk);
-
-        uart0Obj.rxBusyStatus = false;
-
-        /* UART errors are normally associated with the receiver, hence calling
-         * receiver callback */
-        if( uart0Obj.rxCallback != NULL )
-        {
-            uintptr_t rxContext = uart0Obj.rxContext;
-
-            uart0Obj.rxCallback(rxContext);
-        }
-    }
-
-    /* Receiver status */
-    if(UART_SR_RXRDY_Msk == (UART0_REGS->UART_SR & UART_SR_RXRDY_Msk))
-    {
-        UART0_ISR_RX_Handler();
-    }
-
-    /* Transmitter status */
-    if(UART_SR_TXRDY_Msk == (UART0_REGS->UART_SR & UART_SR_TXRDY_Msk))
-    {
-        UART0_ISR_TX_Handler();
-    }
-}
-
 static void UART0_ErrorClear( void )
 {
     uint8_t dummyData = 0u;
@@ -190,18 +77,6 @@ void UART0_Initialize( void )
 
     /* Configure UART0 Baud Rate */
     UART0_REGS->UART_BRGR = UART_BRGR_CD(45);
-
-    /* Initialize instance object */
-    uart0Obj.rxBuffer = NULL;
-    uart0Obj.rxSize = 0;
-    uart0Obj.rxProcessedSize = 0;
-    uart0Obj.rxBusyStatus = false;
-    uart0Obj.rxCallback = NULL;
-    uart0Obj.txBuffer = NULL;
-    uart0Obj.txSize = 0;
-    uart0Obj.txProcessedSize = 0;
-    uart0Obj.txBusyStatus = false;
-    uart0Obj.txCallback = NULL;
 }
 
 UART_ERROR UART0_ErrorGet( void )
@@ -227,16 +102,6 @@ bool UART0_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
     uint32_t brgVal = 0;
     uint32_t uartMode;
 
-    if(uart0Obj.rxBusyStatus == true)
-    {
-        /* Transaction is in progress, so return without updating settings */
-        return false;
-    }
-    if(uart0Obj.txBusyStatus == true)
-    {
-        /* Transaction is in progress, so return without updating settings */
-        return false;
-    }
     if (setup != NULL)
     {
         baud = setup->baudRate;
@@ -270,6 +135,8 @@ bool UART0_Read( void *buffer, const size_t size )
 {
     bool status = false;
     UART_ERROR errorinfo;
+    uint32_t errorStatus = 0;
+    size_t processedSize = 0;
 
     uint8_t * lBuffer = (uint8_t *)buffer;
 
@@ -284,17 +151,26 @@ bool UART0_Read( void *buffer, const size_t size )
              /* Nothing to do */
          }
 
-        /* Check if receive request is in progress */
-        if(uart0Obj.rxBusyStatus == false)
+        while( size > processedSize )
         {
-            uart0Obj.rxBuffer = lBuffer;
-            uart0Obj.rxSize = size;
-            uart0Obj.rxProcessedSize = 0;
-            uart0Obj.rxBusyStatus = true;
-            status = true;
+            /* Error status */
+            errorStatus = (UART0_REGS->UART_SR & (UART_SR_OVRE_Msk | UART_SR_FRAME_Msk | UART_SR_PARE_Msk));
 
-            /* Enable Read, Overrun, Parity and Framing error interrupts */
-            UART0_REGS->UART_IER = (UART_IER_RXRDY_Msk | UART_IER_FRAME_Msk | UART_IER_PARE_Msk | UART_IER_OVRE_Msk);
+            if(errorStatus != 0U)
+            {
+                break;
+            }
+
+            if(UART_SR_RXRDY_Msk == (UART0_REGS->UART_SR & UART_SR_RXRDY_Msk))
+            {
+                *lBuffer++ = (uint8_t)(UART0_REGS->UART_RHR& UART_RHR_RXCHR_Msk);
+                processedSize++;
+            }
+        }
+
+        if(size == processedSize)
+        {
+            status = true;
         }
     }
 
@@ -304,82 +180,64 @@ bool UART0_Read( void *buffer, const size_t size )
 bool UART0_Write( void *buffer, const size_t size )
 {
     bool status = false;
+    size_t processedSize = 0;
     uint8_t * lBuffer = (uint8_t *)buffer;
 
     if(NULL != lBuffer)
     {
-        /* Check if transmit request is in progress */
-        if(uart0Obj.txBusyStatus == false)
+        while( size > processedSize )
         {
-            uart0Obj.txBuffer = lBuffer;
-            uart0Obj.txSize = size;
-            uart0Obj.txProcessedSize = 0;
-            uart0Obj.txBusyStatus = true;
-            status = true;
-
-            /* Initiate the transfer by sending first byte */
             if(UART_SR_TXRDY_Msk == (UART0_REGS->UART_SR & UART_SR_TXRDY_Msk))
             {
-                UART0_REGS->UART_THR = (UART_THR_TXCHR(*lBuffer) & UART_THR_TXCHR_Msk);
-                uart0Obj.txProcessedSize++;
+                UART0_REGS->UART_THR = (UART_THR_TXCHR(*lBuffer++) & UART_THR_TXCHR_Msk);
+                processedSize++;
             }
-
-            UART0_REGS->UART_IER = UART_IER_TXEMPTY_Msk;
         }
+
+        status = true;
     }
 
     return status;
 }
 
-void UART0_WriteCallbackRegister( UART_CALLBACK callback, uintptr_t context )
+int UART0_ReadByte(void)
 {
-    uart0Obj.txCallback = callback;
-
-    uart0Obj.txContext = context;
+    uint32_t readbyte = (UART0_REGS->UART_RHR& UART_RHR_RXCHR_Msk);
+    return (int)readbyte;
 }
 
-void UART0_ReadCallbackRegister( UART_CALLBACK callback, uintptr_t context )
+void UART0_WriteByte( int data )
 {
-    uart0Obj.rxCallback = callback;
-
-    uart0Obj.rxContext = context;
-}
-
-bool UART0_WriteIsBusy( void )
-{
-    return uart0Obj.txBusyStatus;
-}
-
-bool UART0_ReadIsBusy( void )
-{
-    return uart0Obj.rxBusyStatus;
-}
-
-size_t UART0_WriteCountGet( void )
-{
-    return uart0Obj.txProcessedSize;
-}
-
-size_t UART0_ReadCountGet( void )
-{
-    return uart0Obj.rxProcessedSize;
-}
-
-bool UART0_ReadAbort(void)
-{
-    if (uart0Obj.rxBusyStatus == true)
+    while ((UART0_REGS->UART_SR & UART_SR_TXRDY_Msk) == 0U)
     {
-        /* Disable Read, Overrun, Parity and Framing error interrupts */
-        UART0_REGS->UART_IDR = (UART_IDR_RXRDY_Msk | UART_IDR_FRAME_Msk | UART_IDR_PARE_Msk | UART_IDR_OVRE_Msk);
-
-        uart0Obj.rxBusyStatus = false;
-
-        /* If required application should read the num bytes processed prior to calling the read abort API */
-        uart0Obj.rxSize = 0;
-        uart0Obj.rxProcessedSize = 0;
+        /* Wait for TXRDY flag to rise */
     }
 
-    return true;
+    UART0_REGS->UART_THR = (UART_THR_TXCHR(data) & UART_THR_TXCHR_Msk);
+}
+
+bool UART0_TransmitterIsReady( void )
+{
+    bool status = false;
+
+    if(UART_SR_TXRDY_Msk == (UART0_REGS->UART_SR & UART_SR_TXRDY_Msk))
+    {
+        status = true;
+    }
+
+    return status;
+}
+
+bool UART0_ReceiverIsReady( void )
+{
+    bool status = false;
+
+    if(UART_SR_RXRDY_Msk == (UART0_REGS->UART_SR & UART_SR_RXRDY_Msk))
+    {
+        status = true;
+    }
+
+    return status;
 }
 
 
