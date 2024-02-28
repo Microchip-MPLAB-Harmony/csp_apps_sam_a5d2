@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for SFC peripheral ========== */
-#define SFC_INSTANCE_ID                          (50)       
 #define SFC_CLOCK_ID                             (50)       
+#define SFC_INSTANCE_ID                          (50)       
 
 #endif /* _SAMA5D_SFC_INSTANCE_ */

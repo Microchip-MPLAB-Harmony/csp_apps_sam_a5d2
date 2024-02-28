@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for XDMAC1 peripheral ========== */
-#define XDMAC1_INSTANCE_ID                       (7)        
 #define XDMAC1_CLOCK_ID                          (7)        
+#define XDMAC1_INSTANCE_ID                       (7)        
 
 #endif /* _SAMA5D_XDMAC1_INSTANCE_ */
