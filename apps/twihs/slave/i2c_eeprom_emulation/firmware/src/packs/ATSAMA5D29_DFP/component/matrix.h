@@ -95,67 +95,12 @@
 #define MATRIX_MCFG_Msk                       _UINT32_(0x00000007)                                 /* (MATRIX_MCFG) Register Mask  */
 
 
-/* -------- MATRIX_SCFG : (MATRIX Offset: 0x40) (R/W 32) Slave Configuration Register -------- */
-#define MATRIX_SCFG_SLOT_CYCLE_Pos            _UINT32_(0)                                          /* (MATRIX_SCFG) Maximum Bus Grant Duration for Masters Position */
-#define MATRIX_SCFG_SLOT_CYCLE_Msk            (_UINT32_(0x1FF) << MATRIX_SCFG_SLOT_CYCLE_Pos)      /* (MATRIX_SCFG) Maximum Bus Grant Duration for Masters Mask */
-#define MATRIX_SCFG_SLOT_CYCLE(value)         (MATRIX_SCFG_SLOT_CYCLE_Msk & (_UINT32_(value) << MATRIX_SCFG_SLOT_CYCLE_Pos)) /* Assigment of value for SLOT_CYCLE in the MATRIX_SCFG register */
-#define MATRIX_SCFG_DEFMSTR_TYPE_Pos          _UINT32_(16)                                         /* (MATRIX_SCFG) Default Master Type Position */
-#define MATRIX_SCFG_DEFMSTR_TYPE_Msk          (_UINT32_(0x3) << MATRIX_SCFG_DEFMSTR_TYPE_Pos)      /* (MATRIX_SCFG) Default Master Type Mask */
-#define MATRIX_SCFG_DEFMSTR_TYPE(value)       (MATRIX_SCFG_DEFMSTR_TYPE_Msk & (_UINT32_(value) << MATRIX_SCFG_DEFMSTR_TYPE_Pos)) /* Assigment of value for DEFMSTR_TYPE in the MATRIX_SCFG register */
-#define   MATRIX_SCFG_DEFMSTR_TYPE_NONE_Val   _UINT32_(0x0)                                        /* (MATRIX_SCFG) No Default Master-At the end of the current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in a one clock cycle latency for the first access of a burst transfer or for a single access.  */
-#define   MATRIX_SCFG_DEFMSTR_TYPE_LAST_Val   _UINT32_(0x1)                                        /* (MATRIX_SCFG) Last Default Master-At the end of the current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having one clock cycle latency when the last master tries to access the slave again.  */
-#define   MATRIX_SCFG_DEFMSTR_TYPE_FIXED_Val  _UINT32_(0x2)                                        /* (MATRIX_SCFG) Fixed Default Master-At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having one clock cycle latency when the fixed master tries to access the slave again.  */
-#define MATRIX_SCFG_DEFMSTR_TYPE_NONE         (MATRIX_SCFG_DEFMSTR_TYPE_NONE_Val << MATRIX_SCFG_DEFMSTR_TYPE_Pos) /* (MATRIX_SCFG) No Default Master-At the end of the current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in a one clock cycle latency for the first access of a burst transfer or for a single access. Position  */
-#define MATRIX_SCFG_DEFMSTR_TYPE_LAST         (MATRIX_SCFG_DEFMSTR_TYPE_LAST_Val << MATRIX_SCFG_DEFMSTR_TYPE_Pos) /* (MATRIX_SCFG) Last Default Master-At the end of the current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having one clock cycle latency when the last master tries to access the slave again. Position  */
-#define MATRIX_SCFG_DEFMSTR_TYPE_FIXED        (MATRIX_SCFG_DEFMSTR_TYPE_FIXED_Val << MATRIX_SCFG_DEFMSTR_TYPE_Pos) /* (MATRIX_SCFG) Fixed Default Master-At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having one clock cycle latency when the fixed master tries to access the slave again. Position  */
-#define MATRIX_SCFG_FIXED_DEFMSTR_Pos         _UINT32_(18)                                         /* (MATRIX_SCFG) Fixed Default Master Position */
-#define MATRIX_SCFG_FIXED_DEFMSTR_Msk         (_UINT32_(0xF) << MATRIX_SCFG_FIXED_DEFMSTR_Pos)     /* (MATRIX_SCFG) Fixed Default Master Mask */
-#define MATRIX_SCFG_FIXED_DEFMSTR(value)      (MATRIX_SCFG_FIXED_DEFMSTR_Msk & (_UINT32_(value) << MATRIX_SCFG_FIXED_DEFMSTR_Pos)) /* Assigment of value for FIXED_DEFMSTR in the MATRIX_SCFG register */
-#define MATRIX_SCFG_Msk                       _UINT32_(0x003F01FF)                                 /* (MATRIX_SCFG) Register Mask  */
+/* -------- MATRIX_MEAR : (MATRIX Offset: 0x160) ( R/ 32) Master 0 Error Address Register -------- */
+#define MATRIX_MEAR_ERRADD_Pos                _UINT32_(0)                                          /* (MATRIX_MEAR) Master Error Address Position */
+#define MATRIX_MEAR_ERRADD_Msk                (_UINT32_(0xFFFFFFFF) << MATRIX_MEAR_ERRADD_Pos)     /* (MATRIX_MEAR) Master Error Address Mask */
+#define MATRIX_MEAR_ERRADD(value)             (MATRIX_MEAR_ERRADD_Msk & (_UINT32_(value) << MATRIX_MEAR_ERRADD_Pos)) /* Assigment of value for ERRADD in the MATRIX_MEAR register */
+#define MATRIX_MEAR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (MATRIX_MEAR) Register Mask  */
 
-
-/* -------- MATRIX_MEIER : (MATRIX Offset: 0x150) ( /W 32) Master Error Interrupt Enable Register -------- */
-#define MATRIX_MEIER_MERR0_Pos                _UINT32_(0)                                          /* (MATRIX_MEIER) Master 0 Access Error Position */
-#define MATRIX_MEIER_MERR0_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR0_Pos)            /* (MATRIX_MEIER) Master 0 Access Error Mask */
-#define MATRIX_MEIER_MERR0(value)             (MATRIX_MEIER_MERR0_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR0_Pos)) /* Assigment of value for MERR0 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR1_Pos                _UINT32_(1)                                          /* (MATRIX_MEIER) Master 1 Access Error Position */
-#define MATRIX_MEIER_MERR1_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR1_Pos)            /* (MATRIX_MEIER) Master 1 Access Error Mask */
-#define MATRIX_MEIER_MERR1(value)             (MATRIX_MEIER_MERR1_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR1_Pos)) /* Assigment of value for MERR1 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR2_Pos                _UINT32_(2)                                          /* (MATRIX_MEIER) Master 2 Access Error Position */
-#define MATRIX_MEIER_MERR2_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR2_Pos)            /* (MATRIX_MEIER) Master 2 Access Error Mask */
-#define MATRIX_MEIER_MERR2(value)             (MATRIX_MEIER_MERR2_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR2_Pos)) /* Assigment of value for MERR2 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR3_Pos                _UINT32_(3)                                          /* (MATRIX_MEIER) Master 3 Access Error Position */
-#define MATRIX_MEIER_MERR3_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR3_Pos)            /* (MATRIX_MEIER) Master 3 Access Error Mask */
-#define MATRIX_MEIER_MERR3(value)             (MATRIX_MEIER_MERR3_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR3_Pos)) /* Assigment of value for MERR3 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR4_Pos                _UINT32_(4)                                          /* (MATRIX_MEIER) Master 4 Access Error Position */
-#define MATRIX_MEIER_MERR4_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR4_Pos)            /* (MATRIX_MEIER) Master 4 Access Error Mask */
-#define MATRIX_MEIER_MERR4(value)             (MATRIX_MEIER_MERR4_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR4_Pos)) /* Assigment of value for MERR4 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR5_Pos                _UINT32_(5)                                          /* (MATRIX_MEIER) Master 5 Access Error Position */
-#define MATRIX_MEIER_MERR5_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR5_Pos)            /* (MATRIX_MEIER) Master 5 Access Error Mask */
-#define MATRIX_MEIER_MERR5(value)             (MATRIX_MEIER_MERR5_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR5_Pos)) /* Assigment of value for MERR5 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR6_Pos                _UINT32_(6)                                          /* (MATRIX_MEIER) Master 6 Access Error Position */
-#define MATRIX_MEIER_MERR6_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR6_Pos)            /* (MATRIX_MEIER) Master 6 Access Error Mask */
-#define MATRIX_MEIER_MERR6(value)             (MATRIX_MEIER_MERR6_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR6_Pos)) /* Assigment of value for MERR6 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR7_Pos                _UINT32_(7)                                          /* (MATRIX_MEIER) Master 7 Access Error Position */
-#define MATRIX_MEIER_MERR7_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR7_Pos)            /* (MATRIX_MEIER) Master 7 Access Error Mask */
-#define MATRIX_MEIER_MERR7(value)             (MATRIX_MEIER_MERR7_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR7_Pos)) /* Assigment of value for MERR7 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR8_Pos                _UINT32_(8)                                          /* (MATRIX_MEIER) Master 8 Access Error Position */
-#define MATRIX_MEIER_MERR8_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR8_Pos)            /* (MATRIX_MEIER) Master 8 Access Error Mask */
-#define MATRIX_MEIER_MERR8(value)             (MATRIX_MEIER_MERR8_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR8_Pos)) /* Assigment of value for MERR8 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR9_Pos                _UINT32_(9)                                          /* (MATRIX_MEIER) Master 9 Access Error Position */
-#define MATRIX_MEIER_MERR9_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR9_Pos)            /* (MATRIX_MEIER) Master 9 Access Error Mask */
-#define MATRIX_MEIER_MERR9(value)             (MATRIX_MEIER_MERR9_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR9_Pos)) /* Assigment of value for MERR9 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR10_Pos               _UINT32_(10)                                         /* (MATRIX_MEIER) Master 10 Access Error Position */
-#define MATRIX_MEIER_MERR10_Msk               (_UINT32_(0x1) << MATRIX_MEIER_MERR10_Pos)           /* (MATRIX_MEIER) Master 10 Access Error Mask */
-#define MATRIX_MEIER_MERR10(value)            (MATRIX_MEIER_MERR10_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR10_Pos)) /* Assigment of value for MERR10 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_MERR11_Pos               _UINT32_(11)                                         /* (MATRIX_MEIER) Master 11 Access Error Position */
-#define MATRIX_MEIER_MERR11_Msk               (_UINT32_(0x1) << MATRIX_MEIER_MERR11_Pos)           /* (MATRIX_MEIER) Master 11 Access Error Mask */
-#define MATRIX_MEIER_MERR11(value)            (MATRIX_MEIER_MERR11_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR11_Pos)) /* Assigment of value for MERR11 in the MATRIX_MEIER register */
-#define MATRIX_MEIER_Msk                      _UINT32_(0x00000FFF)                                 /* (MATRIX_MEIER) Register Mask  */
-
-#define MATRIX_MEIER_MERR_Pos                 _UINT32_(0)                                          /* (MATRIX_MEIER Position) Master xx Access Error */
-#define MATRIX_MEIER_MERR_Msk                 (_UINT32_(0xFFF) << MATRIX_MEIER_MERR_Pos)           /* (MATRIX_MEIER Mask) MERR */
-#define MATRIX_MEIER_MERR(value)              (MATRIX_MEIER_MERR_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR_Pos)) 
 
 /* -------- MATRIX_MEIDR : (MATRIX Offset: 0x154) ( /W 32) Master Error Interrupt Disable Register -------- */
 #define MATRIX_MEIDR_MERR0_Pos                _UINT32_(0)                                          /* (MATRIX_MEIDR) Master 0 Access Error Position */
@@ -199,6 +144,49 @@
 #define MATRIX_MEIDR_MERR_Pos                 _UINT32_(0)                                          /* (MATRIX_MEIDR Position) Master xx Access Error */
 #define MATRIX_MEIDR_MERR_Msk                 (_UINT32_(0xFFF) << MATRIX_MEIDR_MERR_Pos)           /* (MATRIX_MEIDR Mask) MERR */
 #define MATRIX_MEIDR_MERR(value)              (MATRIX_MEIDR_MERR_Msk & (_UINT32_(value) << MATRIX_MEIDR_MERR_Pos)) 
+
+/* -------- MATRIX_MEIER : (MATRIX Offset: 0x150) ( /W 32) Master Error Interrupt Enable Register -------- */
+#define MATRIX_MEIER_MERR0_Pos                _UINT32_(0)                                          /* (MATRIX_MEIER) Master 0 Access Error Position */
+#define MATRIX_MEIER_MERR0_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR0_Pos)            /* (MATRIX_MEIER) Master 0 Access Error Mask */
+#define MATRIX_MEIER_MERR0(value)             (MATRIX_MEIER_MERR0_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR0_Pos)) /* Assigment of value for MERR0 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR1_Pos                _UINT32_(1)                                          /* (MATRIX_MEIER) Master 1 Access Error Position */
+#define MATRIX_MEIER_MERR1_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR1_Pos)            /* (MATRIX_MEIER) Master 1 Access Error Mask */
+#define MATRIX_MEIER_MERR1(value)             (MATRIX_MEIER_MERR1_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR1_Pos)) /* Assigment of value for MERR1 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR2_Pos                _UINT32_(2)                                          /* (MATRIX_MEIER) Master 2 Access Error Position */
+#define MATRIX_MEIER_MERR2_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR2_Pos)            /* (MATRIX_MEIER) Master 2 Access Error Mask */
+#define MATRIX_MEIER_MERR2(value)             (MATRIX_MEIER_MERR2_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR2_Pos)) /* Assigment of value for MERR2 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR3_Pos                _UINT32_(3)                                          /* (MATRIX_MEIER) Master 3 Access Error Position */
+#define MATRIX_MEIER_MERR3_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR3_Pos)            /* (MATRIX_MEIER) Master 3 Access Error Mask */
+#define MATRIX_MEIER_MERR3(value)             (MATRIX_MEIER_MERR3_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR3_Pos)) /* Assigment of value for MERR3 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR4_Pos                _UINT32_(4)                                          /* (MATRIX_MEIER) Master 4 Access Error Position */
+#define MATRIX_MEIER_MERR4_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR4_Pos)            /* (MATRIX_MEIER) Master 4 Access Error Mask */
+#define MATRIX_MEIER_MERR4(value)             (MATRIX_MEIER_MERR4_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR4_Pos)) /* Assigment of value for MERR4 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR5_Pos                _UINT32_(5)                                          /* (MATRIX_MEIER) Master 5 Access Error Position */
+#define MATRIX_MEIER_MERR5_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR5_Pos)            /* (MATRIX_MEIER) Master 5 Access Error Mask */
+#define MATRIX_MEIER_MERR5(value)             (MATRIX_MEIER_MERR5_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR5_Pos)) /* Assigment of value for MERR5 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR6_Pos                _UINT32_(6)                                          /* (MATRIX_MEIER) Master 6 Access Error Position */
+#define MATRIX_MEIER_MERR6_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR6_Pos)            /* (MATRIX_MEIER) Master 6 Access Error Mask */
+#define MATRIX_MEIER_MERR6(value)             (MATRIX_MEIER_MERR6_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR6_Pos)) /* Assigment of value for MERR6 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR7_Pos                _UINT32_(7)                                          /* (MATRIX_MEIER) Master 7 Access Error Position */
+#define MATRIX_MEIER_MERR7_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR7_Pos)            /* (MATRIX_MEIER) Master 7 Access Error Mask */
+#define MATRIX_MEIER_MERR7(value)             (MATRIX_MEIER_MERR7_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR7_Pos)) /* Assigment of value for MERR7 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR8_Pos                _UINT32_(8)                                          /* (MATRIX_MEIER) Master 8 Access Error Position */
+#define MATRIX_MEIER_MERR8_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR8_Pos)            /* (MATRIX_MEIER) Master 8 Access Error Mask */
+#define MATRIX_MEIER_MERR8(value)             (MATRIX_MEIER_MERR8_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR8_Pos)) /* Assigment of value for MERR8 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR9_Pos                _UINT32_(9)                                          /* (MATRIX_MEIER) Master 9 Access Error Position */
+#define MATRIX_MEIER_MERR9_Msk                (_UINT32_(0x1) << MATRIX_MEIER_MERR9_Pos)            /* (MATRIX_MEIER) Master 9 Access Error Mask */
+#define MATRIX_MEIER_MERR9(value)             (MATRIX_MEIER_MERR9_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR9_Pos)) /* Assigment of value for MERR9 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR10_Pos               _UINT32_(10)                                         /* (MATRIX_MEIER) Master 10 Access Error Position */
+#define MATRIX_MEIER_MERR10_Msk               (_UINT32_(0x1) << MATRIX_MEIER_MERR10_Pos)           /* (MATRIX_MEIER) Master 10 Access Error Mask */
+#define MATRIX_MEIER_MERR10(value)            (MATRIX_MEIER_MERR10_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR10_Pos)) /* Assigment of value for MERR10 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_MERR11_Pos               _UINT32_(11)                                         /* (MATRIX_MEIER) Master 11 Access Error Position */
+#define MATRIX_MEIER_MERR11_Msk               (_UINT32_(0x1) << MATRIX_MEIER_MERR11_Pos)           /* (MATRIX_MEIER) Master 11 Access Error Mask */
+#define MATRIX_MEIER_MERR11(value)            (MATRIX_MEIER_MERR11_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR11_Pos)) /* Assigment of value for MERR11 in the MATRIX_MEIER register */
+#define MATRIX_MEIER_Msk                      _UINT32_(0x00000FFF)                                 /* (MATRIX_MEIER) Register Mask  */
+
+#define MATRIX_MEIER_MERR_Pos                 _UINT32_(0)                                          /* (MATRIX_MEIER Position) Master xx Access Error */
+#define MATRIX_MEIER_MERR_Msk                 (_UINT32_(0xFFF) << MATRIX_MEIER_MERR_Pos)           /* (MATRIX_MEIER Mask) MERR */
+#define MATRIX_MEIER_MERR(value)              (MATRIX_MEIER_MERR_Msk & (_UINT32_(value) << MATRIX_MEIER_MERR_Pos)) 
 
 /* -------- MATRIX_MEIMR : (MATRIX Offset: 0x158) ( R/ 32) Master Error Interrupt Mask Register -------- */
 #define MATRIX_MEIMR_MERR0_Pos                _UINT32_(0)                                          /* (MATRIX_MEIMR) Master 0 Access Error Position */
@@ -286,120 +274,6 @@
 #define MATRIX_MESR_MERR_Msk                  (_UINT32_(0xFFF) << MATRIX_MESR_MERR_Pos)            /* (MATRIX_MESR Mask) MERR */
 #define MATRIX_MESR_MERR(value)               (MATRIX_MESR_MERR_Msk & (_UINT32_(value) << MATRIX_MESR_MERR_Pos)) 
 
-/* -------- MATRIX_MEAR : (MATRIX Offset: 0x160) ( R/ 32) Master 0 Error Address Register -------- */
-#define MATRIX_MEAR_ERRADD_Pos                _UINT32_(0)                                          /* (MATRIX_MEAR) Master Error Address Position */
-#define MATRIX_MEAR_ERRADD_Msk                (_UINT32_(0xFFFFFFFF) << MATRIX_MEAR_ERRADD_Pos)     /* (MATRIX_MEAR) Master Error Address Mask */
-#define MATRIX_MEAR_ERRADD(value)             (MATRIX_MEAR_ERRADD_Msk & (_UINT32_(value) << MATRIX_MEAR_ERRADD_Pos)) /* Assigment of value for ERRADD in the MATRIX_MEAR register */
-#define MATRIX_MEAR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (MATRIX_MEAR) Register Mask  */
-
-
-/* -------- MATRIX_WPMR : (MATRIX Offset: 0x1E4) (R/W 32) Write Protection Mode Register -------- */
-#define MATRIX_WPMR_WPEN_Pos                  _UINT32_(0)                                          /* (MATRIX_WPMR) Write Protection Enable Position */
-#define MATRIX_WPMR_WPEN_Msk                  (_UINT32_(0x1) << MATRIX_WPMR_WPEN_Pos)              /* (MATRIX_WPMR) Write Protection Enable Mask */
-#define MATRIX_WPMR_WPEN(value)               (MATRIX_WPMR_WPEN_Msk & (_UINT32_(value) << MATRIX_WPMR_WPEN_Pos)) /* Assigment of value for WPEN in the MATRIX_WPMR register */
-#define MATRIX_WPMR_WPKEY_Pos                 _UINT32_(8)                                          /* (MATRIX_WPMR) Write Protection Key (Write-only) Position */
-#define MATRIX_WPMR_WPKEY_Msk                 (_UINT32_(0xFFFFFF) << MATRIX_WPMR_WPKEY_Pos)        /* (MATRIX_WPMR) Write Protection Key (Write-only) Mask */
-#define MATRIX_WPMR_WPKEY(value)              (MATRIX_WPMR_WPKEY_Msk & (_UINT32_(value) << MATRIX_WPMR_WPKEY_Pos)) /* Assigment of value for WPKEY in the MATRIX_WPMR register */
-#define   MATRIX_WPMR_WPKEY_PASSWD_Val        _UINT32_(0x4D4154)                                   /* (MATRIX_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.  */
-#define MATRIX_WPMR_WPKEY_PASSWD              (MATRIX_WPMR_WPKEY_PASSWD_Val << MATRIX_WPMR_WPKEY_Pos) /* (MATRIX_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0. Position  */
-#define MATRIX_WPMR_Msk                       _UINT32_(0xFFFFFF01)                                 /* (MATRIX_WPMR) Register Mask  */
-
-
-/* -------- MATRIX_WPSR : (MATRIX Offset: 0x1E8) ( R/ 32) Write Protection Status Register -------- */
-#define MATRIX_WPSR_WPVS_Pos                  _UINT32_(0)                                          /* (MATRIX_WPSR) Write Protection Violation Status Position */
-#define MATRIX_WPSR_WPVS_Msk                  (_UINT32_(0x1) << MATRIX_WPSR_WPVS_Pos)              /* (MATRIX_WPSR) Write Protection Violation Status Mask */
-#define MATRIX_WPSR_WPVS(value)               (MATRIX_WPSR_WPVS_Msk & (_UINT32_(value) << MATRIX_WPSR_WPVS_Pos)) /* Assigment of value for WPVS in the MATRIX_WPSR register */
-#define MATRIX_WPSR_WPVSRC_Pos                _UINT32_(8)                                          /* (MATRIX_WPSR) Write Protection Violation Source Position */
-#define MATRIX_WPSR_WPVSRC_Msk                (_UINT32_(0xFFFF) << MATRIX_WPSR_WPVSRC_Pos)         /* (MATRIX_WPSR) Write Protection Violation Source Mask */
-#define MATRIX_WPSR_WPVSRC(value)             (MATRIX_WPSR_WPVSRC_Msk & (_UINT32_(value) << MATRIX_WPSR_WPVSRC_Pos)) /* Assigment of value for WPVSRC in the MATRIX_WPSR register */
-#define MATRIX_WPSR_Msk                       _UINT32_(0x00FFFF01)                                 /* (MATRIX_WPSR) Register Mask  */
-
-
-/* -------- MATRIX_SSR : (MATRIX Offset: 0x200) (R/W 32) Security Slave 0 Register -------- */
-#define MATRIX_SSR_LANSECH0_Pos               _UINT32_(0)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
-#define MATRIX_SSR_LANSECH0_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH0_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
-#define MATRIX_SSR_LANSECH0(value)            (MATRIX_SSR_LANSECH0_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH0_Pos)) /* Assigment of value for LANSECH0 in the MATRIX_SSR register */
-#define MATRIX_SSR_LANSECH1_Pos               _UINT32_(1)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
-#define MATRIX_SSR_LANSECH1_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH1_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
-#define MATRIX_SSR_LANSECH1(value)            (MATRIX_SSR_LANSECH1_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH1_Pos)) /* Assigment of value for LANSECH1 in the MATRIX_SSR register */
-#define MATRIX_SSR_LANSECH2_Pos               _UINT32_(2)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
-#define MATRIX_SSR_LANSECH2_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH2_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
-#define MATRIX_SSR_LANSECH2(value)            (MATRIX_SSR_LANSECH2_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH2_Pos)) /* Assigment of value for LANSECH2 in the MATRIX_SSR register */
-#define MATRIX_SSR_LANSECH3_Pos               _UINT32_(3)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
-#define MATRIX_SSR_LANSECH3_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH3_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
-#define MATRIX_SSR_LANSECH3(value)            (MATRIX_SSR_LANSECH3_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH3_Pos)) /* Assigment of value for LANSECH3 in the MATRIX_SSR register */
-#define MATRIX_SSR_LANSECH4_Pos               _UINT32_(4)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
-#define MATRIX_SSR_LANSECH4_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH4_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
-#define MATRIX_SSR_LANSECH4(value)            (MATRIX_SSR_LANSECH4_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH4_Pos)) /* Assigment of value for LANSECH4 in the MATRIX_SSR register */
-#define MATRIX_SSR_LANSECH5_Pos               _UINT32_(5)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
-#define MATRIX_SSR_LANSECH5_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH5_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
-#define MATRIX_SSR_LANSECH5(value)            (MATRIX_SSR_LANSECH5_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH5_Pos)) /* Assigment of value for LANSECH5 in the MATRIX_SSR register */
-#define MATRIX_SSR_LANSECH6_Pos               _UINT32_(6)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
-#define MATRIX_SSR_LANSECH6_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH6_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
-#define MATRIX_SSR_LANSECH6(value)            (MATRIX_SSR_LANSECH6_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH6_Pos)) /* Assigment of value for LANSECH6 in the MATRIX_SSR register */
-#define MATRIX_SSR_LANSECH7_Pos               _UINT32_(7)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
-#define MATRIX_SSR_LANSECH7_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH7_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
-#define MATRIX_SSR_LANSECH7(value)            (MATRIX_SSR_LANSECH7_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH7_Pos)) /* Assigment of value for LANSECH7 in the MATRIX_SSR register */
-#define MATRIX_SSR_RDNSECH0_Pos               _UINT32_(8)                                          /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_RDNSECH0_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH0_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_RDNSECH0(value)            (MATRIX_SSR_RDNSECH0_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH0_Pos)) /* Assigment of value for RDNSECH0 in the MATRIX_SSR register */
-#define MATRIX_SSR_RDNSECH1_Pos               _UINT32_(9)                                          /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_RDNSECH1_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH1_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_RDNSECH1(value)            (MATRIX_SSR_RDNSECH1_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH1_Pos)) /* Assigment of value for RDNSECH1 in the MATRIX_SSR register */
-#define MATRIX_SSR_RDNSECH2_Pos               _UINT32_(10)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_RDNSECH2_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH2_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_RDNSECH2(value)            (MATRIX_SSR_RDNSECH2_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH2_Pos)) /* Assigment of value for RDNSECH2 in the MATRIX_SSR register */
-#define MATRIX_SSR_RDNSECH3_Pos               _UINT32_(11)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_RDNSECH3_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH3_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_RDNSECH3(value)            (MATRIX_SSR_RDNSECH3_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH3_Pos)) /* Assigment of value for RDNSECH3 in the MATRIX_SSR register */
-#define MATRIX_SSR_RDNSECH4_Pos               _UINT32_(12)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_RDNSECH4_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH4_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_RDNSECH4(value)            (MATRIX_SSR_RDNSECH4_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH4_Pos)) /* Assigment of value for RDNSECH4 in the MATRIX_SSR register */
-#define MATRIX_SSR_RDNSECH5_Pos               _UINT32_(13)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_RDNSECH5_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH5_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_RDNSECH5(value)            (MATRIX_SSR_RDNSECH5_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH5_Pos)) /* Assigment of value for RDNSECH5 in the MATRIX_SSR register */
-#define MATRIX_SSR_RDNSECH6_Pos               _UINT32_(14)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_RDNSECH6_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH6_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_RDNSECH6(value)            (MATRIX_SSR_RDNSECH6_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH6_Pos)) /* Assigment of value for RDNSECH6 in the MATRIX_SSR register */
-#define MATRIX_SSR_RDNSECH7_Pos               _UINT32_(15)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_RDNSECH7_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH7_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_RDNSECH7(value)            (MATRIX_SSR_RDNSECH7_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH7_Pos)) /* Assigment of value for RDNSECH7 in the MATRIX_SSR register */
-#define MATRIX_SSR_WRNSECH0_Pos               _UINT32_(16)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_WRNSECH0_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH0_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_WRNSECH0(value)            (MATRIX_SSR_WRNSECH0_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH0_Pos)) /* Assigment of value for WRNSECH0 in the MATRIX_SSR register */
-#define MATRIX_SSR_WRNSECH1_Pos               _UINT32_(17)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_WRNSECH1_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH1_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_WRNSECH1(value)            (MATRIX_SSR_WRNSECH1_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH1_Pos)) /* Assigment of value for WRNSECH1 in the MATRIX_SSR register */
-#define MATRIX_SSR_WRNSECH2_Pos               _UINT32_(18)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_WRNSECH2_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH2_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_WRNSECH2(value)            (MATRIX_SSR_WRNSECH2_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH2_Pos)) /* Assigment of value for WRNSECH2 in the MATRIX_SSR register */
-#define MATRIX_SSR_WRNSECH3_Pos               _UINT32_(19)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_WRNSECH3_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH3_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_WRNSECH3(value)            (MATRIX_SSR_WRNSECH3_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH3_Pos)) /* Assigment of value for WRNSECH3 in the MATRIX_SSR register */
-#define MATRIX_SSR_WRNSECH4_Pos               _UINT32_(20)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_WRNSECH4_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH4_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_WRNSECH4(value)            (MATRIX_SSR_WRNSECH4_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH4_Pos)) /* Assigment of value for WRNSECH4 in the MATRIX_SSR register */
-#define MATRIX_SSR_WRNSECH5_Pos               _UINT32_(21)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_WRNSECH5_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH5_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_WRNSECH5(value)            (MATRIX_SSR_WRNSECH5_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH5_Pos)) /* Assigment of value for WRNSECH5 in the MATRIX_SSR register */
-#define MATRIX_SSR_WRNSECH6_Pos               _UINT32_(22)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_WRNSECH6_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH6_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_WRNSECH6(value)            (MATRIX_SSR_WRNSECH6_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH6_Pos)) /* Assigment of value for WRNSECH6 in the MATRIX_SSR register */
-#define MATRIX_SSR_WRNSECH7_Pos               _UINT32_(23)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
-#define MATRIX_SSR_WRNSECH7_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH7_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
-#define MATRIX_SSR_WRNSECH7(value)            (MATRIX_SSR_WRNSECH7_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH7_Pos)) /* Assigment of value for WRNSECH7 in the MATRIX_SSR register */
-#define MATRIX_SSR_Msk                        _UINT32_(0x00FFFFFF)                                 /* (MATRIX_SSR) Register Mask  */
-
-#define MATRIX_SSR_LANSECH_Pos                _UINT32_(0)                                          /* (MATRIX_SSR Position) Low Area Non-secured in HSELx Security Region */
-#define MATRIX_SSR_LANSECH_Msk                (_UINT32_(0xFF) << MATRIX_SSR_LANSECH_Pos)           /* (MATRIX_SSR Mask) LANSECH */
-#define MATRIX_SSR_LANSECH(value)             (MATRIX_SSR_LANSECH_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH_Pos)) 
-#define MATRIX_SSR_RDNSECH_Pos                _UINT32_(8)                                          /* (MATRIX_SSR Position) Read Non-secured for HSELx Security Region */
-#define MATRIX_SSR_RDNSECH_Msk                (_UINT32_(0xFF) << MATRIX_SSR_RDNSECH_Pos)           /* (MATRIX_SSR Mask) RDNSECH */
-#define MATRIX_SSR_RDNSECH(value)             (MATRIX_SSR_RDNSECH_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH_Pos)) 
-#define MATRIX_SSR_WRNSECH_Pos                _UINT32_(16)                                         /* (MATRIX_SSR Position) Write Non-secured for HSELx Security Region */
-#define MATRIX_SSR_WRNSECH_Msk                (_UINT32_(0xFF) << MATRIX_SSR_WRNSECH_Pos)           /* (MATRIX_SSR Mask) WRNSECH */
-#define MATRIX_SSR_WRNSECH(value)             (MATRIX_SSR_WRNSECH_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH_Pos)) 
-
 /* -------- MATRIX_SASSR : (MATRIX Offset: 0x240) (R/W 32) Security Areas Split Slave 0 Register -------- */
 #define MATRIX_SASSR_SASPLIT0_Pos             _UINT32_(0)                                          /* (MATRIX_SASSR) Security Areas Split for HSELx Security Region Position */
 #define MATRIX_SASSR_SASPLIT0_Msk             (_UINT32_(0xF) << MATRIX_SASSR_SASPLIT0_Pos)         /* (MATRIX_SASSR) Security Areas Split for HSELx Security Region Mask */
@@ -428,32 +302,23 @@
 #define MATRIX_SASSR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (MATRIX_SASSR) Register Mask  */
 
 
-/* -------- MATRIX_SRTSR : (MATRIX Offset: 0x284) (R/W 32) Security Region Top Slave 1 Register -------- */
-#define MATRIX_SRTSR_SRTOP0_Pos               _UINT32_(0)                                          /* (MATRIX_SRTSR) HSELx Security Region Top Position */
-#define MATRIX_SRTSR_SRTOP0_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP0_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
-#define MATRIX_SRTSR_SRTOP0(value)            (MATRIX_SRTSR_SRTOP0_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP0_Pos)) /* Assigment of value for SRTOP0 in the MATRIX_SRTSR register */
-#define MATRIX_SRTSR_SRTOP1_Pos               _UINT32_(4)                                          /* (MATRIX_SRTSR) HSELx Security Region Top Position */
-#define MATRIX_SRTSR_SRTOP1_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP1_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
-#define MATRIX_SRTSR_SRTOP1(value)            (MATRIX_SRTSR_SRTOP1_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP1_Pos)) /* Assigment of value for SRTOP1 in the MATRIX_SRTSR register */
-#define MATRIX_SRTSR_SRTOP2_Pos               _UINT32_(8)                                          /* (MATRIX_SRTSR) HSELx Security Region Top Position */
-#define MATRIX_SRTSR_SRTOP2_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP2_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
-#define MATRIX_SRTSR_SRTOP2(value)            (MATRIX_SRTSR_SRTOP2_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP2_Pos)) /* Assigment of value for SRTOP2 in the MATRIX_SRTSR register */
-#define MATRIX_SRTSR_SRTOP3_Pos               _UINT32_(12)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
-#define MATRIX_SRTSR_SRTOP3_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP3_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
-#define MATRIX_SRTSR_SRTOP3(value)            (MATRIX_SRTSR_SRTOP3_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP3_Pos)) /* Assigment of value for SRTOP3 in the MATRIX_SRTSR register */
-#define MATRIX_SRTSR_SRTOP4_Pos               _UINT32_(16)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
-#define MATRIX_SRTSR_SRTOP4_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP4_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
-#define MATRIX_SRTSR_SRTOP4(value)            (MATRIX_SRTSR_SRTOP4_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP4_Pos)) /* Assigment of value for SRTOP4 in the MATRIX_SRTSR register */
-#define MATRIX_SRTSR_SRTOP5_Pos               _UINT32_(20)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
-#define MATRIX_SRTSR_SRTOP5_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP5_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
-#define MATRIX_SRTSR_SRTOP5(value)            (MATRIX_SRTSR_SRTOP5_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP5_Pos)) /* Assigment of value for SRTOP5 in the MATRIX_SRTSR register */
-#define MATRIX_SRTSR_SRTOP6_Pos               _UINT32_(24)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
-#define MATRIX_SRTSR_SRTOP6_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP6_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
-#define MATRIX_SRTSR_SRTOP6(value)            (MATRIX_SRTSR_SRTOP6_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP6_Pos)) /* Assigment of value for SRTOP6 in the MATRIX_SRTSR register */
-#define MATRIX_SRTSR_SRTOP7_Pos               _UINT32_(28)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
-#define MATRIX_SRTSR_SRTOP7_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP7_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
-#define MATRIX_SRTSR_SRTOP7(value)            (MATRIX_SRTSR_SRTOP7_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP7_Pos)) /* Assigment of value for SRTOP7 in the MATRIX_SRTSR register */
-#define MATRIX_SRTSR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (MATRIX_SRTSR) Register Mask  */
+/* -------- MATRIX_SCFG : (MATRIX Offset: 0x40) (R/W 32) Slave Configuration Register -------- */
+#define MATRIX_SCFG_SLOT_CYCLE_Pos            _UINT32_(0)                                          /* (MATRIX_SCFG) Maximum Bus Grant Duration for Masters Position */
+#define MATRIX_SCFG_SLOT_CYCLE_Msk            (_UINT32_(0x1FF) << MATRIX_SCFG_SLOT_CYCLE_Pos)      /* (MATRIX_SCFG) Maximum Bus Grant Duration for Masters Mask */
+#define MATRIX_SCFG_SLOT_CYCLE(value)         (MATRIX_SCFG_SLOT_CYCLE_Msk & (_UINT32_(value) << MATRIX_SCFG_SLOT_CYCLE_Pos)) /* Assigment of value for SLOT_CYCLE in the MATRIX_SCFG register */
+#define MATRIX_SCFG_DEFMSTR_TYPE_Pos          _UINT32_(16)                                         /* (MATRIX_SCFG) Default Master Type Position */
+#define MATRIX_SCFG_DEFMSTR_TYPE_Msk          (_UINT32_(0x3) << MATRIX_SCFG_DEFMSTR_TYPE_Pos)      /* (MATRIX_SCFG) Default Master Type Mask */
+#define MATRIX_SCFG_DEFMSTR_TYPE(value)       (MATRIX_SCFG_DEFMSTR_TYPE_Msk & (_UINT32_(value) << MATRIX_SCFG_DEFMSTR_TYPE_Pos)) /* Assigment of value for DEFMSTR_TYPE in the MATRIX_SCFG register */
+#define   MATRIX_SCFG_DEFMSTR_TYPE_NONE_Val   _UINT32_(0x0)                                        /* (MATRIX_SCFG) No Default Master-At the end of the current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in a one clock cycle latency for the first access of a burst transfer or for a single access.  */
+#define   MATRIX_SCFG_DEFMSTR_TYPE_LAST_Val   _UINT32_(0x1)                                        /* (MATRIX_SCFG) Last Default Master-At the end of the current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having one clock cycle latency when the last master tries to access the slave again.  */
+#define   MATRIX_SCFG_DEFMSTR_TYPE_FIXED_Val  _UINT32_(0x2)                                        /* (MATRIX_SCFG) Fixed Default Master-At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having one clock cycle latency when the fixed master tries to access the slave again.  */
+#define MATRIX_SCFG_DEFMSTR_TYPE_NONE         (MATRIX_SCFG_DEFMSTR_TYPE_NONE_Val << MATRIX_SCFG_DEFMSTR_TYPE_Pos) /* (MATRIX_SCFG) No Default Master-At the end of the current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in a one clock cycle latency for the first access of a burst transfer or for a single access. Position  */
+#define MATRIX_SCFG_DEFMSTR_TYPE_LAST         (MATRIX_SCFG_DEFMSTR_TYPE_LAST_Val << MATRIX_SCFG_DEFMSTR_TYPE_Pos) /* (MATRIX_SCFG) Last Default Master-At the end of the current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having one clock cycle latency when the last master tries to access the slave again. Position  */
+#define MATRIX_SCFG_DEFMSTR_TYPE_FIXED        (MATRIX_SCFG_DEFMSTR_TYPE_FIXED_Val << MATRIX_SCFG_DEFMSTR_TYPE_Pos) /* (MATRIX_SCFG) Fixed Default Master-At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having one clock cycle latency when the fixed master tries to access the slave again. Position  */
+#define MATRIX_SCFG_FIXED_DEFMSTR_Pos         _UINT32_(18)                                         /* (MATRIX_SCFG) Fixed Default Master Position */
+#define MATRIX_SCFG_FIXED_DEFMSTR_Msk         (_UINT32_(0xF) << MATRIX_SCFG_FIXED_DEFMSTR_Pos)     /* (MATRIX_SCFG) Fixed Default Master Mask */
+#define MATRIX_SCFG_FIXED_DEFMSTR(value)      (MATRIX_SCFG_FIXED_DEFMSTR_Msk & (_UINT32_(value) << MATRIX_SCFG_FIXED_DEFMSTR_Pos)) /* Assigment of value for FIXED_DEFMSTR in the MATRIX_SCFG register */
+#define MATRIX_SCFG_Msk                       _UINT32_(0x003F01FF)                                 /* (MATRIX_SCFG) Register Mask  */
 
 
 /* -------- MATRIX_SPSELR : (MATRIX Offset: 0x2C0) (R/W 32) Security Peripheral Select 1 Register -------- */
@@ -559,6 +424,141 @@
 #define MATRIX_SPSELR_NSECP_Msk               (_UINT32_(0xFFFFFFFF) << MATRIX_SPSELR_NSECP_Pos)    /* (MATRIX_SPSELR Mask) NSECP */
 #define MATRIX_SPSELR_NSECP(value)            (MATRIX_SPSELR_NSECP_Msk & (_UINT32_(value) << MATRIX_SPSELR_NSECP_Pos)) 
 
+/* -------- MATRIX_SRTSR : (MATRIX Offset: 0x284) (R/W 32) Security Region Top Slave 1 Register -------- */
+#define MATRIX_SRTSR_SRTOP0_Pos               _UINT32_(0)                                          /* (MATRIX_SRTSR) HSELx Security Region Top Position */
+#define MATRIX_SRTSR_SRTOP0_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP0_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
+#define MATRIX_SRTSR_SRTOP0(value)            (MATRIX_SRTSR_SRTOP0_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP0_Pos)) /* Assigment of value for SRTOP0 in the MATRIX_SRTSR register */
+#define MATRIX_SRTSR_SRTOP1_Pos               _UINT32_(4)                                          /* (MATRIX_SRTSR) HSELx Security Region Top Position */
+#define MATRIX_SRTSR_SRTOP1_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP1_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
+#define MATRIX_SRTSR_SRTOP1(value)            (MATRIX_SRTSR_SRTOP1_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP1_Pos)) /* Assigment of value for SRTOP1 in the MATRIX_SRTSR register */
+#define MATRIX_SRTSR_SRTOP2_Pos               _UINT32_(8)                                          /* (MATRIX_SRTSR) HSELx Security Region Top Position */
+#define MATRIX_SRTSR_SRTOP2_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP2_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
+#define MATRIX_SRTSR_SRTOP2(value)            (MATRIX_SRTSR_SRTOP2_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP2_Pos)) /* Assigment of value for SRTOP2 in the MATRIX_SRTSR register */
+#define MATRIX_SRTSR_SRTOP3_Pos               _UINT32_(12)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
+#define MATRIX_SRTSR_SRTOP3_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP3_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
+#define MATRIX_SRTSR_SRTOP3(value)            (MATRIX_SRTSR_SRTOP3_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP3_Pos)) /* Assigment of value for SRTOP3 in the MATRIX_SRTSR register */
+#define MATRIX_SRTSR_SRTOP4_Pos               _UINT32_(16)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
+#define MATRIX_SRTSR_SRTOP4_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP4_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
+#define MATRIX_SRTSR_SRTOP4(value)            (MATRIX_SRTSR_SRTOP4_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP4_Pos)) /* Assigment of value for SRTOP4 in the MATRIX_SRTSR register */
+#define MATRIX_SRTSR_SRTOP5_Pos               _UINT32_(20)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
+#define MATRIX_SRTSR_SRTOP5_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP5_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
+#define MATRIX_SRTSR_SRTOP5(value)            (MATRIX_SRTSR_SRTOP5_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP5_Pos)) /* Assigment of value for SRTOP5 in the MATRIX_SRTSR register */
+#define MATRIX_SRTSR_SRTOP6_Pos               _UINT32_(24)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
+#define MATRIX_SRTSR_SRTOP6_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP6_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
+#define MATRIX_SRTSR_SRTOP6(value)            (MATRIX_SRTSR_SRTOP6_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP6_Pos)) /* Assigment of value for SRTOP6 in the MATRIX_SRTSR register */
+#define MATRIX_SRTSR_SRTOP7_Pos               _UINT32_(28)                                         /* (MATRIX_SRTSR) HSELx Security Region Top Position */
+#define MATRIX_SRTSR_SRTOP7_Msk               (_UINT32_(0xF) << MATRIX_SRTSR_SRTOP7_Pos)           /* (MATRIX_SRTSR) HSELx Security Region Top Mask */
+#define MATRIX_SRTSR_SRTOP7(value)            (MATRIX_SRTSR_SRTOP7_Msk & (_UINT32_(value) << MATRIX_SRTSR_SRTOP7_Pos)) /* Assigment of value for SRTOP7 in the MATRIX_SRTSR register */
+#define MATRIX_SRTSR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (MATRIX_SRTSR) Register Mask  */
+
+
+/* -------- MATRIX_SSR : (MATRIX Offset: 0x200) (R/W 32) Security Slave 0 Register -------- */
+#define MATRIX_SSR_LANSECH0_Pos               _UINT32_(0)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
+#define MATRIX_SSR_LANSECH0_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH0_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
+#define MATRIX_SSR_LANSECH0(value)            (MATRIX_SSR_LANSECH0_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH0_Pos)) /* Assigment of value for LANSECH0 in the MATRIX_SSR register */
+#define MATRIX_SSR_LANSECH1_Pos               _UINT32_(1)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
+#define MATRIX_SSR_LANSECH1_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH1_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
+#define MATRIX_SSR_LANSECH1(value)            (MATRIX_SSR_LANSECH1_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH1_Pos)) /* Assigment of value for LANSECH1 in the MATRIX_SSR register */
+#define MATRIX_SSR_LANSECH2_Pos               _UINT32_(2)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
+#define MATRIX_SSR_LANSECH2_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH2_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
+#define MATRIX_SSR_LANSECH2(value)            (MATRIX_SSR_LANSECH2_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH2_Pos)) /* Assigment of value for LANSECH2 in the MATRIX_SSR register */
+#define MATRIX_SSR_LANSECH3_Pos               _UINT32_(3)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
+#define MATRIX_SSR_LANSECH3_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH3_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
+#define MATRIX_SSR_LANSECH3(value)            (MATRIX_SSR_LANSECH3_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH3_Pos)) /* Assigment of value for LANSECH3 in the MATRIX_SSR register */
+#define MATRIX_SSR_LANSECH4_Pos               _UINT32_(4)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
+#define MATRIX_SSR_LANSECH4_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH4_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
+#define MATRIX_SSR_LANSECH4(value)            (MATRIX_SSR_LANSECH4_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH4_Pos)) /* Assigment of value for LANSECH4 in the MATRIX_SSR register */
+#define MATRIX_SSR_LANSECH5_Pos               _UINT32_(5)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
+#define MATRIX_SSR_LANSECH5_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH5_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
+#define MATRIX_SSR_LANSECH5(value)            (MATRIX_SSR_LANSECH5_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH5_Pos)) /* Assigment of value for LANSECH5 in the MATRIX_SSR register */
+#define MATRIX_SSR_LANSECH6_Pos               _UINT32_(6)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
+#define MATRIX_SSR_LANSECH6_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH6_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
+#define MATRIX_SSR_LANSECH6(value)            (MATRIX_SSR_LANSECH6_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH6_Pos)) /* Assigment of value for LANSECH6 in the MATRIX_SSR register */
+#define MATRIX_SSR_LANSECH7_Pos               _UINT32_(7)                                          /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Position */
+#define MATRIX_SSR_LANSECH7_Msk               (_UINT32_(0x1) << MATRIX_SSR_LANSECH7_Pos)           /* (MATRIX_SSR) Low Area Non-secured in HSELx Security Region Mask */
+#define MATRIX_SSR_LANSECH7(value)            (MATRIX_SSR_LANSECH7_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH7_Pos)) /* Assigment of value for LANSECH7 in the MATRIX_SSR register */
+#define MATRIX_SSR_RDNSECH0_Pos               _UINT32_(8)                                          /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_RDNSECH0_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH0_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_RDNSECH0(value)            (MATRIX_SSR_RDNSECH0_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH0_Pos)) /* Assigment of value for RDNSECH0 in the MATRIX_SSR register */
+#define MATRIX_SSR_RDNSECH1_Pos               _UINT32_(9)                                          /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_RDNSECH1_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH1_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_RDNSECH1(value)            (MATRIX_SSR_RDNSECH1_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH1_Pos)) /* Assigment of value for RDNSECH1 in the MATRIX_SSR register */
+#define MATRIX_SSR_RDNSECH2_Pos               _UINT32_(10)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_RDNSECH2_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH2_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_RDNSECH2(value)            (MATRIX_SSR_RDNSECH2_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH2_Pos)) /* Assigment of value for RDNSECH2 in the MATRIX_SSR register */
+#define MATRIX_SSR_RDNSECH3_Pos               _UINT32_(11)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_RDNSECH3_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH3_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_RDNSECH3(value)            (MATRIX_SSR_RDNSECH3_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH3_Pos)) /* Assigment of value for RDNSECH3 in the MATRIX_SSR register */
+#define MATRIX_SSR_RDNSECH4_Pos               _UINT32_(12)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_RDNSECH4_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH4_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_RDNSECH4(value)            (MATRIX_SSR_RDNSECH4_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH4_Pos)) /* Assigment of value for RDNSECH4 in the MATRIX_SSR register */
+#define MATRIX_SSR_RDNSECH5_Pos               _UINT32_(13)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_RDNSECH5_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH5_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_RDNSECH5(value)            (MATRIX_SSR_RDNSECH5_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH5_Pos)) /* Assigment of value for RDNSECH5 in the MATRIX_SSR register */
+#define MATRIX_SSR_RDNSECH6_Pos               _UINT32_(14)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_RDNSECH6_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH6_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_RDNSECH6(value)            (MATRIX_SSR_RDNSECH6_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH6_Pos)) /* Assigment of value for RDNSECH6 in the MATRIX_SSR register */
+#define MATRIX_SSR_RDNSECH7_Pos               _UINT32_(15)                                         /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_RDNSECH7_Msk               (_UINT32_(0x1) << MATRIX_SSR_RDNSECH7_Pos)           /* (MATRIX_SSR) Read Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_RDNSECH7(value)            (MATRIX_SSR_RDNSECH7_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH7_Pos)) /* Assigment of value for RDNSECH7 in the MATRIX_SSR register */
+#define MATRIX_SSR_WRNSECH0_Pos               _UINT32_(16)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_WRNSECH0_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH0_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_WRNSECH0(value)            (MATRIX_SSR_WRNSECH0_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH0_Pos)) /* Assigment of value for WRNSECH0 in the MATRIX_SSR register */
+#define MATRIX_SSR_WRNSECH1_Pos               _UINT32_(17)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_WRNSECH1_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH1_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_WRNSECH1(value)            (MATRIX_SSR_WRNSECH1_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH1_Pos)) /* Assigment of value for WRNSECH1 in the MATRIX_SSR register */
+#define MATRIX_SSR_WRNSECH2_Pos               _UINT32_(18)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_WRNSECH2_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH2_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_WRNSECH2(value)            (MATRIX_SSR_WRNSECH2_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH2_Pos)) /* Assigment of value for WRNSECH2 in the MATRIX_SSR register */
+#define MATRIX_SSR_WRNSECH3_Pos               _UINT32_(19)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_WRNSECH3_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH3_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_WRNSECH3(value)            (MATRIX_SSR_WRNSECH3_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH3_Pos)) /* Assigment of value for WRNSECH3 in the MATRIX_SSR register */
+#define MATRIX_SSR_WRNSECH4_Pos               _UINT32_(20)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_WRNSECH4_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH4_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_WRNSECH4(value)            (MATRIX_SSR_WRNSECH4_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH4_Pos)) /* Assigment of value for WRNSECH4 in the MATRIX_SSR register */
+#define MATRIX_SSR_WRNSECH5_Pos               _UINT32_(21)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_WRNSECH5_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH5_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_WRNSECH5(value)            (MATRIX_SSR_WRNSECH5_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH5_Pos)) /* Assigment of value for WRNSECH5 in the MATRIX_SSR register */
+#define MATRIX_SSR_WRNSECH6_Pos               _UINT32_(22)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_WRNSECH6_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH6_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_WRNSECH6(value)            (MATRIX_SSR_WRNSECH6_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH6_Pos)) /* Assigment of value for WRNSECH6 in the MATRIX_SSR register */
+#define MATRIX_SSR_WRNSECH7_Pos               _UINT32_(23)                                         /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Position */
+#define MATRIX_SSR_WRNSECH7_Msk               (_UINT32_(0x1) << MATRIX_SSR_WRNSECH7_Pos)           /* (MATRIX_SSR) Write Non-secured for HSELx Security Region Mask */
+#define MATRIX_SSR_WRNSECH7(value)            (MATRIX_SSR_WRNSECH7_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH7_Pos)) /* Assigment of value for WRNSECH7 in the MATRIX_SSR register */
+#define MATRIX_SSR_Msk                        _UINT32_(0x00FFFFFF)                                 /* (MATRIX_SSR) Register Mask  */
+
+#define MATRIX_SSR_LANSECH_Pos                _UINT32_(0)                                          /* (MATRIX_SSR Position) Low Area Non-secured in HSELx Security Region */
+#define MATRIX_SSR_LANSECH_Msk                (_UINT32_(0xFF) << MATRIX_SSR_LANSECH_Pos)           /* (MATRIX_SSR Mask) LANSECH */
+#define MATRIX_SSR_LANSECH(value)             (MATRIX_SSR_LANSECH_Msk & (_UINT32_(value) << MATRIX_SSR_LANSECH_Pos)) 
+#define MATRIX_SSR_RDNSECH_Pos                _UINT32_(8)                                          /* (MATRIX_SSR Position) Read Non-secured for HSELx Security Region */
+#define MATRIX_SSR_RDNSECH_Msk                (_UINT32_(0xFF) << MATRIX_SSR_RDNSECH_Pos)           /* (MATRIX_SSR Mask) RDNSECH */
+#define MATRIX_SSR_RDNSECH(value)             (MATRIX_SSR_RDNSECH_Msk & (_UINT32_(value) << MATRIX_SSR_RDNSECH_Pos)) 
+#define MATRIX_SSR_WRNSECH_Pos                _UINT32_(16)                                         /* (MATRIX_SSR Position) Write Non-secured for HSELx Security Region */
+#define MATRIX_SSR_WRNSECH_Msk                (_UINT32_(0xFF) << MATRIX_SSR_WRNSECH_Pos)           /* (MATRIX_SSR Mask) WRNSECH */
+#define MATRIX_SSR_WRNSECH(value)             (MATRIX_SSR_WRNSECH_Msk & (_UINT32_(value) << MATRIX_SSR_WRNSECH_Pos)) 
+
+/* -------- MATRIX_WPMR : (MATRIX Offset: 0x1E4) (R/W 32) Write Protection Mode Register -------- */
+#define MATRIX_WPMR_WPEN_Pos                  _UINT32_(0)                                          /* (MATRIX_WPMR) Write Protection Enable Position */
+#define MATRIX_WPMR_WPEN_Msk                  (_UINT32_(0x1) << MATRIX_WPMR_WPEN_Pos)              /* (MATRIX_WPMR) Write Protection Enable Mask */
+#define MATRIX_WPMR_WPEN(value)               (MATRIX_WPMR_WPEN_Msk & (_UINT32_(value) << MATRIX_WPMR_WPEN_Pos)) /* Assigment of value for WPEN in the MATRIX_WPMR register */
+#define MATRIX_WPMR_WPKEY_Pos                 _UINT32_(8)                                          /* (MATRIX_WPMR) Write Protection Key (Write-only) Position */
+#define MATRIX_WPMR_WPKEY_Msk                 (_UINT32_(0xFFFFFF) << MATRIX_WPMR_WPKEY_Pos)        /* (MATRIX_WPMR) Write Protection Key (Write-only) Mask */
+#define MATRIX_WPMR_WPKEY(value)              (MATRIX_WPMR_WPKEY_Msk & (_UINT32_(value) << MATRIX_WPMR_WPKEY_Pos)) /* Assigment of value for WPKEY in the MATRIX_WPMR register */
+#define   MATRIX_WPMR_WPKEY_PASSWD_Val        _UINT32_(0x4D4154)                                   /* (MATRIX_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.  */
+#define MATRIX_WPMR_WPKEY_PASSWD              (MATRIX_WPMR_WPKEY_PASSWD_Val << MATRIX_WPMR_WPKEY_Pos) /* (MATRIX_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0. Position  */
+#define MATRIX_WPMR_Msk                       _UINT32_(0xFFFFFF01)                                 /* (MATRIX_WPMR) Register Mask  */
+
+
+/* -------- MATRIX_WPSR : (MATRIX Offset: 0x1E8) ( R/ 32) Write Protection Status Register -------- */
+#define MATRIX_WPSR_WPVS_Pos                  _UINT32_(0)                                          /* (MATRIX_WPSR) Write Protection Violation Status Position */
+#define MATRIX_WPSR_WPVS_Msk                  (_UINT32_(0x1) << MATRIX_WPSR_WPVS_Pos)              /* (MATRIX_WPSR) Write Protection Violation Status Mask */
+#define MATRIX_WPSR_WPVS(value)               (MATRIX_WPSR_WPVS_Msk & (_UINT32_(value) << MATRIX_WPSR_WPVS_Pos)) /* Assigment of value for WPVS in the MATRIX_WPSR register */
+#define MATRIX_WPSR_WPVSRC_Pos                _UINT32_(8)                                          /* (MATRIX_WPSR) Write Protection Violation Source Position */
+#define MATRIX_WPSR_WPVSRC_Msk                (_UINT32_(0xFFFF) << MATRIX_WPSR_WPVSRC_Pos)         /* (MATRIX_WPSR) Write Protection Violation Source Mask */
+#define MATRIX_WPSR_WPVSRC(value)             (MATRIX_WPSR_WPVSRC_Msk & (_UINT32_(value) << MATRIX_WPSR_WPVSRC_Pos)) /* Assigment of value for WPVSRC in the MATRIX_WPSR register */
+#define MATRIX_WPSR_Msk                       _UINT32_(0x00FFFF01)                                 /* (MATRIX_WPSR) Register Mask  */
+
+
 /** \brief MATRIX register offsets definitions */
 #define MATRIX_PRAS_REG_OFST           _UINT32_(0x00)      /* (MATRIX_PRAS) Priority Register A for Slave 0 Offset */
 #define MATRIX_PRBS_REG_OFST           _UINT32_(0x04)      /* (MATRIX_PRBS) Priority Register B for Slave 0 Offset */
@@ -575,26 +575,6 @@
 #define MATRIX_MCFG9_REG_OFST          _UINT32_(0x24)      /* (MATRIX_MCFG9) Master Configuration Register Offset */
 #define MATRIX_MCFG10_REG_OFST         _UINT32_(0x28)      /* (MATRIX_MCFG10) Master Configuration Register Offset */
 #define MATRIX_MCFG11_REG_OFST         _UINT32_(0x2C)      /* (MATRIX_MCFG11) Master Configuration Register Offset */
-#define MATRIX_SCFG_REG_OFST           _UINT32_(0x40)      /* (MATRIX_SCFG) Slave Configuration Register Offset */
-#define MATRIX_SCFG0_REG_OFST          _UINT32_(0x40)      /* (MATRIX_SCFG0) Slave Configuration Register Offset */
-#define MATRIX_SCFG1_REG_OFST          _UINT32_(0x44)      /* (MATRIX_SCFG1) Slave Configuration Register Offset */
-#define MATRIX_SCFG2_REG_OFST          _UINT32_(0x48)      /* (MATRIX_SCFG2) Slave Configuration Register Offset */
-#define MATRIX_SCFG3_REG_OFST          _UINT32_(0x4C)      /* (MATRIX_SCFG3) Slave Configuration Register Offset */
-#define MATRIX_SCFG4_REG_OFST          _UINT32_(0x50)      /* (MATRIX_SCFG4) Slave Configuration Register Offset */
-#define MATRIX_SCFG5_REG_OFST          _UINT32_(0x54)      /* (MATRIX_SCFG5) Slave Configuration Register Offset */
-#define MATRIX_SCFG6_REG_OFST          _UINT32_(0x58)      /* (MATRIX_SCFG6) Slave Configuration Register Offset */
-#define MATRIX_SCFG7_REG_OFST          _UINT32_(0x5C)      /* (MATRIX_SCFG7) Slave Configuration Register Offset */
-#define MATRIX_SCFG8_REG_OFST          _UINT32_(0x60)      /* (MATRIX_SCFG8) Slave Configuration Register Offset */
-#define MATRIX_SCFG9_REG_OFST          _UINT32_(0x64)      /* (MATRIX_SCFG9) Slave Configuration Register Offset */
-#define MATRIX_SCFG10_REG_OFST         _UINT32_(0x68)      /* (MATRIX_SCFG10) Slave Configuration Register Offset */
-#define MATRIX_SCFG11_REG_OFST         _UINT32_(0x6C)      /* (MATRIX_SCFG11) Slave Configuration Register Offset */
-#define MATRIX_SCFG12_REG_OFST         _UINT32_(0x70)      /* (MATRIX_SCFG12) Slave Configuration Register Offset */
-#define MATRIX_SCFG13_REG_OFST         _UINT32_(0x74)      /* (MATRIX_SCFG13) Slave Configuration Register Offset */
-#define MATRIX_SCFG14_REG_OFST         _UINT32_(0x78)      /* (MATRIX_SCFG14) Slave Configuration Register Offset */
-#define MATRIX_MEIER_REG_OFST          _UINT32_(0x150)     /* (MATRIX_MEIER) Master Error Interrupt Enable Register Offset */
-#define MATRIX_MEIDR_REG_OFST          _UINT32_(0x154)     /* (MATRIX_MEIDR) Master Error Interrupt Disable Register Offset */
-#define MATRIX_MEIMR_REG_OFST          _UINT32_(0x158)     /* (MATRIX_MEIMR) Master Error Interrupt Mask Register Offset */
-#define MATRIX_MESR_REG_OFST           _UINT32_(0x15C)     /* (MATRIX_MESR) Master Error Status Register Offset */
 #define MATRIX_MEAR_REG_OFST           _UINT32_(0x160)     /* (MATRIX_MEAR) Master 0 Error Address Register Offset */
 #define MATRIX_MEAR0_REG_OFST          _UINT32_(0x160)     /* (MATRIX_MEAR0) Master 0 Error Address Register Offset */
 #define MATRIX_MEAR1_REG_OFST          _UINT32_(0x164)     /* (MATRIX_MEAR1) Master 0 Error Address Register Offset */
@@ -608,24 +588,10 @@
 #define MATRIX_MEAR9_REG_OFST          _UINT32_(0x184)     /* (MATRIX_MEAR9) Master 0 Error Address Register Offset */
 #define MATRIX_MEAR10_REG_OFST         _UINT32_(0x188)     /* (MATRIX_MEAR10) Master 0 Error Address Register Offset */
 #define MATRIX_MEAR11_REG_OFST         _UINT32_(0x18C)     /* (MATRIX_MEAR11) Master 0 Error Address Register Offset */
-#define MATRIX_WPMR_REG_OFST           _UINT32_(0x1E4)     /* (MATRIX_WPMR) Write Protection Mode Register Offset */
-#define MATRIX_WPSR_REG_OFST           _UINT32_(0x1E8)     /* (MATRIX_WPSR) Write Protection Status Register Offset */
-#define MATRIX_SSR_REG_OFST            _UINT32_(0x200)     /* (MATRIX_SSR) Security Slave 0 Register Offset */
-#define MATRIX_SSR0_REG_OFST           _UINT32_(0x200)     /* (MATRIX_SSR0) Security Slave 0 Register Offset */
-#define MATRIX_SSR1_REG_OFST           _UINT32_(0x204)     /* (MATRIX_SSR1) Security Slave 0 Register Offset */
-#define MATRIX_SSR2_REG_OFST           _UINT32_(0x208)     /* (MATRIX_SSR2) Security Slave 0 Register Offset */
-#define MATRIX_SSR3_REG_OFST           _UINT32_(0x20C)     /* (MATRIX_SSR3) Security Slave 0 Register Offset */
-#define MATRIX_SSR4_REG_OFST           _UINT32_(0x210)     /* (MATRIX_SSR4) Security Slave 0 Register Offset */
-#define MATRIX_SSR5_REG_OFST           _UINT32_(0x214)     /* (MATRIX_SSR5) Security Slave 0 Register Offset */
-#define MATRIX_SSR6_REG_OFST           _UINT32_(0x218)     /* (MATRIX_SSR6) Security Slave 0 Register Offset */
-#define MATRIX_SSR7_REG_OFST           _UINT32_(0x21C)     /* (MATRIX_SSR7) Security Slave 0 Register Offset */
-#define MATRIX_SSR8_REG_OFST           _UINT32_(0x220)     /* (MATRIX_SSR8) Security Slave 0 Register Offset */
-#define MATRIX_SSR9_REG_OFST           _UINT32_(0x224)     /* (MATRIX_SSR9) Security Slave 0 Register Offset */
-#define MATRIX_SSR10_REG_OFST          _UINT32_(0x228)     /* (MATRIX_SSR10) Security Slave 0 Register Offset */
-#define MATRIX_SSR11_REG_OFST          _UINT32_(0x22C)     /* (MATRIX_SSR11) Security Slave 0 Register Offset */
-#define MATRIX_SSR12_REG_OFST          _UINT32_(0x230)     /* (MATRIX_SSR12) Security Slave 0 Register Offset */
-#define MATRIX_SSR13_REG_OFST          _UINT32_(0x234)     /* (MATRIX_SSR13) Security Slave 0 Register Offset */
-#define MATRIX_SSR14_REG_OFST          _UINT32_(0x238)     /* (MATRIX_SSR14) Security Slave 0 Register Offset */
+#define MATRIX_MEIDR_REG_OFST          _UINT32_(0x154)     /* (MATRIX_MEIDR) Master Error Interrupt Disable Register Offset */
+#define MATRIX_MEIER_REG_OFST          _UINT32_(0x150)     /* (MATRIX_MEIER) Master Error Interrupt Enable Register Offset */
+#define MATRIX_MEIMR_REG_OFST          _UINT32_(0x158)     /* (MATRIX_MEIMR) Master Error Interrupt Mask Register Offset */
+#define MATRIX_MESR_REG_OFST           _UINT32_(0x15C)     /* (MATRIX_MESR) Master Error Status Register Offset */
 #define MATRIX_SASSR_REG_OFST          _UINT32_(0x240)     /* (MATRIX_SASSR) Security Areas Split Slave 0 Register Offset */
 #define MATRIX_SASSR0_REG_OFST         _UINT32_(0x240)     /* (MATRIX_SASSR0) Security Areas Split Slave 0 Register Offset */
 #define MATRIX_SASSR1_REG_OFST         _UINT32_(0x244)     /* (MATRIX_SASSR1) Security Areas Split Slave 0 Register Offset */
@@ -642,6 +608,26 @@
 #define MATRIX_SASSR12_REG_OFST        _UINT32_(0x270)     /* (MATRIX_SASSR12) Security Areas Split Slave 0 Register Offset */
 #define MATRIX_SASSR13_REG_OFST        _UINT32_(0x274)     /* (MATRIX_SASSR13) Security Areas Split Slave 0 Register Offset */
 #define MATRIX_SASSR14_REG_OFST        _UINT32_(0x278)     /* (MATRIX_SASSR14) Security Areas Split Slave 0 Register Offset */
+#define MATRIX_SCFG_REG_OFST           _UINT32_(0x40)      /* (MATRIX_SCFG) Slave Configuration Register Offset */
+#define MATRIX_SCFG0_REG_OFST          _UINT32_(0x40)      /* (MATRIX_SCFG0) Slave Configuration Register Offset */
+#define MATRIX_SCFG1_REG_OFST          _UINT32_(0x44)      /* (MATRIX_SCFG1) Slave Configuration Register Offset */
+#define MATRIX_SCFG2_REG_OFST          _UINT32_(0x48)      /* (MATRIX_SCFG2) Slave Configuration Register Offset */
+#define MATRIX_SCFG3_REG_OFST          _UINT32_(0x4C)      /* (MATRIX_SCFG3) Slave Configuration Register Offset */
+#define MATRIX_SCFG4_REG_OFST          _UINT32_(0x50)      /* (MATRIX_SCFG4) Slave Configuration Register Offset */
+#define MATRIX_SCFG5_REG_OFST          _UINT32_(0x54)      /* (MATRIX_SCFG5) Slave Configuration Register Offset */
+#define MATRIX_SCFG6_REG_OFST          _UINT32_(0x58)      /* (MATRIX_SCFG6) Slave Configuration Register Offset */
+#define MATRIX_SCFG7_REG_OFST          _UINT32_(0x5C)      /* (MATRIX_SCFG7) Slave Configuration Register Offset */
+#define MATRIX_SCFG8_REG_OFST          _UINT32_(0x60)      /* (MATRIX_SCFG8) Slave Configuration Register Offset */
+#define MATRIX_SCFG9_REG_OFST          _UINT32_(0x64)      /* (MATRIX_SCFG9) Slave Configuration Register Offset */
+#define MATRIX_SCFG10_REG_OFST         _UINT32_(0x68)      /* (MATRIX_SCFG10) Slave Configuration Register Offset */
+#define MATRIX_SCFG11_REG_OFST         _UINT32_(0x6C)      /* (MATRIX_SCFG11) Slave Configuration Register Offset */
+#define MATRIX_SCFG12_REG_OFST         _UINT32_(0x70)      /* (MATRIX_SCFG12) Slave Configuration Register Offset */
+#define MATRIX_SCFG13_REG_OFST         _UINT32_(0x74)      /* (MATRIX_SCFG13) Slave Configuration Register Offset */
+#define MATRIX_SCFG14_REG_OFST         _UINT32_(0x78)      /* (MATRIX_SCFG14) Slave Configuration Register Offset */
+#define MATRIX_SPSELR_REG_OFST         _UINT32_(0x2C0)     /* (MATRIX_SPSELR) Security Peripheral Select 1 Register Offset */
+#define MATRIX_SPSELR0_REG_OFST        _UINT32_(0x2C0)     /* (MATRIX_SPSELR0) Security Peripheral Select 1 Register Offset */
+#define MATRIX_SPSELR1_REG_OFST        _UINT32_(0x2C4)     /* (MATRIX_SPSELR1) Security Peripheral Select 1 Register Offset */
+#define MATRIX_SPSELR2_REG_OFST        _UINT32_(0x2C8)     /* (MATRIX_SPSELR2) Security Peripheral Select 1 Register Offset */
 #define MATRIX_SRTSR_REG_OFST          _UINT32_(0x284)     /* (MATRIX_SRTSR) Security Region Top Slave 1 Register Offset */
 #define MATRIX_SRTSR0_REG_OFST         _UINT32_(0x284)     /* (MATRIX_SRTSR0) Security Region Top Slave 1 Register Offset */
 #define MATRIX_SRTSR1_REG_OFST         _UINT32_(0x288)     /* (MATRIX_SRTSR1) Security Region Top Slave 1 Register Offset */
@@ -657,10 +643,24 @@
 #define MATRIX_SRTSR11_REG_OFST        _UINT32_(0x2B0)     /* (MATRIX_SRTSR11) Security Region Top Slave 1 Register Offset */
 #define MATRIX_SRTSR12_REG_OFST        _UINT32_(0x2B4)     /* (MATRIX_SRTSR12) Security Region Top Slave 1 Register Offset */
 #define MATRIX_SRTSR13_REG_OFST        _UINT32_(0x2B8)     /* (MATRIX_SRTSR13) Security Region Top Slave 1 Register Offset */
-#define MATRIX_SPSELR_REG_OFST         _UINT32_(0x2C0)     /* (MATRIX_SPSELR) Security Peripheral Select 1 Register Offset */
-#define MATRIX_SPSELR0_REG_OFST        _UINT32_(0x2C0)     /* (MATRIX_SPSELR0) Security Peripheral Select 1 Register Offset */
-#define MATRIX_SPSELR1_REG_OFST        _UINT32_(0x2C4)     /* (MATRIX_SPSELR1) Security Peripheral Select 1 Register Offset */
-#define MATRIX_SPSELR2_REG_OFST        _UINT32_(0x2C8)     /* (MATRIX_SPSELR2) Security Peripheral Select 1 Register Offset */
+#define MATRIX_SSR_REG_OFST            _UINT32_(0x200)     /* (MATRIX_SSR) Security Slave 0 Register Offset */
+#define MATRIX_SSR0_REG_OFST           _UINT32_(0x200)     /* (MATRIX_SSR0) Security Slave 0 Register Offset */
+#define MATRIX_SSR1_REG_OFST           _UINT32_(0x204)     /* (MATRIX_SSR1) Security Slave 0 Register Offset */
+#define MATRIX_SSR2_REG_OFST           _UINT32_(0x208)     /* (MATRIX_SSR2) Security Slave 0 Register Offset */
+#define MATRIX_SSR3_REG_OFST           _UINT32_(0x20C)     /* (MATRIX_SSR3) Security Slave 0 Register Offset */
+#define MATRIX_SSR4_REG_OFST           _UINT32_(0x210)     /* (MATRIX_SSR4) Security Slave 0 Register Offset */
+#define MATRIX_SSR5_REG_OFST           _UINT32_(0x214)     /* (MATRIX_SSR5) Security Slave 0 Register Offset */
+#define MATRIX_SSR6_REG_OFST           _UINT32_(0x218)     /* (MATRIX_SSR6) Security Slave 0 Register Offset */
+#define MATRIX_SSR7_REG_OFST           _UINT32_(0x21C)     /* (MATRIX_SSR7) Security Slave 0 Register Offset */
+#define MATRIX_SSR8_REG_OFST           _UINT32_(0x220)     /* (MATRIX_SSR8) Security Slave 0 Register Offset */
+#define MATRIX_SSR9_REG_OFST           _UINT32_(0x224)     /* (MATRIX_SSR9) Security Slave 0 Register Offset */
+#define MATRIX_SSR10_REG_OFST          _UINT32_(0x228)     /* (MATRIX_SSR10) Security Slave 0 Register Offset */
+#define MATRIX_SSR11_REG_OFST          _UINT32_(0x22C)     /* (MATRIX_SSR11) Security Slave 0 Register Offset */
+#define MATRIX_SSR12_REG_OFST          _UINT32_(0x230)     /* (MATRIX_SSR12) Security Slave 0 Register Offset */
+#define MATRIX_SSR13_REG_OFST          _UINT32_(0x234)     /* (MATRIX_SSR13) Security Slave 0 Register Offset */
+#define MATRIX_SSR14_REG_OFST          _UINT32_(0x238)     /* (MATRIX_SSR14) Security Slave 0 Register Offset */
+#define MATRIX_WPMR_REG_OFST           _UINT32_(0x1E4)     /* (MATRIX_WPMR) Write Protection Mode Register Offset */
+#define MATRIX_WPSR_REG_OFST           _UINT32_(0x1E8)     /* (MATRIX_WPSR) Write Protection Status Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief MATRIX_PR register API structure */
