@@ -28,6 +28,13 @@
 /*   SOFTWARE API DEFINITION FOR SHA                                          */
 /* ************************************************************************** */
 
+/* -------- SHA_BCR : (SHA Offset: 0x30) (R/W 32) Bytes Count Register -------- */
+#define SHA_BCR_BYTCNT_Pos                    _UINT32_(0)                                          /* (SHA_BCR) Remaining Byte Count Before Auto Padding Position */
+#define SHA_BCR_BYTCNT_Msk                    (_UINT32_(0xFFFFFFFF) << SHA_BCR_BYTCNT_Pos)         /* (SHA_BCR) Remaining Byte Count Before Auto Padding Mask */
+#define SHA_BCR_BYTCNT(value)                 (SHA_BCR_BYTCNT_Msk & (_UINT32_(value) << SHA_BCR_BYTCNT_Pos)) /* Assigment of value for BYTCNT in the SHA_BCR register */
+#define SHA_BCR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SHA_BCR) Register Mask  */
+
+
 /* -------- SHA_CR : (SHA Offset: 0x00) ( /W 32) Control Register -------- */
 #define SHA_CR_START_Pos                      _UINT32_(0)                                          /* (SHA_CR) Start Processing Position */
 #define SHA_CR_START_Msk                      (_UINT32_(0x1) << SHA_CR_START_Pos)                  /* (SHA_CR) Start Processing Mask */
@@ -45,6 +52,81 @@
 #define SHA_CR_WUIEHV_Msk                     (_UINT32_(0x1) << SHA_CR_WUIEHV_Pos)                 /* (SHA_CR) Write User Initial or Expected Hash Values Mask */
 #define SHA_CR_WUIEHV(value)                  (SHA_CR_WUIEHV_Msk & (_UINT32_(value) << SHA_CR_WUIEHV_Pos)) /* Assigment of value for WUIEHV in the SHA_CR register */
 #define SHA_CR_Msk                            _UINT32_(0x00003111)                                 /* (SHA_CR) Register Mask  */
+
+
+/* -------- SHA_IDATAR : (SHA Offset: 0x40) ( /W 32) Input Data 0 Register -------- */
+#define SHA_IDATAR_IDATA_Pos                  _UINT32_(0)                                          /* (SHA_IDATAR) Input Data Position */
+#define SHA_IDATAR_IDATA_Msk                  (_UINT32_(0xFFFFFFFF) << SHA_IDATAR_IDATA_Pos)       /* (SHA_IDATAR) Input Data Mask */
+#define SHA_IDATAR_IDATA(value)               (SHA_IDATAR_IDATA_Msk & (_UINT32_(value) << SHA_IDATAR_IDATA_Pos)) /* Assigment of value for IDATA in the SHA_IDATAR register */
+#define SHA_IDATAR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (SHA_IDATAR) Register Mask  */
+
+
+/* -------- SHA_IDR : (SHA Offset: 0x14) ( /W 32) Interrupt Disable Register -------- */
+#define SHA_IDR_DATRDY_Pos                    _UINT32_(0)                                          /* (SHA_IDR) Data Ready Interrupt Disable Position */
+#define SHA_IDR_DATRDY_Msk                    (_UINT32_(0x1) << SHA_IDR_DATRDY_Pos)                /* (SHA_IDR) Data Ready Interrupt Disable Mask */
+#define SHA_IDR_DATRDY(value)                 (SHA_IDR_DATRDY_Msk & (_UINT32_(value) << SHA_IDR_DATRDY_Pos)) /* Assigment of value for DATRDY in the SHA_IDR register */
+#define SHA_IDR_URAD_Pos                      _UINT32_(8)                                          /* (SHA_IDR) Unspecified Register Access Detection Interrupt Disable Position */
+#define SHA_IDR_URAD_Msk                      (_UINT32_(0x1) << SHA_IDR_URAD_Pos)                  /* (SHA_IDR) Unspecified Register Access Detection Interrupt Disable Mask */
+#define SHA_IDR_URAD(value)                   (SHA_IDR_URAD_Msk & (_UINT32_(value) << SHA_IDR_URAD_Pos)) /* Assigment of value for URAD in the SHA_IDR register */
+#define SHA_IDR_CHECKF_Pos                    _UINT32_(16)                                         /* (SHA_IDR) Check Done Interrupt Disable Position */
+#define SHA_IDR_CHECKF_Msk                    (_UINT32_(0x1) << SHA_IDR_CHECKF_Pos)                /* (SHA_IDR) Check Done Interrupt Disable Mask */
+#define SHA_IDR_CHECKF(value)                 (SHA_IDR_CHECKF_Msk & (_UINT32_(value) << SHA_IDR_CHECKF_Pos)) /* Assigment of value for CHECKF in the SHA_IDR register */
+#define SHA_IDR_Msk                           _UINT32_(0x00010101)                                 /* (SHA_IDR) Register Mask  */
+
+
+/* -------- SHA_IER : (SHA Offset: 0x10) ( /W 32) Interrupt Enable Register -------- */
+#define SHA_IER_DATRDY_Pos                    _UINT32_(0)                                          /* (SHA_IER) Data Ready Interrupt Enable Position */
+#define SHA_IER_DATRDY_Msk                    (_UINT32_(0x1) << SHA_IER_DATRDY_Pos)                /* (SHA_IER) Data Ready Interrupt Enable Mask */
+#define SHA_IER_DATRDY(value)                 (SHA_IER_DATRDY_Msk & (_UINT32_(value) << SHA_IER_DATRDY_Pos)) /* Assigment of value for DATRDY in the SHA_IER register */
+#define SHA_IER_URAD_Pos                      _UINT32_(8)                                          /* (SHA_IER) Unspecified Register Access Detection Interrupt Enable Position */
+#define SHA_IER_URAD_Msk                      (_UINT32_(0x1) << SHA_IER_URAD_Pos)                  /* (SHA_IER) Unspecified Register Access Detection Interrupt Enable Mask */
+#define SHA_IER_URAD(value)                   (SHA_IER_URAD_Msk & (_UINT32_(value) << SHA_IER_URAD_Pos)) /* Assigment of value for URAD in the SHA_IER register */
+#define SHA_IER_CHECKF_Pos                    _UINT32_(16)                                         /* (SHA_IER) Check Done Interrupt Enable Position */
+#define SHA_IER_CHECKF_Msk                    (_UINT32_(0x1) << SHA_IER_CHECKF_Pos)                /* (SHA_IER) Check Done Interrupt Enable Mask */
+#define SHA_IER_CHECKF(value)                 (SHA_IER_CHECKF_Msk & (_UINT32_(value) << SHA_IER_CHECKF_Pos)) /* Assigment of value for CHECKF in the SHA_IER register */
+#define SHA_IER_Msk                           _UINT32_(0x00010101)                                 /* (SHA_IER) Register Mask  */
+
+
+/* -------- SHA_IMR : (SHA Offset: 0x18) ( R/ 32) Interrupt Mask Register -------- */
+#define SHA_IMR_DATRDY_Pos                    _UINT32_(0)                                          /* (SHA_IMR) Data Ready Interrupt Mask Position */
+#define SHA_IMR_DATRDY_Msk                    (_UINT32_(0x1) << SHA_IMR_DATRDY_Pos)                /* (SHA_IMR) Data Ready Interrupt Mask Mask */
+#define SHA_IMR_DATRDY(value)                 (SHA_IMR_DATRDY_Msk & (_UINT32_(value) << SHA_IMR_DATRDY_Pos)) /* Assigment of value for DATRDY in the SHA_IMR register */
+#define SHA_IMR_URAD_Pos                      _UINT32_(8)                                          /* (SHA_IMR) Unspecified Register Access Detection Interrupt Mask Position */
+#define SHA_IMR_URAD_Msk                      (_UINT32_(0x1) << SHA_IMR_URAD_Pos)                  /* (SHA_IMR) Unspecified Register Access Detection Interrupt Mask Mask */
+#define SHA_IMR_URAD(value)                   (SHA_IMR_URAD_Msk & (_UINT32_(value) << SHA_IMR_URAD_Pos)) /* Assigment of value for URAD in the SHA_IMR register */
+#define SHA_IMR_CHECKF_Pos                    _UINT32_(16)                                         /* (SHA_IMR) Check Done Interrupt Mask Position */
+#define SHA_IMR_CHECKF_Msk                    (_UINT32_(0x1) << SHA_IMR_CHECKF_Pos)                /* (SHA_IMR) Check Done Interrupt Mask Mask */
+#define SHA_IMR_CHECKF(value)                 (SHA_IMR_CHECKF_Msk & (_UINT32_(value) << SHA_IMR_CHECKF_Pos)) /* Assigment of value for CHECKF in the SHA_IMR register */
+#define SHA_IMR_Msk                           _UINT32_(0x00010101)                                 /* (SHA_IMR) Register Mask  */
+
+
+/* -------- SHA_IODATAR : (SHA Offset: 0x80) (R/W 32) Input/Output Data 0 Register -------- */
+#define SHA_IODATAR_IODATA_Pos                _UINT32_(0)                                          /* (SHA_IODATAR) Input/Output Data Position */
+#define SHA_IODATAR_IODATA_Msk                (_UINT32_(0xFFFFFFFF) << SHA_IODATAR_IODATA_Pos)     /* (SHA_IODATAR) Input/Output Data Mask */
+#define SHA_IODATAR_IODATA(value)             (SHA_IODATAR_IODATA_Msk & (_UINT32_(value) << SHA_IODATAR_IODATA_Pos)) /* Assigment of value for IODATA in the SHA_IODATAR register */
+#define SHA_IODATAR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (SHA_IODATAR) Register Mask  */
+
+
+/* -------- SHA_ISR : (SHA Offset: 0x1C) ( R/ 32) Interrupt Status Register -------- */
+#define SHA_ISR_DATRDY_Pos                    _UINT32_(0)                                          /* (SHA_ISR) Data Ready (cleared by writing a 1 to bit SWRST or START in SHA_CR, or by reading SHA_IODATARx) Position */
+#define SHA_ISR_DATRDY_Msk                    (_UINT32_(0x1) << SHA_ISR_DATRDY_Pos)                /* (SHA_ISR) Data Ready (cleared by writing a 1 to bit SWRST or START in SHA_CR, or by reading SHA_IODATARx) Mask */
+#define SHA_ISR_DATRDY(value)                 (SHA_ISR_DATRDY_Msk & (_UINT32_(value) << SHA_ISR_DATRDY_Pos)) /* Assigment of value for DATRDY in the SHA_ISR register */
+#define SHA_ISR_WRDY_Pos                      _UINT32_(4)                                          /* (SHA_ISR) Input Data Register Write Ready Position */
+#define SHA_ISR_WRDY_Msk                      (_UINT32_(0x1) << SHA_ISR_WRDY_Pos)                  /* (SHA_ISR) Input Data Register Write Ready Mask */
+#define SHA_ISR_WRDY(value)                   (SHA_ISR_WRDY_Msk & (_UINT32_(value) << SHA_ISR_WRDY_Pos)) /* Assigment of value for WRDY in the SHA_ISR register */
+#define SHA_ISR_URAD_Pos                      _UINT32_(8)                                          /* (SHA_ISR) Unspecified Register Access Detection Status (cleared by writing a 1 to SWRST bit in SHA_CR) Position */
+#define SHA_ISR_URAD_Msk                      (_UINT32_(0x1) << SHA_ISR_URAD_Pos)                  /* (SHA_ISR) Unspecified Register Access Detection Status (cleared by writing a 1 to SWRST bit in SHA_CR) Mask */
+#define SHA_ISR_URAD(value)                   (SHA_ISR_URAD_Msk & (_UINT32_(value) << SHA_ISR_URAD_Pos)) /* Assigment of value for URAD in the SHA_ISR register */
+#define SHA_ISR_URAT_Pos                      _UINT32_(12)                                         /* (SHA_ISR) Unspecified Register Access Type (cleared by writing a 1 to SWRST bit in SHA_CR) Position */
+#define SHA_ISR_URAT_Msk                      (_UINT32_(0x7) << SHA_ISR_URAT_Pos)                  /* (SHA_ISR) Unspecified Register Access Type (cleared by writing a 1 to SWRST bit in SHA_CR) Mask */
+#define SHA_ISR_URAT(value)                   (SHA_ISR_URAT_Msk & (_UINT32_(value) << SHA_ISR_URAT_Pos)) /* Assigment of value for URAT in the SHA_ISR register */
+#define SHA_ISR_CHECKF_Pos                    _UINT32_(16)                                         /* (SHA_ISR) Check Done Status (cleared by writing START or SWRST bits in SHA_CR or by reading SHA_IODATARx) Position */
+#define SHA_ISR_CHECKF_Msk                    (_UINT32_(0x1) << SHA_ISR_CHECKF_Pos)                /* (SHA_ISR) Check Done Status (cleared by writing START or SWRST bits in SHA_CR or by reading SHA_IODATARx) Mask */
+#define SHA_ISR_CHECKF(value)                 (SHA_ISR_CHECKF_Msk & (_UINT32_(value) << SHA_ISR_CHECKF_Pos)) /* Assigment of value for CHECKF in the SHA_ISR register */
+#define SHA_ISR_CHKST_Pos                     _UINT32_(20)                                         /* (SHA_ISR) Check Status (cleared by writing START or SWRST bits in SHA_CR or by reading SHA_IODATARx) Position */
+#define SHA_ISR_CHKST_Msk                     (_UINT32_(0xF) << SHA_ISR_CHKST_Pos)                 /* (SHA_ISR) Check Status (cleared by writing START or SWRST bits in SHA_CR or by reading SHA_IODATARx) Mask */
+#define SHA_ISR_CHKST(value)                  (SHA_ISR_CHKST_Msk & (_UINT32_(value) << SHA_ISR_CHKST_Pos)) /* Assigment of value for CHKST in the SHA_ISR register */
+#define SHA_ISR_Msk                           _UINT32_(0x00F17111)                                 /* (SHA_ISR) Register Mask  */
 
 
 /* -------- SHA_MR : (SHA Offset: 0x04) (R/W 32) Mode Register -------- */
@@ -115,67 +197,6 @@
 #define SHA_MR_Msk                            _UINT32_(0xF3010F73)                                 /* (SHA_MR) Register Mask  */
 
 
-/* -------- SHA_IER : (SHA Offset: 0x10) ( /W 32) Interrupt Enable Register -------- */
-#define SHA_IER_DATRDY_Pos                    _UINT32_(0)                                          /* (SHA_IER) Data Ready Interrupt Enable Position */
-#define SHA_IER_DATRDY_Msk                    (_UINT32_(0x1) << SHA_IER_DATRDY_Pos)                /* (SHA_IER) Data Ready Interrupt Enable Mask */
-#define SHA_IER_DATRDY(value)                 (SHA_IER_DATRDY_Msk & (_UINT32_(value) << SHA_IER_DATRDY_Pos)) /* Assigment of value for DATRDY in the SHA_IER register */
-#define SHA_IER_URAD_Pos                      _UINT32_(8)                                          /* (SHA_IER) Unspecified Register Access Detection Interrupt Enable Position */
-#define SHA_IER_URAD_Msk                      (_UINT32_(0x1) << SHA_IER_URAD_Pos)                  /* (SHA_IER) Unspecified Register Access Detection Interrupt Enable Mask */
-#define SHA_IER_URAD(value)                   (SHA_IER_URAD_Msk & (_UINT32_(value) << SHA_IER_URAD_Pos)) /* Assigment of value for URAD in the SHA_IER register */
-#define SHA_IER_CHECKF_Pos                    _UINT32_(16)                                         /* (SHA_IER) Check Done Interrupt Enable Position */
-#define SHA_IER_CHECKF_Msk                    (_UINT32_(0x1) << SHA_IER_CHECKF_Pos)                /* (SHA_IER) Check Done Interrupt Enable Mask */
-#define SHA_IER_CHECKF(value)                 (SHA_IER_CHECKF_Msk & (_UINT32_(value) << SHA_IER_CHECKF_Pos)) /* Assigment of value for CHECKF in the SHA_IER register */
-#define SHA_IER_Msk                           _UINT32_(0x00010101)                                 /* (SHA_IER) Register Mask  */
-
-
-/* -------- SHA_IDR : (SHA Offset: 0x14) ( /W 32) Interrupt Disable Register -------- */
-#define SHA_IDR_DATRDY_Pos                    _UINT32_(0)                                          /* (SHA_IDR) Data Ready Interrupt Disable Position */
-#define SHA_IDR_DATRDY_Msk                    (_UINT32_(0x1) << SHA_IDR_DATRDY_Pos)                /* (SHA_IDR) Data Ready Interrupt Disable Mask */
-#define SHA_IDR_DATRDY(value)                 (SHA_IDR_DATRDY_Msk & (_UINT32_(value) << SHA_IDR_DATRDY_Pos)) /* Assigment of value for DATRDY in the SHA_IDR register */
-#define SHA_IDR_URAD_Pos                      _UINT32_(8)                                          /* (SHA_IDR) Unspecified Register Access Detection Interrupt Disable Position */
-#define SHA_IDR_URAD_Msk                      (_UINT32_(0x1) << SHA_IDR_URAD_Pos)                  /* (SHA_IDR) Unspecified Register Access Detection Interrupt Disable Mask */
-#define SHA_IDR_URAD(value)                   (SHA_IDR_URAD_Msk & (_UINT32_(value) << SHA_IDR_URAD_Pos)) /* Assigment of value for URAD in the SHA_IDR register */
-#define SHA_IDR_CHECKF_Pos                    _UINT32_(16)                                         /* (SHA_IDR) Check Done Interrupt Disable Position */
-#define SHA_IDR_CHECKF_Msk                    (_UINT32_(0x1) << SHA_IDR_CHECKF_Pos)                /* (SHA_IDR) Check Done Interrupt Disable Mask */
-#define SHA_IDR_CHECKF(value)                 (SHA_IDR_CHECKF_Msk & (_UINT32_(value) << SHA_IDR_CHECKF_Pos)) /* Assigment of value for CHECKF in the SHA_IDR register */
-#define SHA_IDR_Msk                           _UINT32_(0x00010101)                                 /* (SHA_IDR) Register Mask  */
-
-
-/* -------- SHA_IMR : (SHA Offset: 0x18) ( R/ 32) Interrupt Mask Register -------- */
-#define SHA_IMR_DATRDY_Pos                    _UINT32_(0)                                          /* (SHA_IMR) Data Ready Interrupt Mask Position */
-#define SHA_IMR_DATRDY_Msk                    (_UINT32_(0x1) << SHA_IMR_DATRDY_Pos)                /* (SHA_IMR) Data Ready Interrupt Mask Mask */
-#define SHA_IMR_DATRDY(value)                 (SHA_IMR_DATRDY_Msk & (_UINT32_(value) << SHA_IMR_DATRDY_Pos)) /* Assigment of value for DATRDY in the SHA_IMR register */
-#define SHA_IMR_URAD_Pos                      _UINT32_(8)                                          /* (SHA_IMR) Unspecified Register Access Detection Interrupt Mask Position */
-#define SHA_IMR_URAD_Msk                      (_UINT32_(0x1) << SHA_IMR_URAD_Pos)                  /* (SHA_IMR) Unspecified Register Access Detection Interrupt Mask Mask */
-#define SHA_IMR_URAD(value)                   (SHA_IMR_URAD_Msk & (_UINT32_(value) << SHA_IMR_URAD_Pos)) /* Assigment of value for URAD in the SHA_IMR register */
-#define SHA_IMR_CHECKF_Pos                    _UINT32_(16)                                         /* (SHA_IMR) Check Done Interrupt Mask Position */
-#define SHA_IMR_CHECKF_Msk                    (_UINT32_(0x1) << SHA_IMR_CHECKF_Pos)                /* (SHA_IMR) Check Done Interrupt Mask Mask */
-#define SHA_IMR_CHECKF(value)                 (SHA_IMR_CHECKF_Msk & (_UINT32_(value) << SHA_IMR_CHECKF_Pos)) /* Assigment of value for CHECKF in the SHA_IMR register */
-#define SHA_IMR_Msk                           _UINT32_(0x00010101)                                 /* (SHA_IMR) Register Mask  */
-
-
-/* -------- SHA_ISR : (SHA Offset: 0x1C) ( R/ 32) Interrupt Status Register -------- */
-#define SHA_ISR_DATRDY_Pos                    _UINT32_(0)                                          /* (SHA_ISR) Data Ready (cleared by writing a 1 to bit SWRST or START in SHA_CR, or by reading SHA_IODATARx) Position */
-#define SHA_ISR_DATRDY_Msk                    (_UINT32_(0x1) << SHA_ISR_DATRDY_Pos)                /* (SHA_ISR) Data Ready (cleared by writing a 1 to bit SWRST or START in SHA_CR, or by reading SHA_IODATARx) Mask */
-#define SHA_ISR_DATRDY(value)                 (SHA_ISR_DATRDY_Msk & (_UINT32_(value) << SHA_ISR_DATRDY_Pos)) /* Assigment of value for DATRDY in the SHA_ISR register */
-#define SHA_ISR_WRDY_Pos                      _UINT32_(4)                                          /* (SHA_ISR) Input Data Register Write Ready Position */
-#define SHA_ISR_WRDY_Msk                      (_UINT32_(0x1) << SHA_ISR_WRDY_Pos)                  /* (SHA_ISR) Input Data Register Write Ready Mask */
-#define SHA_ISR_WRDY(value)                   (SHA_ISR_WRDY_Msk & (_UINT32_(value) << SHA_ISR_WRDY_Pos)) /* Assigment of value for WRDY in the SHA_ISR register */
-#define SHA_ISR_URAD_Pos                      _UINT32_(8)                                          /* (SHA_ISR) Unspecified Register Access Detection Status (cleared by writing a 1 to SWRST bit in SHA_CR) Position */
-#define SHA_ISR_URAD_Msk                      (_UINT32_(0x1) << SHA_ISR_URAD_Pos)                  /* (SHA_ISR) Unspecified Register Access Detection Status (cleared by writing a 1 to SWRST bit in SHA_CR) Mask */
-#define SHA_ISR_URAD(value)                   (SHA_ISR_URAD_Msk & (_UINT32_(value) << SHA_ISR_URAD_Pos)) /* Assigment of value for URAD in the SHA_ISR register */
-#define SHA_ISR_URAT_Pos                      _UINT32_(12)                                         /* (SHA_ISR) Unspecified Register Access Type (cleared by writing a 1 to SWRST bit in SHA_CR) Position */
-#define SHA_ISR_URAT_Msk                      (_UINT32_(0x7) << SHA_ISR_URAT_Pos)                  /* (SHA_ISR) Unspecified Register Access Type (cleared by writing a 1 to SWRST bit in SHA_CR) Mask */
-#define SHA_ISR_URAT(value)                   (SHA_ISR_URAT_Msk & (_UINT32_(value) << SHA_ISR_URAT_Pos)) /* Assigment of value for URAT in the SHA_ISR register */
-#define SHA_ISR_CHECKF_Pos                    _UINT32_(16)                                         /* (SHA_ISR) Check Done Status (cleared by writing START or SWRST bits in SHA_CR or by reading SHA_IODATARx) Position */
-#define SHA_ISR_CHECKF_Msk                    (_UINT32_(0x1) << SHA_ISR_CHECKF_Pos)                /* (SHA_ISR) Check Done Status (cleared by writing START or SWRST bits in SHA_CR or by reading SHA_IODATARx) Mask */
-#define SHA_ISR_CHECKF(value)                 (SHA_ISR_CHECKF_Msk & (_UINT32_(value) << SHA_ISR_CHECKF_Pos)) /* Assigment of value for CHECKF in the SHA_ISR register */
-#define SHA_ISR_CHKST_Pos                     _UINT32_(20)                                         /* (SHA_ISR) Check Status (cleared by writing START or SWRST bits in SHA_CR or by reading SHA_IODATARx) Position */
-#define SHA_ISR_CHKST_Msk                     (_UINT32_(0xF) << SHA_ISR_CHKST_Pos)                 /* (SHA_ISR) Check Status (cleared by writing START or SWRST bits in SHA_CR or by reading SHA_IODATARx) Mask */
-#define SHA_ISR_CHKST(value)                  (SHA_ISR_CHKST_Msk & (_UINT32_(value) << SHA_ISR_CHKST_Pos)) /* Assigment of value for CHKST in the SHA_ISR register */
-#define SHA_ISR_Msk                           _UINT32_(0x00F17111)                                 /* (SHA_ISR) Register Mask  */
-
-
 /* -------- SHA_MSR : (SHA Offset: 0x20) (R/W 32) Message Size Register -------- */
 #define SHA_MSR_MSGSIZE_Pos                   _UINT32_(0)                                          /* (SHA_MSR) Message Size Position */
 #define SHA_MSR_MSGSIZE_Msk                   (_UINT32_(0xFFFFFFFF) << SHA_MSR_MSGSIZE_Pos)        /* (SHA_MSR) Message Size Mask */
@@ -183,36 +204,9 @@
 #define SHA_MSR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SHA_MSR) Register Mask  */
 
 
-/* -------- SHA_BCR : (SHA Offset: 0x30) (R/W 32) Bytes Count Register -------- */
-#define SHA_BCR_BYTCNT_Pos                    _UINT32_(0)                                          /* (SHA_BCR) Remaining Byte Count Before Auto Padding Position */
-#define SHA_BCR_BYTCNT_Msk                    (_UINT32_(0xFFFFFFFF) << SHA_BCR_BYTCNT_Pos)         /* (SHA_BCR) Remaining Byte Count Before Auto Padding Mask */
-#define SHA_BCR_BYTCNT(value)                 (SHA_BCR_BYTCNT_Msk & (_UINT32_(value) << SHA_BCR_BYTCNT_Pos)) /* Assigment of value for BYTCNT in the SHA_BCR register */
-#define SHA_BCR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SHA_BCR) Register Mask  */
-
-
-/* -------- SHA_IDATAR : (SHA Offset: 0x40) ( /W 32) Input Data 0 Register -------- */
-#define SHA_IDATAR_IDATA_Pos                  _UINT32_(0)                                          /* (SHA_IDATAR) Input Data Position */
-#define SHA_IDATAR_IDATA_Msk                  (_UINT32_(0xFFFFFFFF) << SHA_IDATAR_IDATA_Pos)       /* (SHA_IDATAR) Input Data Mask */
-#define SHA_IDATAR_IDATA(value)               (SHA_IDATAR_IDATA_Msk & (_UINT32_(value) << SHA_IDATAR_IDATA_Pos)) /* Assigment of value for IDATA in the SHA_IDATAR register */
-#define SHA_IDATAR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (SHA_IDATAR) Register Mask  */
-
-
-/* -------- SHA_IODATAR : (SHA Offset: 0x80) (R/W 32) Input/Output Data 0 Register -------- */
-#define SHA_IODATAR_IODATA_Pos                _UINT32_(0)                                          /* (SHA_IODATAR) Input/Output Data Position */
-#define SHA_IODATAR_IODATA_Msk                (_UINT32_(0xFFFFFFFF) << SHA_IODATAR_IODATA_Pos)     /* (SHA_IODATAR) Input/Output Data Mask */
-#define SHA_IODATAR_IODATA(value)             (SHA_IODATAR_IODATA_Msk & (_UINT32_(value) << SHA_IODATAR_IODATA_Pos)) /* Assigment of value for IODATA in the SHA_IODATAR register */
-#define SHA_IODATAR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (SHA_IODATAR) Register Mask  */
-
-
 /** \brief SHA register offsets definitions */
-#define SHA_CR_REG_OFST                _UINT32_(0x00)      /* (SHA_CR) Control Register Offset */
-#define SHA_MR_REG_OFST                _UINT32_(0x04)      /* (SHA_MR) Mode Register Offset */
-#define SHA_IER_REG_OFST               _UINT32_(0x10)      /* (SHA_IER) Interrupt Enable Register Offset */
-#define SHA_IDR_REG_OFST               _UINT32_(0x14)      /* (SHA_IDR) Interrupt Disable Register Offset */
-#define SHA_IMR_REG_OFST               _UINT32_(0x18)      /* (SHA_IMR) Interrupt Mask Register Offset */
-#define SHA_ISR_REG_OFST               _UINT32_(0x1C)      /* (SHA_ISR) Interrupt Status Register Offset */
-#define SHA_MSR_REG_OFST               _UINT32_(0x20)      /* (SHA_MSR) Message Size Register Offset */
 #define SHA_BCR_REG_OFST               _UINT32_(0x30)      /* (SHA_BCR) Bytes Count Register Offset */
+#define SHA_CR_REG_OFST                _UINT32_(0x00)      /* (SHA_CR) Control Register Offset */
 #define SHA_IDATAR_REG_OFST            _UINT32_(0x40)      /* (SHA_IDATAR) Input Data 0 Register Offset */
 #define SHA_IDATAR0_REG_OFST           _UINT32_(0x40)      /* (SHA_IDATAR0) Input Data 0 Register Offset */
 #define SHA_IDATAR1_REG_OFST           _UINT32_(0x44)      /* (SHA_IDATAR1) Input Data 0 Register Offset */
@@ -230,6 +224,9 @@
 #define SHA_IDATAR13_REG_OFST          _UINT32_(0x74)      /* (SHA_IDATAR13) Input Data 0 Register Offset */
 #define SHA_IDATAR14_REG_OFST          _UINT32_(0x78)      /* (SHA_IDATAR14) Input Data 0 Register Offset */
 #define SHA_IDATAR15_REG_OFST          _UINT32_(0x7C)      /* (SHA_IDATAR15) Input Data 0 Register Offset */
+#define SHA_IDR_REG_OFST               _UINT32_(0x14)      /* (SHA_IDR) Interrupt Disable Register Offset */
+#define SHA_IER_REG_OFST               _UINT32_(0x10)      /* (SHA_IER) Interrupt Enable Register Offset */
+#define SHA_IMR_REG_OFST               _UINT32_(0x18)      /* (SHA_IMR) Interrupt Mask Register Offset */
 #define SHA_IODATAR_REG_OFST           _UINT32_(0x80)      /* (SHA_IODATAR) Input/Output Data 0 Register Offset */
 #define SHA_IODATAR0_REG_OFST          _UINT32_(0x80)      /* (SHA_IODATAR0) Input/Output Data 0 Register Offset */
 #define SHA_IODATAR1_REG_OFST          _UINT32_(0x84)      /* (SHA_IODATAR1) Input/Output Data 0 Register Offset */
@@ -247,6 +244,9 @@
 #define SHA_IODATAR13_REG_OFST         _UINT32_(0xB4)      /* (SHA_IODATAR13) Input/Output Data 0 Register Offset */
 #define SHA_IODATAR14_REG_OFST         _UINT32_(0xB8)      /* (SHA_IODATAR14) Input/Output Data 0 Register Offset */
 #define SHA_IODATAR15_REG_OFST         _UINT32_(0xBC)      /* (SHA_IODATAR15) Input/Output Data 0 Register Offset */
+#define SHA_ISR_REG_OFST               _UINT32_(0x1C)      /* (SHA_ISR) Interrupt Status Register Offset */
+#define SHA_MR_REG_OFST                _UINT32_(0x04)      /* (SHA_MR) Mode Register Offset */
+#define SHA_MSR_REG_OFST               _UINT32_(0x20)      /* (SHA_MSR) Message Size Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief SHA register API structure */

@@ -275,23 +275,6 @@
 #define TC_CMR_WAVEFORM_Msk                   _UINT32_(0xFFFF7FC0)                                  /* (TC_CMR_WAVEFORM) Register Mask  */
 
 
-/* -------- TC_SMMR : (TC Offset: 0x08) (R/W 32) Stepper Motor Mode Register -------- */
-#define TC_SMMR_GCEN_Pos                      _UINT32_(0)                                          /* (TC_SMMR) Gray Count Enable Position */
-#define TC_SMMR_GCEN_Msk                      (_UINT32_(0x1) << TC_SMMR_GCEN_Pos)                  /* (TC_SMMR) Gray Count Enable Mask */
-#define TC_SMMR_GCEN(value)                   (TC_SMMR_GCEN_Msk & (_UINT32_(value) << TC_SMMR_GCEN_Pos)) /* Assigment of value for GCEN in the TC_SMMR register */
-#define TC_SMMR_DOWN_Pos                      _UINT32_(1)                                          /* (TC_SMMR) Down Count Position */
-#define TC_SMMR_DOWN_Msk                      (_UINT32_(0x1) << TC_SMMR_DOWN_Pos)                  /* (TC_SMMR) Down Count Mask */
-#define TC_SMMR_DOWN(value)                   (TC_SMMR_DOWN_Msk & (_UINT32_(value) << TC_SMMR_DOWN_Pos)) /* Assigment of value for DOWN in the TC_SMMR register */
-#define TC_SMMR_Msk                           _UINT32_(0x00000003)                                 /* (TC_SMMR) Register Mask  */
-
-
-/* -------- TC_RAB : (TC Offset: 0x0C) ( R/ 32) Register AB -------- */
-#define TC_RAB_RAB_Pos                        _UINT32_(0)                                          /* (TC_RAB) Register A or Register B Position */
-#define TC_RAB_RAB_Msk                        (_UINT32_(0xFFFFFFFF) << TC_RAB_RAB_Pos)             /* (TC_RAB) Register A or Register B Mask */
-#define TC_RAB_RAB(value)                     (TC_RAB_RAB_Msk & (_UINT32_(value) << TC_RAB_RAB_Pos)) /* Assigment of value for RAB in the TC_RAB register */
-#define TC_RAB_Msk                            _UINT32_(0xFFFFFFFF)                                 /* (TC_RAB) Register Mask  */
-
-
 /* -------- TC_CV : (TC Offset: 0x10) ( R/ 32) Counter Value -------- */
 #define TC_CV_CV_Pos                          _UINT32_(0)                                          /* (TC_CV) Counter Value Position */
 #define TC_CV_CV_Msk                          (_UINT32_(0xFFFFFFFF) << TC_CV_CV_Pos)               /* (TC_CV) Counter Value Mask */
@@ -299,11 +282,123 @@
 #define TC_CV_Msk                             _UINT32_(0xFFFFFFFF)                                 /* (TC_CV) Register Mask  */
 
 
+/* -------- TC_EMR : (TC Offset: 0x30) (R/W 32) Extended Mode Register -------- */
+#define TC_EMR_TRIGSRCA_Pos                   _UINT32_(0)                                          /* (TC_EMR) Trigger Source for Input A Position */
+#define TC_EMR_TRIGSRCA_Msk                   (_UINT32_(0x3) << TC_EMR_TRIGSRCA_Pos)               /* (TC_EMR) Trigger Source for Input A Mask */
+#define TC_EMR_TRIGSRCA(value)                (TC_EMR_TRIGSRCA_Msk & (_UINT32_(value) << TC_EMR_TRIGSRCA_Pos)) /* Assigment of value for TRIGSRCA in the TC_EMR register */
+#define   TC_EMR_TRIGSRCA_EXTERNAL_TIOAx_Val  _UINT32_(0x0)                                        /* (TC_EMR) The trigger/capture input A is driven by external pin TIOAx  */
+#define   TC_EMR_TRIGSRCA_PWMx_Val            _UINT32_(0x1)                                        /* (TC_EMR) The trigger/capture input A is driven internally by PWMx  */
+#define TC_EMR_TRIGSRCA_EXTERNAL_TIOAx        (TC_EMR_TRIGSRCA_EXTERNAL_TIOAx_Val << TC_EMR_TRIGSRCA_Pos) /* (TC_EMR) The trigger/capture input A is driven by external pin TIOAx Position  */
+#define TC_EMR_TRIGSRCA_PWMx                  (TC_EMR_TRIGSRCA_PWMx_Val << TC_EMR_TRIGSRCA_Pos)    /* (TC_EMR) The trigger/capture input A is driven internally by PWMx Position  */
+#define TC_EMR_TRIGSRCB_Pos                   _UINT32_(4)                                          /* (TC_EMR) Trigger Source for Input B Position */
+#define TC_EMR_TRIGSRCB_Msk                   (_UINT32_(0x3) << TC_EMR_TRIGSRCB_Pos)               /* (TC_EMR) Trigger Source for Input B Mask */
+#define TC_EMR_TRIGSRCB(value)                (TC_EMR_TRIGSRCB_Msk & (_UINT32_(value) << TC_EMR_TRIGSRCB_Pos)) /* Assigment of value for TRIGSRCB in the TC_EMR register */
+#define   TC_EMR_TRIGSRCB_EXTERNAL_TIOBx_Val  _UINT32_(0x0)                                        /* (TC_EMR) The trigger/capture input B is driven by external pin TIOBx  */
+#define   TC_EMR_TRIGSRCB_PWMx_Val            _UINT32_(0x1)                                        /* (TC_EMR) For TC0 to TC10: The trigger/capture input B is driven internally by the comparator output (see Figure 7-16) of the PWMx.For TC11: The trigger/capture input B is driven internally by the GTSUCOMP signal of the Ethernet MAC (GMAC).  */
+#define TC_EMR_TRIGSRCB_EXTERNAL_TIOBx        (TC_EMR_TRIGSRCB_EXTERNAL_TIOBx_Val << TC_EMR_TRIGSRCB_Pos) /* (TC_EMR) The trigger/capture input B is driven by external pin TIOBx Position  */
+#define TC_EMR_TRIGSRCB_PWMx                  (TC_EMR_TRIGSRCB_PWMx_Val << TC_EMR_TRIGSRCB_Pos)    /* (TC_EMR) For TC0 to TC10: The trigger/capture input B is driven internally by the comparator output (see Figure 7-16) of the PWMx.For TC11: The trigger/capture input B is driven internally by the GTSUCOMP signal of the Ethernet MAC (GMAC). Position  */
+#define TC_EMR_NODIVCLK_Pos                   _UINT32_(8)                                          /* (TC_EMR) No Divided Clock Position */
+#define TC_EMR_NODIVCLK_Msk                   (_UINT32_(0x1) << TC_EMR_NODIVCLK_Pos)               /* (TC_EMR) No Divided Clock Mask */
+#define TC_EMR_NODIVCLK(value)                (TC_EMR_NODIVCLK_Msk & (_UINT32_(value) << TC_EMR_NODIVCLK_Pos)) /* Assigment of value for NODIVCLK in the TC_EMR register */
+#define TC_EMR_Msk                            _UINT32_(0x00000133)                                 /* (TC_EMR) Register Mask  */
+
+
+/* -------- TC_IDR : (TC Offset: 0x28) ( /W 32) Interrupt Disable Register -------- */
+#define TC_IDR_COVFS_Pos                      _UINT32_(0)                                          /* (TC_IDR) Counter Overflow Position */
+#define TC_IDR_COVFS_Msk                      (_UINT32_(0x1) << TC_IDR_COVFS_Pos)                  /* (TC_IDR) Counter Overflow Mask */
+#define TC_IDR_COVFS(value)                   (TC_IDR_COVFS_Msk & (_UINT32_(value) << TC_IDR_COVFS_Pos)) /* Assigment of value for COVFS in the TC_IDR register */
+#define TC_IDR_LOVRS_Pos                      _UINT32_(1)                                          /* (TC_IDR) Load Overrun Position */
+#define TC_IDR_LOVRS_Msk                      (_UINT32_(0x1) << TC_IDR_LOVRS_Pos)                  /* (TC_IDR) Load Overrun Mask */
+#define TC_IDR_LOVRS(value)                   (TC_IDR_LOVRS_Msk & (_UINT32_(value) << TC_IDR_LOVRS_Pos)) /* Assigment of value for LOVRS in the TC_IDR register */
+#define TC_IDR_CPAS_Pos                       _UINT32_(2)                                          /* (TC_IDR) RA Compare Position */
+#define TC_IDR_CPAS_Msk                       (_UINT32_(0x1) << TC_IDR_CPAS_Pos)                   /* (TC_IDR) RA Compare Mask */
+#define TC_IDR_CPAS(value)                    (TC_IDR_CPAS_Msk & (_UINT32_(value) << TC_IDR_CPAS_Pos)) /* Assigment of value for CPAS in the TC_IDR register */
+#define TC_IDR_CPBS_Pos                       _UINT32_(3)                                          /* (TC_IDR) RB Compare Position */
+#define TC_IDR_CPBS_Msk                       (_UINT32_(0x1) << TC_IDR_CPBS_Pos)                   /* (TC_IDR) RB Compare Mask */
+#define TC_IDR_CPBS(value)                    (TC_IDR_CPBS_Msk & (_UINT32_(value) << TC_IDR_CPBS_Pos)) /* Assigment of value for CPBS in the TC_IDR register */
+#define TC_IDR_CPCS_Pos                       _UINT32_(4)                                          /* (TC_IDR) RC Compare Position */
+#define TC_IDR_CPCS_Msk                       (_UINT32_(0x1) << TC_IDR_CPCS_Pos)                   /* (TC_IDR) RC Compare Mask */
+#define TC_IDR_CPCS(value)                    (TC_IDR_CPCS_Msk & (_UINT32_(value) << TC_IDR_CPCS_Pos)) /* Assigment of value for CPCS in the TC_IDR register */
+#define TC_IDR_LDRAS_Pos                      _UINT32_(5)                                          /* (TC_IDR) RA Loading Position */
+#define TC_IDR_LDRAS_Msk                      (_UINT32_(0x1) << TC_IDR_LDRAS_Pos)                  /* (TC_IDR) RA Loading Mask */
+#define TC_IDR_LDRAS(value)                   (TC_IDR_LDRAS_Msk & (_UINT32_(value) << TC_IDR_LDRAS_Pos)) /* Assigment of value for LDRAS in the TC_IDR register */
+#define TC_IDR_LDRBS_Pos                      _UINT32_(6)                                          /* (TC_IDR) RB Loading Position */
+#define TC_IDR_LDRBS_Msk                      (_UINT32_(0x1) << TC_IDR_LDRBS_Pos)                  /* (TC_IDR) RB Loading Mask */
+#define TC_IDR_LDRBS(value)                   (TC_IDR_LDRBS_Msk & (_UINT32_(value) << TC_IDR_LDRBS_Pos)) /* Assigment of value for LDRBS in the TC_IDR register */
+#define TC_IDR_ETRGS_Pos                      _UINT32_(7)                                          /* (TC_IDR) External Trigger Position */
+#define TC_IDR_ETRGS_Msk                      (_UINT32_(0x1) << TC_IDR_ETRGS_Pos)                  /* (TC_IDR) External Trigger Mask */
+#define TC_IDR_ETRGS(value)                   (TC_IDR_ETRGS_Msk & (_UINT32_(value) << TC_IDR_ETRGS_Pos)) /* Assigment of value for ETRGS in the TC_IDR register */
+#define TC_IDR_Msk                            _UINT32_(0x000000FF)                                 /* (TC_IDR) Register Mask  */
+
+
+/* -------- TC_IER : (TC Offset: 0x24) ( /W 32) Interrupt Enable Register -------- */
+#define TC_IER_COVFS_Pos                      _UINT32_(0)                                          /* (TC_IER) Counter Overflow Position */
+#define TC_IER_COVFS_Msk                      (_UINT32_(0x1) << TC_IER_COVFS_Pos)                  /* (TC_IER) Counter Overflow Mask */
+#define TC_IER_COVFS(value)                   (TC_IER_COVFS_Msk & (_UINT32_(value) << TC_IER_COVFS_Pos)) /* Assigment of value for COVFS in the TC_IER register */
+#define TC_IER_LOVRS_Pos                      _UINT32_(1)                                          /* (TC_IER) Load Overrun Position */
+#define TC_IER_LOVRS_Msk                      (_UINT32_(0x1) << TC_IER_LOVRS_Pos)                  /* (TC_IER) Load Overrun Mask */
+#define TC_IER_LOVRS(value)                   (TC_IER_LOVRS_Msk & (_UINT32_(value) << TC_IER_LOVRS_Pos)) /* Assigment of value for LOVRS in the TC_IER register */
+#define TC_IER_CPAS_Pos                       _UINT32_(2)                                          /* (TC_IER) RA Compare Position */
+#define TC_IER_CPAS_Msk                       (_UINT32_(0x1) << TC_IER_CPAS_Pos)                   /* (TC_IER) RA Compare Mask */
+#define TC_IER_CPAS(value)                    (TC_IER_CPAS_Msk & (_UINT32_(value) << TC_IER_CPAS_Pos)) /* Assigment of value for CPAS in the TC_IER register */
+#define TC_IER_CPBS_Pos                       _UINT32_(3)                                          /* (TC_IER) RB Compare Position */
+#define TC_IER_CPBS_Msk                       (_UINT32_(0x1) << TC_IER_CPBS_Pos)                   /* (TC_IER) RB Compare Mask */
+#define TC_IER_CPBS(value)                    (TC_IER_CPBS_Msk & (_UINT32_(value) << TC_IER_CPBS_Pos)) /* Assigment of value for CPBS in the TC_IER register */
+#define TC_IER_CPCS_Pos                       _UINT32_(4)                                          /* (TC_IER) RC Compare Position */
+#define TC_IER_CPCS_Msk                       (_UINT32_(0x1) << TC_IER_CPCS_Pos)                   /* (TC_IER) RC Compare Mask */
+#define TC_IER_CPCS(value)                    (TC_IER_CPCS_Msk & (_UINT32_(value) << TC_IER_CPCS_Pos)) /* Assigment of value for CPCS in the TC_IER register */
+#define TC_IER_LDRAS_Pos                      _UINT32_(5)                                          /* (TC_IER) RA Loading Position */
+#define TC_IER_LDRAS_Msk                      (_UINT32_(0x1) << TC_IER_LDRAS_Pos)                  /* (TC_IER) RA Loading Mask */
+#define TC_IER_LDRAS(value)                   (TC_IER_LDRAS_Msk & (_UINT32_(value) << TC_IER_LDRAS_Pos)) /* Assigment of value for LDRAS in the TC_IER register */
+#define TC_IER_LDRBS_Pos                      _UINT32_(6)                                          /* (TC_IER) RB Loading Position */
+#define TC_IER_LDRBS_Msk                      (_UINT32_(0x1) << TC_IER_LDRBS_Pos)                  /* (TC_IER) RB Loading Mask */
+#define TC_IER_LDRBS(value)                   (TC_IER_LDRBS_Msk & (_UINT32_(value) << TC_IER_LDRBS_Pos)) /* Assigment of value for LDRBS in the TC_IER register */
+#define TC_IER_ETRGS_Pos                      _UINT32_(7)                                          /* (TC_IER) External Trigger Position */
+#define TC_IER_ETRGS_Msk                      (_UINT32_(0x1) << TC_IER_ETRGS_Pos)                  /* (TC_IER) External Trigger Mask */
+#define TC_IER_ETRGS(value)                   (TC_IER_ETRGS_Msk & (_UINT32_(value) << TC_IER_ETRGS_Pos)) /* Assigment of value for ETRGS in the TC_IER register */
+#define TC_IER_Msk                            _UINT32_(0x000000FF)                                 /* (TC_IER) Register Mask  */
+
+
+/* -------- TC_IMR : (TC Offset: 0x2C) ( R/ 32) Interrupt Mask Register -------- */
+#define TC_IMR_COVFS_Pos                      _UINT32_(0)                                          /* (TC_IMR) Counter Overflow Position */
+#define TC_IMR_COVFS_Msk                      (_UINT32_(0x1) << TC_IMR_COVFS_Pos)                  /* (TC_IMR) Counter Overflow Mask */
+#define TC_IMR_COVFS(value)                   (TC_IMR_COVFS_Msk & (_UINT32_(value) << TC_IMR_COVFS_Pos)) /* Assigment of value for COVFS in the TC_IMR register */
+#define TC_IMR_LOVRS_Pos                      _UINT32_(1)                                          /* (TC_IMR) Load Overrun Position */
+#define TC_IMR_LOVRS_Msk                      (_UINT32_(0x1) << TC_IMR_LOVRS_Pos)                  /* (TC_IMR) Load Overrun Mask */
+#define TC_IMR_LOVRS(value)                   (TC_IMR_LOVRS_Msk & (_UINT32_(value) << TC_IMR_LOVRS_Pos)) /* Assigment of value for LOVRS in the TC_IMR register */
+#define TC_IMR_CPAS_Pos                       _UINT32_(2)                                          /* (TC_IMR) RA Compare Position */
+#define TC_IMR_CPAS_Msk                       (_UINT32_(0x1) << TC_IMR_CPAS_Pos)                   /* (TC_IMR) RA Compare Mask */
+#define TC_IMR_CPAS(value)                    (TC_IMR_CPAS_Msk & (_UINT32_(value) << TC_IMR_CPAS_Pos)) /* Assigment of value for CPAS in the TC_IMR register */
+#define TC_IMR_CPBS_Pos                       _UINT32_(3)                                          /* (TC_IMR) RB Compare Position */
+#define TC_IMR_CPBS_Msk                       (_UINT32_(0x1) << TC_IMR_CPBS_Pos)                   /* (TC_IMR) RB Compare Mask */
+#define TC_IMR_CPBS(value)                    (TC_IMR_CPBS_Msk & (_UINT32_(value) << TC_IMR_CPBS_Pos)) /* Assigment of value for CPBS in the TC_IMR register */
+#define TC_IMR_CPCS_Pos                       _UINT32_(4)                                          /* (TC_IMR) RC Compare Position */
+#define TC_IMR_CPCS_Msk                       (_UINT32_(0x1) << TC_IMR_CPCS_Pos)                   /* (TC_IMR) RC Compare Mask */
+#define TC_IMR_CPCS(value)                    (TC_IMR_CPCS_Msk & (_UINT32_(value) << TC_IMR_CPCS_Pos)) /* Assigment of value for CPCS in the TC_IMR register */
+#define TC_IMR_LDRAS_Pos                      _UINT32_(5)                                          /* (TC_IMR) RA Loading Position */
+#define TC_IMR_LDRAS_Msk                      (_UINT32_(0x1) << TC_IMR_LDRAS_Pos)                  /* (TC_IMR) RA Loading Mask */
+#define TC_IMR_LDRAS(value)                   (TC_IMR_LDRAS_Msk & (_UINT32_(value) << TC_IMR_LDRAS_Pos)) /* Assigment of value for LDRAS in the TC_IMR register */
+#define TC_IMR_LDRBS_Pos                      _UINT32_(6)                                          /* (TC_IMR) RB Loading Position */
+#define TC_IMR_LDRBS_Msk                      (_UINT32_(0x1) << TC_IMR_LDRBS_Pos)                  /* (TC_IMR) RB Loading Mask */
+#define TC_IMR_LDRBS(value)                   (TC_IMR_LDRBS_Msk & (_UINT32_(value) << TC_IMR_LDRBS_Pos)) /* Assigment of value for LDRBS in the TC_IMR register */
+#define TC_IMR_ETRGS_Pos                      _UINT32_(7)                                          /* (TC_IMR)  Position */
+#define TC_IMR_ETRGS_Msk                      (_UINT32_(0x1) << TC_IMR_ETRGS_Pos)                  /* (TC_IMR)  Mask */
+#define TC_IMR_ETRGS(value)                   (TC_IMR_ETRGS_Msk & (_UINT32_(value) << TC_IMR_ETRGS_Pos)) /* Assigment of value for ETRGS in the TC_IMR register */
+#define TC_IMR_Msk                            _UINT32_(0x000000FF)                                 /* (TC_IMR) Register Mask  */
+
+
 /* -------- TC_RA : (TC Offset: 0x14) (R/W 32) Register A -------- */
 #define TC_RA_RA_Pos                          _UINT32_(0)                                          /* (TC_RA) Register A Position */
 #define TC_RA_RA_Msk                          (_UINT32_(0xFFFFFFFF) << TC_RA_RA_Pos)               /* (TC_RA) Register A Mask */
 #define TC_RA_RA(value)                       (TC_RA_RA_Msk & (_UINT32_(value) << TC_RA_RA_Pos))   /* Assigment of value for RA in the TC_RA register */
 #define TC_RA_Msk                             _UINT32_(0xFFFFFFFF)                                 /* (TC_RA) Register Mask  */
+
+
+/* -------- TC_RAB : (TC Offset: 0x0C) ( R/ 32) Register AB -------- */
+#define TC_RAB_RAB_Pos                        _UINT32_(0)                                          /* (TC_RAB) Register A or Register B Position */
+#define TC_RAB_RAB_Msk                        (_UINT32_(0xFFFFFFFF) << TC_RAB_RAB_Pos)             /* (TC_RAB) Register A or Register B Mask */
+#define TC_RAB_RAB(value)                     (TC_RAB_RAB_Msk & (_UINT32_(value) << TC_RAB_RAB_Pos)) /* Assigment of value for RAB in the TC_RAB register */
+#define TC_RAB_Msk                            _UINT32_(0xFFFFFFFF)                                 /* (TC_RAB) Register Mask  */
 
 
 /* -------- TC_RB : (TC Offset: 0x18) (R/W 32) Register B -------- */
@@ -318,6 +413,16 @@
 #define TC_RC_RC_Msk                          (_UINT32_(0xFFFFFFFF) << TC_RC_RC_Pos)               /* (TC_RC) Register C Mask */
 #define TC_RC_RC(value)                       (TC_RC_RC_Msk & (_UINT32_(value) << TC_RC_RC_Pos))   /* Assigment of value for RC in the TC_RC register */
 #define TC_RC_Msk                             _UINT32_(0xFFFFFFFF)                                 /* (TC_RC) Register Mask  */
+
+
+/* -------- TC_SMMR : (TC Offset: 0x08) (R/W 32) Stepper Motor Mode Register -------- */
+#define TC_SMMR_GCEN_Pos                      _UINT32_(0)                                          /* (TC_SMMR) Gray Count Enable Position */
+#define TC_SMMR_GCEN_Msk                      (_UINT32_(0x1) << TC_SMMR_GCEN_Pos)                  /* (TC_SMMR) Gray Count Enable Mask */
+#define TC_SMMR_GCEN(value)                   (TC_SMMR_GCEN_Msk & (_UINT32_(value) << TC_SMMR_GCEN_Pos)) /* Assigment of value for GCEN in the TC_SMMR register */
+#define TC_SMMR_DOWN_Pos                      _UINT32_(1)                                          /* (TC_SMMR) Down Count Position */
+#define TC_SMMR_DOWN_Msk                      (_UINT32_(0x1) << TC_SMMR_DOWN_Pos)                  /* (TC_SMMR) Down Count Mask */
+#define TC_SMMR_DOWN(value)                   (TC_SMMR_DOWN_Msk & (_UINT32_(value) << TC_SMMR_DOWN_Pos)) /* Assigment of value for DOWN in the TC_SMMR register */
+#define TC_SMMR_Msk                           _UINT32_(0x00000003)                                 /* (TC_SMMR) Register Mask  */
 
 
 /* -------- TC_SR : (TC Offset: 0x20) ( R/ 32) Interrupt Status Register -------- */
@@ -355,111 +460,6 @@
 #define TC_SR_MTIOB_Msk                       (_UINT32_(0x1) << TC_SR_MTIOB_Pos)                   /* (TC_SR) TIOBx Mirror Mask */
 #define TC_SR_MTIOB(value)                    (TC_SR_MTIOB_Msk & (_UINT32_(value) << TC_SR_MTIOB_Pos)) /* Assigment of value for MTIOB in the TC_SR register */
 #define TC_SR_Msk                             _UINT32_(0x000700FF)                                 /* (TC_SR) Register Mask  */
-
-
-/* -------- TC_IER : (TC Offset: 0x24) ( /W 32) Interrupt Enable Register -------- */
-#define TC_IER_COVFS_Pos                      _UINT32_(0)                                          /* (TC_IER) Counter Overflow Position */
-#define TC_IER_COVFS_Msk                      (_UINT32_(0x1) << TC_IER_COVFS_Pos)                  /* (TC_IER) Counter Overflow Mask */
-#define TC_IER_COVFS(value)                   (TC_IER_COVFS_Msk & (_UINT32_(value) << TC_IER_COVFS_Pos)) /* Assigment of value for COVFS in the TC_IER register */
-#define TC_IER_LOVRS_Pos                      _UINT32_(1)                                          /* (TC_IER) Load Overrun Position */
-#define TC_IER_LOVRS_Msk                      (_UINT32_(0x1) << TC_IER_LOVRS_Pos)                  /* (TC_IER) Load Overrun Mask */
-#define TC_IER_LOVRS(value)                   (TC_IER_LOVRS_Msk & (_UINT32_(value) << TC_IER_LOVRS_Pos)) /* Assigment of value for LOVRS in the TC_IER register */
-#define TC_IER_CPAS_Pos                       _UINT32_(2)                                          /* (TC_IER) RA Compare Position */
-#define TC_IER_CPAS_Msk                       (_UINT32_(0x1) << TC_IER_CPAS_Pos)                   /* (TC_IER) RA Compare Mask */
-#define TC_IER_CPAS(value)                    (TC_IER_CPAS_Msk & (_UINT32_(value) << TC_IER_CPAS_Pos)) /* Assigment of value for CPAS in the TC_IER register */
-#define TC_IER_CPBS_Pos                       _UINT32_(3)                                          /* (TC_IER) RB Compare Position */
-#define TC_IER_CPBS_Msk                       (_UINT32_(0x1) << TC_IER_CPBS_Pos)                   /* (TC_IER) RB Compare Mask */
-#define TC_IER_CPBS(value)                    (TC_IER_CPBS_Msk & (_UINT32_(value) << TC_IER_CPBS_Pos)) /* Assigment of value for CPBS in the TC_IER register */
-#define TC_IER_CPCS_Pos                       _UINT32_(4)                                          /* (TC_IER) RC Compare Position */
-#define TC_IER_CPCS_Msk                       (_UINT32_(0x1) << TC_IER_CPCS_Pos)                   /* (TC_IER) RC Compare Mask */
-#define TC_IER_CPCS(value)                    (TC_IER_CPCS_Msk & (_UINT32_(value) << TC_IER_CPCS_Pos)) /* Assigment of value for CPCS in the TC_IER register */
-#define TC_IER_LDRAS_Pos                      _UINT32_(5)                                          /* (TC_IER) RA Loading Position */
-#define TC_IER_LDRAS_Msk                      (_UINT32_(0x1) << TC_IER_LDRAS_Pos)                  /* (TC_IER) RA Loading Mask */
-#define TC_IER_LDRAS(value)                   (TC_IER_LDRAS_Msk & (_UINT32_(value) << TC_IER_LDRAS_Pos)) /* Assigment of value for LDRAS in the TC_IER register */
-#define TC_IER_LDRBS_Pos                      _UINT32_(6)                                          /* (TC_IER) RB Loading Position */
-#define TC_IER_LDRBS_Msk                      (_UINT32_(0x1) << TC_IER_LDRBS_Pos)                  /* (TC_IER) RB Loading Mask */
-#define TC_IER_LDRBS(value)                   (TC_IER_LDRBS_Msk & (_UINT32_(value) << TC_IER_LDRBS_Pos)) /* Assigment of value for LDRBS in the TC_IER register */
-#define TC_IER_ETRGS_Pos                      _UINT32_(7)                                          /* (TC_IER) External Trigger Position */
-#define TC_IER_ETRGS_Msk                      (_UINT32_(0x1) << TC_IER_ETRGS_Pos)                  /* (TC_IER) External Trigger Mask */
-#define TC_IER_ETRGS(value)                   (TC_IER_ETRGS_Msk & (_UINT32_(value) << TC_IER_ETRGS_Pos)) /* Assigment of value for ETRGS in the TC_IER register */
-#define TC_IER_Msk                            _UINT32_(0x000000FF)                                 /* (TC_IER) Register Mask  */
-
-
-/* -------- TC_IDR : (TC Offset: 0x28) ( /W 32) Interrupt Disable Register -------- */
-#define TC_IDR_COVFS_Pos                      _UINT32_(0)                                          /* (TC_IDR) Counter Overflow Position */
-#define TC_IDR_COVFS_Msk                      (_UINT32_(0x1) << TC_IDR_COVFS_Pos)                  /* (TC_IDR) Counter Overflow Mask */
-#define TC_IDR_COVFS(value)                   (TC_IDR_COVFS_Msk & (_UINT32_(value) << TC_IDR_COVFS_Pos)) /* Assigment of value for COVFS in the TC_IDR register */
-#define TC_IDR_LOVRS_Pos                      _UINT32_(1)                                          /* (TC_IDR) Load Overrun Position */
-#define TC_IDR_LOVRS_Msk                      (_UINT32_(0x1) << TC_IDR_LOVRS_Pos)                  /* (TC_IDR) Load Overrun Mask */
-#define TC_IDR_LOVRS(value)                   (TC_IDR_LOVRS_Msk & (_UINT32_(value) << TC_IDR_LOVRS_Pos)) /* Assigment of value for LOVRS in the TC_IDR register */
-#define TC_IDR_CPAS_Pos                       _UINT32_(2)                                          /* (TC_IDR) RA Compare Position */
-#define TC_IDR_CPAS_Msk                       (_UINT32_(0x1) << TC_IDR_CPAS_Pos)                   /* (TC_IDR) RA Compare Mask */
-#define TC_IDR_CPAS(value)                    (TC_IDR_CPAS_Msk & (_UINT32_(value) << TC_IDR_CPAS_Pos)) /* Assigment of value for CPAS in the TC_IDR register */
-#define TC_IDR_CPBS_Pos                       _UINT32_(3)                                          /* (TC_IDR) RB Compare Position */
-#define TC_IDR_CPBS_Msk                       (_UINT32_(0x1) << TC_IDR_CPBS_Pos)                   /* (TC_IDR) RB Compare Mask */
-#define TC_IDR_CPBS(value)                    (TC_IDR_CPBS_Msk & (_UINT32_(value) << TC_IDR_CPBS_Pos)) /* Assigment of value for CPBS in the TC_IDR register */
-#define TC_IDR_CPCS_Pos                       _UINT32_(4)                                          /* (TC_IDR) RC Compare Position */
-#define TC_IDR_CPCS_Msk                       (_UINT32_(0x1) << TC_IDR_CPCS_Pos)                   /* (TC_IDR) RC Compare Mask */
-#define TC_IDR_CPCS(value)                    (TC_IDR_CPCS_Msk & (_UINT32_(value) << TC_IDR_CPCS_Pos)) /* Assigment of value for CPCS in the TC_IDR register */
-#define TC_IDR_LDRAS_Pos                      _UINT32_(5)                                          /* (TC_IDR) RA Loading Position */
-#define TC_IDR_LDRAS_Msk                      (_UINT32_(0x1) << TC_IDR_LDRAS_Pos)                  /* (TC_IDR) RA Loading Mask */
-#define TC_IDR_LDRAS(value)                   (TC_IDR_LDRAS_Msk & (_UINT32_(value) << TC_IDR_LDRAS_Pos)) /* Assigment of value for LDRAS in the TC_IDR register */
-#define TC_IDR_LDRBS_Pos                      _UINT32_(6)                                          /* (TC_IDR) RB Loading Position */
-#define TC_IDR_LDRBS_Msk                      (_UINT32_(0x1) << TC_IDR_LDRBS_Pos)                  /* (TC_IDR) RB Loading Mask */
-#define TC_IDR_LDRBS(value)                   (TC_IDR_LDRBS_Msk & (_UINT32_(value) << TC_IDR_LDRBS_Pos)) /* Assigment of value for LDRBS in the TC_IDR register */
-#define TC_IDR_ETRGS_Pos                      _UINT32_(7)                                          /* (TC_IDR) External Trigger Position */
-#define TC_IDR_ETRGS_Msk                      (_UINT32_(0x1) << TC_IDR_ETRGS_Pos)                  /* (TC_IDR) External Trigger Mask */
-#define TC_IDR_ETRGS(value)                   (TC_IDR_ETRGS_Msk & (_UINT32_(value) << TC_IDR_ETRGS_Pos)) /* Assigment of value for ETRGS in the TC_IDR register */
-#define TC_IDR_Msk                            _UINT32_(0x000000FF)                                 /* (TC_IDR) Register Mask  */
-
-
-/* -------- TC_IMR : (TC Offset: 0x2C) ( R/ 32) Interrupt Mask Register -------- */
-#define TC_IMR_COVFS_Pos                      _UINT32_(0)                                          /* (TC_IMR) Counter Overflow Position */
-#define TC_IMR_COVFS_Msk                      (_UINT32_(0x1) << TC_IMR_COVFS_Pos)                  /* (TC_IMR) Counter Overflow Mask */
-#define TC_IMR_COVFS(value)                   (TC_IMR_COVFS_Msk & (_UINT32_(value) << TC_IMR_COVFS_Pos)) /* Assigment of value for COVFS in the TC_IMR register */
-#define TC_IMR_LOVRS_Pos                      _UINT32_(1)                                          /* (TC_IMR) Load Overrun Position */
-#define TC_IMR_LOVRS_Msk                      (_UINT32_(0x1) << TC_IMR_LOVRS_Pos)                  /* (TC_IMR) Load Overrun Mask */
-#define TC_IMR_LOVRS(value)                   (TC_IMR_LOVRS_Msk & (_UINT32_(value) << TC_IMR_LOVRS_Pos)) /* Assigment of value for LOVRS in the TC_IMR register */
-#define TC_IMR_CPAS_Pos                       _UINT32_(2)                                          /* (TC_IMR) RA Compare Position */
-#define TC_IMR_CPAS_Msk                       (_UINT32_(0x1) << TC_IMR_CPAS_Pos)                   /* (TC_IMR) RA Compare Mask */
-#define TC_IMR_CPAS(value)                    (TC_IMR_CPAS_Msk & (_UINT32_(value) << TC_IMR_CPAS_Pos)) /* Assigment of value for CPAS in the TC_IMR register */
-#define TC_IMR_CPBS_Pos                       _UINT32_(3)                                          /* (TC_IMR) RB Compare Position */
-#define TC_IMR_CPBS_Msk                       (_UINT32_(0x1) << TC_IMR_CPBS_Pos)                   /* (TC_IMR) RB Compare Mask */
-#define TC_IMR_CPBS(value)                    (TC_IMR_CPBS_Msk & (_UINT32_(value) << TC_IMR_CPBS_Pos)) /* Assigment of value for CPBS in the TC_IMR register */
-#define TC_IMR_CPCS_Pos                       _UINT32_(4)                                          /* (TC_IMR) RC Compare Position */
-#define TC_IMR_CPCS_Msk                       (_UINT32_(0x1) << TC_IMR_CPCS_Pos)                   /* (TC_IMR) RC Compare Mask */
-#define TC_IMR_CPCS(value)                    (TC_IMR_CPCS_Msk & (_UINT32_(value) << TC_IMR_CPCS_Pos)) /* Assigment of value for CPCS in the TC_IMR register */
-#define TC_IMR_LDRAS_Pos                      _UINT32_(5)                                          /* (TC_IMR) RA Loading Position */
-#define TC_IMR_LDRAS_Msk                      (_UINT32_(0x1) << TC_IMR_LDRAS_Pos)                  /* (TC_IMR) RA Loading Mask */
-#define TC_IMR_LDRAS(value)                   (TC_IMR_LDRAS_Msk & (_UINT32_(value) << TC_IMR_LDRAS_Pos)) /* Assigment of value for LDRAS in the TC_IMR register */
-#define TC_IMR_LDRBS_Pos                      _UINT32_(6)                                          /* (TC_IMR) RB Loading Position */
-#define TC_IMR_LDRBS_Msk                      (_UINT32_(0x1) << TC_IMR_LDRBS_Pos)                  /* (TC_IMR) RB Loading Mask */
-#define TC_IMR_LDRBS(value)                   (TC_IMR_LDRBS_Msk & (_UINT32_(value) << TC_IMR_LDRBS_Pos)) /* Assigment of value for LDRBS in the TC_IMR register */
-#define TC_IMR_ETRGS_Pos                      _UINT32_(7)                                          /* (TC_IMR)  Position */
-#define TC_IMR_ETRGS_Msk                      (_UINT32_(0x1) << TC_IMR_ETRGS_Pos)                  /* (TC_IMR)  Mask */
-#define TC_IMR_ETRGS(value)                   (TC_IMR_ETRGS_Msk & (_UINT32_(value) << TC_IMR_ETRGS_Pos)) /* Assigment of value for ETRGS in the TC_IMR register */
-#define TC_IMR_Msk                            _UINT32_(0x000000FF)                                 /* (TC_IMR) Register Mask  */
-
-
-/* -------- TC_EMR : (TC Offset: 0x30) (R/W 32) Extended Mode Register -------- */
-#define TC_EMR_TRIGSRCA_Pos                   _UINT32_(0)                                          /* (TC_EMR) Trigger Source for Input A Position */
-#define TC_EMR_TRIGSRCA_Msk                   (_UINT32_(0x3) << TC_EMR_TRIGSRCA_Pos)               /* (TC_EMR) Trigger Source for Input A Mask */
-#define TC_EMR_TRIGSRCA(value)                (TC_EMR_TRIGSRCA_Msk & (_UINT32_(value) << TC_EMR_TRIGSRCA_Pos)) /* Assigment of value for TRIGSRCA in the TC_EMR register */
-#define   TC_EMR_TRIGSRCA_EXTERNAL_TIOAx_Val  _UINT32_(0x0)                                        /* (TC_EMR) The trigger/capture input A is driven by external pin TIOAx  */
-#define   TC_EMR_TRIGSRCA_PWMx_Val            _UINT32_(0x1)                                        /* (TC_EMR) The trigger/capture input A is driven internally by PWMx  */
-#define TC_EMR_TRIGSRCA_EXTERNAL_TIOAx        (TC_EMR_TRIGSRCA_EXTERNAL_TIOAx_Val << TC_EMR_TRIGSRCA_Pos) /* (TC_EMR) The trigger/capture input A is driven by external pin TIOAx Position  */
-#define TC_EMR_TRIGSRCA_PWMx                  (TC_EMR_TRIGSRCA_PWMx_Val << TC_EMR_TRIGSRCA_Pos)    /* (TC_EMR) The trigger/capture input A is driven internally by PWMx Position  */
-#define TC_EMR_TRIGSRCB_Pos                   _UINT32_(4)                                          /* (TC_EMR) Trigger Source for Input B Position */
-#define TC_EMR_TRIGSRCB_Msk                   (_UINT32_(0x3) << TC_EMR_TRIGSRCB_Pos)               /* (TC_EMR) Trigger Source for Input B Mask */
-#define TC_EMR_TRIGSRCB(value)                (TC_EMR_TRIGSRCB_Msk & (_UINT32_(value) << TC_EMR_TRIGSRCB_Pos)) /* Assigment of value for TRIGSRCB in the TC_EMR register */
-#define   TC_EMR_TRIGSRCB_EXTERNAL_TIOBx_Val  _UINT32_(0x0)                                        /* (TC_EMR) The trigger/capture input B is driven by external pin TIOBx  */
-#define   TC_EMR_TRIGSRCB_PWMx_Val            _UINT32_(0x1)                                        /* (TC_EMR) For TC0 to TC10: The trigger/capture input B is driven internally by the comparator output (see Figure 7-16) of the PWMx.For TC11: The trigger/capture input B is driven internally by the GTSUCOMP signal of the Ethernet MAC (GMAC).  */
-#define TC_EMR_TRIGSRCB_EXTERNAL_TIOBx        (TC_EMR_TRIGSRCB_EXTERNAL_TIOBx_Val << TC_EMR_TRIGSRCB_Pos) /* (TC_EMR) The trigger/capture input B is driven by external pin TIOBx Position  */
-#define TC_EMR_TRIGSRCB_PWMx                  (TC_EMR_TRIGSRCB_PWMx_Val << TC_EMR_TRIGSRCB_Pos)    /* (TC_EMR) For TC0 to TC10: The trigger/capture input B is driven internally by the comparator output (see Figure 7-16) of the PWMx.For TC11: The trigger/capture input B is driven internally by the GTSUCOMP signal of the Ethernet MAC (GMAC). Position  */
-#define TC_EMR_NODIVCLK_Pos                   _UINT32_(8)                                          /* (TC_EMR) No Divided Clock Position */
-#define TC_EMR_NODIVCLK_Msk                   (_UINT32_(0x1) << TC_EMR_NODIVCLK_Pos)               /* (TC_EMR) No Divided Clock Mask */
-#define TC_EMR_NODIVCLK(value)                (TC_EMR_NODIVCLK_Msk & (_UINT32_(value) << TC_EMR_NODIVCLK_Pos)) /* Assigment of value for NODIVCLK in the TC_EMR register */
-#define TC_EMR_Msk                            _UINT32_(0x00000133)                                 /* (TC_EMR) Register Mask  */
 
 
 /* -------- TC_BCR : (TC Offset: 0xC0) ( /W 32) Block Control Register -------- */
@@ -543,21 +543,18 @@
 #define TC_BMR_Msk                            _UINT32_(0x3FF7FF3F)                                 /* (TC_BMR) Register Mask  */
 
 
-/* -------- TC_QIER : (TC Offset: 0xC8) ( /W 32) QDEC Interrupt Enable Register -------- */
-#define TC_QIER_IDX_Pos                       _UINT32_(0)                                          /* (TC_QIER) Index Position */
-#define TC_QIER_IDX_Msk                       (_UINT32_(0x1) << TC_QIER_IDX_Pos)                   /* (TC_QIER) Index Mask */
-#define TC_QIER_IDX(value)                    (TC_QIER_IDX_Msk & (_UINT32_(value) << TC_QIER_IDX_Pos)) /* Assigment of value for IDX in the TC_QIER register */
-#define TC_QIER_DIRCHG_Pos                    _UINT32_(1)                                          /* (TC_QIER) Direction Change Position */
-#define TC_QIER_DIRCHG_Msk                    (_UINT32_(0x1) << TC_QIER_DIRCHG_Pos)                /* (TC_QIER) Direction Change Mask */
-#define TC_QIER_DIRCHG(value)                 (TC_QIER_DIRCHG_Msk & (_UINT32_(value) << TC_QIER_DIRCHG_Pos)) /* Assigment of value for DIRCHG in the TC_QIER register */
-#define TC_QIER_QERR_Pos                      _UINT32_(2)                                          /* (TC_QIER) Quadrature Error Position */
-#define TC_QIER_QERR_Msk                      (_UINT32_(0x1) << TC_QIER_QERR_Pos)                  /* (TC_QIER) Quadrature Error Mask */
-#define TC_QIER_QERR(value)                   (TC_QIER_QERR_Msk & (_UINT32_(value) << TC_QIER_QERR_Pos)) /* Assigment of value for QERR in the TC_QIER register */
-#define TC_QIER_MPE_Pos                       _UINT32_(3)                                          /* (TC_QIER) Consecutive Missing Pulse Error Position */
-#define TC_QIER_MPE_Msk                       (_UINT32_(0x1) << TC_QIER_MPE_Pos)                   /* (TC_QIER) Consecutive Missing Pulse Error Mask */
-#define TC_QIER_MPE(value)                    (TC_QIER_MPE_Msk & (_UINT32_(value) << TC_QIER_MPE_Pos)) /* Assigment of value for MPE in the TC_QIER register */
-#define TC_QIER_Msk                           _UINT32_(0x0000000F)                                 /* (TC_QIER) Register Mask  */
+/* -------- TC_FMR : (TC Offset: 0xD8) (R/W 32) Fault Mode Register -------- */
+#define TC_FMR_ENCF0_Pos                      _UINT32_(0)                                          /* (TC_FMR) Enable Compare Fault Channel 0 Position */
+#define TC_FMR_ENCF0_Msk                      (_UINT32_(0x1) << TC_FMR_ENCF0_Pos)                  /* (TC_FMR) Enable Compare Fault Channel 0 Mask */
+#define TC_FMR_ENCF0(value)                   (TC_FMR_ENCF0_Msk & (_UINT32_(value) << TC_FMR_ENCF0_Pos)) /* Assigment of value for ENCF0 in the TC_FMR register */
+#define TC_FMR_ENCF1_Pos                      _UINT32_(1)                                          /* (TC_FMR) Enable Compare Fault Channel 1 Position */
+#define TC_FMR_ENCF1_Msk                      (_UINT32_(0x1) << TC_FMR_ENCF1_Pos)                  /* (TC_FMR) Enable Compare Fault Channel 1 Mask */
+#define TC_FMR_ENCF1(value)                   (TC_FMR_ENCF1_Msk & (_UINT32_(value) << TC_FMR_ENCF1_Pos)) /* Assigment of value for ENCF1 in the TC_FMR register */
+#define TC_FMR_Msk                            _UINT32_(0x00000003)                                 /* (TC_FMR) Register Mask  */
 
+#define TC_FMR_ENCF_Pos                       _UINT32_(0)                                          /* (TC_FMR Position) Enable Compare Fault Channel x */
+#define TC_FMR_ENCF_Msk                       (_UINT32_(0x3) << TC_FMR_ENCF_Pos)                   /* (TC_FMR Mask) ENCF */
+#define TC_FMR_ENCF(value)                    (TC_FMR_ENCF_Msk & (_UINT32_(value) << TC_FMR_ENCF_Pos)) 
 
 /* -------- TC_QIDR : (TC Offset: 0xCC) ( /W 32) QDEC Interrupt Disable Register -------- */
 #define TC_QIDR_IDX_Pos                       _UINT32_(0)                                          /* (TC_QIDR) Index Position */
@@ -573,6 +570,22 @@
 #define TC_QIDR_MPE_Msk                       (_UINT32_(0x1) << TC_QIDR_MPE_Pos)                   /* (TC_QIDR) Consecutive Missing Pulse Error Mask */
 #define TC_QIDR_MPE(value)                    (TC_QIDR_MPE_Msk & (_UINT32_(value) << TC_QIDR_MPE_Pos)) /* Assigment of value for MPE in the TC_QIDR register */
 #define TC_QIDR_Msk                           _UINT32_(0x0000000F)                                 /* (TC_QIDR) Register Mask  */
+
+
+/* -------- TC_QIER : (TC Offset: 0xC8) ( /W 32) QDEC Interrupt Enable Register -------- */
+#define TC_QIER_IDX_Pos                       _UINT32_(0)                                          /* (TC_QIER) Index Position */
+#define TC_QIER_IDX_Msk                       (_UINT32_(0x1) << TC_QIER_IDX_Pos)                   /* (TC_QIER) Index Mask */
+#define TC_QIER_IDX(value)                    (TC_QIER_IDX_Msk & (_UINT32_(value) << TC_QIER_IDX_Pos)) /* Assigment of value for IDX in the TC_QIER register */
+#define TC_QIER_DIRCHG_Pos                    _UINT32_(1)                                          /* (TC_QIER) Direction Change Position */
+#define TC_QIER_DIRCHG_Msk                    (_UINT32_(0x1) << TC_QIER_DIRCHG_Pos)                /* (TC_QIER) Direction Change Mask */
+#define TC_QIER_DIRCHG(value)                 (TC_QIER_DIRCHG_Msk & (_UINT32_(value) << TC_QIER_DIRCHG_Pos)) /* Assigment of value for DIRCHG in the TC_QIER register */
+#define TC_QIER_QERR_Pos                      _UINT32_(2)                                          /* (TC_QIER) Quadrature Error Position */
+#define TC_QIER_QERR_Msk                      (_UINT32_(0x1) << TC_QIER_QERR_Pos)                  /* (TC_QIER) Quadrature Error Mask */
+#define TC_QIER_QERR(value)                   (TC_QIER_QERR_Msk & (_UINT32_(value) << TC_QIER_QERR_Pos)) /* Assigment of value for QERR in the TC_QIER register */
+#define TC_QIER_MPE_Pos                       _UINT32_(3)                                          /* (TC_QIER) Consecutive Missing Pulse Error Position */
+#define TC_QIER_MPE_Msk                       (_UINT32_(0x1) << TC_QIER_MPE_Pos)                   /* (TC_QIER) Consecutive Missing Pulse Error Mask */
+#define TC_QIER_MPE(value)                    (TC_QIER_MPE_Msk & (_UINT32_(value) << TC_QIER_MPE_Pos)) /* Assigment of value for MPE in the TC_QIER register */
+#define TC_QIER_Msk                           _UINT32_(0x0000000F)                                 /* (TC_QIER) Register Mask  */
 
 
 /* -------- TC_QIMR : (TC Offset: 0xD0) ( R/ 32) QDEC Interrupt Mask Register -------- */
@@ -610,19 +623,6 @@
 #define TC_QISR_Msk                           _UINT32_(0x0000010F)                                 /* (TC_QISR) Register Mask  */
 
 
-/* -------- TC_FMR : (TC Offset: 0xD8) (R/W 32) Fault Mode Register -------- */
-#define TC_FMR_ENCF0_Pos                      _UINT32_(0)                                          /* (TC_FMR) Enable Compare Fault Channel 0 Position */
-#define TC_FMR_ENCF0_Msk                      (_UINT32_(0x1) << TC_FMR_ENCF0_Pos)                  /* (TC_FMR) Enable Compare Fault Channel 0 Mask */
-#define TC_FMR_ENCF0(value)                   (TC_FMR_ENCF0_Msk & (_UINT32_(value) << TC_FMR_ENCF0_Pos)) /* Assigment of value for ENCF0 in the TC_FMR register */
-#define TC_FMR_ENCF1_Pos                      _UINT32_(1)                                          /* (TC_FMR) Enable Compare Fault Channel 1 Position */
-#define TC_FMR_ENCF1_Msk                      (_UINT32_(0x1) << TC_FMR_ENCF1_Pos)                  /* (TC_FMR) Enable Compare Fault Channel 1 Mask */
-#define TC_FMR_ENCF1(value)                   (TC_FMR_ENCF1_Msk & (_UINT32_(value) << TC_FMR_ENCF1_Pos)) /* Assigment of value for ENCF1 in the TC_FMR register */
-#define TC_FMR_Msk                            _UINT32_(0x00000003)                                 /* (TC_FMR) Register Mask  */
-
-#define TC_FMR_ENCF_Pos                       _UINT32_(0)                                          /* (TC_FMR Position) Enable Compare Fault Channel x */
-#define TC_FMR_ENCF_Msk                       (_UINT32_(0x3) << TC_FMR_ENCF_Pos)                   /* (TC_FMR Mask) ENCF */
-#define TC_FMR_ENCF(value)                    (TC_FMR_ENCF_Msk & (_UINT32_(value) << TC_FMR_ENCF_Pos)) 
-
 /* -------- TC_WPMR : (TC Offset: 0xE4) (R/W 32) Write Protection Mode Register -------- */
 #define TC_WPMR_WPEN_Pos                      _UINT32_(0)                                          /* (TC_WPMR) Write Protection Enable Position */
 #define TC_WPMR_WPEN_Msk                      (_UINT32_(0x1) << TC_WPMR_WPEN_Pos)                  /* (TC_WPMR) Write Protection Enable Mask */
@@ -638,24 +638,24 @@
 /** \brief TC register offsets definitions */
 #define TC_CCR_REG_OFST                _UINT32_(0x00)      /* (TC_CCR) Channel Control Register Offset */
 #define TC_CMR_REG_OFST                _UINT32_(0x04)      /* (TC_CMR) Channel Mode Register Offset */
-#define TC_SMMR_REG_OFST               _UINT32_(0x08)      /* (TC_SMMR) Stepper Motor Mode Register Offset */
-#define TC_RAB_REG_OFST                _UINT32_(0x0C)      /* (TC_RAB) Register AB Offset */
 #define TC_CV_REG_OFST                 _UINT32_(0x10)      /* (TC_CV) Counter Value Offset */
+#define TC_EMR_REG_OFST                _UINT32_(0x30)      /* (TC_EMR) Extended Mode Register Offset */
+#define TC_IDR_REG_OFST                _UINT32_(0x28)      /* (TC_IDR) Interrupt Disable Register Offset */
+#define TC_IER_REG_OFST                _UINT32_(0x24)      /* (TC_IER) Interrupt Enable Register Offset */
+#define TC_IMR_REG_OFST                _UINT32_(0x2C)      /* (TC_IMR) Interrupt Mask Register Offset */
 #define TC_RA_REG_OFST                 _UINT32_(0x14)      /* (TC_RA) Register A Offset */
+#define TC_RAB_REG_OFST                _UINT32_(0x0C)      /* (TC_RAB) Register AB Offset */
 #define TC_RB_REG_OFST                 _UINT32_(0x18)      /* (TC_RB) Register B Offset */
 #define TC_RC_REG_OFST                 _UINT32_(0x1C)      /* (TC_RC) Register C Offset */
+#define TC_SMMR_REG_OFST               _UINT32_(0x08)      /* (TC_SMMR) Stepper Motor Mode Register Offset */
 #define TC_SR_REG_OFST                 _UINT32_(0x20)      /* (TC_SR) Interrupt Status Register Offset */
-#define TC_IER_REG_OFST                _UINT32_(0x24)      /* (TC_IER) Interrupt Enable Register Offset */
-#define TC_IDR_REG_OFST                _UINT32_(0x28)      /* (TC_IDR) Interrupt Disable Register Offset */
-#define TC_IMR_REG_OFST                _UINT32_(0x2C)      /* (TC_IMR) Interrupt Mask Register Offset */
-#define TC_EMR_REG_OFST                _UINT32_(0x30)      /* (TC_EMR) Extended Mode Register Offset */
 #define TC_BCR_REG_OFST                _UINT32_(0xC0)      /* (TC_BCR) Block Control Register Offset */
 #define TC_BMR_REG_OFST                _UINT32_(0xC4)      /* (TC_BMR) Block Mode Register Offset */
-#define TC_QIER_REG_OFST               _UINT32_(0xC8)      /* (TC_QIER) QDEC Interrupt Enable Register Offset */
+#define TC_FMR_REG_OFST                _UINT32_(0xD8)      /* (TC_FMR) Fault Mode Register Offset */
 #define TC_QIDR_REG_OFST               _UINT32_(0xCC)      /* (TC_QIDR) QDEC Interrupt Disable Register Offset */
+#define TC_QIER_REG_OFST               _UINT32_(0xC8)      /* (TC_QIER) QDEC Interrupt Enable Register Offset */
 #define TC_QIMR_REG_OFST               _UINT32_(0xD0)      /* (TC_QIMR) QDEC Interrupt Mask Register Offset */
 #define TC_QISR_REG_OFST               _UINT32_(0xD4)      /* (TC_QISR) QDEC Interrupt Status Register Offset */
-#define TC_FMR_REG_OFST                _UINT32_(0xD8)      /* (TC_FMR) Fault Mode Register Offset */
 #define TC_WPMR_REG_OFST               _UINT32_(0xE4)      /* (TC_WPMR) Write Protection Mode Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
