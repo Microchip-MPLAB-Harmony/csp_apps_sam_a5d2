@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for UDPHS peripheral ========== */
-#define UDPHS_INSTANCE_ID                        (42)       
 #define UDPHS_CLOCK_ID                           (42)       
+#define UDPHS_INSTANCE_ID                        (42)       
 
 #endif /* _SAMA5D_UDPHS_INSTANCE_ */

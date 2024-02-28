@@ -45,6 +45,25 @@
 #define PTC_CMD_Msk                           _UINT8_(0x0F)                                        /* (PTC_CMD) Register Mask  */
 
 
+/* -------- PTC_IED : (PTC Offset: 0x35) ( /W 8) PTC Enable Register -------- */
+#define PTC_IED_IER0_Pos                      _UINT8_(4)                                           /* (PTC_IED) IER0 Position */
+#define PTC_IED_IER0_Msk                      (_UINT8_(0x1) << PTC_IED_IER0_Pos)                   /* (PTC_IED) IER0 Mask */
+#define PTC_IED_IER0(value)                   (PTC_IED_IER0_Msk & (_UINT8_(value) << PTC_IED_IER0_Pos)) /* Assigment of value for IER0 in the PTC_IED register */
+#define PTC_IED_IER1_Pos                      _UINT8_(5)                                           /* (PTC_IED) IER1 Position */
+#define PTC_IED_IER1_Msk                      (_UINT8_(0x1) << PTC_IED_IER1_Pos)                   /* (PTC_IED) IER1 Mask */
+#define PTC_IED_IER1(value)                   (PTC_IED_IER1_Msk & (_UINT8_(value) << PTC_IED_IER1_Pos)) /* Assigment of value for IER1 in the PTC_IED register */
+#define PTC_IED_IER2_Pos                      _UINT8_(6)                                           /* (PTC_IED) IER2 Position */
+#define PTC_IED_IER2_Msk                      (_UINT8_(0x1) << PTC_IED_IER2_Pos)                   /* (PTC_IED) IER2 Mask */
+#define PTC_IED_IER2(value)                   (PTC_IED_IER2_Msk & (_UINT8_(value) << PTC_IED_IER2_Pos)) /* Assigment of value for IER2 in the PTC_IED register */
+#define PTC_IED_IER3_Pos                      _UINT8_(7)                                           /* (PTC_IED) IER3 Position */
+#define PTC_IED_IER3_Msk                      (_UINT8_(0x1) << PTC_IED_IER3_Pos)                   /* (PTC_IED) IER3 Mask */
+#define PTC_IED_IER3(value)                   (PTC_IED_IER3_Msk & (_UINT8_(value) << PTC_IED_IER3_Pos)) /* Assigment of value for IER3 in the PTC_IED register */
+#define PTC_IED_Msk                           _UINT8_(0xF0)                                        /* (PTC_IED) Register Mask  */
+
+#define PTC_IED_IER_Pos                       _UINT8_(4)                                           /* (PTC_IED Position) IER3 */
+#define PTC_IED_IER_Msk                       (_UINT8_(0xF) << PTC_IED_IER_Pos)                    /* (PTC_IED Mask) IER */
+#define PTC_IED_IER(value)                    (PTC_IED_IER_Msk & (_UINT8_(value) << PTC_IED_IER_Pos)) 
+
 /* -------- PTC_ISR : (PTC Offset: 0x30) (R/W 8) PTC Interrupt Status Register -------- */
 #define PTC_ISR_NOTIFY0_Pos                   _UINT8_(0)                                           /* (PTC_ISR) Notification to the Firmware Position */
 #define PTC_ISR_NOTIFY0_Msk                   (_UINT8_(0x1) << PTC_ISR_NOTIFY0_Pos)                /* (PTC_ISR) Notification to the Firmware Mask */
@@ -70,29 +89,10 @@
 #define PTC_ISR_IRQ_Msk                       (_UINT8_(0xF) << PTC_ISR_IRQ_Pos)                    /* (PTC_ISR Mask) IRQ */
 #define PTC_ISR_IRQ(value)                    (PTC_ISR_IRQ_Msk & (_UINT8_(value) << PTC_ISR_IRQ_Pos)) 
 
-/* -------- PTC_IED : (PTC Offset: 0x35) ( /W 8) PTC Enable Register -------- */
-#define PTC_IED_IER0_Pos                      _UINT8_(4)                                           /* (PTC_IED) IER0 Position */
-#define PTC_IED_IER0_Msk                      (_UINT8_(0x1) << PTC_IED_IER0_Pos)                   /* (PTC_IED) IER0 Mask */
-#define PTC_IED_IER0(value)                   (PTC_IED_IER0_Msk & (_UINT8_(value) << PTC_IED_IER0_Pos)) /* Assigment of value for IER0 in the PTC_IED register */
-#define PTC_IED_IER1_Pos                      _UINT8_(5)                                           /* (PTC_IED) IER1 Position */
-#define PTC_IED_IER1_Msk                      (_UINT8_(0x1) << PTC_IED_IER1_Pos)                   /* (PTC_IED) IER1 Mask */
-#define PTC_IED_IER1(value)                   (PTC_IED_IER1_Msk & (_UINT8_(value) << PTC_IED_IER1_Pos)) /* Assigment of value for IER1 in the PTC_IED register */
-#define PTC_IED_IER2_Pos                      _UINT8_(6)                                           /* (PTC_IED) IER2 Position */
-#define PTC_IED_IER2_Msk                      (_UINT8_(0x1) << PTC_IED_IER2_Pos)                   /* (PTC_IED) IER2 Mask */
-#define PTC_IED_IER2(value)                   (PTC_IED_IER2_Msk & (_UINT8_(value) << PTC_IED_IER2_Pos)) /* Assigment of value for IER2 in the PTC_IED register */
-#define PTC_IED_IER3_Pos                      _UINT8_(7)                                           /* (PTC_IED) IER3 Position */
-#define PTC_IED_IER3_Msk                      (_UINT8_(0x1) << PTC_IED_IER3_Pos)                   /* (PTC_IED) IER3 Mask */
-#define PTC_IED_IER3(value)                   (PTC_IED_IER3_Msk & (_UINT8_(value) << PTC_IED_IER3_Pos)) /* Assigment of value for IER3 in the PTC_IED register */
-#define PTC_IED_Msk                           _UINT8_(0xF0)                                        /* (PTC_IED) Register Mask  */
-
-#define PTC_IED_IER_Pos                       _UINT8_(4)                                           /* (PTC_IED Position) IER3 */
-#define PTC_IED_IER_Msk                       (_UINT8_(0xF) << PTC_IED_IER_Pos)                    /* (PTC_IED Mask) IER */
-#define PTC_IED_IER(value)                    (PTC_IED_IER_Msk & (_UINT8_(value) << PTC_IED_IER_Pos)) 
-
 /** \brief PTC register offsets definitions */
 #define PTC_CMD_REG_OFST               _UINT32_(0x28)      /* (PTC_CMD) PTC Command Register Offset */
-#define PTC_ISR_REG_OFST               _UINT32_(0x30)      /* (PTC_ISR) PTC Interrupt Status Register Offset */
 #define PTC_IED_REG_OFST               _UINT32_(0x35)      /* (PTC_IED) PTC Enable Register Offset */
+#define PTC_ISR_REG_OFST               _UINT32_(0x30)      /* (PTC_ISR) PTC Interrupt Status Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief PTC register API structure */
