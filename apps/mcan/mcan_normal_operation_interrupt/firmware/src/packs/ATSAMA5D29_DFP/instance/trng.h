@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for TRNG peripheral ========== */
-#define TRNG_INSTANCE_ID                         (47)       
 #define TRNG_CLOCK_ID                            (47)       
+#define TRNG_INSTANCE_ID                         (47)       
 
 #endif /* _SAMA5D_TRNG_INSTANCE_ */

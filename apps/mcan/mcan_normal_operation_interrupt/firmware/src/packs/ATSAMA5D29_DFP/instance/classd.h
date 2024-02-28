@@ -26,8 +26,8 @@
 
 
 /* ========== Instance Parameter definitions for CLASSD peripheral ========== */
-#define CLASSD_INSTANCE_ID                       (59)       
 #define CLASSD_CLOCK_ID                          (59)       
 #define CLASSD_DMAC_ID_TX                        (47)       
+#define CLASSD_INSTANCE_ID                       (59)       
 
 #endif /* _SAMA5D_CLASSD_INSTANCE_ */
