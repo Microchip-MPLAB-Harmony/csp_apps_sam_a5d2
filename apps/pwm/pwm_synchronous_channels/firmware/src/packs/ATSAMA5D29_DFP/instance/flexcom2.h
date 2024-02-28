@@ -26,12 +26,12 @@
 
 
 /* ========== Instance Parameter definitions for FLEXCOM2 peripheral ========== */
-#define FLEXCOM2_INSTANCE_ID                     (21)       
 #define FLEXCOM2_CLOCK_ID                        (21)       
-#define FLEXCOM2_DMAC_ID_TX                      (15)       
 #define FLEXCOM2_DMAC_ID_RX                      (16)       
-#define FLEXCOM2_USART_FIFO_SIZE                 (32)       
+#define FLEXCOM2_DMAC_ID_TX                      (15)       
+#define FLEXCOM2_INSTANCE_ID                     (21)       
 #define FLEXCOM2_SPI_FIFO_SIZE                   (32)       
 #define FLEXCOM2_TWI_FIFO_SIZE                   (16)       
+#define FLEXCOM2_USART_FIFO_SIZE                 (32)       
 
 #endif /* _SAMA5D_FLEXCOM2_INSTANCE_ */

@@ -26,11 +26,11 @@
 
 
 /* ========== Instance Parameter definitions for UART4 peripheral ========== */
-#define UART4_INSTANCE_ID                        (28)       
-#define UART4_CLOCK_ID                           (28)       
-#define UART4_DMAC_ID_TX                         (43)       
-#define UART4_DMAC_ID_RX                         (44)       
-#define UART4_BRSRCCK_PERIPH_CLK                 (0)        /* MCK */
 #define UART4_BRSRCCK_GCLK                       (0)        /* GCLK */
+#define UART4_BRSRCCK_PERIPH_CLK                 (0)        /* MCK */
+#define UART4_CLOCK_ID                           (28)       
+#define UART4_DMAC_ID_RX                         (44)       
+#define UART4_DMAC_ID_TX                         (43)       
+#define UART4_INSTANCE_ID                        (28)       
 
 #endif /* _SAMA5D_UART4_INSTANCE_ */
