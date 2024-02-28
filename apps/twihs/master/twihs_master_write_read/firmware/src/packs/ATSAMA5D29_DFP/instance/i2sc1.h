@@ -26,9 +26,9 @@
 
 
 /* ========== Instance Parameter definitions for I2SC1 peripheral ========== */
-#define I2SC1_INSTANCE_ID                        (55)       
 #define I2SC1_CLOCK_ID                           (55)       
-#define I2SC1_DMAC_ID_TX                         (33)       
 #define I2SC1_DMAC_ID_RX                         (34)       
+#define I2SC1_DMAC_ID_TX                         (33)       
+#define I2SC1_INSTANCE_ID                        (55)       
 
 #endif /* _SAMA5D_I2SC1_INSTANCE_ */

@@ -26,7 +26,7 @@
 
 
 /* ========== Instance Parameter definitions for HSMC peripheral ========== */
-#define HSMC_INSTANCE_ID                         (17)       
 #define HSMC_CLOCK_ID                            (17)       
+#define HSMC_INSTANCE_ID                         (17)       
 
 #endif /* _SAMA5D_HSMC_INSTANCE_ */

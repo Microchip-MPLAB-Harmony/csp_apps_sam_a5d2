@@ -28,6 +28,33 @@
 /*   SOFTWARE API DEFINITION FOR SFR                                          */
 /* ************************************************************************** */
 
+/* -------- SFR_QSPICLK_REG : (SFR Offset: 0x94) (R/W 32) QSPI Clock Pad Supply Select Register -------- */
+#define SFR_QSPICLK_REG_SUP_SEL_Pos           _UINT32_(0)                                          /* (SFR_QSPICLK_REG) Supply Selection Position */
+#define SFR_QSPICLK_REG_SUP_SEL_Msk           (_UINT32_(0x1) << SFR_QSPICLK_REG_SUP_SEL_Pos)       /* (SFR_QSPICLK_REG) Supply Selection Mask */
+#define SFR_QSPICLK_REG_SUP_SEL(value)        (SFR_QSPICLK_REG_SUP_SEL_Msk & (_UINT32_(value) << SFR_QSPICLK_REG_SUP_SEL_Pos)) /* Assigment of value for SUP_SEL in the SFR_QSPICLK_REG register */
+#define SFR_QSPICLK_REG_Msk                   _UINT32_(0x00000001)                                 /* (SFR_QSPICLK_REG) Register Mask  */
+
+
+/* -------- SFR_AICREDIR : (SFR Offset: 0x54) (R/W 32) AIC Interrupt Redirection Register -------- */
+#define SFR_AICREDIR_NSAIC_Pos                _UINT32_(0)                                          /* (SFR_AICREDIR) Interrupt Redirection to Non-Secure AIC Position */
+#define SFR_AICREDIR_NSAIC_Msk                (_UINT32_(0x1) << SFR_AICREDIR_NSAIC_Pos)            /* (SFR_AICREDIR) Interrupt Redirection to Non-Secure AIC Mask */
+#define SFR_AICREDIR_NSAIC(value)             (SFR_AICREDIR_NSAIC_Msk & (_UINT32_(value) << SFR_AICREDIR_NSAIC_Pos)) /* Assigment of value for NSAIC in the SFR_AICREDIR register */
+#define SFR_AICREDIR_AICREDIRKEY_Pos          _UINT32_(1)                                          /* (SFR_AICREDIR) Unlock Key Position */
+#define SFR_AICREDIR_AICREDIRKEY_Msk          (_UINT32_(0x7FFFFFFF) << SFR_AICREDIR_AICREDIRKEY_Pos) /* (SFR_AICREDIR) Unlock Key Mask */
+#define SFR_AICREDIR_AICREDIRKEY(value)       (SFR_AICREDIR_AICREDIRKEY_Msk & (_UINT32_(value) << SFR_AICREDIR_AICREDIRKEY_Pos)) /* Assigment of value for AICREDIRKEY in the SFR_AICREDIR register */
+#define SFR_AICREDIR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (SFR_AICREDIR) Register Mask  */
+
+
+/* -------- SFR_CAN : (SFR Offset: 0x48) (R/W 32) CAN Memories Address-based Register -------- */
+#define SFR_CAN_EXT_MEM_CAN0_ADDR_Pos         _UINT32_(0)                                          /* (SFR_CAN) MSB CAN0 DMA Base Address Position */
+#define SFR_CAN_EXT_MEM_CAN0_ADDR_Msk         (_UINT32_(0xFFFF) << SFR_CAN_EXT_MEM_CAN0_ADDR_Pos)  /* (SFR_CAN) MSB CAN0 DMA Base Address Mask */
+#define SFR_CAN_EXT_MEM_CAN0_ADDR(value)      (SFR_CAN_EXT_MEM_CAN0_ADDR_Msk & (_UINT32_(value) << SFR_CAN_EXT_MEM_CAN0_ADDR_Pos)) /* Assigment of value for EXT_MEM_CAN0_ADDR in the SFR_CAN register */
+#define SFR_CAN_EXT_MEM_CAN1_ADDR_Pos         _UINT32_(16)                                         /* (SFR_CAN) MSB CAN1 DMA Base Address Position */
+#define SFR_CAN_EXT_MEM_CAN1_ADDR_Msk         (_UINT32_(0xFFFF) << SFR_CAN_EXT_MEM_CAN1_ADDR_Pos)  /* (SFR_CAN) MSB CAN1 DMA Base Address Mask */
+#define SFR_CAN_EXT_MEM_CAN1_ADDR(value)      (SFR_CAN_EXT_MEM_CAN1_ADDR_Msk & (_UINT32_(value) << SFR_CAN_EXT_MEM_CAN1_ADDR_Pos)) /* Assigment of value for EXT_MEM_CAN1_ADDR in the SFR_CAN register */
+#define SFR_CAN_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SFR_CAN) Register Mask  */
+
+
 /* -------- SFR_DDRCFG : (SFR Offset: 0x04) (R/W 32) DDR Configuration Register -------- */
 #define SFR_DDRCFG_FDQIEN_Pos                 _UINT32_(16)                                         /* (SFR_DDRCFG) Force DDR_DQ Input Buffer Always On Position */
 #define SFR_DDRCFG_FDQIEN_Msk                 (_UINT32_(0x1) << SFR_DDRCFG_FDQIEN_Pos)             /* (SFR_DDRCFG) Force DDR_DQ Input Buffer Always On Mask */
@@ -36,6 +63,26 @@
 #define SFR_DDRCFG_FDQSIEN_Msk                (_UINT32_(0x1) << SFR_DDRCFG_FDQSIEN_Pos)            /* (SFR_DDRCFG) Force DDR_DQS Input Buffer Always On Mask */
 #define SFR_DDRCFG_FDQSIEN(value)             (SFR_DDRCFG_FDQSIEN_Msk & (_UINT32_(value) << SFR_DDRCFG_FDQSIEN_Pos)) /* Assigment of value for FDQSIEN in the SFR_DDRCFG register */
 #define SFR_DDRCFG_Msk                        _UINT32_(0x00030000)                                 /* (SFR_DDRCFG) Register Mask  */
+
+
+/* -------- SFR_I2SCLKSEL : (SFR Offset: 0x90) (R/W 32) I2SC Register -------- */
+#define SFR_I2SCLKSEL_CLKSEL0_Pos             _UINT32_(0)                                          /* (SFR_I2SCLKSEL) Clock Selection 0 Position */
+#define SFR_I2SCLKSEL_CLKSEL0_Msk             (_UINT32_(0x1) << SFR_I2SCLKSEL_CLKSEL0_Pos)         /* (SFR_I2SCLKSEL) Clock Selection 0 Mask */
+#define SFR_I2SCLKSEL_CLKSEL0(value)          (SFR_I2SCLKSEL_CLKSEL0_Msk & (_UINT32_(value) << SFR_I2SCLKSEL_CLKSEL0_Pos)) /* Assigment of value for CLKSEL0 in the SFR_I2SCLKSEL register */
+#define SFR_I2SCLKSEL_CLKSEL1_Pos             _UINT32_(1)                                          /* (SFR_I2SCLKSEL) Clock Selection 1 Position */
+#define SFR_I2SCLKSEL_CLKSEL1_Msk             (_UINT32_(0x1) << SFR_I2SCLKSEL_CLKSEL1_Pos)         /* (SFR_I2SCLKSEL) Clock Selection 1 Mask */
+#define SFR_I2SCLKSEL_CLKSEL1(value)          (SFR_I2SCLKSEL_CLKSEL1_Msk & (_UINT32_(value) << SFR_I2SCLKSEL_CLKSEL1_Pos)) /* Assigment of value for CLKSEL1 in the SFR_I2SCLKSEL register */
+#define SFR_I2SCLKSEL_Msk                     _UINT32_(0x00000003)                                 /* (SFR_I2SCLKSEL) Register Mask  */
+
+#define SFR_I2SCLKSEL_CLKSEL_Pos              _UINT32_(0)                                          /* (SFR_I2SCLKSEL Position) Clock Selection x */
+#define SFR_I2SCLKSEL_CLKSEL_Msk              (_UINT32_(0x3) << SFR_I2SCLKSEL_CLKSEL_Pos)          /* (SFR_I2SCLKSEL Mask) CLKSEL */
+#define SFR_I2SCLKSEL_CLKSEL(value)           (SFR_I2SCLKSEL_CLKSEL_Msk & (_UINT32_(value) << SFR_I2SCLKSEL_CLKSEL_Pos)) 
+
+/* -------- SFR_L2CC_HRAMC : (SFR Offset: 0x58) (R/W 32) L2CC_HRAMC1 -------- */
+#define SFR_L2CC_HRAMC_SRAM_SEL_Pos           _UINT32_(0)                                          /* (SFR_L2CC_HRAMC) SRAM Selector Position */
+#define SFR_L2CC_HRAMC_SRAM_SEL_Msk           (_UINT32_(0x1) << SFR_L2CC_HRAMC_SRAM_SEL_Pos)       /* (SFR_L2CC_HRAMC) SRAM Selector Mask */
+#define SFR_L2CC_HRAMC_SRAM_SEL(value)        (SFR_L2CC_HRAMC_SRAM_SEL_Msk & (_UINT32_(value) << SFR_L2CC_HRAMC_SRAM_SEL_Pos)) /* Assigment of value for SRAM_SEL in the SFR_L2CC_HRAMC register */
+#define SFR_L2CC_HRAMC_Msk                    _UINT32_(0x00000001)                                 /* (SFR_L2CC_HRAMC) Register Mask  */
 
 
 /* -------- SFR_OHCIICR : (SFR Offset: 0x10) (R/W 32) OHCI Interrupt Configuration Register -------- */
@@ -101,6 +148,20 @@
 #define SFR_SECURE_Msk                        _UINT32_(0x00000101)                                 /* (SFR_SECURE) Register Mask  */
 
 
+/* -------- SFR_SN0 : (SFR Offset: 0x4C) ( R/ 32) Serial Number 0 Register -------- */
+#define SFR_SN0_SN0_Pos                       _UINT32_(0)                                          /* (SFR_SN0) Serial Number 0 Position */
+#define SFR_SN0_SN0_Msk                       (_UINT32_(0xFFFFFFFF) << SFR_SN0_SN0_Pos)            /* (SFR_SN0) Serial Number 0 Mask */
+#define SFR_SN0_SN0(value)                    (SFR_SN0_SN0_Msk & (_UINT32_(value) << SFR_SN0_SN0_Pos)) /* Assigment of value for SN0 in the SFR_SN0 register */
+#define SFR_SN0_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SFR_SN0) Register Mask  */
+
+
+/* -------- SFR_SN1 : (SFR Offset: 0x50) ( R/ 32) Serial Number 1 Register -------- */
+#define SFR_SN1_SN1_Pos                       _UINT32_(0)                                          /* (SFR_SN1) Serial Number 1 Position */
+#define SFR_SN1_SN1_Msk                       (_UINT32_(0xFFFFFFFF) << SFR_SN1_SN1_Pos)            /* (SFR_SN1) Serial Number 1 Mask */
+#define SFR_SN1_SN1(value)                    (SFR_SN1_SN1_Msk & (_UINT32_(value) << SFR_SN1_SN1_Pos)) /* Assigment of value for SN1 in the SFR_SN1 register */
+#define SFR_SN1_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SFR_SN1) Register Mask  */
+
+
 /* -------- SFR_UTMICKTRIM : (SFR Offset: 0x30) (R/W 32) UTMI Clock Trimming Register -------- */
 #define SFR_UTMICKTRIM_FREQ_Pos               _UINT32_(0)                                          /* (SFR_UTMICKTRIM) UTMI Reference Clock Frequency Position */
 #define SFR_UTMICKTRIM_FREQ_Msk               (_UINT32_(0x3) << SFR_UTMICKTRIM_FREQ_Pos)           /* (SFR_UTMICKTRIM) UTMI Reference Clock Frequency Mask */
@@ -115,25 +176,6 @@
 #define SFR_UTMICKTRIM_VBG_Msk                (_UINT32_(0x3) << SFR_UTMICKTRIM_VBG_Pos)            /* (SFR_UTMICKTRIM) UTMI Band Gap Voltage Trimming Mask */
 #define SFR_UTMICKTRIM_VBG(value)             (SFR_UTMICKTRIM_VBG_Msk & (_UINT32_(value) << SFR_UTMICKTRIM_VBG_Pos)) /* Assigment of value for VBG in the SFR_UTMICKTRIM register */
 #define SFR_UTMICKTRIM_Msk                    _UINT32_(0x00030003)                                 /* (SFR_UTMICKTRIM) Register Mask  */
-
-
-/* -------- SFR_UTMIHSTRIM : (SFR Offset: 0x34) (R/W 32) UTMI High-Speed Trimming Register -------- */
-#define SFR_UTMIHSTRIM_SQUELCH_Pos            _UINT32_(0)                                          /* (SFR_UTMIHSTRIM) UTMI HS SQUELCH Voltage Trimming Position */
-#define SFR_UTMIHSTRIM_SQUELCH_Msk            (_UINT32_(0x7) << SFR_UTMIHSTRIM_SQUELCH_Pos)        /* (SFR_UTMIHSTRIM) UTMI HS SQUELCH Voltage Trimming Mask */
-#define SFR_UTMIHSTRIM_SQUELCH(value)         (SFR_UTMIHSTRIM_SQUELCH_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_SQUELCH_Pos)) /* Assigment of value for SQUELCH in the SFR_UTMIHSTRIM register */
-#define SFR_UTMIHSTRIM_DISC_Pos               _UINT32_(4)                                          /* (SFR_UTMIHSTRIM) UTMI Disconnect Voltage Trimming Position */
-#define SFR_UTMIHSTRIM_DISC_Msk               (_UINT32_(0x7) << SFR_UTMIHSTRIM_DISC_Pos)           /* (SFR_UTMIHSTRIM) UTMI Disconnect Voltage Trimming Mask */
-#define SFR_UTMIHSTRIM_DISC(value)            (SFR_UTMIHSTRIM_DISC_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_DISC_Pos)) /* Assigment of value for DISC in the SFR_UTMIHSTRIM register */
-#define SFR_UTMIHSTRIM_SLOPE0_Pos             _UINT32_(8)                                          /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Position */
-#define SFR_UTMIHSTRIM_SLOPE0_Msk             (_UINT32_(0x7) << SFR_UTMIHSTRIM_SLOPE0_Pos)         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Mask */
-#define SFR_UTMIHSTRIM_SLOPE0(value)          (SFR_UTMIHSTRIM_SLOPE0_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_SLOPE0_Pos)) /* Assigment of value for SLOPE0 in the SFR_UTMIHSTRIM register */
-#define SFR_UTMIHSTRIM_SLOPE1_Pos             _UINT32_(12)                                         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Position */
-#define SFR_UTMIHSTRIM_SLOPE1_Msk             (_UINT32_(0x7) << SFR_UTMIHSTRIM_SLOPE1_Pos)         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Mask */
-#define SFR_UTMIHSTRIM_SLOPE1(value)          (SFR_UTMIHSTRIM_SLOPE1_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_SLOPE1_Pos)) /* Assigment of value for SLOPE1 in the SFR_UTMIHSTRIM register */
-#define SFR_UTMIHSTRIM_SLOPE2_Pos             _UINT32_(16)                                         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Position */
-#define SFR_UTMIHSTRIM_SLOPE2_Msk             (_UINT32_(0x7) << SFR_UTMIHSTRIM_SLOPE2_Pos)         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Mask */
-#define SFR_UTMIHSTRIM_SLOPE2(value)          (SFR_UTMIHSTRIM_SLOPE2_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_SLOPE2_Pos)) /* Assigment of value for SLOPE2 in the SFR_UTMIHSTRIM register */
-#define SFR_UTMIHSTRIM_Msk                    _UINT32_(0x00077777)                                 /* (SFR_UTMIHSTRIM) Register Mask  */
 
 
 /* -------- SFR_UTMIFSTRIM : (SFR Offset: 0x38) (R/W 32) UTMI Full-Speed Trimming Register -------- */
@@ -153,6 +195,25 @@
 #define SFR_UTMIFSTRIM_ZP_Msk                 (_UINT32_(0x7) << SFR_UTMIFSTRIM_ZP_Pos)             /* (SFR_UTMIFSTRIM) FS Transceiver PMOS Impedance Trimming Mask */
 #define SFR_UTMIFSTRIM_ZP(value)              (SFR_UTMIFSTRIM_ZP_Msk & (_UINT32_(value) << SFR_UTMIFSTRIM_ZP_Pos)) /* Assigment of value for ZP in the SFR_UTMIFSTRIM register */
 #define SFR_UTMIFSTRIM_Msk                    _UINT32_(0x00770377)                                 /* (SFR_UTMIFSTRIM) Register Mask  */
+
+
+/* -------- SFR_UTMIHSTRIM : (SFR Offset: 0x34) (R/W 32) UTMI High-Speed Trimming Register -------- */
+#define SFR_UTMIHSTRIM_SQUELCH_Pos            _UINT32_(0)                                          /* (SFR_UTMIHSTRIM) UTMI HS SQUELCH Voltage Trimming Position */
+#define SFR_UTMIHSTRIM_SQUELCH_Msk            (_UINT32_(0x7) << SFR_UTMIHSTRIM_SQUELCH_Pos)        /* (SFR_UTMIHSTRIM) UTMI HS SQUELCH Voltage Trimming Mask */
+#define SFR_UTMIHSTRIM_SQUELCH(value)         (SFR_UTMIHSTRIM_SQUELCH_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_SQUELCH_Pos)) /* Assigment of value for SQUELCH in the SFR_UTMIHSTRIM register */
+#define SFR_UTMIHSTRIM_DISC_Pos               _UINT32_(4)                                          /* (SFR_UTMIHSTRIM) UTMI Disconnect Voltage Trimming Position */
+#define SFR_UTMIHSTRIM_DISC_Msk               (_UINT32_(0x7) << SFR_UTMIHSTRIM_DISC_Pos)           /* (SFR_UTMIHSTRIM) UTMI Disconnect Voltage Trimming Mask */
+#define SFR_UTMIHSTRIM_DISC(value)            (SFR_UTMIHSTRIM_DISC_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_DISC_Pos)) /* Assigment of value for DISC in the SFR_UTMIHSTRIM register */
+#define SFR_UTMIHSTRIM_SLOPE0_Pos             _UINT32_(8)                                          /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Position */
+#define SFR_UTMIHSTRIM_SLOPE0_Msk             (_UINT32_(0x7) << SFR_UTMIHSTRIM_SLOPE0_Pos)         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Mask */
+#define SFR_UTMIHSTRIM_SLOPE0(value)          (SFR_UTMIHSTRIM_SLOPE0_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_SLOPE0_Pos)) /* Assigment of value for SLOPE0 in the SFR_UTMIHSTRIM register */
+#define SFR_UTMIHSTRIM_SLOPE1_Pos             _UINT32_(12)                                         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Position */
+#define SFR_UTMIHSTRIM_SLOPE1_Msk             (_UINT32_(0x7) << SFR_UTMIHSTRIM_SLOPE1_Pos)         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Mask */
+#define SFR_UTMIHSTRIM_SLOPE1(value)          (SFR_UTMIHSTRIM_SLOPE1_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_SLOPE1_Pos)) /* Assigment of value for SLOPE1 in the SFR_UTMIHSTRIM register */
+#define SFR_UTMIHSTRIM_SLOPE2_Pos             _UINT32_(16)                                         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Position */
+#define SFR_UTMIHSTRIM_SLOPE2_Msk             (_UINT32_(0x7) << SFR_UTMIHSTRIM_SLOPE2_Pos)         /* (SFR_UTMIHSTRIM) UTMI HS PORTx Transceiver Slope Trimming Mask */
+#define SFR_UTMIHSTRIM_SLOPE2(value)          (SFR_UTMIHSTRIM_SLOPE2_Msk & (_UINT32_(value) << SFR_UTMIHSTRIM_SLOPE2_Pos)) /* Assigment of value for SLOPE2 in the SFR_UTMIHSTRIM register */
+#define SFR_UTMIHSTRIM_Msk                    _UINT32_(0x00077777)                                 /* (SFR_UTMIHSTRIM) Register Mask  */
 
 
 /* -------- SFR_UTMISWAP : (SFR Offset: 0x3C) (R/W 32) UTMI DP/DM Pin Swapping Register -------- */
@@ -183,83 +244,22 @@
 #define SFR_UTMISWAP_PORT_Msk                 (_UINT32_(0x7) << SFR_UTMISWAP_PORT_Pos)             /* (SFR_UTMISWAP Mask) PORT */
 #define SFR_UTMISWAP_PORT(value)              (SFR_UTMISWAP_PORT_Msk & (_UINT32_(value) << SFR_UTMISWAP_PORT_Pos)) 
 
-/* -------- SFR_CAN : (SFR Offset: 0x48) (R/W 32) CAN Memories Address-based Register -------- */
-#define SFR_CAN_EXT_MEM_CAN0_ADDR_Pos         _UINT32_(0)                                          /* (SFR_CAN) MSB CAN0 DMA Base Address Position */
-#define SFR_CAN_EXT_MEM_CAN0_ADDR_Msk         (_UINT32_(0xFFFF) << SFR_CAN_EXT_MEM_CAN0_ADDR_Pos)  /* (SFR_CAN) MSB CAN0 DMA Base Address Mask */
-#define SFR_CAN_EXT_MEM_CAN0_ADDR(value)      (SFR_CAN_EXT_MEM_CAN0_ADDR_Msk & (_UINT32_(value) << SFR_CAN_EXT_MEM_CAN0_ADDR_Pos)) /* Assigment of value for EXT_MEM_CAN0_ADDR in the SFR_CAN register */
-#define SFR_CAN_EXT_MEM_CAN1_ADDR_Pos         _UINT32_(16)                                         /* (SFR_CAN) MSB CAN1 DMA Base Address Position */
-#define SFR_CAN_EXT_MEM_CAN1_ADDR_Msk         (_UINT32_(0xFFFF) << SFR_CAN_EXT_MEM_CAN1_ADDR_Pos)  /* (SFR_CAN) MSB CAN1 DMA Base Address Mask */
-#define SFR_CAN_EXT_MEM_CAN1_ADDR(value)      (SFR_CAN_EXT_MEM_CAN1_ADDR_Msk & (_UINT32_(value) << SFR_CAN_EXT_MEM_CAN1_ADDR_Pos)) /* Assigment of value for EXT_MEM_CAN1_ADDR in the SFR_CAN register */
-#define SFR_CAN_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SFR_CAN) Register Mask  */
-
-
-/* -------- SFR_SN0 : (SFR Offset: 0x4C) ( R/ 32) Serial Number 0 Register -------- */
-#define SFR_SN0_SN0_Pos                       _UINT32_(0)                                          /* (SFR_SN0) Serial Number 0 Position */
-#define SFR_SN0_SN0_Msk                       (_UINT32_(0xFFFFFFFF) << SFR_SN0_SN0_Pos)            /* (SFR_SN0) Serial Number 0 Mask */
-#define SFR_SN0_SN0(value)                    (SFR_SN0_SN0_Msk & (_UINT32_(value) << SFR_SN0_SN0_Pos)) /* Assigment of value for SN0 in the SFR_SN0 register */
-#define SFR_SN0_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SFR_SN0) Register Mask  */
-
-
-/* -------- SFR_SN1 : (SFR Offset: 0x50) ( R/ 32) Serial Number 1 Register -------- */
-#define SFR_SN1_SN1_Pos                       _UINT32_(0)                                          /* (SFR_SN1) Serial Number 1 Position */
-#define SFR_SN1_SN1_Msk                       (_UINT32_(0xFFFFFFFF) << SFR_SN1_SN1_Pos)            /* (SFR_SN1) Serial Number 1 Mask */
-#define SFR_SN1_SN1(value)                    (SFR_SN1_SN1_Msk & (_UINT32_(value) << SFR_SN1_SN1_Pos)) /* Assigment of value for SN1 in the SFR_SN1 register */
-#define SFR_SN1_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SFR_SN1) Register Mask  */
-
-
-/* -------- SFR_AICREDIR : (SFR Offset: 0x54) (R/W 32) AIC Interrupt Redirection Register -------- */
-#define SFR_AICREDIR_NSAIC_Pos                _UINT32_(0)                                          /* (SFR_AICREDIR) Interrupt Redirection to Non-Secure AIC Position */
-#define SFR_AICREDIR_NSAIC_Msk                (_UINT32_(0x1) << SFR_AICREDIR_NSAIC_Pos)            /* (SFR_AICREDIR) Interrupt Redirection to Non-Secure AIC Mask */
-#define SFR_AICREDIR_NSAIC(value)             (SFR_AICREDIR_NSAIC_Msk & (_UINT32_(value) << SFR_AICREDIR_NSAIC_Pos)) /* Assigment of value for NSAIC in the SFR_AICREDIR register */
-#define SFR_AICREDIR_AICREDIRKEY_Pos          _UINT32_(1)                                          /* (SFR_AICREDIR) Unlock Key Position */
-#define SFR_AICREDIR_AICREDIRKEY_Msk          (_UINT32_(0x7FFFFFFF) << SFR_AICREDIR_AICREDIRKEY_Pos) /* (SFR_AICREDIR) Unlock Key Mask */
-#define SFR_AICREDIR_AICREDIRKEY(value)       (SFR_AICREDIR_AICREDIRKEY_Msk & (_UINT32_(value) << SFR_AICREDIR_AICREDIRKEY_Pos)) /* Assigment of value for AICREDIRKEY in the SFR_AICREDIR register */
-#define SFR_AICREDIR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (SFR_AICREDIR) Register Mask  */
-
-
-/* -------- SFR_L2CC_HRAMC : (SFR Offset: 0x58) (R/W 32) L2CC_HRAMC1 -------- */
-#define SFR_L2CC_HRAMC_SRAM_SEL_Pos           _UINT32_(0)                                          /* (SFR_L2CC_HRAMC) SRAM Selector Position */
-#define SFR_L2CC_HRAMC_SRAM_SEL_Msk           (_UINT32_(0x1) << SFR_L2CC_HRAMC_SRAM_SEL_Pos)       /* (SFR_L2CC_HRAMC) SRAM Selector Mask */
-#define SFR_L2CC_HRAMC_SRAM_SEL(value)        (SFR_L2CC_HRAMC_SRAM_SEL_Msk & (_UINT32_(value) << SFR_L2CC_HRAMC_SRAM_SEL_Pos)) /* Assigment of value for SRAM_SEL in the SFR_L2CC_HRAMC register */
-#define SFR_L2CC_HRAMC_Msk                    _UINT32_(0x00000001)                                 /* (SFR_L2CC_HRAMC) Register Mask  */
-
-
-/* -------- SFR_I2SCLKSEL : (SFR Offset: 0x90) (R/W 32) I2SC Register -------- */
-#define SFR_I2SCLKSEL_CLKSEL0_Pos             _UINT32_(0)                                          /* (SFR_I2SCLKSEL) Clock Selection 0 Position */
-#define SFR_I2SCLKSEL_CLKSEL0_Msk             (_UINT32_(0x1) << SFR_I2SCLKSEL_CLKSEL0_Pos)         /* (SFR_I2SCLKSEL) Clock Selection 0 Mask */
-#define SFR_I2SCLKSEL_CLKSEL0(value)          (SFR_I2SCLKSEL_CLKSEL0_Msk & (_UINT32_(value) << SFR_I2SCLKSEL_CLKSEL0_Pos)) /* Assigment of value for CLKSEL0 in the SFR_I2SCLKSEL register */
-#define SFR_I2SCLKSEL_CLKSEL1_Pos             _UINT32_(1)                                          /* (SFR_I2SCLKSEL) Clock Selection 1 Position */
-#define SFR_I2SCLKSEL_CLKSEL1_Msk             (_UINT32_(0x1) << SFR_I2SCLKSEL_CLKSEL1_Pos)         /* (SFR_I2SCLKSEL) Clock Selection 1 Mask */
-#define SFR_I2SCLKSEL_CLKSEL1(value)          (SFR_I2SCLKSEL_CLKSEL1_Msk & (_UINT32_(value) << SFR_I2SCLKSEL_CLKSEL1_Pos)) /* Assigment of value for CLKSEL1 in the SFR_I2SCLKSEL register */
-#define SFR_I2SCLKSEL_Msk                     _UINT32_(0x00000003)                                 /* (SFR_I2SCLKSEL) Register Mask  */
-
-#define SFR_I2SCLKSEL_CLKSEL_Pos              _UINT32_(0)                                          /* (SFR_I2SCLKSEL Position) Clock Selection x */
-#define SFR_I2SCLKSEL_CLKSEL_Msk              (_UINT32_(0x3) << SFR_I2SCLKSEL_CLKSEL_Pos)          /* (SFR_I2SCLKSEL Mask) CLKSEL */
-#define SFR_I2SCLKSEL_CLKSEL(value)           (SFR_I2SCLKSEL_CLKSEL_Msk & (_UINT32_(value) << SFR_I2SCLKSEL_CLKSEL_Pos)) 
-
-/* -------- SFR_QSPICLK_REG : (SFR Offset: 0x94) (R/W 32) QSPI Clock Pad Supply Select Register -------- */
-#define SFR_QSPICLK_REG_SUP_SEL_Pos           _UINT32_(0)                                          /* (SFR_QSPICLK_REG) Supply Selection Position */
-#define SFR_QSPICLK_REG_SUP_SEL_Msk           (_UINT32_(0x1) << SFR_QSPICLK_REG_SUP_SEL_Pos)       /* (SFR_QSPICLK_REG) Supply Selection Mask */
-#define SFR_QSPICLK_REG_SUP_SEL(value)        (SFR_QSPICLK_REG_SUP_SEL_Msk & (_UINT32_(value) << SFR_QSPICLK_REG_SUP_SEL_Pos)) /* Assigment of value for SUP_SEL in the SFR_QSPICLK_REG register */
-#define SFR_QSPICLK_REG_Msk                   _UINT32_(0x00000001)                                 /* (SFR_QSPICLK_REG) Register Mask  */
-
-
 /** \brief SFR register offsets definitions */
+#define SFR_QSPICLK_REG_REG_OFST       _UINT32_(0x94)      /* (SFR_QSPICLK_REG) QSPI Clock Pad Supply Select Register Offset */
+#define SFR_AICREDIR_REG_OFST          _UINT32_(0x54)      /* (SFR_AICREDIR) AIC Interrupt Redirection Register Offset */
+#define SFR_CAN_REG_OFST               _UINT32_(0x48)      /* (SFR_CAN) CAN Memories Address-based Register Offset */
 #define SFR_DDRCFG_REG_OFST            _UINT32_(0x04)      /* (SFR_DDRCFG) DDR Configuration Register Offset */
+#define SFR_I2SCLKSEL_REG_OFST         _UINT32_(0x90)      /* (SFR_I2SCLKSEL) I2SC Register Offset */
+#define SFR_L2CC_HRAMC_REG_OFST        _UINT32_(0x58)      /* (SFR_L2CC_HRAMC) L2CC_HRAMC1 Offset */
 #define SFR_OHCIICR_REG_OFST           _UINT32_(0x10)      /* (SFR_OHCIICR) OHCI Interrupt Configuration Register Offset */
 #define SFR_OHCIISR_REG_OFST           _UINT32_(0x14)      /* (SFR_OHCIISR) OHCI Interrupt Status Register Offset */
 #define SFR_SECURE_REG_OFST            _UINT32_(0x28)      /* (SFR_SECURE) Security Configuration Register Offset */
-#define SFR_UTMICKTRIM_REG_OFST        _UINT32_(0x30)      /* (SFR_UTMICKTRIM) UTMI Clock Trimming Register Offset */
-#define SFR_UTMIHSTRIM_REG_OFST        _UINT32_(0x34)      /* (SFR_UTMIHSTRIM) UTMI High-Speed Trimming Register Offset */
-#define SFR_UTMIFSTRIM_REG_OFST        _UINT32_(0x38)      /* (SFR_UTMIFSTRIM) UTMI Full-Speed Trimming Register Offset */
-#define SFR_UTMISWAP_REG_OFST          _UINT32_(0x3C)      /* (SFR_UTMISWAP) UTMI DP/DM Pin Swapping Register Offset */
-#define SFR_CAN_REG_OFST               _UINT32_(0x48)      /* (SFR_CAN) CAN Memories Address-based Register Offset */
 #define SFR_SN0_REG_OFST               _UINT32_(0x4C)      /* (SFR_SN0) Serial Number 0 Register Offset */
 #define SFR_SN1_REG_OFST               _UINT32_(0x50)      /* (SFR_SN1) Serial Number 1 Register Offset */
-#define SFR_AICREDIR_REG_OFST          _UINT32_(0x54)      /* (SFR_AICREDIR) AIC Interrupt Redirection Register Offset */
-#define SFR_L2CC_HRAMC_REG_OFST        _UINT32_(0x58)      /* (SFR_L2CC_HRAMC) L2CC_HRAMC1 Offset */
-#define SFR_I2SCLKSEL_REG_OFST         _UINT32_(0x90)      /* (SFR_I2SCLKSEL) I2SC Register Offset */
-#define SFR_QSPICLK_REG_REG_OFST       _UINT32_(0x94)      /* (SFR_QSPICLK_REG) QSPI Clock Pad Supply Select Register Offset */
+#define SFR_UTMICKTRIM_REG_OFST        _UINT32_(0x30)      /* (SFR_UTMICKTRIM) UTMI Clock Trimming Register Offset */
+#define SFR_UTMIFSTRIM_REG_OFST        _UINT32_(0x38)      /* (SFR_UTMIFSTRIM) UTMI Full-Speed Trimming Register Offset */
+#define SFR_UTMIHSTRIM_REG_OFST        _UINT32_(0x34)      /* (SFR_UTMIHSTRIM) UTMI High-Speed Trimming Register Offset */
+#define SFR_UTMISWAP_REG_OFST          _UINT32_(0x3C)      /* (SFR_UTMISWAP) UTMI DP/DM Pin Swapping Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief SFR register API structure */
