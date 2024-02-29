@@ -8,7 +8,7 @@ Following table provides number of peripheral library examples available for<br 
 
 |Development Kits|MPLAB X Applications|
 |----------------|--------------------|
-|[SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV21H18A)|46|
+|[SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV07R15A)|46|
 |[SAMA5D27-SOM1-EK1](https://www.microchip.com/DevelopmentTools/ProductDetails/atsama5d27-som1-ek1)|3|
 |[ATSAMA5D27-WLSOM1 Evaluation Kit](https://www.microchip.com/en-us/development-tool/DM320117)|1|
 

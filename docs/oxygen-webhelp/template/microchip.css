@@ -780,3 +780,12 @@ dl.noboldlist dd {
   position: sticky;
   top: 29px;
 }
+
+/* preserve line breaks */
+.wh_publication_title a, .header_title {
+  white-space: pre-line;
+}
+
+.wh_publication_title a {
+  text-align: left;
+}
