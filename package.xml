@@ -2,6 +2,6 @@
 <Package name="csp_apps_sam_a5d2">
     <Dependencies>
         <Dependency name="csp" version="v3.18.3"/>
-        <Dependency name="bsp" version="v3.17.1"/>
+        <Dependency name="bsp" version="v3.18.0"/>
     </Dependencies>
 </Package>

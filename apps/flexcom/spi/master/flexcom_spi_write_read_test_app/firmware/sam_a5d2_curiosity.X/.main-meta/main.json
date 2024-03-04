@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_flexcom_spi_write_read_test_app",
-		"version": "3.4.0",
+		"version": "3.5.0",
 		"displayName": "FLEXCOM SPI Master read write test application Example for SAM A5D2x Family",
 		"projectName": "flexcom_spi_write_read_test_app_sam_a5d2_xult",
 		"shortDescription": "This is a FLEXCOM SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application.",
@@ -20,7 +20,7 @@
 		],
 		"dfp": {
 			"name": "SAMA5D2_DFP",
-			"semverRange": ">=1.9.108"
+			"semverRange": "^1.10.213"
 		},
 		"configurator": {
 			"name": "MCC",

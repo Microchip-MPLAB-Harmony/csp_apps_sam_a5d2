@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_a5d2_tc_timer_mode",
-		"version": "3.4.0",
+		"version": "3.5.0",
 		"displayName": "TC timer mode Example for SAM A5D2x Family",
 		"projectName": "tc_timer_mode_sam_a5d2_xult",
 		"shortDescription": "This example application shows how to use the TC module in timer mode to generate periodic interrupt.",
@@ -20,7 +20,7 @@
 		],
 		"dfp": {
 			"name": "SAMA5D2_DFP",
-			"semverRange": ">=1.9.108"
+			"semverRange": "^1.10.213"
 		},
 		"configurator": {
 			"name": "MCC",
