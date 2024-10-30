@@ -1,28 +1,25 @@
 /*
  * Component description for I2SC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-10-04T10:37:14Z */
-#ifndef _SAMA5D_I2SC_COMPONENT_H_
-#define _SAMA5D_I2SC_COMPONENT_H_
+/* file generated from device description file (ATDF) version 2024-06-24T14:43:55Z */
+#ifndef _SAMA5D2_I2SC_COMPONENT_H_
+#define _SAMA5D2_I2SC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR I2SC                                         */
@@ -51,54 +48,6 @@
 #define I2SC_CR_SWRST_Msk                     (_UINT32_(0x1) << I2SC_CR_SWRST_Pos)                 /* (I2SC_CR) Software Reset Mask */
 #define I2SC_CR_SWRST(value)                  (I2SC_CR_SWRST_Msk & (_UINT32_(value) << I2SC_CR_SWRST_Pos)) /* Assigment of value for SWRST in the I2SC_CR register */
 #define I2SC_CR_Msk                           _UINT32_(0x000000BF)                                 /* (I2SC_CR) Register Mask  */
-
-
-/* -------- I2SC_IDR : (I2SC Offset: 0x18) ( /W 32) Interrupt Disable Register -------- */
-#define I2SC_IDR_RXRDY_Pos                    _UINT32_(1)                                          /* (I2SC_IDR) Receiver Ready Interrupt Disable Position */
-#define I2SC_IDR_RXRDY_Msk                    (_UINT32_(0x1) << I2SC_IDR_RXRDY_Pos)                /* (I2SC_IDR) Receiver Ready Interrupt Disable Mask */
-#define I2SC_IDR_RXRDY(value)                 (I2SC_IDR_RXRDY_Msk & (_UINT32_(value) << I2SC_IDR_RXRDY_Pos)) /* Assigment of value for RXRDY in the I2SC_IDR register */
-#define I2SC_IDR_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_IDR) Receiver Overrun Interrupt Disable Position */
-#define I2SC_IDR_RXOR_Msk                     (_UINT32_(0x1) << I2SC_IDR_RXOR_Pos)                 /* (I2SC_IDR) Receiver Overrun Interrupt Disable Mask */
-#define I2SC_IDR_RXOR(value)                  (I2SC_IDR_RXOR_Msk & (_UINT32_(value) << I2SC_IDR_RXOR_Pos)) /* Assigment of value for RXOR in the I2SC_IDR register */
-#define I2SC_IDR_TXRDY_Pos                    _UINT32_(5)                                          /* (I2SC_IDR) Transmit Ready Interrupt Disable Position */
-#define I2SC_IDR_TXRDY_Msk                    (_UINT32_(0x1) << I2SC_IDR_TXRDY_Pos)                /* (I2SC_IDR) Transmit Ready Interrupt Disable Mask */
-#define I2SC_IDR_TXRDY(value)                 (I2SC_IDR_TXRDY_Msk & (_UINT32_(value) << I2SC_IDR_TXRDY_Pos)) /* Assigment of value for TXRDY in the I2SC_IDR register */
-#define I2SC_IDR_TXUR_Pos                     _UINT32_(6)                                          /* (I2SC_IDR) Transmit Underflow Interrupt Disable Position */
-#define I2SC_IDR_TXUR_Msk                     (_UINT32_(0x1) << I2SC_IDR_TXUR_Pos)                 /* (I2SC_IDR) Transmit Underflow Interrupt Disable Mask */
-#define I2SC_IDR_TXUR(value)                  (I2SC_IDR_TXUR_Msk & (_UINT32_(value) << I2SC_IDR_TXUR_Pos)) /* Assigment of value for TXUR in the I2SC_IDR register */
-#define I2SC_IDR_Msk                          _UINT32_(0x00000066)                                 /* (I2SC_IDR) Register Mask  */
-
-
-/* -------- I2SC_IER : (I2SC Offset: 0x14) ( /W 32) Interrupt Enable Register -------- */
-#define I2SC_IER_RXRDY_Pos                    _UINT32_(1)                                          /* (I2SC_IER) Receiver Ready Interrupt Enable Position */
-#define I2SC_IER_RXRDY_Msk                    (_UINT32_(0x1) << I2SC_IER_RXRDY_Pos)                /* (I2SC_IER) Receiver Ready Interrupt Enable Mask */
-#define I2SC_IER_RXRDY(value)                 (I2SC_IER_RXRDY_Msk & (_UINT32_(value) << I2SC_IER_RXRDY_Pos)) /* Assigment of value for RXRDY in the I2SC_IER register */
-#define I2SC_IER_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_IER) Receiver Overrun Interrupt Enable Position */
-#define I2SC_IER_RXOR_Msk                     (_UINT32_(0x1) << I2SC_IER_RXOR_Pos)                 /* (I2SC_IER) Receiver Overrun Interrupt Enable Mask */
-#define I2SC_IER_RXOR(value)                  (I2SC_IER_RXOR_Msk & (_UINT32_(value) << I2SC_IER_RXOR_Pos)) /* Assigment of value for RXOR in the I2SC_IER register */
-#define I2SC_IER_TXRDY_Pos                    _UINT32_(5)                                          /* (I2SC_IER) Transmit Ready Interrupt Enable Position */
-#define I2SC_IER_TXRDY_Msk                    (_UINT32_(0x1) << I2SC_IER_TXRDY_Pos)                /* (I2SC_IER) Transmit Ready Interrupt Enable Mask */
-#define I2SC_IER_TXRDY(value)                 (I2SC_IER_TXRDY_Msk & (_UINT32_(value) << I2SC_IER_TXRDY_Pos)) /* Assigment of value for TXRDY in the I2SC_IER register */
-#define I2SC_IER_TXUR_Pos                     _UINT32_(6)                                          /* (I2SC_IER) Transmit Underflow Interrupt Enable Position */
-#define I2SC_IER_TXUR_Msk                     (_UINT32_(0x1) << I2SC_IER_TXUR_Pos)                 /* (I2SC_IER) Transmit Underflow Interrupt Enable Mask */
-#define I2SC_IER_TXUR(value)                  (I2SC_IER_TXUR_Msk & (_UINT32_(value) << I2SC_IER_TXUR_Pos)) /* Assigment of value for TXUR in the I2SC_IER register */
-#define I2SC_IER_Msk                          _UINT32_(0x00000066)                                 /* (I2SC_IER) Register Mask  */
-
-
-/* -------- I2SC_IMR : (I2SC Offset: 0x1C) ( R/ 32) Interrupt Mask Register -------- */
-#define I2SC_IMR_RXRDY_Pos                    _UINT32_(1)                                          /* (I2SC_IMR) Receiver Ready Interrupt Disable Position */
-#define I2SC_IMR_RXRDY_Msk                    (_UINT32_(0x1) << I2SC_IMR_RXRDY_Pos)                /* (I2SC_IMR) Receiver Ready Interrupt Disable Mask */
-#define I2SC_IMR_RXRDY(value)                 (I2SC_IMR_RXRDY_Msk & (_UINT32_(value) << I2SC_IMR_RXRDY_Pos)) /* Assigment of value for RXRDY in the I2SC_IMR register */
-#define I2SC_IMR_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_IMR) Receiver Overrun Interrupt Disable Position */
-#define I2SC_IMR_RXOR_Msk                     (_UINT32_(0x1) << I2SC_IMR_RXOR_Pos)                 /* (I2SC_IMR) Receiver Overrun Interrupt Disable Mask */
-#define I2SC_IMR_RXOR(value)                  (I2SC_IMR_RXOR_Msk & (_UINT32_(value) << I2SC_IMR_RXOR_Pos)) /* Assigment of value for RXOR in the I2SC_IMR register */
-#define I2SC_IMR_TXRDY_Pos                    _UINT32_(5)                                          /* (I2SC_IMR) Transmit Ready Interrupt Disable Position */
-#define I2SC_IMR_TXRDY_Msk                    (_UINT32_(0x1) << I2SC_IMR_TXRDY_Pos)                /* (I2SC_IMR) Transmit Ready Interrupt Disable Mask */
-#define I2SC_IMR_TXRDY(value)                 (I2SC_IMR_TXRDY_Msk & (_UINT32_(value) << I2SC_IMR_TXRDY_Pos)) /* Assigment of value for TXRDY in the I2SC_IMR register */
-#define I2SC_IMR_TXUR_Pos                     _UINT32_(6)                                          /* (I2SC_IMR) Transmit Underflow Interrupt Disable Position */
-#define I2SC_IMR_TXUR_Msk                     (_UINT32_(0x1) << I2SC_IMR_TXUR_Pos)                 /* (I2SC_IMR) Transmit Underflow Interrupt Disable Mask */
-#define I2SC_IMR_TXUR(value)                  (I2SC_IMR_TXUR_Msk & (_UINT32_(value) << I2SC_IMR_TXUR_Pos)) /* Assigment of value for TXUR in the I2SC_IMR register */
-#define I2SC_IMR_Msk                          _UINT32_(0x00000066)                                 /* (I2SC_IMR) Register Mask  */
 
 
 /* -------- I2SC_MR : (I2SC Offset: 0x04) (R/W 32) Mode Register -------- */
@@ -186,29 +135,6 @@
 #define I2SC_MR_Msk                           _UINT32_(0xFF3F55DD)                                 /* (I2SC_MR) Register Mask  */
 
 
-/* -------- I2SC_RHR : (I2SC Offset: 0x20) ( R/ 32) Receiver Holding Register -------- */
-#define I2SC_RHR_RHR_Pos                      _UINT32_(0)                                          /* (I2SC_RHR) Receiver Holding Register Position */
-#define I2SC_RHR_RHR_Msk                      (_UINT32_(0xFFFFFFFF) << I2SC_RHR_RHR_Pos)           /* (I2SC_RHR) Receiver Holding Register Mask */
-#define I2SC_RHR_RHR(value)                   (I2SC_RHR_RHR_Msk & (_UINT32_(value) << I2SC_RHR_RHR_Pos)) /* Assigment of value for RHR in the I2SC_RHR register */
-#define I2SC_RHR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (I2SC_RHR) Register Mask  */
-
-
-/* -------- I2SC_SCR : (I2SC Offset: 0x0C) ( /W 32) Status Clear Register -------- */
-#define I2SC_SCR_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_SCR) Receive Overrun Status Clear Position */
-#define I2SC_SCR_RXOR_Msk                     (_UINT32_(0x1) << I2SC_SCR_RXOR_Pos)                 /* (I2SC_SCR) Receive Overrun Status Clear Mask */
-#define I2SC_SCR_RXOR(value)                  (I2SC_SCR_RXOR_Msk & (_UINT32_(value) << I2SC_SCR_RXOR_Pos)) /* Assigment of value for RXOR in the I2SC_SCR register */
-#define I2SC_SCR_TXUR_Pos                     _UINT32_(6)                                          /* (I2SC_SCR) Transmit Underrun Status Clear Position */
-#define I2SC_SCR_TXUR_Msk                     (_UINT32_(0x1) << I2SC_SCR_TXUR_Pos)                 /* (I2SC_SCR) Transmit Underrun Status Clear Mask */
-#define I2SC_SCR_TXUR(value)                  (I2SC_SCR_TXUR_Msk & (_UINT32_(value) << I2SC_SCR_TXUR_Pos)) /* Assigment of value for TXUR in the I2SC_SCR register */
-#define I2SC_SCR_RXORCH_Pos                   _UINT32_(8)                                          /* (I2SC_SCR) Receive Overrun Per Channel Status Clear Position */
-#define I2SC_SCR_RXORCH_Msk                   (_UINT32_(0x3) << I2SC_SCR_RXORCH_Pos)               /* (I2SC_SCR) Receive Overrun Per Channel Status Clear Mask */
-#define I2SC_SCR_RXORCH(value)                (I2SC_SCR_RXORCH_Msk & (_UINT32_(value) << I2SC_SCR_RXORCH_Pos)) /* Assigment of value for RXORCH in the I2SC_SCR register */
-#define I2SC_SCR_TXURCH_Pos                   _UINT32_(20)                                         /* (I2SC_SCR) Transmit Underrun Per Channel Status Clear Position */
-#define I2SC_SCR_TXURCH_Msk                   (_UINT32_(0x3) << I2SC_SCR_TXURCH_Pos)               /* (I2SC_SCR) Transmit Underrun Per Channel Status Clear Mask */
-#define I2SC_SCR_TXURCH(value)                (I2SC_SCR_TXURCH_Msk & (_UINT32_(value) << I2SC_SCR_TXURCH_Pos)) /* Assigment of value for TXURCH in the I2SC_SCR register */
-#define I2SC_SCR_Msk                          _UINT32_(0x00300344)                                 /* (I2SC_SCR) Register Mask  */
-
-
 /* -------- I2SC_SR : (I2SC Offset: 0x08) ( R/ 32) Status Register -------- */
 #define I2SC_SR_RXEN_Pos                      _UINT32_(0)                                          /* (I2SC_SR) Receiver Enabled Position */
 #define I2SC_SR_RXEN_Msk                      (_UINT32_(0x1) << I2SC_SR_RXEN_Pos)                  /* (I2SC_SR) Receiver Enabled Mask */
@@ -237,6 +163,22 @@
 #define I2SC_SR_Msk                           _UINT32_(0x00300377)                                 /* (I2SC_SR) Register Mask  */
 
 
+/* -------- I2SC_SCR : (I2SC Offset: 0x0C) ( /W 32) Status Clear Register -------- */
+#define I2SC_SCR_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_SCR) Receive Overrun Status Clear Position */
+#define I2SC_SCR_RXOR_Msk                     (_UINT32_(0x1) << I2SC_SCR_RXOR_Pos)                 /* (I2SC_SCR) Receive Overrun Status Clear Mask */
+#define I2SC_SCR_RXOR(value)                  (I2SC_SCR_RXOR_Msk & (_UINT32_(value) << I2SC_SCR_RXOR_Pos)) /* Assigment of value for RXOR in the I2SC_SCR register */
+#define I2SC_SCR_TXUR_Pos                     _UINT32_(6)                                          /* (I2SC_SCR) Transmit Underrun Status Clear Position */
+#define I2SC_SCR_TXUR_Msk                     (_UINT32_(0x1) << I2SC_SCR_TXUR_Pos)                 /* (I2SC_SCR) Transmit Underrun Status Clear Mask */
+#define I2SC_SCR_TXUR(value)                  (I2SC_SCR_TXUR_Msk & (_UINT32_(value) << I2SC_SCR_TXUR_Pos)) /* Assigment of value for TXUR in the I2SC_SCR register */
+#define I2SC_SCR_RXORCH_Pos                   _UINT32_(8)                                          /* (I2SC_SCR) Receive Overrun Per Channel Status Clear Position */
+#define I2SC_SCR_RXORCH_Msk                   (_UINT32_(0x3) << I2SC_SCR_RXORCH_Pos)               /* (I2SC_SCR) Receive Overrun Per Channel Status Clear Mask */
+#define I2SC_SCR_RXORCH(value)                (I2SC_SCR_RXORCH_Msk & (_UINT32_(value) << I2SC_SCR_RXORCH_Pos)) /* Assigment of value for RXORCH in the I2SC_SCR register */
+#define I2SC_SCR_TXURCH_Pos                   _UINT32_(20)                                         /* (I2SC_SCR) Transmit Underrun Per Channel Status Clear Position */
+#define I2SC_SCR_TXURCH_Msk                   (_UINT32_(0x3) << I2SC_SCR_TXURCH_Pos)               /* (I2SC_SCR) Transmit Underrun Per Channel Status Clear Mask */
+#define I2SC_SCR_TXURCH(value)                (I2SC_SCR_TXURCH_Msk & (_UINT32_(value) << I2SC_SCR_TXURCH_Pos)) /* Assigment of value for TXURCH in the I2SC_SCR register */
+#define I2SC_SCR_Msk                          _UINT32_(0x00300344)                                 /* (I2SC_SCR) Register Mask  */
+
+
 /* -------- I2SC_SSR : (I2SC Offset: 0x10) ( /W 32) Status Set Register -------- */
 #define I2SC_SSR_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_SSR) Receive Overrun Status Set Position */
 #define I2SC_SSR_RXOR_Msk                     (_UINT32_(0x1) << I2SC_SSR_RXOR_Pos)                 /* (I2SC_SSR) Receive Overrun Status Set Mask */
@@ -253,6 +195,61 @@
 #define I2SC_SSR_Msk                          _UINT32_(0x00300344)                                 /* (I2SC_SSR) Register Mask  */
 
 
+/* -------- I2SC_IER : (I2SC Offset: 0x14) ( /W 32) Interrupt Enable Register -------- */
+#define I2SC_IER_RXRDY_Pos                    _UINT32_(1)                                          /* (I2SC_IER) Receiver Ready Interrupt Enable Position */
+#define I2SC_IER_RXRDY_Msk                    (_UINT32_(0x1) << I2SC_IER_RXRDY_Pos)                /* (I2SC_IER) Receiver Ready Interrupt Enable Mask */
+#define I2SC_IER_RXRDY(value)                 (I2SC_IER_RXRDY_Msk & (_UINT32_(value) << I2SC_IER_RXRDY_Pos)) /* Assigment of value for RXRDY in the I2SC_IER register */
+#define I2SC_IER_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_IER) Receiver Overrun Interrupt Enable Position */
+#define I2SC_IER_RXOR_Msk                     (_UINT32_(0x1) << I2SC_IER_RXOR_Pos)                 /* (I2SC_IER) Receiver Overrun Interrupt Enable Mask */
+#define I2SC_IER_RXOR(value)                  (I2SC_IER_RXOR_Msk & (_UINT32_(value) << I2SC_IER_RXOR_Pos)) /* Assigment of value for RXOR in the I2SC_IER register */
+#define I2SC_IER_TXRDY_Pos                    _UINT32_(5)                                          /* (I2SC_IER) Transmit Ready Interrupt Enable Position */
+#define I2SC_IER_TXRDY_Msk                    (_UINT32_(0x1) << I2SC_IER_TXRDY_Pos)                /* (I2SC_IER) Transmit Ready Interrupt Enable Mask */
+#define I2SC_IER_TXRDY(value)                 (I2SC_IER_TXRDY_Msk & (_UINT32_(value) << I2SC_IER_TXRDY_Pos)) /* Assigment of value for TXRDY in the I2SC_IER register */
+#define I2SC_IER_TXUR_Pos                     _UINT32_(6)                                          /* (I2SC_IER) Transmit Underflow Interrupt Enable Position */
+#define I2SC_IER_TXUR_Msk                     (_UINT32_(0x1) << I2SC_IER_TXUR_Pos)                 /* (I2SC_IER) Transmit Underflow Interrupt Enable Mask */
+#define I2SC_IER_TXUR(value)                  (I2SC_IER_TXUR_Msk & (_UINT32_(value) << I2SC_IER_TXUR_Pos)) /* Assigment of value for TXUR in the I2SC_IER register */
+#define I2SC_IER_Msk                          _UINT32_(0x00000066)                                 /* (I2SC_IER) Register Mask  */
+
+
+/* -------- I2SC_IDR : (I2SC Offset: 0x18) ( /W 32) Interrupt Disable Register -------- */
+#define I2SC_IDR_RXRDY_Pos                    _UINT32_(1)                                          /* (I2SC_IDR) Receiver Ready Interrupt Disable Position */
+#define I2SC_IDR_RXRDY_Msk                    (_UINT32_(0x1) << I2SC_IDR_RXRDY_Pos)                /* (I2SC_IDR) Receiver Ready Interrupt Disable Mask */
+#define I2SC_IDR_RXRDY(value)                 (I2SC_IDR_RXRDY_Msk & (_UINT32_(value) << I2SC_IDR_RXRDY_Pos)) /* Assigment of value for RXRDY in the I2SC_IDR register */
+#define I2SC_IDR_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_IDR) Receiver Overrun Interrupt Disable Position */
+#define I2SC_IDR_RXOR_Msk                     (_UINT32_(0x1) << I2SC_IDR_RXOR_Pos)                 /* (I2SC_IDR) Receiver Overrun Interrupt Disable Mask */
+#define I2SC_IDR_RXOR(value)                  (I2SC_IDR_RXOR_Msk & (_UINT32_(value) << I2SC_IDR_RXOR_Pos)) /* Assigment of value for RXOR in the I2SC_IDR register */
+#define I2SC_IDR_TXRDY_Pos                    _UINT32_(5)                                          /* (I2SC_IDR) Transmit Ready Interrupt Disable Position */
+#define I2SC_IDR_TXRDY_Msk                    (_UINT32_(0x1) << I2SC_IDR_TXRDY_Pos)                /* (I2SC_IDR) Transmit Ready Interrupt Disable Mask */
+#define I2SC_IDR_TXRDY(value)                 (I2SC_IDR_TXRDY_Msk & (_UINT32_(value) << I2SC_IDR_TXRDY_Pos)) /* Assigment of value for TXRDY in the I2SC_IDR register */
+#define I2SC_IDR_TXUR_Pos                     _UINT32_(6)                                          /* (I2SC_IDR) Transmit Underflow Interrupt Disable Position */
+#define I2SC_IDR_TXUR_Msk                     (_UINT32_(0x1) << I2SC_IDR_TXUR_Pos)                 /* (I2SC_IDR) Transmit Underflow Interrupt Disable Mask */
+#define I2SC_IDR_TXUR(value)                  (I2SC_IDR_TXUR_Msk & (_UINT32_(value) << I2SC_IDR_TXUR_Pos)) /* Assigment of value for TXUR in the I2SC_IDR register */
+#define I2SC_IDR_Msk                          _UINT32_(0x00000066)                                 /* (I2SC_IDR) Register Mask  */
+
+
+/* -------- I2SC_IMR : (I2SC Offset: 0x1C) ( R/ 32) Interrupt Mask Register -------- */
+#define I2SC_IMR_RXRDY_Pos                    _UINT32_(1)                                          /* (I2SC_IMR) Receiver Ready Interrupt Disable Position */
+#define I2SC_IMR_RXRDY_Msk                    (_UINT32_(0x1) << I2SC_IMR_RXRDY_Pos)                /* (I2SC_IMR) Receiver Ready Interrupt Disable Mask */
+#define I2SC_IMR_RXRDY(value)                 (I2SC_IMR_RXRDY_Msk & (_UINT32_(value) << I2SC_IMR_RXRDY_Pos)) /* Assigment of value for RXRDY in the I2SC_IMR register */
+#define I2SC_IMR_RXOR_Pos                     _UINT32_(2)                                          /* (I2SC_IMR) Receiver Overrun Interrupt Disable Position */
+#define I2SC_IMR_RXOR_Msk                     (_UINT32_(0x1) << I2SC_IMR_RXOR_Pos)                 /* (I2SC_IMR) Receiver Overrun Interrupt Disable Mask */
+#define I2SC_IMR_RXOR(value)                  (I2SC_IMR_RXOR_Msk & (_UINT32_(value) << I2SC_IMR_RXOR_Pos)) /* Assigment of value for RXOR in the I2SC_IMR register */
+#define I2SC_IMR_TXRDY_Pos                    _UINT32_(5)                                          /* (I2SC_IMR) Transmit Ready Interrupt Disable Position */
+#define I2SC_IMR_TXRDY_Msk                    (_UINT32_(0x1) << I2SC_IMR_TXRDY_Pos)                /* (I2SC_IMR) Transmit Ready Interrupt Disable Mask */
+#define I2SC_IMR_TXRDY(value)                 (I2SC_IMR_TXRDY_Msk & (_UINT32_(value) << I2SC_IMR_TXRDY_Pos)) /* Assigment of value for TXRDY in the I2SC_IMR register */
+#define I2SC_IMR_TXUR_Pos                     _UINT32_(6)                                          /* (I2SC_IMR) Transmit Underflow Interrupt Disable Position */
+#define I2SC_IMR_TXUR_Msk                     (_UINT32_(0x1) << I2SC_IMR_TXUR_Pos)                 /* (I2SC_IMR) Transmit Underflow Interrupt Disable Mask */
+#define I2SC_IMR_TXUR(value)                  (I2SC_IMR_TXUR_Msk & (_UINT32_(value) << I2SC_IMR_TXUR_Pos)) /* Assigment of value for TXUR in the I2SC_IMR register */
+#define I2SC_IMR_Msk                          _UINT32_(0x00000066)                                 /* (I2SC_IMR) Register Mask  */
+
+
+/* -------- I2SC_RHR : (I2SC Offset: 0x20) ( R/ 32) Receiver Holding Register -------- */
+#define I2SC_RHR_RHR_Pos                      _UINT32_(0)                                          /* (I2SC_RHR) Receiver Holding Register Position */
+#define I2SC_RHR_RHR_Msk                      (_UINT32_(0xFFFFFFFF) << I2SC_RHR_RHR_Pos)           /* (I2SC_RHR) Receiver Holding Register Mask */
+#define I2SC_RHR_RHR(value)                   (I2SC_RHR_RHR_Msk & (_UINT32_(value) << I2SC_RHR_RHR_Pos)) /* Assigment of value for RHR in the I2SC_RHR register */
+#define I2SC_RHR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (I2SC_RHR) Register Mask  */
+
+
 /* -------- I2SC_THR : (I2SC Offset: 0x24) ( /W 32) Transmitter Holding Register -------- */
 #define I2SC_THR_THR_Pos                      _UINT32_(0)                                          /* (I2SC_THR) Transmitter Holding Register Position */
 #define I2SC_THR_THR_Msk                      (_UINT32_(0xFFFFFFFF) << I2SC_THR_THR_Pos)           /* (I2SC_THR) Transmitter Holding Register Mask */
@@ -262,14 +259,14 @@
 
 /** \brief I2SC register offsets definitions */
 #define I2SC_CR_REG_OFST               _UINT32_(0x00)      /* (I2SC_CR) Control Register Offset */
-#define I2SC_IDR_REG_OFST              _UINT32_(0x18)      /* (I2SC_IDR) Interrupt Disable Register Offset */
-#define I2SC_IER_REG_OFST              _UINT32_(0x14)      /* (I2SC_IER) Interrupt Enable Register Offset */
-#define I2SC_IMR_REG_OFST              _UINT32_(0x1C)      /* (I2SC_IMR) Interrupt Mask Register Offset */
 #define I2SC_MR_REG_OFST               _UINT32_(0x04)      /* (I2SC_MR) Mode Register Offset */
-#define I2SC_RHR_REG_OFST              _UINT32_(0x20)      /* (I2SC_RHR) Receiver Holding Register Offset */
-#define I2SC_SCR_REG_OFST              _UINT32_(0x0C)      /* (I2SC_SCR) Status Clear Register Offset */
 #define I2SC_SR_REG_OFST               _UINT32_(0x08)      /* (I2SC_SR) Status Register Offset */
+#define I2SC_SCR_REG_OFST              _UINT32_(0x0C)      /* (I2SC_SCR) Status Clear Register Offset */
 #define I2SC_SSR_REG_OFST              _UINT32_(0x10)      /* (I2SC_SSR) Status Set Register Offset */
+#define I2SC_IER_REG_OFST              _UINT32_(0x14)      /* (I2SC_IER) Interrupt Enable Register Offset */
+#define I2SC_IDR_REG_OFST              _UINT32_(0x18)      /* (I2SC_IDR) Interrupt Disable Register Offset */
+#define I2SC_IMR_REG_OFST              _UINT32_(0x1C)      /* (I2SC_IMR) Interrupt Mask Register Offset */
+#define I2SC_RHR_REG_OFST              _UINT32_(0x20)      /* (I2SC_RHR) Receiver Holding Register Offset */
 #define I2SC_THR_REG_OFST              _UINT32_(0x24)      /* (I2SC_THR) Transmitter Holding Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -290,4 +287,4 @@ typedef struct
 
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-#endif /* _SAMA5D_I2SC_COMPONENT_H_ */
+#endif /* _SAMA5D2_I2SC_COMPONENT_H_ */
