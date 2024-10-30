@@ -1,58 +1,83 @@
 /*
  * Component description for AIC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-10-04T10:37:14Z */
-#ifndef _SAMA5D_AIC_COMPONENT_H_
-#define _SAMA5D_AIC_COMPONENT_H_
+/* file generated from device description file (ATDF) version 2024-06-24T14:43:55Z */
+#ifndef _SAMA5D2_AIC_COMPONENT_H_
+#define _SAMA5D2_AIC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR AIC                                          */
 /* ************************************************************************** */
 
-/* -------- AIC_CISR : (AIC Offset: 0x34) ( R/ 32) Core Interrupt Status Register -------- */
-#define AIC_CISR_NFIQ_Pos                     _UINT32_(0)                                          /* (AIC_CISR) NFIQ Status Position */
-#define AIC_CISR_NFIQ_Msk                     (_UINT32_(0x1) << AIC_CISR_NFIQ_Pos)                 /* (AIC_CISR) NFIQ Status Mask */
-#define AIC_CISR_NFIQ(value)                  (AIC_CISR_NFIQ_Msk & (_UINT32_(value) << AIC_CISR_NFIQ_Pos)) /* Assigment of value for NFIQ in the AIC_CISR register */
-#define AIC_CISR_NIRQ_Pos                     _UINT32_(1)                                          /* (AIC_CISR) NIRQ Status Position */
-#define AIC_CISR_NIRQ_Msk                     (_UINT32_(0x1) << AIC_CISR_NIRQ_Pos)                 /* (AIC_CISR) NIRQ Status Mask */
-#define AIC_CISR_NIRQ(value)                  (AIC_CISR_NIRQ_Msk & (_UINT32_(value) << AIC_CISR_NIRQ_Pos)) /* Assigment of value for NIRQ in the AIC_CISR register */
-#define AIC_CISR_Msk                          _UINT32_(0x00000003)                                 /* (AIC_CISR) Register Mask  */
+/* -------- AIC_SSR : (AIC Offset: 0x00) (R/W 32) Source Select Register -------- */
+#define AIC_SSR_INTSEL_Pos                    _UINT32_(0)                                          /* (AIC_SSR) Interrupt Line Selection Position */
+#define AIC_SSR_INTSEL_Msk                    (_UINT32_(0x7F) << AIC_SSR_INTSEL_Pos)               /* (AIC_SSR) Interrupt Line Selection Mask */
+#define AIC_SSR_INTSEL(value)                 (AIC_SSR_INTSEL_Msk & (_UINT32_(value) << AIC_SSR_INTSEL_Pos)) /* Assigment of value for INTSEL in the AIC_SSR register */
+#define AIC_SSR_Msk                           _UINT32_(0x0000007F)                                 /* (AIC_SSR) Register Mask  */
 
 
-/* -------- AIC_DCR : (AIC Offset: 0x6C) (R/W 32) Debug Control Register -------- */
-#define AIC_DCR_PROT_Pos                      _UINT32_(0)                                          /* (AIC_DCR) Protection Mode Position */
-#define AIC_DCR_PROT_Msk                      (_UINT32_(0x1) << AIC_DCR_PROT_Pos)                  /* (AIC_DCR) Protection Mode Mask */
-#define AIC_DCR_PROT(value)                   (AIC_DCR_PROT_Msk & (_UINT32_(value) << AIC_DCR_PROT_Pos)) /* Assigment of value for PROT in the AIC_DCR register */
-#define AIC_DCR_GMSK_Pos                      _UINT32_(1)                                          /* (AIC_DCR) General Interrupt Mask Position */
-#define AIC_DCR_GMSK_Msk                      (_UINT32_(0x1) << AIC_DCR_GMSK_Pos)                  /* (AIC_DCR) General Interrupt Mask Mask */
-#define AIC_DCR_GMSK(value)                   (AIC_DCR_GMSK_Msk & (_UINT32_(value) << AIC_DCR_GMSK_Pos)) /* Assigment of value for GMSK in the AIC_DCR register */
-#define AIC_DCR_Msk                           _UINT32_(0x00000003)                                 /* (AIC_DCR) Register Mask  */
+/* -------- AIC_SMR : (AIC Offset: 0x04) (R/W 32) Source Mode Register -------- */
+#define AIC_SMR_PRIORITY_Pos                  _UINT32_(0)                                          /* (AIC_SMR) Priority Level Position */
+#define AIC_SMR_PRIORITY_Msk                  (_UINT32_(0x7) << AIC_SMR_PRIORITY_Pos)              /* (AIC_SMR) Priority Level Mask */
+#define AIC_SMR_PRIORITY(value)               (AIC_SMR_PRIORITY_Msk & (_UINT32_(value) << AIC_SMR_PRIORITY_Pos)) /* Assigment of value for PRIORITY in the AIC_SMR register */
+#define   AIC_SMR_PRIORITY_MINIMUM_Val        _UINT32_(0x0)                                        /* (AIC_SMR) Minimum priority  */
+#define   AIC_SMR_PRIORITY_VERY_LOW_Val       _UINT32_(0x1)                                        /* (AIC_SMR) Very low priority  */
+#define   AIC_SMR_PRIORITY_LOW_Val            _UINT32_(0x2)                                        /* (AIC_SMR) Low priority  */
+#define   AIC_SMR_PRIORITY_MEDIUM_LOW_Val     _UINT32_(0x3)                                        /* (AIC_SMR) Medium priority  */
+#define   AIC_SMR_PRIORITY_MEDIUM_HIGH_Val    _UINT32_(0x4)                                        /* (AIC_SMR) Medium-high priority  */
+#define   AIC_SMR_PRIORITY_HIGH_Val           _UINT32_(0x5)                                        /* (AIC_SMR) High priority  */
+#define   AIC_SMR_PRIORITY_VERY_HIGH_Val      _UINT32_(0x6)                                        /* (AIC_SMR) Very high priority  */
+#define   AIC_SMR_PRIORITY_MAXIMUM_Val        _UINT32_(0x7)                                        /* (AIC_SMR) Maximum priority  */
+#define AIC_SMR_PRIORITY_MINIMUM              (AIC_SMR_PRIORITY_MINIMUM_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Minimum priority Position  */
+#define AIC_SMR_PRIORITY_VERY_LOW             (AIC_SMR_PRIORITY_VERY_LOW_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Very low priority Position  */
+#define AIC_SMR_PRIORITY_LOW                  (AIC_SMR_PRIORITY_LOW_Val << AIC_SMR_PRIORITY_Pos)   /* (AIC_SMR) Low priority Position  */
+#define AIC_SMR_PRIORITY_MEDIUM_LOW           (AIC_SMR_PRIORITY_MEDIUM_LOW_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Medium priority Position  */
+#define AIC_SMR_PRIORITY_MEDIUM_HIGH          (AIC_SMR_PRIORITY_MEDIUM_HIGH_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Medium-high priority Position  */
+#define AIC_SMR_PRIORITY_HIGH                 (AIC_SMR_PRIORITY_HIGH_Val << AIC_SMR_PRIORITY_Pos)  /* (AIC_SMR) High priority Position  */
+#define AIC_SMR_PRIORITY_VERY_HIGH            (AIC_SMR_PRIORITY_VERY_HIGH_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Very high priority Position  */
+#define AIC_SMR_PRIORITY_MAXIMUM              (AIC_SMR_PRIORITY_MAXIMUM_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Maximum priority Position  */
+#define AIC_SMR_SRCTYPE_Pos                   _UINT32_(5)                                          /* (AIC_SMR) Interrupt Source Type Position */
+#define AIC_SMR_SRCTYPE_Msk                   (_UINT32_(0x3) << AIC_SMR_SRCTYPE_Pos)               /* (AIC_SMR) Interrupt Source Type Mask */
+#define AIC_SMR_SRCTYPE(value)                (AIC_SMR_SRCTYPE_Msk & (_UINT32_(value) << AIC_SMR_SRCTYPE_Pos)) /* Assigment of value for SRCTYPE in the AIC_SMR register */
+#define   AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val _UINT32_(0x0)                                        /* (AIC_SMR) High-level sensitive for internal source. Low-level sensitive for external source  */
+#define   AIC_SMR_SRCTYPE_EXT_NEGATIVE_EDGE_Val _UINT32_(0x1)                                        /* (AIC_SMR) Negative-edge triggered for external source  */
+#define   AIC_SMR_SRCTYPE_EXT_HIGH_LEVEL_Val  _UINT32_(0x2)                                        /* (AIC_SMR) High-level sensitive for internal source. High-level sensitive for external source  */
+#define   AIC_SMR_SRCTYPE_EXT_POSITIVE_EDGE_Val _UINT32_(0x3)                                        /* (AIC_SMR) Positive-edge triggered for external source  */
+#define AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE   (AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val << AIC_SMR_SRCTYPE_Pos) /* (AIC_SMR) High-level sensitive for internal source. Low-level sensitive for external source Position  */
+#define AIC_SMR_SRCTYPE_EXT_NEGATIVE_EDGE     (AIC_SMR_SRCTYPE_EXT_NEGATIVE_EDGE_Val << AIC_SMR_SRCTYPE_Pos) /* (AIC_SMR) Negative-edge triggered for external source Position  */
+#define AIC_SMR_SRCTYPE_EXT_HIGH_LEVEL        (AIC_SMR_SRCTYPE_EXT_HIGH_LEVEL_Val << AIC_SMR_SRCTYPE_Pos) /* (AIC_SMR) High-level sensitive for internal source. High-level sensitive for external source Position  */
+#define AIC_SMR_SRCTYPE_EXT_POSITIVE_EDGE     (AIC_SMR_SRCTYPE_EXT_POSITIVE_EDGE_Val << AIC_SMR_SRCTYPE_Pos) /* (AIC_SMR) Positive-edge triggered for external source Position  */
+#define AIC_SMR_Msk                           _UINT32_(0x00000067)                                 /* (AIC_SMR) Register Mask  */
 
 
-/* -------- AIC_EOICR : (AIC Offset: 0x38) ( /W 32) End of Interrupt Command Register -------- */
-#define AIC_EOICR_ENDIT_Pos                   _UINT32_(0)                                          /* (AIC_EOICR) Interrupt Processing Complete Command Position */
-#define AIC_EOICR_ENDIT_Msk                   (_UINT32_(0x1) << AIC_EOICR_ENDIT_Pos)               /* (AIC_EOICR) Interrupt Processing Complete Command Mask */
-#define AIC_EOICR_ENDIT(value)                (AIC_EOICR_ENDIT_Msk & (_UINT32_(value) << AIC_EOICR_ENDIT_Pos)) /* Assigment of value for ENDIT in the AIC_EOICR register */
-#define AIC_EOICR_Msk                         _UINT32_(0x00000001)                                 /* (AIC_EOICR) Register Mask  */
+/* -------- AIC_SVR : (AIC Offset: 0x08) (R/W 32) Source Vector Register -------- */
+#define AIC_SVR_VECTOR_Pos                    _UINT32_(0)                                          /* (AIC_SVR) Source Vector Position */
+#define AIC_SVR_VECTOR_Msk                    (_UINT32_(0xFFFFFFFF) << AIC_SVR_VECTOR_Pos)         /* (AIC_SVR) Source Vector Mask */
+#define AIC_SVR_VECTOR(value)                 (AIC_SVR_VECTOR_Msk & (_UINT32_(value) << AIC_SVR_VECTOR_Pos)) /* Assigment of value for VECTOR in the AIC_SVR register */
+#define AIC_SVR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AIC_SVR) Register Mask  */
+
+
+/* -------- AIC_IVR : (AIC Offset: 0x10) ( R/ 32) Interrupt Vector Register -------- */
+#define AIC_IVR_IRQV_Pos                      _UINT32_(0)                                          /* (AIC_IVR) Interrupt Vector Register Position */
+#define AIC_IVR_IRQV_Msk                      (_UINT32_(0xFFFFFFFF) << AIC_IVR_IRQV_Pos)           /* (AIC_IVR) Interrupt Vector Register Mask */
+#define AIC_IVR_IRQV(value)                   (AIC_IVR_IRQV_Msk & (_UINT32_(value) << AIC_IVR_IRQV_Pos)) /* Assigment of value for IRQV in the AIC_IVR register */
+#define AIC_IVR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AIC_IVR) Register Mask  */
 
 
 /* -------- AIC_FVR : (AIC Offset: 0x14) ( R/ 32) FIQ Vector Register -------- */
@@ -62,32 +87,11 @@
 #define AIC_FVR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AIC_FVR) Register Mask  */
 
 
-/* -------- AIC_ICCR : (AIC Offset: 0x48) ( /W 32) Interrupt Clear Command Register -------- */
-#define AIC_ICCR_INTCLR_Pos                   _UINT32_(0)                                          /* (AIC_ICCR) Interrupt Clear Position */
-#define AIC_ICCR_INTCLR_Msk                   (_UINT32_(0x1) << AIC_ICCR_INTCLR_Pos)               /* (AIC_ICCR) Interrupt Clear Mask */
-#define AIC_ICCR_INTCLR(value)                (AIC_ICCR_INTCLR_Msk & (_UINT32_(value) << AIC_ICCR_INTCLR_Pos)) /* Assigment of value for INTCLR in the AIC_ICCR register */
-#define AIC_ICCR_Msk                          _UINT32_(0x00000001)                                 /* (AIC_ICCR) Register Mask  */
-
-
-/* -------- AIC_IDCR : (AIC Offset: 0x44) ( /W 32) Interrupt Disable Command Register -------- */
-#define AIC_IDCR_INTD_Pos                     _UINT32_(0)                                          /* (AIC_IDCR) Interrupt Disable Position */
-#define AIC_IDCR_INTD_Msk                     (_UINT32_(0x1) << AIC_IDCR_INTD_Pos)                 /* (AIC_IDCR) Interrupt Disable Mask */
-#define AIC_IDCR_INTD(value)                  (AIC_IDCR_INTD_Msk & (_UINT32_(value) << AIC_IDCR_INTD_Pos)) /* Assigment of value for INTD in the AIC_IDCR register */
-#define AIC_IDCR_Msk                          _UINT32_(0x00000001)                                 /* (AIC_IDCR) Register Mask  */
-
-
-/* -------- AIC_IECR : (AIC Offset: 0x40) ( /W 32) Interrupt Enable Command Register -------- */
-#define AIC_IECR_INTEN_Pos                    _UINT32_(0)                                          /* (AIC_IECR) Interrupt Enable Position */
-#define AIC_IECR_INTEN_Msk                    (_UINT32_(0x1) << AIC_IECR_INTEN_Pos)                /* (AIC_IECR) Interrupt Enable Mask */
-#define AIC_IECR_INTEN(value)                 (AIC_IECR_INTEN_Msk & (_UINT32_(value) << AIC_IECR_INTEN_Pos)) /* Assigment of value for INTEN in the AIC_IECR register */
-#define AIC_IECR_Msk                          _UINT32_(0x00000001)                                 /* (AIC_IECR) Register Mask  */
-
-
-/* -------- AIC_IMR : (AIC Offset: 0x30) ( R/ 32) Interrupt Mask Register -------- */
-#define AIC_IMR_INTM_Pos                      _UINT32_(0)                                          /* (AIC_IMR) Interrupt Mask Position */
-#define AIC_IMR_INTM_Msk                      (_UINT32_(0x1) << AIC_IMR_INTM_Pos)                  /* (AIC_IMR) Interrupt Mask Mask */
-#define AIC_IMR_INTM(value)                   (AIC_IMR_INTM_Msk & (_UINT32_(value) << AIC_IMR_INTM_Pos)) /* Assigment of value for INTM in the AIC_IMR register */
-#define AIC_IMR_Msk                           _UINT32_(0x00000001)                                 /* (AIC_IMR) Register Mask  */
+/* -------- AIC_ISR : (AIC Offset: 0x18) ( R/ 32) Interrupt Status Register -------- */
+#define AIC_ISR_IRQID_Pos                     _UINT32_(0)                                          /* (AIC_ISR) Current Interrupt Identifier Position */
+#define AIC_ISR_IRQID_Msk                     (_UINT32_(0x7F) << AIC_ISR_IRQID_Pos)                /* (AIC_ISR) Current Interrupt Identifier Mask */
+#define AIC_ISR_IRQID(value)                  (AIC_ISR_IRQID_Msk & (_UINT32_(value) << AIC_ISR_IRQID_Pos)) /* Assigment of value for IRQID in the AIC_ISR register */
+#define AIC_ISR_Msk                           _UINT32_(0x0000007F)                                 /* (AIC_ISR) Register Mask  */
 
 
 /* -------- AIC_IPR0 : (AIC Offset: 0x20) ( R/ 32) Interrupt Pending Register 0 -------- */
@@ -499,59 +503,28 @@
 #define AIC_IPR3_PID_Msk                      (_UINT32_(0xFFFFFFFF) << AIC_IPR3_PID_Pos)           /* (AIC_IPR3 Mask) PID */
 #define AIC_IPR3_PID(value)                   (AIC_IPR3_PID_Msk & (_UINT32_(value) << AIC_IPR3_PID_Pos)) 
 
-/* -------- AIC_ISCR : (AIC Offset: 0x4C) ( /W 32) Interrupt Set Command Register -------- */
-#define AIC_ISCR_INTSET_Pos                   _UINT32_(0)                                          /* (AIC_ISCR) Interrupt Set Position */
-#define AIC_ISCR_INTSET_Msk                   (_UINT32_(0x1) << AIC_ISCR_INTSET_Pos)               /* (AIC_ISCR) Interrupt Set Mask */
-#define AIC_ISCR_INTSET(value)                (AIC_ISCR_INTSET_Msk & (_UINT32_(value) << AIC_ISCR_INTSET_Pos)) /* Assigment of value for INTSET in the AIC_ISCR register */
-#define AIC_ISCR_Msk                          _UINT32_(0x00000001)                                 /* (AIC_ISCR) Register Mask  */
+/* -------- AIC_IMR : (AIC Offset: 0x30) ( R/ 32) Interrupt Mask Register -------- */
+#define AIC_IMR_INTM_Pos                      _UINT32_(0)                                          /* (AIC_IMR) Interrupt Mask Position */
+#define AIC_IMR_INTM_Msk                      (_UINT32_(0x1) << AIC_IMR_INTM_Pos)                  /* (AIC_IMR) Interrupt Mask Mask */
+#define AIC_IMR_INTM(value)                   (AIC_IMR_INTM_Msk & (_UINT32_(value) << AIC_IMR_INTM_Pos)) /* Assigment of value for INTM in the AIC_IMR register */
+#define AIC_IMR_Msk                           _UINT32_(0x00000001)                                 /* (AIC_IMR) Register Mask  */
 
 
-/* -------- AIC_ISR : (AIC Offset: 0x18) ( R/ 32) Interrupt Status Register -------- */
-#define AIC_ISR_IRQID_Pos                     _UINT32_(0)                                          /* (AIC_ISR) Current Interrupt Identifier Position */
-#define AIC_ISR_IRQID_Msk                     (_UINT32_(0x7F) << AIC_ISR_IRQID_Pos)                /* (AIC_ISR) Current Interrupt Identifier Mask */
-#define AIC_ISR_IRQID(value)                  (AIC_ISR_IRQID_Msk & (_UINT32_(value) << AIC_ISR_IRQID_Pos)) /* Assigment of value for IRQID in the AIC_ISR register */
-#define AIC_ISR_Msk                           _UINT32_(0x0000007F)                                 /* (AIC_ISR) Register Mask  */
+/* -------- AIC_CISR : (AIC Offset: 0x34) ( R/ 32) Core Interrupt Status Register -------- */
+#define AIC_CISR_NFIQ_Pos                     _UINT32_(0)                                          /* (AIC_CISR) NFIQ Status Position */
+#define AIC_CISR_NFIQ_Msk                     (_UINT32_(0x1) << AIC_CISR_NFIQ_Pos)                 /* (AIC_CISR) NFIQ Status Mask */
+#define AIC_CISR_NFIQ(value)                  (AIC_CISR_NFIQ_Msk & (_UINT32_(value) << AIC_CISR_NFIQ_Pos)) /* Assigment of value for NFIQ in the AIC_CISR register */
+#define AIC_CISR_NIRQ_Pos                     _UINT32_(1)                                          /* (AIC_CISR) NIRQ Status Position */
+#define AIC_CISR_NIRQ_Msk                     (_UINT32_(0x1) << AIC_CISR_NIRQ_Pos)                 /* (AIC_CISR) NIRQ Status Mask */
+#define AIC_CISR_NIRQ(value)                  (AIC_CISR_NIRQ_Msk & (_UINT32_(value) << AIC_CISR_NIRQ_Pos)) /* Assigment of value for NIRQ in the AIC_CISR register */
+#define AIC_CISR_Msk                          _UINT32_(0x00000003)                                 /* (AIC_CISR) Register Mask  */
 
 
-/* -------- AIC_IVR : (AIC Offset: 0x10) ( R/ 32) Interrupt Vector Register -------- */
-#define AIC_IVR_IRQV_Pos                      _UINT32_(0)                                          /* (AIC_IVR) Interrupt Vector Register Position */
-#define AIC_IVR_IRQV_Msk                      (_UINT32_(0xFFFFFFFF) << AIC_IVR_IRQV_Pos)           /* (AIC_IVR) Interrupt Vector Register Mask */
-#define AIC_IVR_IRQV(value)                   (AIC_IVR_IRQV_Msk & (_UINT32_(value) << AIC_IVR_IRQV_Pos)) /* Assigment of value for IRQV in the AIC_IVR register */
-#define AIC_IVR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AIC_IVR) Register Mask  */
-
-
-/* -------- AIC_SMR : (AIC Offset: 0x04) (R/W 32) Source Mode Register -------- */
-#define AIC_SMR_PRIORITY_Pos                  _UINT32_(0)                                          /* (AIC_SMR) Priority Level Position */
-#define AIC_SMR_PRIORITY_Msk                  (_UINT32_(0x7) << AIC_SMR_PRIORITY_Pos)              /* (AIC_SMR) Priority Level Mask */
-#define AIC_SMR_PRIORITY(value)               (AIC_SMR_PRIORITY_Msk & (_UINT32_(value) << AIC_SMR_PRIORITY_Pos)) /* Assigment of value for PRIORITY in the AIC_SMR register */
-#define   AIC_SMR_PRIORITY_MINIMUM_Val        _UINT32_(0x0)                                        /* (AIC_SMR) Minimum priority  */
-#define   AIC_SMR_PRIORITY_VERY_LOW_Val       _UINT32_(0x1)                                        /* (AIC_SMR) Very low priority  */
-#define   AIC_SMR_PRIORITY_LOW_Val            _UINT32_(0x2)                                        /* (AIC_SMR) Low priority  */
-#define   AIC_SMR_PRIORITY_MEDIUM_LOW_Val     _UINT32_(0x3)                                        /* (AIC_SMR) Medium priority  */
-#define   AIC_SMR_PRIORITY_MEDIUM_HIGH_Val    _UINT32_(0x4)                                        /* (AIC_SMR) Medium-high priority  */
-#define   AIC_SMR_PRIORITY_HIGH_Val           _UINT32_(0x5)                                        /* (AIC_SMR) High priority  */
-#define   AIC_SMR_PRIORITY_VERY_HIGH_Val      _UINT32_(0x6)                                        /* (AIC_SMR) Very high priority  */
-#define   AIC_SMR_PRIORITY_MAXIMUM_Val        _UINT32_(0x7)                                        /* (AIC_SMR) Maximum priority  */
-#define AIC_SMR_PRIORITY_MINIMUM              (AIC_SMR_PRIORITY_MINIMUM_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Minimum priority Position  */
-#define AIC_SMR_PRIORITY_VERY_LOW             (AIC_SMR_PRIORITY_VERY_LOW_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Very low priority Position  */
-#define AIC_SMR_PRIORITY_LOW                  (AIC_SMR_PRIORITY_LOW_Val << AIC_SMR_PRIORITY_Pos)   /* (AIC_SMR) Low priority Position  */
-#define AIC_SMR_PRIORITY_MEDIUM_LOW           (AIC_SMR_PRIORITY_MEDIUM_LOW_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Medium priority Position  */
-#define AIC_SMR_PRIORITY_MEDIUM_HIGH          (AIC_SMR_PRIORITY_MEDIUM_HIGH_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Medium-high priority Position  */
-#define AIC_SMR_PRIORITY_HIGH                 (AIC_SMR_PRIORITY_HIGH_Val << AIC_SMR_PRIORITY_Pos)  /* (AIC_SMR) High priority Position  */
-#define AIC_SMR_PRIORITY_VERY_HIGH            (AIC_SMR_PRIORITY_VERY_HIGH_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Very high priority Position  */
-#define AIC_SMR_PRIORITY_MAXIMUM              (AIC_SMR_PRIORITY_MAXIMUM_Val << AIC_SMR_PRIORITY_Pos) /* (AIC_SMR) Maximum priority Position  */
-#define AIC_SMR_SRCTYPE_Pos                   _UINT32_(5)                                          /* (AIC_SMR) Interrupt Source Type Position */
-#define AIC_SMR_SRCTYPE_Msk                   (_UINT32_(0x3) << AIC_SMR_SRCTYPE_Pos)               /* (AIC_SMR) Interrupt Source Type Mask */
-#define AIC_SMR_SRCTYPE(value)                (AIC_SMR_SRCTYPE_Msk & (_UINT32_(value) << AIC_SMR_SRCTYPE_Pos)) /* Assigment of value for SRCTYPE in the AIC_SMR register */
-#define   AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val _UINT32_(0x0)                                        /* (AIC_SMR) High-level sensitive for internal source. Low-level sensitive for external source  */
-#define   AIC_SMR_SRCTYPE_EXT_NEGATIVE_EDGE_Val _UINT32_(0x1)                                        /* (AIC_SMR) Negative-edge triggered for external source  */
-#define   AIC_SMR_SRCTYPE_EXT_HIGH_LEVEL_Val  _UINT32_(0x2)                                        /* (AIC_SMR) High-level sensitive for internal source. High-level sensitive for external source  */
-#define   AIC_SMR_SRCTYPE_EXT_POSITIVE_EDGE_Val _UINT32_(0x3)                                        /* (AIC_SMR) Positive-edge triggered for external source  */
-#define AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE   (AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE_Val << AIC_SMR_SRCTYPE_Pos) /* (AIC_SMR) High-level sensitive for internal source. Low-level sensitive for external source Position  */
-#define AIC_SMR_SRCTYPE_EXT_NEGATIVE_EDGE     (AIC_SMR_SRCTYPE_EXT_NEGATIVE_EDGE_Val << AIC_SMR_SRCTYPE_Pos) /* (AIC_SMR) Negative-edge triggered for external source Position  */
-#define AIC_SMR_SRCTYPE_EXT_HIGH_LEVEL        (AIC_SMR_SRCTYPE_EXT_HIGH_LEVEL_Val << AIC_SMR_SRCTYPE_Pos) /* (AIC_SMR) High-level sensitive for internal source. High-level sensitive for external source Position  */
-#define AIC_SMR_SRCTYPE_EXT_POSITIVE_EDGE     (AIC_SMR_SRCTYPE_EXT_POSITIVE_EDGE_Val << AIC_SMR_SRCTYPE_Pos) /* (AIC_SMR) Positive-edge triggered for external source Position  */
-#define AIC_SMR_Msk                           _UINT32_(0x00000067)                                 /* (AIC_SMR) Register Mask  */
+/* -------- AIC_EOICR : (AIC Offset: 0x38) ( /W 32) End of Interrupt Command Register -------- */
+#define AIC_EOICR_ENDIT_Pos                   _UINT32_(0)                                          /* (AIC_EOICR) Interrupt Processing Complete Command Position */
+#define AIC_EOICR_ENDIT_Msk                   (_UINT32_(0x1) << AIC_EOICR_ENDIT_Pos)               /* (AIC_EOICR) Interrupt Processing Complete Command Mask */
+#define AIC_EOICR_ENDIT(value)                (AIC_EOICR_ENDIT_Msk & (_UINT32_(value) << AIC_EOICR_ENDIT_Pos)) /* Assigment of value for ENDIT in the AIC_EOICR register */
+#define AIC_EOICR_Msk                         _UINT32_(0x00000001)                                 /* (AIC_EOICR) Register Mask  */
 
 
 /* -------- AIC_SPU : (AIC Offset: 0x3C) (R/W 32) Spurious Interrupt Vector Register -------- */
@@ -561,18 +534,42 @@
 #define AIC_SPU_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AIC_SPU) Register Mask  */
 
 
-/* -------- AIC_SSR : (AIC Offset: 0x00) (R/W 32) Source Select Register -------- */
-#define AIC_SSR_INTSEL_Pos                    _UINT32_(0)                                          /* (AIC_SSR) Interrupt Line Selection Position */
-#define AIC_SSR_INTSEL_Msk                    (_UINT32_(0x7F) << AIC_SSR_INTSEL_Pos)               /* (AIC_SSR) Interrupt Line Selection Mask */
-#define AIC_SSR_INTSEL(value)                 (AIC_SSR_INTSEL_Msk & (_UINT32_(value) << AIC_SSR_INTSEL_Pos)) /* Assigment of value for INTSEL in the AIC_SSR register */
-#define AIC_SSR_Msk                           _UINT32_(0x0000007F)                                 /* (AIC_SSR) Register Mask  */
+/* -------- AIC_IECR : (AIC Offset: 0x40) ( /W 32) Interrupt Enable Command Register -------- */
+#define AIC_IECR_INTEN_Pos                    _UINT32_(0)                                          /* (AIC_IECR) Interrupt Enable Position */
+#define AIC_IECR_INTEN_Msk                    (_UINT32_(0x1) << AIC_IECR_INTEN_Pos)                /* (AIC_IECR) Interrupt Enable Mask */
+#define AIC_IECR_INTEN(value)                 (AIC_IECR_INTEN_Msk & (_UINT32_(value) << AIC_IECR_INTEN_Pos)) /* Assigment of value for INTEN in the AIC_IECR register */
+#define AIC_IECR_Msk                          _UINT32_(0x00000001)                                 /* (AIC_IECR) Register Mask  */
 
 
-/* -------- AIC_SVR : (AIC Offset: 0x08) (R/W 32) Source Vector Register -------- */
-#define AIC_SVR_VECTOR_Pos                    _UINT32_(0)                                          /* (AIC_SVR) Source Vector Position */
-#define AIC_SVR_VECTOR_Msk                    (_UINT32_(0xFFFFFFFF) << AIC_SVR_VECTOR_Pos)         /* (AIC_SVR) Source Vector Mask */
-#define AIC_SVR_VECTOR(value)                 (AIC_SVR_VECTOR_Msk & (_UINT32_(value) << AIC_SVR_VECTOR_Pos)) /* Assigment of value for VECTOR in the AIC_SVR register */
-#define AIC_SVR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AIC_SVR) Register Mask  */
+/* -------- AIC_IDCR : (AIC Offset: 0x44) ( /W 32) Interrupt Disable Command Register -------- */
+#define AIC_IDCR_INTD_Pos                     _UINT32_(0)                                          /* (AIC_IDCR) Interrupt Disable Position */
+#define AIC_IDCR_INTD_Msk                     (_UINT32_(0x1) << AIC_IDCR_INTD_Pos)                 /* (AIC_IDCR) Interrupt Disable Mask */
+#define AIC_IDCR_INTD(value)                  (AIC_IDCR_INTD_Msk & (_UINT32_(value) << AIC_IDCR_INTD_Pos)) /* Assigment of value for INTD in the AIC_IDCR register */
+#define AIC_IDCR_Msk                          _UINT32_(0x00000001)                                 /* (AIC_IDCR) Register Mask  */
+
+
+/* -------- AIC_ICCR : (AIC Offset: 0x48) ( /W 32) Interrupt Clear Command Register -------- */
+#define AIC_ICCR_INTCLR_Pos                   _UINT32_(0)                                          /* (AIC_ICCR) Interrupt Clear Position */
+#define AIC_ICCR_INTCLR_Msk                   (_UINT32_(0x1) << AIC_ICCR_INTCLR_Pos)               /* (AIC_ICCR) Interrupt Clear Mask */
+#define AIC_ICCR_INTCLR(value)                (AIC_ICCR_INTCLR_Msk & (_UINT32_(value) << AIC_ICCR_INTCLR_Pos)) /* Assigment of value for INTCLR in the AIC_ICCR register */
+#define AIC_ICCR_Msk                          _UINT32_(0x00000001)                                 /* (AIC_ICCR) Register Mask  */
+
+
+/* -------- AIC_ISCR : (AIC Offset: 0x4C) ( /W 32) Interrupt Set Command Register -------- */
+#define AIC_ISCR_INTSET_Pos                   _UINT32_(0)                                          /* (AIC_ISCR) Interrupt Set Position */
+#define AIC_ISCR_INTSET_Msk                   (_UINT32_(0x1) << AIC_ISCR_INTSET_Pos)               /* (AIC_ISCR) Interrupt Set Mask */
+#define AIC_ISCR_INTSET(value)                (AIC_ISCR_INTSET_Msk & (_UINT32_(value) << AIC_ISCR_INTSET_Pos)) /* Assigment of value for INTSET in the AIC_ISCR register */
+#define AIC_ISCR_Msk                          _UINT32_(0x00000001)                                 /* (AIC_ISCR) Register Mask  */
+
+
+/* -------- AIC_DCR : (AIC Offset: 0x6C) (R/W 32) Debug Control Register -------- */
+#define AIC_DCR_PROT_Pos                      _UINT32_(0)                                          /* (AIC_DCR) Protection Mode Position */
+#define AIC_DCR_PROT_Msk                      (_UINT32_(0x1) << AIC_DCR_PROT_Pos)                  /* (AIC_DCR) Protection Mode Mask */
+#define AIC_DCR_PROT(value)                   (AIC_DCR_PROT_Msk & (_UINT32_(value) << AIC_DCR_PROT_Pos)) /* Assigment of value for PROT in the AIC_DCR register */
+#define AIC_DCR_GMSK_Pos                      _UINT32_(1)                                          /* (AIC_DCR) General Interrupt Mask Position */
+#define AIC_DCR_GMSK_Msk                      (_UINT32_(0x1) << AIC_DCR_GMSK_Pos)                  /* (AIC_DCR) General Interrupt Mask Mask */
+#define AIC_DCR_GMSK(value)                   (AIC_DCR_GMSK_Msk & (_UINT32_(value) << AIC_DCR_GMSK_Pos)) /* Assigment of value for GMSK in the AIC_DCR register */
+#define AIC_DCR_Msk                           _UINT32_(0x00000003)                                 /* (AIC_DCR) Register Mask  */
 
 
 /* -------- AIC_WPMR : (AIC Offset: 0xE4) (R/W 32) Write Protection Mode Register -------- */
@@ -598,25 +595,25 @@
 
 
 /** \brief AIC register offsets definitions */
-#define AIC_CISR_REG_OFST              _UINT32_(0x34)      /* (AIC_CISR) Core Interrupt Status Register Offset */
-#define AIC_DCR_REG_OFST               _UINT32_(0x6C)      /* (AIC_DCR) Debug Control Register Offset */
-#define AIC_EOICR_REG_OFST             _UINT32_(0x38)      /* (AIC_EOICR) End of Interrupt Command Register Offset */
+#define AIC_SSR_REG_OFST               _UINT32_(0x00)      /* (AIC_SSR) Source Select Register Offset */
+#define AIC_SMR_REG_OFST               _UINT32_(0x04)      /* (AIC_SMR) Source Mode Register Offset */
+#define AIC_SVR_REG_OFST               _UINT32_(0x08)      /* (AIC_SVR) Source Vector Register Offset */
+#define AIC_IVR_REG_OFST               _UINT32_(0x10)      /* (AIC_IVR) Interrupt Vector Register Offset */
 #define AIC_FVR_REG_OFST               _UINT32_(0x14)      /* (AIC_FVR) FIQ Vector Register Offset */
-#define AIC_ICCR_REG_OFST              _UINT32_(0x48)      /* (AIC_ICCR) Interrupt Clear Command Register Offset */
-#define AIC_IDCR_REG_OFST              _UINT32_(0x44)      /* (AIC_IDCR) Interrupt Disable Command Register Offset */
-#define AIC_IECR_REG_OFST              _UINT32_(0x40)      /* (AIC_IECR) Interrupt Enable Command Register Offset */
-#define AIC_IMR_REG_OFST               _UINT32_(0x30)      /* (AIC_IMR) Interrupt Mask Register Offset */
+#define AIC_ISR_REG_OFST               _UINT32_(0x18)      /* (AIC_ISR) Interrupt Status Register Offset */
 #define AIC_IPR0_REG_OFST              _UINT32_(0x20)      /* (AIC_IPR0) Interrupt Pending Register 0 Offset */
 #define AIC_IPR1_REG_OFST              _UINT32_(0x24)      /* (AIC_IPR1) Interrupt Pending Register 1 Offset */
 #define AIC_IPR2_REG_OFST              _UINT32_(0x28)      /* (AIC_IPR2) Interrupt Pending Register 2 Offset */
 #define AIC_IPR3_REG_OFST              _UINT32_(0x2C)      /* (AIC_IPR3) Interrupt Pending Register 3 Offset */
-#define AIC_ISCR_REG_OFST              _UINT32_(0x4C)      /* (AIC_ISCR) Interrupt Set Command Register Offset */
-#define AIC_ISR_REG_OFST               _UINT32_(0x18)      /* (AIC_ISR) Interrupt Status Register Offset */
-#define AIC_IVR_REG_OFST               _UINT32_(0x10)      /* (AIC_IVR) Interrupt Vector Register Offset */
-#define AIC_SMR_REG_OFST               _UINT32_(0x04)      /* (AIC_SMR) Source Mode Register Offset */
+#define AIC_IMR_REG_OFST               _UINT32_(0x30)      /* (AIC_IMR) Interrupt Mask Register Offset */
+#define AIC_CISR_REG_OFST              _UINT32_(0x34)      /* (AIC_CISR) Core Interrupt Status Register Offset */
+#define AIC_EOICR_REG_OFST             _UINT32_(0x38)      /* (AIC_EOICR) End of Interrupt Command Register Offset */
 #define AIC_SPU_REG_OFST               _UINT32_(0x3C)      /* (AIC_SPU) Spurious Interrupt Vector Register Offset */
-#define AIC_SSR_REG_OFST               _UINT32_(0x00)      /* (AIC_SSR) Source Select Register Offset */
-#define AIC_SVR_REG_OFST               _UINT32_(0x08)      /* (AIC_SVR) Source Vector Register Offset */
+#define AIC_IECR_REG_OFST              _UINT32_(0x40)      /* (AIC_IECR) Interrupt Enable Command Register Offset */
+#define AIC_IDCR_REG_OFST              _UINT32_(0x44)      /* (AIC_IDCR) Interrupt Disable Command Register Offset */
+#define AIC_ICCR_REG_OFST              _UINT32_(0x48)      /* (AIC_ICCR) Interrupt Clear Command Register Offset */
+#define AIC_ISCR_REG_OFST              _UINT32_(0x4C)      /* (AIC_ISCR) Interrupt Set Command Register Offset */
+#define AIC_DCR_REG_OFST               _UINT32_(0x6C)      /* (AIC_DCR) Debug Control Register Offset */
 #define AIC_WPMR_REG_OFST              _UINT32_(0xE4)      /* (AIC_WPMR) Write Protection Mode Register Offset */
 #define AIC_WPSR_REG_OFST              _UINT32_(0xE8)      /* (AIC_WPSR) Write Protection Status Register Offset */
 
@@ -653,4 +650,4 @@ typedef struct
 
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-#endif /* _SAMA5D_AIC_COMPONENT_H_ */
+#endif /* _SAMA5D2_AIC_COMPONENT_H_ */
