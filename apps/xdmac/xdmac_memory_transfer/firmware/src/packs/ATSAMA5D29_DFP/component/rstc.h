@@ -1,28 +1,25 @@
 /*
  * Component description for RSTC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-10-04T10:37:14Z */
-#ifndef _SAMA5D_RSTC_COMPONENT_H_
-#define _SAMA5D_RSTC_COMPONENT_H_
+/* file generated from device description file (ATDF) version 2024-06-24T14:43:55Z */
+#ifndef _SAMA5D2_RSTC_COMPONENT_H_
+#define _SAMA5D2_RSTC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR RSTC                                         */
@@ -38,21 +35,6 @@
 #define   RSTC_CR_KEY_PASSWD_Val              _UINT32_(0xA5)                                       /* (RSTC_CR) Writing any other value in this field aborts the write operation.Always reads as 0.  */
 #define RSTC_CR_KEY_PASSWD                    (RSTC_CR_KEY_PASSWD_Val << RSTC_CR_KEY_Pos)          /* (RSTC_CR) Writing any other value in this field aborts the write operation.Always reads as 0. Position  */
 #define RSTC_CR_Msk                           _UINT32_(0xFF000001)                                 /* (RSTC_CR) Register Mask  */
-
-
-/* -------- RSTC_MR : (RSTC Offset: 0x08) (R/W 32) Mode Register -------- */
-#define RSTC_MR_URSTEN_Pos                    _UINT32_(0)                                          /* (RSTC_MR) User Reset Enable Position */
-#define RSTC_MR_URSTEN_Msk                    (_UINT32_(0x1) << RSTC_MR_URSTEN_Pos)                /* (RSTC_MR) User Reset Enable Mask */
-#define RSTC_MR_URSTEN(value)                 (RSTC_MR_URSTEN_Msk & (_UINT32_(value) << RSTC_MR_URSTEN_Pos)) /* Assigment of value for URSTEN in the RSTC_MR register */
-#define RSTC_MR_URSTIEN_Pos                   _UINT32_(4)                                          /* (RSTC_MR) User Reset Interrupt Enable Position */
-#define RSTC_MR_URSTIEN_Msk                   (_UINT32_(0x1) << RSTC_MR_URSTIEN_Pos)               /* (RSTC_MR) User Reset Interrupt Enable Mask */
-#define RSTC_MR_URSTIEN(value)                (RSTC_MR_URSTIEN_Msk & (_UINT32_(value) << RSTC_MR_URSTIEN_Pos)) /* Assigment of value for URSTIEN in the RSTC_MR register */
-#define RSTC_MR_KEY_Pos                       _UINT32_(24)                                         /* (RSTC_MR) Write Access Password Position */
-#define RSTC_MR_KEY_Msk                       (_UINT32_(0xFF) << RSTC_MR_KEY_Pos)                  /* (RSTC_MR) Write Access Password Mask */
-#define RSTC_MR_KEY(value)                    (RSTC_MR_KEY_Msk & (_UINT32_(value) << RSTC_MR_KEY_Pos)) /* Assigment of value for KEY in the RSTC_MR register */
-#define   RSTC_MR_KEY_PASSWD_Val              _UINT32_(0xA5)                                       /* (RSTC_MR) Writing any other value in this field aborts the write operation.Always reads as 0.  */
-#define RSTC_MR_KEY_PASSWD                    (RSTC_MR_KEY_PASSWD_Val << RSTC_MR_KEY_Pos)          /* (RSTC_MR) Writing any other value in this field aborts the write operation.Always reads as 0. Position  */
-#define RSTC_MR_Msk                           _UINT32_(0xFF000011)                                 /* (RSTC_MR) Register Mask  */
 
 
 /* -------- RSTC_SR : (RSTC Offset: 0x04) ( R/ 32) Status Register -------- */
@@ -81,10 +63,25 @@
 #define RSTC_SR_Msk                           _UINT32_(0x00030701)                                 /* (RSTC_SR) Register Mask  */
 
 
+/* -------- RSTC_MR : (RSTC Offset: 0x08) (R/W 32) Mode Register -------- */
+#define RSTC_MR_URSTEN_Pos                    _UINT32_(0)                                          /* (RSTC_MR) User Reset Enable Position */
+#define RSTC_MR_URSTEN_Msk                    (_UINT32_(0x1) << RSTC_MR_URSTEN_Pos)                /* (RSTC_MR) User Reset Enable Mask */
+#define RSTC_MR_URSTEN(value)                 (RSTC_MR_URSTEN_Msk & (_UINT32_(value) << RSTC_MR_URSTEN_Pos)) /* Assigment of value for URSTEN in the RSTC_MR register */
+#define RSTC_MR_URSTIEN_Pos                   _UINT32_(4)                                          /* (RSTC_MR) User Reset Interrupt Enable Position */
+#define RSTC_MR_URSTIEN_Msk                   (_UINT32_(0x1) << RSTC_MR_URSTIEN_Pos)               /* (RSTC_MR) User Reset Interrupt Enable Mask */
+#define RSTC_MR_URSTIEN(value)                (RSTC_MR_URSTIEN_Msk & (_UINT32_(value) << RSTC_MR_URSTIEN_Pos)) /* Assigment of value for URSTIEN in the RSTC_MR register */
+#define RSTC_MR_KEY_Pos                       _UINT32_(24)                                         /* (RSTC_MR) Write Access Password Position */
+#define RSTC_MR_KEY_Msk                       (_UINT32_(0xFF) << RSTC_MR_KEY_Pos)                  /* (RSTC_MR) Write Access Password Mask */
+#define RSTC_MR_KEY(value)                    (RSTC_MR_KEY_Msk & (_UINT32_(value) << RSTC_MR_KEY_Pos)) /* Assigment of value for KEY in the RSTC_MR register */
+#define   RSTC_MR_KEY_PASSWD_Val              _UINT32_(0xA5)                                       /* (RSTC_MR) Writing any other value in this field aborts the write operation.Always reads as 0.  */
+#define RSTC_MR_KEY_PASSWD                    (RSTC_MR_KEY_PASSWD_Val << RSTC_MR_KEY_Pos)          /* (RSTC_MR) Writing any other value in this field aborts the write operation.Always reads as 0. Position  */
+#define RSTC_MR_Msk                           _UINT32_(0xFF000011)                                 /* (RSTC_MR) Register Mask  */
+
+
 /** \brief RSTC register offsets definitions */
 #define RSTC_CR_REG_OFST               _UINT32_(0x00)      /* (RSTC_CR) Control Register Offset */
-#define RSTC_MR_REG_OFST               _UINT32_(0x08)      /* (RSTC_MR) Mode Register Offset */
 #define RSTC_SR_REG_OFST               _UINT32_(0x04)      /* (RSTC_SR) Status Register Offset */
+#define RSTC_MR_REG_OFST               _UINT32_(0x08)      /* (RSTC_MR) Mode Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief RSTC register API structure */
@@ -97,4 +94,4 @@ typedef struct
 
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-#endif /* _SAMA5D_RSTC_COMPONENT_H_ */
+#endif /* _SAMA5D2_RSTC_COMPONENT_H_ */
