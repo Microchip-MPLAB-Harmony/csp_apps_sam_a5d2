@@ -33,12 +33,18 @@
 // Section: Main Entry Point
 // *****************************************************************************
 // *****************************************************************************
+void reset_asserted (uintptr_t context)
+{
+    LED_BLUE_Toggle();
+}
 
 int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
+    RSTC_CallbackRegister( reset_asserted, (uintptr_t) NULL );
+    
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
