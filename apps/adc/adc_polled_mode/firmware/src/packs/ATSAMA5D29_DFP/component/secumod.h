@@ -1,63 +1,29 @@
 /*
  * Component description for SECUMOD
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-10-04T10:37:14Z */
-#ifndef _SAMA5D_SECUMOD_COMPONENT_H_
-#define _SAMA5D_SECUMOD_COMPONENT_H_
+/* file generated from device description file (ATDF) version 2024-06-24T14:43:55Z */
+#ifndef _SAMA5D2_SECUMOD_COMPONENT_H_
+#define _SAMA5D2_SECUMOD_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR SECUMOD                                      */
 /* ************************************************************************** */
-
-/* -------- SECUMOD_BMPR : (SECUMOD Offset: 0x7C) (R/W 32) Backup Mode Protection Register -------- */
-#define SECUMOD_BMPR_DET0_Pos                 _UINT32_(16)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_BMPR_DET0_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET0_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_BMPR_DET0(value)              (SECUMOD_BMPR_DET0_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_BMPR register */
-#define SECUMOD_BMPR_DET1_Pos                 _UINT32_(17)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_BMPR_DET1_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET1_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_BMPR_DET1(value)              (SECUMOD_BMPR_DET1_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_BMPR register */
-#define SECUMOD_BMPR_DET2_Pos                 _UINT32_(18)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_BMPR_DET2_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET2_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_BMPR_DET2(value)              (SECUMOD_BMPR_DET2_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_BMPR register */
-#define SECUMOD_BMPR_DET3_Pos                 _UINT32_(19)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_BMPR_DET3_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET3_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_BMPR_DET3(value)              (SECUMOD_BMPR_DET3_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_BMPR register */
-#define SECUMOD_BMPR_DET4_Pos                 _UINT32_(20)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_BMPR_DET4_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET4_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_BMPR_DET4(value)              (SECUMOD_BMPR_DET4_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_BMPR register */
-#define SECUMOD_BMPR_DET5_Pos                 _UINT32_(21)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_BMPR_DET5_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET5_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_BMPR_DET5(value)              (SECUMOD_BMPR_DET5_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_BMPR register */
-#define SECUMOD_BMPR_DET6_Pos                 _UINT32_(22)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_BMPR_DET6_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET6_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_BMPR_DET6(value)              (SECUMOD_BMPR_DET6_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_BMPR register */
-#define SECUMOD_BMPR_DET7_Pos                 _UINT32_(23)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_BMPR_DET7_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET7_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_BMPR_DET7(value)              (SECUMOD_BMPR_DET7_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_BMPR register */
-#define SECUMOD_BMPR_Msk                      _UINT32_(0x00FF0000)                                 /* (SECUMOD_BMPR) Register Mask  */
-
-#define SECUMOD_BMPR_DET_Pos                  _UINT32_(16)                                         /* (SECUMOD_BMPR Position) PIOBU Intrusion Detector Protection */
-#define SECUMOD_BMPR_DET_Msk                  (_UINT32_(0xFF) << SECUMOD_BMPR_DET_Pos)             /* (SECUMOD_BMPR Mask) DET */
-#define SECUMOD_BMPR_DET(value)               (SECUMOD_BMPR_DET_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET_Pos)) 
 
 /* -------- SECUMOD_CR : (SECUMOD Offset: 0x00) ( /W 32) Control Register -------- */
 #define SECUMOD_CR_BACKUP_Pos                 _UINT32_(0)                                          /* (SECUMOD_CR) Backup Mode Position */
@@ -78,142 +44,96 @@
 #define SECUMOD_CR_Msk                        _UINT32_(0xFFFF0607)                                 /* (SECUMOD_CR) Register Mask  */
 
 
-/* -------- SECUMOD_JTAGCR : (SECUMOD Offset: 0x68) (R/W 32) JTAG Protection Control Register -------- */
-#define SECUMOD_JTAGCR_FNTRST_Pos             _UINT32_(0)                                          /* (SECUMOD_JTAGCR) Force NTRST Position */
-#define SECUMOD_JTAGCR_FNTRST_Msk             (_UINT32_(0x1) << SECUMOD_JTAGCR_FNTRST_Pos)         /* (SECUMOD_JTAGCR) Force NTRST Mask */
-#define SECUMOD_JTAGCR_FNTRST(value)          (SECUMOD_JTAGCR_FNTRST_Msk & (_UINT32_(value) << SECUMOD_JTAGCR_FNTRST_Pos)) /* Assigment of value for FNTRST in the SECUMOD_JTAGCR register */
-#define SECUMOD_JTAGCR_CA5_DEBUG_MODE_Pos     _UINT32_(1)                                          /* (SECUMOD_JTAGCR) Cortex-A5 Invasive/Non-Invasive Secure/Non-Secure Debug Permissions Position */
-#define SECUMOD_JTAGCR_CA5_DEBUG_MODE_Msk     (_UINT32_(0x7) << SECUMOD_JTAGCR_CA5_DEBUG_MODE_Pos) /* (SECUMOD_JTAGCR) Cortex-A5 Invasive/Non-Invasive Secure/Non-Secure Debug Permissions Mask */
-#define SECUMOD_JTAGCR_CA5_DEBUG_MODE(value)  (SECUMOD_JTAGCR_CA5_DEBUG_MODE_Msk & (_UINT32_(value) << SECUMOD_JTAGCR_CA5_DEBUG_MODE_Pos)) /* Assigment of value for CA5_DEBUG_MODE in the SECUMOD_JTAGCR register */
-#define SECUMOD_JTAGCR_WZO_Pos                _UINT32_(4)                                          /* (SECUMOD_JTAGCR) Write ZERO Position */
-#define SECUMOD_JTAGCR_WZO_Msk                (_UINT32_(0x1) << SECUMOD_JTAGCR_WZO_Pos)            /* (SECUMOD_JTAGCR) Write ZERO Mask */
-#define SECUMOD_JTAGCR_WZO(value)             (SECUMOD_JTAGCR_WZO_Msk & (_UINT32_(value) << SECUMOD_JTAGCR_WZO_Pos)) /* Assigment of value for WZO in the SECUMOD_JTAGCR register */
-#define SECUMOD_JTAGCR_Msk                    _UINT32_(0x0000001F)                                 /* (SECUMOD_JTAGCR) Register Mask  */
+/* -------- SECUMOD_SYSR : (SECUMOD Offset: 0x04) (R/W 32) System Status Register -------- */
+#define SECUMOD_SYSR_ERASE_DONE_Pos           _UINT32_(0)                                          /* (SECUMOD_SYSR) Erasable Memories State (RW) Position */
+#define SECUMOD_SYSR_ERASE_DONE_Msk           (_UINT32_(0x1) << SECUMOD_SYSR_ERASE_DONE_Pos)       /* (SECUMOD_SYSR) Erasable Memories State (RW) Mask */
+#define SECUMOD_SYSR_ERASE_DONE(value)        (SECUMOD_SYSR_ERASE_DONE_Msk & (_UINT32_(value) << SECUMOD_SYSR_ERASE_DONE_Pos)) /* Assigment of value for ERASE_DONE in the SECUMOD_SYSR register */
+#define SECUMOD_SYSR_ERASE_ON_Pos             _UINT32_(1)                                          /* (SECUMOD_SYSR) Erase Process Ongoing (RO) Position */
+#define SECUMOD_SYSR_ERASE_ON_Msk             (_UINT32_(0x1) << SECUMOD_SYSR_ERASE_ON_Pos)         /* (SECUMOD_SYSR) Erase Process Ongoing (RO) Mask */
+#define SECUMOD_SYSR_ERASE_ON(value)          (SECUMOD_SYSR_ERASE_ON_Msk & (_UINT32_(value) << SECUMOD_SYSR_ERASE_ON_Pos)) /* Assigment of value for ERASE_ON in the SECUMOD_SYSR register */
+#define SECUMOD_SYSR_BACKUP_Pos               _UINT32_(2)                                          /* (SECUMOD_SYSR) Backup Mode (RO) Position */
+#define SECUMOD_SYSR_BACKUP_Msk               (_UINT32_(0x1) << SECUMOD_SYSR_BACKUP_Pos)           /* (SECUMOD_SYSR) Backup Mode (RO) Mask */
+#define SECUMOD_SYSR_BACKUP(value)            (SECUMOD_SYSR_BACKUP_Msk & (_UINT32_(value) << SECUMOD_SYSR_BACKUP_Pos)) /* Assigment of value for BACKUP in the SECUMOD_SYSR register */
+#define SECUMOD_SYSR_SWKUP_Pos                _UINT32_(3)                                          /* (SECUMOD_SYSR) SWKUP State (RO) Position */
+#define SECUMOD_SYSR_SWKUP_Msk                (_UINT32_(0x1) << SECUMOD_SYSR_SWKUP_Pos)            /* (SECUMOD_SYSR) SWKUP State (RO) Mask */
+#define SECUMOD_SYSR_SWKUP(value)             (SECUMOD_SYSR_SWKUP_Msk & (_UINT32_(value) << SECUMOD_SYSR_SWKUP_Pos)) /* Assigment of value for SWKUP in the SECUMOD_SYSR register */
+#define SECUMOD_SYSR_AUTOBKP_Pos              _UINT32_(6)                                          /* (SECUMOD_SYSR) Automatic Backup Mode Enabled (RO) Position */
+#define SECUMOD_SYSR_AUTOBKP_Msk              (_UINT32_(0x1) << SECUMOD_SYSR_AUTOBKP_Pos)          /* (SECUMOD_SYSR) Automatic Backup Mode Enabled (RO) Mask */
+#define SECUMOD_SYSR_AUTOBKP(value)           (SECUMOD_SYSR_AUTOBKP_Msk & (_UINT32_(value) << SECUMOD_SYSR_AUTOBKP_Pos)) /* Assigment of value for AUTOBKP in the SECUMOD_SYSR register */
+#define SECUMOD_SYSR_SCRAMB_Pos               _UINT32_(7)                                          /* (SECUMOD_SYSR) Scrambling Enabled (RO) Position */
+#define SECUMOD_SYSR_SCRAMB_Msk               (_UINT32_(0x1) << SECUMOD_SYSR_SCRAMB_Pos)           /* (SECUMOD_SYSR) Scrambling Enabled (RO) Mask */
+#define SECUMOD_SYSR_SCRAMB(value)            (SECUMOD_SYSR_SCRAMB_Msk & (_UINT32_(value) << SECUMOD_SYSR_SCRAMB_Pos)) /* Assigment of value for SCRAMB in the SECUMOD_SYSR register */
+#define SECUMOD_SYSR_Msk                      _UINT32_(0x000000CF)                                 /* (SECUMOD_SYSR) Register Mask  */
 
 
-/* -------- SECUMOD_NIDPR : (SECUMOD Offset: 0x88) ( /W 32) Normal Interrupt Disable Protection Register -------- */
-#define SECUMOD_NIDPR_DET0_Pos                _UINT32_(16)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
-#define SECUMOD_NIDPR_DET0_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET0_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
-#define SECUMOD_NIDPR_DET0(value)             (SECUMOD_NIDPR_DET0_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_NIDPR register */
-#define SECUMOD_NIDPR_DET1_Pos                _UINT32_(17)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
-#define SECUMOD_NIDPR_DET1_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET1_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
-#define SECUMOD_NIDPR_DET1(value)             (SECUMOD_NIDPR_DET1_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_NIDPR register */
-#define SECUMOD_NIDPR_DET2_Pos                _UINT32_(18)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
-#define SECUMOD_NIDPR_DET2_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET2_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
-#define SECUMOD_NIDPR_DET2(value)             (SECUMOD_NIDPR_DET2_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_NIDPR register */
-#define SECUMOD_NIDPR_DET3_Pos                _UINT32_(19)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
-#define SECUMOD_NIDPR_DET3_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET3_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
-#define SECUMOD_NIDPR_DET3(value)             (SECUMOD_NIDPR_DET3_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_NIDPR register */
-#define SECUMOD_NIDPR_DET4_Pos                _UINT32_(20)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
-#define SECUMOD_NIDPR_DET4_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET4_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
-#define SECUMOD_NIDPR_DET4(value)             (SECUMOD_NIDPR_DET4_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_NIDPR register */
-#define SECUMOD_NIDPR_DET5_Pos                _UINT32_(21)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
-#define SECUMOD_NIDPR_DET5_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET5_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
-#define SECUMOD_NIDPR_DET5(value)             (SECUMOD_NIDPR_DET5_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_NIDPR register */
-#define SECUMOD_NIDPR_DET6_Pos                _UINT32_(22)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
-#define SECUMOD_NIDPR_DET6_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET6_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
-#define SECUMOD_NIDPR_DET6(value)             (SECUMOD_NIDPR_DET6_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_NIDPR register */
-#define SECUMOD_NIDPR_DET7_Pos                _UINT32_(23)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
-#define SECUMOD_NIDPR_DET7_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET7_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
-#define SECUMOD_NIDPR_DET7(value)             (SECUMOD_NIDPR_DET7_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_NIDPR register */
-#define SECUMOD_NIDPR_Msk                     _UINT32_(0x00FF0000)                                 /* (SECUMOD_NIDPR) Register Mask  */
+/* -------- SECUMOD_SR : (SECUMOD Offset: 0x08) ( R/ 32) Status Register -------- */
+#define SECUMOD_SR_DET0_Pos                   _UINT32_(16)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SR_DET0_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET0_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SR_DET0(value)                (SECUMOD_SR_DET0_Msk & (_UINT32_(value) << SECUMOD_SR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_SR register */
+#define SECUMOD_SR_DET1_Pos                   _UINT32_(17)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SR_DET1_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET1_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SR_DET1(value)                (SECUMOD_SR_DET1_Msk & (_UINT32_(value) << SECUMOD_SR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_SR register */
+#define SECUMOD_SR_DET2_Pos                   _UINT32_(18)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SR_DET2_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET2_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SR_DET2(value)                (SECUMOD_SR_DET2_Msk & (_UINT32_(value) << SECUMOD_SR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_SR register */
+#define SECUMOD_SR_DET3_Pos                   _UINT32_(19)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SR_DET3_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET3_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SR_DET3(value)                (SECUMOD_SR_DET3_Msk & (_UINT32_(value) << SECUMOD_SR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_SR register */
+#define SECUMOD_SR_DET4_Pos                   _UINT32_(20)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SR_DET4_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET4_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SR_DET4(value)                (SECUMOD_SR_DET4_Msk & (_UINT32_(value) << SECUMOD_SR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_SR register */
+#define SECUMOD_SR_DET5_Pos                   _UINT32_(21)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SR_DET5_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET5_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SR_DET5(value)                (SECUMOD_SR_DET5_Msk & (_UINT32_(value) << SECUMOD_SR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_SR register */
+#define SECUMOD_SR_DET6_Pos                   _UINT32_(22)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SR_DET6_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET6_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SR_DET6(value)                (SECUMOD_SR_DET6_Msk & (_UINT32_(value) << SECUMOD_SR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_SR register */
+#define SECUMOD_SR_DET7_Pos                   _UINT32_(23)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SR_DET7_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET7_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SR_DET7(value)                (SECUMOD_SR_DET7_Msk & (_UINT32_(value) << SECUMOD_SR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_SR register */
+#define SECUMOD_SR_Msk                        _UINT32_(0x00FF0000)                                 /* (SECUMOD_SR) Register Mask  */
 
-#define SECUMOD_NIDPR_DET_Pos                 _UINT32_(16)                                         /* (SECUMOD_NIDPR Position) PIOBU Intrusion Detector Protection Interrupt Disable */
-#define SECUMOD_NIDPR_DET_Msk                 (_UINT32_(0xFF) << SECUMOD_NIDPR_DET_Pos)            /* (SECUMOD_NIDPR Mask) DET */
-#define SECUMOD_NIDPR_DET(value)              (SECUMOD_NIDPR_DET_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET_Pos)) 
+#define SECUMOD_SR_DET_Pos                    _UINT32_(16)                                         /* (SECUMOD_SR Position) PIOBU Intrusion Detector */
+#define SECUMOD_SR_DET_Msk                    (_UINT32_(0xFF) << SECUMOD_SR_DET_Pos)               /* (SECUMOD_SR Mask) DET */
+#define SECUMOD_SR_DET(value)                 (SECUMOD_SR_DET_Msk & (_UINT32_(value) << SECUMOD_SR_DET_Pos)) 
 
-/* -------- SECUMOD_NIEPR : (SECUMOD Offset: 0x84) ( /W 32) Normal Interrupt Enable Protection Register -------- */
-#define SECUMOD_NIEPR_DET0_Pos                _UINT32_(16)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
-#define SECUMOD_NIEPR_DET0_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET0_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
-#define SECUMOD_NIEPR_DET0(value)             (SECUMOD_NIEPR_DET0_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_NIEPR register */
-#define SECUMOD_NIEPR_DET1_Pos                _UINT32_(17)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
-#define SECUMOD_NIEPR_DET1_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET1_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
-#define SECUMOD_NIEPR_DET1(value)             (SECUMOD_NIEPR_DET1_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_NIEPR register */
-#define SECUMOD_NIEPR_DET2_Pos                _UINT32_(18)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
-#define SECUMOD_NIEPR_DET2_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET2_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
-#define SECUMOD_NIEPR_DET2(value)             (SECUMOD_NIEPR_DET2_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_NIEPR register */
-#define SECUMOD_NIEPR_DET3_Pos                _UINT32_(19)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
-#define SECUMOD_NIEPR_DET3_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET3_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
-#define SECUMOD_NIEPR_DET3(value)             (SECUMOD_NIEPR_DET3_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_NIEPR register */
-#define SECUMOD_NIEPR_DET4_Pos                _UINT32_(20)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
-#define SECUMOD_NIEPR_DET4_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET4_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
-#define SECUMOD_NIEPR_DET4(value)             (SECUMOD_NIEPR_DET4_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_NIEPR register */
-#define SECUMOD_NIEPR_DET5_Pos                _UINT32_(21)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
-#define SECUMOD_NIEPR_DET5_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET5_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
-#define SECUMOD_NIEPR_DET5(value)             (SECUMOD_NIEPR_DET5_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_NIEPR register */
-#define SECUMOD_NIEPR_DET6_Pos                _UINT32_(22)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
-#define SECUMOD_NIEPR_DET6_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET6_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
-#define SECUMOD_NIEPR_DET6(value)             (SECUMOD_NIEPR_DET6_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_NIEPR register */
-#define SECUMOD_NIEPR_DET7_Pos                _UINT32_(23)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
-#define SECUMOD_NIEPR_DET7_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET7_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
-#define SECUMOD_NIEPR_DET7(value)             (SECUMOD_NIEPR_DET7_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_NIEPR register */
-#define SECUMOD_NIEPR_Msk                     _UINT32_(0x00FF0000)                                 /* (SECUMOD_NIEPR) Register Mask  */
+/* -------- SECUMOD_SCR : (SECUMOD Offset: 0x10) ( /W 32) Status Clear Register -------- */
+#define SECUMOD_SCR_DET0_Pos                  _UINT32_(16)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SCR_DET0_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET0_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SCR_DET0(value)               (SECUMOD_SCR_DET0_Msk & (_UINT32_(value) << SECUMOD_SCR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_SCR register */
+#define SECUMOD_SCR_DET1_Pos                  _UINT32_(17)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SCR_DET1_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET1_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SCR_DET1(value)               (SECUMOD_SCR_DET1_Msk & (_UINT32_(value) << SECUMOD_SCR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_SCR register */
+#define SECUMOD_SCR_DET2_Pos                  _UINT32_(18)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SCR_DET2_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET2_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SCR_DET2(value)               (SECUMOD_SCR_DET2_Msk & (_UINT32_(value) << SECUMOD_SCR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_SCR register */
+#define SECUMOD_SCR_DET3_Pos                  _UINT32_(19)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SCR_DET3_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET3_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SCR_DET3(value)               (SECUMOD_SCR_DET3_Msk & (_UINT32_(value) << SECUMOD_SCR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_SCR register */
+#define SECUMOD_SCR_DET4_Pos                  _UINT32_(20)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SCR_DET4_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET4_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SCR_DET4(value)               (SECUMOD_SCR_DET4_Msk & (_UINT32_(value) << SECUMOD_SCR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_SCR register */
+#define SECUMOD_SCR_DET5_Pos                  _UINT32_(21)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SCR_DET5_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET5_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SCR_DET5(value)               (SECUMOD_SCR_DET5_Msk & (_UINT32_(value) << SECUMOD_SCR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_SCR register */
+#define SECUMOD_SCR_DET6_Pos                  _UINT32_(22)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SCR_DET6_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET6_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SCR_DET6(value)               (SECUMOD_SCR_DET6_Msk & (_UINT32_(value) << SECUMOD_SCR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_SCR register */
+#define SECUMOD_SCR_DET7_Pos                  _UINT32_(23)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
+#define SECUMOD_SCR_DET7_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET7_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
+#define SECUMOD_SCR_DET7(value)               (SECUMOD_SCR_DET7_Msk & (_UINT32_(value) << SECUMOD_SCR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_SCR register */
+#define SECUMOD_SCR_Msk                       _UINT32_(0x00FF0000)                                 /* (SECUMOD_SCR) Register Mask  */
 
-#define SECUMOD_NIEPR_DET_Pos                 _UINT32_(16)                                         /* (SECUMOD_NIEPR Position) PIOBU Intrusion Detector Protection Interrupt Enable */
-#define SECUMOD_NIEPR_DET_Msk                 (_UINT32_(0xFF) << SECUMOD_NIEPR_DET_Pos)            /* (SECUMOD_NIEPR Mask) DET */
-#define SECUMOD_NIEPR_DET(value)              (SECUMOD_NIEPR_DET_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET_Pos)) 
+#define SECUMOD_SCR_DET_Pos                   _UINT32_(16)                                         /* (SECUMOD_SCR Position) PIOBU Intrusion Detector */
+#define SECUMOD_SCR_DET_Msk                   (_UINT32_(0xFF) << SECUMOD_SCR_DET_Pos)              /* (SECUMOD_SCR Mask) DET */
+#define SECUMOD_SCR_DET(value)                (SECUMOD_SCR_DET_Msk & (_UINT32_(value) << SECUMOD_SCR_DET_Pos)) 
 
-/* -------- SECUMOD_NIMPR : (SECUMOD Offset: 0x8C) ( R/ 32) Normal Interrupt Mask Protection Register -------- */
-#define SECUMOD_NIMPR_DET0_Pos                _UINT32_(16)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
-#define SECUMOD_NIMPR_DET0_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET0_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
-#define SECUMOD_NIMPR_DET0(value)             (SECUMOD_NIMPR_DET0_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_NIMPR register */
-#define SECUMOD_NIMPR_DET1_Pos                _UINT32_(17)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
-#define SECUMOD_NIMPR_DET1_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET1_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
-#define SECUMOD_NIMPR_DET1(value)             (SECUMOD_NIMPR_DET1_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_NIMPR register */
-#define SECUMOD_NIMPR_DET2_Pos                _UINT32_(18)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
-#define SECUMOD_NIMPR_DET2_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET2_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
-#define SECUMOD_NIMPR_DET2(value)             (SECUMOD_NIMPR_DET2_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_NIMPR register */
-#define SECUMOD_NIMPR_DET3_Pos                _UINT32_(19)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
-#define SECUMOD_NIMPR_DET3_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET3_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
-#define SECUMOD_NIMPR_DET3(value)             (SECUMOD_NIMPR_DET3_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_NIMPR register */
-#define SECUMOD_NIMPR_DET4_Pos                _UINT32_(20)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
-#define SECUMOD_NIMPR_DET4_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET4_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
-#define SECUMOD_NIMPR_DET4(value)             (SECUMOD_NIMPR_DET4_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_NIMPR register */
-#define SECUMOD_NIMPR_DET5_Pos                _UINT32_(21)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
-#define SECUMOD_NIMPR_DET5_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET5_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
-#define SECUMOD_NIMPR_DET5(value)             (SECUMOD_NIMPR_DET5_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_NIMPR register */
-#define SECUMOD_NIMPR_DET6_Pos                _UINT32_(22)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
-#define SECUMOD_NIMPR_DET6_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET6_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
-#define SECUMOD_NIMPR_DET6(value)             (SECUMOD_NIMPR_DET6_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_NIMPR register */
-#define SECUMOD_NIMPR_DET7_Pos                _UINT32_(23)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
-#define SECUMOD_NIMPR_DET7_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET7_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
-#define SECUMOD_NIMPR_DET7(value)             (SECUMOD_NIMPR_DET7_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_NIMPR register */
-#define SECUMOD_NIMPR_Msk                     _UINT32_(0x00FF0000)                                 /* (SECUMOD_NIMPR) Register Mask  */
+/* -------- SECUMOD_RAMRDY : (SECUMOD Offset: 0x14) ( R/ 32) RAM Access Ready Register -------- */
+#define SECUMOD_RAMRDY_READY_Pos              _UINT32_(0)                                          /* (SECUMOD_RAMRDY) Ready for system access flag Position */
+#define SECUMOD_RAMRDY_READY_Msk              (_UINT32_(0x1) << SECUMOD_RAMRDY_READY_Pos)          /* (SECUMOD_RAMRDY) Ready for system access flag Mask */
+#define SECUMOD_RAMRDY_READY(value)           (SECUMOD_RAMRDY_READY_Msk & (_UINT32_(value) << SECUMOD_RAMRDY_READY_Pos)) /* Assigment of value for READY in the SECUMOD_RAMRDY register */
+#define SECUMOD_RAMRDY_Msk                    _UINT32_(0x00000001)                                 /* (SECUMOD_RAMRDY) Register Mask  */
 
-#define SECUMOD_NIMPR_DET_Pos                 _UINT32_(16)                                         /* (SECUMOD_NIMPR Position) PIOBU Intrusion Detector Protection Interrupt Mask */
-#define SECUMOD_NIMPR_DET_Msk                 (_UINT32_(0xFF) << SECUMOD_NIMPR_DET_Pos)            /* (SECUMOD_NIMPR Mask) DET */
-#define SECUMOD_NIMPR_DET(value)              (SECUMOD_NIMPR_DET_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET_Pos)) 
-
-/* -------- SECUMOD_NMPR : (SECUMOD Offset: 0x80) (R/W 32) Normal Mode Protection Register -------- */
-#define SECUMOD_NMPR_DET0_Pos                 _UINT32_(16)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_NMPR_DET0_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET0_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_NMPR_DET0(value)              (SECUMOD_NMPR_DET0_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_NMPR register */
-#define SECUMOD_NMPR_DET1_Pos                 _UINT32_(17)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_NMPR_DET1_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET1_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_NMPR_DET1(value)              (SECUMOD_NMPR_DET1_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_NMPR register */
-#define SECUMOD_NMPR_DET2_Pos                 _UINT32_(18)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_NMPR_DET2_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET2_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_NMPR_DET2(value)              (SECUMOD_NMPR_DET2_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_NMPR register */
-#define SECUMOD_NMPR_DET3_Pos                 _UINT32_(19)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_NMPR_DET3_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET3_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_NMPR_DET3(value)              (SECUMOD_NMPR_DET3_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_NMPR register */
-#define SECUMOD_NMPR_DET4_Pos                 _UINT32_(20)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_NMPR_DET4_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET4_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_NMPR_DET4(value)              (SECUMOD_NMPR_DET4_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_NMPR register */
-#define SECUMOD_NMPR_DET5_Pos                 _UINT32_(21)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_NMPR_DET5_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET5_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_NMPR_DET5(value)              (SECUMOD_NMPR_DET5_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_NMPR register */
-#define SECUMOD_NMPR_DET6_Pos                 _UINT32_(22)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_NMPR_DET6_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET6_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_NMPR_DET6(value)              (SECUMOD_NMPR_DET6_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_NMPR register */
-#define SECUMOD_NMPR_DET7_Pos                 _UINT32_(23)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
-#define SECUMOD_NMPR_DET7_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET7_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
-#define SECUMOD_NMPR_DET7(value)              (SECUMOD_NMPR_DET7_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_NMPR register */
-#define SECUMOD_NMPR_Msk                      _UINT32_(0x00FF0000)                                 /* (SECUMOD_NMPR) Register Mask  */
-
-#define SECUMOD_NMPR_DET_Pos                  _UINT32_(16)                                         /* (SECUMOD_NMPR Position) PIOBU Intrusion Detector Protection */
-#define SECUMOD_NMPR_DET_Msk                  (_UINT32_(0xFF) << SECUMOD_NMPR_DET_Pos)             /* (SECUMOD_NMPR Mask) DET */
-#define SECUMOD_NMPR_DET(value)               (SECUMOD_NMPR_DET_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET_Pos)) 
 
 /* -------- SECUMOD_PIOBU : (SECUMOD Offset: 0x18) (R/W 32) PIO Backup Register -------- */
 #define SECUMOD_PIOBU_PIOBU_AFV_Pos           _UINT32_(0)                                          /* (SECUMOD_PIOBU) PIOBU Alarm Filter Value Position */
@@ -241,6 +161,26 @@
 #define SECUMOD_PIOBU_SWITCH_Msk              (_UINT32_(0x1) << SECUMOD_PIOBU_SWITCH_Pos)          /* (SECUMOD_PIOBU) Switch State for Intrusion Detection Mask */
 #define SECUMOD_PIOBU_SWITCH(value)           (SECUMOD_PIOBU_SWITCH_Msk & (_UINT32_(value) << SECUMOD_PIOBU_SWITCH_Pos)) /* Assigment of value for SWITCH in the SECUMOD_PIOBU register */
 #define SECUMOD_PIOBU_Msk                     _UINT32_(0x0000F7FF)                                 /* (SECUMOD_PIOBU) Register Mask  */
+
+
+/* -------- SECUMOD_JTAGCR : (SECUMOD Offset: 0x68) (R/W 32) JTAG Protection Control Register -------- */
+#define SECUMOD_JTAGCR_FNTRST_Pos             _UINT32_(0)                                          /* (SECUMOD_JTAGCR) Force NTRST Position */
+#define SECUMOD_JTAGCR_FNTRST_Msk             (_UINT32_(0x1) << SECUMOD_JTAGCR_FNTRST_Pos)         /* (SECUMOD_JTAGCR) Force NTRST Mask */
+#define SECUMOD_JTAGCR_FNTRST(value)          (SECUMOD_JTAGCR_FNTRST_Msk & (_UINT32_(value) << SECUMOD_JTAGCR_FNTRST_Pos)) /* Assigment of value for FNTRST in the SECUMOD_JTAGCR register */
+#define SECUMOD_JTAGCR_CA5_DEBUG_MODE_Pos     _UINT32_(1)                                          /* (SECUMOD_JTAGCR) Cortex-A5 Invasive/Non-Invasive Secure/Non-Secure Debug Permissions Position */
+#define SECUMOD_JTAGCR_CA5_DEBUG_MODE_Msk     (_UINT32_(0x7) << SECUMOD_JTAGCR_CA5_DEBUG_MODE_Pos) /* (SECUMOD_JTAGCR) Cortex-A5 Invasive/Non-Invasive Secure/Non-Secure Debug Permissions Mask */
+#define SECUMOD_JTAGCR_CA5_DEBUG_MODE(value)  (SECUMOD_JTAGCR_CA5_DEBUG_MODE_Msk & (_UINT32_(value) << SECUMOD_JTAGCR_CA5_DEBUG_MODE_Pos)) /* Assigment of value for CA5_DEBUG_MODE in the SECUMOD_JTAGCR register */
+#define SECUMOD_JTAGCR_WZO_Pos                _UINT32_(4)                                          /* (SECUMOD_JTAGCR) Write ZERO Position */
+#define SECUMOD_JTAGCR_WZO_Msk                (_UINT32_(0x1) << SECUMOD_JTAGCR_WZO_Pos)            /* (SECUMOD_JTAGCR) Write ZERO Mask */
+#define SECUMOD_JTAGCR_WZO(value)             (SECUMOD_JTAGCR_WZO_Msk & (_UINT32_(value) << SECUMOD_JTAGCR_WZO_Pos)) /* Assigment of value for WZO in the SECUMOD_JTAGCR register */
+#define SECUMOD_JTAGCR_Msk                    _UINT32_(0x0000001F)                                 /* (SECUMOD_JTAGCR) Register Mask  */
+
+
+/* -------- SECUMOD_SCRKEY : (SECUMOD Offset: 0x70) (R/W 32) Scrambling Key Register -------- */
+#define SECUMOD_SCRKEY_SCRKEY_Pos             _UINT32_(0)                                          /* (SECUMOD_SCRKEY) Scrambling Key Value Position */
+#define SECUMOD_SCRKEY_SCRKEY_Msk             (_UINT32_(0xFFFFFFFF) << SECUMOD_SCRKEY_SCRKEY_Pos)  /* (SECUMOD_SCRKEY) Scrambling Key Value Mask */
+#define SECUMOD_SCRKEY_SCRKEY(value)          (SECUMOD_SCRKEY_SCRKEY_Msk & (_UINT32_(value) << SECUMOD_SCRKEY_SCRKEY_Pos)) /* Assigment of value for SCRKEY in the SECUMOD_SCRKEY register */
+#define SECUMOD_SCRKEY_Msk                    _UINT32_(0xFFFFFFFF)                                 /* (SECUMOD_SCRKEY) Register Mask  */
 
 
 /* -------- SECUMOD_RAMACC : (SECUMOD Offset: 0x74) (R/W 32) RAM Access Rights Register -------- */
@@ -287,103 +227,160 @@
 #define SECUMOD_RAMACCSR_Msk                  _UINT32_(0x00000FFF)                                 /* (SECUMOD_RAMACCSR) Register Mask  */
 
 
-/* -------- SECUMOD_RAMRDY : (SECUMOD Offset: 0x14) ( R/ 32) RAM Access Ready Register -------- */
-#define SECUMOD_RAMRDY_READY_Pos              _UINT32_(0)                                          /* (SECUMOD_RAMRDY) Ready for system access flag Position */
-#define SECUMOD_RAMRDY_READY_Msk              (_UINT32_(0x1) << SECUMOD_RAMRDY_READY_Pos)          /* (SECUMOD_RAMRDY) Ready for system access flag Mask */
-#define SECUMOD_RAMRDY_READY(value)           (SECUMOD_RAMRDY_READY_Msk & (_UINT32_(value) << SECUMOD_RAMRDY_READY_Pos)) /* Assigment of value for READY in the SECUMOD_RAMRDY register */
-#define SECUMOD_RAMRDY_Msk                    _UINT32_(0x00000001)                                 /* (SECUMOD_RAMRDY) Register Mask  */
+/* -------- SECUMOD_BMPR : (SECUMOD Offset: 0x7C) (R/W 32) Backup Mode Protection Register -------- */
+#define SECUMOD_BMPR_DET0_Pos                 _UINT32_(16)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_BMPR_DET0_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET0_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_BMPR_DET0(value)              (SECUMOD_BMPR_DET0_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_BMPR register */
+#define SECUMOD_BMPR_DET1_Pos                 _UINT32_(17)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_BMPR_DET1_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET1_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_BMPR_DET1(value)              (SECUMOD_BMPR_DET1_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_BMPR register */
+#define SECUMOD_BMPR_DET2_Pos                 _UINT32_(18)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_BMPR_DET2_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET2_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_BMPR_DET2(value)              (SECUMOD_BMPR_DET2_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_BMPR register */
+#define SECUMOD_BMPR_DET3_Pos                 _UINT32_(19)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_BMPR_DET3_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET3_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_BMPR_DET3(value)              (SECUMOD_BMPR_DET3_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_BMPR register */
+#define SECUMOD_BMPR_DET4_Pos                 _UINT32_(20)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_BMPR_DET4_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET4_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_BMPR_DET4(value)              (SECUMOD_BMPR_DET4_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_BMPR register */
+#define SECUMOD_BMPR_DET5_Pos                 _UINT32_(21)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_BMPR_DET5_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET5_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_BMPR_DET5(value)              (SECUMOD_BMPR_DET5_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_BMPR register */
+#define SECUMOD_BMPR_DET6_Pos                 _UINT32_(22)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_BMPR_DET6_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET6_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_BMPR_DET6(value)              (SECUMOD_BMPR_DET6_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_BMPR register */
+#define SECUMOD_BMPR_DET7_Pos                 _UINT32_(23)                                         /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_BMPR_DET7_Msk                 (_UINT32_(0x1) << SECUMOD_BMPR_DET7_Pos)             /* (SECUMOD_BMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_BMPR_DET7(value)              (SECUMOD_BMPR_DET7_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_BMPR register */
+#define SECUMOD_BMPR_Msk                      _UINT32_(0x00FF0000)                                 /* (SECUMOD_BMPR) Register Mask  */
 
+#define SECUMOD_BMPR_DET_Pos                  _UINT32_(16)                                         /* (SECUMOD_BMPR Position) PIOBU Intrusion Detector Protection */
+#define SECUMOD_BMPR_DET_Msk                  (_UINT32_(0xFF) << SECUMOD_BMPR_DET_Pos)             /* (SECUMOD_BMPR Mask) DET */
+#define SECUMOD_BMPR_DET(value)               (SECUMOD_BMPR_DET_Msk & (_UINT32_(value) << SECUMOD_BMPR_DET_Pos)) 
 
-/* -------- SECUMOD_SCR : (SECUMOD Offset: 0x10) ( /W 32) Status Clear Register -------- */
-#define SECUMOD_SCR_DET0_Pos                  _UINT32_(16)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SCR_DET0_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET0_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SCR_DET0(value)               (SECUMOD_SCR_DET0_Msk & (_UINT32_(value) << SECUMOD_SCR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_SCR register */
-#define SECUMOD_SCR_DET1_Pos                  _UINT32_(17)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SCR_DET1_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET1_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SCR_DET1(value)               (SECUMOD_SCR_DET1_Msk & (_UINT32_(value) << SECUMOD_SCR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_SCR register */
-#define SECUMOD_SCR_DET2_Pos                  _UINT32_(18)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SCR_DET2_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET2_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SCR_DET2(value)               (SECUMOD_SCR_DET2_Msk & (_UINT32_(value) << SECUMOD_SCR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_SCR register */
-#define SECUMOD_SCR_DET3_Pos                  _UINT32_(19)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SCR_DET3_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET3_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SCR_DET3(value)               (SECUMOD_SCR_DET3_Msk & (_UINT32_(value) << SECUMOD_SCR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_SCR register */
-#define SECUMOD_SCR_DET4_Pos                  _UINT32_(20)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SCR_DET4_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET4_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SCR_DET4(value)               (SECUMOD_SCR_DET4_Msk & (_UINT32_(value) << SECUMOD_SCR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_SCR register */
-#define SECUMOD_SCR_DET5_Pos                  _UINT32_(21)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SCR_DET5_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET5_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SCR_DET5(value)               (SECUMOD_SCR_DET5_Msk & (_UINT32_(value) << SECUMOD_SCR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_SCR register */
-#define SECUMOD_SCR_DET6_Pos                  _UINT32_(22)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SCR_DET6_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET6_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SCR_DET6(value)               (SECUMOD_SCR_DET6_Msk & (_UINT32_(value) << SECUMOD_SCR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_SCR register */
-#define SECUMOD_SCR_DET7_Pos                  _UINT32_(23)                                         /* (SECUMOD_SCR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SCR_DET7_Msk                  (_UINT32_(0x1) << SECUMOD_SCR_DET7_Pos)              /* (SECUMOD_SCR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SCR_DET7(value)               (SECUMOD_SCR_DET7_Msk & (_UINT32_(value) << SECUMOD_SCR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_SCR register */
-#define SECUMOD_SCR_Msk                       _UINT32_(0x00FF0000)                                 /* (SECUMOD_SCR) Register Mask  */
+/* -------- SECUMOD_NMPR : (SECUMOD Offset: 0x80) (R/W 32) Normal Mode Protection Register -------- */
+#define SECUMOD_NMPR_DET0_Pos                 _UINT32_(16)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_NMPR_DET0_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET0_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_NMPR_DET0(value)              (SECUMOD_NMPR_DET0_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_NMPR register */
+#define SECUMOD_NMPR_DET1_Pos                 _UINT32_(17)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_NMPR_DET1_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET1_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_NMPR_DET1(value)              (SECUMOD_NMPR_DET1_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_NMPR register */
+#define SECUMOD_NMPR_DET2_Pos                 _UINT32_(18)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_NMPR_DET2_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET2_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_NMPR_DET2(value)              (SECUMOD_NMPR_DET2_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_NMPR register */
+#define SECUMOD_NMPR_DET3_Pos                 _UINT32_(19)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_NMPR_DET3_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET3_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_NMPR_DET3(value)              (SECUMOD_NMPR_DET3_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_NMPR register */
+#define SECUMOD_NMPR_DET4_Pos                 _UINT32_(20)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_NMPR_DET4_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET4_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_NMPR_DET4(value)              (SECUMOD_NMPR_DET4_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_NMPR register */
+#define SECUMOD_NMPR_DET5_Pos                 _UINT32_(21)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_NMPR_DET5_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET5_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_NMPR_DET5(value)              (SECUMOD_NMPR_DET5_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_NMPR register */
+#define SECUMOD_NMPR_DET6_Pos                 _UINT32_(22)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_NMPR_DET6_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET6_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_NMPR_DET6(value)              (SECUMOD_NMPR_DET6_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_NMPR register */
+#define SECUMOD_NMPR_DET7_Pos                 _UINT32_(23)                                         /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Position */
+#define SECUMOD_NMPR_DET7_Msk                 (_UINT32_(0x1) << SECUMOD_NMPR_DET7_Pos)             /* (SECUMOD_NMPR) PIOBU Intrusion Detector Protection Mask */
+#define SECUMOD_NMPR_DET7(value)              (SECUMOD_NMPR_DET7_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_NMPR register */
+#define SECUMOD_NMPR_Msk                      _UINT32_(0x00FF0000)                                 /* (SECUMOD_NMPR) Register Mask  */
 
-#define SECUMOD_SCR_DET_Pos                   _UINT32_(16)                                         /* (SECUMOD_SCR Position) PIOBU Intrusion Detector */
-#define SECUMOD_SCR_DET_Msk                   (_UINT32_(0xFF) << SECUMOD_SCR_DET_Pos)              /* (SECUMOD_SCR Mask) DET */
-#define SECUMOD_SCR_DET(value)                (SECUMOD_SCR_DET_Msk & (_UINT32_(value) << SECUMOD_SCR_DET_Pos)) 
+#define SECUMOD_NMPR_DET_Pos                  _UINT32_(16)                                         /* (SECUMOD_NMPR Position) PIOBU Intrusion Detector Protection */
+#define SECUMOD_NMPR_DET_Msk                  (_UINT32_(0xFF) << SECUMOD_NMPR_DET_Pos)             /* (SECUMOD_NMPR Mask) DET */
+#define SECUMOD_NMPR_DET(value)               (SECUMOD_NMPR_DET_Msk & (_UINT32_(value) << SECUMOD_NMPR_DET_Pos)) 
 
-/* -------- SECUMOD_SCRKEY : (SECUMOD Offset: 0x70) (R/W 32) Scrambling Key Register -------- */
-#define SECUMOD_SCRKEY_SCRKEY_Pos             _UINT32_(0)                                          /* (SECUMOD_SCRKEY) Scrambling Key Value Position */
-#define SECUMOD_SCRKEY_SCRKEY_Msk             (_UINT32_(0xFFFFFFFF) << SECUMOD_SCRKEY_SCRKEY_Pos)  /* (SECUMOD_SCRKEY) Scrambling Key Value Mask */
-#define SECUMOD_SCRKEY_SCRKEY(value)          (SECUMOD_SCRKEY_SCRKEY_Msk & (_UINT32_(value) << SECUMOD_SCRKEY_SCRKEY_Pos)) /* Assigment of value for SCRKEY in the SECUMOD_SCRKEY register */
-#define SECUMOD_SCRKEY_Msk                    _UINT32_(0xFFFFFFFF)                                 /* (SECUMOD_SCRKEY) Register Mask  */
+/* -------- SECUMOD_NIEPR : (SECUMOD Offset: 0x84) ( /W 32) Normal Interrupt Enable Protection Register -------- */
+#define SECUMOD_NIEPR_DET0_Pos                _UINT32_(16)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
+#define SECUMOD_NIEPR_DET0_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET0_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
+#define SECUMOD_NIEPR_DET0(value)             (SECUMOD_NIEPR_DET0_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_NIEPR register */
+#define SECUMOD_NIEPR_DET1_Pos                _UINT32_(17)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
+#define SECUMOD_NIEPR_DET1_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET1_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
+#define SECUMOD_NIEPR_DET1(value)             (SECUMOD_NIEPR_DET1_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_NIEPR register */
+#define SECUMOD_NIEPR_DET2_Pos                _UINT32_(18)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
+#define SECUMOD_NIEPR_DET2_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET2_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
+#define SECUMOD_NIEPR_DET2(value)             (SECUMOD_NIEPR_DET2_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_NIEPR register */
+#define SECUMOD_NIEPR_DET3_Pos                _UINT32_(19)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
+#define SECUMOD_NIEPR_DET3_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET3_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
+#define SECUMOD_NIEPR_DET3(value)             (SECUMOD_NIEPR_DET3_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_NIEPR register */
+#define SECUMOD_NIEPR_DET4_Pos                _UINT32_(20)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
+#define SECUMOD_NIEPR_DET4_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET4_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
+#define SECUMOD_NIEPR_DET4(value)             (SECUMOD_NIEPR_DET4_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_NIEPR register */
+#define SECUMOD_NIEPR_DET5_Pos                _UINT32_(21)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
+#define SECUMOD_NIEPR_DET5_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET5_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
+#define SECUMOD_NIEPR_DET5(value)             (SECUMOD_NIEPR_DET5_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_NIEPR register */
+#define SECUMOD_NIEPR_DET6_Pos                _UINT32_(22)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
+#define SECUMOD_NIEPR_DET6_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET6_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
+#define SECUMOD_NIEPR_DET6(value)             (SECUMOD_NIEPR_DET6_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_NIEPR register */
+#define SECUMOD_NIEPR_DET7_Pos                _UINT32_(23)                                         /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Position */
+#define SECUMOD_NIEPR_DET7_Msk                (_UINT32_(0x1) << SECUMOD_NIEPR_DET7_Pos)            /* (SECUMOD_NIEPR) PIOBU Intrusion Detector Protection Interrupt Enable Mask */
+#define SECUMOD_NIEPR_DET7(value)             (SECUMOD_NIEPR_DET7_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_NIEPR register */
+#define SECUMOD_NIEPR_Msk                     _UINT32_(0x00FF0000)                                 /* (SECUMOD_NIEPR) Register Mask  */
 
+#define SECUMOD_NIEPR_DET_Pos                 _UINT32_(16)                                         /* (SECUMOD_NIEPR Position) PIOBU Intrusion Detector Protection Interrupt Enable */
+#define SECUMOD_NIEPR_DET_Msk                 (_UINT32_(0xFF) << SECUMOD_NIEPR_DET_Pos)            /* (SECUMOD_NIEPR Mask) DET */
+#define SECUMOD_NIEPR_DET(value)              (SECUMOD_NIEPR_DET_Msk & (_UINT32_(value) << SECUMOD_NIEPR_DET_Pos)) 
 
-/* -------- SECUMOD_SR : (SECUMOD Offset: 0x08) ( R/ 32) Status Register -------- */
-#define SECUMOD_SR_DET0_Pos                   _UINT32_(16)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SR_DET0_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET0_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SR_DET0(value)                (SECUMOD_SR_DET0_Msk & (_UINT32_(value) << SECUMOD_SR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_SR register */
-#define SECUMOD_SR_DET1_Pos                   _UINT32_(17)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SR_DET1_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET1_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SR_DET1(value)                (SECUMOD_SR_DET1_Msk & (_UINT32_(value) << SECUMOD_SR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_SR register */
-#define SECUMOD_SR_DET2_Pos                   _UINT32_(18)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SR_DET2_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET2_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SR_DET2(value)                (SECUMOD_SR_DET2_Msk & (_UINT32_(value) << SECUMOD_SR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_SR register */
-#define SECUMOD_SR_DET3_Pos                   _UINT32_(19)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SR_DET3_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET3_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SR_DET3(value)                (SECUMOD_SR_DET3_Msk & (_UINT32_(value) << SECUMOD_SR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_SR register */
-#define SECUMOD_SR_DET4_Pos                   _UINT32_(20)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SR_DET4_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET4_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SR_DET4(value)                (SECUMOD_SR_DET4_Msk & (_UINT32_(value) << SECUMOD_SR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_SR register */
-#define SECUMOD_SR_DET5_Pos                   _UINT32_(21)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SR_DET5_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET5_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SR_DET5(value)                (SECUMOD_SR_DET5_Msk & (_UINT32_(value) << SECUMOD_SR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_SR register */
-#define SECUMOD_SR_DET6_Pos                   _UINT32_(22)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SR_DET6_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET6_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SR_DET6(value)                (SECUMOD_SR_DET6_Msk & (_UINT32_(value) << SECUMOD_SR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_SR register */
-#define SECUMOD_SR_DET7_Pos                   _UINT32_(23)                                         /* (SECUMOD_SR) PIOBU Intrusion Detector Position */
-#define SECUMOD_SR_DET7_Msk                   (_UINT32_(0x1) << SECUMOD_SR_DET7_Pos)               /* (SECUMOD_SR) PIOBU Intrusion Detector Mask */
-#define SECUMOD_SR_DET7(value)                (SECUMOD_SR_DET7_Msk & (_UINT32_(value) << SECUMOD_SR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_SR register */
-#define SECUMOD_SR_Msk                        _UINT32_(0x00FF0000)                                 /* (SECUMOD_SR) Register Mask  */
+/* -------- SECUMOD_NIDPR : (SECUMOD Offset: 0x88) ( /W 32) Normal Interrupt Disable Protection Register -------- */
+#define SECUMOD_NIDPR_DET0_Pos                _UINT32_(16)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
+#define SECUMOD_NIDPR_DET0_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET0_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
+#define SECUMOD_NIDPR_DET0(value)             (SECUMOD_NIDPR_DET0_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_NIDPR register */
+#define SECUMOD_NIDPR_DET1_Pos                _UINT32_(17)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
+#define SECUMOD_NIDPR_DET1_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET1_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
+#define SECUMOD_NIDPR_DET1(value)             (SECUMOD_NIDPR_DET1_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_NIDPR register */
+#define SECUMOD_NIDPR_DET2_Pos                _UINT32_(18)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
+#define SECUMOD_NIDPR_DET2_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET2_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
+#define SECUMOD_NIDPR_DET2(value)             (SECUMOD_NIDPR_DET2_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_NIDPR register */
+#define SECUMOD_NIDPR_DET3_Pos                _UINT32_(19)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
+#define SECUMOD_NIDPR_DET3_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET3_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
+#define SECUMOD_NIDPR_DET3(value)             (SECUMOD_NIDPR_DET3_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_NIDPR register */
+#define SECUMOD_NIDPR_DET4_Pos                _UINT32_(20)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
+#define SECUMOD_NIDPR_DET4_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET4_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
+#define SECUMOD_NIDPR_DET4(value)             (SECUMOD_NIDPR_DET4_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_NIDPR register */
+#define SECUMOD_NIDPR_DET5_Pos                _UINT32_(21)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
+#define SECUMOD_NIDPR_DET5_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET5_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
+#define SECUMOD_NIDPR_DET5(value)             (SECUMOD_NIDPR_DET5_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_NIDPR register */
+#define SECUMOD_NIDPR_DET6_Pos                _UINT32_(22)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
+#define SECUMOD_NIDPR_DET6_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET6_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
+#define SECUMOD_NIDPR_DET6(value)             (SECUMOD_NIDPR_DET6_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_NIDPR register */
+#define SECUMOD_NIDPR_DET7_Pos                _UINT32_(23)                                         /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Position */
+#define SECUMOD_NIDPR_DET7_Msk                (_UINT32_(0x1) << SECUMOD_NIDPR_DET7_Pos)            /* (SECUMOD_NIDPR) PIOBU Intrusion Detector Protection Interrupt Disable Mask */
+#define SECUMOD_NIDPR_DET7(value)             (SECUMOD_NIDPR_DET7_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_NIDPR register */
+#define SECUMOD_NIDPR_Msk                     _UINT32_(0x00FF0000)                                 /* (SECUMOD_NIDPR) Register Mask  */
 
-#define SECUMOD_SR_DET_Pos                    _UINT32_(16)                                         /* (SECUMOD_SR Position) PIOBU Intrusion Detector */
-#define SECUMOD_SR_DET_Msk                    (_UINT32_(0xFF) << SECUMOD_SR_DET_Pos)               /* (SECUMOD_SR Mask) DET */
-#define SECUMOD_SR_DET(value)                 (SECUMOD_SR_DET_Msk & (_UINT32_(value) << SECUMOD_SR_DET_Pos)) 
+#define SECUMOD_NIDPR_DET_Pos                 _UINT32_(16)                                         /* (SECUMOD_NIDPR Position) PIOBU Intrusion Detector Protection Interrupt Disable */
+#define SECUMOD_NIDPR_DET_Msk                 (_UINT32_(0xFF) << SECUMOD_NIDPR_DET_Pos)            /* (SECUMOD_NIDPR Mask) DET */
+#define SECUMOD_NIDPR_DET(value)              (SECUMOD_NIDPR_DET_Msk & (_UINT32_(value) << SECUMOD_NIDPR_DET_Pos)) 
 
-/* -------- SECUMOD_SYSR : (SECUMOD Offset: 0x04) (R/W 32) System Status Register -------- */
-#define SECUMOD_SYSR_ERASE_DONE_Pos           _UINT32_(0)                                          /* (SECUMOD_SYSR) Erasable Memories State (RW) Position */
-#define SECUMOD_SYSR_ERASE_DONE_Msk           (_UINT32_(0x1) << SECUMOD_SYSR_ERASE_DONE_Pos)       /* (SECUMOD_SYSR) Erasable Memories State (RW) Mask */
-#define SECUMOD_SYSR_ERASE_DONE(value)        (SECUMOD_SYSR_ERASE_DONE_Msk & (_UINT32_(value) << SECUMOD_SYSR_ERASE_DONE_Pos)) /* Assigment of value for ERASE_DONE in the SECUMOD_SYSR register */
-#define SECUMOD_SYSR_ERASE_ON_Pos             _UINT32_(1)                                          /* (SECUMOD_SYSR) Erase Process Ongoing (RO) Position */
-#define SECUMOD_SYSR_ERASE_ON_Msk             (_UINT32_(0x1) << SECUMOD_SYSR_ERASE_ON_Pos)         /* (SECUMOD_SYSR) Erase Process Ongoing (RO) Mask */
-#define SECUMOD_SYSR_ERASE_ON(value)          (SECUMOD_SYSR_ERASE_ON_Msk & (_UINT32_(value) << SECUMOD_SYSR_ERASE_ON_Pos)) /* Assigment of value for ERASE_ON in the SECUMOD_SYSR register */
-#define SECUMOD_SYSR_BACKUP_Pos               _UINT32_(2)                                          /* (SECUMOD_SYSR) Backup Mode (RO) Position */
-#define SECUMOD_SYSR_BACKUP_Msk               (_UINT32_(0x1) << SECUMOD_SYSR_BACKUP_Pos)           /* (SECUMOD_SYSR) Backup Mode (RO) Mask */
-#define SECUMOD_SYSR_BACKUP(value)            (SECUMOD_SYSR_BACKUP_Msk & (_UINT32_(value) << SECUMOD_SYSR_BACKUP_Pos)) /* Assigment of value for BACKUP in the SECUMOD_SYSR register */
-#define SECUMOD_SYSR_SWKUP_Pos                _UINT32_(3)                                          /* (SECUMOD_SYSR) SWKUP State (RO) Position */
-#define SECUMOD_SYSR_SWKUP_Msk                (_UINT32_(0x1) << SECUMOD_SYSR_SWKUP_Pos)            /* (SECUMOD_SYSR) SWKUP State (RO) Mask */
-#define SECUMOD_SYSR_SWKUP(value)             (SECUMOD_SYSR_SWKUP_Msk & (_UINT32_(value) << SECUMOD_SYSR_SWKUP_Pos)) /* Assigment of value for SWKUP in the SECUMOD_SYSR register */
-#define SECUMOD_SYSR_AUTOBKP_Pos              _UINT32_(6)                                          /* (SECUMOD_SYSR) Automatic Backup Mode Enabled (RO) Position */
-#define SECUMOD_SYSR_AUTOBKP_Msk              (_UINT32_(0x1) << SECUMOD_SYSR_AUTOBKP_Pos)          /* (SECUMOD_SYSR) Automatic Backup Mode Enabled (RO) Mask */
-#define SECUMOD_SYSR_AUTOBKP(value)           (SECUMOD_SYSR_AUTOBKP_Msk & (_UINT32_(value) << SECUMOD_SYSR_AUTOBKP_Pos)) /* Assigment of value for AUTOBKP in the SECUMOD_SYSR register */
-#define SECUMOD_SYSR_SCRAMB_Pos               _UINT32_(7)                                          /* (SECUMOD_SYSR) Scrambling Enabled (RO) Position */
-#define SECUMOD_SYSR_SCRAMB_Msk               (_UINT32_(0x1) << SECUMOD_SYSR_SCRAMB_Pos)           /* (SECUMOD_SYSR) Scrambling Enabled (RO) Mask */
-#define SECUMOD_SYSR_SCRAMB(value)            (SECUMOD_SYSR_SCRAMB_Msk & (_UINT32_(value) << SECUMOD_SYSR_SCRAMB_Pos)) /* Assigment of value for SCRAMB in the SECUMOD_SYSR register */
-#define SECUMOD_SYSR_Msk                      _UINT32_(0x000000CF)                                 /* (SECUMOD_SYSR) Register Mask  */
+/* -------- SECUMOD_NIMPR : (SECUMOD Offset: 0x8C) ( R/ 32) Normal Interrupt Mask Protection Register -------- */
+#define SECUMOD_NIMPR_DET0_Pos                _UINT32_(16)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
+#define SECUMOD_NIMPR_DET0_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET0_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
+#define SECUMOD_NIMPR_DET0(value)             (SECUMOD_NIMPR_DET0_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET0_Pos)) /* Assigment of value for DET0 in the SECUMOD_NIMPR register */
+#define SECUMOD_NIMPR_DET1_Pos                _UINT32_(17)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
+#define SECUMOD_NIMPR_DET1_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET1_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
+#define SECUMOD_NIMPR_DET1(value)             (SECUMOD_NIMPR_DET1_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET1_Pos)) /* Assigment of value for DET1 in the SECUMOD_NIMPR register */
+#define SECUMOD_NIMPR_DET2_Pos                _UINT32_(18)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
+#define SECUMOD_NIMPR_DET2_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET2_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
+#define SECUMOD_NIMPR_DET2(value)             (SECUMOD_NIMPR_DET2_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET2_Pos)) /* Assigment of value for DET2 in the SECUMOD_NIMPR register */
+#define SECUMOD_NIMPR_DET3_Pos                _UINT32_(19)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
+#define SECUMOD_NIMPR_DET3_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET3_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
+#define SECUMOD_NIMPR_DET3(value)             (SECUMOD_NIMPR_DET3_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET3_Pos)) /* Assigment of value for DET3 in the SECUMOD_NIMPR register */
+#define SECUMOD_NIMPR_DET4_Pos                _UINT32_(20)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
+#define SECUMOD_NIMPR_DET4_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET4_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
+#define SECUMOD_NIMPR_DET4(value)             (SECUMOD_NIMPR_DET4_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET4_Pos)) /* Assigment of value for DET4 in the SECUMOD_NIMPR register */
+#define SECUMOD_NIMPR_DET5_Pos                _UINT32_(21)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
+#define SECUMOD_NIMPR_DET5_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET5_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
+#define SECUMOD_NIMPR_DET5(value)             (SECUMOD_NIMPR_DET5_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET5_Pos)) /* Assigment of value for DET5 in the SECUMOD_NIMPR register */
+#define SECUMOD_NIMPR_DET6_Pos                _UINT32_(22)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
+#define SECUMOD_NIMPR_DET6_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET6_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
+#define SECUMOD_NIMPR_DET6(value)             (SECUMOD_NIMPR_DET6_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET6_Pos)) /* Assigment of value for DET6 in the SECUMOD_NIMPR register */
+#define SECUMOD_NIMPR_DET7_Pos                _UINT32_(23)                                         /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Position */
+#define SECUMOD_NIMPR_DET7_Msk                (_UINT32_(0x1) << SECUMOD_NIMPR_DET7_Pos)            /* (SECUMOD_NIMPR) PIOBU Intrusion Detector Protection Interrupt Mask Mask */
+#define SECUMOD_NIMPR_DET7(value)             (SECUMOD_NIMPR_DET7_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET7_Pos)) /* Assigment of value for DET7 in the SECUMOD_NIMPR register */
+#define SECUMOD_NIMPR_Msk                     _UINT32_(0x00FF0000)                                 /* (SECUMOD_NIMPR) Register Mask  */
 
+#define SECUMOD_NIMPR_DET_Pos                 _UINT32_(16)                                         /* (SECUMOD_NIMPR Position) PIOBU Intrusion Detector Protection Interrupt Mask */
+#define SECUMOD_NIMPR_DET_Msk                 (_UINT32_(0xFF) << SECUMOD_NIMPR_DET_Pos)            /* (SECUMOD_NIMPR Mask) DET */
+#define SECUMOD_NIMPR_DET(value)              (SECUMOD_NIMPR_DET_Msk & (_UINT32_(value) << SECUMOD_NIMPR_DET_Pos)) 
 
 /* -------- SECUMOD_WKPR : (SECUMOD Offset: 0x90) (R/W 32) Wakeup Protection Register -------- */
 #define SECUMOD_WKPR_DET0_Pos                 _UINT32_(16)                                         /* (SECUMOD_WKPR) PIOBU Intrusion Detector Protection Position */
@@ -417,13 +414,11 @@
 #define SECUMOD_WKPR_DET(value)               (SECUMOD_WKPR_DET_Msk & (_UINT32_(value) << SECUMOD_WKPR_DET_Pos)) 
 
 /** \brief SECUMOD register offsets definitions */
-#define SECUMOD_BMPR_REG_OFST          _UINT32_(0x7C)      /* (SECUMOD_BMPR) Backup Mode Protection Register Offset */
 #define SECUMOD_CR_REG_OFST            _UINT32_(0x00)      /* (SECUMOD_CR) Control Register Offset */
-#define SECUMOD_JTAGCR_REG_OFST        _UINT32_(0x68)      /* (SECUMOD_JTAGCR) JTAG Protection Control Register Offset */
-#define SECUMOD_NIDPR_REG_OFST         _UINT32_(0x88)      /* (SECUMOD_NIDPR) Normal Interrupt Disable Protection Register Offset */
-#define SECUMOD_NIEPR_REG_OFST         _UINT32_(0x84)      /* (SECUMOD_NIEPR) Normal Interrupt Enable Protection Register Offset */
-#define SECUMOD_NIMPR_REG_OFST         _UINT32_(0x8C)      /* (SECUMOD_NIMPR) Normal Interrupt Mask Protection Register Offset */
-#define SECUMOD_NMPR_REG_OFST          _UINT32_(0x80)      /* (SECUMOD_NMPR) Normal Mode Protection Register Offset */
+#define SECUMOD_SYSR_REG_OFST          _UINT32_(0x04)      /* (SECUMOD_SYSR) System Status Register Offset */
+#define SECUMOD_SR_REG_OFST            _UINT32_(0x08)      /* (SECUMOD_SR) Status Register Offset */
+#define SECUMOD_SCR_REG_OFST           _UINT32_(0x10)      /* (SECUMOD_SCR) Status Clear Register Offset */
+#define SECUMOD_RAMRDY_REG_OFST        _UINT32_(0x14)      /* (SECUMOD_RAMRDY) RAM Access Ready Register Offset */
 #define SECUMOD_PIOBU_REG_OFST         _UINT32_(0x18)      /* (SECUMOD_PIOBU) PIO Backup Register Offset */
 #define SECUMOD_PIOBU0_REG_OFST        _UINT32_(0x18)      /* (SECUMOD_PIOBU0) PIO Backup Register Offset */
 #define SECUMOD_PIOBU1_REG_OFST        _UINT32_(0x1C)      /* (SECUMOD_PIOBU1) PIO Backup Register Offset */
@@ -433,13 +428,15 @@
 #define SECUMOD_PIOBU5_REG_OFST        _UINT32_(0x2C)      /* (SECUMOD_PIOBU5) PIO Backup Register Offset */
 #define SECUMOD_PIOBU6_REG_OFST        _UINT32_(0x30)      /* (SECUMOD_PIOBU6) PIO Backup Register Offset */
 #define SECUMOD_PIOBU7_REG_OFST        _UINT32_(0x34)      /* (SECUMOD_PIOBU7) PIO Backup Register Offset */
+#define SECUMOD_JTAGCR_REG_OFST        _UINT32_(0x68)      /* (SECUMOD_JTAGCR) JTAG Protection Control Register Offset */
+#define SECUMOD_SCRKEY_REG_OFST        _UINT32_(0x70)      /* (SECUMOD_SCRKEY) Scrambling Key Register Offset */
 #define SECUMOD_RAMACC_REG_OFST        _UINT32_(0x74)      /* (SECUMOD_RAMACC) RAM Access Rights Register Offset */
 #define SECUMOD_RAMACCSR_REG_OFST      _UINT32_(0x78)      /* (SECUMOD_RAMACCSR) RAM Access Rights Status Register Offset */
-#define SECUMOD_RAMRDY_REG_OFST        _UINT32_(0x14)      /* (SECUMOD_RAMRDY) RAM Access Ready Register Offset */
-#define SECUMOD_SCR_REG_OFST           _UINT32_(0x10)      /* (SECUMOD_SCR) Status Clear Register Offset */
-#define SECUMOD_SCRKEY_REG_OFST        _UINT32_(0x70)      /* (SECUMOD_SCRKEY) Scrambling Key Register Offset */
-#define SECUMOD_SR_REG_OFST            _UINT32_(0x08)      /* (SECUMOD_SR) Status Register Offset */
-#define SECUMOD_SYSR_REG_OFST          _UINT32_(0x04)      /* (SECUMOD_SYSR) System Status Register Offset */
+#define SECUMOD_BMPR_REG_OFST          _UINT32_(0x7C)      /* (SECUMOD_BMPR) Backup Mode Protection Register Offset */
+#define SECUMOD_NMPR_REG_OFST          _UINT32_(0x80)      /* (SECUMOD_NMPR) Normal Mode Protection Register Offset */
+#define SECUMOD_NIEPR_REG_OFST         _UINT32_(0x84)      /* (SECUMOD_NIEPR) Normal Interrupt Enable Protection Register Offset */
+#define SECUMOD_NIDPR_REG_OFST         _UINT32_(0x88)      /* (SECUMOD_NIDPR) Normal Interrupt Disable Protection Register Offset */
+#define SECUMOD_NIMPR_REG_OFST         _UINT32_(0x8C)      /* (SECUMOD_NIMPR) Normal Interrupt Mask Protection Register Offset */
 #define SECUMOD_WKPR_REG_OFST          _UINT32_(0x90)      /* (SECUMOD_WKPR) Wakeup Protection Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -469,4 +466,4 @@ typedef struct
 
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-#endif /* _SAMA5D_SECUMOD_COMPONENT_H_ */
+#endif /* _SAMA5D2_SECUMOD_COMPONENT_H_ */
