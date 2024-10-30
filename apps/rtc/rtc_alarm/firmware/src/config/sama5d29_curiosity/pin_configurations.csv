@@ -96,7 +96,7 @@ N1,PD21,,Available,In,,,,,,,
 N2,PD26,,Available,In,,,,,,,
 N3,PD29,,Available,In,,,,,,,
 N8,PIOBU1,,Available,In,,,,,,,
-N10,PA8,GREEN,GPIO,Out,High,No,Disabled,No,No,Glitch Filter,0x0
+N10,PA8,GREEN,GPIO,Out,Low,No,Disabled,No,No,Glitch Filter,0x0
 N11,PA9,RED,GPIO,Out,Low,No,Disabled,No,No,Glitch Filter,0x0
 N12,PC1,,Available,In,,,,,,,
 N14,PC2,,Available,In,,,,,,,
