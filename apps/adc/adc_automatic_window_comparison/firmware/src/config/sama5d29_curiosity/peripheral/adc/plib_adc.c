@@ -123,23 +123,14 @@ void ADC_ConversionSequenceSet(ADC_CHANNEL_NUM *channelList, uint8_t numChannel)
 {
     uint8_t channelIndex;
     ADC_REGS->ADC_SEQR1 = 0U;
-    ADC_REGS->ADC_SEQR2 = 0U;
 
-    if (numChannel <= 11U)
-    {
-        for (channelIndex = 0U; channelIndex < numChannel; channelIndex++)
-    {
-        if (channelIndex < ADC_SEQ1_CHANNEL_NUM)
-        {
-            ADC_REGS->ADC_SEQR1 |= (uint32_t)channelList[channelIndex] << (channelIndex * 4U);
-        }
-        else
-        {
-            ADC_REGS->ADC_SEQR2 |= (uint32_t)channelList[channelIndex] << ((channelIndex - ADC_SEQ1_CHANNEL_NUM) * 4U);
-        }
-    }
-    }
-
+	for (channelIndex = 0U; channelIndex < numChannel; channelIndex++)
+	{
+		if (channelIndex < ADC_SEQ1_CHANNEL_NUM)
+		{
+			ADC_REGS->ADC_SEQR1 |= (uint32_t)channelList[channelIndex] << (channelIndex * 4U);
+		}
+	}
 }
 
 /* Sets Low threshold and High threshold in comparison window */
