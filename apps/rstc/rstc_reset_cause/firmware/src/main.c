@@ -126,9 +126,9 @@ void ledUpdate( void )
     if( ledColorType != lastLedColorType )
     {
         lastLedColorType = ledColorType;
-        LED_RED_Set();
-        LED_GREEN_Set();
-        LED_BLUE_Set();
+        LED_RED_Clear();
+        LED_GREEN_Clear();
+        LED_BLUE_Clear();
     }
     
     switch( ledColorType )
@@ -154,9 +154,9 @@ void ledUpdate( void )
         default:
         case LedInvalid:
         case LedOff:
-            LED_RED_Set();
-            LED_GREEN_Set();
-            LED_BLUE_Set();
+            LED_RED_Clear();
+            LED_GREEN_Clear();
+            LED_BLUE_Clear();
             break;
     }
 }
