@@ -1,49 +1,29 @@
 /*
  * Component description for RXLP
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-10-04T10:37:14Z */
-#ifndef _SAMA5D_RXLP_COMPONENT_H_
-#define _SAMA5D_RXLP_COMPONENT_H_
+/* file generated from device description file (ATDF) version 2024-06-24T14:43:55Z */
+#ifndef _SAMA5D2_RXLP_COMPONENT_H_
+#define _SAMA5D2_RXLP_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR RXLP                                         */
 /* ************************************************************************** */
-
-/* -------- RXLP_BRGR : (RXLP Offset: 0x20) (R/W 32) Baud Rate Generator Register -------- */
-#define RXLP_BRGR_CD_Pos                      _UINT32_(0)                                          /* (RXLP_BRGR) Clock Divisor Position */
-#define RXLP_BRGR_CD_Msk                      (_UINT32_(0x3) << RXLP_BRGR_CD_Pos)                  /* (RXLP_BRGR) Clock Divisor Mask */
-#define RXLP_BRGR_CD(value)                   (RXLP_BRGR_CD_Msk & (_UINT32_(value) << RXLP_BRGR_CD_Pos)) /* Assigment of value for CD in the RXLP_BRGR register */
-#define RXLP_BRGR_Msk                         _UINT32_(0x00000003)                                 /* (RXLP_BRGR) Register Mask  */
-
-
-/* -------- RXLP_CMPR : (RXLP Offset: 0x24) (R/W 32) Comparison Register -------- */
-#define RXLP_CMPR_VAL1_Pos                    _UINT32_(0)                                          /* (RXLP_CMPR) First Comparison Value for Received Character Position */
-#define RXLP_CMPR_VAL1_Msk                    (_UINT32_(0xFF) << RXLP_CMPR_VAL1_Pos)               /* (RXLP_CMPR) First Comparison Value for Received Character Mask */
-#define RXLP_CMPR_VAL1(value)                 (RXLP_CMPR_VAL1_Msk & (_UINT32_(value) << RXLP_CMPR_VAL1_Pos)) /* Assigment of value for VAL1 in the RXLP_CMPR register */
-#define RXLP_CMPR_VAL2_Pos                    _UINT32_(16)                                         /* (RXLP_CMPR) Second Comparison Value for Received Character Position */
-#define RXLP_CMPR_VAL2_Msk                    (_UINT32_(0xFF) << RXLP_CMPR_VAL2_Pos)               /* (RXLP_CMPR) Second Comparison Value for Received Character Mask */
-#define RXLP_CMPR_VAL2(value)                 (RXLP_CMPR_VAL2_Msk & (_UINT32_(value) << RXLP_CMPR_VAL2_Pos)) /* Assigment of value for VAL2 in the RXLP_CMPR register */
-#define RXLP_CMPR_Msk                         _UINT32_(0x00FF00FF)                                 /* (RXLP_CMPR) Register Mask  */
-
 
 /* -------- RXLP_CR : (RXLP Offset: 0x00) ( /W 32) Control Register -------- */
 #define RXLP_CR_RSTRX_Pos                     _UINT32_(2)                                          /* (RXLP_CR) Reset Receiver Position */
@@ -89,6 +69,23 @@
 #define RXLP_RHR_Msk                          _UINT32_(0x000000FF)                                 /* (RXLP_RHR) Register Mask  */
 
 
+/* -------- RXLP_BRGR : (RXLP Offset: 0x20) (R/W 32) Baud Rate Generator Register -------- */
+#define RXLP_BRGR_CD_Pos                      _UINT32_(0)                                          /* (RXLP_BRGR) Clock Divisor Position */
+#define RXLP_BRGR_CD_Msk                      (_UINT32_(0x3) << RXLP_BRGR_CD_Pos)                  /* (RXLP_BRGR) Clock Divisor Mask */
+#define RXLP_BRGR_CD(value)                   (RXLP_BRGR_CD_Msk & (_UINT32_(value) << RXLP_BRGR_CD_Pos)) /* Assigment of value for CD in the RXLP_BRGR register */
+#define RXLP_BRGR_Msk                         _UINT32_(0x00000003)                                 /* (RXLP_BRGR) Register Mask  */
+
+
+/* -------- RXLP_CMPR : (RXLP Offset: 0x24) (R/W 32) Comparison Register -------- */
+#define RXLP_CMPR_VAL1_Pos                    _UINT32_(0)                                          /* (RXLP_CMPR) First Comparison Value for Received Character Position */
+#define RXLP_CMPR_VAL1_Msk                    (_UINT32_(0xFF) << RXLP_CMPR_VAL1_Pos)               /* (RXLP_CMPR) First Comparison Value for Received Character Mask */
+#define RXLP_CMPR_VAL1(value)                 (RXLP_CMPR_VAL1_Msk & (_UINT32_(value) << RXLP_CMPR_VAL1_Pos)) /* Assigment of value for VAL1 in the RXLP_CMPR register */
+#define RXLP_CMPR_VAL2_Pos                    _UINT32_(16)                                         /* (RXLP_CMPR) Second Comparison Value for Received Character Position */
+#define RXLP_CMPR_VAL2_Msk                    (_UINT32_(0xFF) << RXLP_CMPR_VAL2_Pos)               /* (RXLP_CMPR) Second Comparison Value for Received Character Mask */
+#define RXLP_CMPR_VAL2(value)                 (RXLP_CMPR_VAL2_Msk & (_UINT32_(value) << RXLP_CMPR_VAL2_Pos)) /* Assigment of value for VAL2 in the RXLP_CMPR register */
+#define RXLP_CMPR_Msk                         _UINT32_(0x00FF00FF)                                 /* (RXLP_CMPR) Register Mask  */
+
+
 /* -------- RXLP_WPMR : (RXLP Offset: 0xE4) (R/W 32) Write Protection Mode Register -------- */
 #define RXLP_WPMR_WPEN_Pos                    _UINT32_(0)                                          /* (RXLP_WPMR) Write Protection Enable Position */
 #define RXLP_WPMR_WPEN_Msk                    (_UINT32_(0x1) << RXLP_WPMR_WPEN_Pos)                /* (RXLP_WPMR) Write Protection Enable Mask */
@@ -102,11 +99,11 @@
 
 
 /** \brief RXLP register offsets definitions */
-#define RXLP_BRGR_REG_OFST             _UINT32_(0x20)      /* (RXLP_BRGR) Baud Rate Generator Register Offset */
-#define RXLP_CMPR_REG_OFST             _UINT32_(0x24)      /* (RXLP_CMPR) Comparison Register Offset */
 #define RXLP_CR_REG_OFST               _UINT32_(0x00)      /* (RXLP_CR) Control Register Offset */
 #define RXLP_MR_REG_OFST               _UINT32_(0x04)      /* (RXLP_MR) Mode Register Offset */
 #define RXLP_RHR_REG_OFST              _UINT32_(0x18)      /* (RXLP_RHR) Receive Holding Register Offset */
+#define RXLP_BRGR_REG_OFST             _UINT32_(0x20)      /* (RXLP_BRGR) Baud Rate Generator Register Offset */
+#define RXLP_CMPR_REG_OFST             _UINT32_(0x24)      /* (RXLP_CMPR) Comparison Register Offset */
 #define RXLP_WPMR_REG_OFST             _UINT32_(0xE4)      /* (RXLP_WPMR) Write Protection Mode Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -126,4 +123,4 @@ typedef struct
 
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-#endif /* _SAMA5D_RXLP_COMPONENT_H_ */
+#endif /* _SAMA5D2_RXLP_COMPONENT_H_ */
