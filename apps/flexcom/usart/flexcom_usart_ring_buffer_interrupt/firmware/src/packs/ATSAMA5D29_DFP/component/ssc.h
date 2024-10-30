@@ -1,39 +1,29 @@
 /*
  * Component description for SSC
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-10-04T10:37:14Z */
-#ifndef _SAMA5D_SSC_COMPONENT_H_
-#define _SAMA5D_SSC_COMPONENT_H_
+/* file generated from device description file (ATDF) version 2024-06-24T14:43:55Z */
+#ifndef _SAMA5D2_SSC_COMPONENT_H_
+#define _SAMA5D2_SSC_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR SSC                                          */
 /* ************************************************************************** */
-
-/* -------- SSC_CMR : (SSC Offset: 0x04) (R/W 32) Clock Mode Register -------- */
-#define SSC_CMR_DIV_Pos                       _UINT32_(0)                                          /* (SSC_CMR) Clock Divider Position */
-#define SSC_CMR_DIV_Msk                       (_UINT32_(0xFFF) << SSC_CMR_DIV_Pos)                 /* (SSC_CMR) Clock Divider Mask */
-#define SSC_CMR_DIV(value)                    (SSC_CMR_DIV_Msk & (_UINT32_(value) << SSC_CMR_DIV_Pos)) /* Assigment of value for DIV in the SSC_CMR register */
-#define SSC_CMR_Msk                           _UINT32_(0x00000FFF)                                 /* (SSC_CMR) Register Mask  */
-
 
 /* -------- SSC_CR : (SSC Offset: 0x00) ( /W 32) Control Register -------- */
 #define SSC_CR_RXEN_Pos                       _UINT32_(0)                                          /* (SSC_CR) Receive Enable Position */
@@ -54,111 +44,11 @@
 #define SSC_CR_Msk                            _UINT32_(0x00008303)                                 /* (SSC_CR) Register Mask  */
 
 
-/* -------- SSC_IDR : (SSC Offset: 0x48) ( /W 32) Interrupt Disable Register -------- */
-#define SSC_IDR_TXRDY_Pos                     _UINT32_(0)                                          /* (SSC_IDR) Transmit Ready Interrupt Disable Position */
-#define SSC_IDR_TXRDY_Msk                     (_UINT32_(0x1) << SSC_IDR_TXRDY_Pos)                 /* (SSC_IDR) Transmit Ready Interrupt Disable Mask */
-#define SSC_IDR_TXRDY(value)                  (SSC_IDR_TXRDY_Msk & (_UINT32_(value) << SSC_IDR_TXRDY_Pos)) /* Assigment of value for TXRDY in the SSC_IDR register */
-#define SSC_IDR_TXEMPTY_Pos                   _UINT32_(1)                                          /* (SSC_IDR) Transmit Empty Interrupt Disable Position */
-#define SSC_IDR_TXEMPTY_Msk                   (_UINT32_(0x1) << SSC_IDR_TXEMPTY_Pos)               /* (SSC_IDR) Transmit Empty Interrupt Disable Mask */
-#define SSC_IDR_TXEMPTY(value)                (SSC_IDR_TXEMPTY_Msk & (_UINT32_(value) << SSC_IDR_TXEMPTY_Pos)) /* Assigment of value for TXEMPTY in the SSC_IDR register */
-#define SSC_IDR_RXRDY_Pos                     _UINT32_(4)                                          /* (SSC_IDR) Receive Ready Interrupt Disable Position */
-#define SSC_IDR_RXRDY_Msk                     (_UINT32_(0x1) << SSC_IDR_RXRDY_Pos)                 /* (SSC_IDR) Receive Ready Interrupt Disable Mask */
-#define SSC_IDR_RXRDY(value)                  (SSC_IDR_RXRDY_Msk & (_UINT32_(value) << SSC_IDR_RXRDY_Pos)) /* Assigment of value for RXRDY in the SSC_IDR register */
-#define SSC_IDR_OVRUN_Pos                     _UINT32_(5)                                          /* (SSC_IDR) Receive Overrun Interrupt Disable Position */
-#define SSC_IDR_OVRUN_Msk                     (_UINT32_(0x1) << SSC_IDR_OVRUN_Pos)                 /* (SSC_IDR) Receive Overrun Interrupt Disable Mask */
-#define SSC_IDR_OVRUN(value)                  (SSC_IDR_OVRUN_Msk & (_UINT32_(value) << SSC_IDR_OVRUN_Pos)) /* Assigment of value for OVRUN in the SSC_IDR register */
-#define SSC_IDR_CP0_Pos                       _UINT32_(8)                                          /* (SSC_IDR) Compare 0 Interrupt Disable Position */
-#define SSC_IDR_CP0_Msk                       (_UINT32_(0x1) << SSC_IDR_CP0_Pos)                   /* (SSC_IDR) Compare 0 Interrupt Disable Mask */
-#define SSC_IDR_CP0(value)                    (SSC_IDR_CP0_Msk & (_UINT32_(value) << SSC_IDR_CP0_Pos)) /* Assigment of value for CP0 in the SSC_IDR register */
-#define SSC_IDR_CP1_Pos                       _UINT32_(9)                                          /* (SSC_IDR) Compare 1 Interrupt Disable Position */
-#define SSC_IDR_CP1_Msk                       (_UINT32_(0x1) << SSC_IDR_CP1_Pos)                   /* (SSC_IDR) Compare 1 Interrupt Disable Mask */
-#define SSC_IDR_CP1(value)                    (SSC_IDR_CP1_Msk & (_UINT32_(value) << SSC_IDR_CP1_Pos)) /* Assigment of value for CP1 in the SSC_IDR register */
-#define SSC_IDR_TXSYN_Pos                     _UINT32_(10)                                         /* (SSC_IDR) Tx Sync Interrupt Enable Position */
-#define SSC_IDR_TXSYN_Msk                     (_UINT32_(0x1) << SSC_IDR_TXSYN_Pos)                 /* (SSC_IDR) Tx Sync Interrupt Enable Mask */
-#define SSC_IDR_TXSYN(value)                  (SSC_IDR_TXSYN_Msk & (_UINT32_(value) << SSC_IDR_TXSYN_Pos)) /* Assigment of value for TXSYN in the SSC_IDR register */
-#define SSC_IDR_RXSYN_Pos                     _UINT32_(11)                                         /* (SSC_IDR) Rx Sync Interrupt Enable Position */
-#define SSC_IDR_RXSYN_Msk                     (_UINT32_(0x1) << SSC_IDR_RXSYN_Pos)                 /* (SSC_IDR) Rx Sync Interrupt Enable Mask */
-#define SSC_IDR_RXSYN(value)                  (SSC_IDR_RXSYN_Msk & (_UINT32_(value) << SSC_IDR_RXSYN_Pos)) /* Assigment of value for RXSYN in the SSC_IDR register */
-#define SSC_IDR_Msk                           _UINT32_(0x00000F33)                                 /* (SSC_IDR) Register Mask  */
-
-#define SSC_IDR_CP_Pos                        _UINT32_(8)                                          /* (SSC_IDR Position) Compare x Interrupt Disable */
-#define SSC_IDR_CP_Msk                        (_UINT32_(0x3) << SSC_IDR_CP_Pos)                    /* (SSC_IDR Mask) CP */
-#define SSC_IDR_CP(value)                     (SSC_IDR_CP_Msk & (_UINT32_(value) << SSC_IDR_CP_Pos)) 
-
-/* -------- SSC_IER : (SSC Offset: 0x44) ( /W 32) Interrupt Enable Register -------- */
-#define SSC_IER_TXRDY_Pos                     _UINT32_(0)                                          /* (SSC_IER) Transmit Ready Interrupt Enable Position */
-#define SSC_IER_TXRDY_Msk                     (_UINT32_(0x1) << SSC_IER_TXRDY_Pos)                 /* (SSC_IER) Transmit Ready Interrupt Enable Mask */
-#define SSC_IER_TXRDY(value)                  (SSC_IER_TXRDY_Msk & (_UINT32_(value) << SSC_IER_TXRDY_Pos)) /* Assigment of value for TXRDY in the SSC_IER register */
-#define SSC_IER_TXEMPTY_Pos                   _UINT32_(1)                                          /* (SSC_IER) Transmit Empty Interrupt Enable Position */
-#define SSC_IER_TXEMPTY_Msk                   (_UINT32_(0x1) << SSC_IER_TXEMPTY_Pos)               /* (SSC_IER) Transmit Empty Interrupt Enable Mask */
-#define SSC_IER_TXEMPTY(value)                (SSC_IER_TXEMPTY_Msk & (_UINT32_(value) << SSC_IER_TXEMPTY_Pos)) /* Assigment of value for TXEMPTY in the SSC_IER register */
-#define SSC_IER_RXRDY_Pos                     _UINT32_(4)                                          /* (SSC_IER) Receive Ready Interrupt Enable Position */
-#define SSC_IER_RXRDY_Msk                     (_UINT32_(0x1) << SSC_IER_RXRDY_Pos)                 /* (SSC_IER) Receive Ready Interrupt Enable Mask */
-#define SSC_IER_RXRDY(value)                  (SSC_IER_RXRDY_Msk & (_UINT32_(value) << SSC_IER_RXRDY_Pos)) /* Assigment of value for RXRDY in the SSC_IER register */
-#define SSC_IER_OVRUN_Pos                     _UINT32_(5)                                          /* (SSC_IER) Receive Overrun Interrupt Enable Position */
-#define SSC_IER_OVRUN_Msk                     (_UINT32_(0x1) << SSC_IER_OVRUN_Pos)                 /* (SSC_IER) Receive Overrun Interrupt Enable Mask */
-#define SSC_IER_OVRUN(value)                  (SSC_IER_OVRUN_Msk & (_UINT32_(value) << SSC_IER_OVRUN_Pos)) /* Assigment of value for OVRUN in the SSC_IER register */
-#define SSC_IER_CP0_Pos                       _UINT32_(8)                                          /* (SSC_IER) Compare 0 Interrupt Enable Position */
-#define SSC_IER_CP0_Msk                       (_UINT32_(0x1) << SSC_IER_CP0_Pos)                   /* (SSC_IER) Compare 0 Interrupt Enable Mask */
-#define SSC_IER_CP0(value)                    (SSC_IER_CP0_Msk & (_UINT32_(value) << SSC_IER_CP0_Pos)) /* Assigment of value for CP0 in the SSC_IER register */
-#define SSC_IER_CP1_Pos                       _UINT32_(9)                                          /* (SSC_IER) Compare 1 Interrupt Enable Position */
-#define SSC_IER_CP1_Msk                       (_UINT32_(0x1) << SSC_IER_CP1_Pos)                   /* (SSC_IER) Compare 1 Interrupt Enable Mask */
-#define SSC_IER_CP1(value)                    (SSC_IER_CP1_Msk & (_UINT32_(value) << SSC_IER_CP1_Pos)) /* Assigment of value for CP1 in the SSC_IER register */
-#define SSC_IER_TXSYN_Pos                     _UINT32_(10)                                         /* (SSC_IER) Tx Sync Interrupt Enable Position */
-#define SSC_IER_TXSYN_Msk                     (_UINT32_(0x1) << SSC_IER_TXSYN_Pos)                 /* (SSC_IER) Tx Sync Interrupt Enable Mask */
-#define SSC_IER_TXSYN(value)                  (SSC_IER_TXSYN_Msk & (_UINT32_(value) << SSC_IER_TXSYN_Pos)) /* Assigment of value for TXSYN in the SSC_IER register */
-#define SSC_IER_RXSYN_Pos                     _UINT32_(11)                                         /* (SSC_IER) Rx Sync Interrupt Enable Position */
-#define SSC_IER_RXSYN_Msk                     (_UINT32_(0x1) << SSC_IER_RXSYN_Pos)                 /* (SSC_IER) Rx Sync Interrupt Enable Mask */
-#define SSC_IER_RXSYN(value)                  (SSC_IER_RXSYN_Msk & (_UINT32_(value) << SSC_IER_RXSYN_Pos)) /* Assigment of value for RXSYN in the SSC_IER register */
-#define SSC_IER_Msk                           _UINT32_(0x00000F33)                                 /* (SSC_IER) Register Mask  */
-
-#define SSC_IER_CP_Pos                        _UINT32_(8)                                          /* (SSC_IER Position) Compare x Interrupt Enable */
-#define SSC_IER_CP_Msk                        (_UINT32_(0x3) << SSC_IER_CP_Pos)                    /* (SSC_IER Mask) CP */
-#define SSC_IER_CP(value)                     (SSC_IER_CP_Msk & (_UINT32_(value) << SSC_IER_CP_Pos)) 
-
-/* -------- SSC_IMR : (SSC Offset: 0x4C) ( R/ 32) Interrupt Mask Register -------- */
-#define SSC_IMR_TXRDY_Pos                     _UINT32_(0)                                          /* (SSC_IMR) Transmit Ready Interrupt Mask Position */
-#define SSC_IMR_TXRDY_Msk                     (_UINT32_(0x1) << SSC_IMR_TXRDY_Pos)                 /* (SSC_IMR) Transmit Ready Interrupt Mask Mask */
-#define SSC_IMR_TXRDY(value)                  (SSC_IMR_TXRDY_Msk & (_UINT32_(value) << SSC_IMR_TXRDY_Pos)) /* Assigment of value for TXRDY in the SSC_IMR register */
-#define SSC_IMR_TXEMPTY_Pos                   _UINT32_(1)                                          /* (SSC_IMR) Transmit Empty Interrupt Mask Position */
-#define SSC_IMR_TXEMPTY_Msk                   (_UINT32_(0x1) << SSC_IMR_TXEMPTY_Pos)               /* (SSC_IMR) Transmit Empty Interrupt Mask Mask */
-#define SSC_IMR_TXEMPTY(value)                (SSC_IMR_TXEMPTY_Msk & (_UINT32_(value) << SSC_IMR_TXEMPTY_Pos)) /* Assigment of value for TXEMPTY in the SSC_IMR register */
-#define SSC_IMR_RXRDY_Pos                     _UINT32_(4)                                          /* (SSC_IMR) Receive Ready Interrupt Mask Position */
-#define SSC_IMR_RXRDY_Msk                     (_UINT32_(0x1) << SSC_IMR_RXRDY_Pos)                 /* (SSC_IMR) Receive Ready Interrupt Mask Mask */
-#define SSC_IMR_RXRDY(value)                  (SSC_IMR_RXRDY_Msk & (_UINT32_(value) << SSC_IMR_RXRDY_Pos)) /* Assigment of value for RXRDY in the SSC_IMR register */
-#define SSC_IMR_OVRUN_Pos                     _UINT32_(5)                                          /* (SSC_IMR) Receive Overrun Interrupt Mask Position */
-#define SSC_IMR_OVRUN_Msk                     (_UINT32_(0x1) << SSC_IMR_OVRUN_Pos)                 /* (SSC_IMR) Receive Overrun Interrupt Mask Mask */
-#define SSC_IMR_OVRUN(value)                  (SSC_IMR_OVRUN_Msk & (_UINT32_(value) << SSC_IMR_OVRUN_Pos)) /* Assigment of value for OVRUN in the SSC_IMR register */
-#define SSC_IMR_CP0_Pos                       _UINT32_(8)                                          /* (SSC_IMR) Compare 0 Interrupt Mask Position */
-#define SSC_IMR_CP0_Msk                       (_UINT32_(0x1) << SSC_IMR_CP0_Pos)                   /* (SSC_IMR) Compare 0 Interrupt Mask Mask */
-#define SSC_IMR_CP0(value)                    (SSC_IMR_CP0_Msk & (_UINT32_(value) << SSC_IMR_CP0_Pos)) /* Assigment of value for CP0 in the SSC_IMR register */
-#define SSC_IMR_CP1_Pos                       _UINT32_(9)                                          /* (SSC_IMR) Compare 1 Interrupt Mask Position */
-#define SSC_IMR_CP1_Msk                       (_UINT32_(0x1) << SSC_IMR_CP1_Pos)                   /* (SSC_IMR) Compare 1 Interrupt Mask Mask */
-#define SSC_IMR_CP1(value)                    (SSC_IMR_CP1_Msk & (_UINT32_(value) << SSC_IMR_CP1_Pos)) /* Assigment of value for CP1 in the SSC_IMR register */
-#define SSC_IMR_TXSYN_Pos                     _UINT32_(10)                                         /* (SSC_IMR) Tx Sync Interrupt Mask Position */
-#define SSC_IMR_TXSYN_Msk                     (_UINT32_(0x1) << SSC_IMR_TXSYN_Pos)                 /* (SSC_IMR) Tx Sync Interrupt Mask Mask */
-#define SSC_IMR_TXSYN(value)                  (SSC_IMR_TXSYN_Msk & (_UINT32_(value) << SSC_IMR_TXSYN_Pos)) /* Assigment of value for TXSYN in the SSC_IMR register */
-#define SSC_IMR_RXSYN_Pos                     _UINT32_(11)                                         /* (SSC_IMR) Rx Sync Interrupt Mask Position */
-#define SSC_IMR_RXSYN_Msk                     (_UINT32_(0x1) << SSC_IMR_RXSYN_Pos)                 /* (SSC_IMR) Rx Sync Interrupt Mask Mask */
-#define SSC_IMR_RXSYN(value)                  (SSC_IMR_RXSYN_Msk & (_UINT32_(value) << SSC_IMR_RXSYN_Pos)) /* Assigment of value for RXSYN in the SSC_IMR register */
-#define SSC_IMR_Msk                           _UINT32_(0x00000F33)                                 /* (SSC_IMR) Register Mask  */
-
-#define SSC_IMR_CP_Pos                        _UINT32_(8)                                          /* (SSC_IMR Position) Compare x Interrupt Mask */
-#define SSC_IMR_CP_Msk                        (_UINT32_(0x3) << SSC_IMR_CP_Pos)                    /* (SSC_IMR Mask) CP */
-#define SSC_IMR_CP(value)                     (SSC_IMR_CP_Msk & (_UINT32_(value) << SSC_IMR_CP_Pos)) 
-
-/* -------- SSC_RC0R : (SSC Offset: 0x38) (R/W 32) Receive Compare 0 Register -------- */
-#define SSC_RC0R_CP0_Pos                      _UINT32_(0)                                          /* (SSC_RC0R) Receive Compare Data 0 Position */
-#define SSC_RC0R_CP0_Msk                      (_UINT32_(0xFFFF) << SSC_RC0R_CP0_Pos)               /* (SSC_RC0R) Receive Compare Data 0 Mask */
-#define SSC_RC0R_CP0(value)                   (SSC_RC0R_CP0_Msk & (_UINT32_(value) << SSC_RC0R_CP0_Pos)) /* Assigment of value for CP0 in the SSC_RC0R register */
-#define SSC_RC0R_Msk                          _UINT32_(0x0000FFFF)                                 /* (SSC_RC0R) Register Mask  */
-
-
-/* -------- SSC_RC1R : (SSC Offset: 0x3C) (R/W 32) Receive Compare 1 Register -------- */
-#define SSC_RC1R_CP1_Pos                      _UINT32_(0)                                          /* (SSC_RC1R) Receive Compare Data 1 Position */
-#define SSC_RC1R_CP1_Msk                      (_UINT32_(0xFFFF) << SSC_RC1R_CP1_Pos)               /* (SSC_RC1R) Receive Compare Data 1 Mask */
-#define SSC_RC1R_CP1(value)                   (SSC_RC1R_CP1_Msk & (_UINT32_(value) << SSC_RC1R_CP1_Pos)) /* Assigment of value for CP1 in the SSC_RC1R register */
-#define SSC_RC1R_Msk                          _UINT32_(0x0000FFFF)                                 /* (SSC_RC1R) Register Mask  */
+/* -------- SSC_CMR : (SSC Offset: 0x04) (R/W 32) Clock Mode Register -------- */
+#define SSC_CMR_DIV_Pos                       _UINT32_(0)                                          /* (SSC_CMR) Clock Divider Position */
+#define SSC_CMR_DIV_Msk                       (_UINT32_(0xFFF) << SSC_CMR_DIV_Pos)                 /* (SSC_CMR) Clock Divider Mask */
+#define SSC_CMR_DIV(value)                    (SSC_CMR_DIV_Msk & (_UINT32_(value) << SSC_CMR_DIV_Pos)) /* Assigment of value for DIV in the SSC_CMR register */
+#define SSC_CMR_Msk                           _UINT32_(0x00000FFF)                                 /* (SSC_CMR) Register Mask  */
 
 
 /* -------- SSC_RCMR : (SSC Offset: 0x10) (R/W 32) Receive Clock Mode Register -------- */
@@ -269,57 +159,6 @@
 #define SSC_RFMR_Msk                          _UINT32_(0xF17F0FBF)                                 /* (SSC_RFMR) Register Mask  */
 
 
-/* -------- SSC_RHR : (SSC Offset: 0x20) ( R/ 32) Receive Holding Register -------- */
-#define SSC_RHR_RDAT_Pos                      _UINT32_(0)                                          /* (SSC_RHR) Receive Data Position */
-#define SSC_RHR_RDAT_Msk                      (_UINT32_(0xFFFFFFFF) << SSC_RHR_RDAT_Pos)           /* (SSC_RHR) Receive Data Mask */
-#define SSC_RHR_RDAT(value)                   (SSC_RHR_RDAT_Msk & (_UINT32_(value) << SSC_RHR_RDAT_Pos)) /* Assigment of value for RDAT in the SSC_RHR register */
-#define SSC_RHR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SSC_RHR) Register Mask  */
-
-
-/* -------- SSC_RSHR : (SSC Offset: 0x30) ( R/ 32) Receive Sync. Holding Register -------- */
-#define SSC_RSHR_RSDAT_Pos                    _UINT32_(0)                                          /* (SSC_RSHR) Receive Synchronization Data Position */
-#define SSC_RSHR_RSDAT_Msk                    (_UINT32_(0xFFFF) << SSC_RSHR_RSDAT_Pos)             /* (SSC_RSHR) Receive Synchronization Data Mask */
-#define SSC_RSHR_RSDAT(value)                 (SSC_RSHR_RSDAT_Msk & (_UINT32_(value) << SSC_RSHR_RSDAT_Pos)) /* Assigment of value for RSDAT in the SSC_RSHR register */
-#define SSC_RSHR_Msk                          _UINT32_(0x0000FFFF)                                 /* (SSC_RSHR) Register Mask  */
-
-
-/* -------- SSC_SR : (SSC Offset: 0x40) ( R/ 32) Status Register -------- */
-#define SSC_SR_TXRDY_Pos                      _UINT32_(0)                                          /* (SSC_SR) Transmit Ready Position */
-#define SSC_SR_TXRDY_Msk                      (_UINT32_(0x1) << SSC_SR_TXRDY_Pos)                  /* (SSC_SR) Transmit Ready Mask */
-#define SSC_SR_TXRDY(value)                   (SSC_SR_TXRDY_Msk & (_UINT32_(value) << SSC_SR_TXRDY_Pos)) /* Assigment of value for TXRDY in the SSC_SR register */
-#define SSC_SR_TXEMPTY_Pos                    _UINT32_(1)                                          /* (SSC_SR) Transmit Empty Position */
-#define SSC_SR_TXEMPTY_Msk                    (_UINT32_(0x1) << SSC_SR_TXEMPTY_Pos)                /* (SSC_SR) Transmit Empty Mask */
-#define SSC_SR_TXEMPTY(value)                 (SSC_SR_TXEMPTY_Msk & (_UINT32_(value) << SSC_SR_TXEMPTY_Pos)) /* Assigment of value for TXEMPTY in the SSC_SR register */
-#define SSC_SR_RXRDY_Pos                      _UINT32_(4)                                          /* (SSC_SR) Receive Ready Position */
-#define SSC_SR_RXRDY_Msk                      (_UINT32_(0x1) << SSC_SR_RXRDY_Pos)                  /* (SSC_SR) Receive Ready Mask */
-#define SSC_SR_RXRDY(value)                   (SSC_SR_RXRDY_Msk & (_UINT32_(value) << SSC_SR_RXRDY_Pos)) /* Assigment of value for RXRDY in the SSC_SR register */
-#define SSC_SR_OVRUN_Pos                      _UINT32_(5)                                          /* (SSC_SR) Receive Overrun Position */
-#define SSC_SR_OVRUN_Msk                      (_UINT32_(0x1) << SSC_SR_OVRUN_Pos)                  /* (SSC_SR) Receive Overrun Mask */
-#define SSC_SR_OVRUN(value)                   (SSC_SR_OVRUN_Msk & (_UINT32_(value) << SSC_SR_OVRUN_Pos)) /* Assigment of value for OVRUN in the SSC_SR register */
-#define SSC_SR_CP0_Pos                        _UINT32_(8)                                          /* (SSC_SR) Compare 0 Position */
-#define SSC_SR_CP0_Msk                        (_UINT32_(0x1) << SSC_SR_CP0_Pos)                    /* (SSC_SR) Compare 0 Mask */
-#define SSC_SR_CP0(value)                     (SSC_SR_CP0_Msk & (_UINT32_(value) << SSC_SR_CP0_Pos)) /* Assigment of value for CP0 in the SSC_SR register */
-#define SSC_SR_CP1_Pos                        _UINT32_(9)                                          /* (SSC_SR) Compare 1 Position */
-#define SSC_SR_CP1_Msk                        (_UINT32_(0x1) << SSC_SR_CP1_Pos)                    /* (SSC_SR) Compare 1 Mask */
-#define SSC_SR_CP1(value)                     (SSC_SR_CP1_Msk & (_UINT32_(value) << SSC_SR_CP1_Pos)) /* Assigment of value for CP1 in the SSC_SR register */
-#define SSC_SR_TXSYN_Pos                      _UINT32_(10)                                         /* (SSC_SR) Transmit Sync Position */
-#define SSC_SR_TXSYN_Msk                      (_UINT32_(0x1) << SSC_SR_TXSYN_Pos)                  /* (SSC_SR) Transmit Sync Mask */
-#define SSC_SR_TXSYN(value)                   (SSC_SR_TXSYN_Msk & (_UINT32_(value) << SSC_SR_TXSYN_Pos)) /* Assigment of value for TXSYN in the SSC_SR register */
-#define SSC_SR_RXSYN_Pos                      _UINT32_(11)                                         /* (SSC_SR) Receive Sync Position */
-#define SSC_SR_RXSYN_Msk                      (_UINT32_(0x1) << SSC_SR_RXSYN_Pos)                  /* (SSC_SR) Receive Sync Mask */
-#define SSC_SR_RXSYN(value)                   (SSC_SR_RXSYN_Msk & (_UINT32_(value) << SSC_SR_RXSYN_Pos)) /* Assigment of value for RXSYN in the SSC_SR register */
-#define SSC_SR_TXEN_Pos                       _UINT32_(16)                                         /* (SSC_SR) Transmit Enable Position */
-#define SSC_SR_TXEN_Msk                       (_UINT32_(0x1) << SSC_SR_TXEN_Pos)                   /* (SSC_SR) Transmit Enable Mask */
-#define SSC_SR_TXEN(value)                    (SSC_SR_TXEN_Msk & (_UINT32_(value) << SSC_SR_TXEN_Pos)) /* Assigment of value for TXEN in the SSC_SR register */
-#define SSC_SR_RXEN_Pos                       _UINT32_(17)                                         /* (SSC_SR) Receive Enable Position */
-#define SSC_SR_RXEN_Msk                       (_UINT32_(0x1) << SSC_SR_RXEN_Pos)                   /* (SSC_SR) Receive Enable Mask */
-#define SSC_SR_RXEN(value)                    (SSC_SR_RXEN_Msk & (_UINT32_(value) << SSC_SR_RXEN_Pos)) /* Assigment of value for RXEN in the SSC_SR register */
-#define SSC_SR_Msk                            _UINT32_(0x00030F33)                                 /* (SSC_SR) Register Mask  */
-
-#define SSC_SR_CP_Pos                         _UINT32_(8)                                          /* (SSC_SR Position) Compare x */
-#define SSC_SR_CP_Msk                         (_UINT32_(0x3) << SSC_SR_CP_Pos)                     /* (SSC_SR Mask) CP */
-#define SSC_SR_CP(value)                      (SSC_SR_CP_Msk & (_UINT32_(value) << SSC_SR_CP_Pos)) 
-
 /* -------- SSC_TCMR : (SSC Offset: 0x18) (R/W 32) Transmit Clock Mode Register -------- */
 #define SSC_TCMR_CKS_Pos                      _UINT32_(0)                                          /* (SSC_TCMR) Transmit Clock Selection Position */
 #define SSC_TCMR_CKS_Msk                      (_UINT32_(0x3) << SSC_TCMR_CKS_Pos)                  /* (SSC_TCMR) Transmit Clock Selection Mask */
@@ -426,11 +265,25 @@
 #define SSC_TFMR_Msk                          _UINT32_(0xF1FF0FBF)                                 /* (SSC_TFMR) Register Mask  */
 
 
+/* -------- SSC_RHR : (SSC Offset: 0x20) ( R/ 32) Receive Holding Register -------- */
+#define SSC_RHR_RDAT_Pos                      _UINT32_(0)                                          /* (SSC_RHR) Receive Data Position */
+#define SSC_RHR_RDAT_Msk                      (_UINT32_(0xFFFFFFFF) << SSC_RHR_RDAT_Pos)           /* (SSC_RHR) Receive Data Mask */
+#define SSC_RHR_RDAT(value)                   (SSC_RHR_RDAT_Msk & (_UINT32_(value) << SSC_RHR_RDAT_Pos)) /* Assigment of value for RDAT in the SSC_RHR register */
+#define SSC_RHR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SSC_RHR) Register Mask  */
+
+
 /* -------- SSC_THR : (SSC Offset: 0x24) ( /W 32) Transmit Holding Register -------- */
 #define SSC_THR_TDAT_Pos                      _UINT32_(0)                                          /* (SSC_THR) Transmit Data Position */
 #define SSC_THR_TDAT_Msk                      (_UINT32_(0xFFFFFFFF) << SSC_THR_TDAT_Pos)           /* (SSC_THR) Transmit Data Mask */
 #define SSC_THR_TDAT(value)                   (SSC_THR_TDAT_Msk & (_UINT32_(value) << SSC_THR_TDAT_Pos)) /* Assigment of value for TDAT in the SSC_THR register */
 #define SSC_THR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (SSC_THR) Register Mask  */
+
+
+/* -------- SSC_RSHR : (SSC Offset: 0x30) ( R/ 32) Receive Sync. Holding Register -------- */
+#define SSC_RSHR_RSDAT_Pos                    _UINT32_(0)                                          /* (SSC_RSHR) Receive Synchronization Data Position */
+#define SSC_RSHR_RSDAT_Msk                    (_UINT32_(0xFFFF) << SSC_RSHR_RSDAT_Pos)             /* (SSC_RSHR) Receive Synchronization Data Mask */
+#define SSC_RSHR_RSDAT(value)                 (SSC_RSHR_RSDAT_Msk & (_UINT32_(value) << SSC_RSHR_RSDAT_Pos)) /* Assigment of value for RSDAT in the SSC_RSHR register */
+#define SSC_RSHR_Msk                          _UINT32_(0x0000FFFF)                                 /* (SSC_RSHR) Register Mask  */
 
 
 /* -------- SSC_TSHR : (SSC Offset: 0x34) (R/W 32) Transmit Sync. Holding Register -------- */
@@ -439,6 +292,150 @@
 #define SSC_TSHR_TSDAT(value)                 (SSC_TSHR_TSDAT_Msk & (_UINT32_(value) << SSC_TSHR_TSDAT_Pos)) /* Assigment of value for TSDAT in the SSC_TSHR register */
 #define SSC_TSHR_Msk                          _UINT32_(0x0000FFFF)                                 /* (SSC_TSHR) Register Mask  */
 
+
+/* -------- SSC_RC0R : (SSC Offset: 0x38) (R/W 32) Receive Compare 0 Register -------- */
+#define SSC_RC0R_CP0_Pos                      _UINT32_(0)                                          /* (SSC_RC0R) Receive Compare Data 0 Position */
+#define SSC_RC0R_CP0_Msk                      (_UINT32_(0xFFFF) << SSC_RC0R_CP0_Pos)               /* (SSC_RC0R) Receive Compare Data 0 Mask */
+#define SSC_RC0R_CP0(value)                   (SSC_RC0R_CP0_Msk & (_UINT32_(value) << SSC_RC0R_CP0_Pos)) /* Assigment of value for CP0 in the SSC_RC0R register */
+#define SSC_RC0R_Msk                          _UINT32_(0x0000FFFF)                                 /* (SSC_RC0R) Register Mask  */
+
+
+/* -------- SSC_RC1R : (SSC Offset: 0x3C) (R/W 32) Receive Compare 1 Register -------- */
+#define SSC_RC1R_CP1_Pos                      _UINT32_(0)                                          /* (SSC_RC1R) Receive Compare Data 1 Position */
+#define SSC_RC1R_CP1_Msk                      (_UINT32_(0xFFFF) << SSC_RC1R_CP1_Pos)               /* (SSC_RC1R) Receive Compare Data 1 Mask */
+#define SSC_RC1R_CP1(value)                   (SSC_RC1R_CP1_Msk & (_UINT32_(value) << SSC_RC1R_CP1_Pos)) /* Assigment of value for CP1 in the SSC_RC1R register */
+#define SSC_RC1R_Msk                          _UINT32_(0x0000FFFF)                                 /* (SSC_RC1R) Register Mask  */
+
+
+/* -------- SSC_SR : (SSC Offset: 0x40) ( R/ 32) Status Register -------- */
+#define SSC_SR_TXRDY_Pos                      _UINT32_(0)                                          /* (SSC_SR) Transmit Ready Position */
+#define SSC_SR_TXRDY_Msk                      (_UINT32_(0x1) << SSC_SR_TXRDY_Pos)                  /* (SSC_SR) Transmit Ready Mask */
+#define SSC_SR_TXRDY(value)                   (SSC_SR_TXRDY_Msk & (_UINT32_(value) << SSC_SR_TXRDY_Pos)) /* Assigment of value for TXRDY in the SSC_SR register */
+#define SSC_SR_TXEMPTY_Pos                    _UINT32_(1)                                          /* (SSC_SR) Transmit Empty Position */
+#define SSC_SR_TXEMPTY_Msk                    (_UINT32_(0x1) << SSC_SR_TXEMPTY_Pos)                /* (SSC_SR) Transmit Empty Mask */
+#define SSC_SR_TXEMPTY(value)                 (SSC_SR_TXEMPTY_Msk & (_UINT32_(value) << SSC_SR_TXEMPTY_Pos)) /* Assigment of value for TXEMPTY in the SSC_SR register */
+#define SSC_SR_RXRDY_Pos                      _UINT32_(4)                                          /* (SSC_SR) Receive Ready Position */
+#define SSC_SR_RXRDY_Msk                      (_UINT32_(0x1) << SSC_SR_RXRDY_Pos)                  /* (SSC_SR) Receive Ready Mask */
+#define SSC_SR_RXRDY(value)                   (SSC_SR_RXRDY_Msk & (_UINT32_(value) << SSC_SR_RXRDY_Pos)) /* Assigment of value for RXRDY in the SSC_SR register */
+#define SSC_SR_OVRUN_Pos                      _UINT32_(5)                                          /* (SSC_SR) Receive Overrun Position */
+#define SSC_SR_OVRUN_Msk                      (_UINT32_(0x1) << SSC_SR_OVRUN_Pos)                  /* (SSC_SR) Receive Overrun Mask */
+#define SSC_SR_OVRUN(value)                   (SSC_SR_OVRUN_Msk & (_UINT32_(value) << SSC_SR_OVRUN_Pos)) /* Assigment of value for OVRUN in the SSC_SR register */
+#define SSC_SR_CP0_Pos                        _UINT32_(8)                                          /* (SSC_SR) Compare 0 Position */
+#define SSC_SR_CP0_Msk                        (_UINT32_(0x1) << SSC_SR_CP0_Pos)                    /* (SSC_SR) Compare 0 Mask */
+#define SSC_SR_CP0(value)                     (SSC_SR_CP0_Msk & (_UINT32_(value) << SSC_SR_CP0_Pos)) /* Assigment of value for CP0 in the SSC_SR register */
+#define SSC_SR_CP1_Pos                        _UINT32_(9)                                          /* (SSC_SR) Compare 1 Position */
+#define SSC_SR_CP1_Msk                        (_UINT32_(0x1) << SSC_SR_CP1_Pos)                    /* (SSC_SR) Compare 1 Mask */
+#define SSC_SR_CP1(value)                     (SSC_SR_CP1_Msk & (_UINT32_(value) << SSC_SR_CP1_Pos)) /* Assigment of value for CP1 in the SSC_SR register */
+#define SSC_SR_TXSYN_Pos                      _UINT32_(10)                                         /* (SSC_SR) Transmit Sync Position */
+#define SSC_SR_TXSYN_Msk                      (_UINT32_(0x1) << SSC_SR_TXSYN_Pos)                  /* (SSC_SR) Transmit Sync Mask */
+#define SSC_SR_TXSYN(value)                   (SSC_SR_TXSYN_Msk & (_UINT32_(value) << SSC_SR_TXSYN_Pos)) /* Assigment of value for TXSYN in the SSC_SR register */
+#define SSC_SR_RXSYN_Pos                      _UINT32_(11)                                         /* (SSC_SR) Receive Sync Position */
+#define SSC_SR_RXSYN_Msk                      (_UINT32_(0x1) << SSC_SR_RXSYN_Pos)                  /* (SSC_SR) Receive Sync Mask */
+#define SSC_SR_RXSYN(value)                   (SSC_SR_RXSYN_Msk & (_UINT32_(value) << SSC_SR_RXSYN_Pos)) /* Assigment of value for RXSYN in the SSC_SR register */
+#define SSC_SR_TXEN_Pos                       _UINT32_(16)                                         /* (SSC_SR) Transmit Enable Position */
+#define SSC_SR_TXEN_Msk                       (_UINT32_(0x1) << SSC_SR_TXEN_Pos)                   /* (SSC_SR) Transmit Enable Mask */
+#define SSC_SR_TXEN(value)                    (SSC_SR_TXEN_Msk & (_UINT32_(value) << SSC_SR_TXEN_Pos)) /* Assigment of value for TXEN in the SSC_SR register */
+#define SSC_SR_RXEN_Pos                       _UINT32_(17)                                         /* (SSC_SR) Receive Enable Position */
+#define SSC_SR_RXEN_Msk                       (_UINT32_(0x1) << SSC_SR_RXEN_Pos)                   /* (SSC_SR) Receive Enable Mask */
+#define SSC_SR_RXEN(value)                    (SSC_SR_RXEN_Msk & (_UINT32_(value) << SSC_SR_RXEN_Pos)) /* Assigment of value for RXEN in the SSC_SR register */
+#define SSC_SR_Msk                            _UINT32_(0x00030F33)                                 /* (SSC_SR) Register Mask  */
+
+#define SSC_SR_CP_Pos                         _UINT32_(8)                                          /* (SSC_SR Position) Compare x */
+#define SSC_SR_CP_Msk                         (_UINT32_(0x3) << SSC_SR_CP_Pos)                     /* (SSC_SR Mask) CP */
+#define SSC_SR_CP(value)                      (SSC_SR_CP_Msk & (_UINT32_(value) << SSC_SR_CP_Pos)) 
+
+/* -------- SSC_IER : (SSC Offset: 0x44) ( /W 32) Interrupt Enable Register -------- */
+#define SSC_IER_TXRDY_Pos                     _UINT32_(0)                                          /* (SSC_IER) Transmit Ready Interrupt Enable Position */
+#define SSC_IER_TXRDY_Msk                     (_UINT32_(0x1) << SSC_IER_TXRDY_Pos)                 /* (SSC_IER) Transmit Ready Interrupt Enable Mask */
+#define SSC_IER_TXRDY(value)                  (SSC_IER_TXRDY_Msk & (_UINT32_(value) << SSC_IER_TXRDY_Pos)) /* Assigment of value for TXRDY in the SSC_IER register */
+#define SSC_IER_TXEMPTY_Pos                   _UINT32_(1)                                          /* (SSC_IER) Transmit Empty Interrupt Enable Position */
+#define SSC_IER_TXEMPTY_Msk                   (_UINT32_(0x1) << SSC_IER_TXEMPTY_Pos)               /* (SSC_IER) Transmit Empty Interrupt Enable Mask */
+#define SSC_IER_TXEMPTY(value)                (SSC_IER_TXEMPTY_Msk & (_UINT32_(value) << SSC_IER_TXEMPTY_Pos)) /* Assigment of value for TXEMPTY in the SSC_IER register */
+#define SSC_IER_RXRDY_Pos                     _UINT32_(4)                                          /* (SSC_IER) Receive Ready Interrupt Enable Position */
+#define SSC_IER_RXRDY_Msk                     (_UINT32_(0x1) << SSC_IER_RXRDY_Pos)                 /* (SSC_IER) Receive Ready Interrupt Enable Mask */
+#define SSC_IER_RXRDY(value)                  (SSC_IER_RXRDY_Msk & (_UINT32_(value) << SSC_IER_RXRDY_Pos)) /* Assigment of value for RXRDY in the SSC_IER register */
+#define SSC_IER_OVRUN_Pos                     _UINT32_(5)                                          /* (SSC_IER) Receive Overrun Interrupt Enable Position */
+#define SSC_IER_OVRUN_Msk                     (_UINT32_(0x1) << SSC_IER_OVRUN_Pos)                 /* (SSC_IER) Receive Overrun Interrupt Enable Mask */
+#define SSC_IER_OVRUN(value)                  (SSC_IER_OVRUN_Msk & (_UINT32_(value) << SSC_IER_OVRUN_Pos)) /* Assigment of value for OVRUN in the SSC_IER register */
+#define SSC_IER_CP0_Pos                       _UINT32_(8)                                          /* (SSC_IER) Compare 0 Interrupt Enable Position */
+#define SSC_IER_CP0_Msk                       (_UINT32_(0x1) << SSC_IER_CP0_Pos)                   /* (SSC_IER) Compare 0 Interrupt Enable Mask */
+#define SSC_IER_CP0(value)                    (SSC_IER_CP0_Msk & (_UINT32_(value) << SSC_IER_CP0_Pos)) /* Assigment of value for CP0 in the SSC_IER register */
+#define SSC_IER_CP1_Pos                       _UINT32_(9)                                          /* (SSC_IER) Compare 1 Interrupt Enable Position */
+#define SSC_IER_CP1_Msk                       (_UINT32_(0x1) << SSC_IER_CP1_Pos)                   /* (SSC_IER) Compare 1 Interrupt Enable Mask */
+#define SSC_IER_CP1(value)                    (SSC_IER_CP1_Msk & (_UINT32_(value) << SSC_IER_CP1_Pos)) /* Assigment of value for CP1 in the SSC_IER register */
+#define SSC_IER_TXSYN_Pos                     _UINT32_(10)                                         /* (SSC_IER) Tx Sync Interrupt Enable Position */
+#define SSC_IER_TXSYN_Msk                     (_UINT32_(0x1) << SSC_IER_TXSYN_Pos)                 /* (SSC_IER) Tx Sync Interrupt Enable Mask */
+#define SSC_IER_TXSYN(value)                  (SSC_IER_TXSYN_Msk & (_UINT32_(value) << SSC_IER_TXSYN_Pos)) /* Assigment of value for TXSYN in the SSC_IER register */
+#define SSC_IER_RXSYN_Pos                     _UINT32_(11)                                         /* (SSC_IER) Rx Sync Interrupt Enable Position */
+#define SSC_IER_RXSYN_Msk                     (_UINT32_(0x1) << SSC_IER_RXSYN_Pos)                 /* (SSC_IER) Rx Sync Interrupt Enable Mask */
+#define SSC_IER_RXSYN(value)                  (SSC_IER_RXSYN_Msk & (_UINT32_(value) << SSC_IER_RXSYN_Pos)) /* Assigment of value for RXSYN in the SSC_IER register */
+#define SSC_IER_Msk                           _UINT32_(0x00000F33)                                 /* (SSC_IER) Register Mask  */
+
+#define SSC_IER_CP_Pos                        _UINT32_(8)                                          /* (SSC_IER Position) Compare x Interrupt Enable */
+#define SSC_IER_CP_Msk                        (_UINT32_(0x3) << SSC_IER_CP_Pos)                    /* (SSC_IER Mask) CP */
+#define SSC_IER_CP(value)                     (SSC_IER_CP_Msk & (_UINT32_(value) << SSC_IER_CP_Pos)) 
+
+/* -------- SSC_IDR : (SSC Offset: 0x48) ( /W 32) Interrupt Disable Register -------- */
+#define SSC_IDR_TXRDY_Pos                     _UINT32_(0)                                          /* (SSC_IDR) Transmit Ready Interrupt Disable Position */
+#define SSC_IDR_TXRDY_Msk                     (_UINT32_(0x1) << SSC_IDR_TXRDY_Pos)                 /* (SSC_IDR) Transmit Ready Interrupt Disable Mask */
+#define SSC_IDR_TXRDY(value)                  (SSC_IDR_TXRDY_Msk & (_UINT32_(value) << SSC_IDR_TXRDY_Pos)) /* Assigment of value for TXRDY in the SSC_IDR register */
+#define SSC_IDR_TXEMPTY_Pos                   _UINT32_(1)                                          /* (SSC_IDR) Transmit Empty Interrupt Disable Position */
+#define SSC_IDR_TXEMPTY_Msk                   (_UINT32_(0x1) << SSC_IDR_TXEMPTY_Pos)               /* (SSC_IDR) Transmit Empty Interrupt Disable Mask */
+#define SSC_IDR_TXEMPTY(value)                (SSC_IDR_TXEMPTY_Msk & (_UINT32_(value) << SSC_IDR_TXEMPTY_Pos)) /* Assigment of value for TXEMPTY in the SSC_IDR register */
+#define SSC_IDR_RXRDY_Pos                     _UINT32_(4)                                          /* (SSC_IDR) Receive Ready Interrupt Disable Position */
+#define SSC_IDR_RXRDY_Msk                     (_UINT32_(0x1) << SSC_IDR_RXRDY_Pos)                 /* (SSC_IDR) Receive Ready Interrupt Disable Mask */
+#define SSC_IDR_RXRDY(value)                  (SSC_IDR_RXRDY_Msk & (_UINT32_(value) << SSC_IDR_RXRDY_Pos)) /* Assigment of value for RXRDY in the SSC_IDR register */
+#define SSC_IDR_OVRUN_Pos                     _UINT32_(5)                                          /* (SSC_IDR) Receive Overrun Interrupt Disable Position */
+#define SSC_IDR_OVRUN_Msk                     (_UINT32_(0x1) << SSC_IDR_OVRUN_Pos)                 /* (SSC_IDR) Receive Overrun Interrupt Disable Mask */
+#define SSC_IDR_OVRUN(value)                  (SSC_IDR_OVRUN_Msk & (_UINT32_(value) << SSC_IDR_OVRUN_Pos)) /* Assigment of value for OVRUN in the SSC_IDR register */
+#define SSC_IDR_CP0_Pos                       _UINT32_(8)                                          /* (SSC_IDR) Compare 0 Interrupt Disable Position */
+#define SSC_IDR_CP0_Msk                       (_UINT32_(0x1) << SSC_IDR_CP0_Pos)                   /* (SSC_IDR) Compare 0 Interrupt Disable Mask */
+#define SSC_IDR_CP0(value)                    (SSC_IDR_CP0_Msk & (_UINT32_(value) << SSC_IDR_CP0_Pos)) /* Assigment of value for CP0 in the SSC_IDR register */
+#define SSC_IDR_CP1_Pos                       _UINT32_(9)                                          /* (SSC_IDR) Compare 1 Interrupt Disable Position */
+#define SSC_IDR_CP1_Msk                       (_UINT32_(0x1) << SSC_IDR_CP1_Pos)                   /* (SSC_IDR) Compare 1 Interrupt Disable Mask */
+#define SSC_IDR_CP1(value)                    (SSC_IDR_CP1_Msk & (_UINT32_(value) << SSC_IDR_CP1_Pos)) /* Assigment of value for CP1 in the SSC_IDR register */
+#define SSC_IDR_TXSYN_Pos                     _UINT32_(10)                                         /* (SSC_IDR) Tx Sync Interrupt Enable Position */
+#define SSC_IDR_TXSYN_Msk                     (_UINT32_(0x1) << SSC_IDR_TXSYN_Pos)                 /* (SSC_IDR) Tx Sync Interrupt Enable Mask */
+#define SSC_IDR_TXSYN(value)                  (SSC_IDR_TXSYN_Msk & (_UINT32_(value) << SSC_IDR_TXSYN_Pos)) /* Assigment of value for TXSYN in the SSC_IDR register */
+#define SSC_IDR_RXSYN_Pos                     _UINT32_(11)                                         /* (SSC_IDR) Rx Sync Interrupt Enable Position */
+#define SSC_IDR_RXSYN_Msk                     (_UINT32_(0x1) << SSC_IDR_RXSYN_Pos)                 /* (SSC_IDR) Rx Sync Interrupt Enable Mask */
+#define SSC_IDR_RXSYN(value)                  (SSC_IDR_RXSYN_Msk & (_UINT32_(value) << SSC_IDR_RXSYN_Pos)) /* Assigment of value for RXSYN in the SSC_IDR register */
+#define SSC_IDR_Msk                           _UINT32_(0x00000F33)                                 /* (SSC_IDR) Register Mask  */
+
+#define SSC_IDR_CP_Pos                        _UINT32_(8)                                          /* (SSC_IDR Position) Compare x Interrupt Disable */
+#define SSC_IDR_CP_Msk                        (_UINT32_(0x3) << SSC_IDR_CP_Pos)                    /* (SSC_IDR Mask) CP */
+#define SSC_IDR_CP(value)                     (SSC_IDR_CP_Msk & (_UINT32_(value) << SSC_IDR_CP_Pos)) 
+
+/* -------- SSC_IMR : (SSC Offset: 0x4C) ( R/ 32) Interrupt Mask Register -------- */
+#define SSC_IMR_TXRDY_Pos                     _UINT32_(0)                                          /* (SSC_IMR) Transmit Ready Interrupt Mask Position */
+#define SSC_IMR_TXRDY_Msk                     (_UINT32_(0x1) << SSC_IMR_TXRDY_Pos)                 /* (SSC_IMR) Transmit Ready Interrupt Mask Mask */
+#define SSC_IMR_TXRDY(value)                  (SSC_IMR_TXRDY_Msk & (_UINT32_(value) << SSC_IMR_TXRDY_Pos)) /* Assigment of value for TXRDY in the SSC_IMR register */
+#define SSC_IMR_TXEMPTY_Pos                   _UINT32_(1)                                          /* (SSC_IMR) Transmit Empty Interrupt Mask Position */
+#define SSC_IMR_TXEMPTY_Msk                   (_UINT32_(0x1) << SSC_IMR_TXEMPTY_Pos)               /* (SSC_IMR) Transmit Empty Interrupt Mask Mask */
+#define SSC_IMR_TXEMPTY(value)                (SSC_IMR_TXEMPTY_Msk & (_UINT32_(value) << SSC_IMR_TXEMPTY_Pos)) /* Assigment of value for TXEMPTY in the SSC_IMR register */
+#define SSC_IMR_RXRDY_Pos                     _UINT32_(4)                                          /* (SSC_IMR) Receive Ready Interrupt Mask Position */
+#define SSC_IMR_RXRDY_Msk                     (_UINT32_(0x1) << SSC_IMR_RXRDY_Pos)                 /* (SSC_IMR) Receive Ready Interrupt Mask Mask */
+#define SSC_IMR_RXRDY(value)                  (SSC_IMR_RXRDY_Msk & (_UINT32_(value) << SSC_IMR_RXRDY_Pos)) /* Assigment of value for RXRDY in the SSC_IMR register */
+#define SSC_IMR_OVRUN_Pos                     _UINT32_(5)                                          /* (SSC_IMR) Receive Overrun Interrupt Mask Position */
+#define SSC_IMR_OVRUN_Msk                     (_UINT32_(0x1) << SSC_IMR_OVRUN_Pos)                 /* (SSC_IMR) Receive Overrun Interrupt Mask Mask */
+#define SSC_IMR_OVRUN(value)                  (SSC_IMR_OVRUN_Msk & (_UINT32_(value) << SSC_IMR_OVRUN_Pos)) /* Assigment of value for OVRUN in the SSC_IMR register */
+#define SSC_IMR_CP0_Pos                       _UINT32_(8)                                          /* (SSC_IMR) Compare 0 Interrupt Mask Position */
+#define SSC_IMR_CP0_Msk                       (_UINT32_(0x1) << SSC_IMR_CP0_Pos)                   /* (SSC_IMR) Compare 0 Interrupt Mask Mask */
+#define SSC_IMR_CP0(value)                    (SSC_IMR_CP0_Msk & (_UINT32_(value) << SSC_IMR_CP0_Pos)) /* Assigment of value for CP0 in the SSC_IMR register */
+#define SSC_IMR_CP1_Pos                       _UINT32_(9)                                          /* (SSC_IMR) Compare 1 Interrupt Mask Position */
+#define SSC_IMR_CP1_Msk                       (_UINT32_(0x1) << SSC_IMR_CP1_Pos)                   /* (SSC_IMR) Compare 1 Interrupt Mask Mask */
+#define SSC_IMR_CP1(value)                    (SSC_IMR_CP1_Msk & (_UINT32_(value) << SSC_IMR_CP1_Pos)) /* Assigment of value for CP1 in the SSC_IMR register */
+#define SSC_IMR_TXSYN_Pos                     _UINT32_(10)                                         /* (SSC_IMR) Tx Sync Interrupt Mask Position */
+#define SSC_IMR_TXSYN_Msk                     (_UINT32_(0x1) << SSC_IMR_TXSYN_Pos)                 /* (SSC_IMR) Tx Sync Interrupt Mask Mask */
+#define SSC_IMR_TXSYN(value)                  (SSC_IMR_TXSYN_Msk & (_UINT32_(value) << SSC_IMR_TXSYN_Pos)) /* Assigment of value for TXSYN in the SSC_IMR register */
+#define SSC_IMR_RXSYN_Pos                     _UINT32_(11)                                         /* (SSC_IMR) Rx Sync Interrupt Mask Position */
+#define SSC_IMR_RXSYN_Msk                     (_UINT32_(0x1) << SSC_IMR_RXSYN_Pos)                 /* (SSC_IMR) Rx Sync Interrupt Mask Mask */
+#define SSC_IMR_RXSYN(value)                  (SSC_IMR_RXSYN_Msk & (_UINT32_(value) << SSC_IMR_RXSYN_Pos)) /* Assigment of value for RXSYN in the SSC_IMR register */
+#define SSC_IMR_Msk                           _UINT32_(0x00000F33)                                 /* (SSC_IMR) Register Mask  */
+
+#define SSC_IMR_CP_Pos                        _UINT32_(8)                                          /* (SSC_IMR Position) Compare x Interrupt Mask */
+#define SSC_IMR_CP_Msk                        (_UINT32_(0x3) << SSC_IMR_CP_Pos)                    /* (SSC_IMR Mask) CP */
+#define SSC_IMR_CP(value)                     (SSC_IMR_CP_Msk & (_UINT32_(value) << SSC_IMR_CP_Pos)) 
 
 /* -------- SSC_WPMR : (SSC Offset: 0xE4) (R/W 32) Write Protection Mode Register -------- */
 #define SSC_WPMR_WPEN_Pos                     _UINT32_(0)                                          /* (SSC_WPMR) Write Protection Enable Position */
@@ -463,22 +460,22 @@
 
 
 /** \brief SSC register offsets definitions */
-#define SSC_CMR_REG_OFST               _UINT32_(0x04)      /* (SSC_CMR) Clock Mode Register Offset */
 #define SSC_CR_REG_OFST                _UINT32_(0x00)      /* (SSC_CR) Control Register Offset */
-#define SSC_IDR_REG_OFST               _UINT32_(0x48)      /* (SSC_IDR) Interrupt Disable Register Offset */
-#define SSC_IER_REG_OFST               _UINT32_(0x44)      /* (SSC_IER) Interrupt Enable Register Offset */
-#define SSC_IMR_REG_OFST               _UINT32_(0x4C)      /* (SSC_IMR) Interrupt Mask Register Offset */
-#define SSC_RC0R_REG_OFST              _UINT32_(0x38)      /* (SSC_RC0R) Receive Compare 0 Register Offset */
-#define SSC_RC1R_REG_OFST              _UINT32_(0x3C)      /* (SSC_RC1R) Receive Compare 1 Register Offset */
+#define SSC_CMR_REG_OFST               _UINT32_(0x04)      /* (SSC_CMR) Clock Mode Register Offset */
 #define SSC_RCMR_REG_OFST              _UINT32_(0x10)      /* (SSC_RCMR) Receive Clock Mode Register Offset */
 #define SSC_RFMR_REG_OFST              _UINT32_(0x14)      /* (SSC_RFMR) Receive Frame Mode Register Offset */
-#define SSC_RHR_REG_OFST               _UINT32_(0x20)      /* (SSC_RHR) Receive Holding Register Offset */
-#define SSC_RSHR_REG_OFST              _UINT32_(0x30)      /* (SSC_RSHR) Receive Sync. Holding Register Offset */
-#define SSC_SR_REG_OFST                _UINT32_(0x40)      /* (SSC_SR) Status Register Offset */
 #define SSC_TCMR_REG_OFST              _UINT32_(0x18)      /* (SSC_TCMR) Transmit Clock Mode Register Offset */
 #define SSC_TFMR_REG_OFST              _UINT32_(0x1C)      /* (SSC_TFMR) Transmit Frame Mode Register Offset */
+#define SSC_RHR_REG_OFST               _UINT32_(0x20)      /* (SSC_RHR) Receive Holding Register Offset */
 #define SSC_THR_REG_OFST               _UINT32_(0x24)      /* (SSC_THR) Transmit Holding Register Offset */
+#define SSC_RSHR_REG_OFST              _UINT32_(0x30)      /* (SSC_RSHR) Receive Sync. Holding Register Offset */
 #define SSC_TSHR_REG_OFST              _UINT32_(0x34)      /* (SSC_TSHR) Transmit Sync. Holding Register Offset */
+#define SSC_RC0R_REG_OFST              _UINT32_(0x38)      /* (SSC_RC0R) Receive Compare 0 Register Offset */
+#define SSC_RC1R_REG_OFST              _UINT32_(0x3C)      /* (SSC_RC1R) Receive Compare 1 Register Offset */
+#define SSC_SR_REG_OFST                _UINT32_(0x40)      /* (SSC_SR) Status Register Offset */
+#define SSC_IER_REG_OFST               _UINT32_(0x44)      /* (SSC_IER) Interrupt Enable Register Offset */
+#define SSC_IDR_REG_OFST               _UINT32_(0x48)      /* (SSC_IDR) Interrupt Disable Register Offset */
+#define SSC_IMR_REG_OFST               _UINT32_(0x4C)      /* (SSC_IMR) Interrupt Mask Register Offset */
 #define SSC_WPMR_REG_OFST              _UINT32_(0xE4)      /* (SSC_WPMR) Write Protection Mode Register Offset */
 #define SSC_WPSR_REG_OFST              _UINT32_(0xE8)      /* (SSC_WPSR) Write Protection Status Register Offset */
 
@@ -511,4 +508,4 @@ typedef struct
 
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-#endif /* _SAMA5D_SSC_COMPONENT_H_ */
+#endif /* _SAMA5D2_SSC_COMPONENT_H_ */
