@@ -29,6 +29,7 @@
 
 
 
+
 /*********************************************************************************
 Initialize Generic clock
 *********************************************************************************/
@@ -49,6 +50,7 @@ static void CLK_PeripheralClockInitialize(void)
     PMC_REGS->PMC_PCER1=0x40U;
     PMC_REGS->PMC_PCDR1=~0x40U;
 }
+
 
 
 
