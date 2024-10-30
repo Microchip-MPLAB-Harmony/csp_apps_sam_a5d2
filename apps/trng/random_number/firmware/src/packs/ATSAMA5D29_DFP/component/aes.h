@@ -1,60 +1,29 @@
 /*
  * Component description for AES
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2022-10-04T10:37:14Z */
-#ifndef _SAMA5D_AES_COMPONENT_H_
-#define _SAMA5D_AES_COMPONENT_H_
+/* file generated from device description file (ATDF) version 2024-06-24T14:43:55Z */
+#ifndef _SAMA5D2_AES_COMPONENT_H_
+#define _SAMA5D2_AES_COMPONENT_H_
 
 /* ************************************************************************** */
 /*   SOFTWARE API DEFINITION FOR AES                                          */
 /* ************************************************************************** */
-
-/* -------- AES_AADLENR : (AES Offset: 0x70) (R/W 32) Additional Authenticated Data Length Register -------- */
-#define AES_AADLENR_AADLEN_Pos                _UINT32_(0)                                          /* (AES_AADLENR) Additional Authenticated Data Length Position */
-#define AES_AADLENR_AADLEN_Msk                (_UINT32_(0xFFFFFFFF) << AES_AADLENR_AADLEN_Pos)     /* (AES_AADLENR) Additional Authenticated Data Length Mask */
-#define AES_AADLENR_AADLEN(value)             (AES_AADLENR_AADLEN_Msk & (_UINT32_(value) << AES_AADLENR_AADLEN_Pos)) /* Assigment of value for AADLEN in the AES_AADLENR register */
-#define AES_AADLENR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (AES_AADLENR) Register Mask  */
-
-
-/* -------- AES_ALPHAR : (AES Offset: 0xD0) ( /W 32) Alpha Word Register -------- */
-#define AES_ALPHAR_ALPHA_Pos                  _UINT32_(0)                                          /* (AES_ALPHAR) Alpha Word x Position */
-#define AES_ALPHAR_ALPHA_Msk                  (_UINT32_(0xFFFFFFFF) << AES_ALPHAR_ALPHA_Pos)       /* (AES_ALPHAR) Alpha Word x Mask */
-#define AES_ALPHAR_ALPHA(value)               (AES_ALPHAR_ALPHA_Msk & (_UINT32_(value) << AES_ALPHAR_ALPHA_Pos)) /* Assigment of value for ALPHA in the AES_ALPHAR register */
-#define AES_ALPHAR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_ALPHAR) Register Mask  */
-
-
-/* -------- AES_BCNT : (AES Offset: 0xB4) (R/W 32) Byte Counter Register -------- */
-#define AES_BCNT_BCNT_Pos                     _UINT32_(0)                                          /* (AES_BCNT) Auto Padding Byte Counter Position */
-#define AES_BCNT_BCNT_Msk                     (_UINT32_(0xFFFFFFFF) << AES_BCNT_BCNT_Pos)          /* (AES_BCNT) Auto Padding Byte Counter Mask */
-#define AES_BCNT_BCNT(value)                  (AES_BCNT_BCNT_Msk & (_UINT32_(value) << AES_BCNT_BCNT_Pos)) /* Assigment of value for BCNT in the AES_BCNT register */
-#define AES_BCNT_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (AES_BCNT) Register Mask  */
-
-
-/* -------- AES_CLENR : (AES Offset: 0x74) (R/W 32) Plaintext/Ciphertext Length Register -------- */
-#define AES_CLENR_CLEN_Pos                    _UINT32_(0)                                          /* (AES_CLENR) Plaintext/Ciphertext Length Position */
-#define AES_CLENR_CLEN_Msk                    (_UINT32_(0xFFFFFFFF) << AES_CLENR_CLEN_Pos)         /* (AES_CLENR) Plaintext/Ciphertext Length Mask */
-#define AES_CLENR_CLEN(value)                 (AES_CLENR_CLEN_Msk & (_UINT32_(value) << AES_CLENR_CLEN_Pos)) /* Assigment of value for CLEN in the AES_CLENR register */
-#define AES_CLENR_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (AES_CLENR) Register Mask  */
-
 
 /* -------- AES_CR : (AES Offset: 0x00) ( /W 32) Control Register -------- */
 #define AES_CR_START_Pos                      _UINT32_(0)                                          /* (AES_CR) Start Processing Position */
@@ -64,161 +33,6 @@
 #define AES_CR_SWRST_Msk                      (_UINT32_(0x1) << AES_CR_SWRST_Pos)                  /* (AES_CR) Software Reset Mask */
 #define AES_CR_SWRST(value)                   (AES_CR_SWRST_Msk & (_UINT32_(value) << AES_CR_SWRST_Pos)) /* Assigment of value for SWRST in the AES_CR register */
 #define AES_CR_Msk                            _UINT32_(0x00000101)                                 /* (AES_CR) Register Mask  */
-
-
-/* -------- AES_CTRR : (AES Offset: 0x98) ( R/ 32) GCM Encryption Counter Value Register -------- */
-#define AES_CTRR_CTR_Pos                      _UINT32_(0)                                          /* (AES_CTRR) GCM Encryption Counter Position */
-#define AES_CTRR_CTR_Msk                      (_UINT32_(0xFFFFFFFF) << AES_CTRR_CTR_Pos)           /* (AES_CTRR) GCM Encryption Counter Mask */
-#define AES_CTRR_CTR(value)                   (AES_CTRR_CTR_Msk & (_UINT32_(value) << AES_CTRR_CTR_Pos)) /* Assigment of value for CTR in the AES_CTRR register */
-#define AES_CTRR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (AES_CTRR) Register Mask  */
-
-
-/* -------- AES_EMR : (AES Offset: 0xB0) (R/W 32) Extended Mode Register -------- */
-#define AES_EMR_APEN_Pos                      _UINT32_(0)                                          /* (AES_EMR) Auto Padding Enable Position */
-#define AES_EMR_APEN_Msk                      (_UINT32_(0x1) << AES_EMR_APEN_Pos)                  /* (AES_EMR) Auto Padding Enable Mask */
-#define AES_EMR_APEN(value)                   (AES_EMR_APEN_Msk & (_UINT32_(value) << AES_EMR_APEN_Pos)) /* Assigment of value for APEN in the AES_EMR register */
-#define AES_EMR_APM_Pos                       _UINT32_(1)                                          /* (AES_EMR) Auto Padding Mode Position */
-#define AES_EMR_APM_Msk                       (_UINT32_(0x1) << AES_EMR_APM_Pos)                   /* (AES_EMR) Auto Padding Mode Mask */
-#define AES_EMR_APM(value)                    (AES_EMR_APM_Msk & (_UINT32_(value) << AES_EMR_APM_Pos)) /* Assigment of value for APM in the AES_EMR register */
-#define AES_EMR_PLIPEN_Pos                    _UINT32_(4)                                          /* (AES_EMR) Protocol Layer Improved Performance Enable Position */
-#define AES_EMR_PLIPEN_Msk                    (_UINT32_(0x1) << AES_EMR_PLIPEN_Pos)                /* (AES_EMR) Protocol Layer Improved Performance Enable Mask */
-#define AES_EMR_PLIPEN(value)                 (AES_EMR_PLIPEN_Msk & (_UINT32_(value) << AES_EMR_PLIPEN_Pos)) /* Assigment of value for PLIPEN in the AES_EMR register */
-#define AES_EMR_PLIPD_Pos                     _UINT32_(5)                                          /* (AES_EMR) Protocol Layer Improved Performance Decipher Position */
-#define AES_EMR_PLIPD_Msk                     (_UINT32_(0x1) << AES_EMR_PLIPD_Pos)                 /* (AES_EMR) Protocol Layer Improved Performance Decipher Mask */
-#define AES_EMR_PLIPD(value)                  (AES_EMR_PLIPD_Msk & (_UINT32_(value) << AES_EMR_PLIPD_Pos)) /* Assigment of value for PLIPD in the AES_EMR register */
-#define AES_EMR_PADLEN_Pos                    _UINT32_(8)                                          /* (AES_EMR) Auto Padding Length Position */
-#define AES_EMR_PADLEN_Msk                    (_UINT32_(0xFF) << AES_EMR_PADLEN_Pos)               /* (AES_EMR) Auto Padding Length Mask */
-#define AES_EMR_PADLEN(value)                 (AES_EMR_PADLEN_Msk & (_UINT32_(value) << AES_EMR_PADLEN_Pos)) /* Assigment of value for PADLEN in the AES_EMR register */
-#define AES_EMR_NHEAD_Pos                     _UINT32_(16)                                         /* (AES_EMR) IPSEC Next Header Position */
-#define AES_EMR_NHEAD_Msk                     (_UINT32_(0xFF) << AES_EMR_NHEAD_Pos)                /* (AES_EMR) IPSEC Next Header Mask */
-#define AES_EMR_NHEAD(value)                  (AES_EMR_NHEAD_Msk & (_UINT32_(value) << AES_EMR_NHEAD_Pos)) /* Assigment of value for NHEAD in the AES_EMR register */
-#define AES_EMR_Msk                           _UINT32_(0x00FFFF33)                                 /* (AES_EMR) Register Mask  */
-
-
-/* -------- AES_GCMHR : (AES Offset: 0x9C) (R/W 32) GCM H Word Register -------- */
-#define AES_GCMHR_H_Pos                       _UINT32_(0)                                          /* (AES_GCMHR) GCM H Word x Position */
-#define AES_GCMHR_H_Msk                       (_UINT32_(0xFFFFFFFF) << AES_GCMHR_H_Pos)            /* (AES_GCMHR) GCM H Word x Mask */
-#define AES_GCMHR_H(value)                    (AES_GCMHR_H_Msk & (_UINT32_(value) << AES_GCMHR_H_Pos)) /* Assigment of value for H in the AES_GCMHR register */
-#define AES_GCMHR_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (AES_GCMHR) Register Mask  */
-
-
-/* -------- AES_GHASHR : (AES Offset: 0x78) (R/W 32) GCM Intermediate Hash Word Register -------- */
-#define AES_GHASHR_GHASH_Pos                  _UINT32_(0)                                          /* (AES_GHASHR) Intermediate GCM Hash Word x Position */
-#define AES_GHASHR_GHASH_Msk                  (_UINT32_(0xFFFFFFFF) << AES_GHASHR_GHASH_Pos)       /* (AES_GHASHR) Intermediate GCM Hash Word x Mask */
-#define AES_GHASHR_GHASH(value)               (AES_GHASHR_GHASH_Msk & (_UINT32_(value) << AES_GHASHR_GHASH_Pos)) /* Assigment of value for GHASH in the AES_GHASHR register */
-#define AES_GHASHR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_GHASHR) Register Mask  */
-
-
-/* -------- AES_IDATAR : (AES Offset: 0x40) ( /W 32) Input Data Register -------- */
-#define AES_IDATAR_IDATA_Pos                  _UINT32_(0)                                          /* (AES_IDATAR) Input Data Word Position */
-#define AES_IDATAR_IDATA_Msk                  (_UINT32_(0xFFFFFFFF) << AES_IDATAR_IDATA_Pos)       /* (AES_IDATAR) Input Data Word Mask */
-#define AES_IDATAR_IDATA(value)               (AES_IDATAR_IDATA_Msk & (_UINT32_(value) << AES_IDATAR_IDATA_Pos)) /* Assigment of value for IDATA in the AES_IDATAR register */
-#define AES_IDATAR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_IDATAR) Register Mask  */
-
-
-/* -------- AES_IDR : (AES Offset: 0x14) ( /W 32) Interrupt Disable Register -------- */
-#define AES_IDR_DATRDY_Pos                    _UINT32_(0)                                          /* (AES_IDR) Data Ready Interrupt Disable Position */
-#define AES_IDR_DATRDY_Msk                    (_UINT32_(0x1) << AES_IDR_DATRDY_Pos)                /* (AES_IDR) Data Ready Interrupt Disable Mask */
-#define AES_IDR_DATRDY(value)                 (AES_IDR_DATRDY_Msk & (_UINT32_(value) << AES_IDR_DATRDY_Pos)) /* Assigment of value for DATRDY in the AES_IDR register */
-#define AES_IDR_URAD_Pos                      _UINT32_(8)                                          /* (AES_IDR) Unspecified Register Access Detection Interrupt Disable Position */
-#define AES_IDR_URAD_Msk                      (_UINT32_(0x1) << AES_IDR_URAD_Pos)                  /* (AES_IDR) Unspecified Register Access Detection Interrupt Disable Mask */
-#define AES_IDR_URAD(value)                   (AES_IDR_URAD_Msk & (_UINT32_(value) << AES_IDR_URAD_Pos)) /* Assigment of value for URAD in the AES_IDR register */
-#define AES_IDR_TAGRDY_Pos                    _UINT32_(16)                                         /* (AES_IDR) GCM Tag Ready Interrupt Disable Position */
-#define AES_IDR_TAGRDY_Msk                    (_UINT32_(0x1) << AES_IDR_TAGRDY_Pos)                /* (AES_IDR) GCM Tag Ready Interrupt Disable Mask */
-#define AES_IDR_TAGRDY(value)                 (AES_IDR_TAGRDY_Msk & (_UINT32_(value) << AES_IDR_TAGRDY_Pos)) /* Assigment of value for TAGRDY in the AES_IDR register */
-#define AES_IDR_EOPAD_Pos                     _UINT32_(17)                                         /* (AES_IDR) End of Padding Interrupt Disable Position */
-#define AES_IDR_EOPAD_Msk                     (_UINT32_(0x1) << AES_IDR_EOPAD_Pos)                 /* (AES_IDR) End of Padding Interrupt Disable Mask */
-#define AES_IDR_EOPAD(value)                  (AES_IDR_EOPAD_Msk & (_UINT32_(value) << AES_IDR_EOPAD_Pos)) /* Assigment of value for EOPAD in the AES_IDR register */
-#define AES_IDR_PLENERR_Pos                   _UINT32_(18)                                         /* (AES_IDR) Padding Length Error Interrupt Disable Position */
-#define AES_IDR_PLENERR_Msk                   (_UINT32_(0x1) << AES_IDR_PLENERR_Pos)               /* (AES_IDR) Padding Length Error Interrupt Disable Mask */
-#define AES_IDR_PLENERR(value)                (AES_IDR_PLENERR_Msk & (_UINT32_(value) << AES_IDR_PLENERR_Pos)) /* Assigment of value for PLENERR in the AES_IDR register */
-#define AES_IDR_Msk                           _UINT32_(0x00070101)                                 /* (AES_IDR) Register Mask  */
-
-
-/* -------- AES_IER : (AES Offset: 0x10) ( /W 32) Interrupt Enable Register -------- */
-#define AES_IER_DATRDY_Pos                    _UINT32_(0)                                          /* (AES_IER) Data Ready Interrupt Enable Position */
-#define AES_IER_DATRDY_Msk                    (_UINT32_(0x1) << AES_IER_DATRDY_Pos)                /* (AES_IER) Data Ready Interrupt Enable Mask */
-#define AES_IER_DATRDY(value)                 (AES_IER_DATRDY_Msk & (_UINT32_(value) << AES_IER_DATRDY_Pos)) /* Assigment of value for DATRDY in the AES_IER register */
-#define AES_IER_URAD_Pos                      _UINT32_(8)                                          /* (AES_IER) Unspecified Register Access Detection Interrupt Enable Position */
-#define AES_IER_URAD_Msk                      (_UINT32_(0x1) << AES_IER_URAD_Pos)                  /* (AES_IER) Unspecified Register Access Detection Interrupt Enable Mask */
-#define AES_IER_URAD(value)                   (AES_IER_URAD_Msk & (_UINT32_(value) << AES_IER_URAD_Pos)) /* Assigment of value for URAD in the AES_IER register */
-#define AES_IER_TAGRDY_Pos                    _UINT32_(16)                                         /* (AES_IER) GCM Tag Ready Interrupt Enable Position */
-#define AES_IER_TAGRDY_Msk                    (_UINT32_(0x1) << AES_IER_TAGRDY_Pos)                /* (AES_IER) GCM Tag Ready Interrupt Enable Mask */
-#define AES_IER_TAGRDY(value)                 (AES_IER_TAGRDY_Msk & (_UINT32_(value) << AES_IER_TAGRDY_Pos)) /* Assigment of value for TAGRDY in the AES_IER register */
-#define AES_IER_EOPAD_Pos                     _UINT32_(17)                                         /* (AES_IER) End of Padding Interrupt Enable Position */
-#define AES_IER_EOPAD_Msk                     (_UINT32_(0x1) << AES_IER_EOPAD_Pos)                 /* (AES_IER) End of Padding Interrupt Enable Mask */
-#define AES_IER_EOPAD(value)                  (AES_IER_EOPAD_Msk & (_UINT32_(value) << AES_IER_EOPAD_Pos)) /* Assigment of value for EOPAD in the AES_IER register */
-#define AES_IER_PLENERR_Pos                   _UINT32_(18)                                         /* (AES_IER) Padding Length Error Interrupt Enable Position */
-#define AES_IER_PLENERR_Msk                   (_UINT32_(0x1) << AES_IER_PLENERR_Pos)               /* (AES_IER) Padding Length Error Interrupt Enable Mask */
-#define AES_IER_PLENERR(value)                (AES_IER_PLENERR_Msk & (_UINT32_(value) << AES_IER_PLENERR_Pos)) /* Assigment of value for PLENERR in the AES_IER register */
-#define AES_IER_Msk                           _UINT32_(0x00070101)                                 /* (AES_IER) Register Mask  */
-
-
-/* -------- AES_IMR : (AES Offset: 0x18) ( R/ 32) Interrupt Mask Register -------- */
-#define AES_IMR_DATRDY_Pos                    _UINT32_(0)                                          /* (AES_IMR) Data Ready Interrupt Mask Position */
-#define AES_IMR_DATRDY_Msk                    (_UINT32_(0x1) << AES_IMR_DATRDY_Pos)                /* (AES_IMR) Data Ready Interrupt Mask Mask */
-#define AES_IMR_DATRDY(value)                 (AES_IMR_DATRDY_Msk & (_UINT32_(value) << AES_IMR_DATRDY_Pos)) /* Assigment of value for DATRDY in the AES_IMR register */
-#define AES_IMR_URAD_Pos                      _UINT32_(8)                                          /* (AES_IMR) Unspecified Register Access Detection Interrupt Mask Position */
-#define AES_IMR_URAD_Msk                      (_UINT32_(0x1) << AES_IMR_URAD_Pos)                  /* (AES_IMR) Unspecified Register Access Detection Interrupt Mask Mask */
-#define AES_IMR_URAD(value)                   (AES_IMR_URAD_Msk & (_UINT32_(value) << AES_IMR_URAD_Pos)) /* Assigment of value for URAD in the AES_IMR register */
-#define AES_IMR_TAGRDY_Pos                    _UINT32_(16)                                         /* (AES_IMR) GCM Tag Ready Interrupt Mask Position */
-#define AES_IMR_TAGRDY_Msk                    (_UINT32_(0x1) << AES_IMR_TAGRDY_Pos)                /* (AES_IMR) GCM Tag Ready Interrupt Mask Mask */
-#define AES_IMR_TAGRDY(value)                 (AES_IMR_TAGRDY_Msk & (_UINT32_(value) << AES_IMR_TAGRDY_Pos)) /* Assigment of value for TAGRDY in the AES_IMR register */
-#define AES_IMR_EOPAD_Pos                     _UINT32_(17)                                         /* (AES_IMR) End of Padding Interrupt Mask Position */
-#define AES_IMR_EOPAD_Msk                     (_UINT32_(0x1) << AES_IMR_EOPAD_Pos)                 /* (AES_IMR) End of Padding Interrupt Mask Mask */
-#define AES_IMR_EOPAD(value)                  (AES_IMR_EOPAD_Msk & (_UINT32_(value) << AES_IMR_EOPAD_Pos)) /* Assigment of value for EOPAD in the AES_IMR register */
-#define AES_IMR_PLENERR_Pos                   _UINT32_(18)                                         /* (AES_IMR) Padding Length Error Interrupt Mask Position */
-#define AES_IMR_PLENERR_Msk                   (_UINT32_(0x1) << AES_IMR_PLENERR_Pos)               /* (AES_IMR) Padding Length Error Interrupt Mask Mask */
-#define AES_IMR_PLENERR(value)                (AES_IMR_PLENERR_Msk & (_UINT32_(value) << AES_IMR_PLENERR_Pos)) /* Assigment of value for PLENERR in the AES_IMR register */
-#define AES_IMR_Msk                           _UINT32_(0x00070101)                                 /* (AES_IMR) Register Mask  */
-
-
-/* -------- AES_ISR : (AES Offset: 0x1C) ( R/ 32) Interrupt Status Register -------- */
-#define AES_ISR_DATRDY_Pos                    _UINT32_(0)                                          /* (AES_ISR) Data Ready (cleared by setting bit START or bit SWRST in AES_CR or by reading AES_ODATARx) Position */
-#define AES_ISR_DATRDY_Msk                    (_UINT32_(0x1) << AES_ISR_DATRDY_Pos)                /* (AES_ISR) Data Ready (cleared by setting bit START or bit SWRST in AES_CR or by reading AES_ODATARx) Mask */
-#define AES_ISR_DATRDY(value)                 (AES_ISR_DATRDY_Msk & (_UINT32_(value) << AES_ISR_DATRDY_Pos)) /* Assigment of value for DATRDY in the AES_ISR register */
-#define AES_ISR_URAD_Pos                      _UINT32_(8)                                          /* (AES_ISR) Unspecified Register Access Detection Status (cleared by writing SWRST in AES_CR) Position */
-#define AES_ISR_URAD_Msk                      (_UINT32_(0x1) << AES_ISR_URAD_Pos)                  /* (AES_ISR) Unspecified Register Access Detection Status (cleared by writing SWRST in AES_CR) Mask */
-#define AES_ISR_URAD(value)                   (AES_ISR_URAD_Msk & (_UINT32_(value) << AES_ISR_URAD_Pos)) /* Assigment of value for URAD in the AES_ISR register */
-#define AES_ISR_URAT_Pos                      _UINT32_(12)                                         /* (AES_ISR) Unspecified Register Access (cleared by writing SWRST in AES_CR) Position */
-#define AES_ISR_URAT_Msk                      (_UINT32_(0xF) << AES_ISR_URAT_Pos)                  /* (AES_ISR) Unspecified Register Access (cleared by writing SWRST in AES_CR) Mask */
-#define AES_ISR_URAT(value)                   (AES_ISR_URAT_Msk & (_UINT32_(value) << AES_ISR_URAT_Pos)) /* Assigment of value for URAT in the AES_ISR register */
-#define   AES_ISR_URAT_IDR_WR_PROCESSING_Val  _UINT32_(0x0)                                        /* (AES_ISR) Input Data register written during the data processing when SMOD = 2 mode.  */
-#define   AES_ISR_URAT_ODR_RD_PROCESSING_Val  _UINT32_(0x1)                                        /* (AES_ISR) Output Data register read during the data processing.  */
-#define   AES_ISR_URAT_MR_WR_PROCESSING_Val   _UINT32_(0x2)                                        /* (AES_ISR) Mode register written during the data processing.  */
-#define   AES_ISR_URAT_ODR_RD_SUBKGEN_Val     _UINT32_(0x3)                                        /* (AES_ISR) Output Data register read during the sub-keys generation.  */
-#define   AES_ISR_URAT_MR_WR_SUBKGEN_Val      _UINT32_(0x4)                                        /* (AES_ISR) Mode register written during the sub-keys generation.  */
-#define   AES_ISR_URAT_WOR_RD_ACCESS_Val      _UINT32_(0x5)                                        /* (AES_ISR) Write-only register read access.  */
-#define AES_ISR_URAT_IDR_WR_PROCESSING        (AES_ISR_URAT_IDR_WR_PROCESSING_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Input Data register written during the data processing when SMOD = 2 mode. Position  */
-#define AES_ISR_URAT_ODR_RD_PROCESSING        (AES_ISR_URAT_ODR_RD_PROCESSING_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Output Data register read during the data processing. Position  */
-#define AES_ISR_URAT_MR_WR_PROCESSING         (AES_ISR_URAT_MR_WR_PROCESSING_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Mode register written during the data processing. Position  */
-#define AES_ISR_URAT_ODR_RD_SUBKGEN           (AES_ISR_URAT_ODR_RD_SUBKGEN_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Output Data register read during the sub-keys generation. Position  */
-#define AES_ISR_URAT_MR_WR_SUBKGEN            (AES_ISR_URAT_MR_WR_SUBKGEN_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Mode register written during the sub-keys generation. Position  */
-#define AES_ISR_URAT_WOR_RD_ACCESS            (AES_ISR_URAT_WOR_RD_ACCESS_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Write-only register read access. Position  */
-#define AES_ISR_TAGRDY_Pos                    _UINT32_(16)                                         /* (AES_ISR) GCM Tag Ready Position */
-#define AES_ISR_TAGRDY_Msk                    (_UINT32_(0x1) << AES_ISR_TAGRDY_Pos)                /* (AES_ISR) GCM Tag Ready Mask */
-#define AES_ISR_TAGRDY(value)                 (AES_ISR_TAGRDY_Msk & (_UINT32_(value) << AES_ISR_TAGRDY_Pos)) /* Assigment of value for TAGRDY in the AES_ISR register */
-#define AES_ISR_EOPAD_Pos                     _UINT32_(17)                                         /* (AES_ISR) End of Padding Position */
-#define AES_ISR_EOPAD_Msk                     (_UINT32_(0x1) << AES_ISR_EOPAD_Pos)                 /* (AES_ISR) End of Padding Mask */
-#define AES_ISR_EOPAD(value)                  (AES_ISR_EOPAD_Msk & (_UINT32_(value) << AES_ISR_EOPAD_Pos)) /* Assigment of value for EOPAD in the AES_ISR register */
-#define AES_ISR_PLENERR_Pos                   _UINT32_(18)                                         /* (AES_ISR) Padding Length Error Position */
-#define AES_ISR_PLENERR_Msk                   (_UINT32_(0x1) << AES_ISR_PLENERR_Pos)               /* (AES_ISR) Padding Length Error Mask */
-#define AES_ISR_PLENERR(value)                (AES_ISR_PLENERR_Msk & (_UINT32_(value) << AES_ISR_PLENERR_Pos)) /* Assigment of value for PLENERR in the AES_ISR register */
-#define AES_ISR_Msk                           _UINT32_(0x0007F101)                                 /* (AES_ISR) Register Mask  */
-
-
-/* -------- AES_IVR : (AES Offset: 0x60) ( /W 32) Initialization Vector Register -------- */
-#define AES_IVR_IV_Pos                        _UINT32_(0)                                          /* (AES_IVR) Initialization Vector Position */
-#define AES_IVR_IV_Msk                        (_UINT32_(0xFFFFFFFF) << AES_IVR_IV_Pos)             /* (AES_IVR) Initialization Vector Mask */
-#define AES_IVR_IV(value)                     (AES_IVR_IV_Msk & (_UINT32_(value) << AES_IVR_IV_Pos)) /* Assigment of value for IV in the AES_IVR register */
-#define AES_IVR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AES_IVR) Register Mask  */
-
-
-/* -------- AES_KEYWR : (AES Offset: 0x20) ( /W 32) Key Word Register -------- */
-#define AES_KEYWR_KEYW_Pos                    _UINT32_(0)                                          /* (AES_KEYWR) Key Word Position */
-#define AES_KEYWR_KEYW_Msk                    (_UINT32_(0xFFFFFFFF) << AES_KEYWR_KEYW_Pos)         /* (AES_KEYWR) Key Word Mask */
-#define AES_KEYWR_KEYW(value)                 (AES_KEYWR_KEYW_Msk & (_UINT32_(value) << AES_KEYWR_KEYW_Pos)) /* Assigment of value for KEYW in the AES_KEYWR register */
-#define AES_KEYWR_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (AES_KEYWR) Register Mask  */
 
 
 /* -------- AES_MR : (AES Offset: 0x04) (R/W 32) Mode Register -------- */
@@ -297,11 +111,144 @@
 #define AES_MR_Msk                            _UINT32_(0x00F7FFFB)                                 /* (AES_MR) Register Mask  */
 
 
+/* -------- AES_IER : (AES Offset: 0x10) ( /W 32) Interrupt Enable Register -------- */
+#define AES_IER_DATRDY_Pos                    _UINT32_(0)                                          /* (AES_IER) Data Ready Interrupt Enable Position */
+#define AES_IER_DATRDY_Msk                    (_UINT32_(0x1) << AES_IER_DATRDY_Pos)                /* (AES_IER) Data Ready Interrupt Enable Mask */
+#define AES_IER_DATRDY(value)                 (AES_IER_DATRDY_Msk & (_UINT32_(value) << AES_IER_DATRDY_Pos)) /* Assigment of value for DATRDY in the AES_IER register */
+#define AES_IER_URAD_Pos                      _UINT32_(8)                                          /* (AES_IER) Unspecified Register Access Detection Interrupt Enable Position */
+#define AES_IER_URAD_Msk                      (_UINT32_(0x1) << AES_IER_URAD_Pos)                  /* (AES_IER) Unspecified Register Access Detection Interrupt Enable Mask */
+#define AES_IER_URAD(value)                   (AES_IER_URAD_Msk & (_UINT32_(value) << AES_IER_URAD_Pos)) /* Assigment of value for URAD in the AES_IER register */
+#define AES_IER_TAGRDY_Pos                    _UINT32_(16)                                         /* (AES_IER) GCM Tag Ready Interrupt Enable Position */
+#define AES_IER_TAGRDY_Msk                    (_UINT32_(0x1) << AES_IER_TAGRDY_Pos)                /* (AES_IER) GCM Tag Ready Interrupt Enable Mask */
+#define AES_IER_TAGRDY(value)                 (AES_IER_TAGRDY_Msk & (_UINT32_(value) << AES_IER_TAGRDY_Pos)) /* Assigment of value for TAGRDY in the AES_IER register */
+#define AES_IER_EOPAD_Pos                     _UINT32_(17)                                         /* (AES_IER) End of Padding Interrupt Enable Position */
+#define AES_IER_EOPAD_Msk                     (_UINT32_(0x1) << AES_IER_EOPAD_Pos)                 /* (AES_IER) End of Padding Interrupt Enable Mask */
+#define AES_IER_EOPAD(value)                  (AES_IER_EOPAD_Msk & (_UINT32_(value) << AES_IER_EOPAD_Pos)) /* Assigment of value for EOPAD in the AES_IER register */
+#define AES_IER_PLENERR_Pos                   _UINT32_(18)                                         /* (AES_IER) Padding Length Error Interrupt Enable Position */
+#define AES_IER_PLENERR_Msk                   (_UINT32_(0x1) << AES_IER_PLENERR_Pos)               /* (AES_IER) Padding Length Error Interrupt Enable Mask */
+#define AES_IER_PLENERR(value)                (AES_IER_PLENERR_Msk & (_UINT32_(value) << AES_IER_PLENERR_Pos)) /* Assigment of value for PLENERR in the AES_IER register */
+#define AES_IER_Msk                           _UINT32_(0x00070101)                                 /* (AES_IER) Register Mask  */
+
+
+/* -------- AES_IDR : (AES Offset: 0x14) ( /W 32) Interrupt Disable Register -------- */
+#define AES_IDR_DATRDY_Pos                    _UINT32_(0)                                          /* (AES_IDR) Data Ready Interrupt Disable Position */
+#define AES_IDR_DATRDY_Msk                    (_UINT32_(0x1) << AES_IDR_DATRDY_Pos)                /* (AES_IDR) Data Ready Interrupt Disable Mask */
+#define AES_IDR_DATRDY(value)                 (AES_IDR_DATRDY_Msk & (_UINT32_(value) << AES_IDR_DATRDY_Pos)) /* Assigment of value for DATRDY in the AES_IDR register */
+#define AES_IDR_URAD_Pos                      _UINT32_(8)                                          /* (AES_IDR) Unspecified Register Access Detection Interrupt Disable Position */
+#define AES_IDR_URAD_Msk                      (_UINT32_(0x1) << AES_IDR_URAD_Pos)                  /* (AES_IDR) Unspecified Register Access Detection Interrupt Disable Mask */
+#define AES_IDR_URAD(value)                   (AES_IDR_URAD_Msk & (_UINT32_(value) << AES_IDR_URAD_Pos)) /* Assigment of value for URAD in the AES_IDR register */
+#define AES_IDR_TAGRDY_Pos                    _UINT32_(16)                                         /* (AES_IDR) GCM Tag Ready Interrupt Disable Position */
+#define AES_IDR_TAGRDY_Msk                    (_UINT32_(0x1) << AES_IDR_TAGRDY_Pos)                /* (AES_IDR) GCM Tag Ready Interrupt Disable Mask */
+#define AES_IDR_TAGRDY(value)                 (AES_IDR_TAGRDY_Msk & (_UINT32_(value) << AES_IDR_TAGRDY_Pos)) /* Assigment of value for TAGRDY in the AES_IDR register */
+#define AES_IDR_EOPAD_Pos                     _UINT32_(17)                                         /* (AES_IDR) End of Padding Interrupt Disable Position */
+#define AES_IDR_EOPAD_Msk                     (_UINT32_(0x1) << AES_IDR_EOPAD_Pos)                 /* (AES_IDR) End of Padding Interrupt Disable Mask */
+#define AES_IDR_EOPAD(value)                  (AES_IDR_EOPAD_Msk & (_UINT32_(value) << AES_IDR_EOPAD_Pos)) /* Assigment of value for EOPAD in the AES_IDR register */
+#define AES_IDR_PLENERR_Pos                   _UINT32_(18)                                         /* (AES_IDR) Padding Length Error Interrupt Disable Position */
+#define AES_IDR_PLENERR_Msk                   (_UINT32_(0x1) << AES_IDR_PLENERR_Pos)               /* (AES_IDR) Padding Length Error Interrupt Disable Mask */
+#define AES_IDR_PLENERR(value)                (AES_IDR_PLENERR_Msk & (_UINT32_(value) << AES_IDR_PLENERR_Pos)) /* Assigment of value for PLENERR in the AES_IDR register */
+#define AES_IDR_Msk                           _UINT32_(0x00070101)                                 /* (AES_IDR) Register Mask  */
+
+
+/* -------- AES_IMR : (AES Offset: 0x18) ( R/ 32) Interrupt Mask Register -------- */
+#define AES_IMR_DATRDY_Pos                    _UINT32_(0)                                          /* (AES_IMR) Data Ready Interrupt Mask Position */
+#define AES_IMR_DATRDY_Msk                    (_UINT32_(0x1) << AES_IMR_DATRDY_Pos)                /* (AES_IMR) Data Ready Interrupt Mask Mask */
+#define AES_IMR_DATRDY(value)                 (AES_IMR_DATRDY_Msk & (_UINT32_(value) << AES_IMR_DATRDY_Pos)) /* Assigment of value for DATRDY in the AES_IMR register */
+#define AES_IMR_URAD_Pos                      _UINT32_(8)                                          /* (AES_IMR) Unspecified Register Access Detection Interrupt Mask Position */
+#define AES_IMR_URAD_Msk                      (_UINT32_(0x1) << AES_IMR_URAD_Pos)                  /* (AES_IMR) Unspecified Register Access Detection Interrupt Mask Mask */
+#define AES_IMR_URAD(value)                   (AES_IMR_URAD_Msk & (_UINT32_(value) << AES_IMR_URAD_Pos)) /* Assigment of value for URAD in the AES_IMR register */
+#define AES_IMR_TAGRDY_Pos                    _UINT32_(16)                                         /* (AES_IMR) GCM Tag Ready Interrupt Mask Position */
+#define AES_IMR_TAGRDY_Msk                    (_UINT32_(0x1) << AES_IMR_TAGRDY_Pos)                /* (AES_IMR) GCM Tag Ready Interrupt Mask Mask */
+#define AES_IMR_TAGRDY(value)                 (AES_IMR_TAGRDY_Msk & (_UINT32_(value) << AES_IMR_TAGRDY_Pos)) /* Assigment of value for TAGRDY in the AES_IMR register */
+#define AES_IMR_EOPAD_Pos                     _UINT32_(17)                                         /* (AES_IMR) End of Padding Interrupt Mask Position */
+#define AES_IMR_EOPAD_Msk                     (_UINT32_(0x1) << AES_IMR_EOPAD_Pos)                 /* (AES_IMR) End of Padding Interrupt Mask Mask */
+#define AES_IMR_EOPAD(value)                  (AES_IMR_EOPAD_Msk & (_UINT32_(value) << AES_IMR_EOPAD_Pos)) /* Assigment of value for EOPAD in the AES_IMR register */
+#define AES_IMR_PLENERR_Pos                   _UINT32_(18)                                         /* (AES_IMR) Padding Length Error Interrupt Mask Position */
+#define AES_IMR_PLENERR_Msk                   (_UINT32_(0x1) << AES_IMR_PLENERR_Pos)               /* (AES_IMR) Padding Length Error Interrupt Mask Mask */
+#define AES_IMR_PLENERR(value)                (AES_IMR_PLENERR_Msk & (_UINT32_(value) << AES_IMR_PLENERR_Pos)) /* Assigment of value for PLENERR in the AES_IMR register */
+#define AES_IMR_Msk                           _UINT32_(0x00070101)                                 /* (AES_IMR) Register Mask  */
+
+
+/* -------- AES_ISR : (AES Offset: 0x1C) ( R/ 32) Interrupt Status Register -------- */
+#define AES_ISR_DATRDY_Pos                    _UINT32_(0)                                          /* (AES_ISR) Data Ready (cleared by setting bit START or bit SWRST in AES_CR or by reading AES_ODATARx) Position */
+#define AES_ISR_DATRDY_Msk                    (_UINT32_(0x1) << AES_ISR_DATRDY_Pos)                /* (AES_ISR) Data Ready (cleared by setting bit START or bit SWRST in AES_CR or by reading AES_ODATARx) Mask */
+#define AES_ISR_DATRDY(value)                 (AES_ISR_DATRDY_Msk & (_UINT32_(value) << AES_ISR_DATRDY_Pos)) /* Assigment of value for DATRDY in the AES_ISR register */
+#define AES_ISR_URAD_Pos                      _UINT32_(8)                                          /* (AES_ISR) Unspecified Register Access Detection Status (cleared by writing SWRST in AES_CR) Position */
+#define AES_ISR_URAD_Msk                      (_UINT32_(0x1) << AES_ISR_URAD_Pos)                  /* (AES_ISR) Unspecified Register Access Detection Status (cleared by writing SWRST in AES_CR) Mask */
+#define AES_ISR_URAD(value)                   (AES_ISR_URAD_Msk & (_UINT32_(value) << AES_ISR_URAD_Pos)) /* Assigment of value for URAD in the AES_ISR register */
+#define AES_ISR_URAT_Pos                      _UINT32_(12)                                         /* (AES_ISR) Unspecified Register Access (cleared by writing SWRST in AES_CR) Position */
+#define AES_ISR_URAT_Msk                      (_UINT32_(0xF) << AES_ISR_URAT_Pos)                  /* (AES_ISR) Unspecified Register Access (cleared by writing SWRST in AES_CR) Mask */
+#define AES_ISR_URAT(value)                   (AES_ISR_URAT_Msk & (_UINT32_(value) << AES_ISR_URAT_Pos)) /* Assigment of value for URAT in the AES_ISR register */
+#define   AES_ISR_URAT_IDR_WR_PROCESSING_Val  _UINT32_(0x0)                                        /* (AES_ISR) Input Data register written during the data processing when SMOD = 2 mode.  */
+#define   AES_ISR_URAT_ODR_RD_PROCESSING_Val  _UINT32_(0x1)                                        /* (AES_ISR) Output Data register read during the data processing.  */
+#define   AES_ISR_URAT_MR_WR_PROCESSING_Val   _UINT32_(0x2)                                        /* (AES_ISR) Mode register written during the data processing.  */
+#define   AES_ISR_URAT_ODR_RD_SUBKGEN_Val     _UINT32_(0x3)                                        /* (AES_ISR) Output Data register read during the sub-keys generation.  */
+#define   AES_ISR_URAT_MR_WR_SUBKGEN_Val      _UINT32_(0x4)                                        /* (AES_ISR) Mode register written during the sub-keys generation.  */
+#define   AES_ISR_URAT_WOR_RD_ACCESS_Val      _UINT32_(0x5)                                        /* (AES_ISR) Write-only register read access.  */
+#define AES_ISR_URAT_IDR_WR_PROCESSING        (AES_ISR_URAT_IDR_WR_PROCESSING_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Input Data register written during the data processing when SMOD = 2 mode. Position  */
+#define AES_ISR_URAT_ODR_RD_PROCESSING        (AES_ISR_URAT_ODR_RD_PROCESSING_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Output Data register read during the data processing. Position  */
+#define AES_ISR_URAT_MR_WR_PROCESSING         (AES_ISR_URAT_MR_WR_PROCESSING_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Mode register written during the data processing. Position  */
+#define AES_ISR_URAT_ODR_RD_SUBKGEN           (AES_ISR_URAT_ODR_RD_SUBKGEN_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Output Data register read during the sub-keys generation. Position  */
+#define AES_ISR_URAT_MR_WR_SUBKGEN            (AES_ISR_URAT_MR_WR_SUBKGEN_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Mode register written during the sub-keys generation. Position  */
+#define AES_ISR_URAT_WOR_RD_ACCESS            (AES_ISR_URAT_WOR_RD_ACCESS_Val << AES_ISR_URAT_Pos) /* (AES_ISR) Write-only register read access. Position  */
+#define AES_ISR_TAGRDY_Pos                    _UINT32_(16)                                         /* (AES_ISR) GCM Tag Ready Position */
+#define AES_ISR_TAGRDY_Msk                    (_UINT32_(0x1) << AES_ISR_TAGRDY_Pos)                /* (AES_ISR) GCM Tag Ready Mask */
+#define AES_ISR_TAGRDY(value)                 (AES_ISR_TAGRDY_Msk & (_UINT32_(value) << AES_ISR_TAGRDY_Pos)) /* Assigment of value for TAGRDY in the AES_ISR register */
+#define AES_ISR_EOPAD_Pos                     _UINT32_(17)                                         /* (AES_ISR) End of Padding Position */
+#define AES_ISR_EOPAD_Msk                     (_UINT32_(0x1) << AES_ISR_EOPAD_Pos)                 /* (AES_ISR) End of Padding Mask */
+#define AES_ISR_EOPAD(value)                  (AES_ISR_EOPAD_Msk & (_UINT32_(value) << AES_ISR_EOPAD_Pos)) /* Assigment of value for EOPAD in the AES_ISR register */
+#define AES_ISR_PLENERR_Pos                   _UINT32_(18)                                         /* (AES_ISR) Padding Length Error Position */
+#define AES_ISR_PLENERR_Msk                   (_UINT32_(0x1) << AES_ISR_PLENERR_Pos)               /* (AES_ISR) Padding Length Error Mask */
+#define AES_ISR_PLENERR(value)                (AES_ISR_PLENERR_Msk & (_UINT32_(value) << AES_ISR_PLENERR_Pos)) /* Assigment of value for PLENERR in the AES_ISR register */
+#define AES_ISR_Msk                           _UINT32_(0x0007F101)                                 /* (AES_ISR) Register Mask  */
+
+
+/* -------- AES_KEYWR : (AES Offset: 0x20) ( /W 32) Key Word Register -------- */
+#define AES_KEYWR_KEYW_Pos                    _UINT32_(0)                                          /* (AES_KEYWR) Key Word Position */
+#define AES_KEYWR_KEYW_Msk                    (_UINT32_(0xFFFFFFFF) << AES_KEYWR_KEYW_Pos)         /* (AES_KEYWR) Key Word Mask */
+#define AES_KEYWR_KEYW(value)                 (AES_KEYWR_KEYW_Msk & (_UINT32_(value) << AES_KEYWR_KEYW_Pos)) /* Assigment of value for KEYW in the AES_KEYWR register */
+#define AES_KEYWR_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (AES_KEYWR) Register Mask  */
+
+
+/* -------- AES_IDATAR : (AES Offset: 0x40) ( /W 32) Input Data Register -------- */
+#define AES_IDATAR_IDATA_Pos                  _UINT32_(0)                                          /* (AES_IDATAR) Input Data Word Position */
+#define AES_IDATAR_IDATA_Msk                  (_UINT32_(0xFFFFFFFF) << AES_IDATAR_IDATA_Pos)       /* (AES_IDATAR) Input Data Word Mask */
+#define AES_IDATAR_IDATA(value)               (AES_IDATAR_IDATA_Msk & (_UINT32_(value) << AES_IDATAR_IDATA_Pos)) /* Assigment of value for IDATA in the AES_IDATAR register */
+#define AES_IDATAR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_IDATAR) Register Mask  */
+
+
 /* -------- AES_ODATAR : (AES Offset: 0x50) ( R/ 32) Output Data Register -------- */
 #define AES_ODATAR_ODATA_Pos                  _UINT32_(0)                                          /* (AES_ODATAR) Output Data Position */
 #define AES_ODATAR_ODATA_Msk                  (_UINT32_(0xFFFFFFFF) << AES_ODATAR_ODATA_Pos)       /* (AES_ODATAR) Output Data Mask */
 #define AES_ODATAR_ODATA(value)               (AES_ODATAR_ODATA_Msk & (_UINT32_(value) << AES_ODATAR_ODATA_Pos)) /* Assigment of value for ODATA in the AES_ODATAR register */
 #define AES_ODATAR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_ODATAR) Register Mask  */
+
+
+/* -------- AES_IVR : (AES Offset: 0x60) ( /W 32) Initialization Vector Register -------- */
+#define AES_IVR_IV_Pos                        _UINT32_(0)                                          /* (AES_IVR) Initialization Vector Position */
+#define AES_IVR_IV_Msk                        (_UINT32_(0xFFFFFFFF) << AES_IVR_IV_Pos)             /* (AES_IVR) Initialization Vector Mask */
+#define AES_IVR_IV(value)                     (AES_IVR_IV_Msk & (_UINT32_(value) << AES_IVR_IV_Pos)) /* Assigment of value for IV in the AES_IVR register */
+#define AES_IVR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AES_IVR) Register Mask  */
+
+
+/* -------- AES_AADLENR : (AES Offset: 0x70) (R/W 32) Additional Authenticated Data Length Register -------- */
+#define AES_AADLENR_AADLEN_Pos                _UINT32_(0)                                          /* (AES_AADLENR) Additional Authenticated Data Length Position */
+#define AES_AADLENR_AADLEN_Msk                (_UINT32_(0xFFFFFFFF) << AES_AADLENR_AADLEN_Pos)     /* (AES_AADLENR) Additional Authenticated Data Length Mask */
+#define AES_AADLENR_AADLEN(value)             (AES_AADLENR_AADLEN_Msk & (_UINT32_(value) << AES_AADLENR_AADLEN_Pos)) /* Assigment of value for AADLEN in the AES_AADLENR register */
+#define AES_AADLENR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (AES_AADLENR) Register Mask  */
+
+
+/* -------- AES_CLENR : (AES Offset: 0x74) (R/W 32) Plaintext/Ciphertext Length Register -------- */
+#define AES_CLENR_CLEN_Pos                    _UINT32_(0)                                          /* (AES_CLENR) Plaintext/Ciphertext Length Position */
+#define AES_CLENR_CLEN_Msk                    (_UINT32_(0xFFFFFFFF) << AES_CLENR_CLEN_Pos)         /* (AES_CLENR) Plaintext/Ciphertext Length Mask */
+#define AES_CLENR_CLEN(value)                 (AES_CLENR_CLEN_Msk & (_UINT32_(value) << AES_CLENR_CLEN_Pos)) /* Assigment of value for CLEN in the AES_CLENR register */
+#define AES_CLENR_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (AES_CLENR) Register Mask  */
+
+
+/* -------- AES_GHASHR : (AES Offset: 0x78) (R/W 32) GCM Intermediate Hash Word Register -------- */
+#define AES_GHASHR_GHASH_Pos                  _UINT32_(0)                                          /* (AES_GHASHR) Intermediate GCM Hash Word x Position */
+#define AES_GHASHR_GHASH_Msk                  (_UINT32_(0xFFFFFFFF) << AES_GHASHR_GHASH_Pos)       /* (AES_GHASHR) Intermediate GCM Hash Word x Mask */
+#define AES_GHASHR_GHASH(value)               (AES_GHASHR_GHASH_Msk & (_UINT32_(value) << AES_GHASHR_GHASH_Pos)) /* Assigment of value for GHASH in the AES_GHASHR register */
+#define AES_GHASHR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_GHASHR) Register Mask  */
 
 
 /* -------- AES_TAGR : (AES Offset: 0x88) ( R/ 32) GCM Authentication Tag Word Register -------- */
@@ -311,6 +258,49 @@
 #define AES_TAGR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (AES_TAGR) Register Mask  */
 
 
+/* -------- AES_CTRR : (AES Offset: 0x98) ( R/ 32) GCM Encryption Counter Value Register -------- */
+#define AES_CTRR_CTR_Pos                      _UINT32_(0)                                          /* (AES_CTRR) GCM Encryption Counter Position */
+#define AES_CTRR_CTR_Msk                      (_UINT32_(0xFFFFFFFF) << AES_CTRR_CTR_Pos)           /* (AES_CTRR) GCM Encryption Counter Mask */
+#define AES_CTRR_CTR(value)                   (AES_CTRR_CTR_Msk & (_UINT32_(value) << AES_CTRR_CTR_Pos)) /* Assigment of value for CTR in the AES_CTRR register */
+#define AES_CTRR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (AES_CTRR) Register Mask  */
+
+
+/* -------- AES_GCMHR : (AES Offset: 0x9C) (R/W 32) GCM H Word Register -------- */
+#define AES_GCMHR_H_Pos                       _UINT32_(0)                                          /* (AES_GCMHR) GCM H Word x Position */
+#define AES_GCMHR_H_Msk                       (_UINT32_(0xFFFFFFFF) << AES_GCMHR_H_Pos)            /* (AES_GCMHR) GCM H Word x Mask */
+#define AES_GCMHR_H(value)                    (AES_GCMHR_H_Msk & (_UINT32_(value) << AES_GCMHR_H_Pos)) /* Assigment of value for H in the AES_GCMHR register */
+#define AES_GCMHR_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (AES_GCMHR) Register Mask  */
+
+
+/* -------- AES_EMR : (AES Offset: 0xB0) (R/W 32) Extended Mode Register -------- */
+#define AES_EMR_APEN_Pos                      _UINT32_(0)                                          /* (AES_EMR) Auto Padding Enable Position */
+#define AES_EMR_APEN_Msk                      (_UINT32_(0x1) << AES_EMR_APEN_Pos)                  /* (AES_EMR) Auto Padding Enable Mask */
+#define AES_EMR_APEN(value)                   (AES_EMR_APEN_Msk & (_UINT32_(value) << AES_EMR_APEN_Pos)) /* Assigment of value for APEN in the AES_EMR register */
+#define AES_EMR_APM_Pos                       _UINT32_(1)                                          /* (AES_EMR) Auto Padding Mode Position */
+#define AES_EMR_APM_Msk                       (_UINT32_(0x1) << AES_EMR_APM_Pos)                   /* (AES_EMR) Auto Padding Mode Mask */
+#define AES_EMR_APM(value)                    (AES_EMR_APM_Msk & (_UINT32_(value) << AES_EMR_APM_Pos)) /* Assigment of value for APM in the AES_EMR register */
+#define AES_EMR_PLIPEN_Pos                    _UINT32_(4)                                          /* (AES_EMR) Protocol Layer Improved Performance Enable Position */
+#define AES_EMR_PLIPEN_Msk                    (_UINT32_(0x1) << AES_EMR_PLIPEN_Pos)                /* (AES_EMR) Protocol Layer Improved Performance Enable Mask */
+#define AES_EMR_PLIPEN(value)                 (AES_EMR_PLIPEN_Msk & (_UINT32_(value) << AES_EMR_PLIPEN_Pos)) /* Assigment of value for PLIPEN in the AES_EMR register */
+#define AES_EMR_PLIPD_Pos                     _UINT32_(5)                                          /* (AES_EMR) Protocol Layer Improved Performance Decipher Position */
+#define AES_EMR_PLIPD_Msk                     (_UINT32_(0x1) << AES_EMR_PLIPD_Pos)                 /* (AES_EMR) Protocol Layer Improved Performance Decipher Mask */
+#define AES_EMR_PLIPD(value)                  (AES_EMR_PLIPD_Msk & (_UINT32_(value) << AES_EMR_PLIPD_Pos)) /* Assigment of value for PLIPD in the AES_EMR register */
+#define AES_EMR_PADLEN_Pos                    _UINT32_(8)                                          /* (AES_EMR) Auto Padding Length Position */
+#define AES_EMR_PADLEN_Msk                    (_UINT32_(0xFF) << AES_EMR_PADLEN_Pos)               /* (AES_EMR) Auto Padding Length Mask */
+#define AES_EMR_PADLEN(value)                 (AES_EMR_PADLEN_Msk & (_UINT32_(value) << AES_EMR_PADLEN_Pos)) /* Assigment of value for PADLEN in the AES_EMR register */
+#define AES_EMR_NHEAD_Pos                     _UINT32_(16)                                         /* (AES_EMR) IPSEC Next Header Position */
+#define AES_EMR_NHEAD_Msk                     (_UINT32_(0xFF) << AES_EMR_NHEAD_Pos)                /* (AES_EMR) IPSEC Next Header Mask */
+#define AES_EMR_NHEAD(value)                  (AES_EMR_NHEAD_Msk & (_UINT32_(value) << AES_EMR_NHEAD_Pos)) /* Assigment of value for NHEAD in the AES_EMR register */
+#define AES_EMR_Msk                           _UINT32_(0x00FFFF33)                                 /* (AES_EMR) Register Mask  */
+
+
+/* -------- AES_BCNT : (AES Offset: 0xB4) (R/W 32) Byte Counter Register -------- */
+#define AES_BCNT_BCNT_Pos                     _UINT32_(0)                                          /* (AES_BCNT) Auto Padding Byte Counter Position */
+#define AES_BCNT_BCNT_Msk                     (_UINT32_(0xFFFFFFFF) << AES_BCNT_BCNT_Pos)          /* (AES_BCNT) Auto Padding Byte Counter Mask */
+#define AES_BCNT_BCNT(value)                  (AES_BCNT_BCNT_Msk & (_UINT32_(value) << AES_BCNT_BCNT_Pos)) /* Assigment of value for BCNT in the AES_BCNT register */
+#define AES_BCNT_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (AES_BCNT) Register Mask  */
+
+
 /* -------- AES_TWR : (AES Offset: 0xC0) (R/W 32) Tweak Word Register -------- */
 #define AES_TWR_TWEAK_Pos                     _UINT32_(0)                                          /* (AES_TWR) Tweak Word x Position */
 #define AES_TWR_TWEAK_Msk                     (_UINT32_(0xFFFFFFFF) << AES_TWR_TWEAK_Pos)          /* (AES_TWR) Tweak Word x Mask */
@@ -318,42 +308,20 @@
 #define AES_TWR_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (AES_TWR) Register Mask  */
 
 
+/* -------- AES_ALPHAR : (AES Offset: 0xD0) ( /W 32) Alpha Word Register -------- */
+#define AES_ALPHAR_ALPHA_Pos                  _UINT32_(0)                                          /* (AES_ALPHAR) Alpha Word x Position */
+#define AES_ALPHAR_ALPHA_Msk                  (_UINT32_(0xFFFFFFFF) << AES_ALPHAR_ALPHA_Pos)       /* (AES_ALPHAR) Alpha Word x Mask */
+#define AES_ALPHAR_ALPHA(value)               (AES_ALPHAR_ALPHA_Msk & (_UINT32_(value) << AES_ALPHAR_ALPHA_Pos)) /* Assigment of value for ALPHA in the AES_ALPHAR register */
+#define AES_ALPHAR_Msk                        _UINT32_(0xFFFFFFFF)                                 /* (AES_ALPHAR) Register Mask  */
+
+
 /** \brief AES register offsets definitions */
-#define AES_AADLENR_REG_OFST           _UINT32_(0x70)      /* (AES_AADLENR) Additional Authenticated Data Length Register Offset */
-#define AES_ALPHAR_REG_OFST            _UINT32_(0xD0)      /* (AES_ALPHAR) Alpha Word Register Offset */
-#define AES_ALPHAR0_REG_OFST           _UINT32_(0xD0)      /* (AES_ALPHAR0) Alpha Word Register Offset */
-#define AES_ALPHAR1_REG_OFST           _UINT32_(0xD4)      /* (AES_ALPHAR1) Alpha Word Register Offset */
-#define AES_ALPHAR2_REG_OFST           _UINT32_(0xD8)      /* (AES_ALPHAR2) Alpha Word Register Offset */
-#define AES_ALPHAR3_REG_OFST           _UINT32_(0xDC)      /* (AES_ALPHAR3) Alpha Word Register Offset */
-#define AES_BCNT_REG_OFST              _UINT32_(0xB4)      /* (AES_BCNT) Byte Counter Register Offset */
-#define AES_CLENR_REG_OFST             _UINT32_(0x74)      /* (AES_CLENR) Plaintext/Ciphertext Length Register Offset */
 #define AES_CR_REG_OFST                _UINT32_(0x00)      /* (AES_CR) Control Register Offset */
-#define AES_CTRR_REG_OFST              _UINT32_(0x98)      /* (AES_CTRR) GCM Encryption Counter Value Register Offset */
-#define AES_EMR_REG_OFST               _UINT32_(0xB0)      /* (AES_EMR) Extended Mode Register Offset */
-#define AES_GCMHR_REG_OFST             _UINT32_(0x9C)      /* (AES_GCMHR) GCM H Word Register Offset */
-#define AES_GCMHR0_REG_OFST            _UINT32_(0x9C)      /* (AES_GCMHR0) GCM H Word Register Offset */
-#define AES_GCMHR1_REG_OFST            _UINT32_(0xA0)      /* (AES_GCMHR1) GCM H Word Register Offset */
-#define AES_GCMHR2_REG_OFST            _UINT32_(0xA4)      /* (AES_GCMHR2) GCM H Word Register Offset */
-#define AES_GCMHR3_REG_OFST            _UINT32_(0xA8)      /* (AES_GCMHR3) GCM H Word Register Offset */
-#define AES_GHASHR_REG_OFST            _UINT32_(0x78)      /* (AES_GHASHR) GCM Intermediate Hash Word Register Offset */
-#define AES_GHASHR0_REG_OFST           _UINT32_(0x78)      /* (AES_GHASHR0) GCM Intermediate Hash Word Register Offset */
-#define AES_GHASHR1_REG_OFST           _UINT32_(0x7C)      /* (AES_GHASHR1) GCM Intermediate Hash Word Register Offset */
-#define AES_GHASHR2_REG_OFST           _UINT32_(0x80)      /* (AES_GHASHR2) GCM Intermediate Hash Word Register Offset */
-#define AES_GHASHR3_REG_OFST           _UINT32_(0x84)      /* (AES_GHASHR3) GCM Intermediate Hash Word Register Offset */
-#define AES_IDATAR_REG_OFST            _UINT32_(0x40)      /* (AES_IDATAR) Input Data Register Offset */
-#define AES_IDATAR0_REG_OFST           _UINT32_(0x40)      /* (AES_IDATAR0) Input Data Register Offset */
-#define AES_IDATAR1_REG_OFST           _UINT32_(0x44)      /* (AES_IDATAR1) Input Data Register Offset */
-#define AES_IDATAR2_REG_OFST           _UINT32_(0x48)      /* (AES_IDATAR2) Input Data Register Offset */
-#define AES_IDATAR3_REG_OFST           _UINT32_(0x4C)      /* (AES_IDATAR3) Input Data Register Offset */
-#define AES_IDR_REG_OFST               _UINT32_(0x14)      /* (AES_IDR) Interrupt Disable Register Offset */
+#define AES_MR_REG_OFST                _UINT32_(0x04)      /* (AES_MR) Mode Register Offset */
 #define AES_IER_REG_OFST               _UINT32_(0x10)      /* (AES_IER) Interrupt Enable Register Offset */
+#define AES_IDR_REG_OFST               _UINT32_(0x14)      /* (AES_IDR) Interrupt Disable Register Offset */
 #define AES_IMR_REG_OFST               _UINT32_(0x18)      /* (AES_IMR) Interrupt Mask Register Offset */
 #define AES_ISR_REG_OFST               _UINT32_(0x1C)      /* (AES_ISR) Interrupt Status Register Offset */
-#define AES_IVR_REG_OFST               _UINT32_(0x60)      /* (AES_IVR) Initialization Vector Register Offset */
-#define AES_IVR0_REG_OFST              _UINT32_(0x60)      /* (AES_IVR0) Initialization Vector Register Offset */
-#define AES_IVR1_REG_OFST              _UINT32_(0x64)      /* (AES_IVR1) Initialization Vector Register Offset */
-#define AES_IVR2_REG_OFST              _UINT32_(0x68)      /* (AES_IVR2) Initialization Vector Register Offset */
-#define AES_IVR3_REG_OFST              _UINT32_(0x6C)      /* (AES_IVR3) Initialization Vector Register Offset */
 #define AES_KEYWR_REG_OFST             _UINT32_(0x20)      /* (AES_KEYWR) Key Word Register Offset */
 #define AES_KEYWR0_REG_OFST            _UINT32_(0x20)      /* (AES_KEYWR0) Key Word Register Offset */
 #define AES_KEYWR1_REG_OFST            _UINT32_(0x24)      /* (AES_KEYWR1) Key Word Register Offset */
@@ -363,22 +331,51 @@
 #define AES_KEYWR5_REG_OFST            _UINT32_(0x34)      /* (AES_KEYWR5) Key Word Register Offset */
 #define AES_KEYWR6_REG_OFST            _UINT32_(0x38)      /* (AES_KEYWR6) Key Word Register Offset */
 #define AES_KEYWR7_REG_OFST            _UINT32_(0x3C)      /* (AES_KEYWR7) Key Word Register Offset */
-#define AES_MR_REG_OFST                _UINT32_(0x04)      /* (AES_MR) Mode Register Offset */
+#define AES_IDATAR_REG_OFST            _UINT32_(0x40)      /* (AES_IDATAR) Input Data Register Offset */
+#define AES_IDATAR0_REG_OFST           _UINT32_(0x40)      /* (AES_IDATAR0) Input Data Register Offset */
+#define AES_IDATAR1_REG_OFST           _UINT32_(0x44)      /* (AES_IDATAR1) Input Data Register Offset */
+#define AES_IDATAR2_REG_OFST           _UINT32_(0x48)      /* (AES_IDATAR2) Input Data Register Offset */
+#define AES_IDATAR3_REG_OFST           _UINT32_(0x4C)      /* (AES_IDATAR3) Input Data Register Offset */
 #define AES_ODATAR_REG_OFST            _UINT32_(0x50)      /* (AES_ODATAR) Output Data Register Offset */
 #define AES_ODATAR0_REG_OFST           _UINT32_(0x50)      /* (AES_ODATAR0) Output Data Register Offset */
 #define AES_ODATAR1_REG_OFST           _UINT32_(0x54)      /* (AES_ODATAR1) Output Data Register Offset */
 #define AES_ODATAR2_REG_OFST           _UINT32_(0x58)      /* (AES_ODATAR2) Output Data Register Offset */
 #define AES_ODATAR3_REG_OFST           _UINT32_(0x5C)      /* (AES_ODATAR3) Output Data Register Offset */
+#define AES_IVR_REG_OFST               _UINT32_(0x60)      /* (AES_IVR) Initialization Vector Register Offset */
+#define AES_IVR0_REG_OFST              _UINT32_(0x60)      /* (AES_IVR0) Initialization Vector Register Offset */
+#define AES_IVR1_REG_OFST              _UINT32_(0x64)      /* (AES_IVR1) Initialization Vector Register Offset */
+#define AES_IVR2_REG_OFST              _UINT32_(0x68)      /* (AES_IVR2) Initialization Vector Register Offset */
+#define AES_IVR3_REG_OFST              _UINT32_(0x6C)      /* (AES_IVR3) Initialization Vector Register Offset */
+#define AES_AADLENR_REG_OFST           _UINT32_(0x70)      /* (AES_AADLENR) Additional Authenticated Data Length Register Offset */
+#define AES_CLENR_REG_OFST             _UINT32_(0x74)      /* (AES_CLENR) Plaintext/Ciphertext Length Register Offset */
+#define AES_GHASHR_REG_OFST            _UINT32_(0x78)      /* (AES_GHASHR) GCM Intermediate Hash Word Register Offset */
+#define AES_GHASHR0_REG_OFST           _UINT32_(0x78)      /* (AES_GHASHR0) GCM Intermediate Hash Word Register Offset */
+#define AES_GHASHR1_REG_OFST           _UINT32_(0x7C)      /* (AES_GHASHR1) GCM Intermediate Hash Word Register Offset */
+#define AES_GHASHR2_REG_OFST           _UINT32_(0x80)      /* (AES_GHASHR2) GCM Intermediate Hash Word Register Offset */
+#define AES_GHASHR3_REG_OFST           _UINT32_(0x84)      /* (AES_GHASHR3) GCM Intermediate Hash Word Register Offset */
 #define AES_TAGR_REG_OFST              _UINT32_(0x88)      /* (AES_TAGR) GCM Authentication Tag Word Register Offset */
 #define AES_TAGR0_REG_OFST             _UINT32_(0x88)      /* (AES_TAGR0) GCM Authentication Tag Word Register Offset */
 #define AES_TAGR1_REG_OFST             _UINT32_(0x8C)      /* (AES_TAGR1) GCM Authentication Tag Word Register Offset */
 #define AES_TAGR2_REG_OFST             _UINT32_(0x90)      /* (AES_TAGR2) GCM Authentication Tag Word Register Offset */
 #define AES_TAGR3_REG_OFST             _UINT32_(0x94)      /* (AES_TAGR3) GCM Authentication Tag Word Register Offset */
+#define AES_CTRR_REG_OFST              _UINT32_(0x98)      /* (AES_CTRR) GCM Encryption Counter Value Register Offset */
+#define AES_GCMHR_REG_OFST             _UINT32_(0x9C)      /* (AES_GCMHR) GCM H Word Register Offset */
+#define AES_GCMHR0_REG_OFST            _UINT32_(0x9C)      /* (AES_GCMHR0) GCM H Word Register Offset */
+#define AES_GCMHR1_REG_OFST            _UINT32_(0xA0)      /* (AES_GCMHR1) GCM H Word Register Offset */
+#define AES_GCMHR2_REG_OFST            _UINT32_(0xA4)      /* (AES_GCMHR2) GCM H Word Register Offset */
+#define AES_GCMHR3_REG_OFST            _UINT32_(0xA8)      /* (AES_GCMHR3) GCM H Word Register Offset */
+#define AES_EMR_REG_OFST               _UINT32_(0xB0)      /* (AES_EMR) Extended Mode Register Offset */
+#define AES_BCNT_REG_OFST              _UINT32_(0xB4)      /* (AES_BCNT) Byte Counter Register Offset */
 #define AES_TWR_REG_OFST               _UINT32_(0xC0)      /* (AES_TWR) Tweak Word Register Offset */
 #define AES_TWR0_REG_OFST              _UINT32_(0xC0)      /* (AES_TWR0) Tweak Word Register Offset */
 #define AES_TWR1_REG_OFST              _UINT32_(0xC4)      /* (AES_TWR1) Tweak Word Register Offset */
 #define AES_TWR2_REG_OFST              _UINT32_(0xC8)      /* (AES_TWR2) Tweak Word Register Offset */
 #define AES_TWR3_REG_OFST              _UINT32_(0xCC)      /* (AES_TWR3) Tweak Word Register Offset */
+#define AES_ALPHAR_REG_OFST            _UINT32_(0xD0)      /* (AES_ALPHAR) Alpha Word Register Offset */
+#define AES_ALPHAR0_REG_OFST           _UINT32_(0xD0)      /* (AES_ALPHAR0) Alpha Word Register Offset */
+#define AES_ALPHAR1_REG_OFST           _UINT32_(0xD4)      /* (AES_ALPHAR1) Alpha Word Register Offset */
+#define AES_ALPHAR2_REG_OFST           _UINT32_(0xD8)      /* (AES_ALPHAR2) Alpha Word Register Offset */
+#define AES_ALPHAR3_REG_OFST           _UINT32_(0xDC)      /* (AES_ALPHAR3) Alpha Word Register Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief AES register API structure */
@@ -411,4 +408,4 @@ typedef struct
 
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-#endif /* _SAMA5D_AES_COMPONENT_H_ */
+#endif /* _SAMA5D2_AES_COMPONENT_H_ */
