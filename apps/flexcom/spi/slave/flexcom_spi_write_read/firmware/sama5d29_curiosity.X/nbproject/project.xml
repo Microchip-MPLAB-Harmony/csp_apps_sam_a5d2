@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>flexcom_spi_write_read_sama5d29_curiosity</name>
+            <name>flexcom_spi_client_write_read_sama5d29_curiosity</name>
             <creation-uuid>1998a2cc-ada4-4f49-8c4e-9b282f02bb5a</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
