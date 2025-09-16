@@ -83,6 +83,7 @@
             <itemPath>../src/packs/ATSAMA5D29_DFP/component/trng.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D29_DFP/component/classd.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D29_DFP/component/udphs.h</itemPath>
+            <itemPath>../src/packs/ATSAMA5D29_DFP/component/syscwp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="instance" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D29_DFP/instance/hsmc.h</itemPath>
@@ -153,11 +154,9 @@
             <itemPath>../src/packs/ATSAMA5D29_DFP/instance/chipid.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D29_DFP/instance/piod.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D29_DFP/instance/pioa.h</itemPath>
-            <itemPath>../src/packs/ATSAMA5D29_DFP/instance/pio_ctrl.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D29_DFP/instance/pioc.h</itemPath>
-            <itemPath>../src/packs/ATSAMA5D29_DFP/instance/s_pio.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D29_DFP/instance/piob.h</itemPath>
-            <itemPath>../src/packs/ATSAMA5D29_DFP/instance/s_pio_ctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAMA5D29_DFP/instance/syscwp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="pio" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D29_DFP/pio/sama5d29.h</itemPath>
@@ -222,8 +221,16 @@
       <itemPath>../src/config/sama5d29_curiosity/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="false">
+      <logicalFolder name="uart_echo_blocking_sama5d29_curiosity_sama5d29_curiosity" displayName="uart_echo_blocking_sama5d29_curiosity_sama5d29_curiosity" projectFiles="true">
+        <itemPath>uart_echo_blocking_sama5d29_curiosity_sama5d29_curiosity/mcc-config.mc4</itemPath>
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>uart_echo_blocking_sama5d29_curiosity_sama5d29_curiosity/components/cmsis.yml</itemPath>
+          <itemPath>uart_echo_blocking_sama5d29_curiosity_sama5d29_curiosity/components/core.yml</itemPath>
+          <itemPath>uart_echo_blocking_sama5d29_curiosity_sama5d29_curiosity/components/dfp.yml</itemPath>
+          <itemPath>uart_echo_blocking_sama5d29_curiosity_sama5d29_curiosity/components/uart0.yml</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>uart_echo_blocking_sama5d29_curiosity.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -236,11 +243,11 @@
         <targetPluginBoard/>
         <platformTool>j32</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.11.228"/>
+        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.14.264"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
