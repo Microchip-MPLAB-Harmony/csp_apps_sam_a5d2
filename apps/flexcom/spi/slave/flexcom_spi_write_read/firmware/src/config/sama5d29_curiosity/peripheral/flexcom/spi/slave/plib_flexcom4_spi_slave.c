@@ -56,8 +56,8 @@
 #define FLEXCOM4_READ_BUFFER_SIZE            256U
 #define FLEXCOM4_WRITE_BUFFER_SIZE           256U
 
-volatile static uint8_t FLEXCOM4_ReadBuffer[FLEXCOM4_READ_BUFFER_SIZE];
-volatile static uint8_t FLEXCOM4_WriteBuffer[FLEXCOM4_WRITE_BUFFER_SIZE];
+static volatile uint8_t FLEXCOM4_ReadBuffer[FLEXCOM4_READ_BUFFER_SIZE];
+static volatile uint8_t FLEXCOM4_WriteBuffer[FLEXCOM4_WRITE_BUFFER_SIZE];
 
 // *****************************************************************************
 // *****************************************************************************
@@ -66,7 +66,7 @@ volatile static uint8_t FLEXCOM4_WriteBuffer[FLEXCOM4_WRITE_BUFFER_SIZE];
 // *****************************************************************************
 
 /* Global object to save FLEXCOM SPI Exchange related data */
-volatile static FLEXCOM_SPI_SLAVE_OBJECT flexcom4SpiObj;
+static volatile FLEXCOM_SPI_SLAVE_OBJECT flexcom4SpiObj;
 
 static void mem_copy(volatile void* pDst, volatile void* pSrc, uint32_t nBytes)
 {
