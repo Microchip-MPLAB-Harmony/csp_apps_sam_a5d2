@@ -83,6 +83,7 @@
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/component/uhphs.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/component/xdmac.h</itemPath>
+            <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/component/syscwp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/acc.h</itemPath>
@@ -150,13 +151,11 @@
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/xdmac0.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/xdmac1.h</itemPath>
-            <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/s_pio_ctrl.h</itemPath>
-            <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/pio_ctrl.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/pioa.h</itemPath>
-            <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/s_pio.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/piob.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/pioc.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/piod.h</itemPath>
+            <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/instance/syscwp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D27CLD2G_DFP/pio/sama5d27cld2g.h</itemPath>
@@ -179,9 +178,17 @@
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="true">
+      <logicalFolder name="uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek1_sam_a5d27_wlsom1_ek1" displayName="uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek1_sam_a5d27_wlsom1_ek1" projectFiles="true">
+        <itemPath>uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek1_sam_a5d27_wlsom1_ek1/mcc-config.mc4</itemPath>
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek1_sam_a5d27_wlsom1_ek1/components/cmsis.yml</itemPath>
+          <itemPath>uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek1_sam_a5d27_wlsom1_ek1/components/core.yml</itemPath>
+          <itemPath>uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek1_sam_a5d27_wlsom1_ek1/components/dfp.yml</itemPath>
+          <itemPath>uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek1_sam_a5d27_wlsom1_ek1/components/uart0.yml</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_a5d27_wlsom1_ek1/harmony-manifest-success.yml</itemPath>
-      <itemPath>uart_ring_buffer_interrupt_sam_a5d27_wlsom1_ek1.mc3</itemPath>
       <itemPath>../src/config/sam_a5d27_wlsom1_ek1/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
@@ -239,12 +246,12 @@
         <targetPluginBoard/>
         <platformTool>j32</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.11.228"/>
+        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.14.264"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="boot.load_adr" value=""/>
