@@ -1,7 +1,9 @@
 /*
- * Instance header file for ATSAMA5D27WLSOM1
+ * Instance header file for ATSAMA5D28CLD2G
  *
- * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
+ *
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +19,8 @@
  *
  */
 
-/* file generated from device description file (ATDF) version 2021-04-15T06:44:00Z */
-#ifndef _SAMA5D2_S_PIO_INSTANCE_
-#define _SAMA5D2_S_PIO_INSTANCE_
+/* file generated from device description file (ATDF) version 2025-07-15T11:00:00Z */
+#ifndef _SAMA5D2_SYSCWP_INSTANCE_
+#define _SAMA5D2_SYSCWP_INSTANCE_
 
-#endif /* _SAMA5D2_S_PIO_INSTANCE_ */
+#endif /* _SAMA5D2_SYSCWP_INSTANCE_ */

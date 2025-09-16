@@ -1,0 +1,61 @@
+configVersion: 1.0.0
+componentName: uart1
+coreVersion: 5.8.2
+device: ATSAMA5D27CD1G
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: uart1
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: bsp
+  type: package
+  version: v3.23.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: uart1
+          x: '700'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    BRG_VALUE:
+      attributes:
+        id: BRG_VALUE
+      children:
+      - children:
+        - attributes:
+            id: uart1
+            value: '44'
+          type: Dynamic
+        type: Values
+      type: Integer
+    UART_CLOCK_FREQ:
+      attributes:
+        id: UART_CLOCK_FREQ
+      children:
+      - children:
+        - attributes:
+            id: uart1
+            value: '82000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}
