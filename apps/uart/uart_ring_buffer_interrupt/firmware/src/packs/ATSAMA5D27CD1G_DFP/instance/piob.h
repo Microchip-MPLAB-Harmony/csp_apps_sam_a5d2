@@ -1,7 +1,9 @@
 /*
- * Instance header file for ATSAMA5D27WLSOM1
+ * Instance header file for ATSAMA5D28CLD2G
  *
- * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2025 Microchip Technology Inc. and its subsidiaries.
+ *
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,23 +19,12 @@
  *
  */
 
-/* file generated from device description file (ATDF) version 2021-04-15T06:44:00Z */
+/* file generated from device description file (ATDF) version 2025-07-15T11:00:00Z */
 #ifndef _SAMA5D2_PIOB_INSTANCE_
 #define _SAMA5D2_PIOB_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for PIOB peripheral ========== */
-#define PIOB_ABCDSR1_DEFAULT_VAL                 (0x00000000) /* Register value at reset */
-#define PIOB_ABCDSR2_DEFAULT_VAL                 (0x00000000) /* Register value at reset */
-#define PIOB_ABCDSR3_DEFAULT_VAL                 (0x00000000) /* Register value at reset */
-#define PIOB_ABCDSR4_DEFAULT_VAL                 (0x00000000) /* Register value at reset */
-#define PIOB_FILTRS_DEFAULT_VAL                  (0x00000000) /* Register value at reset */
-#define PIOB_INSTANCE_ID_B                       (68)       
-#define PIOB_OSR_DEFAULT_VAL                     (0x00000000) /* Register value at reset */
-#define PIOB_PPDSR_DEFAULT_VAL                   (0xFFFFFFFF) /* Register value at reset */
-#define PIOB_PSR_DEFAULT_VAL                     (0xFFFFFFFF) /* Register value at reset */
-#define PIOB_PUSR_DEFAULT_VAL                    (0x00000000) /* Register value at reset */
-#define PIOB_SECRS_DEFAULT_VAL                   (0x00000000) /* Register value at reset */
-#define PIOB_STRS_DEFAULT_VAL                    (0xFFFFFFFF) /* Register value at reset */
+#define PIOB_INSTANCE_ID                         (68)
 
 #endif /* _SAMA5D2_PIOB_INSTANCE_ */
