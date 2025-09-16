@@ -50,7 +50,7 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-/* This section lists the other files that are included in this file. */
+
 #include "device.h"
 #include "plib_flexcom_usart_local.h"
 
@@ -86,7 +86,6 @@ void FLEXCOM4_USART_WriteByte(uint8_t data);
 bool FLEXCOM4_USART_TransmitterIsReady( void );
 
 bool FLEXCOM4_USART_ReceiverIsReady( void );
-
 
 bool FLEXCOM4_USART_TransmitComplete( void );
 
