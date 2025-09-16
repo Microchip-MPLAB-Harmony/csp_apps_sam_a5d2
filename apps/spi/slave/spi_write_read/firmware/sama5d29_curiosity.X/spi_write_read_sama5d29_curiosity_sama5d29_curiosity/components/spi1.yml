@@ -1,0 +1,148 @@
+configVersion: 1.0.0
+componentName: spi1
+coreVersion: 5.8.2
+device: ATSAMA5D29
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: spi1
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: spi1
+          x: '240'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    SPIS_BUSY_PIN:
+      attributes:
+        id: SPIS_BUSY_PIN
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '121'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SPI_CSR_INDEX:
+      attributes:
+        id: SPI_CSR_INDEX
+      children:
+      - children:
+        - attributes:
+            id: spi1
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    SPI_EN_NPCS0:
+      attributes:
+        id: SPI_EN_NPCS0
+      children:
+      - children:
+        - attributes:
+            id: label
+          children:
+          - type: Value
+            value: Enable NPCS0
+          type: String
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: spi1
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SPI_FIFO_ENABLE:
+      attributes:
+        id: SPI_FIFO_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: spi1
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SPI_INTERRUPT_MODE:
+      attributes:
+        id: SPI_INTERRUPT_MODE
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: spi1
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SPI_MR_MSTR:
+      attributes:
+        id: SPI_MR_MSTR
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SPI_NUM_CSR:
+      attributes:
+        id: SPI_NUM_CSR
+      children:
+      - children:
+        - attributes:
+            id: spi1
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}

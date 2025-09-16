@@ -47,8 +47,8 @@
 #define SPI1_READ_BUFFER_SIZE            256U
 #define SPI1_WRITE_BUFFER_SIZE           256U
 
-volatile static uint8_t SPI1_ReadBuffer[SPI1_READ_BUFFER_SIZE];
-volatile static uint8_t SPI1_WriteBuffer[SPI1_WRITE_BUFFER_SIZE];
+static volatile uint8_t SPI1_ReadBuffer[SPI1_READ_BUFFER_SIZE];
+static volatile uint8_t SPI1_WriteBuffer[SPI1_WRITE_BUFFER_SIZE];
 
 
 #define NOP asm("nop")
@@ -70,7 +70,7 @@ volatile static uint8_t SPI1_WriteBuffer[SPI1_WRITE_BUFFER_SIZE];
 // *****************************************************************************
 
 /* Global object to save SPI Exchange related data */
-volatile static SPI_SLAVE_OBJECT spi1Obj;
+static volatile SPI_SLAVE_OBJECT spi1Obj;
 
 static void mem_copy(volatile void* pDst, volatile void* pSrc, uint32_t nBytes)
 {
