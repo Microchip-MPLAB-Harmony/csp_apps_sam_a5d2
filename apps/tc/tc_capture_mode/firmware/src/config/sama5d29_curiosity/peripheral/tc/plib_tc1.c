@@ -68,7 +68,7 @@
  
 
 /* Callback object for channel 1 */
-volatile static TC_COMPARE_CALLBACK_OBJECT TC1_CH1_CallbackObj;
+static volatile TC_COMPARE_CALLBACK_OBJECT TC1_CH1_CallbackObj;
 
 /* Initialize channel in compare mode */
 void TC1_CH1_CompareInitialize (void)
@@ -164,7 +164,7 @@ static void __attribute__((used)) TC1_CH1_InterruptHandler(void)
 
 
 /* Callback object for channel 2 */
-volatile static TC_TIMER_CALLBACK_OBJECT TC1_CH2_CallbackObj;
+static volatile TC_TIMER_CALLBACK_OBJECT TC1_CH2_CallbackObj;
 
 /* Initialize channel in timer mode */
 void TC1_CH2_TimerInitialize (void)
