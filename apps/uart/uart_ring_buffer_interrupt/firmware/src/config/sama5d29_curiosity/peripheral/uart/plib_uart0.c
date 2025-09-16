@@ -48,7 +48,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-volatile static UART_RING_BUFFER_OBJECT uart0Obj;
+static volatile UART_RING_BUFFER_OBJECT uart0Obj;
 
 #define UART0_READ_BUFFER_SIZE      20U
 /* Disable Read, Overrun, Parity and Framing error interrupts */
@@ -56,13 +56,13 @@ volatile static UART_RING_BUFFER_OBJECT uart0Obj;
 /* Enable Read, Overrun, Parity and Framing error interrupts */
 #define UART0_RX_INT_ENABLE()       UART0_REGS->UART_IER = (UART_IER_RXRDY_Msk | UART_IER_FRAME_Msk | UART_IER_PARE_Msk | UART_IER_OVRE_Msk);
 
-volatile static uint8_t UART0_ReadBuffer[UART0_READ_BUFFER_SIZE];
+static volatile uint8_t UART0_ReadBuffer[UART0_READ_BUFFER_SIZE];
 
 #define UART0_WRITE_BUFFER_SIZE     128U
 #define UART0_TX_INT_DISABLE()      UART0_REGS->UART_IDR = UART_IDR_TXEMPTY_Msk;
 #define UART0_TX_INT_ENABLE()       UART0_REGS->UART_IER = UART_IER_TXEMPTY_Msk;
 
-volatile static uint8_t UART0_WriteBuffer[UART0_WRITE_BUFFER_SIZE];
+static volatile uint8_t UART0_WriteBuffer[UART0_WRITE_BUFFER_SIZE];
 
 void UART0_Initialize( void )
 {
