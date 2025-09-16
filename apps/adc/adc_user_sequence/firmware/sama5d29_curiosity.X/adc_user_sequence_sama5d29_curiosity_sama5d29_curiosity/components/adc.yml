@@ -1,0 +1,157 @@
+configVersion: 1.0.0
+componentName: adc
+coreVersion: 5.8.2
+device: ATSAMA5D29
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: adc
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: adc
+          x: '520'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    ADC_5_CHER:
+      attributes:
+        id: ADC_5_CHER
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_6_CHER:
+      attributes:
+        id: ADC_6_CHER
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_7_CHER:
+      attributes:
+        id: ADC_7_CHER
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_7_IER_EOC:
+      attributes:
+        id: ADC_7_IER_EOC
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_MR_USEQ:
+      attributes:
+        id: ADC_MR_USEQ
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_SEQR1_USCH1:
+      attributes:
+        id: ADC_SEQR1_USCH1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: CH5
+          type: User
+        type: Values
+      type: Combo
+    ADC_SEQR1_USCH2:
+      attributes:
+        id: ADC_SEQR1_USCH2
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: CH6
+          type: User
+        type: Values
+      type: Combo
+    ADC_SEQR1_USCH3:
+      attributes:
+        id: ADC_SEQR1_USCH3
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: CH7
+          type: User
+        type: Values
+      type: Combo
+    ADC_TRGR_MODE:
+      attributes:
+        id: ADC_TRGR_MODE
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+  userData: {}
