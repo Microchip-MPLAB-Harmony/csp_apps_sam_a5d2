@@ -1,0 +1,630 @@
+generatedFiles:
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/device_cache.h
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/toolchain_specifics.h
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/main_sama5d27_som1__ek.c
+  projectFolder: ''
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/definitions.h
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/initialization.c
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/interrupts.c
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/interrupts.h
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/stdio/xc32_monitor.c
+  projectFolder: config/sam_a5d27_som1_ek/stdio
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/mmu/plib_mmu.c
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/mmu
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/mmu/plib_mmu.h
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/mmu
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/matrix/plib_matrix.c
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/matrix
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/matrix/plib_matrix.h
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/matrix
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/clk/plib_clk.h
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/clk
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/clk/plib_clk.c
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/clk
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/pio/plib_pio.h
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/pio
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/pio/plib_pio.c
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/pio
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/pin_configurations.csv
+  projectFolder: ''
+  type: Important Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/aic/plib_aic.c
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/aic
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/peripheral/aic/plib_aic.h
+  projectFolder: config/sam_a5d27_som1_ek/peripheral/aic
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/cstartup.S
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/ddr.ld
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Linker Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/fault_handlers.c
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/device.h
+  projectFolder: config/sam_a5d27_som1_ek
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/acc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/adc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/aes.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/aesb.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/aic.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/aximx.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/chipid.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/classd.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/flexcom.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/gmac.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/i2sc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/icm.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/isc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/l2cc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/lcdc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/matrix.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/mcan.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/mpddrc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/pdmic.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/pio.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/pit.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/pmc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/ptc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/pwm.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/qspi.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/rstc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/rtc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/rxlp.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/sckc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/sdmmc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/secumod.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/sfc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/sfr.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/sfrbu.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/sha.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/shdwc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/smc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/spi.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/ssc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/syscwp.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/tc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/tdes.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/trng.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/twihs.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/uart.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/udphs.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/uhphs.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/wdt.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/component/xdmac.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/acc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/adc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/aes.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/aesb.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/aic.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/aximx.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/chipid.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/classd.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/flexcom0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/flexcom1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/flexcom2.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/flexcom3.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/flexcom4.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/gmac.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/hsmc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/i2sc0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/i2sc1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/icm.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/isc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/l2cc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/lcdc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/matrix0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/matrix1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/mcan0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/mcan1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/mpddrc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/pdmic.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/pio.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/pioa.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/piob.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/pioc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/piod.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/pit.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/pmc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/ptc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/pwm.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/qspi0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/qspi1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/rstc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/rtc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/rxlp.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/saic.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/sckc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/sdmmc0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/sdmmc1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/secumod.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/sfc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/sfr.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/sfrbu.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/sha.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/shdwc.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/spi0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/spi1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/ssc0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/ssc1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/syscwp.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/tc0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/tc1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/tdes.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/trng.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/twihs0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/twihs1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/uart0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/uart1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/uart2.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/uart3.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/uart4.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/udphs.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/wdt.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/xdmac0.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/instance/xdmac1.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/sama5d27cd1g.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/ATSAMA5D27CD1G_DFP/pio/sama5d27cd1g.h
+  projectFolder: packs/ATSAMA5D27CD1G_DFP/pio
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/bsp/bsp.c
+  projectFolder: config/sam_a5d27_som1_ek/bsp
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/config/sam_a5d27_som1_ek/bsp/bsp.h
+  projectFolder: config/sam_a5d27_som1_ek/bsp
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/CMSIS/CMSIS/Core_A/Include/cmsis_compiler.h
+  projectFolder: packs/CMSIS/CMSIS/Core_A/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/CMSIS/CMSIS/Core_A/Include/cmsis_gcc.h
+  projectFolder: packs/CMSIS/CMSIS/Core_A/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/CMSIS/CMSIS/Core_A/Include/cmsis_iccarm.h
+  projectFolder: packs/CMSIS/CMSIS/Core_A/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/CMSIS/CMSIS/Core_A/Include/cmsis_cp15.h
+  projectFolder: packs/CMSIS/CMSIS/Core_A/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/remove-werror-switch-from-apps/csp_apps_sam_a5d2/apps/pio/pio_led_on_off_polling/firmware/src/packs/CMSIS/CMSIS/Core_A/Include/core_ca.h
+  projectFolder: packs/CMSIS/CMSIS/Core_A/Include
+  type: Header Files
+generatedSettings:
+- category: C32-LD
+  key: preprocessor-macros
+  value: ''
+- category: C32-LD
+  key: heap-size
+  value: '512'
+- category: C32
+  key: extra-include-directories
+  value: ../src;../src/config/sam_a5d27_som1_ek;../src/packs/ATSAMA5D27CD1G_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/
+- category: C32CPP
+  key: extra-include-directories
+  value: ../src;../src/config/sam_a5d27_som1_ek;../src/packs/ATSAMA5D27CD1G_DFP;../src/packs/CMSIS/CMSIS/Core_A/Include;../src/packs/CMSIS/
+- category: C32-LD
+  key: no-device-startup-code
+  value: 'true'
+- category: C32
+  key: appendMe
+  value: -marm
+removedFiles: [
+  ]

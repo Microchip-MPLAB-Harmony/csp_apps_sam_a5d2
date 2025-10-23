@@ -194,20 +194,21 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity"
-                     displayName="mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity"
+      <logicalFolder name="mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity"
+                     displayName="mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity"
                      projectFiles="true">
         <logicalFolder name="components" displayName="components" projectFiles="true">
-          <itemPath>mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity/components/cmsis.yml</itemPath>
-          <itemPath>mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity/components/core.yml</itemPath>
-          <itemPath>mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity/components/dfp.yml</itemPath>
-          <itemPath>mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity/components/mcan0.yml</itemPath>
-          <itemPath>mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity/components/stdio.yml</itemPath>
-          <itemPath>mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity/components/uart0.yml</itemPath>
+          <itemPath>mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity/components/cmsis.yml</itemPath>
+          <itemPath>mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity/components/core.yml</itemPath>
+          <itemPath>mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity/components/dfp.yml</itemPath>
+          <itemPath>mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity/components/mcan0.yml</itemPath>
+          <itemPath>mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity/components/stdio.yml</itemPath>
+          <itemPath>mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity/components/uart0.yml</itemPath>
         </logicalFolder>
-        <itemPath>mcan_fd_operation_interrupt_timestamp_sama5d29_curiosity/mcc-config.mc4</itemPath>
+        <itemPath>mcan_fd_operation_blocking_sama5d29_curiosity_sama5d29_curiosity/mcc-config.mc4</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sama5d29_curiosity/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -263,7 +264,6 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/config/sama5d29_curiosity/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -280,7 +280,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="CMSIS" vendor="ARM" version="5.9.0"/>
         <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.14.264"/>
       </packs>
       <ScriptingSettings>

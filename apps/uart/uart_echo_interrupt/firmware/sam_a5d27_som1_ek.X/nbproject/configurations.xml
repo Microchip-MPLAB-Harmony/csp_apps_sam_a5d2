@@ -160,6 +160,7 @@
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/piob.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/piod.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/pioc.h</itemPath>
+            <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/hsmc.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/syscwp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="pio" projectFiles="true">
@@ -198,7 +199,6 @@
         <itemPath>uart_echo_interrupt_sam_a5d27_som1_ek_sam_a5d27_som1_ek/mcc-config.mc4</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_a5d27_som1_ek/harmony-manifest-success.yml</itemPath>
       <itemPath>../src/config/sam_a5d27_som1_ek/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -268,7 +268,7 @@
       </toolsSet>
       <packs>
         <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.14.264"/>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="CMSIS" vendor="ARM" version="5.9.0"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="boot.load_adr" value=""/>

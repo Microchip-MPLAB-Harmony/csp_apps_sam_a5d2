@@ -2,8 +2,8 @@
 
 manifest_file_version: 1.0.0
 project: adc_automatic_window_comparison_sam_a5d2_curiosity
-creation_date: 2025-09-16T16:41:24.525+00:00[UTC]
-operating_system: Windows 10
+creation_date: 2025-10-23T18:38:08.570+00:00[UTC]
+operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
 device_name: ATSAMA5D29

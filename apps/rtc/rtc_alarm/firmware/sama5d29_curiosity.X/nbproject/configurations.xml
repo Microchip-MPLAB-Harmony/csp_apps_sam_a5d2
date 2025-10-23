@@ -205,6 +205,7 @@
         <itemPath>rtc_alarm_sama5d29_curiosity_sama5d29_curiosity/mcc-config.mc4</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sama5d29_curiosity/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -257,7 +258,6 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/config/sama5d29_curiosity/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -274,7 +274,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="CMSIS" vendor="ARM" version="5.9.0"/>
         <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.14.264"/>
       </packs>
       <ScriptingSettings>

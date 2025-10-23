@@ -189,18 +189,19 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
-      <logicalFolder name="i2c_eeprom_emulation_sama5d29_curiosity"
-                     displayName="i2c_eeprom_emulation_sama5d29_curiosity"
+      <logicalFolder name="twihs_eeprom_emulation_sama5d29_curiosity_sama5d29_curiosity"
+                     displayName="twihs_eeprom_emulation_sama5d29_curiosity_sama5d29_curiosity"
                      projectFiles="true">
         <logicalFolder name="components" displayName="components" projectFiles="true">
-          <itemPath>i2c_eeprom_emulation_sama5d29_curiosity/components/cmsis.yml</itemPath>
-          <itemPath>i2c_eeprom_emulation_sama5d29_curiosity/components/core.yml</itemPath>
-          <itemPath>i2c_eeprom_emulation_sama5d29_curiosity/components/dfp.yml</itemPath>
-          <itemPath>i2c_eeprom_emulation_sama5d29_curiosity/components/twihs1.yml</itemPath>
+          <itemPath>twihs_eeprom_emulation_sama5d29_curiosity_sama5d29_curiosity/components/cmsis.yml</itemPath>
+          <itemPath>twihs_eeprom_emulation_sama5d29_curiosity_sama5d29_curiosity/components/core.yml</itemPath>
+          <itemPath>twihs_eeprom_emulation_sama5d29_curiosity_sama5d29_curiosity/components/dfp.yml</itemPath>
+          <itemPath>twihs_eeprom_emulation_sama5d29_curiosity_sama5d29_curiosity/components/twihs1.yml</itemPath>
         </logicalFolder>
-        <itemPath>i2c_eeprom_emulation_sama5d29_curiosity/mcc-config.mc4</itemPath>
+        <itemPath>twihs_eeprom_emulation_sama5d29_curiosity_sama5d29_curiosity/mcc-config.mc4</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sama5d29_curiosity/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -251,7 +252,6 @@
           <itemPath>../src/config/sama5d29_curiosity/cstartup.S</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/config/sama5d29_curiosity/pin_configurations.csv</itemPath>
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -270,7 +270,7 @@
       </toolsSet>
       <packs>
         <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.14.264"/>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="CMSIS" vendor="ARM" version="5.9.0"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="boot.load_adr" value=""/>

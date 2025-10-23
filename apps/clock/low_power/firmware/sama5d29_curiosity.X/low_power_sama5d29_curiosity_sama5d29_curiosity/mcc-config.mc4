@@ -18,7 +18,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sama5d29_curiosity\ddr.ld
   hash: d945ebbe1eda655d490ea238106694552967e0a38f4a4daf16cd30a63760bec3
 - file: ..\src\config\sama5d29_curiosity\definitions.h
-  hash: 1236c231120cdb37d7a16acb01ea00a54574081895b7e5d6c7badac3f1a1a859
+  hash: 82b8c5884178a1637014b33e90eebffc30792212320d4974cc5f33ac71ef5810
 - file: ..\src\config\sama5d29_curiosity\device.h
   hash: 4d7a5908f693c0ebdd1b71878e37d52050e06c2881fda52e1991ac23de07335d
 - file: ..\src\config\sama5d29_curiosity\device_cache.h
@@ -26,7 +26,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sama5d29_curiosity\fault_handlers.c
   hash: 931e951cf7431d3d70d6ab81bcd265ff0ac8b3f473b73cd7a541f59d49786b7c
 - file: ..\src\config\sama5d29_curiosity\initialization.c
-  hash: ae2f661be693e9044dc339b05239f397c1b8af253ff98c7d1d4991efe3b8155d
+  hash: 735b06cc3c7ec37dc49bb76c895b4033b0c83c077c7a34c35b4aca76700690d9
 - file: ..\src\config\sama5d29_curiosity\interrupts.c
   hash: 07a34acc1aba3b6058bc0112e9f9e25e75976fd3054a03661f43bdaf28bd2e1e
 - file: ..\src\config\sama5d29_curiosity\interrupts.h
