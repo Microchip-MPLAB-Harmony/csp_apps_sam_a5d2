@@ -33,8 +33,8 @@
 
 /* The USART RS485 example demonstrates how to use USART in RS485 mode.
 
- * Before running, make sure to connect two boards with RS485 lines. 
- * Use the RS485 adapter board (ATRS485-XPRO) for this purpose. 
+ * Before running, make sure to connect two boards with RS485 lines.
+ * Use the RS485 adapter board (ATRS485-XPRO) for this purpose.
  * Match each pair of pins on the two boards respectively: A to A, B to B.
  *
  *   - <b>Board 1 and Board 2</b>
@@ -53,7 +53,7 @@
  * This is defined by the user.
  */
 
-char errorMessage[] = "\r\n**** DBGU error has occurred ****\r\n";
+static char errorMessage[] = "\r\n**** DBGU error has occurred ****\r\n";
 
 #define BUFFER_SIZE  1024
 
@@ -65,7 +65,7 @@ static __ALIGNED(64) uint8_t read_buffer[BUFFER_SIZE];
 static __ALIGNED(64) uint8_t write_buffer[BUFFER_SIZE];
 
 /** Transmit buffer. */
-uint8_t palette[BUFFER_SIZE]=
+static uint8_t palette[BUFFER_SIZE] =
 "This application provides an example of how to use USART in RS485 mode.\n\r\
 The USART features RS485 mode to enable line driver control.\n\r\
 While operating in RS485 mode, the USART behaves as though it is in asynchronous\n\r\
@@ -117,7 +117,7 @@ static void dump_info(uint8_t *buf, uint32_t size)
 // Section: Main Entry Point
 // *****************************************************************************
 // *****************************************************************************
-int i=0;
+static int i=0;
 int main ( void )
 {
     char c = 0;
@@ -171,7 +171,7 @@ int main ( void )
                             printf("FLEXCOM USART error occurred\n\r");
                         }
                         dump_info(read_buffer, sizeof(read_buffer));
-                        
+
                         memset(read_buffer, 0, sizeof(read_buffer));
                         printf("RS485 reception completed\r\n");
                         break;
